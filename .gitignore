@@ -1,13 +1,21 @@
 # Secrets — NEVER commit these
 .env
+google_credentials.json
 
 # Runtime output files
 job_results.json
 seen_jobs.json
 job_decisions.json
+job_decisions.json.bak
+job_decisions_old.json
 job_search_run.log
+today_jobs.json
+scoring_weights.json
+overnight_summary.json
+job_search.py.bak
 JobSearch_Scheduler.xml
-package_lock.json
+package-lock.json
+job_search.py.old
 
 # Python
 __pycache__/
@@ -24,4 +32,3 @@ desktop.ini
 
 # macOS
 .DS_Store
-job_search.py.old
