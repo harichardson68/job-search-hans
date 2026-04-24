@@ -982,7 +982,111 @@ def search_serper_jobs():
 
 
 # 
-# SOURCE 4: Adzuna API
+# AMAZON JOBS SPOTLIGHT — Top 5 Amazon-specific postings (10 day window)
+# Searches amazon.jobs via Serper — no login required
+# 
+AMAZON_MAX_AGE_DAYS = 10
+
+def search_amazon_jobs():
+    """Search amazon.jobs specifically for performance and AI roles."""
+    print("[SEARCH] Searching Amazon Jobs spotlight...")
+    jobs = []
+    if not SERPER_API_KEY:
+        print("   [WARN] Serper key not set — Amazon Jobs skipped")
+        return jobs
+
+    queries = [
+        'site:amazon.jobs "performance engineer" OR "performance test"',
+        'site:amazon.jobs "loadrunner" OR "vugen"',
+        'site:amazon.jobs "prompt engineer" OR "ai engineer"',
+        'site:amazon.jobs "mlops" OR "llm engineer"',
+        'site:amazon.jobs "ai automation" OR "agentic"',
+    ]
+
+    seen = set()
+    cutoff = datetime.now(timezone.utc) - timedelta(days=AMAZON_MAX_AGE_DAYS)
+
+    for query in queries:
+        try:
+            url = "https://google.serper.dev/search"
+            headers = {
+                "X-API-KEY": SERPER_API_KEY,
+                "Content-Type": "application/json"
+            }
+            payload = {
+                "q": query,
+                "gl": "us",
+                "hl": "en",
+                "num": 10,
+                "tbs": "qdr:m"  # Last month — wider window than regular search
+            }
+            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            if resp.status_code != 200:
+                continue
+            data = resp.json()
+            all_results = data.get("jobs", []) + data.get("organic", [])
+
+            for item in all_results:
+                title   = item.get("title", "")
+                desc    = item.get("description", item.get("snippet", ""))
+                url_job = item.get("applyLink", "") or item.get("link", "") or item.get("url", "")
+                posted  = item.get("date", item.get("publishedDate", ""))
+                company = item.get("company", item.get("source", "Amazon"))
+
+                # Must be from amazon.jobs
+                if "amazon.jobs" not in url_job.lower():
+                    continue
+                if url_job in seen:
+                    continue
+                seen.add(url_job)
+
+                # Apply 10-day freshness filter
+                if posted:
+                    try:
+                        parsed = parse_relative_date(str(posted))
+                        if parsed is None:
+                            from dateutil import parser as dateparser
+                            parsed = dateparser.parse(str(posted))
+                        if parsed:
+                            if parsed.tzinfo is None:
+                                parsed = parsed.replace(tzinfo=timezone.utc)
+                            if parsed < cutoff:
+                                continue
+                    except Exception:
+                        pass  # If can't parse date, include it
+
+                score, matched = score_job(title, desc)
+                track, level_ok = get_job_track(title, desc)
+
+                # Lower score threshold for Amazon — worth seeing even at lower scores
+                if score >= 15 and is_relevant_title(title) and not is_blocked_company(title, desc, company):
+                    jobs.append({
+                        "source":           "Amazon Jobs",
+                        "title":            title,
+                        "company":          "Amazon",
+                        "url":              url_job,
+                        "posted":           posted,
+                        "description":      desc[:500],
+                        "score":            score,
+                        "matched_keywords": matched,
+                        "track":            track,
+                        "salary":           item.get("salary", ""),
+                    })
+        except Exception as e:
+            print(f"   [ERROR] Amazon Jobs search error ({query}): {e}")
+        time.sleep(1.2)
+
+    # Deduplicate and sort
+    seen_urls = set()
+    deduped = []
+    for job in sorted(jobs, key=lambda x: x["score"], reverse=True):
+        if job["url"] not in seen_urls:
+            seen_urls.add(job["url"])
+            deduped.append(job)
+
+    top5 = deduped[:5]
+    print(f"   [OK] Amazon Jobs: {len(top5)} relevant jobs found (10-day window)")
+    return top5
 # 
 def search_adzuna():
     print("[SEARCH] Searching Adzuna...")
@@ -1576,8 +1680,9 @@ def main():
     print(f"\n[OK] Results saved to: {OUTPUT_FILE}")
     print(f"   Open it to see all jobs + cover letters.\n")
 
-    # Send email notification always  even if no jobs found
-    send_email(top_jobs)
+    # Send email notification always — even if no jobs found
+    amazon_jobs = search_amazon_jobs()
+    send_email(top_jobs, amazon_jobs)
 
     # Print top 3 with cover letters
     print("="*55)
@@ -1593,7 +1698,7 @@ def main():
         print(job["cover_letter"])
         print("-"*40)
 
-def send_email(top_jobs):
+def send_email(top_jobs, amazon_jobs=None):
     import smtplib
     from email.mime.multipart import MIMEMultipart
     from email.mime.text import MIMEText
@@ -1605,12 +1710,16 @@ def send_email(top_jobs):
 
     html = f"""<html><body style="font-family:Arial,sans-serif;max-width:800px;margin:auto;color:#333;">
     <h2 style="color:#1F3864;">Daily Job Search Results</h2>
-    <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>"""
+    <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>
+    <div style="background:#f0f4ff;border:1px solid #c5d0e8;border-radius:8px;padding:12px 16px;margin:12px 0 16px;font-size:12px;color:#444;">
+      <strong>Submit decisions:</strong> Use the form link at the bottom of this email.<br>
+      Regular jobs are numbered <strong>1–10</strong> &nbsp;|&nbsp; Amazon Spotlight jobs are numbered <strong>A1–A5</strong>
+    </div>"""
 
     if count == 0:
         html += """<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:16px;margin:16px 0;">
         <p style="margin:0;color:#f57f17;font-weight:bold;">No matching jobs found today.</p>
-        <p style="margin:8px 0 0;color:#555;">The script ran successfully across all 10 sources (RemoteOK, Google Jobs, Adzuna, USAJobs, Greenhouse, Lever, Google Search, Dice, Wellfound, Glassdoor, ClearanceJobs) but found no new jobs matching your criteria (Performance Engineering (LoadRunner), AI Engineering, AI Performance, COBOL/Mainframe) posted in the last 5 days that you haven't already seen. Check back tomorrow!</p>
+        <p style="margin:8px 0 0;color:#555;">The script ran successfully but found no new jobs matching your criteria posted in the last 5 days that you haven't already seen. Check back tomorrow!</p>
         </div>"""
     html += "<hr/>"
 
@@ -1634,7 +1743,86 @@ def send_email(top_jobs):
             <div style="background:#f9f9f9;padding:12px;border-radius:4px;font-size:14px;">{cover}</div>
         </div>"""
 
+    # ── Amazon Jobs Spotlight ─────────────────────────────────
+    if amazon_jobs:
+        html += """
+<div style="background:#f0f7ff;border:2px solid #FF9900;border-radius:8px;padding:16px;margin:24px 0 8px;">
+  <h2 style="color:#232F3E;margin:0 0 4px;font-size:17px;">Amazon Jobs Spotlight</h2>
+  <p style="margin:0 0 12px;font-size:12px;color:#555;">Top Amazon postings (last 10 days) — you are an internal employee, use your advantage!<br>
+  Also check: <a href="https://internal.amazon.jobs" style="color:#FF9900;">internal.amazon.jobs</a> for internal-only postings not listed here.</p>"""
+
+        for i, job in enumerate(amazon_jobs, 1):
+            keywords = ", ".join(job["matched_keywords"][:5])
+            salary   = f"<span style='color:#232F3E;'> | <strong>Salary:</strong> {job['salary']}</span>" if job.get("salary","").strip(" -") else ""
+            posted   = job.get("posted","")[:10] if job.get("posted") else "Recent"
+            html += f"""
+  <div style="border:1px solid #FFD700;border-radius:6px;padding:12px 14px;margin-bottom:12px;background:#fff;">
+    <p style="margin:0 0 4px;font-weight:bold;font-size:13px;color:#232F3E;">#{i} — {job["title"]}</p>
+    <p style="margin:0 0 4px;font-size:12px;color:#555;">
+      <strong>Track:</strong> {job.get("track","")} &nbsp;|&nbsp;
+      <strong>Score:</strong> {job["score"]} pts &nbsp;|&nbsp;
+      <strong>Posted:</strong> {posted}{salary}
+    </p>
+    <p style="margin:0 0 8px;font-size:12px;color:#555;"><strong>Matched:</strong> {keywords}</p>
+    <a href="{job.get('url','')}" style="background:#FF9900;color:#232F3E;padding:7px 14px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:bold;">View on Amazon Jobs</a>
+  </div>"""
+
+        html += "</div>"
+
     html += """<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
+
+    # ── Save today's batch for overnight script ───────────────
+    import hashlib
+    def _job_id(job):
+        raw = f"{job.get('title','')}{job.get('company','')}{job.get('url','')}"
+        return hashlib.md5(raw.encode()).hexdigest()[:10]
+
+    today_key  = datetime.now().strftime("%Y-%m-%d")
+    batch_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "today_jobs.json")
+    try:
+        # Regular jobs numbered 1-10
+        regular_batch = [
+            {
+                "job_id":           _job_id(j),
+                "number":           idx,
+                "number_display":   str(idx),
+                "title":            j.get("title", ""),
+                "company":          j.get("company", ""),
+                "track":            j.get("track", ""),
+                "score":            j.get("score", 0),
+                "url":              j.get("url", ""),
+                "matched_keywords": j.get("matched_keywords", []),
+                "source":           j.get("source", ""),
+                "is_amazon":        False,
+            }
+            for idx, j in enumerate(top_jobs, 1)
+        ]
+        # Amazon jobs numbered A1-A5
+        amazon_batch = [
+            {
+                "job_id":           _job_id(j),
+                "number":           f"A{idx}",
+                "number_display":   f"A{idx}",
+                "title":            j.get("title", ""),
+                "company":          "Amazon",
+                "track":            j.get("track", ""),
+                "score":            j.get("score", 0),
+                "url":              j.get("url", ""),
+                "matched_keywords": j.get("matched_keywords", []),
+                "source":           "Amazon Jobs",
+                "is_amazon":        True,
+            }
+            for idx, j in enumerate(amazon_jobs or [], 1)
+        ]
+        batch = {
+            "date": today_key,
+            "jobs": regular_batch + amazon_batch,
+        }
+        with open(batch_file, "w") as f:
+            json.dump(batch, f, indent=2)
+        print(f"   [OK] Saved {len(regular_batch)} regular + {len(amazon_batch)} Amazon jobs to today_jobs.json")
+    except Exception as e:
+        print(f"   [WARN] Could not save today_jobs.json: {e}")
 
     try:
         msg = MIMEMultipart("alternative")

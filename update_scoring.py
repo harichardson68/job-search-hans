@@ -73,7 +73,8 @@ def load_today_jobs():
             with open(TODAY_JOBS_FILE, "r") as f:
                 data = json.load(f)
             if data.get("date") == TODAY:
-                return {j["number"]: j for j in data.get("jobs", [])}
+                # Use number_display as key to support both 1-10 and A1-A5
+                return {j.get("number_display", j["number"]): j for j in data.get("jobs", [])}
             else:
                 print(f"   [WARN] today_jobs.json is from {data.get('date')} not today")
     except Exception as e:
@@ -113,7 +114,12 @@ def read_google_sheet():
                 continue
 
             try:
-                job_num = int(str(job_number).strip())
+                job_num_raw = str(job_number).strip().upper()
+                # Handle both regular (1-10) and Amazon (A1-A5) job numbers
+                if job_num_raw.startswith("A"):
+                    job_num = job_num_raw  # Keep as string e.g. "A1"
+                else:
+                    job_num = int(job_num_raw)
             except ValueError:
                 continue
 
@@ -138,7 +144,8 @@ def save_decisions(today_jobs, decisions):
 
         today_entries = []
         for job_num, job in today_jobs.items():
-            dec = decisions.get(job_num, {})
+            # Match decisions by number — handle both int (1-10) and string (A1-A5)
+            dec = decisions.get(job_num) or decisions.get(str(job_num)) or decisions.get(int(job_num) if str(job_num).isdigit() else job_num) or {}
             today_entries.append({
                 "job_id":           job.get("job_id", ""),
                 "number":           job_num,

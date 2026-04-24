@@ -1,5 +1,5 @@
 # Hans Richardson - AI Engineering Progress Tracker
-# Updated: April 23, 2026
+# Updated: April 24, 2026
 # Share this file at the start of each Claude session for instant context!
 
 # ─────────────────────────────────────────────────────────────
@@ -396,6 +396,78 @@ PERFORMANCE_CREDENTIALS = {
 # ─────────────────────────────────────────────────────────────
 SESSION_NOTES = [
     {
+        "date": "April 24, 2026",
+        "accomplishments": [
+            # Morning verification
+            "Verified overnight system worked correctly — job_decisions.json, scoring_weights.json, overnight_summary.json all populated",
+            "Confirmed 10 decisions recorded from April 23 Google Form submissions",
+            "Confirmed scoring_weights.json updated: 12 boosted keywords, applied_tracks, skipped_tracks recorded",
+            "Identified 5 needs_review items from first real run — all 5 were 'Other' reasons needing manual fix",
+            # job_search.py fixes
+            "Fixed ZipRecruiter — added all ZipRecruiter URL patterns to BLOCKED_JOB_SITES (fully blocked)",
+            "Fixed suspended domains — added flexjobs.zya.me to BLOCKED_JOB_SITES",
+            "Fixed salary/guide page detection — added 'salaries 2026', 'developer salaries', 'engineer salaries' to is_relevant_title() search_page_patterns",
+            "Fixed secret clearance detection — added 13 clearance indicators to is_us_remote() (top secret, ts/sci, polygraph, etc.)",
+            "Fixed JMeter-only penalty — added -30pts when JMeter mentioned but LoadRunner NOT mentioned",
+            "Fixed onsite city detection — expanded list to 40+ cities including Alpharetta, GA",
+            "Added salary/guide page URL blocking to BLOCKED_JOB_SITES",
+            # needs_review.json system
+            "Built needs_review.json persistent storage system",
+            "Updated update_scoring.py to write structured items to needs_review.json (full job details + status)",
+            "Updated update_scoring_evan.py with same system (evan_needs_review.json)",
+            "Added pending count to overnight_summary.json so email header shows total items awaiting review",
+            # Weekly review system
+            "Built weekly_review.py — Monday 10AM script for Hans",
+            "Built weekly_review_evan.py — Monday 10:30AM script for Evan",
+            "Weekly review email: groups items by category with color coding, count table, suggested actions",
+            "After sending, clears all pending items (marks as 'reviewed'), commits to GitHub",
+            "Added REVIEW_EMAIL to Evan's .env — weekly review goes to Hans, not Evan",
+            "Created run_weekly_review.bat and run_weekly_review_evan.bat",
+            "Added WeeklyJobReview Task Scheduler task (Monday 10:00 AM)",
+            "Added EvanWeeklyReview Task Scheduler task (Monday 10:30 AM)",
+            # GitHub portfolio
+            "Created harichardson68 profile repo — GitHub profile README now live at github.com/harichardson68",
+            "Profile README: What I Build, Featured Projects, Stack table, Background, Performance→AI Bridge table, Connect badges",
+            "Created HR avatar — AI futuristic blue styling with circuit decorations",
+            "Uploaded avatar to GitHub profile",
+            "Created repo thumbnail SVGs for both job-search-hans and job-search-evan",
+            "Added GitHub to LinkedIn contact info and Featured section",
+            "Added both repos to LinkedIn Featured section with descriptions",
+            "Added Bio, Location, LinkedIn to GitHub profile settings",
+            # Resume
+            "Updated resume — added github.com/harichardson68 to contact line",
+            "Updated resume — replaced old automation bullet with self-improving feedback loop bullet",
+            "Updated resume — updated project source count (9→6 sources, accurate)",
+            "Updated resume — added GitHub repo link to project bullet",
+            "Updated resume — added Agentic Systems, Google Sheets API, Git/GitHub to AI & Automation skills",
+        ],
+        "concepts_learned": [
+            "GitHub profile README lives in a special repo named exactly the same as your username",
+            "needs_review.json accumulates over time — weekly review clears it, Git shows full history",
+            "JMeter-only penalty (-30pts) prevents JMeter-focused jobs from outscoring LoadRunner jobs",
+            "Clearance detection must be in is_us_remote() so it runs on full description text",
+            "Weekly review + auto-clear pattern keeps needs_review.json manageable without manual cleanup",
+            "REVIEW_EMAIL env var separates weekly review recipient from daily email recipient",
+            "GitHub social preview images show when repo links are shared on LinkedIn/Slack",
+        ],
+        "task_scheduler_full_list": [
+            "JobSearch_Scheduler    — 12:00 PM daily  — job_search.py (Hans)",
+            "EvanJobSearch          — 1:00 PM daily   — evan_job_search.py",
+            "HansJobSearchUpdate    — 12:00 AM daily  — update_scoring.py",
+            "EvanJobSearch_Update   — 12:30 AM daily  — update_scoring_evan.py",
+            "WeeklyJobReview        — 10:00 AM Monday — weekly_review.py",
+            "EvanWeeklyReview       — 10:30 AM Monday — weekly_review_evan.py",
+        ],
+        "next_session_priorities": [
+            "1. Test Evan's job search end to end — confirm email arrives, form works",
+            "2. Test weekly_review.py manually — run it and confirm email format",
+            "3. Continue IBM course — next module after regression",
+            "4. Consider adding architecture diagram image to repo READMEs",
+            "5. Monitor first real week of needs_review.json accumulation",
+            "6. Consider adding 'Too Junior' as a decision option to forms",
+        ]
+    },
+    {
         "date": "April 23, 2026",
         "accomplishments": [
             # GitHub setup
@@ -531,15 +603,18 @@ FILE_INVENTORY = {
     "C:/Users/haric/Jobsearch/": [
         "job_search.py              - Hans's job search script (Performance/AI/COBOL)",
         "update_scoring.py          - Midnight update script (reads Google Sheet, patches code, commits to Git)",
+        "weekly_review.py           - Monday 10AM weekly review email script",
         "agent_hub.py               - 5-tab AI Agent Hub",
         "generate_resume.js         - Resume generator (run: node generate_resume.js)",
         "run_job_search.bat         - Noon Task Scheduler batch file",
         "run_update_scoring.bat     - Midnight Task Scheduler batch file",
+        "run_weekly_review.bat      - Monday 10AM Task Scheduler batch file",
         ".env                       - API keys and credentials (NEVER commit to Git)",
         "google_credentials.json   - Google service account key (NEVER commit to Git)",
         "seen_jobs.json             - Hans's duplicate tracker",
         "today_jobs.json            - Today's job batch (for midnight script)",
         "job_decisions.json         - All-time decision history",
+        "needs_review.json          - Accumulates items needing manual review (cleared weekly)",
         "scoring_weights.json       - Auto-updated scoring weights",
         "overnight_summary.json     - Last midnight run summary",
         "job_search_run.log         - Hans's debug log",
@@ -549,13 +624,16 @@ FILE_INVENTORY = {
     "C:/Users/haric/Evan Jobsearch/": [
         "evan_job_search.py          - Evan's cybersecurity job search script",
         "update_scoring_evan.py      - Evan's midnight update script",
+        "weekly_review_evan.py       - Monday 10:30AM weekly review email script (sends to Hans)",
         "run_evan_job_search.bat     - Noon Task Scheduler batch file",
         "run_update_scoring_evan.bat - Midnight Task Scheduler batch file",
-        ".env                        - API keys and credentials (NEVER commit to Git)",
+        "run_weekly_review_evan.bat  - Monday 10:30AM Task Scheduler batch file",
+        ".env                        - API keys + REVIEW_EMAIL=harichardson68@gmail.com",
         "google_credentials.json    - Google service account key (NEVER commit to Git)",
         "evan_seen_jobs.json         - Evan's duplicate tracker",
         "evan_today_jobs.json        - Today's job batch (for midnight script)",
         "evan_job_decisions.json     - All-time decision history",
+        "evan_needs_review.json      - Accumulates items needing manual review (cleared weekly)",
         "evan_scoring_weights.json   - Auto-updated scoring weights",
         "evan_overnight_summary.json - Last midnight run summary",
         "evan_job_search.log         - Evan's debug log",
@@ -578,6 +656,13 @@ DAILY WORKFLOW:
 - 12:30 AM: Evan midnight script auto-runs (update_scoring_evan.py)
 - Next noon: Smarter email with overnight summary at top
 
+WEEKLY WORKFLOW (every Monday):
+================================
+- 10:00 AM: Hans weekly review email arrives (needs_review.json items, grouped by category)
+- 10:30 AM: Evan weekly review email arrives (goes to Hans's email)
+- Review items → bring patterns to Claude for code fixes
+- File is auto-cleared after each weekly email send
+
 REMOTE WORKFLOW (from phone):
 ==============================
 - Chat with Claude on Claude.ai
@@ -589,8 +674,14 @@ FOR INTERVIEW PREP:
 ===================
 "Here is my tracker. Interview me for an AI QA Engineer role and critique my answers"
 
-GITHUB REPOS:
+GITHUB:
+=======
+- Profile:          github.com/harichardson68
+- Hans job search:  github.com/harichardson68/job-search-hans
+- Evan job search:  github.com/harichardson68/job-search-evan
+
+GOOGLE FORMS:
 =============
-- github.com/harichardson68/job-search-hans
-- github.com/harichardson68/job-search-evan
+- Hans decisions: https://docs.google.com/forms/d/1gLcCAhFvOpDWFgCGbu1r9Xubl9o7RVGQbyHwWYJPHIw/viewform
+- Evan decisions: https://docs.google.com/forms/d/14_Jt5xRxZsjo3KgHM4V4wUuhGQ_soPQk8vFw8cVT9ds/viewform
 """
