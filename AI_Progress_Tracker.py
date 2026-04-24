@@ -1,5 +1,5 @@
 # Hans Richardson - AI Engineering Progress Tracker
-# Updated: April 24, 2026
+# Updated: April 24, 2026 (evening)
 # Share this file at the start of each Claude session for instant context!
 
 # ─────────────────────────────────────────────────────────────
@@ -62,6 +62,17 @@ JOB_SEARCH_SYSTEM = {
     ],
     "schedule": "Daily at 12:00 PM via Windows Task Scheduler",
     "midnight_update": "Daily at 12:00 AM via Windows Task Scheduler (update_scoring.py)",
+    "amazon_jobs_spotlight": {
+        "function":        "search_amazon_jobs()",
+        "source":          "amazon.jobs via Serper site: targeting",
+        "max_results":     5,
+        "freshness_days":  10,
+        "numbering":       "A1-A5 (separate from regular 1-10)",
+        "min_score":       15,
+        "email_section":   "Amazon Jobs Spotlight — orange branded section below top 10",
+        "decision_loop":   "Fully integrated — submit A1-A5 via same Google Form",
+        "internal_reminder": "Link to internal.amazon.jobs in every email",
+    },
     "email_notifications": "harichardson68@gmail.com",
     "freshness_filter": "5 days (120 hours)",
     "max_jobs_per_email": 10,
@@ -434,12 +445,22 @@ SESSION_NOTES = [
             "Added GitHub to LinkedIn contact info and Featured section",
             "Added both repos to LinkedIn Featured section with descriptions",
             "Added Bio, Location, LinkedIn to GitHub profile settings",
-            # Resume
-            "Updated resume — added github.com/harichardson68 to contact line",
-            "Updated resume — replaced old automation bullet with self-improving feedback loop bullet",
-            "Updated resume — updated project source count (9→6 sources, accurate)",
-            "Updated resume — added GitHub repo link to project bullet",
-            "Updated resume — added Agentic Systems, Google Sheets API, Git/GitHub to AI & Automation skills",
+            # Amazon Jobs spotlight
+            "Built search_amazon_jobs() function — searches amazon.jobs via Serper with site: targeting",
+            "Amazon jobs use 10-day freshness window (vs 5 days for regular jobs)",
+            "Amazon jobs numbered A1-A5 in email and today_jobs.json — separate from regular 1-10",
+            "Amazon Spotlight section added to email — orange branding, internal.amazon.jobs reminder link",
+            "Amazon jobs fully wired into decision loop — submit A1-A5 decisions via same Google Form",
+            "Updated update_scoring.py — handles both int (1-10) and string (A1-A5) job numbers",
+            "Updated load_today_jobs() to use number_display key for A1-A5 support",
+            "Email header updated: 'Regular jobs 1-10 | Amazon Spotlight A1-A5'",
+            "Added description hint to Google Form Job Number question: Enter 1-10 or A1-A5",
+            # Resume and portfolio
+            "Updated resume with GitHub link, self-improving feedback loop bullet, updated AI skills",
+            "GitHub profile README live at github.com/harichardson68",
+            "HR avatar uploaded — AI futuristic blue styling",
+            "Repo thumbnails created for both job-search-hans and job-search-evan",
+            "Added both repos to LinkedIn Featured section",
         ],
         "concepts_learned": [
             "GitHub profile README lives in a special repo named exactly the same as your username",
@@ -465,6 +486,7 @@ SESSION_NOTES = [
             "4. Consider adding architecture diagram image to repo READMEs",
             "5. Monitor first real week of needs_review.json accumulation",
             "6. Consider adding 'Too Junior' as a decision option to forms",
+            "7. Verify Amazon Jobs spotlight appearing correctly in email",
         ]
     },
     {
