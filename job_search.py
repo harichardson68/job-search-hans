@@ -67,7 +67,7 @@ print(f"{'='*60}")
 # 
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
 
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
@@ -150,6 +150,16 @@ BLOCKED_JOB_SITES = [
     "tiktok.com",
     "remotive.com", "remotive.io", "remotive",
     "ziprecruiter.com/candidate/",
+    "ziprecruiter.com/c/",
+    "ziprecruiter.com/jobs/",
+    "ziprecruiter.com/job/",
+    "ziprecruiter.com",
+    # Salary/guide pages — not job listings
+    "agentic-engineering-jobs.com/agentic-engineer-salaries",
+    "agentic-engineering-jobs.com/salaries",
+    "levels.fyi", "salary.com", "payscale.com",
+    "glassdoor.com/Salaries", "glassdoor.com/salaries",
+    "flexjobs.zya.me",  # Suspended domain
 ]
 
 def is_blocked_site(url):
@@ -264,7 +274,7 @@ def is_us_remote(title, description, location=""):
 
     # Block jobs with onsite city in the TITLE (e.g. "SDET - Seattle, WA")
     # These are onsite roles masquerading in search results
-    onsite_city_pattern = r"[-–|,]\s*(seattle|chicago|boston|austin|dallas|denver|phoenix|atlanta|houston|new york|san francisco|los angeles|philadelphia|charlotte|orlando|miami|bellevue|portland|minneapolis|pittsburgh|raleigh|nashville|detroit|baltimore|st\. louis|cleveland|columbus|indianapolis|louisville|memphis|richmond|norfolk|sacramento|san diego|san jose|las vegas|tampa|jacksonville|hartford|providence|buffalo|rochester|albany|newark|jersey city)\s*,\s*[a-z]{2}"
+    onsite_city_pattern = r"[-–|,]\s*(seattle|chicago|boston|austin|dallas|denver|phoenix|atlanta|alpharetta|houston|new york|san francisco|los angeles|philadelphia|charlotte|orlando|miami|bellevue|portland|minneapolis|pittsburgh|raleigh|nashville|detroit|baltimore|st\. louis|cleveland|columbus|indianapolis|louisville|memphis|richmond|norfolk|sacramento|san diego|san jose|las vegas|tampa|jacksonville|hartford|providence|buffalo|rochester|albany|newark|jersey city|ann arbor|birmingham|boise|cincinnati|salt lake city|tucson|albuquerque|omaha|tulsa|oklahoma city|el paso|fresno|long beach|mesa|colorado springs|virginia beach|arlington|bakersfield|honolulu|anaheim|aurora|santa ana)\s*,\s*[a-z]{2}"
     if re.search(onsite_city_pattern, title.lower()):
         # Only block if no "remote" in title
         if "remote" not in title.lower():
@@ -278,6 +288,19 @@ def is_us_remote(title, description, location=""):
     for indicator in closed_indicators:
         if indicator in check:
             return False
+
+    # Block jobs requiring security clearance Hans doesn't hold
+    clearance_indicators = [
+        "top secret", "ts/sci", "ts clearance", "secret clearance required",
+        "active secret", "active top secret", "dod secret", "dod clearance",
+        "security clearance required", "clearance required", "must have clearance",
+        "must hold clearance", "clearance: secret", "clearance: top secret",
+        "polygraph", "sci clearance",
+    ]
+    for indicator in clearance_indicators:
+        if indicator in check:
+            return False
+
     return True
 
 def is_blocked_company(title, description, company=""):
@@ -580,6 +603,9 @@ def is_relevant_title(title):
         r"career guide",
         r"what is a.*engineer",
         r"salary guide",
+        r"salaries \d{4}",
+        r"developer salaries",
+        r"engineer salaries",
         r"best.*jobs in \d{4}",
         r"top \d+.*jobs",
         # Job application form pages
@@ -723,6 +749,13 @@ def score_job(title, description):
         if kw in text and kw + "-in-title" not in matched:
             score += 50
             matched.append(kw)
+
+    # JMeter-only penalty: if JMeter mentioned but NO LoadRunner → not Hans's primary strength
+    has_jmeter = "jmeter" in text
+    has_loadrunner = any(kw in text for kw in LOADRUNNER_PRIORITY)
+    if has_jmeter and not has_loadrunner:
+        score -= 30
+        matched.append("jmeter-only-penalty")
 
     # Performance keywords = 35 pts
     for kw in PERF_HIGH_KEYWORDS:
@@ -1560,140 +1593,48 @@ def main():
         print(job["cover_letter"])
         print("-"*40)
 
-def generate_job_id(job):
-    """Generate a short stable ID for a job based on title + company + url."""
-    import hashlib
-    raw = f"{job.get('title','')}{job.get('company','')}{job.get('url','')}"
-    return hashlib.md5(raw.encode()).hexdigest()[:10]
-
-def load_overnight_summary():
-    """Load the overnight update summary if it exists."""
-    summary_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "overnight_summary.json")
-    try:
-        if os.path.exists(summary_file):
-            with open(summary_file, "r") as f:
-                return json.load(f)
-    except Exception:
-        pass
-    return None
-
 def send_email(top_jobs):
     import smtplib
     from email.mime.multipart import MIMEMultipart
     from email.mime.text import MIMEText
 
     print("\n[EMAIL] Sending email notification...")
-    today      = datetime.now().strftime("%B %d, %Y")
-    today_key  = datetime.now().strftime("%Y-%m-%d")
-    count      = len(top_jobs)
-    subject    = f"Job Search Results - {count} Top Matches - {today}" if count > 0 else f"Job Search Ran - No Matches Found - {today}"
-
-    # ── Decision guide + Google Form button ─────────────────────
-    FORM_URL = "https://docs.google.com/forms/d/1gLcCAhFvOpDWFgCGbu1r9Xubl9o7RVGQbyHwWYJPHIw/viewform"
-    decision_guide = f"""
-<div style="background:#f0f4ff;border:1px solid #c5d0e8;border-radius:8px;padding:14px 18px;margin:16px 0 20px;">
-  <p style="margin:0 0 10px;font-weight:bold;color:#1F3864;font-size:13px;">SUBMIT YOUR DECISIONS</p>
-  <p style="margin:0 0 12px;">
-    <a href="{FORM_URL}" style="background:#1F3864;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:bold;">Submit Job Decisions</a>
-  </p>
-  <p style="margin:8px 0 6px;font-size:12px;color:#555;">Click the button above anytime before midnight to submit your decisions. You can submit one job at a time or all at once.</p>
-  <p style="margin:6px 0 4px;font-size:12px;color:#888;"><strong>Decision options:</strong> Applied &nbsp;|&nbsp; Bad Link &nbsp;|&nbsp; Too Senior &nbsp;|&nbsp; Salary Too Low &nbsp;|&nbsp; Not Interested &nbsp;|&nbsp; Already Seen &nbsp;|&nbsp; Search Page &nbsp;|&nbsp; Not in United States &nbsp;|&nbsp; Other</p>
-  <p style="margin:4px 0 0;font-size:11px;color:#aaa;"><em>Unanswered jobs are treated as neutral — no action taken.</em></p>
-</div>"""
-
-    # ── Overnight summary block ──────────────────────────────────
-    summary = load_overnight_summary()
-    summary_html = ""
-    if summary:
-        auto_items = "".join(f"<li>{item}</li>" for item in summary.get("auto_handled", []))
-        manual_items = "".join(f"<li>{item}</li>" for item in summary.get("needs_review", []))
-        auto_block = f"<p style='margin:6px 0 2px;color:#0F6E56;font-weight:bold;font-size:12px;'>Auto-handled ✓</p><ul style='margin:0;padding-left:18px;font-size:12px;color:#333;'>{auto_items}</ul>" if auto_items else ""
-        manual_block = f"<p style='margin:10px 0 2px;color:#c0392b;font-weight:bold;font-size:12px;'>Needs manual review ⚠</p><ul style='margin:0;padding-left:18px;font-size:12px;color:#333;'>{manual_items}</ul>" if manual_items else ""
-        summary_html = f"""
-<div style="background:#f9f9f9;border:1px solid #ddd;border-radius:8px;padding:14px 18px;margin:0 0 20px;">
-  <p style="margin:0 0 8px;font-weight:bold;color:#1F3864;font-size:13px;">Overnight Update Report — {summary.get('date','')}</p>
-  <p style="font-size:12px;color:#555;margin:0 0 6px;">
-    Decisions received: <strong>{summary.get('decisions_received',0)}</strong> of <strong>{summary.get('jobs_sent',0)}</strong> jobs &nbsp;|&nbsp;
-    No response: <strong>{summary.get('no_response',0)}</strong> &nbsp;|&nbsp;
-    Git commit: <strong>{summary.get('git_committed','—')}</strong>
-  </p>
-  {auto_block}{manual_block}
-</div>"""
+    today = datetime.now().strftime("%B %d, %Y")
+    count = len(top_jobs)
+    subject = f"Job Search Results - {count} Top Matches - {today}" if count > 0 else f"Job Search Ran - No Matches Found - {today}"
 
     html = f"""<html><body style="font-family:Arial,sans-serif;max-width:800px;margin:auto;color:#333;">
     <h2 style="color:#1F3864;">Daily Job Search Results</h2>
-    <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>
-    {summary_html}
-    {decision_guide}"""
+    <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>"""
 
     if count == 0:
         html += """<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:16px;margin:16px 0;">
         <p style="margin:0;color:#f57f17;font-weight:bold;">No matching jobs found today.</p>
-        <p style="margin:8px 0 0;color:#555;">The script ran successfully but found no new jobs matching your criteria posted in the last 5 days that you haven't already seen. Check back tomorrow!</p>
+        <p style="margin:8px 0 0;color:#555;">The script ran successfully across all 10 sources (RemoteOK, Google Jobs, Adzuna, USAJobs, Greenhouse, Lever, Google Search, Dice, Wellfound, Glassdoor, ClearanceJobs) but found no new jobs matching your criteria (Performance Engineering (LoadRunner), AI Engineering, AI Performance, COBOL/Mainframe) posted in the last 5 days that you haven't already seen. Check back tomorrow!</p>
         </div>"""
     html += "<hr/>"
 
     for i, job in enumerate(top_jobs, 1):
-        job_id   = generate_job_id(job)
         keywords = ", ".join(job["matched_keywords"][:6])
         cover    = job.get("cover_letter", "").replace("\n", "<br>")
         salary   = f"<p><strong>Salary:</strong> {job['salary']}</p>" if job.get("salary","").strip(" -") else ""
         track    = job.get("track", "")
-        posted   = job.get("posted","")
-        posted_display = posted[:10] if posted else "Date unknown — verify before applying!"
+        html += f"""<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:24px;">
+            <h3 style="color:#1F3864;margin:0 0 4px;">#{i} - {job["title"]}
+            <span style="font-size:12px;background:#e8f0fe;color:#1F3864;padding:2px 8px;border-radius:10px;">{track}</span></h3>
+            <p><strong>Company:</strong> {job["company"]} | <strong>Source:</strong> {job["source"]} | <strong>Score:</strong> {job["score"]} pts</p>
+            <p><strong>Posted:</strong> <span style="color:#e65100;font-weight:500;">{job.get("posted","Unknown")[:10] if job.get("posted") else "Date unknown - verify before applying!"}</span> | <strong>Track:</strong> {job.get("track","N/A")}</p>
+            {salary}
+            <p><strong>Matched Skills:</strong> {keywords}</p>
+            <p>
+                {f"<a href='{job.get('url', '')}' style='background:#1F3864;color:#fff;padding:8px 16px;border-radius:4px;text-decoration:none;'>View and Apply</a>"}
+            </p>
+            <hr style="border:none;border-top:1px solid #eee;margin:12px 0"/>
+            <p><strong>Cover Letter:</strong></p>
+            <div style="background:#f9f9f9;padding:12px;border-radius:4px;font-size:14px;">{cover}</div>
+        </div>"""
 
-        html += f"""
-<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:24px;">
-  <h3 style="color:#1F3864;margin:0 0 4px;">
-    #{i} - {job["title"]}
-    <span style="font-size:11px;background:#e8f0fe;color:#1F3864;padding:2px 8px;border-radius:10px;margin-left:6px;">{track}</span>
-  </h3>
-  <p style="margin:4px 0;"><strong>Company:</strong> {job["company"]} | <strong>Source:</strong> {job["source"]} | <strong>Score:</strong> {job["score"]} pts</p>
-  <p style="margin:4px 0;"><strong>Posted:</strong> <span style="color:#e65100;font-weight:500;">{posted_display}</span> | <strong>Track:</strong> {track}</p>
-  {salary}
-  <p style="margin:4px 0;"><strong>Matched Skills:</strong> {keywords}</p>
-  <p style="margin:12px 0 6px;">
-    <a href="{job.get('url','')}" style="background:#1F3864;color:#fff;padding:8px 16px;border-radius:4px;text-decoration:none;font-size:13px;">View and Apply</a>
-  </p>
-
-  <div style="background:#f7f9fc;border:1px solid #dde3ef;border-radius:6px;padding:12px;margin-top:10px;">
-    <p style="margin:0 0 8px;font-size:12px;color:#555;"><strong>Job #{i} decision</strong> &nbsp;·&nbsp; <span style="font-family:monospace;font-size:11px;color:#888;">ID: {job_id}</span></p>
-    <p style="margin:0;font-size:12px;color:#444;">Reply to this email and include: &nbsp;<strong>Job {i}: [code]</strong></p>
-    <p style="margin:4px 0 0;font-size:11px;color:#888;">1=Applied &nbsp; 2=Bad link &nbsp; 3=Too senior &nbsp; 4=Salary too low &nbsp; 5=Not interested &nbsp; 6=Already seen &nbsp; 7=Search page &nbsp; 8=Other (add reason)</p>
-  </div>
-
-  <hr style="border:none;border-top:1px solid #eee;margin:12px 0"/>
-  <p><strong>Cover Letter:</strong></p>
-  <div style="background:#f9f9f9;padding:12px;border-radius:4px;font-size:14px;">{cover}</div>
-</div>"""
-
-    html += """<hr/><p style="font-size:12px;color:#888;">Sent automatically by Hans's Job Search Script &nbsp;·&nbsp; Reply with decisions anytime before midnight.</p></body></html>"""
-
-    # Save today's job batch for the overnight script to reference
-    batch_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "today_jobs.json")
-    try:
-        batch = {
-            "date": today_key,
-            "jobs": [
-                {
-                    "job_id": generate_job_id(j),
-                    "number": idx,
-                    "title": j.get("title",""),
-                    "company": j.get("company",""),
-                    "track": j.get("track",""),
-                    "score": j.get("score",0),
-                    "url": j.get("url",""),
-                    "matched_keywords": j.get("matched_keywords",[]),
-                    "source": j.get("source",""),
-                }
-                for idx, j in enumerate(top_jobs, 1)
-            ]
-        }
-        with open(batch_file, "w") as f:
-            json.dump(batch, f, indent=2)
-        print(f"   [OK] Saved today's job batch to today_jobs.json")
-    except Exception as e:
-        print(f"   [WARN] Could not save today_jobs.json: {e}")
+    html += """<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
 
     try:
         msg = MIMEMultipart("alternative")
