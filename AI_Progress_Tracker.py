@@ -482,11 +482,21 @@ SESSION_NOTES = [
         "next_session_priorities": [
             "1. Test Evan's job search end to end — confirm email arrives, form works",
             "2. Test weekly_review.py manually — run it and confirm email format",
-            "3. Continue IBM course — next module after regression",
+            "3. Continue IBM course — K-Means clustering and unsupervised learning",
             "4. Consider adding architecture diagram image to repo READMEs",
             "5. Monitor first real week of needs_review.json accumulation",
             "6. Consider adding 'Too Junior' as a decision option to forms",
             "7. Verify Amazon Jobs spotlight appearing correctly in email",
+        ],
+        "future_milestones": [
+            {
+                "milestone": "K-Means clustering analysis on job_decisions.json",
+                "when": "After 4-6 weeks of decision data (target: early June 2026)",
+                "what": "Build analyze_decisions.py — clusters Applied vs Skipped jobs to discover hidden patterns",
+                "why": "Finds keyword combinations and job patterns that predict 'Applied' — feeds back into scoring_weights.json",
+                "data_requirement": "Minimum 200-300 decisions for meaningful clustering",
+                "note": "job_decisions.json is NEVER cleared — it is the permanent training dataset",
+            }
         ]
     },
     {
