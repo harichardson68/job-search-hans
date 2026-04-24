@@ -67,7 +67,7 @@ print(f"{'='*60}")
 # 
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
 
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
@@ -1059,7 +1059,8 @@ def search_amazon_jobs():
                 track, level_ok = get_job_track(title, desc)
 
                 # Lower score threshold for Amazon — worth seeing even at lower scores
-                if score >= 15 and is_relevant_title(title) and not is_blocked_company(title, desc, company):
+                # level_ok: senior AI jobs blocked, senior LoadRunner jobs allowed
+                if score >= 15 and level_ok and is_relevant_title(title) and not is_blocked_company(title, desc, company):
                     jobs.append({
                         "source":           "Amazon Jobs",
                         "title":            title,
@@ -1749,27 +1750,47 @@ def send_email(top_jobs, amazon_jobs=None):
 <div style="background:#f0f7ff;border:2px solid #FF9900;border-radius:8px;padding:16px;margin:24px 0 8px;">
   <h2 style="color:#232F3E;margin:0 0 4px;font-size:17px;">Amazon Jobs Spotlight</h2>
   <p style="margin:0 0 12px;font-size:12px;color:#555;">Top Amazon postings (last 10 days) — you are an internal employee, use your advantage!<br>
-  Also check: <a href="https://internal.amazon.jobs" style="color:#FF9900;">internal.amazon.jobs</a> for internal-only postings not listed here.</p>"""
+  Search the Job ID in the <strong>A to Z app</strong> to find internal-only postings not listed here.</p>"""
 
         for i, job in enumerate(amazon_jobs, 1):
+            import re
             keywords = ", ".join(job["matched_keywords"][:5])
             salary   = f"<span style='color:#232F3E;'> | <strong>Salary:</strong> {job['salary']}</span>" if job.get("salary","").strip(" -") else ""
             posted   = job.get("posted","")[:10] if job.get("posted") else "Recent"
+            # Extract Job ID from URL (e.g. amazon.jobs/en/jobs/1234567/title)
+            job_url  = job.get("url", "")
+            id_match = re.search(r"/jobs/(\d+)", job_url)
+            job_id   = id_match.group(1) if id_match else "N/A"
             html += f"""
   <div style="border:1px solid #FFD700;border-radius:6px;padding:12px 14px;margin-bottom:12px;background:#fff;">
     <p style="margin:0 0 4px;font-weight:bold;font-size:13px;color:#232F3E;">#{i} — {job["title"]}</p>
+    <p style="margin:0 0 6px;">
+      <span style="background:#FF9900;color:#232F3E;padding:3px 10px;border-radius:4px;font-size:13px;font-weight:bold;font-family:monospace;">Job ID: {job_id}</span>
+      <span style="font-size:11px;color:#888;margin-left:8px;">← Search this in A to Z app</span>
+    </p>
     <p style="margin:0 0 4px;font-size:12px;color:#555;">
       <strong>Track:</strong> {job.get("track","")} &nbsp;|&nbsp;
       <strong>Score:</strong> {job["score"]} pts &nbsp;|&nbsp;
       <strong>Posted:</strong> {posted}{salary}
     </p>
     <p style="margin:0 0 8px;font-size:12px;color:#555;"><strong>Matched:</strong> {keywords}</p>
-    <a href="{job.get('url','')}" style="background:#FF9900;color:#232F3E;padding:7px 14px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:bold;">View on Amazon Jobs</a>
+    <a href="{job_url}" style="background:#FF9900;color:#232F3E;padding:7px 14px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:bold;">View on Amazon Jobs</a>
   </div>"""
 
         html += "</div>"
 
-    html += """<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
+    FORM_URL = "https://docs.google.com/forms/d/1gLcCAhFvOpDWFgCGbu1r9Xubl9o7RVGQbyHwWYJPHIw/viewform"
+    html += f"""
+<div style="background:#eaf3ff;border:1px solid #b5d4f4;border-radius:8px;padding:14px 18px;margin:16px 0 20px;">
+  <p style="margin:0 0 10px;font-weight:bold;color:#1a3a5c;font-size:13px;">SUBMIT YOUR DECISIONS</p>
+  <p style="margin:0 0 12px;">
+    <a href="{FORM_URL}" style="background:#1a3a5c;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:bold;">Submit Job Decisions</a>
+  </p>
+  <p style="margin:8px 0 6px;font-size:12px;color:#555;">Click the button above anytime before midnight to submit your decisions. You can submit one job at a time or all at once.</p>
+  <p style="margin:6px 0 4px;font-size:12px;color:#888;"><strong>Decision options:</strong> Applied &nbsp;|&nbsp; Bad Link &nbsp;|&nbsp; Too Senior &nbsp;|&nbsp; Salary Too Low &nbsp;|&nbsp; Not Interested &nbsp;|&nbsp; Already Seen &nbsp;|&nbsp; Search Page &nbsp;|&nbsp; Not in United States &nbsp;|&nbsp; Other</p>
+  <p style="margin:4px 0 0;font-size:11px;color:#aaa;"><em>Unanswered jobs are treated as neutral — no action taken.</em></p>
+</div>
+<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
 
     # ── Save today's batch for overnight script ───────────────
     import hashlib
