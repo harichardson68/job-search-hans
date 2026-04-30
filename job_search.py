@@ -1456,6 +1456,8 @@ Location: Lee's Summit, MO (Remote)
 LinkedIn: linkedin.com/in/hans-richardson
 Email: harichardson68@gmail.com
 
+TOTAL EXPERIENCE: 24+ years IT experience, 14 years LoadRunner/performance testing specialist
+
 EXPERIENCE:
 - Sr. Performance/QA Test Engineer (Contract), USDA, Jan 2021 - Sep 2025
   * 14 years LoadRunner/VuGen/LRE expert
@@ -1562,7 +1564,7 @@ COVER LETTER INSTRUCTIONS:
 14. If it's a COBOL/Mainframe role, lead with Hans's early career COBOL/CICS programming experience.
     Emphasize: Started career as COBOL/CICS programmer, understands enterprise mainframe systems,
     brings rare combination of mainframe programming AND modern IT/performance testing expertise,
-    24 years of IT experience makes him immediately productive with minimal ramp-up time.
+    24+ years of IT experience makes him immediately productive with minimal ramp-up time.
 
 Write only the cover letter text, no subject line or extra commentary."""
 
@@ -1606,9 +1608,9 @@ def generate_cover_letter_template(job):
     skills_str = ", ".join(job["matched_keywords"][:5]) if job["matched_keywords"] else "LoadRunner, JMeter, NeoLoad"
     return f"""Dear Hiring Manager,
 
-With 28+ years of performance engineering experience and deep expertise in {skills_str}, I am confident I would be a strong fit for the {job["title"]} role at {job["company"]}.
+With 24+ years of IT experience and 14 years of hands-on LoadRunner/performance testing expertise in {skills_str}, I am confident I would be a strong fit for the {job["title"]} role at {job["company"]}.
 
-In my recent role as Sr. Performance Test Engineer at the USDA, I led performance testing for AWS/Kubernetes migrations, integrating AppDynamics, Splunk, and Prometheus to ensure SLA compliance. I increased throughput by 40% and reduced defect resolution time by 35%. Prior to that, I spent 18 years at Sprint/CenturyLink as a LoadRunner specialist, scaling systems to 12,000+ transactions per minute.
+In my recent role as Sr. Performance Test Engineer at the USDA, I led performance testing for AWS/Kubernetes migrations, integrating AppDynamics, Splunk, and Prometheus to ensure SLA compliance. I increased throughput by 40% and reduced defect resolution time by 35%. Earlier in my career at Sprint/CenturyLink, I spent 9 years as a LoadRunner specialist, scaling systems to 12,000+ transactions per minute.
 
 I am available immediately for remote work and would welcome the opportunity to discuss how my background aligns with your team's needs.
 
