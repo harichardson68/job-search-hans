@@ -160,6 +160,22 @@ BLOCKED_JOB_SITES = [
     "levels.fyi", "salary.com", "payscale.com",
     "glassdoor.com/Salaries", "glassdoor.com/salaries",
     "flexjobs.zya.me",  # Suspended domain
+    # Overseas job boards — not US positions
+    "pt.talent.com",        # Portugal Talent.com
+    "es.talent.com",        # Spain Talent.com
+    "fr.talent.com",        # France Talent.com
+    "de.talent.com",        # Germany Talent.com
+    "uk.talent.com",        # UK Talent.com
+    "au.talent.com",        # Australia Talent.com
+    "ca.talent.com",        # Canada Talent.com
+    "justjoin.it",          # Polish job board
+    "pracuj.pl",            # Polish job board
+    "nofluffjobs.com",      # Polish/European job board
+    "eurojobs.com",         # European job board
+    "eu.indeed.com",        # European Indeed
+    "uk.indeed.com",        # UK Indeed
+    "au.indeed.com",        # Australian Indeed
+    "careers-page.com",     # Unvetted overseas aggregator
 ]
 
 def is_blocked_site(url):
@@ -204,6 +220,23 @@ def is_us_remote(title, description, location=""):
         "latin america", "latam", "south america",
         "colombia", "argentina", "brazil", "mexico", "chile",
         "remote people", "globally distributed",
+        # Europe cities/countries slipping through
+        "lisbon", "portugal", "krakow", "kraków", "warsaw", "warszawa",
+        "prague", "budapest", "bucharest", "sofia", "zagreb",
+        "amsterdam", "berlin", "munich", "frankfurt", "hamburg",
+        "paris", "lyon", "madrid", "barcelona", "rome", "milan",
+        "stockholm", "oslo", "copenhagen", "helsinki", "dublin",
+        "zurich", "geneva", "brussels", "vienna", "athens",
+        # Canada cities slipping through
+        "calgary", "edmonton", "ottawa", "winnipeg", "quebec",
+        "halifax", "saskatoon", "regina", "victoria",
+        # Australia
+        "brisbane", "perth", "adelaide", "auckland", "wellington",
+        # Job board language indicators
+        "emprego",      # Portuguese for "job"
+        "emploi",       # French for "job"
+        "arbeit",       # German for "work"
+        "offre d'emploi",  # French job posting
     ]
     for indicator in strong_indicators:
         if indicator in check:
@@ -1077,15 +1110,25 @@ def search_amazon_jobs():
             print(f"   [ERROR] Amazon Jobs search error ({query}): {e}")
         time.sleep(1.2)
 
-    # Deduplicate and sort
+    # Deduplicate and sort — also check against seen_jobs.json to avoid repeat sends
     seen_urls = set()
+    previously_seen = load_seen_jobs()  # Load persistent seen jobs
     deduped = []
+    skipped_dupes = 0
     for job in sorted(jobs, key=lambda x: x["score"], reverse=True):
-        if job["url"] not in seen_urls:
+        if job["url"] not in seen_urls and job["url"] not in previously_seen:
             seen_urls.add(job["url"])
             deduped.append(job)
+        else:
+            skipped_dupes += 1
+    if skipped_dupes > 0:
+        print(f"   [OK] Skipped {skipped_dupes} Amazon jobs already seen previously")
 
     top5 = deduped[:5]
+    # Save Amazon job URLs to seen_jobs so they won't repeat tomorrow
+    if top5:
+        updated_seen = previously_seen | {job["url"] for job in top5}
+        save_seen_jobs(updated_seen)
     print(f"   [OK] Amazon Jobs: {len(top5)} relevant jobs found (10-day window)")
     return top5
 # 
