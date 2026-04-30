@@ -62,6 +62,111 @@ print(f"\n{'='*60}")
 print(f"  Job Search Run: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 print(f"{'='*60}")
 
+# ─── ERROR LOGGING + FAILURE ALERT ───────────────────────────
+# Persistent error log shared with review_decisions.py (append mode)
+ERROR_LOG_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "jobsearch_errors.log")
+SCRIPT_NAME = "job_search.py"
+
+def log_error(message):
+    """Append a timestamped error to the shared persistent error log."""
+    try:
+        with open(ERROR_LOG_FILE, "a", encoding="utf-8") as f:
+            ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            f.write(f"[{ts}] [{SCRIPT_NAME}] {message}\n")
+    except Exception as e:
+        print(f"[WARN] Could not write to {ERROR_LOG_FILE}: {e}")
+
+def send_failure_alert(reason_short, error_detail):
+    """Send a fatal-error alert email when something prevents the run."""
+    import smtplib as _smtplib
+    from email.mime.multipart import MIMEMultipart as _MM
+    from email.mime.text import MIMEText as _MT
+    try:
+        gmail_addr = os.environ.get("GMAIL_ADDRESS", "")
+        gmail_pass = os.environ.get("GMAIL_APP_PASS", "")
+        email_to   = os.environ.get("EMAIL_TO", gmail_addr)
+        if not (gmail_addr and gmail_pass):
+            print("[WARN] Email creds missing — cannot send failure alert.")
+            return
+        today_iso = datetime.now().strftime("%Y-%m-%d")
+        subject = f"[ALERT] {SCRIPT_NAME} aborted — {reason_short} — {today_iso}"
+        body = f"""<html><body style="font-family:Arial,sans-serif;color:#333;">
+<div style="background:#c0392b;color:white;padding:16px 20px;border-radius:6px;">
+  <h2 style="margin:0;font-size:18px;">Run Aborted: {SCRIPT_NAME}</h2>
+  <p style="margin:6px 0 0;font-size:12px;opacity:0.9;">{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+</div>
+<div style="padding:16px 20px;background:#fff5f5;border:1px solid #f5c6cb;border-top:none;border-radius:0 0 6px 6px;">
+  <p style="margin:0 0 8px;"><strong>Reason:</strong> {reason_short}</p>
+  <p style="margin:0 0 8px;"><strong>Detail:</strong></p>
+  <pre style="background:#f8f9fa;padding:10px;border-radius:4px;font-size:11px;white-space:pre-wrap;">{error_detail}</pre>
+  <p style="margin:12px 0 0;font-size:12px;color:#555;">See <code>jobsearch_errors.log</code> for the full persistent error history.</p>
+</div></body></html>"""
+        msg = _MM("alternative")
+        msg["Subject"] = subject
+        msg["From"]    = f"Job Search Alert <{gmail_addr}>"
+        msg["To"]      = email_to
+        msg.attach(_MT(body, "html"))
+        with _smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(gmail_addr, gmail_pass)
+            server.sendmail(gmail_addr, email_to, msg.as_string())
+        print(f"[OK] Failure alert email sent to {email_to}")
+    except Exception as e:
+        log_error(f"Could not send failure alert email: {e}")
+        print(f"[ERROR] Could not send failure alert: {e}")
+
+# ─── GIT PULL AT START (abort if it fails) ───────────────────
+import subprocess as _subprocess
+SCRIPT_DIR = _os.path.dirname(_os.path.abspath(__file__))
+
+def git_pull_or_abort():
+    """Pull latest before running. Abort + alert + log on failure."""
+    print("[GIT] Pulling latest from GitHub...")
+    try:
+        result = _subprocess.run(
+            ["git", "pull"],
+            cwd=SCRIPT_DIR,
+            capture_output=True,
+            text=True,
+            timeout=60,
+        )
+        if result.returncode != 0:
+            err = (result.stderr or result.stdout or "unknown error").strip()
+            raise RuntimeError(f"git pull returned {result.returncode}: {err}")
+        print(f"   [OK] {result.stdout.strip() or 'Up to date.'}")
+        return True
+    except Exception as e:
+        msg = f"git pull failed: {e}"
+        print(f"   [FATAL] {msg}")
+        log_error(msg)
+        send_failure_alert("git pull failed", str(e))
+        return False
+
+def git_commit_push():
+    """Commit and push at end of run so all local changes go to GitHub."""
+    print("\n[GIT] Committing and pushing local changes...")
+    try:
+        _subprocess.run(["git", "add", "-A"], cwd=SCRIPT_DIR, check=True)
+        today_iso = datetime.now().strftime("%Y-%m-%d")
+        commit_msg = f"Nightly job search run — {today_iso}"
+        result = _subprocess.run(
+            ["git", "commit", "-m", commit_msg],
+            cwd=SCRIPT_DIR, capture_output=True, text=True
+        )
+        if "nothing to commit" in (result.stdout + result.stderr).lower():
+            print("   [INFO] Nothing to commit")
+            return
+        _subprocess.run(["git", "push"], cwd=SCRIPT_DIR, check=True)
+        print(f"   [OK] Pushed: '{commit_msg}'")
+    except _subprocess.CalledProcessError as e:
+        msg = f"git commit/push failed: {e}"
+        print(f"   [ERROR] {msg}")
+        log_error(msg)
+
+# Pull before doing anything else — abort the whole run if it fails
+if not git_pull_or_abort():
+    print("[ABORT] Run halted due to git pull failure.")
+    sys.exit(1)
+
 # 
 # 48-HOUR FRESHNESS FILTER
 # 
@@ -1020,6 +1125,42 @@ def search_serper_jobs():
 # 
 AMAZON_MAX_AGE_DAYS = 10
 
+# Non-US location markers — if any appear in the title/snippet of an
+# Amazon posting, we skip it. Amazon posts globally on amazon.jobs and
+# Serper indexes them all, so this is the cheapest way to keep overseas
+# roles out of the digest.
+AMAZON_NON_US_MARKERS = [
+    # Europe
+    "london", "dublin", "berlin", "munich", "madrid", "barcelona",
+    "paris", "amsterdam", "luxembourg", "milan", "rome", "warsaw",
+    "prague", "stockholm", "copenhagen", "zurich", "vienna",
+    # Asia / Pacific
+    "tokyo", "osaka", "bengaluru", "bangalore", "hyderabad", "chennai",
+    "mumbai", "delhi", "pune", "gurgaon", "noida", "singapore",
+    "sydney", "melbourne", "auckland", "shanghai", "beijing",
+    "seoul", "manila", "jakarta", "ho chi minh", "hanoi",
+    # Middle East / Africa
+    "dubai", "abu dhabi", "riyadh", "doha", "tel aviv", "cape town",
+    "johannesburg", "cairo", "nairobi",
+    # Americas (non-US)
+    "toronto", "vancouver", "montreal", "ottawa", "mexico city",
+    "são paulo", "sao paulo", "rio de janeiro", "buenos aires",
+    "santiago", "bogota", "bogotá", "lima",
+    # Country-only mentions that reliably mean non-US
+    "united kingdom", " uk ", "(uk)", "ireland", "germany", "france",
+    "spain", "italy", "netherlands", "poland", "sweden", "denmark",
+    "switzerland", "austria", "japan", "india", "china", "korea",
+    "australia", "canada", "brazil", "mexico", "argentina",
+]
+
+def _is_non_us_amazon_posting(title, description):
+    """Return True if title or snippet contains a non-US location marker."""
+    blob = f" {title} {description} ".lower()
+    for marker in AMAZON_NON_US_MARKERS:
+        if marker in blob:
+            return marker
+    return None
+
 def search_amazon_jobs():
     """Search amazon.jobs specifically for performance and AI roles."""
     print("[SEARCH] Searching Amazon Jobs spotlight...")
@@ -1072,6 +1213,14 @@ def search_amazon_jobs():
                 if url_job in seen:
                     continue
                 seen.add(url_job)
+
+                # Skip overseas postings — Amazon posts globally on
+                # amazon.jobs and we only want US roles.
+                non_us_hit = _is_non_us_amazon_posting(title, desc)
+                if non_us_hit:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Amazon FILTERED-non-US ({non_us_hit}): {title[:60]}")
+                    continue
 
                 # Apply 10-day freshness filter
                 if posted:
@@ -1903,4 +2052,14 @@ def send_email(top_jobs, amazon_jobs=None):
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+        # Push all local changes (job_decisions.json, today_jobs.json,
+        # seen_jobs.json, run logs) to GitHub at end of every run.
+        git_commit_push()
+    except Exception as e:
+        import traceback as _tb
+        tb = _tb.format_exc()
+        print(f"\n[FATAL] {tb}")
+        log_error(f"FATAL unhandled exception: {e}\n{tb}")
+        send_failure_alert("unhandled exception", tb)
