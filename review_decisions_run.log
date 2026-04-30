@@ -1,15 +1,13 @@
 
 ============================================================
-  Review Decisions Run: 2026-04-30 11:41:16
+  Review Decisions Run: 2026-04-30 12:06:02
 ============================================================
 
 [GIT] Pulling latest from GitHub...
    [OK] Already up to date.
-[OK] Found 5 unreviewed 'Other' decision(s) in job_decisions.json
+[OK] Found 0 unreviewed 'Other' decision(s) in job_decisions.json
    [OK] Attached job_decisions_2026-04-30.json (backup)
 [OK] Review email sent to harichardson68@gmail.com
-[OK] Marked 5 entry/entries as reviewed in job_decisions.json
-[GIT] Committing and pushing updated job_decisions.json...
-   [OK] Pushed: 'Review decisions sent — items marked reviewed — 2026-04-30'
+[INFO] Empty digest sent — nothing to flag, nothing to push.
 
-[DONE] Review run completed at 2026-04-30 11:41:21
+[DONE] Review run completed at 2026-04-30 12:06:04
