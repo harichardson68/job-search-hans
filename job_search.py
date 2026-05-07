@@ -2135,10 +2135,23 @@ def get_decision_stats():
         if not data:
             return None
         by_status = {}
-        for record in data.values():
-            status = record.get("status") or record.get("decision") or "unknown"
-            by_status[status] = by_status.get(status, 0) + 1
-        total = len(data)
+        total = 0
+        for date_key, entries in data.items():
+            # Handle date-keyed array structure: {"2026-04-23": [{...}, ...]}
+            if isinstance(entries, list):
+                for record in entries:
+                    if not isinstance(record, dict):
+                        continue
+                    status = record.get("decision") or record.get("status") or "unknown"
+                    by_status[status] = by_status.get(status, 0) + 1
+                    total += 1
+            elif isinstance(entries, dict):
+                # Legacy flat structure fallback
+                status = entries.get("decision") or entries.get("status") or "unknown"
+                by_status[status] = by_status.get(status, 0) + 1
+                total += 1
+        if total == 0:
+            return None
         pct = min(100, int((total / KMEANS_THRESHOLD) * 100))
         return {"total": total, "by_status": by_status, "pct": pct}
     except Exception as e:
