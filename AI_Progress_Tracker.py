@@ -1,5 +1,5 @@
 # Hans Richardson - AI Engineering Progress Tracker
-# Updated: April 24, 2026 (evening)
+# Updated: May 07, 2026 (evening)
 # Share this file at the start of each Claude session for instant context!
 
 # ─────────────────────────────────────────────────────────────
@@ -9,11 +9,11 @@ NAME            = "Hans Richardson"
 EMAIL           = "harichardson68@gmail.com"
 LOCATION        = "Lee's Summit, MO (Remote)"
 LINKEDIN        = "linkedin.com/in/hans-richardson"
-CURRENT_JOB     = "Amazon Warehouse (Dec 2025 - Present)"
-CLEARANCE       = "Public Trust (held during USDA contract 2021-2025)"
-EXPERIENCE      = "28+ years Performance/QA Test Engineering"
+CURRENT_JOB     = "Amazon Warehouse Associate (Dec 2025 - Present) — actively seeking Performance Engineering / AI Engineering roles"
+CLEARANCE       = "Public Trust (active — held continuously since USDA contract 2021-2025)"
+EXPERIENCE      = "24+ years IT (14 specialized in Performance Test Engineering — LoadRunner/VuGen/LRE)"
 CORE_SKILL      = "LoadRunner/VuGen/LRE - 14 years expert"
-EDUCATION       = "Bachelor of Science in Computer Information Systems"
+EDUCATION       = "B.S. Computer Information Systems + B.A. Marketing"
 
 # ─────────────────────────────────────────────────────────────
 # GITHUB
@@ -44,10 +44,13 @@ JOB_SEARCH_SYSTEM = {
     "script": "job_search.py",
     "location": "C:/Users/haric/Jobsearch/",
     "language": "Python",
-    "sources": 6,
+    "sources": 7,
     "source_list": [
         "RemoteOK", "Google Jobs (Serper)", "Adzuna", "USAJobs",
-        "Google Custom Search", "Wellfound"
+        "JSearch (RapidAPI)", "Wellfound", "Amazon Jobs Spotlight"
+    ],
+    "removed_sources": [
+        "Google Custom Search API (removed 2026-05-07 — 403 on every query, redundant with Serper)"
     ],
     "dead_sources_removed": [
         "Indeed RSS (shut down 2024)",
@@ -194,7 +197,7 @@ GOOGLE_INFRASTRUCTURE = {
     "project": "My Project 67638 (optimum-habitat-304315)",
     "service_account": "job-search-reader@optimum-habitat-304315.iam.gserviceaccount.com",
     "credentials_file": "google_credentials.json (in both job search folders, never committed to Git)",
-    "apis_enabled": ["Google Sheets API", "Google Custom Search API"],
+    "apis_enabled": ["Google Sheets API"],  # Google Custom Search API removed 2026-05-07
     "hans_sheet": "Job Search Decisions - https://docs.google.com/spreadsheets/d/1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE",
     "evan_sheet": "Job Search Decisions (Evan) - https://docs.google.com/spreadsheets/d/16NA3xPpvdV3nh1-FdWsfjGxCZ0OnvvmBAg6P2PQaaJs",
 }
@@ -291,6 +294,9 @@ AI_SKILLS_HANDS_ON = {
     "Python Automation": {"level": "Practical - Growing", "evidence": "job_search.py + evan_job_search.py + update_scoring.py - all production systems running daily", "date": "April 23, 2026"},
     "Agentic Systems": {"level": "Practical", "evidence": "Self-improving feedback loop: email → Google Form → Google Sheets → midnight script → auto-patches job_search.py → git commit", "date": "April 23, 2026"},
     "Git / GitHub": {"level": "Practical", "evidence": "Two public repos with portfolio-grade READMEs, automated nightly commits from update scripts", "date": "April 23, 2026"},
+    "RAG / Vector Search": {"level": "Practical", "evidence": "ChromaDB + sentence-transformers (all-MiniLM-L6-v2) wired into job_search.py — 92 decisions ingested, chroma_db folder live on disk", "date": "May 07, 2026"},
+    "ChromaDB": {"level": "Practical", "evidence": "Local persistent vector store, upsert/query pipeline built and running nightly", "date": "May 07, 2026"},
+    "K-Means (in progress)": {"level": "Conceptual + Implementation planned", "evidence": "92/300 decisions collected, progress tracker in nightly email, architecture designed", "date": "May 07, 2026"},
     "Google Sheets API": {"level": "Practical", "evidence": "Service account auth, reads form submissions to drive autonomous scoring updates", "date": "April 23, 2026"},
     "Debugging & Troubleshooting": {"level": "Practical", "evidence": "Fixed dead APIs, date parsing, email crashes, location filtering, score inflation, secret scanning blocks", "date": "April 23, 2026"},
     "Linear/Logistic Regression": {"level": "Conceptual + IBM Course", "evidence": "Completed regression module", "date": "March 29, 2026"},
@@ -497,6 +503,83 @@ SESSION_NOTES = [
                 "data_requirement": "Minimum 200-300 decisions for meaningful clustering",
                 "note": "job_decisions.json is NEVER cleared — it is the permanent training dataset",
             }
+        ]
+    },
+    {
+        "date": "May 07, 2026",
+        "accomplishments": [
+            # False positive filtering
+            "Added BLOCKED_FP_DOMAINS and BLOCKED_FP_PATHS to job_search.py",
+            "Added is_false_positive_url() helper — catches training sites, spam domains, services pages",
+            "Blocked ishatrainingsolutions.org, 2kool4u.net, cortance.com and 20+ others",
+            "Blocked URL paths: /events/, /courses/, /services/hire-, /training/, /blog/, /salary/",
+            "Wired false positive check into Serper result loop",
+            # Location filtering improvements
+            "Added india remote, remote - india, engineering - india, remote india variants to strong_indicators",
+            "Added community.n8n.io (forum posts) and remotejobsfinder.co (overseas) to BLOCKED_JOB_SITES",
+            # Google Custom Search removed
+            "Removed search_google_jobs() function entirely — 403 on every query, redundant with Serper",
+            "Removed GOOGLE_API_KEY and GOOGLE_CX constants",
+            # JSearch added
+            "Added search_jsearch() — JSearch via RapidAPI, real-time Google for Jobs aggregation",
+            "8 targeted queries: LoadRunner, VuGen, LRE, AI automation, prompt engineering, COBOL",
+            "JSEARCH_API_KEY added to .env (free tier 200 req/month)",
+            # K-Means decision tracker
+            "Added get_decision_stats() to job_search.py",
+            "Added K-Means progress bar to nightly email with decision breakdown by type",
+            "Fixed get_decision_stats() for date-keyed array structure",
+            # Google Sheet backfill
+            "Discovered update_scoring.py was only processing TODAY rows — discarding all past submissions",
+            "Added parse_sheet_date() helper handling all Google Sheets timestamp formats",
+            "Rewrote read_google_sheet() to return all rows grouped by date",
+            "Rewrote save_decisions() with backfill logic for past no_response entries",
+            "Built and ran backfill_decisions.py — recovered 72 new records from Google Sheet",
+            "job_decisions.json grew from 10 records (1 date) to 92 records (14 dates)",
+            # today_jobs archiving
+            "Added today_jobs_YYYY-MM-DD.json daily archive to job_search.py",
+            "Ensures future backfills always have full job metadata",
+            # Google Form improvements
+            "Added regex validation to Job Number field: ^([1-9]|10|A[1-5])$",
+            "Set Job Number field as Required",
+            "Fixed bad historical entries (1a, 1A, A2 with trailing space) directly in sheet",
+            # RAG implementation
+            "Installed chromadb and sentence-transformers via pip",
+            "Built JobRAG class with _init(), ingest_decisions(), retrieve_similar()",
+            "Wired RAG ingest into end of nightly run",
+            "First successful run: 20 decisions upserted into ChromaDB",
+            "chroma_db folder created in Jobsearch directory",
+            # README
+            "Fully rewrote README.md — reflects current sources, RAG, ChromaDB, false positive filtering",
+            "Updated architecture diagram, tech stack, features, roadmap",
+            # GitHub traffic
+            "Checked GitHub traffic — 265 clones, 144 unique cloners (mostly bots), 5 real human visitors",
+        ],
+        "concepts_learned": [
+            "RAG = retrieval augmented generation — past decisions as context for future scoring",
+            "ChromaDB stores vector embeddings locally — no cloud, no cost, git-trackable folder",
+            "sentence-transformers all-MiniLM-L6-v2 = 80MB free embedding model, runs on CPU",
+            "Location filtering is always rules-based — data quality problem, not a learning problem",
+            "K-Means solves subjective pattern recognition, not data quality issues",
+            "Google Sheets timestamp format is M/D/YYYY H:MM:SS — not zero-padded",
+            "MinGW pip resolves to Strawberry Perl pip — must use python -m pip on Windows",
+            "GitHub clones metric includes automated bots — visitor count is more meaningful",
+            "update_scoring.py was silently discarding all past form submissions — today-only filter bug",
+            "backfill_decisions.py bare-bones records skip RAG ingest (no job_id) — future records will be full",
+        ],
+        "decisions_milestone": {
+            "total": 92,
+            "target": 300,
+            "pct": 31,
+            "chroma_db_count": 20,
+            "note": "20 in ChromaDB because backfilled records lack job_id — will grow with new nightly runs"
+        },
+        "next_session_priorities": [
+            "1. Monitor tonight scheduled run — verify K-Means tracker shows in email",
+            "2. Add JSEARCH_API_KEY to .env and test JSearch source",
+            "3. Wire retrieve_similar() into cover letter prompt when GENERATE_COVER_LETTERS=True",
+            "4. Update profile README at github.com/harichardson68 to mention RAG",
+            "5. Continue IBM course — K-Means and unsupervised learning (relevant now!)",
+            "6. Consider analyze_decisions.py when decision count reaches 150+",
         ]
     },
     {
