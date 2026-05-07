@@ -2218,6 +2218,14 @@ def send_email(top_jobs, amazon_jobs=None):
         with open(batch_file, "w") as f:
             json.dump(batch, f, indent=2)
         print(f"   [OK] Saved {len(regular_batch)} regular + {len(amazon_batch)} Amazon jobs to today_jobs.json")
+        # Archive a dated copy so backfills always have full metadata
+        archive_file = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            f"today_jobs_{today_key}.json"
+        )
+        with open(archive_file, "w") as f:
+            json.dump(batch, f, indent=2)
+        print(f"   [OK] Archived to today_jobs_{today_key}.json")
     except Exception as e:
         print(f"   [WARN] Could not save today_jobs.json: {e}")
 
