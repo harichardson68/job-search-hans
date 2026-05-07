@@ -172,7 +172,7 @@ if not git_pull_or_abort():
 # 
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
 
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
@@ -287,6 +287,67 @@ def is_blocked_site(url):
     """Returns True if the job URL is from a blocked middleman site."""
     url_lower = str(url).lower()
     return any(site in url_lower for site in BLOCKED_JOB_SITES)
+
+# ── False-positive domain/path filter (added 2026-05-07) ──────────────
+# Catches training sites, spam aggregators, and services pages that score
+# high on keywords but are not actual job postings.
+BLOCKED_FP_DOMAINS = {
+    # Training / course event sites — not job postings
+    "ishatrainingsolutions.org",
+    "udemy.com",
+    "coursera.org",
+    "pluralsight.com",
+    "learnquest.com",
+    "globalknowledge.com",
+    "new-horizons.com",
+    "newhorizons.com",
+    "trainingcamp.com",
+    "simplilearn.com",
+    "intellipaat.com",
+    # Sketchy aggregator / spam domains
+    "2kool4u.net",
+    "jobisite.com",
+    "jobomas.com",
+    "jobrapido.com",
+    # Staffing services pages (not listings)
+    "cortance.com",
+}
+
+BLOCKED_FP_PATHS = {
+    # URL path segments that indicate a non-job page
+    "/events/",
+    "/event/",
+    "/services/hire-",
+    "/services/hire_",
+    "/courses/",
+    "/course/",
+    "/training/",
+    "/webinar/",
+    "/workshop/",
+    "/certification/",
+    "/learning/",
+    "/bootcamp/",
+    "/tutorial/",
+    "/blog/",          # blog posts sometimes match keywords
+    "/salary/",
+    "/salaries/",
+}
+
+def is_false_positive_url(url: str) -> tuple:
+    """
+    Returns (True, reason_str) if URL looks like a course/training/services
+    page rather than an actual job posting. Returns (False, '') if clean.
+    """
+    if not url:
+        return False, ""
+    url_lower = url.lower()
+    for domain in BLOCKED_FP_DOMAINS:
+        if domain in url_lower:
+            return True, f"fp_domain:{domain}"
+    for path in BLOCKED_FP_PATHS:
+        if path in url_lower:
+            return True, f"fp_path:{path}"
+    return False, ""
 
 def is_us_remote(title, description, location=""):
     # Check location field first - if it contains a non-US location, reject immediately
@@ -1091,6 +1152,11 @@ def search_serper_jobs():
                     if DEBUG_MODE:
                         print(f"   [DEBUG] Serper FILTERED-searchpage: {title[:50]}")
                     continue
+                fp, fp_reason = is_false_positive_url(url_job)
+                if fp:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Serper FILTERED-{fp_reason}: {title[:50]}")
+                    continue
                 location = item.get("location", "").lower()
                 if url_job in seen:
                     continue
@@ -1634,79 +1700,11 @@ def generate_cover_letter(job):
 # SOURCE 8: Greenhouse.io (public ATS boards)
 # 
 
-# 
-# SOURCE 10: Google Custom Search (searches ALL ATS platforms)
-# 
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
-GOOGLE_CX      = os.environ.get("GOOGLE_CX", "")
+# NOTE: Google Custom Search API removed (2026-05-07)
+# All Google Jobs searches are handled by Serper (search_serper_jobs).
+# Custom Search API was returning 403 on every query and was redundant.
 
-def search_google_jobs():
-    print("[SEARCH] Searching Google Custom Search...")
-    jobs = []
-    if GOOGLE_API_KEY == "YOUR_GOOGLE_API_KEY":
-        print("   [WARN]  Google Custom Search skipped  add your API key to the config")
-        return jobs
 
-    queries = [
-        # LoadRunner/Performance — highest value targets
-        'site:boards.greenhouse.io "loadrunner" "remote"',
-        'site:jobs.lever.co "loadrunner" "remote"',
-        'site:myworkdayjobs.com "loadrunner" "performance engineer"',
-        'site:dice.com "loadrunner" "performance engineer" "remote"',
-        # Prompt Engineering
-        'site:boards.greenhouse.io "prompt engineer" "remote"',
-        'site:jobs.lever.co "prompt engineer" "remote"',
-        # AI Agent / LLM
-        'site:jobs.ashbyhq.com "ai agent engineer" "remote"',
-        'site:jobs.lever.co "generative ai engineer" "remote"',
-        # MLOps
-        'site:boards.greenhouse.io "mlops engineer" "remote"',
-        # COBOL
-        '"COBOL developer" remote',
-    ]
-    seen = set()
-    for query in queries:
-        try:
-            url = "https://www.googleapis.com/customsearch/v1"
-            params = {
-                "key": GOOGLE_API_KEY,
-                "cx": GOOGLE_CX,
-                "q": query,
-                "num": 10,
-                "dateRestrict": "d5",  # last 5 days
-            }
-            resp = requests.get(url, params=params, timeout=15)
-            data = resp.json()
-            if DEBUG_MODE:
-                items_count = len(data.get("items", []))
-                print(f"   [DEBUG] Google Search '{query[:50]}': {items_count} results, status {resp.status_code}")
-                if "error" in data:
-                    print(f"   [DEBUG] Google Search error: {data['error'].get('message', '')}")
-            for item in data.get("items", []):
-                title   = item.get("title", "")
-                desc    = item.get("snippet", "")
-                url_job = item.get("link", "")
-                if url_job in seen:
-                    continue
-                seen.add(url_job)
-                score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
-                if score > 0 and level_ok and is_relevant_title(title):
-                    jobs.append({
-                        "source": "Google Search",
-                        "title": title,
-                        "company": item.get("displayLink", "N/A"),
-                        "url": url_job,
-                        "posted": "",
-                        "description": desc[:500],
-                        "score": score,
-                        "matched_keywords": matched,
-                        "track": track,
-                    })
-        except Exception as e:
-            print(f"   [ERROR] Google Search error: {e}")
-    print(f"   [OK] Google Search: {len(jobs)} relevant jobs found")
-    return jobs
 
 
 # ---------------------------------------------
@@ -1764,6 +1762,107 @@ def search_wellfound():
             print(f"   [ERROR] Wellfound error ({query}): {e}")
     print(f"   [OK] Wellfound: {len(jobs)} relevant jobs found")
     return jobs
+# ─────────────────────────────────────────────────────────────
+# SOURCE 15: JSearch via RapidAPI
+# Real-time Google for Jobs aggregator — LinkedIn, Indeed,
+# Glassdoor and more via one endpoint. Free tier: 200 req/month.
+# Sign up: https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch
+# Add JSEARCH_API_KEY to your .env file.
+# ─────────────────────────────────────────────────────────────
+JSEARCH_API_KEY = os.environ.get("JSEARCH_API_KEY", "")
+
+def search_jsearch():
+    print("[SEARCH] Searching JSearch (Google for Jobs)...")
+    jobs = []
+    if not JSEARCH_API_KEY:
+        print("   [WARN] JSearch skipped - add JSEARCH_API_KEY to .env")
+        return jobs
+
+    queries = [
+        "loadrunner performance engineer remote",
+        "vugen performance test engineer remote",
+        "LoadRunner Enterprise performance engineer remote",
+        "performance test engineer loadrunner remote",
+        "AI automation engineer remote",
+        "LLM engineer remote entry level",
+        "prompt engineer remote generative ai",
+        "COBOL developer remote",
+    ]
+
+    seen = set()
+    headers = {
+        "x-rapidapi-host": "jsearch.p.rapidapi.com",
+        "x-rapidapi-key": JSEARCH_API_KEY,
+    }
+
+    for query in queries:
+        try:
+            params = {
+                "query": query,
+                "page": "1",
+                "num_pages": "1",
+                "country": "us",
+                "date_posted": "week",  # last 7 days
+                "remote_jobs_only": "true",
+            }
+            resp = requests.get(
+                "https://jsearch.p.rapidapi.com/search",
+                headers=headers,
+                params=params,
+                timeout=15,
+            )
+            data = resp.json()
+            results = data.get("data", [])
+            if DEBUG_MODE:
+                print(f"   [DEBUG] JSearch '{query[:50]}': {len(results)} results, status {resp.status_code}")
+            for item in results:
+                title    = item.get("job_title", "")
+                company  = item.get("employer_name", "N/A")
+                desc     = item.get("job_description", "")[:500]
+                url_job  = item.get("job_apply_link", "") or item.get("job_google_link", "")
+                posted   = item.get("job_posted_at_datetime_utc", "")[:10] if item.get("job_posted_at_datetime_utc") else ""
+                location = f"{item.get('job_city','') or ''} {item.get('job_state','') or ''} {item.get('job_country','') or ''}".strip()
+
+                if url_job in seen:
+                    continue
+                seen.add(url_job)
+
+                # False-positive filter
+                fp, fp_reason = is_false_positive_url(url_job)
+                if fp:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] JSearch FILTERED-{fp_reason}: {title[:50]}")
+                    continue
+
+                if is_blocked_site(url_job):
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] JSearch FILTERED-blocked: {title[:50]}")
+                    continue
+
+                score, matched = score_job(title, desc)
+                track, level_ok = get_job_track(title, desc)
+
+                if score > 0 and level_ok and is_relevant_title(title) and is_us_remote(title, desc, location) and not is_blocked_company(title, desc, company):
+                    jobs.append({
+                        "source": "JSearch",
+                        "title": title,
+                        "company": company,
+                        "url": url_job,
+                        "posted": posted,
+                        "description": desc,
+                        "score": score,
+                        "matched_keywords": matched,
+                        "track": track,
+                        "salary": item.get("job_min_salary", ""),
+                    })
+            time.sleep(1)  # be kind to the free tier rate limit
+        except Exception as e:
+            print(f"   [ERROR] JSearch error ({query[:40]}): {e}")
+
+    print(f"   [OK] JSearch: {len(jobs)} relevant jobs found")
+    return jobs
+
+
 def main():
     print("\n" + "="*55)
     print("  Hans Richardson  Automated Job Search")
@@ -1775,8 +1874,8 @@ def main():
     all_jobs += search_serper_jobs()
     all_jobs += search_adzuna()
     all_jobs += search_usajobs()
-    all_jobs += search_google_jobs()
     all_jobs += search_wellfound()
+    all_jobs += search_jsearch()
 
     # Sort by score descending
     all_jobs.sort(key=lambda x: x["score"], reverse=True)
