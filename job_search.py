@@ -28,6 +28,126 @@ from dotenv import load_dotenv
 # Load .env file from same directory as this script
 load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 
+# ─── RAG SETUP (ChromaDB + sentence-transformers) ────────────
+CHROMA_DIR      = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chroma_db")
+DECISIONS_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "job_decisions.json")
+RAG_ENABLED     = True
+RAG_TOP_K       = 3
+
+class JobRAG:
+    """
+    Lightweight RAG layer over job_decisions.json.
+    Embeds past decisions into ChromaDB on each run,
+    ready for similarity retrieval once enough data exists.
+    """
+    def __init__(self):
+        self._client     = None
+        self._collection = None
+        self._model      = None
+        self._ready      = False
+
+    def _init(self):
+        if self._ready:
+            return True
+        try:
+            from sentence_transformers import SentenceTransformer
+            import chromadb
+            self._model      = SentenceTransformer("all-MiniLM-L6-v2")
+            self._client     = chromadb.PersistentClient(path=CHROMA_DIR)
+            self._collection = self._client.get_or_create_collection(
+                name="job_decisions",
+                metadata={"hnsw:space": "cosine"},
+            )
+            self._ready = True
+            return True
+        except Exception as e:
+            print(f"   [WARN] RAG init failed: {e}")
+            return False
+
+    def ingest_decisions(self):
+        """
+        Upsert all decisions from job_decisions.json into ChromaDB.
+        Called once per nightly run after email is sent.
+        """
+        if not RAG_ENABLED or not self._init():
+            return
+        try:
+            if not os.path.exists(DECISIONS_FILE):
+                return
+            with open(DECISIONS_FILE, "r", encoding="utf-8") as f:
+                all_decisions = json.load(f)
+
+            ids, docs, metas = [], [], []
+            for date_str, entries in all_decisions.items():
+                if not isinstance(entries, list):
+                    continue
+                for entry in entries:
+                    job_id = entry.get("job_id", "")
+                    if not job_id:
+                        continue
+                    text = " ".join(filter(None, [
+                        entry.get("title", ""),
+                        entry.get("track", ""),
+                        " ".join(entry.get("matched_keywords", [])),
+                    ]))
+                    if not text.strip():
+                        continue
+                    ids.append(job_id)
+                    docs.append(text[:500])
+                    metas.append({
+                        "title":    entry.get("title", "")[:100],
+                        "decision": entry.get("decision", "unknown"),
+                        "reason":   entry.get("reason", "") or "",
+                        "track":    entry.get("track", "") or "",
+                        "score":    str(entry.get("score", 0)),
+                        "date":     date_str,
+                    })
+
+            if ids:
+                self._collection.upsert(ids=ids, documents=docs, metadatas=metas)
+                print(f"   [RAG] Upserted {len(ids)} decisions into ChromaDB")
+                print(f"   [RAG] Total in ChromaDB: {self._collection.count()}")
+        except Exception as e:
+            print(f"   [WARN] RAG ingest failed: {e}")
+
+    def retrieve_similar(self, job, top_k=RAG_TOP_K):
+        """
+        Returns a plain-text summary of the most similar past decisions.
+        Returns empty string if not enough data or RAG disabled.
+        """
+        if not RAG_ENABLED or not self._init():
+            return ""
+        try:
+            count = self._collection.count()
+            if count < 20:
+                return ""  # not enough data yet
+            query_text = " ".join(filter(None, [
+                job.get("title", ""),
+                job.get("track", ""),
+                " ".join(job.get("matched_keywords", [])),
+            ]))
+            if not query_text.strip():
+                return ""
+            results = self._collection.query(
+                query_texts=[query_text],
+                n_results=min(top_k, count),
+                include=["metadatas", "distances"],
+            )
+            if not results or not results["metadatas"]:
+                return ""
+            lines = ["Similar past decisions:"]
+            for meta, dist in zip(results["metadatas"][0], results["distances"][0]):
+                similarity = round((1 - dist) * 100)
+                reason = f" ({meta['reason']})" if meta.get("reason") else ""
+                lines.append(f"  - [{similarity}% match] {meta['title']} → {meta['decision']}{reason}")
+            return "\n".join(lines)
+        except Exception as e:
+            print(f"   [WARN] RAG retrieval failed: {e}")
+            return ""
+
+# Singleton
+job_rag = JobRAG()
+
 # ─── LOGGING SETUP ───────────────────────────────────────────
 # Logs to both console AND job_search.log (overwrites each run)
 import os as _os
@@ -172,7 +292,7 @@ if not git_pull_or_abort():
 # 
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
 
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
@@ -2249,6 +2369,9 @@ if __name__ == "__main__":
         # Push all local changes (job_decisions.json, today_jobs.json,
         # seen_jobs.json, run logs) to GitHub at end of every run.
         git_commit_push()
+        # Ingest latest decisions into ChromaDB for RAG
+        print("\n[RAG] Ingesting decisions into ChromaDB...")
+        job_rag.ingest_decisions()
     except Exception as e:
         import traceback as _tb
         tb = _tb.format_exc()
