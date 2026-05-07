@@ -81,8 +81,44 @@ def load_today_jobs():
         print(f"   [WARN] Could not load today_jobs.json: {e}")
     return {}
 
+def parse_sheet_date(timestamp_str):
+    """
+    Parse Google Sheets timestamp into YYYY-MM-DD.
+    Handles M/D/YYYY HH:MM:SS and YYYY-MM-DD variants.
+    Returns None if unparseable.
+    """
+    if not timestamp_str:
+        return None
+    ts = str(timestamp_str).strip()
+    for fmt in (
+        "%m/%d/%Y %H:%M:%S",
+        "%m/%d/%Y %H:%M",
+        "%Y-%m-%d %H:%M:%S",
+        "%Y-%m-%d %H:%M",
+        "%Y-%m-%d",
+    ):
+        try:
+            return datetime.strptime(ts, fmt).strftime("%Y-%m-%d")
+        except ValueError:
+            continue
+    # Fallback: try extracting M/D/YYYY without time
+    import re as _re
+    m = _re.match(r"(\d{1,2})/(\d{1,2})/(\d{4})", ts)
+    if m:
+        try:
+            return datetime(int(m.group(3)), int(m.group(1)), int(m.group(2))).strftime("%Y-%m-%d")
+        except ValueError:
+            pass
+    return None
+
+
 def read_google_sheet():
-    decisions = {}
+    """
+    Read ALL rows from Google Sheet (not just today).
+    Returns dict: {date_str: {job_num: decision_dict}}
+    so each row matches the right day's jobs.
+    """
+    decisions_by_date = {}
     try:
         creds = service_account.Credentials.from_service_account_file(
             CREDENTIALS_FILE,
@@ -96,11 +132,9 @@ def read_google_sheet():
 
         if not rows or len(rows) < 2:
             print("   [INFO] No form submissions found in sheet")
-            return decisions
+            return decisions_by_date
 
-        print(f"   Found {len(rows)-1} total submission(s) in sheet")
-        # Handle M/D/YYYY format that Google Sheets uses
-        today_fmt = f"{datetime.now().month}/{datetime.now().day}/{datetime.now().year}"
+        print(f"   Found {len(rows)-1} total submission(s) in sheet (all dates)")
 
         for row in rows[1:]:
             if len(row) < 3:
@@ -110,42 +144,60 @@ def read_google_sheet():
             decision   = row[2] if len(row) > 2 else ""
             reason     = row[3] if len(row) > 3 else ""
 
-            if TODAY not in timestamp and today_fmt not in timestamp:
+            row_date = parse_sheet_date(timestamp)
+            if not row_date:
+                print(f"   [WARN] Could not parse timestamp: '{timestamp}' — skipping")
                 continue
 
             try:
                 job_num_raw = str(job_number).strip().upper()
-                # Handle both regular (1-10) and Amazon (A1-A5) job numbers
                 if job_num_raw.startswith("A"):
-                    job_num = job_num_raw  # Keep as string e.g. "A1"
+                    job_num = job_num_raw
                 else:
                     job_num = int(job_num_raw)
             except ValueError:
                 continue
 
             decision_key = DECISION_MAP.get(decision.lower().strip(), "other")
-            decisions[job_num] = {
+            decisions_by_date.setdefault(row_date, {})[job_num] = {
                 "decision": decision_key,
                 "reason":   reason.strip() if reason else None,
                 "raw":      decision,
             }
-            print(f"   Job {job_num}: {decision_key}" + (f" — {reason}" if reason else ""))
+            print(f"   [{row_date}] Job {job_num}: {decision_key}" + (f" — {reason}" if reason else ""))
 
     except Exception as e:
         print(f"   [ERROR] Google Sheets read failed: {e}")
-    return decisions
+    return decisions_by_date
 
-def save_decisions(today_jobs, decisions):
+def save_decisions(today_jobs, decisions_by_date):
+    """
+    Merges ALL sheet decisions (all dates) into job_decisions.json.
+    For today: matches against today_jobs.json by job number.
+    For past dates: updates existing entries in job_decisions.json
+    that still have decision=="no_response", matching by job number
+    within that date's existing array.
+    Skips any date/job already recorded with a real decision.
+    """
     try:
         all_decisions = {}
         if os.path.exists(DECISIONS_FILE):
             with open(DECISIONS_FILE, "r") as f:
                 all_decisions = json.load(f)
 
+        total_updated = 0
+        total_new     = 0
+
+        # ── TODAY: build fresh entries from today_jobs.json ──────
+        today_decisions = decisions_by_date.get(TODAY, {})
         today_entries = []
         for job_num, job in today_jobs.items():
-            # Match decisions by number — handle both int (1-10) and string (A1-A5)
-            dec = decisions.get(job_num) or decisions.get(str(job_num)) or decisions.get(int(job_num) if str(job_num).isdigit() else job_num) or {}
+            dec = (
+                today_decisions.get(job_num)
+                or today_decisions.get(str(job_num))
+                or today_decisions.get(int(job_num) if str(job_num).isdigit() else job_num)
+                or {}
+            )
             today_entries.append({
                 "job_id":           job.get("job_id", ""),
                 "number":           job_num,
@@ -161,12 +213,38 @@ def save_decisions(today_jobs, decisions):
                 "raw_decision":     dec.get("raw", ""),
                 "timestamp":        datetime.now().strftime("%Y-%m-%d %H:%M"),
             })
-
         all_decisions[TODAY] = today_entries
+        total_new = len(today_entries)
+
+        # ── BACKFILL: update past no_response entries ─────────────
+        for date_str, date_decisions in decisions_by_date.items():
+            if date_str == TODAY:
+                continue  # already handled above
+            if date_str not in all_decisions:
+                print(f"   [SKIP] {date_str} not in job_decisions.json — no job data to match against")
+                continue
+            day_entries = all_decisions[date_str]
+            for entry in day_entries:
+                if entry.get("decision") not in ("no_response", None, ""):
+                    continue  # already has a real decision — don't overwrite
+                job_num = entry.get("number")
+                dec = (
+                    date_decisions.get(job_num)
+                    or date_decisions.get(str(job_num))
+                    or date_decisions.get(int(job_num) if str(job_num).isdigit() else job_num)
+                    or {}
+                )
+                if dec:
+                    entry["decision"]     = dec.get("decision", "no_response")
+                    entry["reason"]       = dec.get("reason", None)
+                    entry["raw_decision"] = dec.get("raw", "")
+                    total_updated += 1
+                    print(f"   [BACKFILL] {date_str} Job {job_num}: {entry['decision']}")
+
         with open(DECISIONS_FILE, "w") as f:
             json.dump(all_decisions, f, indent=2)
-        print(f"[OK] Saved {len(today_entries)} decisions to job_decisions.json")
-        return today_entries
+        print(f"[OK] Saved {total_new} today entries + backfilled {total_updated} past decisions")
+        return all_decisions.get(TODAY, [])
     except Exception as e:
         print(f"[ERROR] Could not save decisions: {e}")
         return []
@@ -420,11 +498,12 @@ def main():
         return
     print(f"[OK] Loaded {len(today_jobs)} jobs from today_jobs.json")
 
-    print("[SHEETS] Reading Google Sheet...")
-    decisions = read_google_sheet()
-    print(f"[OK] {len(decisions)} decision(s) from Google Sheet")
+    print("[SHEETS] Reading Google Sheet (all dates)...")
+    decisions_by_date = read_google_sheet()
+    total_sheet_decisions = sum(len(v) for v in decisions_by_date.values())
+    print(f"[OK] {total_sheet_decisions} decision(s) from Google Sheet across {len(decisions_by_date)} date(s)")
 
-    entries = save_decisions(today_jobs, decisions)
+    entries = save_decisions(today_jobs, decisions_by_date)
     weights = load_weights()
 
     auto_handled, needs_review = apply_feedback(entries, weights)

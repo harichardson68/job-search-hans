@@ -172,7 +172,7 @@ if not git_pull_or_abort():
 # 
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
 
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
@@ -281,6 +281,8 @@ BLOCKED_JOB_SITES = [
     "uk.indeed.com",        # UK Indeed
     "au.indeed.com",        # Australian Indeed
     "careers-page.com",     # Unvetted overseas aggregator
+    "community.n8n.io",     # n8n forum posts — not job listings
+    "remotejobsfinder.co",  # Overseas listings slipping through (e.g. /mex/)
 ]
 
 def is_blocked_site(url):
@@ -364,6 +366,8 @@ def is_us_remote(title, description, location=""):
         "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
         "chennai", "pune", "kolkata", "noida", "gurugram", "gurgaon",
         "india only", "india based", "based in india", "location: india",
+        "india remote", "remote, india", "remote - india", "engineering - india",
+        "india (remote)", "remote india",
         "karnataka", "maharashtra", "tamil nadu",
         "cochin", "coimbatore", "kochi", "kolkata", "indore",
         "jaipur", "ahmedabad", "chandigarh", "bhopal", "lucknow",
@@ -1992,6 +1996,36 @@ def main():
         print(job["cover_letter"])
         print("-"*40)
 
+KMEANS_THRESHOLD = 300  # target decision count before K-Means clustering is meaningful
+
+def get_decision_stats():
+    """
+    Reads job_decisions.json and returns a dict with:
+      - total: total decision count
+      - by_status: breakdown by decision status
+      - pct: progress toward KMEANS_THRESHOLD (capped at 100)
+    Returns None if file doesn't exist or can't be read.
+    """
+    decisions_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "job_decisions.json")
+    try:
+        if not os.path.exists(decisions_file):
+            return None
+        with open(decisions_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if not data:
+            return None
+        by_status = {}
+        for record in data.values():
+            status = record.get("status") or record.get("decision") or "unknown"
+            by_status[status] = by_status.get(status, 0) + 1
+        total = len(data)
+        pct = min(100, int((total / KMEANS_THRESHOLD) * 100))
+        return {"total": total, "by_status": by_status, "pct": pct}
+    except Exception as e:
+        print(f"   [WARN] Could not read decision stats: {e}")
+        return None
+
+
 def send_email(top_jobs, amazon_jobs=None):
     import smtplib
     from email.mime.multipart import MIMEMultipart
@@ -2083,7 +2117,56 @@ def send_email(top_jobs, amazon_jobs=None):
   <p style="margin:6px 0 4px;font-size:12px;color:#888;"><strong>Decision options:</strong> Applied &nbsp;|&nbsp; Bad Link &nbsp;|&nbsp; Too Senior &nbsp;|&nbsp; Salary Too Low &nbsp;|&nbsp; Not Interested &nbsp;|&nbsp; Already Seen &nbsp;|&nbsp; Search Page &nbsp;|&nbsp; Not in United States &nbsp;|&nbsp; Other</p>
   <p style="margin:4px 0 0;font-size:11px;color:#aaa;"><em>Unanswered jobs are treated as neutral — no action taken.</em></p>
 </div>
-<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
+<hr/>"""
+
+    # ── K-Means Decision Tracker ──────────────────────────────
+    stats = get_decision_stats()
+    if stats:
+        total   = stats["total"]
+        pct     = stats["pct"]
+        remaining = max(0, KMEANS_THRESHOLD - total)
+        # Build breakdown rows
+        status_rows = ""
+        status_labels = {
+            "applied":          ("✅", "#2e7d32"),
+            "skipped":          ("⏭️", "#555"),
+            "skip":             ("⏭️", "#555"),
+            "too_senior":       ("🔺", "#e65100"),
+            "too_junior":       ("🔻", "#1565c0"),
+            "location_mismatch":("📍", "#6a1b9a"),
+            "salary_too_low":   ("💰", "#795548"),
+            "broken_link":      ("🔗", "#b71c1c"),
+            "duplicate":        ("♻️", "#37474f"),
+            "not_interested":   ("👎", "#555"),
+            "needs_review":     ("🔍", "#f57f17"),
+            "other":            ("❓", "#888"),
+        }
+        for status, cnt in sorted(stats["by_status"].items(), key=lambda x: -x[1]):
+            icon, color = status_labels.get(status.lower(), ("•", "#555"))
+            status_rows += f"""<span style="display:inline-block;margin:2px 8px 2px 0;font-size:11px;color:{color};">
+                {icon} <strong>{status}</strong>: {cnt}</span>"""
+        # Progress bar color
+        bar_color = "#4caf50" if pct >= 75 else "#ff9800" if pct >= 40 else "#1F3864"
+        html += f"""
+<div style="background:#f8f9ff;border:1px solid #c5d0e8;border-radius:8px;padding:14px 18px;margin:16px 0 20px;">
+  <p style="margin:0 0 6px;font-weight:bold;color:#1a3a5c;font-size:13px;">📊 K-MEANS TRAINING PROGRESS</p>
+  <p style="margin:0 0 8px;font-size:12px;color:#444;">
+    <strong>{total}</strong> total decisions &nbsp;|&nbsp;
+    <strong>{remaining}</strong> remaining to K-Means ready &nbsp;|&nbsp;
+    <strong>{pct}%</strong> of {KMEANS_THRESHOLD} target
+  </p>
+  <div style="background:#e0e0e0;border-radius:4px;height:10px;width:100%;margin:6px 0 10px;">
+    <div style="background:{bar_color};width:{pct}%;height:10px;border-radius:4px;"></div>
+  </div>
+  <div style="margin-top:4px;">{status_rows}</div>
+</div>"""
+    else:
+        html += """
+<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:10px 16px;margin:16px 0 20px;">
+  <p style="margin:0;font-size:12px;color:#f57f17;">📊 K-Means tracker: no decisions recorded yet — start submitting decisions via the form above!</p>
+</div>"""
+
+    html += """<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
 
     # ── Save today's batch for overnight script ───────────────
     import hashlib
