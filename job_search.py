@@ -347,7 +347,7 @@ BLOCKED_JOB_SITES = [
     "veritosolutions.com", "verito",
     "remote-jobs-anywhere", "remotejobsanywhere",
     "calance.com",
-    
+
     "energyjobline.com", "energyjobline",
     "lockedinai.com", "lockedinai",
     # Social/forum sites — not job postings
@@ -393,6 +393,8 @@ BLOCKED_JOB_SITES = [
     "uk.talent.com",        # UK Talent.com
     "au.talent.com",        # Australia Talent.com
     "ca.talent.com",        # Canada Talent.com
+    "in.talent.com",        # India Talent.com
+    "us.talent.com",        # US Talent.com (aggregator - unreliable direct links)
     "justjoin.it",          # Polish job board
     "pracuj.pl",            # Polish job board
     "nofluffjobs.com",      # Polish/European job board
@@ -403,7 +405,7 @@ BLOCKED_JOB_SITES = [
     "careers-page.com",     # Unvetted overseas aggregator
     "community.n8n.io",     # n8n forum posts — not job listings
     "remotejobsfinder.co",  # Overseas listings slipping through (e.g. /mex/)
-  
+
     # Arc.dev — search results pages, not direct job postings
     "arc.dev/remote-jobs/", "arc.dev/remote-jobs",
 
@@ -423,6 +425,13 @@ BLOCKED_JOB_SITES = [
 
     # MeetFrank — European job board
     "meetfrank.com", "meetfrank",
+
+    # Aggregators slipping through noon run (2026-05-08)
+    "tallo.com", "tallo",
+    "virtualvocations.com", "virtualvocations",
+    "theladders.com", "theladders",
+    "edtech.com/jobs", "edtech.com",
+    "pairedrecruiting.com", "pairedrecruiting",
 ]
 
 def is_blocked_site(url):
@@ -502,6 +511,9 @@ def is_us_remote(title, description, location=""):
     check = (title + " " + description).lower()
     # Strong indicators - if these appear anywhere, reject
     strong_indicators = [
+        # Multi-country job titles — not US only (added 2026-05-08)
+        "us/uk", "uk/ca", "us/ca", "us/uk/ca", "us/uk/ca/de",
+        "remote, us/", "remote (us/", "(us/uk)", "(us/ca)",
         # India
         "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
         "chennai", "pune", "kolkata", "noida", "gurugram", "gurgaon",
