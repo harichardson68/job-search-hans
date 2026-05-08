@@ -403,6 +403,26 @@ BLOCKED_JOB_SITES = [
     "careers-page.com",     # Unvetted overseas aggregator
     "community.n8n.io",     # n8n forum posts — not job listings
     "remotejobsfinder.co",  # Overseas listings slipping through (e.g. /mex/)
+  
+    # Arc.dev — search results pages, not direct job postings
+    "arc.dev/remote-jobs/", "arc.dev/remote-jobs",
+
+    # BuiltIn regional subdomains (builtin.com + builtinkc.com already blocked)
+    "builtincolorado.com", "builtinnyc.com", "builtinchicago.com",
+    "builtinboston.com", "builtinaustin.com", "builtinla.com",
+    "builtinseattle.com", "builtinsf.com",
+
+    # Indeed international subdomains
+    "hk.indeed.com",    # Hong Kong
+    "mx.indeed.com",    # Mexico
+    "br.indeed.com",    # Brazil
+    "fr.indeed.com",    # France
+    "de.indeed.com",    # Germany
+    "sg.indeed.com",    # Singapore
+    "ph.indeed.com",    # Philippines
+
+    # MeetFrank — European job board
+    "meetfrank.com", "meetfrank",
 ]
 
 def is_blocked_site(url):
