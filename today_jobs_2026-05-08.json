@@ -2,220 +2,165 @@
   "date": "2026-05-08",
   "jobs": [
     {
-      "job_id": "88942a5c8b",
+      "job_id": "e3621b23f3",
       "number": 1,
       "number_display": "1",
-      "title": "Sr Performance Engineer - Egnyte Careers - Jobvite",
+      "title": "Performance Test Engineer - Remote | Jobs & Internships - Tallo",
       "company": "N/A",
       "track": "Performance Engineering",
-      "score": 120,
-      "url": "https://jobs.jobvite.com/egnyte/job/oIh2zfwk",
+      "score": 50,
+      "url": "https://tallo.com/talent/job/technology/software-qa-engineer-or-tester/remote/performance-test-engineer-re-8416eb0b",
       "matched_keywords": [
-        "performance engineer",
-        "loadrunner",
-        "jmeter"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "54196adf1c",
-      "number": 2,
-      "number_display": "2",
-      "title": "AI ML Engineer with Agentic AI Engineer - Emergere Technologies",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 103,
-      "url": "https://www.dice.com/job-detail/01a7288b-809d-4c32-93e7-2970ff0d4f04",
-      "matched_keywords": [
-        "ml engineer",
-        "ai engineer",
-        "prompt engineer",
-        "AI-title:ai engineer",
-        "agentic",
-        "agentic ai"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "87f5dff4a4",
-      "number": 3,
-      "number_display": "3",
-      "title": "AI ML Engineer - inPerson Interview - CTH - Keylent - Reading, PA, US",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 89,
-      "url": "https://www.dice.com/job-detail/b5f8a910-4a8d-4637-b92c-340a0fbb7189",
-      "matched_keywords": [
-        "ml engineer",
-        "python",
-        "openai",
-        "openai api",
-        "prompt engineer",
-        "llm",
-        "AI-title:ml engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "6279fa72ba",
-      "number": 4,
-      "number_display": "4",
-      "title": "SAP Performance Testing Engineer with Tricentis and Load Runner ...",
-      "company": "N/A",
-      "track": "Performance Engineering",
-      "score": 85,
-      "url": "https://www.dice.com/job-detail/077c75d2-5a16-4836-a151-f63e774ee9ee",
-      "matched_keywords": [
-        "performance testing",
         "loadrunner"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "033b851697",
+      "job_id": "afed301393",
+      "number": 2,
+      "number_display": "2",
+      "title": "Senior Performance Test Engineer (Full time, Remote) - Talent.com",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 50,
+      "url": "https://in.talent.com/view?id=610466740298777094",
+      "matched_keywords": [
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "501b95f1a4",
+      "number": 3,
+      "number_display": "3",
+      "title": "Prompt Engineer_ Remote - Arbor Tek Systems - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/74779df7-b9a0-4cf1-9b68-16526e8fcbaa",
+      "matched_keywords": [
+        "AI-title:prompt engineer",
+        "prompt engineer",
+        "nlp"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "6658c755b0",
+      "number": 4,
+      "number_display": "4",
+      "title": "Python MLOps Engineer - Eliassen Group - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/b92677b0-4a31-48fe-ae87-b020f537ba34",
+      "matched_keywords": [
+        "AI-title:mlops",
+        "mlops engineer",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "4cf537046d",
       "number": 5,
       "number_display": "5",
-      "title": "Remote Prompt Engineering Jobs (May 2026) - Arc.dev",
+      "title": "MLOps Engineer \u2014 AI Training (Remote, US/UK/CA/DE/AU) at IXO",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 83,
-      "url": "https://arc.dev/remote-jobs/prompt-engineering",
+      "score": 43,
+      "url": "https://wellfound.com/jobs/4174607-mlops-engineer-ai-training-remote-us-uk-ca-de-au",
       "matched_keywords": [
-        "prompt engineer",
-        "AI-title:prompt engineer",
-        "observability",
-        "generative ai",
-        "prompt engineering"
+        "AI-title:mlops",
+        "mlops engineer",
+        "ci/cd"
       ],
-      "source": "Google Jobs",
+      "source": "Wellfound",
       "is_amazon": false
     },
     {
-      "job_id": "007e0314b3",
+      "job_id": "f05c0a1571",
       "number": 6,
       "number_display": "6",
-      "title": "Agentic AI Engineer (Remote, 6-Month Contract) - Built In Colorado",
+      "title": "AI Automation Engineer For a USA Client (Remote) - Paired",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 83,
-      "url": "https://www.builtincolorado.com/job/agentic-ai-engineer-remote-6-month-contract/8816631",
+      "score": 40,
+      "url": "https://apply.workable.com/pairedrecruiting/j/CCF67B0EAE/",
       "matched_keywords": [
-        "ai engineer",
-        "ai workflow",
-        "AI-title:ai engineer",
-        "agentic",
-        "agentic ai"
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "beb1694fa3",
+      "job_id": "286b979342",
       "number": 7,
       "number_display": "7",
-      "title": "Generative AI Engineer - BearingPoint - Hybrid Remote - MeetFrank",
+      "title": "AI Automation Engineer - Global Operations - Edtech.com",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 80,
-      "url": "https://meetfrank.com/jobs/bearingpoint/generative-ai-engineer",
+      "score": 40,
+      "url": "https://www.edtech.com/jobs/ai-automation-engineer-global-operations-4705",
       "matched_keywords": [
-        "generative ai engineer",
-        "AI-title:generative ai engineer",
-        "generative ai",
-        "ai engineer"
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "8273e534c0",
+      "job_id": "0b9ad52156",
       "number": 8,
       "number_display": "8",
-      "title": "Remote: Agentic AI Engineer - J-RAM IT Consulting Inc. - Dice",
+      "title": "AI Automation Engineer - Virtual Vocations",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 63,
-      "url": "https://www.dice.com/job-detail/ec8c9b84-dd4e-407e-a779-d339b8207af3",
+      "score": 40,
+      "url": "https://www.virtualvocations.com/job/ai-automation-engineer-1033568.html",
       "matched_keywords": [
-        "AI-title:ai engineer",
-        "agentic",
-        "ai engineer",
-        "agentic ai"
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "36b6224a72",
+      "job_id": "eb22216a49",
       "number": 9,
       "number_display": "9",
-      "title": "AI ENGINEER \u2014 AGENTIC AI PLATFORM at Awear.ai - Wellfound",
+      "title": "AI Integration Engineer - Real Chemistry - Remote - Ladders",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 63,
-      "url": "https://wellfound.com/jobs/4185322-ai-engineer-agentic-ai-platform",
+      "score": 40,
+      "url": "https://www.theladders.com/job/ai-integration-engineer-realchemistry-virtual-travel_86814131",
       "matched_keywords": [
-        "AI-title:ai engineer",
-        "agentic",
-        "ai engineer",
-        "agentic ai"
+        "AI-title:ai integration engineer",
+        "ai integration engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "64fb2c2c0f",
+      "job_id": "08bb326d79",
       "number": 10,
       "number_display": "10",
-      "title": "Binance Accelerator Program - Applied AI Agent Developer - Remote",
+      "title": "Data & AI Integration Engineer - Mid-Level - Careers at Peraton",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 60,
-      "url": "https://hk.indeed.com/viewjob?jk=e9b3a4f4dc094c56",
+      "score": 40,
+      "url": "https://www.careers.peraton.com/jobs/data-ai-integration-engineer-mid-level-reston-virginia-166005-jobs--information-technology--",
       "matched_keywords": [
-        "AI-title:ai agent",
-        "ai agent",
-        "ai agent developer"
+        "AI-title:ai integration engineer",
+        "ai integration engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
-    },
-    {
-      "job_id": "2eb5ebfaf5",
-      "number": "A1",
-      "number_display": "A1",
-      "title": "Strategic Agentic Modernisation Consultant, AWS Professional ...",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 26,
-      "url": "https://amazon.jobs/en/jobs/10409788/strategic-agentic-modernisation-consultant-aws-professional-services",
-      "matched_keywords": [
-        "agentic",
-        "aws",
-        "agentic ai"
-      ],
-      "source": "Amazon Jobs",
-      "is_amazon": true
-    },
-    {
-      "job_id": "cd8b0788b7",
-      "number": "A2",
-      "number_display": "A2",
-      "title": "Business Analyst I , Agentic Solutions, Relay Product and Tech",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 23,
-      "url": "https://www.amazon.jobs/en/jobs/10412096/business-analyst-i-agentic-solutions-relay-product-and-tech",
-      "matched_keywords": [
-        "agentic",
-        "agentic ai"
-      ],
-      "source": "Amazon Jobs",
-      "is_amazon": true
     }
   ]
 }
