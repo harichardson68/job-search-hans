@@ -292,7 +292,7 @@ if not git_pull_or_abort():
 # 
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
 
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
