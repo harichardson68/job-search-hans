@@ -1,0 +1,186 @@
+{
+  "date": "2026-05-09",
+  "jobs": [
+    {
+      "job_id": "b5ea96a995",
+      "number": 1,
+      "number_display": "1",
+      "title": "Performance Engineer in Chicago, Illinois, USA | Tester at TEKsystems",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 155,
+      "url": "https://careers.teksystems.com/us/en/job/JP-006013157/Performance-Engineer",
+      "matched_keywords": [
+        "blazemeter",
+        "loadrunner",
+        "neoload",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "85140f84e2",
+      "number": 2,
+      "number_display": "2",
+      "title": "SAP Performance Testing Engineer with Tricentis and Load Runner ...",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.linkedin.com/jobs/view/sap-performance-testing-engineer-with-tricentis-and-load-runner-experience-remote-at-jobs-via-dice-4410419349",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "b2fe450282",
+      "number": 3,
+      "number_display": "3",
+      "title": "AI Developer/Prompt Engineer @ Levio - Teal",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.tealhq.com/job/ai-developer-prompt-engineer_7ea1ab75bab735d23b60a25796152ba639727",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai developer",
+        "generative ai",
+        "AI-title:prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "a237d54adb",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI Automation Engineer For a USA Client (Remote) | Paired",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.workable.com/view/23o8MZCvfWi8BZw7QZZ8pK/ai-automation-engineer-for-a-usa-client-(remote)-in-colombia-at-paired",
+      "matched_keywords": [
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "94e08d65d6",
+      "number": 5,
+      "number_display": "5",
+      "title": "AI Integration Engineer \u2014 Wire Claude/GPT into our customer ops ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Integration-Engineer-Wire-Claude-GPT-into-our-customer-ops-stack-Twilio-Postgres-Make-com_~022052726225117558751/",
+      "matched_keywords": [
+        "AI-title:ai integration engineer",
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "23bc5cedd5",
+      "number": 6,
+      "number_display": "6",
+      "title": "Hardcore AI Engineer (All Levels) @ DualEntry - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/dualentry/6813c3cb-9639-4d9b-8eb0-cfff83f5e3fa",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "93b862d2c9",
+      "number": 7,
+      "number_display": "7",
+      "title": "GTM AI Engineer @ Superhuman - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/Superhuman%20Platform%20Inc/430fbbae-edd8-4d58-b27b-1ab9eecca3c0",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "1e9733889a",
+      "number": 8,
+      "number_display": "8",
+      "title": "Full Stack AI Engineer (Front-End Leaning) @ Inception Point AI - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/Inception%20Point%20AI/07646580-2f05-42d8-86f4-155d7a496474",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "428e876428",
+      "number": 9,
+      "number_display": "9",
+      "title": "Full-Stack AI Engineer @ Hire Hangar - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/hirehangar/fc79996e-77c4-47b5-a235-7d33e925678b",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "7aa6071782",
+      "number": 10,
+      "number_display": "10",
+      "title": "Junior AI Engineer @ Maigrate - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/maigrate/8bfd51bb-0cef-4fc3-9b9d-5d30bce8d813/application",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "8f140470f6",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "SDE II, AI Automation, Prime Video - Job ID: 10415077 | Amazon.jobs",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10415077/sde-ii-ai-automation-prime-video",
+      "matched_keywords": [
+        "AI-title:ai automation",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
