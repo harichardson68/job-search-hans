@@ -1,0 +1,72 @@
+{
+  "date": "2026-05-10",
+  "jobs": [
+    {
+      "job_id": "2d8b83d5a3",
+      "number": 1,
+      "number_display": "1",
+      "title": "Generative AI Engineer - Remote - Indeed.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.indeed.com/viewjob?jk=402a8cbe67e1b3aa",
+      "matched_keywords": [
+        "AI-title:generative ai engineer",
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "5b14f4916e",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Engineer - 360Learning - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://jobs.lever.co/360learning/705f8577-c37e-48a9-a4c0-8277164bc0c0",
+      "matched_keywords": [
+        "ai agent",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "ae63c0c745",
+      "number": 3,
+      "number_display": "3",
+      "title": "ML/MLOps Engineer - Peterson Technology Partners - Remote - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/131e8571-b482-46fb-a6e6-547478cdfbb3",
+      "matched_keywords": [
+        "mlops engineer",
+        "AI-title:mlops"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "2e354f62a8",
+      "number": 4,
+      "number_display": "4",
+      "title": "Founding ML Engineer at Stealth AI Start-up",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wellfound.com/jobs/4185292-founding-ml-engineer",
+      "matched_keywords": [
+        "AI-title:ml engineer",
+        "ml engineer"
+      ],
+      "source": "Wellfound",
+      "is_amazon": false
+    }
+  ]
+}
