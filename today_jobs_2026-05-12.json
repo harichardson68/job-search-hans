@@ -1,0 +1,130 @@
+{
+  "date": "2026-05-12",
+  "jobs": [
+    {
+      "job_id": "16d80010c4",
+      "number": 1,
+      "number_display": "1",
+      "title": "AI Engineer - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://clarioclinical.wd1.myworkdayjobs.com/en-US/clarioclinical_careers/job/AI-Engineer_R17443",
+      "matched_keywords": [
+        "llm",
+        "ai agent",
+        "AI-title:ai engineer",
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "9bee8dd487",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Engineer III in Remote, Texas | Careers at R-TX - RealPage, Inc.",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://careers-international-realpagepms.icims.com/jobs/12926/ai-engineer-iii/job",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "generative ai",
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "263b83f475",
+      "number": 3,
+      "number_display": "3",
+      "title": "Generative AI Engineer - NextGen Federal Systems - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://jobs.lever.co/nextgenfed/c14f66a4-f978-40c2-a3b7-a69669722437/apply",
+      "matched_keywords": [
+        "AI-title:generative ai engineer",
+        "generative ai engineer",
+        "generative ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "c85286e8cd",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI Engineer - Rockwell Automation - Remote in Milwaukee, WI, US",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/e97a2c3c-69be-4bfd-b110-dc732a5946e6",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "668b65127d",
+      "number": 5,
+      "number_display": "5",
+      "title": "AI Engineer - Vaco by Highspring - Garden City, GA, US | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/7c4f7e9b-f845-420c-b179-42ae2a029173",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "mlops engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "56c7bad6da",
+      "number": 6,
+      "number_display": "6",
+      "title": "AI/ML Solutions Architect (Agentic Systems) - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://guidehouse.wd1.myworkdayjobs.com/en-US/External/job/AI-ML-Solutions-Architect--Agentic-Systems-_37697",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "2f6bf7734d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "SDE II, AI Automation, Prime Video - Job ID: 10415075 | Amazon.jobs",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10415075/sde-ii-ai-automation-prime-video",
+      "matched_keywords": [
+        "AI-title:ai automation",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
