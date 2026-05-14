@@ -9,12 +9,16 @@ reviewed yet, so we can pattern-match them into job_search.py improvements.
 
 Workflow per run:
   1. git pull (abort + email + log on failure)
-  2. Read job_decisions.json across all dates
-  3. Filter entries: decision == "other" AND reviewed != true
-  4. Map free-text reasons to categories via REASON_CATEGORY_MAP
-  5. Send HTML digest grouped by category
-  6. Mark each surfaced entry with reviewed: true + reviewed_date
-  7. git add/commit/push the updated job_decisions.json
+  2. NEW: Sync Google Form responses → job_decisions.json
+       - Reads all rows from the Google Sheet (Form responses)
+       - Matches each row to archived today_jobs_YYYY-MM-DD.json by date + job number
+       - Writes any missing decisions into job_decisions.json
+  3. Read job_decisions.json across all dates
+  4. Filter entries: decision == "other" AND reviewed != true
+  5. Map free-text reasons to categories via REASON_CATEGORY_MAP
+  6. Send HTML digest grouped by category
+  7. Mark each surfaced entry with reviewed: true + reviewed_date
+  8. git add/commit/push the updated job_decisions.json
 
 Logging:
   - review_decisions_run.log   (overwrite each run, full per-run trace)
@@ -28,6 +32,7 @@ import json
 import smtplib
 import subprocess
 import traceback
+import hashlib
 from datetime import datetime, date
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -49,6 +54,79 @@ ERROR_LOG_FILE     = os.path.join(SCRIPT_DIR, "jobsearch_errors.log")
 
 TODAY              = date.today().isoformat()
 SCRIPT_NAME        = "review_decisions.py"
+
+# ─── GOOGLE SHEETS CONFIG ────────────────────────────────────
+# Path to your service account JSON key file (place in same folder as this script)
+SERVICE_ACCOUNT_FILE = os.path.join(SCRIPT_DIR, "google_credentials.json")
+
+# The Google Sheet ID from your Form responses spreadsheet URL
+SHEET_ID = "1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE"
+
+# Column names in the Google Sheet (must match exactly)
+COL_TIMESTAMP   = "Timestamp"
+COL_JOB_NUMBER  = "Question 1: Job Number"
+COL_DECISION    = "Decision"
+COL_REASON      = "Reason for Not Applying (Other)"
+
+# ─── DECISION VALUE NORMALISATION MAP ───────────────────────
+# Maps form display values → internal decision codes used in job_decisions.json
+DECISION_NORM = {
+    "applied":                  "applied",
+    "too senior":               "too_senior",
+    "too junior":               "too_junior",
+    "not in united states":     "not_in_us",
+    "not in us":                "not_in_us",
+    "onsite / not remote":      "onsite",
+    "onsite":                   "onsite",
+    "already seen / duplicate": "already_seen",
+    "already seen":             "already_seen",
+    "duplicate":                "already_seen",
+    "search page listing":      "search_page",
+    "search page":              "search_page",
+    "bad link":                 "bad_link",
+    "not interested":           "not_interested",
+    "no response":              "no_response",
+    "other":                    "other",
+}
+
+
+def normalise_decision(raw):
+    """Convert a form display value to the internal decision code."""
+    if not raw:
+        return "other"
+    key = str(raw).strip().lower()
+    # Try exact match first
+    if key in DECISION_NORM:
+        return DECISION_NORM[key]
+    # Try prefix/contains match
+    for form_val, code in DECISION_NORM.items():
+        if key.startswith(form_val) or form_val in key:
+            return code
+    return "other"
+
+
+def normalise_job_number(raw):
+    """
+    Normalise job number from form.
+    Returns an int for regular jobs (1-10) or a string like 'A1' for Amazon.
+    Returns None if unparseable.
+    """
+    if not raw:
+        return None
+    s = str(raw).strip().upper()
+    # Amazon jobs: A1, A2, A3 ...
+    if s.startswith("A"):
+        try:
+            int(s[1:])   # validate the numeric part
+            return s
+        except ValueError:
+            return None
+    # Regular jobs
+    try:
+        return int(s)
+    except ValueError:
+        return None
+
 
 # ─── LOGGING SETUP (same DualLogger pattern as job_search.py) ─
 class DualLogger:
@@ -91,16 +169,16 @@ print(f"{'='*60}\n")
 
 
 # ─── REASON → CATEGORY MAPPING ───────────────────────────────
-# Seeded from 4/23/2026 decision data.
-# Order matters: first match wins. Add new patterns at the top
-# as they emerge from review cycles.
 REASON_CATEGORY_MAP = [
-    ("clearance",        "clearance"),    # "Secret clearance", "TS clearance", etc.
+    ("clearance",        "clearance"),
     ("domain suspended", "bad_link"),
     ("job not found",    "bad_link"),
     ("404",              "bad_link"),
     ("dead link",        "bad_link"),
     ("page not found",   "bad_link"),
+    ("no longer",        "bad_link"),
+    ("not available",    "bad_link"),
+    ("does not exist",   "bad_link"),
     ("not remote",       "onsite"),
     ("on site",          "onsite"),
     ("on-site",          "onsite"),
@@ -113,19 +191,27 @@ REASON_CATEGORY_MAP = [
     ("too senior",       "too_senior"),
     ("salary",           "salary"),
     ("pay too low",      "salary"),
+    ("part time",        "part_time"),
+    ("internship",       "internship"),
+    ("pay site",         "bad_link"),
+    ("upwork",           "bad_link"),
+    ("sketchy",          "sketchy"),
 ]
 
 # Display config for each category in the email
 CATEGORY_CONFIG = {
-    "other":        {"label": "Other / Unclassified",      "color": "#6c5ce7"},
-    "bad_link":     {"label": "Dead Links / Bad URLs",     "color": "#c0392b"},
-    "clearance":    {"label": "Clearance Required",        "color": "#d35400"},
-    "onsite":       {"label": "Onsite / Not Remote",       "color": "#e17055"},
-    "not_in_us":    {"label": "Not in United States",      "color": "#0984e3"},
+    "other":        {"label": "Other / Unclassified",       "color": "#6c5ce7"},
+    "bad_link":     {"label": "Dead Links / Bad URLs",      "color": "#c0392b"},
+    "clearance":    {"label": "Clearance Required",         "color": "#d35400"},
+    "onsite":       {"label": "Onsite / Not Remote",        "color": "#e17055"},
+    "not_in_us":    {"label": "Not in United States",       "color": "#0984e3"},
     "jmeter_only":  {"label": "JMeter-Only (No LoadRunner)","color": "#00b894"},
-    "too_senior":   {"label": "Too Senior",                "color": "#fdcb6e"},
-    "salary":       {"label": "Salary Too Low",            "color": "#a29bfe"},
-    "unknown":      {"label": "Uncategorized",             "color": "#636e72"},
+    "too_senior":   {"label": "Too Senior",                 "color": "#fdcb6e"},
+    "salary":       {"label": "Salary Too Low",             "color": "#a29bfe"},
+    "part_time":    {"label": "Part Time / Low Pay",        "color": "#fd79a8"},
+    "internship":   {"label": "Internship",                 "color": "#55efc4"},
+    "sketchy":      {"label": "Sketchy / Low Quality",      "color": "#b2bec3"},
+    "unknown":      {"label": "Uncategorized",              "color": "#636e72"},
 }
 
 
@@ -142,11 +228,6 @@ def categorize_reason(reason_text):
 
 # ─── GIT OPERATIONS ──────────────────────────────────────────
 def git_pull_or_abort():
-    """
-    Pull latest from GitHub before running. If pull fails, send an alert
-    email and abort the run — we don't want to operate on stale code or
-    create divergent state.
-    """
     print("[GIT] Pulling latest from GitHub...")
     try:
         result = subprocess.run(
@@ -190,6 +271,256 @@ def git_commit_push():
         log_error(msg)
 
 
+# ─── GOOGLE SHEETS SYNC ──────────────────────────────────────
+def _job_id_from_parts(title, company, url):
+    """Reproduce the same MD5 job_id used in job_search.py."""
+    raw = f"{title}{company}{url}"
+    return hashlib.md5(raw.encode()).hexdigest()[:10]
+
+
+def load_archived_jobs():
+    """
+    Load all today_jobs_YYYY-MM-DD.json archive files from the script folder.
+    Returns a dict keyed by (date_str, job_number) → job metadata dict.
+    job_number is an int for regular jobs or a string like 'A1' for Amazon.
+    """
+    lookup = {}
+    for fname in os.listdir(SCRIPT_DIR):
+        if not (fname.startswith("today_jobs_") and fname.endswith(".json")):
+            continue
+        # Extract date from filename: today_jobs_2026-04-23.json
+        date_part = fname.replace("today_jobs_", "").replace(".json", "")
+        fpath = os.path.join(SCRIPT_DIR, fname)
+        try:
+            with open(fpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for job in data.get("jobs", []):
+                num_raw = job.get("number")
+                # number may be stored as int (1) or string ('A1')
+                if isinstance(num_raw, int):
+                    key = (date_part, num_raw)
+                elif isinstance(num_raw, str) and num_raw.upper().startswith("A"):
+                    key = (date_part, num_raw.upper())
+                else:
+                    # Try coercing to int
+                    try:
+                        key = (date_part, int(num_raw))
+                    except (TypeError, ValueError):
+                        continue
+                lookup[key] = job
+        except Exception as e:
+            print(f"   [WARN] Could not load {fname}: {e}")
+    print(f"[SYNC] Loaded {len(lookup)} archived job slots from today_jobs_*.json files")
+    return lookup
+
+
+def fetch_form_responses():
+    """
+    Pull all rows from the Google Form responses sheet via the Sheets API.
+    Returns a list of dicts with keys: timestamp, job_number, decision, reason, date_str
+    """
+    try:
+        from google.oauth2 import service_account
+        from googleapiclient.discovery import build
+    except ImportError:
+        print("[SYNC][ERROR] Google API libraries not installed.")
+        print("   Run: pip install google-auth google-auth-httplib2 google-api-python-client")
+        return []
+
+    if not os.path.exists(SERVICE_ACCOUNT_FILE):
+        print(f"[SYNC][ERROR] Service account file not found: {SERVICE_ACCOUNT_FILE}")
+        print("   Place google_credentials.json in the same folder as this script.")
+        return []
+
+    try:
+        creds = service_account.Credentials.from_service_account_file(
+            SERVICE_ACCOUNT_FILE,
+            scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"]
+        )
+        service = build("sheets", "v4", credentials=creds)
+        sheet   = service.spreadsheets()
+
+        # Read everything — let the API return header + all rows
+        result = sheet.values().get(
+            spreadsheetId=SHEET_ID,
+            range="Form Responses 1"   # default sheet name for Form responses
+        ).execute()
+
+        rows = result.get("values", [])
+        if not rows:
+            print("[SYNC] No rows returned from Google Sheet.")
+            return []
+
+        headers = rows[0]
+        print(f"[SYNC] Sheet headers: {headers}")
+        print(f"[SYNC] {len(rows) - 1} form response rows found")
+
+        # Locate column indices (case-insensitive)
+        def col_idx(name):
+            for i, h in enumerate(headers):
+                if h.strip().lower() == name.strip().lower():
+                    return i
+            return None
+
+        idx_ts       = col_idx(COL_TIMESTAMP)
+        idx_jobnum   = col_idx(COL_JOB_NUMBER)
+        idx_decision = col_idx(COL_DECISION)
+        idx_reason   = col_idx(COL_REASON)
+
+        if idx_ts is None or idx_jobnum is None or idx_decision is None:
+            print(f"[SYNC][ERROR] Could not find required columns in sheet.")
+            print(f"   Expected: '{COL_TIMESTAMP}', '{COL_JOB_NUMBER}', '{COL_DECISION}'")
+            print(f"   Found: {headers}")
+            return []
+
+        responses = []
+        for row in rows[1:]:
+            def safe_get(idx):
+                if idx is None or idx >= len(row):
+                    return ""
+                return str(row[idx]).strip()
+
+            ts_raw   = safe_get(idx_ts)
+            job_raw  = safe_get(idx_jobnum)
+            dec_raw  = safe_get(idx_decision)
+            rea_raw  = safe_get(idx_reason) if idx_reason is not None else ""
+
+            if not ts_raw or not job_raw or not dec_raw:
+                continue
+
+            # Parse date from timestamp  "4/23/2026 16:54:17"
+            try:
+                ts_dt    = datetime.strptime(ts_raw, "%m/%d/%Y %H:%M:%S")
+                date_str = ts_dt.strftime("%Y-%m-%d")
+            except ValueError:
+                try:
+                    # Fallback: try other common formats
+                    ts_dt    = datetime.strptime(ts_raw[:10], "%Y-%m-%d")
+                    date_str = ts_raw[:10]
+                except ValueError:
+                    print(f"   [WARN] Could not parse timestamp: {ts_raw!r} — skipping row")
+                    continue
+
+            job_number = normalise_job_number(job_raw)
+            if job_number is None:
+                print(f"   [WARN] Could not parse job number: {job_raw!r} — skipping row")
+                continue
+
+            responses.append({
+                "timestamp": ts_raw,
+                "date_str":  date_str,
+                "job_number": job_number,
+                "decision":  dec_raw,
+                "reason":    rea_raw,
+            })
+
+        print(f"[SYNC] Parsed {len(responses)} valid form responses")
+        return responses
+
+    except Exception as e:
+        msg = f"Google Sheets API error: {e}"
+        print(f"[SYNC][ERROR] {msg}")
+        log_error(msg)
+        return []
+
+
+def sync_form_responses_to_decisions(decisions_data):
+    """
+    Main sync function. Reads Google Form responses, matches each to an
+    archived job, and writes missing records into decisions_data in place.
+
+    Returns (decisions_data, new_count, skipped_count)
+    """
+    print("\n[SYNC] Starting Google Form → job_decisions.json sync...")
+
+    archived_jobs = load_archived_jobs()
+    responses     = fetch_form_responses()
+
+    if not responses:
+        print("[SYNC] No responses to sync — skipping.")
+        return decisions_data, 0, 0
+
+    # Build a set of existing job_ids so we never double-write
+    existing_ids = set()
+    for date_key, day_items in decisions_data.items():
+        if isinstance(day_items, list):
+            for item in day_items:
+                jid = item.get("job_id")
+                if jid:
+                    existing_ids.add(jid)
+
+    new_count     = 0
+    skipped_count = 0
+    unmatched     = 0
+
+    for resp in responses:
+        date_str   = resp["date_str"]
+        job_number = resp["job_number"]
+        key        = (date_str, job_number)
+
+        # Look up the archived job metadata
+        job_meta = archived_jobs.get(key)
+
+        if job_meta is None:
+            # No archived file for this date/number — can't enrich metadata
+            unmatched += 1
+            print(f"   [WARN] No archived job for {date_str} #{job_number} — skipping")
+            continue
+
+        job_id = job_meta.get("job_id") or _job_id_from_parts(
+            job_meta.get("title", ""),
+            job_meta.get("company", ""),
+            job_meta.get("url", ""),
+        )
+
+        # Skip if already in decisions
+        if job_id in existing_ids:
+            skipped_count += 1
+            continue
+
+        # Build the decision record
+        decision_code = normalise_decision(resp["decision"])
+        record = {
+            "job_id":           job_id,
+            "number":           job_meta.get("number"),
+            "title":            job_meta.get("title", ""),
+            "company":          job_meta.get("company", ""),
+            "track":            job_meta.get("track", ""),
+            "score":            job_meta.get("score", 0),
+            "url":              job_meta.get("url", ""),
+            "source":           job_meta.get("source", ""),
+            "matched_keywords": job_meta.get("matched_keywords", []),
+            "decision":         decision_code,
+            "reason":           resp["reason"] or None,
+            "raw_decision":     resp["decision"],
+            "timestamp":        resp["timestamp"],
+            "reviewed":         False,
+            "reviewed_date":    None,
+        }
+
+        # Insert into decisions_data under the correct date key
+        decisions_data.setdefault(date_str, [])
+        decisions_data[date_str].append(record)
+        existing_ids.add(job_id)
+        new_count += 1
+
+    print(f"[SYNC] Complete — {new_count} new records written, "
+          f"{skipped_count} already present, {unmatched} unmatched (no archive file)")
+
+    # Save immediately after sync
+    if new_count > 0:
+        try:
+            with open(DECISIONS_FILE, "w", encoding="utf-8") as f:
+                json.dump(decisions_data, f, indent=2)
+            print(f"[SYNC] Saved updated job_decisions.json ({new_count} new records)")
+        except Exception as e:
+            msg = f"Could not save job_decisions.json after sync: {e}"
+            print(f"[SYNC][ERROR] {msg}")
+            log_error(msg)
+
+    return decisions_data, new_count, skipped_count
+
+
 # ─── DATA LOAD / FILTER / SAVE ───────────────────────────────
 def load_decisions():
     """Load the full job_decisions.json file."""
@@ -210,8 +541,6 @@ def collect_pending_items(decisions_data):
     """
     Walk the decisions file and return a flat list of (date_key, item_index, item)
     for entries that are decision=='other' AND not yet reviewed.
-
-    Returns the index so we can write reviewed:true back into the right slot.
     """
     pending = []
     for date_key, day_items in decisions_data.items():
@@ -224,9 +553,8 @@ def collect_pending_items(decisions_data):
                 continue
             if item.get("reviewed") is True:
                 continue
-            # Tag with date so the email shows when it was decided
             enriched = dict(item)
-            enriched["_date"] = date_key
+            enriched["_date"]     = date_key
             enriched["_category"] = categorize_reason(item.get("reason"))
             pending.append((date_key, idx, enriched))
     return pending
@@ -266,7 +594,7 @@ def mark_items_reviewed(decisions_data, pending_items):
 
 
 # ─── EMAIL: SUCCESS DIGEST ───────────────────────────────────
-def build_email(pending_items, groups):
+def build_email(pending_items, groups, sync_new=0):
     """Build the HTML review digest."""
     total = len(pending_items)
 
@@ -281,6 +609,22 @@ def build_email(pending_items, groups):
     These are the decisions where you marked "Other" with a free-text reason.
     Use the patterns here to drive job_search.py filter improvements with Claude.
     <strong>After this email is sent, each entry below will be flagged reviewed:true in job_decisions.json (data is preserved for K-Means).</strong>
+  </p>
+</div>"""
+
+    # Sync summary banner
+    if sync_new > 0:
+        html += f"""
+<div style="background:#e8f5e9;border:1px solid #a5d6a7;border-radius:8px;padding:12px 16px;margin-bottom:16px;">
+  <p style="margin:0;font-size:13px;color:#1b5e20;">
+    ✅ <strong>Google Form Sync:</strong> {sync_new} new decision(s) pulled from your form and added to job_decisions.json this run.
+  </p>
+</div>"""
+    else:
+        html += """
+<div style="background:#f8f9fa;border:1px solid #dee2e6;border-radius:8px;padding:10px 16px;margin-bottom:16px;">
+  <p style="margin:0;font-size:12px;color:#6c757d;">
+    ℹ️ Google Form Sync: No new decisions to import this run (all already present).
   </p>
 </div>"""
 
@@ -356,10 +700,12 @@ def build_email(pending_items, groups):
     return html
 
 
-def send_review_email(html, total):
+def send_review_email(html, total, sync_new=0):
     """Send the digest email with full job_decisions.json attached as backup."""
-    if total == 0:
+    if total == 0 and sync_new == 0:
         subject = f"Decision Review — Nothing new to review — {TODAY}"
+    elif total == 0:
+        subject = f"Decision Review — {sync_new} new decision(s) synced, nothing to review — {TODAY}"
     else:
         subject = f"Decision Review — {total} 'Other' item(s) to review — {TODAY}"
 
@@ -427,7 +773,6 @@ def send_failure_alert(reason_short, error_detail):
             server.sendmail(GMAIL_ADDRESS, EMAIL_TO, msg.as_string())
         print(f"[OK] Failure alert email sent to {EMAIL_TO}")
     except Exception as e:
-        # If even the alert email fails, at least log it
         log_error(f"Could not send failure alert email: {e}")
         print(f"[ERROR] Could not send failure alert: {e}")
 
@@ -439,22 +784,33 @@ def main():
         print("[ABORT] Run halted due to git pull failure.")
         return
 
-    # 2. Load and filter
+    # 2. Load existing decisions
     decisions_data = load_decisions()
+
+    # 3. Sync Google Form responses → job_decisions.json
+    decisions_data, sync_new, sync_skipped = sync_form_responses_to_decisions(decisions_data)
+    print(f"[SYNC] {sync_new} new decisions added from Google Form, "
+          f"{sync_skipped} already present")
+
+    # 4. Filter for unreviewed "other" items
     pending = collect_pending_items(decisions_data)
     print(f"[OK] Found {len(pending)} unreviewed 'Other' decision(s) in job_decisions.json")
 
-    # 3. Group + build + send
+    # 5. Group + build + send
     groups = group_by_category(pending)
-    html = build_email(pending, groups)
-    sent = send_review_email(html, len(pending))
+    html   = build_email(pending, groups, sync_new=sync_new)
+    sent   = send_review_email(html, len(pending), sync_new=sync_new)
 
-    # 4. Mark reviewed + push only on successful send
+    # 6. Mark reviewed + push only on successful send
     if sent and pending:
         mark_items_reviewed(decisions_data, pending)
         git_commit_push()
     elif sent:
-        print("[INFO] Empty digest sent — nothing to flag, nothing to push.")
+        if sync_new > 0:
+            # Still push even if no "other" reviews — sync added new data
+            git_commit_push()
+        else:
+            print("[INFO] Empty digest sent — nothing to flag, nothing to push.")
 
     print(f"\n[DONE] Review run completed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
