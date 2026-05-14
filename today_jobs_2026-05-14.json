@@ -2,158 +2,38 @@
   "date": "2026-05-14",
   "jobs": [
     {
-      "job_id": "b8ccd8211a",
+      "job_id": "78259c00cc",
       "number": 1,
       "number_display": "1",
-      "title": "Copilot Studio / Agentic AI Engineer (Remote) - Careers/codvo",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 83,
-      "url": "https://codvo-team.freshteam.com/jobs/XaiqkGzD_VfL/copilot-studio-agentic-ai-engineer-remote",
-      "matched_keywords": [
-        "ai engineer",
-        "AI-title:ai engineer",
-        "agentic",
-        "ai agent",
-        "agentic ai"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "2945a9b512",
-      "number": 2,
-      "number_display": "2",
-      "title": "Best Prompt Engineering Jobs in Chicago, IL 2026",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 80,
-      "url": "https://www.builtinchicago.org/jobs/ai-machine-learning/search/prompt-engineering",
-      "matched_keywords": [
-        "prompt engineer",
-        "prompt engineering",
-        "generative ai",
-        "AI-title:prompt engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "a772b59cb6",
-      "number": 3,
-      "number_display": "3",
-      "title": "Prompt Engineer ( Full-Time ) \u2014 Careers at Teraleads",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 80,
-      "url": "https://www.teraleads.com/careers/prompt-engineer/",
-      "matched_keywords": [
-        "llm",
-        "prompt engineer",
-        "large language model",
-        "AI-title:prompt engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "7d89c14923",
-      "number": 4,
-      "number_display": "4",
-      "title": "Agentic AI Engineer in San Francisco, California | careers-home",
+      "title": "Agentic AI Engineer \u2013 Apheris \u2013 Permanent contract \u2013 Fully-remote",
       "company": "N/A",
       "track": "AI Engineering",
       "score": 63,
-      "url": "https://careers.docusign.com/careers-home/jobs/29380?utm_source=ai-jobs-dot-com",
+      "url": "https://www.welcometothejungle.com/en/companies/apheris/jobs/agentic-ai-engineer_fr_6miwc4df",
       "matched_keywords": [
-        "agentic ai",
-        "ai engineer",
+        "AI-title:ai engineer",
         "agentic",
-        "AI-title:ai engineer"
+        "agentic ai",
+        "ai engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "9093598ee7",
-      "number": 5,
-      "number_display": "5",
-      "title": "Entry-Level Agentic Engineer (Ho Chi Minh City)",
+      "job_id": "7dec7d88f6",
+      "number": 2,
+      "number_display": "2",
+      "title": "Machine Learning Engineer, Underwriting",
       "company": "N/A",
-      "track": "Performance Engineering",
-      "score": 53,
-      "url": "https://wellfound.com/jobs/4191819-entry-level-agentic-engineer-ho-chi-minh-city",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wellfound.com/jobs/4203314-machine-learning-engineer-underwriting",
       "matched_keywords": [
-        "lre",
-        "agentic"
+        "machine learning engineer",
+        "AI-title:machine learning engineer"
       ],
       "source": "Wellfound",
       "is_amazon": false
-    },
-    {
-      "job_id": "3563c3778f",
-      "number": 6,
-      "number_display": "6",
-      "title": "AI Automation Engineer, Remote Job, May 2026 - Dynamite Jobs",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://dynamitejobs.com/company/cosuno/remote-job/ai-automation-engineer",
-      "matched_keywords": [
-        "ai automation engineer",
-        "AI-title:ai automation engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "0d337286b0",
-      "number": 7,
-      "number_display": "7",
-      "title": "AI Engineer @ Ruby Labs - Jobs",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://jobs.ashbyhq.com/ruby-labs/225d221f-73c0-485c-acaa-1f536fa35060",
-      "matched_keywords": [
-        "ai engineer",
-        "AI-title:ai engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "7e0025fe7b",
-      "number": 8,
-      "number_display": "8",
-      "title": "Ruby Labs - AI Engineer (use.ai) - Jobs",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://jobs.ashbyhq.com/ruby-labs/6854572c-b1bb-4fe3-a87d-af8565c8333e/application",
-      "matched_keywords": [
-        "ai engineer",
-        "AI-title:ai engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false
-    },
-    {
-      "job_id": "b289df2d28",
-      "number": "A1",
-      "number_display": "A1",
-      "title": "SDE II, AI Automation, Prime Video - Job ID: 10415075 | Amazon.jobs",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 43,
-      "url": "https://amazon.jobs/en-gb/jobs/10415075/sde-ii-ai-automation-prime-video",
-      "matched_keywords": [
-        "AI-title:ai automation",
-        "agentic ai",
-        "agentic"
-      ],
-      "source": "Amazon Jobs",
-      "is_amazon": true
     }
   ]
 }
