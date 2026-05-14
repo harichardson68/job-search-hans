@@ -1,0 +1,212 @@
+{
+  "date": "2026-05-13",
+  "jobs": [
+    {
+      "job_id": "a2ad8221ae",
+      "number": 1,
+      "number_display": "1",
+      "title": "Jobs via Dice hiring Performance Tester in Reston, VA | LinkedIn",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 155,
+      "url": "https://www.linkedin.com/jobs/view/performance-tester-at-jobs-via-dice-4413803968",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "34ec084618",
+      "number": 2,
+      "number_display": "2",
+      "title": "Egnyte is hiring Senior Performance Engineer job (Remote only)",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://cutshort.io/job/Senior-Performance-Engineer-Egnyte-IRWOkOTW",
+      "matched_keywords": [
+        "loadrunner",
+        "performance engineer",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "48d5f78f1c",
+      "number": 3,
+      "number_display": "3",
+      "title": "Generative AI Engineer - Remote - Indeed.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.indeed.com/viewjob?jk=929c65bb94ca47fe",
+      "matched_keywords": [
+        "generative ai engineer",
+        "AI-title:generative ai engineer",
+        "generative ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "d4fd238b38",
+      "number": 4,
+      "number_display": "4",
+      "title": "Remote Agentic AI Engineer (based in US) at tribe.ai",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://wellfound.com/jobs/3621117-remote-agentic-ai-engineer-based-in-us",
+      "matched_keywords": [
+        "agentic",
+        "ci/cd",
+        "agentic ai",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Wellfound",
+      "is_amazon": false
+    },
+    {
+      "job_id": "37c5ec8298",
+      "number": 5,
+      "number_display": "5",
+      "title": "Agentic AI Engineer - Job Detail | Careers Marketplace - Siemens",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.siemens.com/en_US/externaljobs/JobDetail/506205",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "911c7c2b64",
+      "number": 6,
+      "number_display": "6",
+      "title": "AI Agent Developer at Floe Labs \u2022 San Francisco - Wellfound",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://wellfound.com/jobs/4015411-ai-agent-developer",
+      "matched_keywords": [
+        "AI-title:ai agent",
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "f43789284c",
+      "number": 7,
+      "number_display": "7",
+      "title": "Remote AI Engineer job at DeAngelis Diamond | Lensa",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://lensa.com/job-v1/deangelis-diamond/remote/game-engineer/299ea1a82584fac16a127c2baf4d37a2",
+      "matched_keywords": [
+        "ai integration engineer",
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "c2be6a0828",
+      "number": 8,
+      "number_display": "8",
+      "title": "Performance Specialist - SolutionIT, Inc. - Remote | Dice.com",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/bb9e76f0-909b-4ada-985b-320ef08d628f",
+      "matched_keywords": [
+        "jmeter-only-penalty",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "feaf7dccb1",
+      "number": 9,
+      "number_display": "9",
+      "title": "AI Automation Engineer (Remote) - Monster Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.monster.com/job-openings/ai-automation-engineer-remote-ak--f0493fc3-2837-4ce8-823c-9cb74aa8e770",
+      "matched_keywords": [
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "60a6801de9",
+      "number": 10,
+      "number_display": "10",
+      "title": "Ruby Labs - AI Engineer (use.ai) - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/ruby-labs/6854572c-b1bb-4fe3-a87d-af8565c8333e",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "a85e7ce346",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "SDE II, AI Automation, Prime Video - Job ID: 10415074 | Amazon.jobs",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10415074/sde-ii-ai-automation-prime-video",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "AI-title:ai automation"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    },
+    {
+      "job_id": "3c7b0150f2",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Strategic Agentic Modernisation Consultant, AWS Professional ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 26,
+      "url": "https://www.amazon.jobs/en/jobs/10409788/strategic-agentic-modernisation-consultant-aws-professional-services?source=Hatch",
+      "matched_keywords": [
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
