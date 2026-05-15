@@ -1,0 +1,165 @@
+{
+  "date": "2026-05-15",
+  "jobs": [
+    {
+      "job_id": "6be843a722",
+      "number": 1,
+      "number_display": "1",
+      "title": "Sr. Software Performance Engineer - Remote in Austin, TX, US - Dice",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 190,
+      "url": "https://www.dice.com/job-detail/38f1f18d-b1b0-4fc7-82f3-06f89884a1ae",
+      "matched_keywords": [
+        "performance engineer",
+        "blazemeter",
+        "loadrunner",
+        "performance testing",
+        "neoload"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "8075e165d5",
+      "number": 2,
+      "number_display": "2",
+      "title": "Generative AI Engineer - ScrumBytes - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 123,
+      "url": "https://www.dice.com/job-detail/e116aab5-2ea8-4b71-8daf-3fd5860818f1",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "generative ai",
+        "llm",
+        "generative ai engineer",
+        "agentic",
+        "AI-title:generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "b7f4042305",
+      "number": 3,
+      "number_display": "3",
+      "title": "Senior QA Performance Tester - Stanfield Systems, Inc. - Dice",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/8abee75e-f686-491d-8f3d-a7975c68f75b",
+      "matched_keywords": [
+        "jmeter",
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "0a419ef644",
+      "number": 4,
+      "number_display": "4",
+      "title": "Agentic AI engineer with Golang (Golang experience is must) - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/9cb2d1c8-c1ee-49c4-9cb7-3233201196ec",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "AI-title:ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "e2c0b1c25c",
+      "number": 5,
+      "number_display": "5",
+      "title": "Claude AI Agent Developer | Berry Virtual - Jobs By Workable",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://jobs.workable.com/view/pjk8x1XA61J5hqicGuF8CB/remote-claude-ai-agent-developer-in-india-at-berry-virtual",
+      "matched_keywords": [
+        "AI-title:ai agent",
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "6dd116229e",
+      "number": 6,
+      "number_display": "6",
+      "title": "AI Automation Engineer (Remote) - Monster Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.monster.com/job-openings/ai-automation-engineer-remote-ak--f0493fc3-2837-4ce8-823c-9cb74aa8e770?sid=a4d79471-852b-4014-aab2-ff357ed0fa8f&hidesmr=1",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "80e12210af",
+      "number": 7,
+      "number_display": "7",
+      "title": "AI Engineer(Backend) @ Deel - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/deel/6e93f93c-dcde-42c1-9b61-9a542de8cdbe",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "d66e05dffc",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Manager, AWS AI Agentic Automated ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://www.amazon.jobs/en/jobs/10420172/software-development-manager-aws-ai-agentic-automated-reasoning-ar",
+      "matched_keywords": [
+        "AI-title:ai agent",
+        "agentic ai",
+        "ai agent",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    },
+    {
+      "job_id": "13412b00c4",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "SDE II, AI Automation, Prime Video - Job ID: 10415078 | Amazon.jobs",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/en-gb/jobs/10415078/sde-ii-ai-automation-prime-video",
+      "matched_keywords": [
+        "AI-title:ai automation",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
