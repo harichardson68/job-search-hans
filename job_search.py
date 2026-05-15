@@ -539,6 +539,13 @@ def is_us_remote(title, description, location=""):
         "remote jobs anywhere worldwide", "worldwide remote",
         "principal ai engineer (europe", "europe only",
         "emea remote", "apac remote", "latam remote",
+        # Southeast Asia / Middle East
+        "ho chi minh", "hanoi", "vietnam", "jakarta", "indonesia",
+        "kuala lumpur", "malaysia", "bangkok", "thailand",
+        "dubai", "abu dhabi", "uae", "united arab emirates",
+        "cairo", "egypt", "nairobi", "kenya", "lagos", "nigeria",
+        "remote (emea)", "remote(emea)", "emea only", "(emea)",
+        "teraleads", "ruby labs", "rubylabs",
         "latin america", "latam", "south america",
         "colombia", "argentina", "brazil", "mexico", "chile",
         "remote people", "globally distributed",
@@ -560,6 +567,10 @@ def is_us_remote(title, description, location=""):
         "arbeit",       # German for "work"
         "offre d'emploi",  # French job posting
     ]
+    # Detect semicolon-separated multi-country locations (e.g. "EMEA; India; Poland; Ukraine")
+    import re as _re
+    if re.search(r'(emea|apac|latam|india|ukraine|poland|albania|romania)[^a-z]*;', check):
+        return False
     for indicator in strong_indicators:
         if indicator in check:
             return False
@@ -667,6 +678,14 @@ def is_blocked_company(title, description, company=""):
         "appen ", "clickworker", "telus international",
         "outlier ai", "scale ai",
     "silicon valley bank", "svb ", "first citizens bank", "first-citizens bank", "first-citizens",
+        # India/offshore body shops
+        "berry virtual", "legal soft", "legalsoft",
+        "softratech", "innovative information technologi",
+        "mastech", "igate", "hexaware", "nisum", "coforge",
+        # Middle East / other overseas
+        "teraleads", "ruby labs", "rubylabs",
+        # Global hiring platforms (never US-only)
+        "deel.com", " deel ", "letsdeel",
     ]
     check = (title + " " + description + " " + company).lower()
     return any(co in check for co in blocked_companies)
@@ -931,6 +950,15 @@ EXCLUDED_TITLE_TERMS = [
     "/mo", "/mp", "per month usd", "usd/month",
     # Indian job market terms
     "fresher", "freshers", "fresher job", "fresher role",
+    # People manager titles (not IC roles)
+    "software development manager", "sdm,", "sdm ", " sdm,",
+    "software dev manager", "development manager",
+    "engineering lead manager", "group engineering manager",
+    "technical program manager", "tpm ", "tpm,",
+    "program manager", "product manager",
+    # Hard language requirements Hans doesn't have
+    "golang is must", "golang required", "must know golang",
+    "rust required", "rust is must", "ruby required", "ruby is must",
 ]
 
 def is_relevant_title(title):
@@ -1352,6 +1380,7 @@ AMAZON_MAX_AGE_DAYS = 10
 # Serper indexes them all, so this is the cheapest way to keep overseas
 # roles out of the digest.
 AMAZON_NON_US_MARKERS = [
+    "adci", "adci -", "- adci",
     # Europe
     "london", "dublin", "berlin", "munich", "madrid", "barcelona",
     "paris", "amsterdam", "luxembourg", "milan", "rome", "warsaw",
