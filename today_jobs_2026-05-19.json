@@ -1,0 +1,54 @@
+{
+  "date": "2026-05-19",
+  "jobs": [
+    {
+      "job_id": "9ae1a9aaf2",
+      "number": 1,
+      "number_display": "1",
+      "title": "Performance Test Engineer - Charles Schwab - Southlake, TX, US",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/b6b93a6b-6cb4-4a8e-83e8-ee231ff5c336",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "0cd3a71dd0",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Automation Bootcamp \u2014 Build a $90K+ Remote Career | Careerist",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.careerist.com/ai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "1058bd3ec3",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Applied Scientist, Agentic Automated Reasoning Group - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/jobs/10417926",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
