@@ -1,4 +1,182 @@
 {
   "date": "2026-05-18",
-  "jobs": []
+  "jobs": [
+    {
+      "job_id": "3c1194484a",
+      "number": 1,
+      "number_display": "1",
+      "title": "Performance Tester with Loadrunner and JMeter experience - Gigpro",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://gigpro.html-5.me/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote",
+      "matched_keywords": [
+        "jmeter",
+        "performance tester",
+        "LoadRunner-in-title",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "26c8ee7674",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI ML Engineer with Agentic AI Engineer - Emergere Technologies",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.dice.com/job-detail/d72c2601-c10c-47ca-8df9-f23c6e110d78",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "prompt engineer",
+        "ai engineer",
+        "AI-title:agentic ai engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "d7fb647829",
+      "number": 3,
+      "number_display": "3",
+      "title": "Quik Hire Staffing hiring LLM Engineer (Remote) in Canada - LinkedIn",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://ca.linkedin.com/jobs/view/llm-engineer-remote-at-quik-hire-staffing-4415887746",
+      "matched_keywords": [
+        "AI-title:llm engineer",
+        "llm engineer",
+        "llm",
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "371c2a441d",
+      "number": 4,
+      "number_display": "4",
+      "title": "R&D Experienced Professional- Performance Tester - IDC",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 88,
+      "url": "https://hitachi.wd1.myworkdayjobs.com/en-US/hitachi/job/Chennai-Tamil-Nadu-India/R-D-Experienced-Professional--Performance-Tester---IDC_R0128549",
+      "matched_keywords": [
+        "performance tester",
+        "bottleneck",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "15be5ef378",
+      "number": 5,
+      "number_display": "5",
+      "title": "AI Engineer - SYSTEM SOFT TECHNOLOGIES LLC - Remote - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.dice.com/job-detail/2059fe43-8f3d-4c9c-9ae9-fb8a2947e07b",
+      "matched_keywords": [
+        "python",
+        "AI-title:ai engineer",
+        "prompt engineer",
+        "generative ai",
+        "ai engineer",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "f98a3b1ced",
+      "number": 6,
+      "number_display": "6",
+      "title": "Generative AI Engineer | Apply now - PyjamaHR",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://jobs.pyjamahr.com/the-recruiting-guy/generative-ai-engineer",
+      "matched_keywords": [
+        "ai engineer",
+        "generative ai engineer",
+        "AI-title:generative ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "97fea05890",
+      "number": 7,
+      "number_display": "7",
+      "title": "AI Automation Bootcamp \u2014 Build a $90K+ Remote Career | Careerist",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "http://www.careerist.com/ai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "30fabd85ef",
+      "number": 8,
+      "number_display": "8",
+      "title": "AI Engineer (Full Remote) @ Everfield - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/everfield/6ff5cd5d-e68f-4170-86f0-b63b0aa05eea?utm_source=arbeitnow.com&ref=arbeitnow.com",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "8aaceec881",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Full-Funnel Agentic Intelligence & Models (FAIM) - Job ID: 10423110",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10423110/software-development-engineer-ads-full-funnel-agentic-intelligence-models-faim",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    },
+    {
+      "job_id": "94b49e9d43",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Applied Scientist, Agentic Automated Reasoning Group - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10417926/applied-scientist-agentic-automated-reasoning-group",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
 }
