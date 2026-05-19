@@ -4,8 +4,6 @@ google_credentials.json
 
 # Runtime output files
 job_results.json
-seen_jobs.json
-job_decisions.json
 job_decisions.json.bak
 job_decisions_old.json
 job_search_run.log
@@ -32,3 +30,10 @@ desktop.ini
 
 # macOS
 .DS_Store
+
+# Live logs — ignored (overwritten each run, noisy)
+job_search_run.log
+jobsearch_errors.log
+
+# But DO commit the snapshot folder
+!logs/

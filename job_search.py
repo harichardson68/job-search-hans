@@ -234,6 +234,68 @@ def send_failure_alert(reason_short, error_detail):
         log_error(f"Could not send failure alert email: {e}")
         print(f"[ERROR] Could not send failure alert: {e}")
 
+# ─── LOG SNAPSHOTS (mobile-accessible via GitHub) ────────────
+import shutil as _shutil
+LOGS_DIR = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "logs")
+LOG_RETENTION_DAYS = 14
+
+def snapshot_and_prune_logs(retention_days=LOG_RETENTION_DAYS):
+    """
+    Copy live logs to dated snapshots in logs/, then prune snapshots
+    older than retention_days. Run logs are snapshotted every day
+    (proof of run); error log only snapshotted when non-empty (signal).
+    Called near end of run, before git_commit_push().
+    Returns (snapshotted, pruned) counts. Never raises.
+    """
+    snapshotted = 0
+    pruned = 0
+    try:
+        _os.makedirs(LOGS_DIR, exist_ok=True)
+        today = datetime.now().strftime("%Y-%m-%d")
+
+        # Run log: snapshot every day (even if empty — proves the run happened)
+        if _os.path.exists(LOG_FILE):
+            try:
+                # Flush any pending writes from the DualLogger before copying
+                if hasattr(sys.stdout, "logfile") and sys.stdout.logfile:
+                    sys.stdout.logfile.flush()
+            except Exception:
+                pass
+            dst = _os.path.join(LOGS_DIR, f"job_search_{today}.log")
+            _shutil.copy2(LOG_FILE, dst)
+            snapshotted += 1
+
+        # Error log: snapshot ONLY if non-empty (presence = signal something went wrong)
+        if _os.path.exists(ERROR_LOG_FILE) and _os.path.getsize(ERROR_LOG_FILE) > 0:
+            dst = _os.path.join(LOGS_DIR, f"jobsearch_errors_{today}.log")
+            _shutil.copy2(ERROR_LOG_FILE, dst)
+            snapshotted += 1
+
+        # Prune snapshots older than retention_days
+        cutoff = datetime.now() - timedelta(days=retention_days)
+        for fname in _os.listdir(LOGS_DIR):
+            if not fname.endswith(".log"):
+                continue
+            # Filename pattern: <prefix>_YYYY-MM-DD.log
+            try:
+                date_str = fname.rsplit(".", 1)[0].rsplit("_", 1)[-1]
+                snap_date = datetime.strptime(date_str, "%Y-%m-%d")
+                if snap_date < cutoff:
+                    _os.remove(_os.path.join(LOGS_DIR, fname))
+                    pruned += 1
+            except (ValueError, IndexError):
+                continue
+    except Exception as e:
+        # Non-critical — never abort a run because of snapshot issues
+        print(f"[WARN] Log snapshot failed: {e}")
+        try:
+            log_error(f"Log snapshot failed: {e}")
+        except Exception:
+            pass
+
+    return snapshotted, pruned
+
+
 # ─── GIT PULL AT START (abort if it fails) ───────────────────
 import subprocess as _subprocess
 SCRIPT_DIR = _os.path.dirname(_os.path.abspath(__file__))
@@ -568,7 +630,6 @@ def is_us_remote(title, description, location=""):
         "offre d'emploi",  # French job posting
     ]
     # Detect semicolon-separated multi-country locations (e.g. "EMEA; India; Poland; Ukraine")
-    import re as _re
     if re.search(r'(emea|apac|latam|india|ukraine|poland|albania|romania)[^a-z]*;', check):
         return False
     for indicator in strong_indicators:
@@ -576,7 +637,6 @@ def is_us_remote(title, description, location=""):
             return False
     # Detect state-restricted remote jobs (remote but must live in specific state)
     # These phrases indicate state restrictions
-    import re
     # List of all US states to detect restrictions (excluding Missouri - Hans is there!)
     us_states = [
         "alabama", "alaska", "arizona", "arkansas", "california",
@@ -765,6 +825,9 @@ SEARCH_KEYWORDS = [
     # Track 3: AI Engineering (entry level)
     "entry level AI engineer", "junior AI engineer", "associate AI engineer",
     "AI engineer entry", "machine learning engineer entry",
+    # Track 3: Agentic AI / AI Developer roles
+    "agentic AI developer", "agentic AI engineer", "AI agent developer",
+    "AI developer", "LLM developer", "AI application developer",
 ]
 
 CANDIDATE = {
@@ -903,6 +966,8 @@ REQUIRED_TITLE_KEYWORDS = [
     "ai agent", "agent engineer", "llm developer", "llm engineer",
     "llm application", "ai application engineer", "ai application developer",
     "langchain", "agentic",
+    # Agentic AI / AI Developer explicit phrases
+    "agentic ai developer", "agentic ai engineer", "ai agent developer",
     # AI Automation / Integration
     "ai automation", "ai integration engineer", "ai solutions engineer",
     "ai workflow", "ai pipeline engineer",
@@ -1096,6 +1161,9 @@ AI_TITLE_PRIORITY = [
     # Agent / LLM Application
     "ai agent", "agent engineer", "llm developer", "llm engineer",
     "llm application", "ai application engineer", "langchain",
+    # Agentic AI / AI Developer roles
+    "agentic ai developer", "agentic ai engineer", "ai agent developer",
+    "ai developer", "ai application developer", "agentic",
     # AI Automation / Integration
     "ai automation engineer", "ai integration engineer", "ai solutions engineer",
     # AI + Performance hybrid
@@ -2440,6 +2508,12 @@ def send_email(top_jobs, amazon_jobs=None):
 if __name__ == "__main__":
     try:
         main()
+        # Snapshot logs to logs/ folder (14-day rolling retention).
+        # Runs AFTER main() so logs are complete, BEFORE git_commit_push()
+        # so the snapshot is included in the same commit.
+        print("\n[LOGS] Snapshotting run logs...")
+        snap_count, prune_count = snapshot_and_prune_logs()
+        print(f"   [OK] Snapshotted {snap_count} log file(s), pruned {prune_count} old snapshot(s)")
         # Push all local changes (job_decisions.json, today_jobs.json,
         # seen_jobs.json, run logs) to GitHub at end of every run.
         git_commit_push()
