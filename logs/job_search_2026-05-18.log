@@ -1,6 +1,6 @@
 
 ============================================================
-  Job Search Run: 2026-05-18 19:28:31
+  Job Search Run: 2026-05-18 20:05:26
 ============================================================
 [GIT] Pulling latest from GitHub...
    [OK] Already up to date.
@@ -137,7 +137,7 @@
    [DEBUG] Serper '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "prompt engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.lever.co "prompt engineer" "remote"': 0 jobs, 2 organic, status 200
-   [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 2 organic, status 200
+   [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 3 organic, status 200
    [DEBUG] Serper 'site:myworkdayjobs.com "prompt engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "prompt engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper '"prompt engineer" remote "generative ai"': 0 jobs, 10 organic, status 200
@@ -150,7 +150,7 @@
    [DEBUG] Serper FILTERED-searchpage: Prompt Engineer Jobs - Naukri.com
    [DEBUG] Serper '"prompt engineering" remote entry level OR mid level': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Flexible Remote Entry Level Prompt Engineer Jobs -
-   [DEBUG] Serper FILTERED-searchpage: Prompt Engineering jobs in Remote - Indeed
+   [DEBUG] Serper FILTERED-searchpage: Prompt Engineer jobs in Remote - Indeed
    [DEBUG] Serper 'site:boards.greenhouse.io "ai agent" OR "llm developer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.lever.co "llm engineer" OR "ai agent" "remote"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper '"llm application developer" remote': 0 jobs, 10 organic, status 200
@@ -175,7 +175,7 @@
    [DEBUG] Serper 'site:jobs.lever.co "llm engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.ashbyhq.com "ai engineer" "remote"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper 'site:myworkdayjobs.com "mlops engineer" remote': 0 jobs, 0 organic, status 200
-   [DEBUG] Serper 'site:dice.com/job-detail "mlops engineer" remote': 0 jobs, 8 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "mlops engineer" remote': 0 jobs, 9 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "ai performance engineer" remote': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "cobol" "remote"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "cobol" "remote"': 0 jobs, 0 organic, status 200
@@ -201,13 +201,13 @@
    [DEBUG] Adzuna FILTERED-no-LR: Sr. Sustaining Engineer, Electromechanical Systems
    [DEBUG] Adzuna 'senior performance engineer': 20 raw results, status 200
    [DEBUG] Adzuna 'performance qa engineer': 20 raw results, status 200
-   [DEBUG] Adzuna FILTERED-stale: Lead Engineering Executive - remote [2026-05-13]
-   [DEBUG] Adzuna FILTERED-stale: Remote Lead Engineering Executive [2026-05-13]
-   [DEBUG] Adzuna FILTERED-stale: Senior Engineering Leader - REMOTE [2026-05-13]
-   [DEBUG] Adzuna FILTERED-stale: Remote Senior Engineering VP [2026-05-13]
-   [DEBUG] Adzuna FILTERED-stale: Remote Engineering Vice President [2026-05-13]
-   [DEBUG] Adzuna FILTERED-stale: Senior Vice President, Engineering (Remote) [2026-05-13]
-   [DEBUG] Adzuna FILTERED-stale: Remote Vice President of Engineering [2026-05-13]
+   [DEBUG] Adzuna FILTERED-no-LR: Lead Engineering Executive - remote
+   [DEBUG] Adzuna FILTERED-no-LR: Remote Lead Engineering Executive
+   [DEBUG] Adzuna FILTERED-no-LR: Senior Engineering Leader - REMOTE
+   [DEBUG] Adzuna FILTERED-no-LR: Remote Senior Engineering VP
+   [DEBUG] Adzuna FILTERED-no-LR: Remote Engineering Vice President
+   [DEBUG] Adzuna FILTERED-no-LR: Senior Vice President, Engineering (Remote)
+   [DEBUG] Adzuna FILTERED-no-LR: Remote Vice President of Engineering
    [DEBUG] Adzuna 'software performance engineer': 20 raw results, status 200
    [DEBUG] Adzuna 'application performance engineer': 20 raw results, status 200
    [DEBUG] Adzuna 'enterprise performance engineer': 20 raw results, status 200
@@ -227,128 +227,37 @@
    [WARN] JSearch skipped - add JSEARCH_API_KEY to .env
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): COBOL Developer - Innosoul inc - Remote | Dice.com [18pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): Mainframe COBOL Developer (IDMS/DB2/CICS) - Monste [12pts]
+   [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): Mainframe Developer - Remote - 12 Months - W2 role [10pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): COBOL Mainframe Developer(Remote) (Only w2) - Mars [8pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): Programmer Mainframe or Cobol Developer at Remote  [8pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): COBOL DEVELOPER - Involgix - Remote | Dice.com [8pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): Mainframe/Cobol Developer - Maxpath Technologies L [8pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): AS400/Cobol Developer - Altitude Technology Soluti [6pts]
-[OK] Removed 7 jobs below minimum score thresholds
-[OK] Removed 2 duplicate jobs already sent previously
+[OK] Removed 8 jobs below minimum score thresholds
+[OK] Removed 9 duplicate jobs already sent previously
 
 =======================================================
-[STATS] Total relevant jobs found: 8
-[STATS] Sending all 8 jobs to harichardson68@gmail.com
+[STATS] Total relevant jobs found: 0
+[STATS] No matching jobs found today.
 =======================================================
 
-[STATS] Generating cover letters for 8 jobs...
+[STATS] Generating cover letters for 0 jobs...
 
-  [01] Score:170 | Google Jobs | Performance Tester with Loadrunner and JMeter expe
-        N/A | https://gigpro.html-5.me/job/performance-tester-with-loadrun
-
-  [02] Score:103 | Google Jobs | AI ML Engineer with Agentic AI Engineer - Emergere
-        N/A | https://www.dice.com/job-detail/d72c2601-c10c-47ca-8df9-f23c
-
-  [03] Score:100 | Google Jobs | Quik Hire Staffing hiring LLM Engineer (Remote) in
-        N/A | https://ca.linkedin.com/jobs/view/llm-engineer-remote-at-qui
-
-  [04] Score: 88 | Google Jobs | R&D Experienced Professional- Performance Tester -
-        N/A | https://hitachi.wd1.myworkdayjobs.com/en-US/hitachi/job/Chen
-
-  [05] Score: 86 | Google Jobs | AI Engineer - SYSTEM SOFT TECHNOLOGIES LLC - Remot
-        N/A | https://www.dice.com/job-detail/2059fe43-8f3d-4c9c-9ae9-fb8a
-
-  [06] Score: 80 | Google Jobs | Generative AI Engineer | Apply now - PyjamaHR
-        N/A | https://jobs.pyjamahr.com/the-recruiting-guy/generative-ai-e
-
-  [07] Score: 40 | Google Jobs | AI Automation Bootcamp — Build a $90K+ Remote Care
-        N/A | http://www.careerist.com/ai-automation-engineer
-
-  [08] Score: 40 | Google Jobs | AI Engineer (Full Remote) @ Everfield - Jobs
-        N/A | https://jobs.ashbyhq.com/everfield/6ff5cd5d-e68f-4170-86f0-b
-
-[OK] Saved 8 job URLs to seen_jobs.json
 
 [OK] Results saved to: job_results.json
    Open it to see all jobs + cover letters.
 
 [SEARCH] Searching Amazon Jobs spotlight...
    [DEBUG] Amazon FILTERED-non-US (luxembourg): 2026 Data Engineer Internship - ID opportunità di lavoro
-   [OK] Amazon Jobs: 2 relevant jobs found (10-day window)
+   [OK] Skipped 1 Amazon jobs already seen previously
+   [OK] Amazon Jobs: 0 relevant jobs found (10-day window)
 
 [EMAIL] Sending email notification...
-   [OK] Saved 8 regular + 2 Amazon jobs to today_jobs.json
+   [OK] Saved 0 regular + 0 Amazon jobs to today_jobs.json
    [OK] Archived to today_jobs_2026-05-18.json
    Email sent to harichardson68@gmail.com
 =======================================================
 TOP 3 MATCHES WITH COVER LETTERS
 =======================================================
-
-[TOP] [170 pts] Performance Tester with Loadrunner and JMeter experience - Gigpro
-   Company : N/A
-   Source  : Google Jobs
-   URL     : https://gigpro.html-5.me/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote
-   Keywords: jmeter, performance tester, LoadRunner-in-title, loadrunner
-
---- COVER LETTER ---
-Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
-
----
-
-With 14 years of hands-on LoadRunner/VuGen expertise and deep knowledge of Performance Center infrastructure, I'm ready to contribute immediately to this Performance Tester role.
-
-At the USDA, I led end-to-end performance testing initiatives using LoadRunner and LRE, enforcing strict SLA thresholds of under five seconds for transactions and under two seconds for services. I integrated AppDynamics, Splunk, Prometheus, and Grafana to drive observability across complex environments—delivering a 40% throughput increase and reducing defect resolution time by 35%. Earlier at Sprint/CenturyLink, I scaled systems to handle 12,000+ transactions per minute using LoadRunner as the primary performance center tool.
-
-I also hold a current JMeter certification (Coursera, 2025), giving me proficiency across both tools this role specifically requires.
-
-This 100% remote position aligns perfectly with my current work arrangement. I'm available immediately and would welcome a conversation about how my LoadRunner depth and proven performance engineering results can benefit your team.
-----------------------------------------
-
-[TOP] [103 pts] AI ML Engineer with Agentic AI Engineer - Emergere Technologies
-   Company : N/A
-   Source  : Google Jobs
-   URL     : https://www.dice.com/job-detail/d72c2601-c10c-47ca-8df9-f23c6e110d78
-   Keywords: agentic ai, agentic, prompt engineer, ai engineer, AI-title:agentic ai engineer, ml engineer
-
---- COVER LETTER ---
-Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
-
----
-
-Having just completed an AI Engineer Bootcamp and IBM Generative AI Engineering certification alongside 24 years of engineering experience, I'm well-positioned to contribute immediately as an Agentic AI Engineer at Emergere Technologies.
-
-My current AI training covers prompt engineering, LLM orchestration, and agentic workflows — directly aligned with what your contract positions require. What I bring beyond foundational AI skills is a seasoned engineer's discipline: at USDA, I increased system throughput 40%, reduced defect resolution time 35%, and maintained SLA compliance across high-volume AWS/Kubernetes environments handling thousands of transactions per minute. That operational rigor translates directly into building and validating reliable agentic AI pipelines.
-
-My observability background — Splunk, Grafana, Prometheus, AppDynamics — means I can monitor and optimize AI model performance in ways many prompt engineers simply cannot.
-
-I'm fully remote-ready and available immediately for contract work. I'd welcome a conversation about how my engineering foundation strengthens your agentic AI initiatives.
-
-Respectfully,
-Hans Richardson
-----------------------------------------
-
-[TOP] [100 pts] Quik Hire Staffing hiring LLM Engineer (Remote) in Canada - LinkedIn
-   Company : N/A
-   Source  : Google Jobs
-   URL     : https://ca.linkedin.com/jobs/view/llm-engineer-remote-at-quik-hire-staffing-4415887746
-   Keywords: AI-title:llm engineer, llm engineer, llm, prompt engineer, ai prompt
-
---- COVER LETTER ---
-Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
-
----
-
-Building and evaluating large language models requires more than prompt engineering — it demands rigorous performance validation, and that's exactly where my background becomes a direct advantage for the LLM Engineer role with Quik Hire Staffing.
-
-Performance testing AI inference endpoints and LLM APIs is functionally identical to load testing web services — measuring latency, throughput, and SLA compliance under real-world conditions. At USDA, I increased system throughput 40% and reduced defect resolution time 35% using the same observability stack — AppDynamics, Splunk, Prometheus, Grafana — that directly applies to monitoring model performance in production. Earlier at Sprint/CenturyLink, I scaled systems handling 12,000+ transactions per minute. Most LLM engineers lack this performance engineering depth. I bring it natively.
-
-My current IBM Generative AI Engineering certification (Coursera, 2025–2026) and AI Engineer Bootcamp have me building hands-on LLM and prompt engineering skills to complement that foundation.
-
-I'm fully remote-ready and available immediately. I'd welcome a conversation about how I can contribute.
-
-— Hans Richardson
-----------------------------------------
 
 [LOGS] Snapshotting run logs...
