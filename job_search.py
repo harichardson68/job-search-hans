@@ -563,19 +563,79 @@ def is_false_positive_url(url: str) -> tuple:
     return False, ""
 
 def is_us_remote(title, description, location=""):
-    # Check location field first - if it contains a non-US location, reject immediately
+    # Check location field first - if it contains a non-US location, reject immediately.
+    # EXCEPTION: Canada in the location field is handled later, after we check
+    # the description for "US/Canada" / "North America" eligibility signals.
     loc_lower = location.lower().strip()
+    canada_in_location = False
+    canada_location_terms = {"canada", "toronto", "vancouver", "montreal",
+                             "ontario", "british columbia", "alberta",
+                             "calgary", "edmonton", "ottawa", "winnipeg",
+                             "quebec", "halifax"}
     if loc_lower:
         for non_us in NON_US_LOCATIONS:
-            if non_us.strip() in loc_lower:
+            term = non_us.strip()
+            if term in loc_lower:
+                if term in canada_location_terms:
+                    canada_in_location = True  # defer decision
+                    continue
                 return False
     # Also check title and description for strong non-US indicators
     check = (title + " " + description).lower()
+
+    # ─── CANADA HANDLING ────────────────────────────────────
+    # PASS 1: US-eligible signals — keep these even if Canada is mentioned.
+    # Many "Remote, Canada" postings are actually US/Canada or North America
+    # eligible. If we see explicit US eligibility, allow through.
+    us_eligible_signals = [
+        "us/canada", "us / canada", "u.s./canada", "us and canada",
+        "us or canada", "us, canada", "canada/us", "canada / us",
+        "canada and us", "canada or us", "canada, us",
+        "north america", "north american", "americas remote",
+        "remote (americas)", "remote, americas",
+        "na remote", "remote (na)", "remote na ",
+        "remote - us/canada", "remote (us/canada)",
+        "remote in us or canada", "remote in the us or canada",
+        "open to us and canada", "open to candidates in us and canada",
+        "us-based or canada-based", "based in the us or canada",
+        "eligible to work in the us", "eligible to work in the united states",
+        "authorized to work in the us", "authorized to work in the united states",
+    ]
+    for signal in us_eligible_signals:
+        if signal in check:
+            # Found explicit US eligibility — short-circuit all later Canada rejects.
+            # We still need to run the other (non-Canada) rejection passes below,
+            # so set a flag and skip Canada-specific blocks.
+            _us_eligible_override = True
+            break
+    else:
+        _us_eligible_override = False
+
+    # PASS 2: Canada-only hard reject — explicit Canada-restrictive language.
+    # These always reject, regardless of any US-eligible signal above.
+    canada_only_signals = [
+        "canada only", "canada-only", "canadian residents only",
+        "must reside in canada", "must be located in canada",
+        "must be a canadian", "canadian citizens only",
+        "open only to canadian", "canada-based candidates only",
+        "must be based in canada", "remote (canada only)",
+        "remote, canada only", "remote - canada only",
+        "this role is open to canadian", "only open to canadian residents",
+        "work authorization in canada required",
+    ]
+    for signal in canada_only_signals:
+        if signal in check:
+            return False
+
     # Strong indicators - if these appear anywhere, reject
     strong_indicators = [
         # Multi-country job titles — not US only (added 2026-05-08)
-        "us/uk", "uk/ca", "us/ca", "us/uk/ca", "us/uk/ca/de",
-        "remote, us/", "remote (us/", "(us/uk)", "(us/ca)",
+        # NOTE: us/ca and (us/ca) removed — those are US/Canada eligible,
+        # handled by the US-eligible allow-list above.
+        # NOTE: "remote, us/" prefix removed — was too broad; caught
+        # "remote, us/canada". Specific multi-country tags below cover the bad cases.
+        "us/uk", "uk/ca", "us/uk/ca", "us/uk/ca/de",
+        "remote (us/uk)", "(us/uk)", "remote (us/india)",
         # India
         "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
         "chennai", "pune", "kolkata", "noida", "gurugram", "gurgaon",
@@ -587,11 +647,7 @@ def is_us_remote(title, description, location=""):
         "jaipur", "ahmedabad", "chandigarh", "bhopal", "lucknow",
         "smartworking", "smart working", "smart-working solutions", "smart working solutions",
         "verito solutions", "verito",
-        # Canada
-        "remote in canada", "canada remote", "location: canada",
-        "based in canada", "toronto", "vancouver", "montreal",
-        "ontario", "british columbia", "alberta", "markham, on",
-        "markham, ontario", " on,", ", on ", "qualcomm canada",
+        # Canada signals are checked separately below (respects US-eligible override)
         # UK
         "remote in uk", "united kingdom", "london, uk", "location: uk",
         # Other
@@ -618,9 +674,7 @@ def is_us_remote(title, description, location=""):
         "paris", "lyon", "madrid", "barcelona", "rome", "milan",
         "stockholm", "oslo", "copenhagen", "helsinki", "dublin",
         "zurich", "geneva", "brussels", "vienna", "athens",
-        # Canada cities slipping through
-        "calgary", "edmonton", "ottawa", "winnipeg", "quebec",
-        "halifax", "saskatoon", "regina", "victoria",
+        # Canada cities are checked separately below (respects US-eligible override)
         # Australia
         "brisbane", "perth", "adelaide", "auckland", "wellington",
         # Job board language indicators
@@ -635,6 +689,30 @@ def is_us_remote(title, description, location=""):
     for indicator in strong_indicators:
         if indicator in check:
             return False
+
+    # PASS 3: Canada signals — only reject if no US-eligible override.
+    # If "us/canada", "north america", etc. appeared earlier, _us_eligible_override
+    # is True and these signals are ignored (the role is open to US candidates).
+    if not _us_eligible_override:
+        # Canada was in the location field but we deferred — now reject it.
+        if canada_in_location:
+            return False
+        canada_signals = [
+            # Canada-specific remote phrasing
+            "remote in canada", "canada remote", "location: canada",
+            "based in canada", "remote, canada", "remote - canada",
+            "remote (canada)", "(canada)", "in canada",
+            # Canada provinces & major cities
+            "toronto", "vancouver", "montreal", "calgary", "edmonton",
+            "ottawa", "winnipeg", "quebec", "halifax", "saskatoon",
+            "regina", "victoria",
+            "ontario", "british columbia", "alberta",
+            "markham, on", "markham, ontario", " on,", ", on ",
+            "qualcomm canada",
+        ]
+        for signal in canada_signals:
+            if signal in check:
+                return False
     # Detect state-restricted remote jobs (remote but must live in specific state)
     # These phrases indicate state restrictions
     # List of all US states to detect restrictions (excluding Missouri - Hans is there!)
