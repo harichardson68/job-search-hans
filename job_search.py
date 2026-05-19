@@ -356,6 +356,97 @@ MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
 GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
 
+# ─── PIPELINE FUNNEL INSTRUMENTATION ─────────────────────────
+# Tracks where jobs get filtered out at each stage of the pipeline.
+# Counts are surfaced in the daily digest email so we can diagnose
+# dry spells at a glance (which stage killed the most candidates?).
+class FunnelCounter:
+    """
+    Tracks job counts at each filter stage globally across all sources.
+    Stages mirror the actual filter order used by the source functions:
+      raw → recency → title → level → score → us_remote → blocked → kept
+    Plus post-aggregation stages:
+      → minscore → cross_dedup → seen_dedup → final
+    """
+    def __init__(self):
+        # Per-stage cumulative counts
+        self.stages = {
+            "raw": 0,           # Raw candidates from all sources (pre-filter)
+            "after_recency": 0, # Survived is_recent() check
+            "after_title": 0,   # Survived is_relevant_title() check
+            "after_level": 0,   # Survived get_job_track level_ok check
+            "after_score": 0,   # Survived score > 0 check
+            "after_us": 0,      # Survived is_us_remote() check
+            "after_blocked": 0, # Survived blocked-site/company check
+            "kept_by_sources": 0,  # Total returned by all sources (before main() filters)
+            "after_minscore": 0,   # Survived per-track min score thresholds
+            "after_cross_dedup": 0,  # Survived cross-source dedup
+            "after_seen_dedup": 0,   # Survived seen_jobs.json dedup
+            "final": 0,            # Made it to the email
+        }
+        # Per-source raw count for context (not used in main funnel, but useful)
+        self.by_source = {}
+
+    def add_raw(self, source, n=1):
+        self.stages["raw"] += n
+        self.by_source[source] = self.by_source.get(source, 0) + n
+
+    def record(self, stage, n=1):
+        """Record n jobs surviving a given stage."""
+        if stage in self.stages:
+            self.stages[stage] += n
+
+    def set_stage(self, stage, n):
+        """Set a stage count directly (used for post-aggregation stages
+        where we know the exact survivor count from len(list))."""
+        if stage in self.stages:
+            self.stages[stage] = n
+
+    def biggest_drop(self):
+        """
+        Return (stage_name, dropped_count, pct_of_prior_stage) for the
+        single biggest drop in the funnel. Returns (None, 0, 0) if no drops.
+        """
+        order = [
+            ("raw",              "Raw candidates"),
+            ("after_recency",    "Recency filter"),
+            ("after_title",      "Title filter"),
+            ("after_level",      "Level filter"),
+            ("after_score",      "Score filter"),
+            ("after_us",         "US/remote filter"),
+            ("after_blocked",    "Blocked site/company filter"),
+            ("after_minscore",   "Min score threshold"),
+            ("after_cross_dedup", "Cross-source dedup"),
+            ("after_seen_dedup",  "Already-seen dedup"),
+            ("final",            "Final"),
+        ]
+        biggest_label = None
+        biggest_drop = 0
+        biggest_pct = 0.0
+        for i in range(1, len(order)):
+            prior_key, _ = order[i - 1]
+            this_key, this_label = order[i]
+            prior = self.stages.get(prior_key, 0)
+            current = self.stages.get(this_key, 0)
+            dropped = prior - current
+            if prior > 0 and dropped > biggest_drop:
+                biggest_drop = dropped
+                biggest_label = this_label
+                biggest_pct = (dropped / prior) * 100
+        return biggest_label, biggest_drop, biggest_pct
+
+    def summary_dict(self):
+        """Return a dict suitable for passing to send_email() for rendering."""
+        return {
+            "stages": dict(self.stages),
+            "by_source": dict(self.by_source),
+            "biggest_drop": self.biggest_drop(),
+        }
+
+# Global singleton — sources and main() both write to this
+funnel = FunnelCounter()
+
+
 NON_US_LOCATIONS = [
     "india", "bangalore", "bengaluru", "mumbai", "delhi", "hyderabad",
     "chennai", "pune", "kolkata", "noida", "gurugram", "gurgaon",
@@ -1315,6 +1406,58 @@ def score_job(title, description):
     # Bonus keywords handled above per track
     return score, list(set(matched))
 
+
+def passes_filters(title, desc, posted, location, url_job, company, source_name):
+    """
+    Run a candidate through every filter stage and record the funnel count
+    at each stage it survives. Returns:
+      (passed: bool, score: int, matched: list, track: str)
+    The job has already been counted in funnel.add_raw() before this is called.
+
+    Uses short-circuit evaluation: as soon as a filter rejects, returns False
+    without checking later stages. The funnel counter records survival at
+    each stage in order, so the drops between stages reveal exactly where
+    candidates are getting killed.
+    """
+    funnel = globals()["funnel"]  # module-level singleton
+
+    # Stage: recency
+    if not is_recent(posted):
+        return False, 0, [], ""
+    funnel.record("after_recency")
+
+    # Stage: title
+    if not is_relevant_title(title):
+        return False, 0, [], ""
+    funnel.record("after_title")
+
+    # Stage: level (track + level_ok)
+    track, level_ok = get_job_track(title, desc)
+    if not level_ok:
+        return False, 0, [], ""
+    funnel.record("after_level")
+
+    # Stage: score
+    score, matched = score_job(title, desc)
+    if score <= 0:
+        return False, 0, [], ""
+    funnel.record("after_score")
+
+    # Stage: US/remote
+    if not is_us_remote(title, desc, location):
+        return False, score, matched, track
+    funnel.record("after_us")
+
+    # Stage: blocked site/company
+    if is_blocked_site(url_job) or is_blocked_company(title, desc, company):
+        return False, score, matched, track
+    funnel.record("after_blocked")
+
+    # Survived everything — count it as kept by this source
+    funnel.record("kept_by_sources")
+    return True, score, matched, track
+
+
 # 
 # SOURCE 1: RemoteOK (free public API)
 # 
@@ -1326,26 +1469,36 @@ def search_remoteok():
         resp = requests.get("https://remoteok.com/api", headers=headers, timeout=15)
         data = resp.json()
         for item in data[1:]:  # first item is metadata
-            title = item.get("position", "")
-            desc  = item.get("description", "")
-            score, matched = score_job(title, desc)
-            track, level_ok = get_job_track(title, desc)
+            title  = item.get("position", "")
+            desc   = item.get("description", "")
+            posted = item.get("date", "")
+            url_job = item.get("url", "")
+            company = item.get("company", "N/A")
+
+            funnel.add_raw("RemoteOK")
+            # Debug breadcrumb (preserve existing log style)
             if DEBUG_MODE and title:
-                if score == 0:
+                score_quick, _ = score_job(title, desc)
+                track_quick, level_ok_quick = get_job_track(title, desc)
+                if score_quick == 0:
                     print(f"   [DEBUG] RemoteOK FILTERED-score: {title[:60]}")
-                elif not level_ok:
+                elif not level_ok_quick:
                     print(f"   [DEBUG] RemoteOK FILTERED-level: {title[:60]}")
-                elif not is_recent(item.get("date", "")):
+                elif not is_recent(posted):
                     print(f"   [DEBUG] RemoteOK FILTERED-date: {title[:60]}")
                 elif not is_relevant_title(title):
                     print(f"   [DEBUG] RemoteOK FILTERED-title: {title[:60]}")
-            if score > 0 and level_ok and is_recent(item.get("date", "")) and is_relevant_title(title) and is_us_remote(title, desc) and not is_blocked_site(url_job) and not is_blocked_company(title, desc):
+
+            passed, score, matched, track = passes_filters(
+                title, desc, posted, "", url_job, company, "RemoteOK"
+            )
+            if passed:
                 jobs.append({
                     "source": "RemoteOK",
                     "title": title,
-                    "company": item.get("company", "N/A"),
-                    "url": item.get("url", ""),
-                    "posted": item.get("date", ""),
+                    "company": company,
+                    "url": url_job,
+                    "posted": posted,
                     "description": desc[:500],
                     "score": score,
                     "matched_keywords": matched,
@@ -1354,6 +1507,7 @@ def search_remoteok():
         print(f"   [OK] RemoteOK: {len(jobs)} relevant jobs found")
     except Exception as e:
         print(f"   [ERROR] RemoteOK error: {e}")
+        log_error(f"RemoteOK error: {e}")
     return jobs
 
 # 
@@ -1493,9 +1647,13 @@ def search_serper_jobs():
                 seen.add(url_job)
                 if "remote" not in location and "remote" not in (title + desc).lower():
                     continue
-                score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
-                if score > 0 and level_ok and is_recent(posted) and is_relevant_title(title) and is_us_remote(title, desc, location) and not is_blocked_site(url_job) and not is_blocked_company(title, desc, company):
+
+                # Pre-pipeline filters survived — count as raw candidate for funnel
+                funnel.add_raw("Google Jobs (Serper)")
+                passed, score, matched, track = passes_filters(
+                    title, desc, posted, location, url_job, company, "Google Jobs"
+                )
+                if passed:
                     jobs.append({
                         "source": "Google Jobs",
                         "title": title,
@@ -1740,22 +1898,27 @@ def search_adzuna():
 
                 if "remote" not in combined:
                     continue
-                if is_blocked_site(url_job) or is_blocked_company(title, desc, company):
-                    continue
-                if not is_recent(posted):
-                    if DEBUG_MODE:
-                        print(f"   [DEBUG] Adzuna FILTERED-stale: {title[:50]} [{posted[:10]}]")
-                    continue
 
-                score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
-                # For Performance track, require LR signal for quality control
-                if track == "Performance Engineering":
+                # Adzuna-specific: For Performance Engineering track, require LR signal.
+                # Run a quick track classification BEFORE the full pipeline so we
+                # can drop non-LR perf jobs without polluting funnel stats.
+                track_quick, _ = get_job_track(title, desc)
+                if track_quick == "Performance Engineering":
                     if not any(sig in combined for sig in LR_SIGNALS):
                         if DEBUG_MODE:
                             print(f"   [DEBUG] Adzuna FILTERED-no-LR: {title[:50]}")
                         continue
-                if score > 0 and level_ok and is_relevant_title(title) and is_us_remote(title, desc):
+
+                # Debug breadcrumb for stale jobs
+                if DEBUG_MODE and not is_recent(posted):
+                    print(f"   [DEBUG] Adzuna FILTERED-stale: {title[:50]} [{posted[:10]}]")
+
+                # Count as raw and run full pipeline
+                funnel.add_raw("Adzuna")
+                passed, score, matched, track = passes_filters(
+                    title, desc, posted, "", url_job, company, "Adzuna"
+                )
+                if passed:
                     jobs.append({
                         "source": "Adzuna",
                         "title": title,
@@ -1816,15 +1979,23 @@ def search_usajobs():
                 mv = item.get("MatchedObjectDescriptor", {})
                 title = mv.get("PositionTitle", "")
                 desc  = mv.get("QualificationSummary", "") + " " + mv.get("UserArea", {}).get("Details", {}).get("JobSummary", "")
-                score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
-                if score > 0 and level_ok and is_recent(mv.get("PublicationStartDate", "")) and is_relevant_title(title):
+                posted = mv.get("PublicationStartDate", "")
+                url_job = mv.get("PositionURI", "")
+                company = mv.get("OrganizationName", "Federal Agency")
+
+                funnel.add_raw("USAJobs")
+                # USAJobs is federal-only and already filters by RemoteIndicator,
+                # so we still run through passes_filters for funnel consistency.
+                passed, score, matched, track = passes_filters(
+                    title, desc, posted, "", url_job, company, "USAJobs"
+                )
+                if passed:
                     jobs.append({
                         "source": "USAJobs",
                         "title": title,
-                        "company": mv.get("OrganizationName", "Federal Agency"),
-                        "url": mv.get("PositionURI", ""),
-                        "posted": mv.get("PublicationStartDate", ""),
+                        "company": company,
+                        "url": url_job,
+                        "posted": posted,
                         "description": desc[:500],
                         "score": score,
                         "matched_keywords": matched,
@@ -2075,9 +2246,12 @@ def search_wellfound():
                 if url_job in seen:
                     continue
                 seen.add(url_job)
-                score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
-                if score > 0 and level_ok and is_relevant_title(title) and is_us_remote(title, desc) and not is_blocked_site(url_job):
+
+                funnel.add_raw("Wellfound")
+                passed, score, matched, track = passes_filters(
+                    title, desc, posted, "", url_job, "", "Wellfound"
+                )
+                if passed:
                     jobs.append({
                         "source": "Wellfound",
                         "title": title,
@@ -2170,10 +2344,11 @@ def search_jsearch():
                         print(f"   [DEBUG] JSearch FILTERED-blocked: {title[:50]}")
                     continue
 
-                score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
-
-                if score > 0 and level_ok and is_relevant_title(title) and is_us_remote(title, desc, location) and not is_blocked_company(title, desc, company):
+                funnel.add_raw("JSearch")
+                passed, score, matched, track = passes_filters(
+                    title, desc, posted, location, url_job, company, "JSearch"
+                )
+                if passed:
                     jobs.append({
                         "source": "JSearch",
                         "title": title,
@@ -2210,6 +2385,7 @@ def main():
 
     # Sort by score descending
     all_jobs.sort(key=lambda x: x["score"], reverse=True)
+    funnel.set_stage("kept_by_sources", len(all_jobs))
 
     # Apply minimum score thresholds per track
     MIN_SCORES = {
@@ -2229,6 +2405,7 @@ def main():
     if removed > 0:
         print(f"[OK] Removed {removed} jobs below minimum score thresholds")
     all_jobs = filtered_by_score
+    funnel.set_stage("after_minscore", len(all_jobs))
 
     # Deduplicate within this run by title + company AND by title alone
     seen_title_company = set()
@@ -2249,6 +2426,7 @@ def main():
     if cross_dupes > 0:
         print(f"[OK] Removed {cross_dupes} cross-source duplicate jobs (same job on multiple sites)")
     all_jobs = deduped_jobs
+    funnel.set_stage("after_cross_dedup", len(all_jobs))
 
     # Remove jobs already seen in previous runs
     seen_urls = load_seen_jobs()
@@ -2257,6 +2435,10 @@ def main():
     if duplicate_count > 0:
         print(f"[OK] Removed {duplicate_count} duplicate jobs already sent previously")
     all_jobs = new_jobs
+    funnel.set_stage("after_seen_dedup", len(all_jobs))
+    funnel.set_stage("final", len(all_jobs))
+    # kept_by_sources reflects what survived per-source filtering (pre-aggregation).
+    # We set it from the sort step total before the post-aggregation gates.
 
     print(f"\n{'='*55}")
     print(f"[STATS] Total relevant jobs found: {len(all_jobs)}")
@@ -2307,7 +2489,7 @@ def main():
 
     # Send email notification always — even if no jobs found
     amazon_jobs = search_amazon_jobs()
-    send_email(top_jobs, amazon_jobs)
+    send_email(top_jobs, amazon_jobs, funnel_summary=funnel.summary_dict())
 
     # Print top 3 with cover letters
     print("="*55)
@@ -2366,7 +2548,7 @@ def get_decision_stats():
         return None
 
 
-def send_email(top_jobs, amazon_jobs=None):
+def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     import smtplib
     from email.mime.multipart import MIMEMultipart
     from email.mime.text import MIMEText
@@ -2385,9 +2567,23 @@ def send_email(top_jobs, amazon_jobs=None):
     </div>"""
 
     if count == 0:
-        html += """<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:16px;margin:16px 0;">
+        # Build a one-line diagnostic hint from funnel data, if available
+        diagnostic_hint = ""
+        if funnel_summary:
+            biggest_label, biggest_drop_n, biggest_pct = funnel_summary.get("biggest_drop", (None, 0, 0))
+            raw_count = funnel_summary.get("stages", {}).get("raw", 0)
+            if biggest_drop_n > 0 and biggest_label:
+                diagnostic_hint = (
+                    f'<p style="margin:8px 0 0;color:#c62828;font-size:12px;">'
+                    f'📉 <strong>Biggest drop:</strong> {biggest_label} removed '
+                    f'{biggest_drop_n} of {raw_count} raw candidates ({biggest_pct:.0f}%). '
+                    f'See Pipeline Funnel below for the full breakdown.'
+                    f'</p>'
+                )
+        html += f"""<div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:16px;margin:16px 0;">
         <p style="margin:0;color:#f57f17;font-weight:bold;">No matching jobs found today.</p>
         <p style="margin:8px 0 0;color:#555;">The script ran successfully but found no new jobs matching your criteria posted in the last 5 days that you haven't already seen. Check back tomorrow!</p>
+        {diagnostic_hint}
         </div>"""
     html += "<hr/>"
 
@@ -2504,6 +2700,83 @@ def send_email(top_jobs, amazon_jobs=None):
         html += """
 <div style="background:#fff8e1;border:1px solid #ffe082;border-radius:8px;padding:10px 16px;margin:16px 0 20px;">
   <p style="margin:0;font-size:12px;color:#f57f17;">📊 K-Means tracker: no decisions recorded yet — start submitting decisions via the form above!</p>
+</div>"""
+
+    # ── Pipeline Funnel section ─────────────────────────────
+    # Matches K-Means box styling so the future K-Means transformation
+    # is a content swap, not a redesign.
+    if funnel_summary:
+        stages = funnel_summary.get("stages", {})
+        biggest = funnel_summary.get("biggest_drop", (None, 0, 0))
+
+        raw = stages.get("raw", 0)
+        final = stages.get("final", 0)
+        survival_pct = (final / raw * 100) if raw > 0 else 0
+
+        # Build stage rows
+        stage_order = [
+            ("raw",              "Raw candidates"),
+            ("after_recency",    "After recency filter"),
+            ("after_title",      "After title filter"),
+            ("after_level",      "After level filter"),
+            ("after_score",      "After score filter"),
+            ("after_us",         "After US/remote filter"),
+            ("after_blocked",    "After blocked-site filter"),
+            ("kept_by_sources",  "Kept by sources"),
+            ("after_minscore",   "After min-score threshold"),
+            ("after_cross_dedup", "After cross-source dedup"),
+            ("after_seen_dedup",  "After already-seen dedup"),
+            ("final",            "→ Final email"),
+        ]
+        rows_html = ""
+        for key, label in stage_order:
+            count = stages.get(key, 0)
+            pct = (count / raw * 100) if raw > 0 else 0
+            is_final = (key == "final")
+            row_style = "font-weight:bold;color:#1a3a5c;" if is_final else "color:#444;"
+            rows_html += (
+                f'<tr>'
+                f'<td style="padding:2px 8px 2px 0;font-size:11px;{row_style}">{label}</td>'
+                f'<td style="padding:2px 8px 2px 0;font-size:11px;text-align:right;{row_style}">{count}</td>'
+                f'<td style="padding:2px 0;font-size:11px;text-align:right;color:#888;">{pct:.1f}%</td>'
+                f'</tr>'
+            )
+
+        # Biggest-drop diagnostic line
+        biggest_label, biggest_drop_n, biggest_pct = biggest
+        if biggest_drop_n > 0 and biggest_label:
+            biggest_html = (
+                f'<p style="margin:8px 0 0;font-size:11px;color:#c62828;">'
+                f'📉 <strong>Biggest drop:</strong> {biggest_label} removed '
+                f'{biggest_drop_n} jobs ({biggest_pct:.0f}% of prior stage)'
+                f'</p>'
+            )
+        else:
+            biggest_html = ""
+
+        # Per-source raw context (optional small print)
+        by_source = funnel_summary.get("by_source", {})
+        source_html = ""
+        if by_source:
+            source_parts = [f"{s}: {n}" for s, n in sorted(by_source.items(), key=lambda x: -x[1])]
+            source_html = (
+                f'<p style="margin:6px 0 0;font-size:10px;color:#888;">'
+                f'Raw by source: {" &nbsp;|&nbsp; ".join(source_parts)}'
+                f'</p>'
+            )
+
+        html += f"""
+<div style="background:#f8f9ff;border:1px solid #c5d0e8;border-radius:8px;padding:14px 18px;margin:16px 0 20px;">
+  <p style="margin:0 0 6px;font-weight:bold;color:#1a3a5c;font-size:13px;">📊 PIPELINE FUNNEL</p>
+  <p style="margin:0 0 10px;font-size:12px;color:#444;">
+    <strong>{raw}</strong> raw → <strong>{final}</strong> final match{'es' if final != 1 else ''}
+    &nbsp;({survival_pct:.1f}% survival rate)
+  </p>
+  <table style="width:100%;border-collapse:collapse;margin-top:4px;">
+    {rows_html}
+  </table>
+  {biggest_html}
+  {source_html}
 </div>"""
 
     html += """<hr/><p style="font-size:12px;color:#888;">Sent automatically by your Job Search Script.</p></body></html>"""
