@@ -1896,17 +1896,33 @@ def search_adzuna():
                     continue
                 seen.add(url_job)
 
-                if "remote" not in combined:
+                adzuna_remote_signals = ["remote", "work from home", "wfh",
+                                         "telecommute", "anywhere",
+                                         "distributed", "virtual",
+                                         "home-based", "home based"]
+                if not any(sig in combined for sig in adzuna_remote_signals):
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Adzuna FILTERED-not-remote: {title[:50]}")
                     continue
 
-                # Adzuna-specific: For Performance Engineering track, require LR signal.
-                # Run a quick track classification BEFORE the full pipeline so we
-                # can drop non-LR perf jobs without polluting funnel stats.
+                # Adzuna-specific: For Performance Engineering track, prefer
+                # LR signal, but allow senior perf roles with observability
+                # stack to pass through (they often hide LR deeper in the
+                # full JD that Adzuna doesn't return in the snippet).
                 track_quick, _ = get_job_track(title, desc)
                 if track_quick == "Performance Engineering":
-                    if not any(sig in combined for sig in LR_SIGNALS):
+                    has_lr = any(sig in combined for sig in LR_SIGNALS)
+                    perf_stack_signals = ["appdynamics", "dynatrace", "splunk",
+                                          "grafana", "prometheus",
+                                          "new relic", "datadog",
+                                          "observability"]
+                    has_stack = any(sig in combined for sig in perf_stack_signals)
+                    is_senior_perf = any(s in title.lower() for s in
+                                         ["senior", "sr ", "sr.", "staff",
+                                          "lead", "principal"])
+                    if not has_lr and not (is_senior_perf and has_stack):
                         if DEBUG_MODE:
-                            print(f"   [DEBUG] Adzuna FILTERED-no-LR: {title[:50]}")
+                            print(f"   [DEBUG] Adzuna FILTERED-no-LR-no-stack: {title[:50]}")
                         continue
 
                 # Debug breadcrumb for stale jobs
