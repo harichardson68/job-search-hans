@@ -10,6 +10,12 @@ Sequence:
   4. Apply auto-fixes      — update job_search.py + scoring_weights.json
   5. Write summary         — overnight_summary.json (shown in tomorrow's email)
   6. git commit + push     — send everything back to GitHub
+
+Note: Unmatched 'other' decisions (those that don't match the bad-location /
+bad-company regex auto-patterns) are NOT written here. They live in
+job_decisions.json with decision='other' and reviewed!=true, and are
+surfaced Mon+Thu by review_decisions.py as a digest email.
+The legacy needs_review.json file was retired 2026-05-21.
 """
 
 import os
@@ -36,7 +42,6 @@ WEIGHTS_FILE     = os.path.join(SCRIPT_DIR, "scoring_weights.json")
 JOB_SEARCH_FILE  = os.path.join(SCRIPT_DIR, "job_search.py")
 SUMMARY_FILE     = os.path.join(SCRIPT_DIR, "overnight_summary.json")
 BACKUP_FILE      = os.path.join(SCRIPT_DIR, "job_search.py.bak")
-NEEDS_REVIEW_FILE = os.path.join(SCRIPT_DIR, "needs_review.json")
 
 TODAY = date.today().isoformat()
 
@@ -284,7 +289,6 @@ def save_weights(weights):
 
 def apply_feedback(entries, weights):
     auto_handled = []
-    needs_review = []
 
     for entry in entries:
         decision = entry.get("decision", "no_response")
@@ -348,43 +352,11 @@ def apply_feedback(entries, weights):
                 if co not in weights["auto_blocked_companies"]:
                     weights["auto_blocked_companies"].append(co)
                     auto_handled.append(f"Auto-blocked company: '{co}'")
-            else:
-                needs_review.append({
-                    "date":     TODAY,
-                    "job_id":   entry.get("job_id", ""),
-                    "title":    entry.get("title", ""),
-                    "company":  entry.get("company", ""),
-                    "track":    entry.get("track", ""),
-                    "url":      entry.get("url", ""),
-                    "decision": decision,
-                    "reason":   reason,
-                    "category": "other",
-                    "status":   "pending",
-                    "resolution": None,
-                })
+            # Unmatched 'other' decisions are surfaced Mon+Thu by review_decisions.py
+            # (filter: decision=='other' AND reviewed!=true; marked reviewed:true after digest)
 
-    return auto_handled, needs_review
+    return auto_handled
 
-
-def write_needs_review(needs_review_items):
-    """Append new needs_review items to needs_review.json."""
-    if not needs_review_items:
-        return
-    try:
-        existing = {"items": []}
-        if os.path.exists(NEEDS_REVIEW_FILE):
-            with open(NEEDS_REVIEW_FILE, "r") as f:
-                existing = json.load(f)
-
-        existing["items"].extend(needs_review_items)
-        existing["last_updated"] = datetime.now().isoformat()
-        existing["pending_count"] = sum(1 for i in existing["items"] if i.get("status") == "pending")
-
-        with open(NEEDS_REVIEW_FILE, "w") as f:
-            json.dump(existing, f, indent=2)
-        print(f"[OK] Added {len(needs_review_items)} item(s) to needs_review.json ({existing['pending_count']} total pending)")
-    except Exception as e:
-        print(f"[WARN] Could not write needs_review.json: {e}")
 
 def patch_job_search(weights):
     if not os.path.exists(JOB_SEARCH_FILE):
@@ -439,19 +411,9 @@ def patch_job_search(weights):
         print(f"[OK] No patches needed for job_search.py")
     return changed
 
-def write_summary(entries, auto_handled, needs_review, git_committed):
+def write_summary(entries, auto_handled, git_committed):
     decisions_received = sum(1 for e in entries if e.get("decision") != "no_response")
     no_response        = sum(1 for e in entries if e.get("decision") == "no_response")
-
-    # Get total pending needs_review count
-    pending_count = 0
-    try:
-        if os.path.exists(NEEDS_REVIEW_FILE):
-            with open(NEEDS_REVIEW_FILE, "r") as f:
-                nr = json.load(f)
-            pending_count = sum(1 for i in nr.get("items", []) if i.get("status") == "pending")
-    except Exception:
-        pass
 
     summary = {
         "date":               TODAY,
@@ -459,16 +421,14 @@ def write_summary(entries, auto_handled, needs_review, git_committed):
         "decisions_received": decisions_received,
         "no_response":        no_response,
         "auto_handled":       auto_handled,
-        "needs_review":       [i.get("reason","") if isinstance(i, dict) else i for i in needs_review],
-        "needs_review_pending_total": pending_count,
         "git_committed":      "Yes" if git_committed else "No",
         "generated_at":       datetime.now().isoformat(),
     }
     with open(SUMMARY_FILE, "w") as f:
         json.dump(summary, f, indent=2)
-    print(f"[OK] Overnight summary written ({pending_count} total needs_review pending)")
+    print(f"[OK] Overnight summary written")
 
-def git_commit_push(auto_handled, needs_review):
+def git_commit_push(auto_handled):
     print("[GIT] Committing and pushing updates...")
     try:
         subprocess.run(["git", "add", "."], cwd=SCRIPT_DIR, check=True)
@@ -494,7 +454,7 @@ def main():
     today_jobs = load_today_jobs()
     if not today_jobs:
         print("[INFO] No jobs for today — nothing to process")
-        write_summary([], [], [], False)
+        write_summary([], [], False)
         return
     print(f"[OK] Loaded {len(today_jobs)} jobs from today_jobs.json")
 
@@ -506,18 +466,15 @@ def main():
     entries = save_decisions(today_jobs, decisions_by_date)
     weights = load_weights()
 
-    auto_handled, needs_review = apply_feedback(entries, weights)
-    print(f"[OK] Auto-handled: {len(auto_handled)} | Needs review: {len(needs_review)}")
+    auto_handled = apply_feedback(entries, weights)
+    print(f"[OK] Auto-handled: {len(auto_handled)}")
     for item in auto_handled:
         print(f"   + {item}")
-    for item in needs_review:
-        print(f"   ! {item}")
 
     save_weights(weights)
     patch_job_search(weights)
-    write_needs_review(needs_review)
-    git_committed = git_commit_push(auto_handled, needs_review)
-    write_summary(entries, auto_handled, needs_review, git_committed)
+    git_committed = git_commit_push(auto_handled)
+    write_summary(entries, auto_handled, git_committed)
 
     print(f"\n[DONE] Completed at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
