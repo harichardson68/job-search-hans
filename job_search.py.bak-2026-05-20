@@ -1511,80 +1511,6 @@ def search_remoteok():
     return jobs
 
 # 
-# SOURCE 1b: Remotive API (free, no key required)
-# https://remotive.com/api/remote-jobs
-# Strong AI/ML section. Added 2026-05-20.
-# 
-def search_remotive():
-    print("[SEARCH] Searching Remotive...")
-    jobs = []
-    try:
-        headers = {"User-Agent": "JobSearchBot/1.0 (personal use)"}
-        # Pull software-dev category — covers AI/ML, QA, and perf roles.
-        # Remotive API returns up to ~200 jobs per category; we filter locally.
-        resp = requests.get(
-            "https://remotive.com/api/remote-jobs?category=software-dev",
-            headers=headers, timeout=15
-        )
-        data = resp.json()
-        items = data.get("jobs", [])
-        if DEBUG_MODE:
-            print(f"   [DEBUG] Remotive: {len(items)} raw results, status {resp.status_code}")
-
-        for item in items:
-            title   = item.get("title", "")
-            desc    = item.get("description", "")
-            url_job = item.get("url", "")
-            posted  = item.get("publication_date", "")
-            company = item.get("company_name", "N/A")
-            location = (item.get("candidate_required_location", "") or "").lower()
-
-            # Remotive is remote-only by design, but some jobs restrict
-            # to specific regions. Keep only worldwide or US-friendly.
-            if location and not any(loc in location for loc in
-                                    ["worldwide", "anywhere", "usa", "us only",
-                                     "united states", "americas", "north america"]):
-                if DEBUG_MODE:
-                    print(f"   [DEBUG] Remotive FILTERED-region ({location[:30]}): {title[:50]}")
-                continue
-
-            funnel.add_raw("Remotive")
-
-            # Debug breadcrumb matching RemoteOK style
-            if DEBUG_MODE and title:
-                score_quick, _ = score_job(title, desc)
-                track_quick, level_ok_quick = get_job_track(title, desc)
-                if score_quick == 0:
-                    print(f"   [DEBUG] Remotive FILTERED-score: {title[:60]}")
-                elif not level_ok_quick:
-                    print(f"   [DEBUG] Remotive FILTERED-level: {title[:60]}")
-                elif not is_recent(posted):
-                    print(f"   [DEBUG] Remotive FILTERED-date: {title[:60]}")
-                elif not is_relevant_title(title):
-                    print(f"   [DEBUG] Remotive FILTERED-title: {title[:60]}")
-
-            passed, score, matched, track = passes_filters(
-                title, desc, posted, location, url_job, company, "Remotive"
-            )
-            if passed:
-                jobs.append({
-                    "source": "Remotive",
-                    "title": title,
-                    "company": company,
-                    "url": url_job,
-                    "posted": posted,
-                    "description": desc[:500],
-                    "score": score,
-                    "matched_keywords": matched,
-                    "track": track,
-                })
-        print(f"   [OK] Remotive: {len(jobs)} relevant jobs found")
-    except Exception as e:
-        print(f"   [ERROR] Remotive error: {e}")
-        log_error(f"Remotive error: {e}")
-    return jobs
-
-# 
 # SOURCE 2: Serper.dev Google Jobs API (2,500 free searches/month - direct apply links!)
 # Sign up free at: https://serper.dev
 # 
@@ -1660,24 +1586,6 @@ def search_serper_jobs():
         'site:myworkdayjobs.com "cobol developer" remote',
         '"cobol developer" remote "w2"',
         '"mainframe developer" "cobol" remote',
-        # New sources (added 2026-05-20): Himalayas + BuiltIn
-        'site:himalayas.app "loadrunner" OR "performance engineer" remote',
-        'site:himalayas.app "ai engineer" OR "llm" remote',
-        'site:builtin.com/job "ai engineer" OR "performance engineer" remote',
-        'site:builtin.com/job "ai qa" OR "ai test" remote',
-        # AI lane targeting (added 2026-05-20): performance-engineer-bridges-to-AI
-        # roles where Hans's 14 yrs LoadRunner + observability stack is the moat.
-        # These should keep at higher rates than generic "agentic ai engineer".
-        '"AI QA engineer" OR "AI test engineer" remote',
-        '"LLM evaluation engineer" remote',
-        '"AI reliability engineer" remote',
-        '"AI observability" engineer remote',
-        '"LLM observability" engineer remote',
-        '"AI SDET" remote',
-        '"AI workflow engineer" remote',
-        'site:jobs.lever.co "ai sdet" OR "llm test" "remote"',
-        'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"',
-        'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"',
     ]
     seen = set()
     for query in queries:
@@ -1717,8 +1625,6 @@ def search_serper_jobs():
                     "/jobs?", "q=ai+ml", "search?q=", "find-jobs",
                     "indeed.com/jobs", "indeed.com/q-", "linkedin.com/jobs/search",
                     "glassdoor.com/Job/jobs", "glassdoor.com/Job/remote",
-                    "srch_il", "glassdoor.com/job/united-states",
-                    "glassdoor.com/job/us-", "-jobs-srch_",
                     "monster.com/jobs/search",
                     "ziprecruiter.com/Jobs/", "ziprecruiter.com/jobs-search",
                     "naukri.com/loadrunner", "naukri.com/cobol", "naukri.com/",
@@ -1937,16 +1843,18 @@ def search_adzuna():
         print("   [WARN]  Adzuna skipped  add your API key to the config")
         return jobs
 
-    # Narrowed to LoadRunner/LRE/VuGen-specific queries only (2026-05-20).
-    # Previous broad queries (performance test engineer, performance engineer,
-    # load test engineer, etc.) returned 180 raw / 0 keepers per run.
-    # Re-evaluate in 2 weeks — delete source entirely if still zero.
+    # Broader performance testing titles — filter for LR/LRE in description
     queries = [
-        "loadrunner performance engineer",
-        "loadrunner",
-        "vugen",
-        "loadrunner enterprise",
-        "performance center loadrunner",
+        "performance test engineer",
+        "performance engineer",
+        "load test engineer",
+        "performance testing engineer",
+        "sr performance engineer",
+        "senior performance engineer",
+        "performance qa engineer",
+        "software performance engineer",
+        "application performance engineer",
+        "enterprise performance engineer",
     ]
 
     # Require LoadRunner/LRE/VuGen signal in description to pass
@@ -2485,7 +2393,6 @@ def main():
 
     all_jobs = []
     all_jobs += search_remoteok()
-    all_jobs += search_remotive()
     all_jobs += search_serper_jobs()
     all_jobs += search_adzuna()
     all_jobs += search_usajobs()
@@ -2552,7 +2459,7 @@ def main():
     print(f"\n{'='*55}")
     print(f"[STATS] Total relevant jobs found: {len(all_jobs)}")
 
-    top_jobs = all_jobs[:15]  # Send top 15 jobs per day (bumped from 10 on 2026-05-20 to accelerate K-Means timeline)
+    top_jobs = all_jobs[:10]  # Send top 10 jobs per day
 
     if len(all_jobs) == 0:
         print(f"[STATS] No matching jobs found today.")
@@ -2614,8 +2521,7 @@ def main():
         print(job["cover_letter"])
         print("-"*40)
 
-KMEANS_THRESHOLD     = 300  # target decision count before K-Means production training is meaningful
-KMEANS_EXPLORATORY   = 100  # earlier milestone for exploratory K-Means — see what clusters emerge, validate the approach
+KMEANS_THRESHOLD = 300  # target decision count before K-Means clustering is meaningful
 
 def get_decision_stats():
     """
@@ -2651,14 +2557,8 @@ def get_decision_stats():
                 total += 1
         if total == 0:
             return None
-        pct      = min(100, int((total / KMEANS_THRESHOLD) * 100))
-        pct_expl = min(100, int((total / KMEANS_EXPLORATORY) * 100))
-        return {
-            "total":     total,
-            "by_status": by_status,
-            "pct":       pct,
-            "pct_expl":  pct_expl,
-        }
+        pct = min(100, int((total / KMEANS_THRESHOLD) * 100))
+        return {"total": total, "by_status": by_status, "pct": pct}
     except Exception as e:
         print(f"   [WARN] Could not read decision stats: {e}")
         return None
@@ -2774,11 +2674,9 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     # ── K-Means Decision Tracker ──────────────────────────────
     stats = get_decision_stats()
     if stats:
-        total       = stats["total"]
-        pct         = stats["pct"]
-        pct_expl    = stats["pct_expl"]
-        remaining_p = max(0, KMEANS_THRESHOLD - total)
-        remaining_e = max(0, KMEANS_EXPLORATORY - total)
+        total   = stats["total"]
+        pct     = stats["pct"]
+        remaining = max(0, KMEANS_THRESHOLD - total)
         # Build breakdown rows
         status_rows = ""
         status_labels = {
@@ -2799,40 +2697,20 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             icon, color = status_labels.get(status.lower(), ("•", "#555"))
             status_rows += f"""<span style="display:inline-block;margin:2px 8px 2px 0;font-size:11px;color:{color};">
                 {icon} <strong>{status}</strong>: {cnt}</span>"""
-
-        # Exploratory bar: green when reached, blue/orange while in progress
-        if total >= KMEANS_EXPLORATORY:
-            expl_color = "#4caf50"   # green — milestone hit
-            expl_label = f"✅ Exploratory ready ({KMEANS_EXPLORATORY})"
-        else:
-            expl_color = "#1F3864"
-            expl_label = f"<strong>{remaining_e}</strong> to exploratory ({KMEANS_EXPLORATORY})"
-
-        # Production bar color graduates by progress
-        prod_color = "#4caf50" if pct >= 75 else "#ff9800" if pct >= 40 else "#1F3864"
-
+        # Progress bar color
+        bar_color = "#4caf50" if pct >= 75 else "#ff9800" if pct >= 40 else "#1F3864"
         html += f"""
 <div style="background:#f8f9ff;border:1px solid #c5d0e8;border-radius:8px;padding:14px 18px;margin:16px 0 20px;">
   <p style="margin:0 0 6px;font-weight:bold;color:#1a3a5c;font-size:13px;">📊 K-MEANS TRAINING PROGRESS</p>
-  <p style="margin:0 0 4px;font-size:12px;color:#444;">
-    <strong>{total}</strong> total decisions
+  <p style="margin:0 0 8px;font-size:12px;color:#444;">
+    <strong>{total}</strong> total decisions &nbsp;|&nbsp;
+    <strong>{remaining}</strong> remaining to K-Means ready &nbsp;|&nbsp;
+    <strong>{pct}%</strong> of {KMEANS_THRESHOLD} target
   </p>
-
-  <p style="margin:8px 0 2px;font-size:11px;color:#444;">
-    {expl_label} &nbsp;|&nbsp; <strong>{pct_expl}%</strong>
-  </p>
-  <div style="background:#e0e0e0;border-radius:4px;height:8px;width:100%;margin:0 0 8px;">
-    <div style="background:{expl_color};width:{pct_expl}%;height:8px;border-radius:4px;"></div>
+  <div style="background:#e0e0e0;border-radius:4px;height:10px;width:100%;margin:6px 0 10px;">
+    <div style="background:{bar_color};width:{pct}%;height:10px;border-radius:4px;"></div>
   </div>
-
-  <p style="margin:6px 0 2px;font-size:11px;color:#444;">
-    <strong>{remaining_p}</strong> to production ({KMEANS_THRESHOLD}) &nbsp;|&nbsp; <strong>{pct}%</strong>
-  </p>
-  <div style="background:#e0e0e0;border-radius:4px;height:8px;width:100%;margin:0 0 10px;">
-    <div style="background:{prod_color};width:{pct}%;height:8px;border-radius:4px;"></div>
-  </div>
-
-  <div style="margin-top:6px;">{status_rows}</div>
+  <div style="margin-top:4px;">{status_rows}</div>
 </div>"""
     else:
         html += """
