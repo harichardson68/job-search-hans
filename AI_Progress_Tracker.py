@@ -1,5 +1,5 @@
 # Hans Richardson - AI Engineering Progress Tracker
-# Updated: May 07, 2026 (evening)
+# Updated: May 20, 2026 (evening)
 # Share this file at the start of each Claude session for instant context!
 
 # ─────────────────────────────────────────────────────────────
@@ -33,12 +33,29 @@ GITHUB = {
             "description": "Automated cybersecurity job search pipeline for Evan",
             "topics": ["python", "job-search", "cybersecurity", "automation", "claude-api"],
         },
+        {
+            "name": "FLAPBOARD",
+            "url": "github.com/harichardson68/FLAPBOARD",
+            "live_url": "https://flapboard.onrender.com",
+            "description": "Flask-based flight price comparison app with split-flap aesthetic (amber on navy). Auth + mock flight search working on Render free tier.",
+            "stack": "Flask 3.0 app factory, SQLite/SQLAlchemy, Flask-Login, Flask-WTF CSRF, Werkzeug PBKDF2",
+            "tests": "11 integration tests passing",
+            "next_steps": [
+                "Postgres for persistent accounts (SQLite ephemeral on Render — wipes on redeploy)",
+                "Amadeus API for real prices + city autocomplete",
+                "Round trip toggle",
+                "Price-drop email alerts (reuse job_search.py SMTP pattern)",
+                "Flask-Limiter on /auth/login and /auth/register (5/min per IP)",
+                "Password reset flow",
+            ],
+            "portfolio_role": "Second agentic project candidate — travel-planning agent applying the agentic loop pattern to a new domain. One project is a project; two is a replicable pattern.",
+        },
     ],
     "created": "April 23, 2026",
 }
 
 # ─────────────────────────────────────────────────────────────
-# JOB SEARCH SYSTEM - UPDATED April 23, 2026
+# JOB SEARCH SYSTEM - UPDATED May 20, 2026
 # ─────────────────────────────────────────────────────────────
 JOB_SEARCH_SYSTEM = {
     "script": "job_search.py",
@@ -46,22 +63,34 @@ JOB_SEARCH_SYSTEM = {
     "language": "Python",
     "sources": 7,
     "source_list": [
-        "RemoteOK", "Google Jobs (Serper)", "Adzuna", "USAJobs",
-        "JSearch (RapidAPI)", "Wellfound", "Amazon Jobs Spotlight"
+        "RemoteOK", "Remotive", "Google Jobs (Serper)", "Adzuna",
+        "USAJobs", "Wellfound", "Amazon Jobs Spotlight"
+    ],
+    "source_changes_2026_05_20": [
+        "Added Remotive API (free, no key, software-dev category)",
+        "Narrowed Adzuna to LoadRunner-only queries (5 instead of 10)",
+        "Added Glassdoor SRCH_IL filter (kills aggregator search pages)",
+        "Added 14 new Serper queries (Himalayas + BuiltIn site-targets, AI-lane: AI QA, LLM eval, AI reliability, AI SDET, AI observability)",
+        "Bumped daily cap from Top 10 to Top 15",
+        "Added dual K-Means thresholds: 100 exploratory + 300 production",
     ],
     "removed_sources": [
-        "Google Custom Search API (removed 2026-05-07 — 403 on every query, redundant with Serper)"
+        "Google Custom Search API (removed 2026-05-07 — 403 on every query, redundant with Serper)",
+        "JSearch (added 2026-05-07, dormant — no JSEARCH_API_KEY in .env; skipped every run)",
     ],
     "dead_sources_removed": [
         "Indeed RSS (shut down 2024)",
         "LinkedIn RSS (shut down 2023)",
         "Jooble (premium pay wall - replaced with Serper)",
-        "Remotive (too few results)", "WeWorkRemotely (non-English listings)",
-        "Himalayas (no dates)", "Jobicy (low quality)", "SimplyHired (aggregator)",
+        "WeWorkRemotely (non-English listings)",
+        "Jobicy (low quality)", "SimplyHired (aggregator)",
         "ZipRecruiter (search pages only)", "Ashby (function broken)",
         "Jobvite (function broken)", "Glassdoor (function broken)",
         "ClearanceJobs (function broken)", "Arc.dev (category pages only)",
-        "Greenhouse (403 blocks)", "Lever (403 blocks)", "Dice (403 blocks)",
+        "Greenhouse direct (403 blocks — now targeted via Serper site: instead)",
+        "Lever direct (403 blocks — now via Serper site:)",
+        "Dice direct (403 blocks — now via Serper site:)",
+        "pitchmeai, Data Annotation, JobLeads, Arbeitnow (low signal)",
     ],
     "schedule": "Daily at 12:00 PM via Windows Task Scheduler",
     "midnight_update": "Daily at 12:00 AM via Windows Task Scheduler (update_scoring.py)",
@@ -70,17 +99,18 @@ JOB_SEARCH_SYSTEM = {
         "source":          "amazon.jobs via Serper site: targeting",
         "max_results":     5,
         "freshness_days":  10,
-        "numbering":       "A1-A5 (separate from regular 1-10)",
+        "numbering":       "A1-A5 (separate from regular 1-15)",
         "min_score":       15,
-        "email_section":   "Amazon Jobs Spotlight — orange branded section below top 10",
+        "email_section":   "Amazon Jobs Spotlight — orange branded section below top 15",
         "decision_loop":   "Fully integrated — submit A1-A5 via same Google Form",
         "internal_reminder": "Link to internal.amazon.jobs in every email",
+        "non_us_filter":   "_is_non_us_amazon_posting() catches Toronto, Luxembourg, etc.",
     },
     "email_notifications": "harichardson68@gmail.com",
-    "freshness_filter": "5 days (120 hours)",
-    "max_jobs_per_email": 10,
+    "freshness_filter": "5 days (120 hours) for regular jobs, 10 days for Amazon",
+    "max_jobs_per_email": 15,
     "duplicate_tracking": "seen_jobs.json - never sends same job twice",
-    "cover_letters": "AI-generated via Claude API (prompt engineering agent)",
+    "cover_letters": "AI-generated via Claude API (claude-sonnet-4-6, prompt engineering agent)",
     "api_keys_location": ".env file (never committed to Git)",
     "job_tracks": [
         "Performance Engineering (LoadRunner focus - Senior OK only if LR mentioned)",
@@ -107,31 +137,56 @@ JOB_SEARCH_SYSTEM = {
         "form": "Hans Job Search Decisions (Google Forms)",
         "form_url": "https://docs.google.com/forms/d/1gLcCAhFvOpDWFgCGbu1r9Xubl9o7RVGQbyHwWYJPHIw/viewform",
         "sheet_id": "1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE",
-        "midnight_script": "update_scoring.py",
+        "form_validation_regex": "^([1-9]|1[0-5]|A[1-5])$",
+        "form_validation_note": "Updated 2026-05-20 from 1-10 to 1-15 to support Top 15 daily cap",
         "decisions": [
             "Applied", "Bad Link", "Onsite / Not Remote", "Too Senior",
             "Salary Too Low", "Not Interested", "Already Seen / Duplicate",
             "Search Page Listing", "Not in United States", "Other"
         ],
-        "auto_handled": [
-            "Applied → boosts matched keywords in scoring_weights.json",
-            "Bad Link → auto-blocks domain in BLOCKED_JOB_SITES",
-            "Not in United States + reason → auto-adds location to NON_US_LOCATIONS",
-            "Other + 'bad location - X' → auto-adds X to NON_US_LOCATIONS",
-            "Other + 'bad company - X' → auto-adds X to blocked_companies",
-        ],
-        "needs_manual_review": [
-            "Other reasons that don't match auto-detect patterns",
-            "These appear in overnight_summary.json and tomorrow's email header",
-        ],
-        "midnight_sequence": [
-            "1. git pull — sync latest from GitHub",
-            "2. Read Google Sheet — get today's form submissions",
-            "3. Write job_decisions.json — save all decisions",
-            "4. Apply auto-fixes — patch job_search.py + scoring_weights.json",
-            "5. Write overnight_summary.json — shown in tomorrow's email header",
-            "6. git commit + push — everything to GitHub",
-        ],
+        "two_script_architecture": {
+            "note": "Two scripts both read the Google Sheet; their unique roles differ.",
+            "update_scoring.py": {
+                "schedule": "Daily 12:00 AM via Task Scheduler",
+                "primary_role": "AUTO-PATCH job_search.py source code based on feedback",
+                "sequence": [
+                    "1. git pull",
+                    "2. Read Google Sheet (all dates)",
+                    "3. Write today's entries to job_decisions.json",
+                    "4. Regex-patch job_search.py:",
+                    "   - Append new locations to NON_US_LOCATIONS array",
+                    "   - Append new sites to BLOCKED_JOB_SITES array",
+                    "   - Append new companies to blocked_companies array",
+                    "5. Update scoring_weights.json",
+                    "6. Write overnight_summary.json (shown in next day's email)",
+                    "7. git commit + push",
+                ],
+                "auto_handled_patterns": [
+                    "Applied → boost matched keywords in scoring_weights.json",
+                    "Bad Link → auto-block domain in BLOCKED_JOB_SITES",
+                    "Not in United States + reason → auto-add to NON_US_LOCATIONS",
+                    "Other + 'bad location - X' → auto-add X to NON_US_LOCATIONS",
+                    "Other + 'bad company - X' → auto-add X to blocked_companies",
+                ],
+                "deprecated_path": "write_needs_review() function still exists but needs_review.json was deleted; if no 'other' regex match fires, the function silently regenerates orphan file. Slated for surgical removal a different evening.",
+            },
+            "review_decisions.py": {
+                "schedule": "Mon + Thu 10:00 AM via Task Scheduler",
+                "primary_role": "Surface unreviewed 'Other' decisions for pattern recognition",
+                "sequence": [
+                    "1. git pull",
+                    "2. Sync Google Form responses → job_decisions.json (matches by date+job_number)",
+                    "3. Filter: decision == 'other' AND reviewed != true",
+                    "4. Group by REASON_CATEGORY_MAP (clearance/onsite/jmeter_only/etc.)",
+                    "5. Send HTML digest grouped by category",
+                    "6. Mark each surfaced entry reviewed:true + reviewed_date",
+                    "7. git commit + push",
+                ],
+                "renamed_from": "weekly_review.py (renamed 2026-04-30, frequency changed Mon→Mon+Thu)",
+                "replaces": "needs_review.json file (deleted; review state now lives inside job_decisions.json via reviewed: true flag)",
+                "supports_amazon": "Yes — normalise_job_number() handles both 1-15 and A1-A5",
+            },
+        },
     },
 }
 
@@ -246,6 +301,7 @@ COURSES_COMPLETED = [
 
 COURSES_IN_PROGRESS = [
     "IBM Generative AI Engineering Professional Certificate - Coursera (in progress)",
+    "Pathstream Amazon Operations Leadership Certificate - Career Choice (May-September 2026, free via Amazon Career Choice — parallel hedge while AI engineering pivot and IT contract search continue)",
 ]
 
 # ─────────────────────────────────────────────────────────────
@@ -270,7 +326,7 @@ IBM_COURSE_PROGRESS = {
     ],
     "modules_next": [
         "Building Supervised Learning Models",
-        "Unsupervised Learning",
+        "Unsupervised Learning (K-Means — RELEVANT NOW: your job_decisions.json hits 100-record exploratory milestone soon)",
         "Neural Networks and Deep Learning",
         "Generative AI and LLMs",
     ],
@@ -280,6 +336,7 @@ IBM_COURSE_PROGRESS = {
         "Threshold = SLA target (28 years of experience applies!)",
         "MLOps/AI Test Engineer roles are realistic targets for Hans",
         "Performance testing background is a COMPETITIVE ADVANTAGE in AI",
+        "Exploratory K-Means at 100 records = data audit before committing to 300; matches the smoke-test-before-load-test pattern from performance engineering",
     ]
 }
 
@@ -296,7 +353,7 @@ AI_SKILLS_HANDS_ON = {
     "Git / GitHub": {"level": "Practical", "evidence": "Two public repos with portfolio-grade READMEs, automated nightly commits from update scripts", "date": "April 23, 2026"},
     "RAG / Vector Search": {"level": "Practical", "evidence": "ChromaDB + sentence-transformers (all-MiniLM-L6-v2) wired into job_search.py — 92 decisions ingested, chroma_db folder live on disk", "date": "May 07, 2026"},
     "ChromaDB": {"level": "Practical", "evidence": "Local persistent vector store, upsert/query pipeline built and running nightly", "date": "May 07, 2026"},
-    "K-Means (in progress)": {"level": "Conceptual + Implementation planned", "evidence": "92/300 decisions collected, progress tracker in nightly email, architecture designed", "date": "May 07, 2026"},
+    "K-Means (in progress)": {"level": "Conceptual + Implementation planned", "evidence": "71/100 exploratory decisions (71%), 71/300 production decisions (24%) after 2026-05-20 stub cleanup. Dual-threshold architecture: exploratory milestone at 100 (audit if data has clustering signal), production milestone at 300 (train supervised classifier to auto-skip predicted-rejects). analyze_decisions.py to be drafted near 80 records.", "date": "May 20, 2026"},
     "Google Sheets API": {"level": "Practical", "evidence": "Service account auth, reads form submissions to drive autonomous scoring updates", "date": "April 23, 2026"},
     "Debugging & Troubleshooting": {"level": "Practical", "evidence": "Fixed dead APIs, date parsing, email crashes, location filtering, score inflation, secret scanning blocks", "date": "April 23, 2026"},
     "Linear/Logistic Regression": {"level": "Conceptual + IBM Course", "evidence": "Completed regression module", "date": "March 29, 2026"},
@@ -413,6 +470,66 @@ PERFORMANCE_CREDENTIALS = {
 # ─────────────────────────────────────────────────────────────
 SESSION_NOTES = [
     {
+        "date": "May 20, 2026",
+        "accomplishments": [
+            # Source expansion + filter improvements
+            "Added Remotive API as new source (free, no key, software-dev category; 19 raw / 0 keepers on debut run — earning two-week trial)",
+            "Narrowed Adzuna from 10 broad performance queries to 5 LoadRunner-only queries (was returning ~180 raw / 0 keepers/run)",
+            "Added Glassdoor SRCH_IL searchpage pattern to URL filter (kills aggregator URLs like glassdoor.com/Job/*-jobs-SRCH_IL...)",
+            "Added 4 new site-targeted Serper queries: himalayas.app, builtin.com/job (each targeting both LR and AI lanes)",
+            "Added 10 new AI-lane Serper queries: AI QA, AI test, LLM evaluation, AI reliability, AI observability, LLM observability, AI SDET, AI workflow, ai eval, model evaluation",
+            "Targeting rationale: AI-lane queries match performance-engineer-bridges-to-AI roles where 14-yr LoadRunner + observability stack is the actual moat",
+            # Capacity bump
+            "Bumped daily email cap from Top 10 to Top 15 to accelerate K-Means timeline (raw pool grew with new sources so the cap meant 5 keepers today vs ~3 morning baseline)",
+            "Updated Google Form regex from ^([1-9]|10|A[1-5])$ to ^([1-9]|1[0-5]|A[1-5])$ to accept 1-15",
+            # K-Means architecture: dual threshold
+            "Added KMEANS_EXPLORATORY = 100 constant alongside KMEANS_THRESHOLD = 300",
+            "Updated get_decision_stats() to return both pct and pct_expl",
+            "Rewrote email K-Means tracker block to show two stacked progress bars (exploratory turns green at 100, production turns green at 300)",
+            "Rationale: Catch dataset-quality problems early at 100 records (cheap fix) rather than 300 (expensive fix). Exploratory K-Means audits whether the features carry signal before grinding to production threshold.",
+            # job_decisions.json cleanup (one-shot)
+            "Built cleanup_backfilled_stubs.py — dry-run by default, --apply to delete, auto-creates timestamped backup before deletion",
+            "Discovered 72 of 143 records (50%) were backfilled stubs from 4/24-5/05 window — empty job_id/url/score/matched_keywords because today_jobs_*.json archives didn't exist for those dates",
+            "Deleted 72 stubs after dry-run verification. Decision count now 71 (real records only). Backup preserved at job_decisions.json.bak-cleanup-20260520_193836",
+            "Confirmed gap: backfill archive issue was fixed between 5/05 and 5/09. After 5/09 every Amazon spotlight (A1-A5) and regular job has full metadata in archive files.",
+            # Verified
+            "First post-change run delivered 5 keepers + 1 Amazon spotlight (vs. 4+1 morning baseline)",
+            "Top picks included AI Observability & Agent Engineering @ $230K base — proof of concept for AI-lane targeting (would not have surfaced without tonight's new queries)",
+            "Pipeline funnel: 362 raw → 5 final, 1.4% survival rate. Biggest drop: recency filter at 194 jobs (54% of prior stage). After-score-filter only barely smaller than after-level-filter (70 vs 71) — level filter is the limiter, not score.",
+            "Raw by source: Serper 227 / RemoteOK 99 / Remotive 16 / Wellfound 16 / USAJobs 4. Adzuna 0 (narrowed queries returned zero — expected and acceptable; 2-week trial).",
+            # Documentation
+            "Rewrote AI_Progress_Tracker.py — accurate as of 2026-05-20 (this update)",
+            "Documented true two-script architecture: update_scoring.py owns auto-patching; review_decisions.py owns Mon+Thu 'other' digest",
+        ],
+        "concepts_learned": [
+            "schema.org/JobPosting exists as a metadata standard but isn't enforced — job sites self-report 'remote' status and game it. That's why your filter pipeline is defense-in-depth rather than a single metadata check.",
+            "Features (job metadata) vs labels (your form decision) — the form is the LABEL the K-Means/classifier predicts; the features come from the job's title/description/score/source/track that job_search.py already collects.",
+            "Exploratory K-Means at 100 is a data audit, not a model — answers 'do the features carry signal?' If yes, keep collecting to 300 for a supervised classifier. If no, fix features (likely cheap: more derived columns from existing text).",
+            "Worst-case audit outcome isn't 'lose 100 records' — it's 'add 4-5 derived feature columns and re-cluster'. Schema is sound; foundational restart unlikely.",
+            "Regex character classes don't span numbers — [1-15] doesn't mean 1 through 15, it means '1', '1-1', or '4'. Multi-digit ranges need digit-position decomposition: 10-15 = 1[0-5]",
+            "Remotive ToS requires attribution + link-back; personal email digest use is fine, third-party republishing isn't",
+            "Adzuna and RemoteOK are broad-software-dev sources — they produce raw volume but rarely keep through tight LoadRunner/AI-lane filters. Their value is the occasional rare match, not consistent flow. Same evaluation rubric applies to Remotive going forward.",
+            "stub records (no job_id, no metadata) pollute K-Means training data even if you count them toward thresholds; better to delete and let true count drive timeline honesty",
+        ],
+        "decisions_milestone": {
+            "total_after_cleanup": 71,
+            "exploratory_target":  100,
+            "exploratory_pct":     71,
+            "production_target":   300,
+            "production_pct":      24,
+            "removed_today":       72,
+            "estimated_days_to_exploratory": "5-6 weeks at current 4-5 decisions/day pace",
+        },
+        "next_session_priorities": [
+            "1. Monitor first week of post-change runs — watch Remotive keep rate, AI-lane query keep rate, Adzuna (likely still zero)",
+            "2. Update README.md on GitHub to match this tracker (currently still references Remotive removed, 7 sources, Top 10, single K-Means threshold)",
+            "3. Surgical cleanup of update_scoring.py — remove write_needs_review() / NEEDS_REVIEW_FILE references so it cannot regenerate orphan file (different evening; touches nightly Task Scheduler script)",
+            "4. Consider archiving backfill_decisions.py and cleanup_backfilled_stubs.py to an archive/ folder (one-shots, completed)",
+            "5. Draft analyze_decisions.py skeleton when decision count hits ~80 (currently 71, ~9 records away)",
+            "6. Continue IBM course — Unsupervised Learning module (K-Means specifically — relevant timing)",
+        ],
+    },
+    {
         "date": "April 24, 2026",
         "accomplishments": [
             # Morning verification
@@ -478,12 +595,12 @@ SESSION_NOTES = [
             "GitHub social preview images show when repo links are shared on LinkedIn/Slack",
         ],
         "task_scheduler_full_list": [
-            "JobSearch_Scheduler    — 12:00 PM daily  — job_search.py (Hans)",
-            "EvanJobSearch          — 1:00 PM daily   — evan_job_search.py",
-            "HansJobSearchUpdate    — 12:00 AM daily  — update_scoring.py",
-            "EvanJobSearch_Update   — 12:30 AM daily  — update_scoring_evan.py",
-            "WeeklyJobReview        — 10:00 AM Monday — weekly_review.py",
-            "EvanWeeklyReview       — 10:30 AM Monday — weekly_review_evan.py",
+            "JobSearch_Scheduler    — 12:00 PM daily       — job_search.py (Hans)",
+            "EvanJobSearch          — 1:00 PM daily        — evan_job_search.py",
+            "HansJobSearchUpdate    — 12:00 AM daily       — update_scoring.py",
+            "EvanJobSearch_Update   — 12:30 AM daily       — update_scoring_evan.py",
+            "ReviewDecisions        — 10:00 AM Mon+Thu     — review_decisions.py (renamed from WeeklyJobReview)",
+            "ReviewDecisionsEvan    — 10:30 AM Mon+Thu     — review_decisions_evan.py (renamed from EvanWeeklyReview)",
         ],
         "next_session_priorities": [
             "1. Test Evan's job search end to end — confirm email arrives, form works",
@@ -717,38 +834,44 @@ SESSION_NOTES = [
 FILE_INVENTORY = {
     "C:/Users/haric/Jobsearch/": [
         "job_search.py              - Hans's job search script (Performance/AI/COBOL)",
-        "update_scoring.py          - Midnight update script (reads Google Sheet, patches code, commits to Git)",
-        "weekly_review.py           - Monday 10AM weekly review email script",
+        "update_scoring.py          - Midnight update script (auto-patches job_search.py, updates scoring_weights.json, commits to Git)",
+        "review_decisions.py        - Mon+Thu 10AM review script (surfaces 'other' decisions for pattern recognition)",
         "agent_hub.py               - 5-tab AI Agent Hub",
         "generate_resume.js         - Resume generator (run: node generate_resume.js)",
+        "AI_Progress_Tracker.py     - This file!",
+        "cleanup_backfilled_stubs.py - One-shot stub deletion tool (used 2026-05-20, --dry-run/--apply, can stay or archive)",
+        "backfill_decisions.py      - One-shot from 2026-05-07 to recover form responses from Google Sheet (completed, can archive)",
         "run_job_search.bat         - Noon Task Scheduler batch file",
         "run_update_scoring.bat     - Midnight Task Scheduler batch file",
-        "run_weekly_review.bat      - Monday 10AM Task Scheduler batch file",
+        "review_decisions.bat       - Mon+Thu 10AM Task Scheduler batch file",
         ".env                       - API keys and credentials (NEVER commit to Git)",
-        "google_credentials.json   - Google service account key (NEVER commit to Git)",
+        "google_credentials.json    - Google service account key (NEVER commit to Git)",
         "seen_jobs.json             - Hans's duplicate tracker",
-        "today_jobs.json            - Today's job batch (for midnight script)",
-        "job_decisions.json         - All-time decision history",
-        "needs_review.json          - Accumulates items needing manual review (cleared weekly)",
+        "today_jobs.json            - Today's job batch (15 regular + 5 Amazon spotlight)",
+        "today_jobs_YYYY-MM-DD.json - Daily archive (rolling 14-day retention; supports retroactive decision sync)",
+        "job_decisions.json         - All-time decision history (71 records after 2026-05-20 stub cleanup)",
+        "job_decisions.json.bak-cleanup-20260520_193836 - Pre-cleanup backup (72 stubs preserved here)",
         "scoring_weights.json       - Auto-updated scoring weights",
         "overnight_summary.json     - Last midnight run summary",
-        "job_search_run.log         - Hans's debug log",
+        "job_search_run.log         - Hans's debug log (overwrites each run)",
+        "review_decisions_run.log   - review_decisions.py run log",
+        "jobsearch_errors.log       - Persistent error log shared across scripts (append mode)",
         "job_results.json           - Latest results",
-        "AI_Progress_Tracker.py     - This file!",
+        "logs/                      - Snapshot folder for historical run logs",
+        "chroma_db/                 - ChromaDB persistent vector store for RAG",
     ],
     "C:/Users/haric/Evan Jobsearch/": [
         "evan_job_search.py          - Evan's cybersecurity job search script",
         "update_scoring_evan.py      - Evan's midnight update script",
-        "weekly_review_evan.py       - Monday 10:30AM weekly review email script (sends to Hans)",
+        "review_decisions_evan.py    - Mon+Thu review script for Evan (sends to Hans)",
         "run_evan_job_search.bat     - Noon Task Scheduler batch file",
         "run_update_scoring_evan.bat - Midnight Task Scheduler batch file",
-        "run_weekly_review_evan.bat  - Monday 10:30AM Task Scheduler batch file",
+        "review_decisions_evan.bat   - Mon+Thu Task Scheduler batch file",
         ".env                        - API keys + REVIEW_EMAIL=harichardson68@gmail.com",
-        "google_credentials.json    - Google service account key (NEVER commit to Git)",
+        "google_credentials.json     - Google service account key (NEVER commit to Git)",
         "evan_seen_jobs.json         - Evan's duplicate tracker",
-        "evan_today_jobs.json        - Today's job batch (for midnight script)",
+        "evan_today_jobs.json        - Today's job batch",
         "evan_job_decisions.json     - All-time decision history",
-        "evan_needs_review.json      - Accumulates items needing manual review (cleared weekly)",
         "evan_scoring_weights.json   - Auto-updated scoring weights",
         "evan_overnight_summary.json - Last midnight run summary",
         "evan_job_search.log         - Evan's debug log",
@@ -771,12 +894,12 @@ DAILY WORKFLOW:
 - 12:30 AM: Evan midnight script auto-runs (update_scoring_evan.py)
 - Next noon: Smarter email with overnight summary at top
 
-WEEKLY WORKFLOW (every Monday):
-================================
-- 10:00 AM: Hans weekly review email arrives (needs_review.json items, grouped by category)
-- 10:30 AM: Evan weekly review email arrives (goes to Hans's email)
+WEEKLY WORKFLOW (every Monday and Thursday):
+============================================
+- 10:00 AM: Hans review_decisions.py email arrives (unreviewed 'Other' items grouped by category)
+- 10:30 AM: Evan review_decisions_evan.py email arrives (sends to Hans)
 - Review items → bring patterns to Claude for code fixes
-- File is auto-cleared after each weekly email send
+- Each surfaced item auto-flagged reviewed:true in job_decisions.json (data preserved permanently for K-Means)
 
 REMOTE WORKFLOW (from phone):
 ==============================
