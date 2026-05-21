@@ -2375,108 +2375,6 @@ def search_wellfound():
             print(f"   [ERROR] Wellfound error ({query}): {e}")
     print(f"   [OK] Wellfound: {len(jobs)} relevant jobs found")
     return jobs
-# ─────────────────────────────────────────────────────────────
-# SOURCE 15: JSearch via RapidAPI
-# Real-time Google for Jobs aggregator — LinkedIn, Indeed,
-# Glassdoor and more via one endpoint. Free tier: 200 req/month.
-# Sign up: https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch
-# Add JSEARCH_API_KEY to your .env file.
-# ─────────────────────────────────────────────────────────────
-JSEARCH_API_KEY = os.environ.get("JSEARCH_API_KEY", "")
-
-def search_jsearch():
-    print("[SEARCH] Searching JSearch (Google for Jobs)...")
-    jobs = []
-    if not JSEARCH_API_KEY:
-        print("   [WARN] JSearch skipped - add JSEARCH_API_KEY to .env")
-        return jobs
-
-    queries = [
-        "loadrunner performance engineer remote",
-        "vugen performance test engineer remote",
-        "LoadRunner Enterprise performance engineer remote",
-        "performance test engineer loadrunner remote",
-        "AI automation engineer remote",
-        "LLM engineer remote entry level",
-        "prompt engineer remote generative ai",
-        "COBOL developer remote",
-    ]
-
-    seen = set()
-    headers = {
-        "x-rapidapi-host": "jsearch.p.rapidapi.com",
-        "x-rapidapi-key": JSEARCH_API_KEY,
-    }
-
-    for query in queries:
-        try:
-            params = {
-                "query": query,
-                "page": "1",
-                "num_pages": "1",
-                "country": "us",
-                "date_posted": "week",  # last 7 days
-                "remote_jobs_only": "true",
-            }
-            resp = requests.get(
-                "https://jsearch.p.rapidapi.com/search",
-                headers=headers,
-                params=params,
-                timeout=15,
-            )
-            data = resp.json()
-            results = data.get("data", [])
-            if DEBUG_MODE:
-                print(f"   [DEBUG] JSearch '{query[:50]}': {len(results)} results, status {resp.status_code}")
-            for item in results:
-                title    = item.get("job_title", "")
-                company  = item.get("employer_name", "N/A")
-                desc     = item.get("job_description", "")[:500]
-                url_job  = item.get("job_apply_link", "") or item.get("job_google_link", "")
-                posted   = item.get("job_posted_at_datetime_utc", "")[:10] if item.get("job_posted_at_datetime_utc") else ""
-                location = f"{item.get('job_city','') or ''} {item.get('job_state','') or ''} {item.get('job_country','') or ''}".strip()
-
-                if url_job in seen:
-                    continue
-                seen.add(url_job)
-
-                # False-positive filter
-                fp, fp_reason = is_false_positive_url(url_job)
-                if fp:
-                    if DEBUG_MODE:
-                        print(f"   [DEBUG] JSearch FILTERED-{fp_reason}: {title[:50]}")
-                    continue
-
-                if is_blocked_site(url_job):
-                    if DEBUG_MODE:
-                        print(f"   [DEBUG] JSearch FILTERED-blocked: {title[:50]}")
-                    continue
-
-                funnel.add_raw("JSearch")
-                passed, score, matched, track = passes_filters(
-                    title, desc, posted, location, url_job, company, "JSearch"
-                )
-                if passed:
-                    jobs.append({
-                        "source": "JSearch",
-                        "title": title,
-                        "company": company,
-                        "url": url_job,
-                        "posted": posted,
-                        "description": desc,
-                        "score": score,
-                        "matched_keywords": matched,
-                        "track": track,
-                        "salary": item.get("job_min_salary", ""),
-                    })
-            time.sleep(1)  # be kind to the free tier rate limit
-        except Exception as e:
-            print(f"   [ERROR] JSearch error ({query[:40]}): {e}")
-
-    print(f"   [OK] JSearch: {len(jobs)} relevant jobs found")
-    return jobs
-
-
 def main():
     print("\n" + "="*55)
     print("  Hans Richardson  Automated Job Search")
@@ -2490,7 +2388,6 @@ def main():
     all_jobs += search_adzuna()
     all_jobs += search_usajobs()
     all_jobs += search_wellfound()
-    all_jobs += search_jsearch()
 
     # Sort by score descending
     all_jobs.sort(key=lambda x: x["score"], reverse=True)
