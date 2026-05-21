@@ -1502,5 +1502,200 @@
       "reviewed": false,
       "reviewed_date": null
     }
+  ],
+  "2026-05-19": [
+    {
+      "job_id": "0cd3a71dd0",
+      "number": 2,
+      "title": "AI Automation Bootcamp \u2014 Build a $90K+ Remote Career | Careerist",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.careerist.com/ai-automation-engineer",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation"
+      ],
+      "decision": "already_seen",
+      "reason": "Bootcamp of training",
+      "raw_decision": "Already Seen / Duplicate",
+      "timestamp": "5/19/2026 13:12:10",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "9ae1a9aaf2",
+      "number": 1,
+      "title": "Performance Test Engineer - Charles Schwab - Southlake, TX, US",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/b6b93a6b-6cb4-4a8e-83e8-ee231ff5c336",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing",
+        "jmeter"
+      ],
+      "decision": "onsite",
+      "reason": null,
+      "raw_decision": "Onsite / Not Remote",
+      "timestamp": "5/19/2026 14:27:12",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "1058bd3ec3",
+      "number": "A1",
+      "title": "Applied Scientist, Agentic Automated Reasoning Group - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/jobs/10417926",
+      "source": "Amazon Jobs",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:agentic"
+      ],
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "5/19/2026 14:28:44",
+      "reviewed": false,
+      "reviewed_date": null
+    }
+  ],
+  "2026-05-20": [
+    {
+      "job_id": "a1a289cd52",
+      "number": 1,
+      "title": "Performance Testers with LoadRunner and JMeter experience",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://hirebase.infinityfree.me/job/performance-testers-with-loadrunner-and-jmeter-experience-100-remote",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner",
+        "LoadRunner-in-title",
+        "jmeter"
+      ],
+      "decision": "bad_link",
+      "reason": null,
+      "raw_decision": "Bad Link",
+      "timestamp": "5/20/2026 22:26:49",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "a330fd8afd",
+      "number": 2,
+      "title": "Performance Tester - Techridge, Inc. - Remote in Phoenix, AZ, US",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/bf86166b-14f3-4a42-9aff-dd417f8f486b",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner",
+        "jmeter"
+      ],
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "5/20/2026 22:27:51",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "309aaeb00e",
+      "number": 3,
+      "title": "Agentic AI/ML Engineer - Remote - QTech US Inc - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 69,
+      "url": "https://www.dice.com/job-detail/7f394d0e-aad3-4228-9d07-fe7307a64011",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "langchain",
+        "AI-title:agentic",
+        "python",
+        "agentic ai",
+        "agentic",
+        "ml engineer"
+      ],
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "5/20/2026 22:29:04",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "601bd25737",
+      "number": 4,
+      "title": "Machine Learning Engineer / Predictive Analyst - Vaco by Highspring",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/90fdd3be-bead-4bf2-a872-00488a7597b8",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "mlops engineer",
+        "AI-title:machine learning engineer",
+        "machine learning engineer"
+      ],
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "5/20/2026 22:29:17",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "c9344ce4a8",
+      "number": 5,
+      "title": "AI Observability & Agent Engineering | Remote | Up to $230k Base + ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.linkedin.com/jobs/view/staff-full-stack-product-engineer-ai-observability-agent-engineering-remote-up-to-%24230k-base-%2B-equity-at-space-executive-4415465706",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "AI-title:agent engineer",
+        "agent engineer",
+        "ai observability",
+        "observability"
+      ],
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "5/20/2026 22:29:51",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "197378de75",
+      "number": "A1",
+      "title": "Applied Scientist, Agentic Automated Reasoning Group - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10417926/applied-scientist-agentic-automated-reasoning-group",
+      "source": "Amazon Jobs",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic"
+      ],
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "5/20/2026 22:30:38",
+      "reviewed": false,
+      "reviewed_date": null
+    }
   ]
 }
