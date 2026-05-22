@@ -455,6 +455,7 @@ NON_US_LOCATIONS = [
     "france", "paris", "brazil", "philippines", "manila",
     "pakistan", "singapore", "china", "japan", "tokyo",
     "poland", "ukraine", "romania", "latam", "latin america", "apac", "emea",
+    "canadian and listed in french",
 ]
 
 # Job site URL blacklist - sites that are hard to apply on or are middlemen
@@ -585,6 +586,7 @@ BLOCKED_JOB_SITES = [
     "theladders.com", "theladders",
     "edtech.com/jobs", "edtech.com",
     "pairedrecruiting.com", "pairedrecruiting",
+    "aidoos.com",
 ]
 
 def is_blocked_site(url):

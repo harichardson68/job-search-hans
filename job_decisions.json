@@ -234,9 +234,9 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
+      "decision": "other",
+      "reason": "No longer available",
+      "raw_decision": "Other",
       "timestamp": "2026-05-07 11:23"
     },
     {
@@ -256,9 +256,9 @@
         "prompt engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-07 11:23"
     },
     {
@@ -1696,6 +1696,65 @@
       "timestamp": "5/20/2026 22:30:38",
       "reviewed": false,
       "reviewed_date": null
+    }
+  ],
+  "2026-05-21": [
+    {
+      "job_id": "40bbf5f068",
+      "number": "1",
+      "title": "AI Automation Engineer | Remote Jobs on AiDOOS",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://aidoos.com/remote-jobs/ai-automation-engineer-30717/?srsltid=AfmBOoqU7XlgNtno7enSxy1O58woqBiX373F64vqniOABsDi4Tyj1Zl-",
+      "matched_keywords": [
+        "llm",
+        "aws",
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "bad_link",
+      "reason": "No job link to apply to...  sign up for the service",
+      "raw_decision": "Bad Link",
+      "timestamp": "2026-05-21 23:00"
+    },
+    {
+      "job_id": "be675fd0dd",
+      "number": "2",
+      "title": "AI Reliability Engineer Job - Reston, VA, USA (LiveMindz) - iitjobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.iitjobs.com/job/ai-reliability-engineer-reston-va-usa-306983",
+      "matched_keywords": [
+        "ai reliability engineer",
+        "AI-title:ai reliability"
+      ],
+      "source": "Google Jobs",
+      "decision": "onsite",
+      "reason": null,
+      "raw_decision": "Onsite / Not Remote",
+      "timestamp": "2026-05-21 23:00"
+    },
+    {
+      "job_id": "fa8a06d311",
+      "number": "A1",
+      "title": "Ing\u00e9nieur en machine learning/Machine Learning Engineer ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10424469/ingenieur-en-machine-learning-machine-learning-engineer-proserve-shared-delivery-team-data-ai",
+      "matched_keywords": [
+        "AI-title:machine learning engineer",
+        "aws",
+        "machine learning engineer"
+      ],
+      "source": "Amazon Jobs",
+      "decision": "not_in_us",
+      "reason": "Canadian and listed in French",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-05-21 23:00"
     }
   ]
 }
