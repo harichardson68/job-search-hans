@@ -1739,6 +1739,14 @@ def search_serper_jobs():
                     if DEBUG_MODE:
                         print(f"   [DEBUG] Serper FILTERED-{fp_reason}: {title[:50]}")
                     continue
+                # Non-US filter — catch UK/EU/overseas roles that slip past
+                # the search_page and false-positive URL checks (e.g. UK
+                # aggregators with location encoded in the URL slug).
+                non_us_reason = _is_non_us_serper_posting(title, desc, url_job)
+                if non_us_reason:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Serper FILTERED-non-US ({non_us_reason}): {title[:50]}")
+                    continue
                 location = item.get("location", "").lower()
                 if url_job in seen:
                     continue
@@ -1813,6 +1821,94 @@ def _is_non_us_amazon_posting(title, description):
         if marker in blob:
             return marker
     return None
+
+
+# 
+# SERPER NON-US FILTER
+# 
+# Catches UK/EU/non-US jobs that slip through Serper Google Jobs results
+# (e.g. the Newcastle upon Tyne AI Integration Engineer that scored 80 pts
+# on 2026-05-23). Reuses AMAZON_NON_US_MARKERS plus extra UK/EU cities the
+# Amazon list didn't need, and adds URL-side checks (TLD + slug) for
+# aggregators like qualitycontracts.co.uk that encode location in the URL.
+
+# Extra non-US city markers not already in AMAZON_NON_US_MARKERS
+SERPER_EXTRA_NON_US_CITIES = [
+    # UK (beyond London/Dublin which Amazon list already has)
+    "newcastle upon tyne", "newcastle", "manchester", "birmingham",
+    "leeds", "liverpool", "sheffield", "nottingham", "bristol",
+    "edinburgh", "glasgow", "cardiff", "belfast",
+    # Ireland (beyond Dublin)
+    "cork", "galway",
+    # Germany (beyond Berlin/Munich/Frankfurt — Amazon list has these)
+    "münchen", "cologne", "köln", "stuttgart", "düsseldorf", "dusseldorf",
+    # France (beyond Paris)
+    "lyon", "marseille", "toulouse", "nantes",
+    # Spain / Portugal (beyond Madrid/Barcelona)
+    "valencia", "seville", "lisbon", "porto",
+    # Netherlands / Belgium (beyond Amsterdam)
+    "rotterdam", "the hague", "utrecht", "brussels", "antwerp",
+    # Italy / Nordics / EU (mostly already covered, plus a few)
+    "turin", "naples", "gothenburg", "oslo", "helsinki",
+    "krakow", "geneva", "athens",
+    # Country-only — extra UK regions
+    "england", "scotland", "wales", "northern ireland",
+]
+
+# Non-US TLDs — if the result's domain ends with one of these, skip it.
+SERPER_NON_US_TLDS = (
+    ".co.uk", ".uk", ".de", ".fr", ".es", ".it", ".nl",
+    ".ie", ".eu", ".ch", ".se", ".dk", ".no", ".fi",
+    ".pl", ".at", ".be", ".pt", ".cz", ".gr",
+    ".com.au", ".co.nz", ".co.in", ".in", ".sg", ".com.sg",
+    ".ca", ".com.br", ".mx", ".com.mx",
+)
+
+# URL slug markers — aggregators encode location in the path, e.g.
+# qualitycontracts.co.uk/.../-newcastle-upon-tyne-england-united-kingdom-
+SERPER_URL_SLUG_MARKERS = (
+    "-united-kingdom", "-england-", "-scotland-", "-wales-",
+    "-germany-", "-france-", "-spain-", "-netherlands-",
+    "-canada-", "-australia-", "-india-", "-singapore-",
+    "-ireland-",
+)
+
+
+def _is_non_us_serper_posting(title, description, url):
+    """
+    Return a reason string if a Serper result is non-US, else None.
+    Checks title/snippet against the marker lists, then URL domain TLD,
+    then URL slug patterns.
+    """
+    blob = f" {title} {description} ".lower()
+    url_lower = (url or "").lower()
+
+    # 1. Reuse Amazon marker list (covers most major non-US cities/countries)
+    for marker in AMAZON_NON_US_MARKERS:
+        if marker in blob:
+            return f"city/country {marker.strip()}"
+
+    # 2. Extra UK/EU cities Amazon list didn't cover
+    for marker in SERPER_EXTRA_NON_US_CITIES:
+        if marker in blob:
+            return f"city {marker}"
+
+    # 3. URL domain TLD check
+    if "://" in url_lower:
+        domain_part = url_lower.split("/")[2]
+    else:
+        domain_part = url_lower.split("/")[0]
+    for tld in SERPER_NON_US_TLDS:
+        if domain_part.endswith(tld):
+            return f"tld {tld}"
+
+    # 4. URL slug check (aggregators encoding location in path)
+    for marker in SERPER_URL_SLUG_MARKERS:
+        if marker in url_lower:
+            return f"urlslug {marker.strip('-')}"
+
+    return None
+
 
 def search_amazon_jobs():
     """Search amazon.jobs specifically for performance and AI roles."""
