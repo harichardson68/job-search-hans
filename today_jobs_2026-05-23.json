@@ -1,0 +1,129 @@
+{
+  "date": "2026-05-23",
+  "jobs": [
+    {
+      "job_id": "40b98b5fdd",
+      "number": 1,
+      "number_display": "1",
+      "title": "Agentic AI Engineer @ Benchling - Lux Capital Job Board",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://jobs.luxcapital.com/companies/benchling/jobs/80069508-agentic-ai-engineer",
+      "matched_keywords": [
+        "llm",
+        "agentic",
+        "ai engineer",
+        "observability",
+        "agentic ai",
+        "AI-title:agentic ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "91af63a071",
+      "number": 2,
+      "number_display": "2",
+      "title": "dexter health (Remote): AI Engineer (LLM Products) - JOIN",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://join.com/companies/dexter-health/16143525-ai-engineer-llm-products-remote",
+      "matched_keywords": [
+        "llm",
+        "prompt engineer",
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "0d319f86ff",
+      "number": 3,
+      "number_display": "3",
+      "title": "AI Integration Engineer (Remote) (Newcastle upon Tyne) Contract Job",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://qualitycontracts.co.uk/contract-jobs/remote-ai-integration-engineer-remote-newcastle-upon-tyne-in-newcastle-upon-tyne-england-united-kingdom-1779326091",
+      "matched_keywords": [
+        "ai agent",
+        "ai integration engineer",
+        "large language model",
+        "AI-title:ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "cd2527ef48",
+      "number": 4,
+      "number_display": "4",
+      "title": "Agentic AI Engineer @ Benchling - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.ashbyhq.com/benchling/d5896e95-fed2-4cd4-b104-1ea4df92f7d7",
+      "matched_keywords": [
+        "AI-title:agentic ai engineer",
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "783a811750",
+      "number": 5,
+      "number_display": "5",
+      "title": "Binance Accelerator Program - Applied AI Agent Engineer - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://jobs.lever.co/binance/303def79-701c-4b29-aceb-e07877a22d1d?lever-source=Indeed",
+      "matched_keywords": [
+        "ai agent",
+        "AI-title:ai agent",
+        "agent engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "b0b361081e",
+      "number": 6,
+      "number_display": "6",
+      "title": "Applied AI Engineer @ LI.FI - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/li.fi/5f0b1f78-25c7-492c-aecf-e80d631623b2",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "20a50546c9",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID: 10426914",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/en/jobs/10426914/senior-specialist-solutions-architect-agentic-ai-ags-specialist-solutions-architects",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
