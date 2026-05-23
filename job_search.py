@@ -456,6 +456,7 @@ NON_US_LOCATIONS = [
     "pakistan", "singapore", "china", "japan", "tokyo",
     "poland", "ukraine", "romania", "latam", "latin america", "apac", "emea",
     "canadian and listed in french",
+    "great britian",
 ]
 
 # Job site URL blacklist - sites that are hard to apply on or are middlemen
@@ -587,6 +588,7 @@ BLOCKED_JOB_SITES = [
     "edtech.com/jobs", "edtech.com",
     "pairedrecruiting.com", "pairedrecruiting",
     "aidoos.com",
+    "www.linkedin.com",
 ]
 
 def is_blocked_site(url):
