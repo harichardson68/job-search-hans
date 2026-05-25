@@ -237,7 +237,9 @@
       "decision": "other",
       "reason": "No longer available",
       "raw_decision": "Other",
-      "timestamp": "2026-05-07 11:23"
+      "timestamp": "2026-05-07 11:23",
+      "reviewed": true,
+      "reviewed_date": "2026-05-25"
     },
     {
       "job_id": "54196adf1c",
@@ -1861,7 +1863,9 @@
       "decision": "other",
       "reason": "No longer accepting applications",
       "raw_decision": "Other",
-      "timestamp": "2026-05-22 23:00"
+      "timestamp": "2026-05-22 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-05-25"
     },
     {
       "job_id": "dc20f95c2e",
