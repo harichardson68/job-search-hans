@@ -1,7 +1,7 @@
 """
 Automated Job Search Script for Hans Richardson - Performance Engineer
-Searches: RemoteOK, Indeed RSS, LinkedIn RSS, Adzuna, USAJobs
-Targets: LoadRunner, JMeter, NeoLoad, Performance Engineer roles (Remote)
+Searches: RemoteOK, Remotive, Serper (Google Jobs), Adzuna, USAJobs, Wellfound, Amazon Jobs
+Targets: LoadRunner, JMeter, NeoLoad, Performance Engineer, AI/Agentic, COBOL (Remote)
 
 SETUP:
     pip install requests feedparser python-dateutil anthropic python-dotenv
@@ -9,8 +9,8 @@ SETUP:
 OPTIONAL API KEYS (free tiers available):
     - Adzuna: https://developer.adzuna.com/  (free, ~1000 calls/day)
     - USAJobs: https://developer.usajobs.gov/ (free, requires registration)
-    - OpenAI: https://platform.openai.com/   (for cover letter generation)
-      OR leave blank to use a template-based cover letter instead
+    - Serper: https://serper.dev (free, 2,500 searches/month)
+    - Claude: https://console.anthropic.com (for cover letters & fit analysis)
 """
 
 import requests
@@ -349,9 +349,9 @@ if not git_pull_or_abort():
     print("[ABORT] Run halted due to git pull failure.")
     sys.exit(1)
 
-# 
-# 48-HOUR FRESHNESS FILTER
-# 
+#
+# FRESHNESS FILTER (5 days)
+#
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
 GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
@@ -697,15 +697,12 @@ def is_us_remote(title, description, location=""):
         "eligible to work in the us", "eligible to work in the united states",
         "authorized to work in the us", "authorized to work in the united states",
     ]
+    _us_eligible_override = False
     for signal in us_eligible_signals:
         if signal in check:
             # Found explicit US eligibility — short-circuit all later Canada rejects.
-            # We still need to run the other (non-Canada) rejection passes below,
-            # so set a flag and skip Canada-specific blocks.
             _us_eligible_override = True
             break
-    else:
-        _us_eligible_override = False
 
     # PASS 2: Canada-only hard reject — explicit Canada-restrictive language.
     # These always reject, regardless of any US-eligible signal above.
@@ -726,10 +723,6 @@ def is_us_remote(title, description, location=""):
     # Strong indicators - if these appear anywhere, reject
     strong_indicators = [
         # Multi-country job titles — not US only (added 2026-05-08)
-        # NOTE: us/ca and (us/ca) removed — those are US/Canada eligible,
-        # handled by the US-eligible allow-list above.
-        # NOTE: "remote, us/" prefix removed — was too broad; caught
-        # "remote, us/canada". Specific multi-country tags below cover the bad cases.
         "us/uk", "uk/ca", "us/uk/ca", "us/uk/ca/de",
         "remote (us/uk)", "(us/uk)", "remote (us/india)",
         # India
@@ -743,7 +736,6 @@ def is_us_remote(title, description, location=""):
         "jaipur", "ahmedabad", "chandigarh", "bhopal", "lucknow",
         "smartworking", "smart working", "smart-working solutions", "smart working solutions",
         "verito solutions", "verito",
-        # Canada signals are checked separately below (respects US-eligible override)
         # UK
         "remote in uk", "united kingdom", "london, uk", "location: uk",
         # Other
@@ -770,7 +762,6 @@ def is_us_remote(title, description, location=""):
         "paris", "lyon", "madrid", "barcelona", "rome", "milan",
         "stockholm", "oslo", "copenhagen", "helsinki", "dublin",
         "zurich", "geneva", "brussels", "vienna", "athens",
-        # Canada cities are checked separately below (respects US-eligible override)
         # Australia
         "brisbane", "perth", "adelaide", "auckland", "wellington",
         # Job board language indicators
@@ -787,8 +778,6 @@ def is_us_remote(title, description, location=""):
             return False
 
     # PASS 3: Canada signals — only reject if no US-eligible override.
-    # If "us/canada", "north america", etc. appeared earlier, _us_eligible_override
-    # is True and these signals are ignored (the role is open to US candidates).
     if not _us_eligible_override:
         # Canada was in the location field but we deferred — now reject it.
         if canada_in_location:
@@ -810,7 +799,6 @@ def is_us_remote(title, description, location=""):
             if signal in check:
                 return False
     # Detect state-restricted remote jobs (remote but must live in specific state)
-    # These phrases indicate state restrictions
     # List of all US states to detect restrictions (excluding Missouri - Hans is there!)
     us_states = [
         "alabama", "alaska", "arizona", "arkansas", "california",
@@ -873,7 +861,6 @@ def is_us_remote(title, description, location=""):
             return False
 
     # Block jobs with onsite city in the TITLE (e.g. "SDET - Seattle, WA")
-    # These are onsite roles masquerading in search results
     onsite_city_pattern = r"[-–|,]\s*(seattle|chicago|boston|austin|dallas|denver|phoenix|atlanta|alpharetta|houston|new york|san francisco|los angeles|philadelphia|charlotte|orlando|miami|bellevue|portland|minneapolis|pittsburgh|raleigh|nashville|detroit|baltimore|st\. louis|cleveland|columbus|indianapolis|louisville|memphis|richmond|norfolk|sacramento|san diego|san jose|las vegas|tampa|jacksonville|hartford|providence|buffalo|rochester|albany|newark|jersey city|ann arbor|birmingham|boise|cincinnati|salt lake city|tucson|albuquerque|omaha|tulsa|oklahoma city|el paso|fresno|long beach|mesa|colorado springs|virginia beach|arlington|bakersfield|honolulu|anaheim|aurora|santa ana)\s*,\s*[a-z]{2}"
     if re.search(onsite_city_pattern, title.lower()):
         # Only block if no "remote" in title
@@ -911,7 +898,7 @@ def is_blocked_company(title, description, company=""):
         "synergisticit", "synergistic it",
         "appen ", "clickworker", "telus international",
         "outlier ai", "scale ai",
-    "silicon valley bank", "svb ", "first citizens bank", "first-citizens bank", "first-citizens",
+        "silicon valley bank", "svb ", "first citizens bank", "first-citizens bank", "first-citizens",
         # India/offshore body shops
         "berry virtual", "legal soft", "legalsoft",
         "softratech", "innovative information technologi",
@@ -923,9 +910,9 @@ def is_blocked_company(title, description, company=""):
     ]
     check = (title + " " + description + " " + company).lower()
     return any(co in check for co in blocked_companies)
+
 def parse_relative_date(date_str):
     """Handle relative dates like '1 day ago', '3 days ago', '2 hours ago'"""
-    import re
     s = str(date_str).lower().strip()
     now = datetime.now(timezone.utc)
     # Match patterns like "1 day ago", "3 days ago", "2 hours ago", "5 minutes ago"
@@ -977,20 +964,26 @@ def is_recent(date_str):
     except Exception:
         return False
 
-# 
-# CONFIGURATION   Edit these
-# 
+#
+# CONFIGURATION
+#
 ADZUNA_APP_ID   = os.environ.get("ADZUNA_APP_ID", "")
 ADZUNA_APP_KEY  = os.environ.get("ADZUNA_APP_KEY", "")
 USAJOBS_API_KEY = os.environ.get("USAJOBS_API_KEY", "")
 USAJOBS_EMAIL   = os.environ.get("USAJOBS_EMAIL", "")
-OPENAI_API_KEY  = os.environ.get("OPENAI_API_KEY", "")   # optional, for AI cover letters
+OPENAI_API_KEY  = os.environ.get("OPENAI_API_KEY", "")   # optional, not currently used
 CLAUDE_API_KEY  = os.environ.get("CLAUDE_API_KEY", "")
 
 #  Email notifications
 GMAIL_ADDRESS  = os.environ.get("GMAIL_ADDRESS", "")
 GMAIL_APP_PASS = os.environ.get("GMAIL_APP_PASS", "")
 EMAIL_TO       = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
+
+# ─── FIT ANALYSIS (Claude-powered per-job blurb) ─────────────
+# Set to False to disable per-job fit blurbs in email digest.
+# Each call is ~1 API hit per top-tier job (15 jobs/day max).
+GENERATE_FIT_ANALYSIS = True
+FIT_ANALYSIS_MAX_JOBS = 5  # Only run on top N to save API calls
 
 SEARCH_KEYWORDS = [
     # Track 1: Performance Engineering (core)
@@ -1008,7 +1001,7 @@ CANDIDATE = {
     "name": "Hans Richardson",
     "location": "Lee's Summit, MO (Remote)",
     "linkedin": "linkedin.com/in/hans-richardson",
-    "years_exp": 28,
+    "years_exp": 24,
     "top_skills": ["LoadRunner", "VuGen", "LRE", "JMeter", "NeoLoad",
                    "AppDynamics", "Splunk", "Prometheus", "Grafana",
                    "AWS", "Kubernetes", "REST API", "SQL", "Python",
@@ -1046,9 +1039,9 @@ AI_ENGINEERING_LEVEL_FILTER = ["entry", "junior", "associate", "entry-level", "m
 QA_AUTOMATION_LEVEL_FILTER  = ["entry", "junior", "associate", "mid", "intermediate", "entry-level", "mid-level"]
 GENERAL_QA_LEVEL_FILTER     = ["entry", "junior", "associate", "mid", "intermediate", "entry-level", "mid-level", ""]
 
-# 
-# RELEVANCE SCORING - Three tracks
-# 
+#
+# RELEVANCE SCORING - Tracks
+#
 PERF_HIGH_KEYWORDS = [
     "loadrunner", "vugen", "lre", "neoload", "performance engineer",
     "performance tester", "load testing", "performance testing",
@@ -1114,10 +1107,9 @@ AI_BONUS_KEYWORDS = [
 HIGH_VALUE_KEYWORDS = PERF_HIGH_KEYWORDS + QA_HIGH_KEYWORDS + AI_HIGH_KEYWORDS + COBOL_HIGH_KEYWORDS
 BONUS_KEYWORDS      = PERF_BONUS_KEYWORDS + QA_BONUS_KEYWORDS + AI_BONUS_KEYWORDS + COBOL_BONUS_KEYWORDS
 
-# 
+#
 # STRICT TITLE FILTER
-# 
-# Job title MUST contain at least one of these to be included
+#
 REQUIRED_TITLE_KEYWORDS = [
     # Performance engineering
     "performance engineer", "performance test", "performance tester",
@@ -1128,6 +1120,10 @@ REQUIRED_TITLE_KEYWORDS = [
     "staff performance",
     # QA Performance hybrid only - no general QA
     "qa performance engineer", "performance qa engineer",
+    # SDET (entry-level path)
+    "sdet", "junior sdet", "entry level sdet", "entry-level sdet",
+    "associate sdet", "software engineer in test",
+    "junior software engineer in test", "junior test engineer",
     # AI engineering
     "ai engineer", "ml engineer", "machine learning engineer",
     "artificial intelligence engineer", "ai developer",
@@ -1203,7 +1199,6 @@ EXCLUDED_TITLE_TERMS = [
 def is_relevant_title(title):
     """Returns True only if the job title contains a required technical keyword
     AND does not contain an excluded management term."""
-    import re as _retitle
     t = title.lower()
     # Reject titles that are search result pages not individual jobs
     search_page_patterns = [
@@ -1236,7 +1231,7 @@ def is_relevant_title(title):
         r"hiring\] ",
     ]
     for pattern in search_page_patterns:
-        if _retitle.search(pattern, t):
+        if re.search(pattern, t):
             return False
     # First check it has a required keyword
     if not any(kw in t for kw in REQUIRED_TITLE_KEYWORDS):
@@ -1247,22 +1242,28 @@ def is_relevant_title(title):
     return True
 
 
+# SDET title keywords — explicit list for accurate detection
+SDET_TITLE_KEYWORDS = [
+    "sdet", "software engineer in test", "software development engineer in test",
+    "test automation engineer", "automation test engineer",
+]
+
 def get_job_track(title, description):
-    """Identify which track a job belongs to and check level requirements."""
+    """Identify which track a job belongs to and check level requirements.
+    Returns (track_name, level_ok)."""
     text = (title + " " + description).lower()
     t = title.lower()
 
-    is_ai   = any(kw in text for kw in AI_HIGH_KEYWORDS)
-    is_sdet = any(kw in ["sdet", "junior sdet", "entry level sdet", "associate sdet",
-                          "junior test engineer", "junior software engineer in test"] for kw in [text] if kw in text) or "sdet" in t
-    is_qa   = any(kw in text for kw in QA_HIGH_KEYWORDS)
+    is_ai = any(kw in text for kw in AI_HIGH_KEYWORDS)
+    is_sdet = any(kw in t for kw in SDET_TITLE_KEYWORDS)
+    is_qa = any(kw in text for kw in QA_HIGH_KEYWORDS)
+
     if is_ai:
         is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "head of", "vp "])
         if is_senior:
             return "AI Engineering", False
 
         # Check description for experience requirements
-        import re as _re
         full_text = text
 
         # Block if requires 3+ years for agent/LLM roles (tighter than general AI)
@@ -1281,13 +1282,13 @@ def get_job_track(title, description):
             r"(\d+)\s*years?\s*(of\s*)?(relevant|related|professional|hands.on)",
         ]
         for pattern in exp_patterns:
-            matches = _re.findall(pattern, full_text)
+            matches = re.findall(pattern, full_text)
             for match in matches:
                 try:
                     first_num = next((x for x in match if x and x.isdigit()), None)
                     if first_num and int(first_num) >= exp_threshold:
                         return "AI Engineering", False
-                except:
+                except Exception:
                     pass
 
         # Allow if explicitly entry/mid OR if no strong seniority signal in description
@@ -1310,13 +1311,22 @@ def get_job_track(title, description):
             return "AI Engineering", False
 
         return "AI Engineering", True
+
     if is_sdet:
+        # FIXED: was falling through to QA branch. Now correctly returns.
         level_ok = any(lvl in t for lvl in ["junior", "entry", "associate", "entry-level"])
+        # If no level signal in title, allow it through (mid-level SDET is fine)
+        if not level_ok:
+            is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead ", "principal", "staff "])
+            level_ok = not is_senior
+        return "QA Automation", level_ok
+
     if is_qa:
         level_ok = any(lvl in t for lvl in QA_AUTOMATION_LEVEL_FILTER) or not any(
             senior in t for senior in ["senior", "lead", "principal", "staff", "director"]
         )
         return "QA Automation", level_ok
+
     # Performance Engineering - Senior OK only if LoadRunner/VuGen/LRE mentioned
     is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead", "principal", "staff", "director", "head of", "vp"])
     has_loadrunner = any(kw in text for kw in ["loadrunner", "vugen", "lre", "load runner", "vuser"])
@@ -1408,7 +1418,6 @@ def score_job(title, description):
         if kw in text and kw not in matched:
             score += 2
             matched.append(kw)
-    # Bonus keywords handled above per track
     return score, list(set(matched))
 
 
@@ -1420,12 +1429,8 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name)
     The job has already been counted in funnel.add_raw() before this is called.
 
     Uses short-circuit evaluation: as soon as a filter rejects, returns False
-    without checking later stages. The funnel counter records survival at
-    each stage in order, so the drops between stages reveal exactly where
-    candidates are getting killed.
+    without checking later stages.
     """
-    funnel = globals()["funnel"]  # module-level singleton
-
     # Stage: recency
     if not is_recent(posted):
         return False, 0, [], ""
@@ -1458,14 +1463,14 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name)
         return False, score, matched, track
     funnel.record("after_blocked")
 
-    # Survived everything — count it as kept by this source
-    funnel.record("kept_by_sources")
+    # NOTE: kept_by_sources is set in main() via funnel.set_stage()
+    # using len(all_jobs) after aggregation, so we don't double-count here.
     return True, score, matched, track
 
 
-# 
+#
 # SOURCE 1: RemoteOK (free public API)
-# 
+#
 def search_remoteok():
     print("[SEARCH] Searching RemoteOK...")
     jobs = []
@@ -1515,18 +1520,16 @@ def search_remoteok():
         log_error(f"RemoteOK error: {e}")
     return jobs
 
-# 
+#
 # SOURCE 1b: Remotive API (free, no key required)
 # https://remotive.com/api/remote-jobs
-# Strong AI/ML section. Added 2026-05-20.
-# 
+#
 def search_remotive():
     print("[SEARCH] Searching Remotive...")
     jobs = []
     try:
         headers = {"User-Agent": "JobSearchBot/1.0 (personal use)"}
         # Pull software-dev category — covers AI/ML, QA, and perf roles.
-        # Remotive API returns up to ~200 jobs per category; we filter locally.
         resp = requests.get(
             "https://remotive.com/api/remote-jobs?category=software-dev",
             headers=headers, timeout=15
@@ -1589,17 +1592,17 @@ def search_remotive():
         log_error(f"Remotive error: {e}")
     return jobs
 
-# 
+#
 # SOURCE 2: Serper.dev Google Jobs API (2,500 free searches/month - direct apply links!)
 # Sign up free at: https://serper.dev
-# 
+#
 SERPER_API_KEY = os.environ.get("SERPER_API_KEY", "")
 
 def search_serper_jobs():
     print("[SEARCH] Searching Google Jobs via Serper...")
     jobs = []
-    if SERPER_API_KEY == "YOUR_SERPER_API_KEY":
-        print("   [WARN] Serper skipped - add your free API key from serper.dev")
+    if not SERPER_API_KEY:
+        print("   [WARN] Serper skipped - SERPER_API_KEY not set in environment")
         return jobs
 
     queries = [
@@ -1665,14 +1668,12 @@ def search_serper_jobs():
         'site:myworkdayjobs.com "cobol developer" remote',
         '"cobol developer" remote "w2"',
         '"mainframe developer" "cobol" remote',
-        # New sources (added 2026-05-20): Himalayas + BuiltIn
+        # Himalayas + BuiltIn
         'site:himalayas.app "loadrunner" OR "performance engineer" remote',
         'site:himalayas.app "ai engineer" OR "llm" remote',
         'site:builtin.com/job "ai engineer" OR "performance engineer" remote',
         'site:builtin.com/job "ai qa" OR "ai test" remote',
-        # AI lane targeting (added 2026-05-20): performance-engineer-bridges-to-AI
-        # roles where Hans's 14 yrs LoadRunner + observability stack is the moat.
-        # These should keep at higher rates than generic "agentic ai engineer".
+        # AI lane targeting — performance-engineer-bridges-to-AI
         '"AI QA engineer" OR "AI test engineer" remote',
         '"LLM evaluation engineer" remote',
         '"AI reliability engineer" remote',
@@ -1741,8 +1742,6 @@ def search_serper_jobs():
                         print(f"   [DEBUG] Serper FILTERED-{fp_reason}: {title[:50]}")
                     continue
                 # Non-US filter — catch UK/EU/overseas roles that slip past
-                # the search_page and false-positive URL checks (e.g. UK
-                # aggregators with location encoded in the URL slug).
                 non_us_reason = _is_non_us_serper_posting(title, desc, url_job)
                 if non_us_reason:
                     if DEBUG_MODE:
@@ -1775,21 +1774,19 @@ def search_serper_jobs():
                     })
         except Exception as e:
             print(f"   [ERROR] Serper error ({query}): {e}")
+            log_error(f"Serper error ({query}): {e}")
         time.sleep(1.2)  # Rate limit: stay under Serper's burst threshold
     print(f"   [OK] Google Jobs: {len(jobs)} relevant jobs found")
     return jobs
 
 
-# 
+#
 # AMAZON JOBS SPOTLIGHT — Top 5 Amazon-specific postings (10 day window)
-# Searches amazon.jobs via Serper — no login required
-# 
+#
 AMAZON_MAX_AGE_DAYS = 10
 
 # Non-US location markers — if any appear in the title/snippet of an
-# Amazon posting, we skip it. Amazon posts globally on amazon.jobs and
-# Serper indexes them all, so this is the cheapest way to keep overseas
-# roles out of the digest.
+# Amazon posting, we skip it.
 AMAZON_NON_US_MARKERS = [
     "adci", "adci -", "- adci",
     # Europe
@@ -1824,16 +1821,9 @@ def _is_non_us_amazon_posting(title, description):
     return None
 
 
-# 
+#
 # SERPER NON-US FILTER
-# 
-# Catches UK/EU/non-US jobs that slip through Serper Google Jobs results
-# (e.g. the Newcastle upon Tyne AI Integration Engineer that scored 80 pts
-# on 2026-05-23). Reuses AMAZON_NON_US_MARKERS plus extra UK/EU cities the
-# Amazon list didn't need, and adds URL-side checks (TLD + slug) for
-# aggregators like qualitycontracts.co.uk that encode location in the URL.
-
-# Extra non-US city markers not already in AMAZON_NON_US_MARKERS
+#
 SERPER_EXTRA_NON_US_CITIES = [
     # UK (beyond London/Dublin which Amazon list already has)
     "newcastle upon tyne", "newcastle", "manchester", "birmingham",
@@ -1856,7 +1846,6 @@ SERPER_EXTRA_NON_US_CITIES = [
     "england", "scotland", "wales", "northern ireland",
 ]
 
-# Non-US TLDs — if the result's domain ends with one of these, skip it.
 SERPER_NON_US_TLDS = (
     ".co.uk", ".uk", ".de", ".fr", ".es", ".it", ".nl",
     ".ie", ".eu", ".ch", ".se", ".dk", ".no", ".fi",
@@ -1865,8 +1854,6 @@ SERPER_NON_US_TLDS = (
     ".ca", ".com.br", ".mx", ".com.mx",
 )
 
-# URL slug markers — aggregators encode location in the path, e.g.
-# qualitycontracts.co.uk/.../-newcastle-upon-tyne-england-united-kingdom-
 SERPER_URL_SLUG_MARKERS = (
     "-united-kingdom", "-england-", "-scotland-", "-wales-",
     "-germany-", "-france-", "-spain-", "-netherlands-",
@@ -1878,8 +1865,6 @@ SERPER_URL_SLUG_MARKERS = (
 def _is_non_us_serper_posting(title, description, url):
     """
     Return a reason string if a Serper result is non-US, else None.
-    Checks title/snippet against the marker lists, then URL domain TLD,
-    then URL slug patterns.
     """
     blob = f" {title} {description} ".lower()
     url_lower = (url or "").lower()
@@ -1896,7 +1881,10 @@ def _is_non_us_serper_posting(title, description, url):
 
     # 3. URL domain TLD check
     if "://" in url_lower:
-        domain_part = url_lower.split("/")[2]
+        try:
+            domain_part = url_lower.split("/")[2]
+        except IndexError:
+            domain_part = url_lower
     else:
         domain_part = url_lower.split("/")[0]
     for tld in SERPER_NON_US_TLDS:
@@ -1964,8 +1952,7 @@ def search_amazon_jobs():
                     continue
                 seen.add(url_job)
 
-                # Skip overseas postings — Amazon posts globally on
-                # amazon.jobs and we only want US roles.
+                # Skip overseas postings
                 non_us_hit = _is_non_us_amazon_posting(title, desc)
                 if non_us_hit:
                     if DEBUG_MODE:
@@ -1977,7 +1964,6 @@ def search_amazon_jobs():
                     try:
                         parsed = parse_relative_date(str(posted))
                         if parsed is None:
-                            from dateutil import parser as dateparser
                             parsed = dateparser.parse(str(posted))
                         if parsed:
                             if parsed.tzinfo is None:
@@ -1991,7 +1977,6 @@ def search_amazon_jobs():
                 track, level_ok = get_job_track(title, desc)
 
                 # Lower score threshold for Amazon — worth seeing even at lower scores
-                # level_ok: senior AI jobs blocked, senior LoadRunner jobs allowed
                 if score >= 15 and level_ok and is_relevant_title(title) and not is_blocked_company(title, desc, company):
                     jobs.append({
                         "source":           "Amazon Jobs",
@@ -2007,6 +1992,7 @@ def search_amazon_jobs():
                     })
         except Exception as e:
             print(f"   [ERROR] Amazon Jobs search error ({query}): {e}")
+            log_error(f"Amazon Jobs error ({query}): {e}")
         time.sleep(1.2)
 
     # Deduplicate and sort — also check against seen_jobs.json to avoid repeat sends
@@ -2030,18 +2016,19 @@ def search_amazon_jobs():
         save_seen_jobs(updated_seen)
     print(f"   [OK] Amazon Jobs: {len(top5)} relevant jobs found (10-day window)")
     return top5
-# 
+
+
+#
+# SOURCE 3: Adzuna
+#
 def search_adzuna():
     print("[SEARCH] Searching Adzuna...")
     jobs = []
-    if ADZUNA_APP_ID == "YOUR_ADZUNA_APP_ID":
-        print("   [WARN]  Adzuna skipped  add your API key to the config")
+    if not ADZUNA_APP_ID or not ADZUNA_APP_KEY:
+        print("   [WARN] Adzuna skipped — ADZUNA_APP_ID/KEY not set in environment")
         return jobs
 
     # Narrowed to LoadRunner/LRE/VuGen-specific queries only (2026-05-20).
-    # Previous broad queries (performance test engineer, performance engineer,
-    # load test engineer, etc.) returned 180 raw / 0 keepers per run.
-    # Re-evaluate in 2 weeks — delete source entirely if still zero.
     queries = [
         "loadrunner performance engineer",
         "loadrunner",
@@ -2100,8 +2087,7 @@ def search_adzuna():
 
                 # Adzuna-specific: For Performance Engineering track, prefer
                 # LR signal, but allow senior perf roles with observability
-                # stack to pass through (they often hide LR deeper in the
-                # full JD that Adzuna doesn't return in the snippet).
+                # stack to pass through.
                 track_quick, _ = get_job_track(title, desc)
                 if track_quick == "Performance Engineering":
                     has_lr = any(sig in combined for sig in LR_SIGNALS)
@@ -2142,18 +2128,20 @@ def search_adzuna():
                     })
         except Exception as e:
             print(f"   [ERROR] Adzuna error ({query}): {e}")
+            log_error(f"Adzuna error ({query}): {e}")
         time.sleep(1)
     print(f"   [OK] Adzuna: {len(jobs)} relevant jobs found")
     return jobs
 
-# 
+
+#
 # SOURCE 5: USAJobs API
-# 
+#
 def search_usajobs():
     print("[SEARCH] Searching USAJobs...")
     jobs = []
-    if USAJOBS_API_KEY == "YOUR_USAJOBS_API_KEY":
-        print("   [WARN]  USAJobs skipped  add your API key to the config")
+    if not USAJOBS_API_KEY or not USAJOBS_EMAIL:
+        print("   [WARN] USAJobs skipped — USAJOBS_API_KEY/EMAIL not set in environment")
         return jobs
     queries = [
         "performance engineer", "loadrunner", "performance tester",
@@ -2191,12 +2179,12 @@ def search_usajobs():
                 posted = mv.get("PublicationStartDate", "")
                 url_job = mv.get("PositionURI", "")
                 company = mv.get("OrganizationName", "Federal Agency")
+                # FIXED: pull location from USAJobs response (was empty string)
+                location = mv.get("PositionLocationDisplay", "") or ""
 
                 funnel.add_raw("USAJobs")
-                # USAJobs is federal-only and already filters by RemoteIndicator,
-                # so we still run through passes_filters for funnel consistency.
                 passed, score, matched, track = passes_filters(
-                    title, desc, posted, "", url_job, company, "USAJobs"
+                    title, desc, posted, location, url_job, company, "USAJobs"
                 )
                 if passed:
                     jobs.append({
@@ -2214,6 +2202,7 @@ def search_usajobs():
                     })
         except Exception as e:
             print(f"   [ERROR] USAJobs error ({query}): {e}")
+            log_error(f"USAJobs error ({query}): {e}")
     seen = set()
     unique = []
     for j in jobs:
@@ -2223,9 +2212,67 @@ def search_usajobs():
     print(f"   [OK] USAJobs: {len(unique)} relevant jobs found")
     return unique
 
-# 
+
+#
+# SOURCE 14c: Wellfound (startup jobs, direct links)
+#
+def search_wellfound():
+    print("[SEARCH] Searching Wellfound...")
+    jobs = []
+    if not SERPER_API_KEY:
+        print("   [WARN] Wellfound skipped - SERPER_API_KEY needed")
+        return jobs
+    queries = [
+        "site:wellfound.com loadrunner performance engineer remote",
+        "site:wellfound.com performance test engineer remote",
+        "site:wellfound.com ai engineer entry level remote",
+        "site:wellfound.com mlops engineer remote",
+    ]
+    seen = set()
+    for query in queries:
+        try:
+            url = "https://google.serper.dev/search"
+            headers = {"X-API-KEY": SERPER_API_KEY, "Content-Type": "application/json"}
+            payload = {"q": query, "gl": "us", "hl": "en", "num": 10}
+            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            data = resp.json()
+            for item in data.get("organic", []):
+                title   = item.get("title", "").replace(" | Wellfound", "").replace(" - Wellfound", "").strip()
+                desc    = item.get("snippet", "")
+                url_job = item.get("link", "")
+                posted  = item.get("date", "")
+                if not any(x in url_job for x in ["wellfound.com/jobs/", "angel.co/jobs/"]):
+                    continue
+                if url_job in seen:
+                    continue
+                seen.add(url_job)
+
+                funnel.add_raw("Wellfound")
+                passed, score, matched, track = passes_filters(
+                    title, desc, posted, "", url_job, "", "Wellfound"
+                )
+                if passed:
+                    jobs.append({
+                        "source": "Wellfound",
+                        "title": title,
+                        "company": "N/A",
+                        "url": url_job,
+                        "posted": posted,
+                        "description": desc[:500],
+                        "score": score,
+                        "matched_keywords": matched,
+                        "track": track,
+                    })
+        except Exception as e:
+            print(f"   [ERROR] Wellfound error ({query}): {e}")
+            log_error(f"Wellfound error ({query}): {e}")
+    print(f"   [OK] Wellfound: {len(jobs)} relevant jobs found")
+    return jobs
+
+
+#
 # COVER LETTER GENERATOR
-# 
+#
 RESUME_FULL = """
 Name: Hans Richardson
 Title: Senior Performance / QA Test Engineer
@@ -2280,7 +2327,7 @@ def build_optimized_prompt(job):
 
     # Extract key requirements from job description
     desc_lower = desc.lower()
-    
+
     requirements = []
     if "loadrunner" in desc_lower or "vugen" in desc_lower:
         requirements.append("LoadRunner/VuGen expertise is explicitly required")
@@ -2347,11 +2394,12 @@ Write only the cover letter text, no subject line or extra commentary."""
 
     return prompt
 
-def generate_cover_letter_claude(job):
-    """Generate tailored cover letter using Claude API with optimized prompt."""
+
+def _call_claude_api(prompt, max_tokens=1000):
+    """Shared Claude API call helper. Returns text on success, None on failure."""
+    if not CLAUDE_API_KEY:
+        return None
     try:
-        prompt = build_optimized_prompt(job)
-        
         headers = {
             "x-api-key": CLAUDE_API_KEY,
             "anthropic-version": "2023-06-01",
@@ -2359,26 +2407,37 @@ def generate_cover_letter_claude(job):
         }
         payload = {
             "model": "claude-sonnet-4-6",
-            "max_tokens": 1000,
+            "max_tokens": max_tokens,
             "messages": [{"role": "user", "content": prompt}]
         }
-        
         resp = requests.post(
             "https://api.anthropic.com/v1/messages",
             headers=headers,
             json=payload,
             timeout=30
         )
-        
         if resp.status_code == 200:
             data = resp.json()
             return data["content"][0]["text"].strip()
         else:
-            print(f"   [WARN] Claude API error {resp.status_code}, using template")
-            return generate_cover_letter_template(job)
+            print(f"   [WARN] Claude API error {resp.status_code}: {resp.text[:200]}")
+            log_error(f"Claude API error {resp.status_code}: {resp.text[:200]}")
+            return None
     except Exception as e:
-        print(f"   [WARN] Claude API failed: {e}, using template")
-        return generate_cover_letter_template(job)
+        print(f"   [WARN] Claude API failed: {e}")
+        log_error(f"Claude API failed: {e}")
+        return None
+
+
+def generate_cover_letter_claude(job):
+    """Generate tailored cover letter using Claude API with optimized prompt."""
+    prompt = build_optimized_prompt(job)
+    result = _call_claude_api(prompt, max_tokens=1000)
+    if result:
+        return result
+    print(f"   [WARN] Claude cover letter failed, using template")
+    return generate_cover_letter_template(job)
+
 
 def generate_cover_letter_template(job):
     """Fallback template-based cover letter."""
@@ -2396,86 +2455,66 @@ Hans Richardson
 Lee's Summit, MO | linkedin.com/in/hans-richardson
 """
 
+
 def generate_cover_letter(job):
+    """Generate cover letter — use Claude if key set, otherwise template."""
+    # FIXED: removed broken `if OPENAI_API_KEY: return generate_cover_letter_claude()`
+    # OpenAI key is not currently wired up; only Claude or template.
     if CLAUDE_API_KEY:
-        return generate_cover_letter_claude(job)
-    if OPENAI_API_KEY:
         return generate_cover_letter_claude(job)
     return generate_cover_letter_template(job)
 
-# 
+
+#
+# FIT ANALYSIS (Claude-powered per-job "why this fits" blurb)
+#
+def generate_fit_analysis(job):
+    """
+    Generate a short (3-4 sentence) fit analysis for a job using Claude.
+    Returns empty string on failure or if disabled. Modeled after
+    Jobright.ai's Orion copilot — gives Hans a quick read on each top match.
+    """
+    if not GENERATE_FIT_ANALYSIS or not CLAUDE_API_KEY:
+        return ""
+
+    title    = job.get("title", "")
+    company  = job.get("company", "")
+    desc     = job.get("description", "")[:800]  # cap to keep prompt small
+    keywords = ", ".join(job.get("matched_keywords", []))
+    track    = job.get("track", "")
+    score    = job.get("score", 0)
+
+    prompt = f"""You are a career strategist evaluating job fit for Hans Richardson, a Senior Performance Test Engineer pivoting toward AI engineering.
+
+HANS'S PROFILE:
+- 24+ years IT, 14 years LoadRunner/VuGen/LRE specialist
+- Active Public Trust clearance (USDA contract 2021-2025)
+- Currently Amazon Warehouse Associate, actively job searching
+- Bridging into AI: prompt engineering, LLM ops, AI QA/SDET, AI reliability
+- Observability stack expert: AppDynamics, Splunk, Grafana, Prometheus
+- Building portfolio: FLAPBOARD (Flask flight app), job_search.py (this script), agentic loop project planned
+
+THIS JOB:
+- Title: {title}
+- Company: {company}
+- Track: {track} (matched at {score} pts)
+- Matched keywords: {keywords}
+- Description (truncated): {desc}
+
+TASK: Write a 3-4 sentence fit analysis. Be specific and honest. Cover:
+1. Why this is (or isn't) a strong fit given Hans's actual background
+2. The 1-2 strongest talking points to emphasize in his application
+3. Any concerns or gaps to be aware of
+
+Be direct. If it's a weak fit, say so. If it's a stretch role but worth applying, say that. No fluff, no "passionate about" language. Output the analysis only, no preamble."""
+
+    result = _call_claude_api(prompt, max_tokens=400)
+    return result or ""
+
+
+#
 # MAIN
-# 
-
-# 
-# SOURCE 8: Greenhouse.io (public ATS boards)
-# 
-
-# NOTE: Google Custom Search API removed (2026-05-07)
-# All Google Jobs searches are handled by Serper (search_serper_jobs).
-# Custom Search API was returning 403 on every query and was redundant.
-
-
-
-
-# ---------------------------------------------
-# SOURCE 11: Dice (tech-focused job board RSS)
-# ---------------------------------------------
-
-# ---------------------------------------------
-# SOURCE 14c: Wellfound (startup jobs, direct links)
-# ---------------------------------------------
-def search_wellfound():
-    print("[SEARCH] Searching Wellfound...")
-    jobs = []
-    if SERPER_API_KEY == "YOUR_SERPER_API_KEY":
-        print("   [WARN] Wellfound skipped - Serper key needed")
-        return jobs
-    queries = [
-        "site:wellfound.com loadrunner performance engineer remote",
-        "site:wellfound.com performance test engineer remote",
-        "site:wellfound.com ai engineer entry level remote",
-        "site:wellfound.com mlops engineer remote",
-    ]
-    seen = set()
-    for query in queries:
-        try:
-            url = "https://google.serper.dev/search"
-            headers = {"X-API-KEY": SERPER_API_KEY, "Content-Type": "application/json"}
-            payload = {"q": query, "gl": "us", "hl": "en", "num": 10}
-            resp = requests.post(url, headers=headers, json=payload, timeout=15)
-            data = resp.json()
-            for item in data.get("organic", []):
-                title   = item.get("title", "").replace(" | Wellfound", "").replace(" - Wellfound", "").strip()
-                desc    = item.get("snippet", "")
-                url_job = item.get("link", "")
-                posted  = item.get("date", "")
-                if not any(x in url_job for x in ["wellfound.com/jobs/", "angel.co/jobs/"]):
-                    continue
-                if url_job in seen:
-                    continue
-                seen.add(url_job)
-
-                funnel.add_raw("Wellfound")
-                passed, score, matched, track = passes_filters(
-                    title, desc, posted, "", url_job, "", "Wellfound"
-                )
-                if passed:
-                    jobs.append({
-                        "source": "Wellfound",
-                        "title": title,
-                        "company": "N/A",
-                        "url": url_job,
-                        "posted": posted,
-                        "description": desc[:500],
-                        "score": score,
-                        "matched_keywords": matched,
-                        "track": track,
-                    })
-        except Exception as e:
-            print(f"   [ERROR] Wellfound error ({query}): {e}")
-    print(f"   [OK] Wellfound: {len(jobs)} relevant jobs found")
-    return jobs
+#
 def main():
     print("\n" + "="*55)
     print("  Hans Richardson  Automated Job Search")
@@ -2498,6 +2537,7 @@ def main():
     MIN_SCORES = {
         "Performance Engineering": 30,  # Lower threshold - core specialty
         "AI Engineering": 40,           # Lowered from 51 - catching real jobs
+        "QA Automation": 30,            # SDET / QA hybrid
         "COBOL/Mainframe": 10,          # Last resort - low threshold
     }
     filtered_by_score = []
@@ -2544,13 +2584,11 @@ def main():
     all_jobs = new_jobs
     funnel.set_stage("after_seen_dedup", len(all_jobs))
     funnel.set_stage("final", len(all_jobs))
-    # kept_by_sources reflects what survived per-source filtering (pre-aggregation).
-    # We set it from the sort step total before the post-aggregation gates.
 
     print(f"\n{'='*55}")
     print(f"[STATS] Total relevant jobs found: {len(all_jobs)}")
 
-    top_jobs = all_jobs[:15]  # Send top 15 jobs per day (bumped from 10 on 2026-05-20 to accelerate K-Means timeline)
+    top_jobs = all_jobs[:15]  # Send top 15 jobs per day
 
     if len(all_jobs) == 0:
         print(f"[STATS] No matching jobs found today.")
@@ -2566,13 +2604,19 @@ def main():
             job["cover_letter"] = generate_cover_letter(job)
         else:
             job["cover_letter"] = ""
+        # FIT ANALYSIS for top N jobs only
+        if i <= FIT_ANALYSIS_MAX_JOBS:
+            job["fit_analysis"] = generate_fit_analysis(job)
+        else:
+            job["fit_analysis"] = ""
         print(f"  [{i:02d}] Score:{job['score']:3d} | {job['source']:<10} | {job['title'][:50]}")
         print(f"        {job['company']} | {job['url'][:60]}")
+        if job.get("fit_analysis"):
+            print(f"        [FIT] {job['fit_analysis'][:120]}...")
         print()
 
     # Save newly seen job URLs
     if top_jobs:
-        # Only mark SENT jobs as seen - unsent jobs will appear tomorrow
         seen_urls.update(j.get("url", "") for j in top_jobs)
         save_seen_jobs(seen_urls)
         unsent = len(all_jobs) - len(top_jobs)
@@ -2592,10 +2636,11 @@ def main():
     with open(OUTPUT_FILE, "w") as f:
         json.dump(output, f, indent=2)
     print(f"\n[OK] Results saved to: {OUTPUT_FILE}")
-    print(f"   Open it to see all jobs + cover letters.\n")
+
+    # Search Amazon jobs separately
+    amazon_jobs = search_amazon_jobs()
 
     # Send email notification always — even if no jobs found
-    amazon_jobs = search_amazon_jobs()
     send_email(top_jobs, amazon_jobs, funnel_summary=funnel.summary_dict())
 
     # Print top 3 with cover letters
@@ -2608,12 +2653,16 @@ def main():
         print(f"   Source  : {job['source']}")
         print(f"   URL     : {job['url']}")
         print(f"   Keywords: {', '.join(job['matched_keywords'])}")
+        if job.get("fit_analysis"):
+            print(f"\n--- FIT ANALYSIS ---")
+            print(job["fit_analysis"])
         print(f"\n--- COVER LETTER ---")
         print(job["cover_letter"])
         print("-"*40)
 
+
 KMEANS_THRESHOLD     = 300  # target decision count before K-Means production training is meaningful
-KMEANS_EXPLORATORY   = 100  # earlier milestone for exploratory K-Means — see what clusters emerge, validate the approach
+KMEANS_EXPLORATORY   = 100  # earlier milestone for exploratory K-Means
 
 def get_decision_stats():
     """
@@ -2704,8 +2753,19 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     for i, job in enumerate(top_jobs, 1):
         keywords = ", ".join(job["matched_keywords"][:6])
         cover    = job.get("cover_letter", "").replace("\n", "<br>")
+        fit      = job.get("fit_analysis", "").replace("\n", "<br>")
         salary   = f"<p><strong>Salary:</strong> {job['salary']}</p>" if job.get("salary","").strip(" -") else ""
         track    = job.get("track", "")
+
+        # FIT ANALYSIS block — only if present
+        fit_block = ""
+        if fit:
+            fit_block = f"""
+            <div style="background:#f0f7ff;border-left:3px solid #1F3864;padding:10px 14px;margin:8px 0 12px;border-radius:0 4px 4px 0;">
+              <p style="margin:0 0 4px;font-size:12px;font-weight:bold;color:#1F3864;">🎯 FIT ANALYSIS</p>
+              <p style="margin:0;font-size:13px;color:#444;line-height:1.4;">{fit}</p>
+            </div>"""
+
         html += f"""<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:24px;">
             <h3 style="color:#1F3864;margin:0 0 4px;">#{i} - {job["title"]}
             <span style="font-size:12px;background:#e8f0fe;color:#1F3864;padding:2px 8px;border-radius:10px;">{track}</span></h3>
@@ -2713,6 +2773,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             <p><strong>Posted:</strong> <span style="color:#e65100;font-weight:500;">{job.get("posted","Unknown")[:10] if job.get("posted") else "Date unknown - verify before applying!"}</span> | <strong>Track:</strong> {job.get("track","N/A")}</p>
             {salary}
             <p><strong>Matched Skills:</strong> {keywords}</p>
+            {fit_block}
             <p>
                 {f"<a href='{job.get('url', '')}' style='background:#1F3864;color:#fff;padding:8px 16px;border-radius:4px;text-decoration:none;'>View and Apply</a>"}
             </p>
@@ -2730,7 +2791,6 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
   Search the Job ID in the <strong>A to Z app</strong> to find internal-only postings not listed here.</p>"""
 
         for i, job in enumerate(amazon_jobs, 1):
-            import re
             keywords = ", ".join(job["matched_keywords"][:5])
             salary   = f"<span style='color:#232F3E;'> | <strong>Salary:</strong> {job['salary']}</span>" if job.get("salary","").strip(" -") else ""
             posted   = job.get("posted","")[:10] if job.get("posted") else "Recent"
@@ -2839,8 +2899,6 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
 </div>"""
 
     # ── Pipeline Funnel section ─────────────────────────────
-    # Matches K-Means box styling so the future K-Means transformation
-    # is a content swap, not a redesign.
     if funnel_summary:
         stages = funnel_summary.get("stages", {})
         biggest = funnel_summary.get("biggest_drop", (None, 0, 0))
@@ -2926,7 +2984,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     today_key  = datetime.now().strftime("%Y-%m-%d")
     batch_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "today_jobs.json")
     try:
-        # Regular jobs numbered 1-10
+        # Regular jobs numbered 1-N
         regular_batch = [
             {
                 "job_id":           _job_id(j),
@@ -2943,7 +3001,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             }
             for idx, j in enumerate(top_jobs, 1)
         ]
-        # Amazon jobs numbered A1-A5
+        # Amazon jobs numbered A1-AN
         amazon_batch = [
             {
                 "job_id":           _job_id(j),
@@ -2975,8 +3033,17 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         with open(archive_file, "w") as f:
             json.dump(batch, f, indent=2)
         print(f"   [OK] Archived to today_jobs_{today_key}.json")
+
+        # ── Write Amazon jobs to job_decisions.json ───────────
+        # FIXED 4/30 gap: Amazon Spotlight jobs (A1–A5) were not being
+        # persisted to job_decisions.json. Now they are, so decisions.py
+        # has a complete record to work from.
+        if amazon_batch:
+            _persist_amazon_to_decisions(amazon_batch, today_key)
+
     except Exception as e:
         print(f"   [WARN] Could not save today_jobs.json: {e}")
+        log_error(f"today_jobs.json save failed: {e}")
 
     try:
         msg = MIMEMultipart("alternative")
@@ -2990,19 +3057,81 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         print(f"   Email sent to {EMAIL_TO}")
     except Exception as e:
         print(f"   Email failed: {e}")
+        log_error(f"Email send failed: {e}")
+
+
+def _persist_amazon_to_decisions(amazon_batch, today_key):
+    """
+    Write Amazon Spotlight jobs into job_decisions.json with a 'pending' decision.
+    This closes the 4/30 gap where Amazon jobs (A1–A5) weren't being persisted
+    for the decisions/review pipeline.
+
+    Mirrors the structure decisions.py expects: date-keyed array of dicts with
+    job_id, title, company, track, score, url, matched_keywords, source, and
+    a default decision='pending' / reviewed=false so review_decisions.py can
+    pick them up if they're never explicitly decided on.
+    """
+    try:
+        # Load existing decisions
+        if os.path.exists(DECISIONS_FILE):
+            with open(DECISIONS_FILE, "r", encoding="utf-8") as f:
+                decisions = json.load(f)
+        else:
+            decisions = {}
+
+        if today_key not in decisions:
+            decisions[today_key] = []
+
+        # Build set of existing job_ids for today to avoid duplicates
+        existing_ids = {entry.get("job_id") for entry in decisions[today_key]
+                        if isinstance(entry, dict)}
+
+        added = 0
+        for job in amazon_batch:
+            jid = job.get("job_id", "")
+            if not jid or jid in existing_ids:
+                continue
+            decisions[today_key].append({
+                "job_id":           jid,
+                "number":           job.get("number"),
+                "number_display":   job.get("number_display"),
+                "title":            job.get("title", ""),
+                "company":          job.get("company", "Amazon"),
+                "track":            job.get("track", ""),
+                "score":            job.get("score", 0),
+                "url":              job.get("url", ""),
+                "matched_keywords": job.get("matched_keywords", []),
+                "source":           job.get("source", "Amazon Jobs"),
+                "is_amazon":        True,
+                "decision":         "pending",
+                "reason":           "",
+                "detection_method": "auto",
+                "confidence":       1.0,
+                "notes":            "",
+                "reviewed":         False,
+                "reviewed_date":    "",
+                "recorded_at":      datetime.now().isoformat(),
+            })
+            existing_ids.add(jid)
+            added += 1
+
+        if added > 0:
+            with open(DECISIONS_FILE, "w", encoding="utf-8") as f:
+                json.dump(decisions, f, indent=2)
+            print(f"   [OK] Persisted {added} Amazon jobs to job_decisions.json")
+    except Exception as e:
+        print(f"   [WARN] Could not persist Amazon jobs to decisions: {e}")
+        log_error(f"Amazon decisions persist failed: {e}")
 
 
 if __name__ == "__main__":
     try:
         main()
         # Snapshot logs to logs/ folder (14-day rolling retention).
-        # Runs AFTER main() so logs are complete, BEFORE git_commit_push()
-        # so the snapshot is included in the same commit.
         print("\n[LOGS] Snapshotting run logs...")
         snap_count, prune_count = snapshot_and_prune_logs()
         print(f"   [OK] Snapshotted {snap_count} log file(s), pruned {prune_count} old snapshot(s)")
-        # Push all local changes (job_decisions.json, today_jobs.json,
-        # seen_jobs.json, run logs) to GitHub at end of every run.
+        # Push all local changes to GitHub at end of every run.
         git_commit_push()
         # Ingest latest decisions into ChromaDB for RAG
         print("\n[RAG] Ingesting decisions into ChromaDB...")
