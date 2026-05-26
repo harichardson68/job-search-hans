@@ -1,0 +1,73 @@
+{
+  "date": "2026-05-26",
+  "jobs": [
+    {
+      "job_id": "89c5ec337a",
+      "number": 1,
+      "number_display": "1",
+      "title": "dexter health (Remote): AI Engineer (LLM Products) - JOIN",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://join.com/companies/dexter-health/16204568-ai-engineer-llm-products-remote",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer",
+        "llm",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "5e4b6fa525",
+      "number": 2,
+      "number_display": "2",
+      "title": "Generative AI Engineer - Ford Pro Intelligence at Ford Motor Company",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.careers.ford.com/job/bellevue/generative-ai-engineer-ford-pro-intelligence/48560/95431583616",
+      "matched_keywords": [
+        "ai engineer",
+        "generative ai",
+        "AI-title:generative ai engineer",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "29a46666b4",
+      "number": 3,
+      "number_display": "3",
+      "title": "AI Integration Engineer at Creative Chaos - Remote Leaf",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteleaf.com/company/creative-chaos/ai-integration-engineer-pakistan/",
+      "matched_keywords": [
+        "AI-title:ai integration engineer",
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "a676e7b5e3",
+      "number": 4,
+      "number_display": "4",
+      "title": "Applied AI Engineer @ LI.FI - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/li.fi/5f0b1f78-25c7-492c-aecf-e80d631623b2/application",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    }
+  ]
+}
