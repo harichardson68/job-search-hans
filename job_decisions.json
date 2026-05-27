@@ -2051,5 +2051,33 @@
       "reviewed_date": "",
       "recorded_at": "2026-05-26T21:20:29.816694"
     }
+  ],
+  "2026-05-27": [
+    {
+      "job_id": "69fdd7edc2",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Applied scientist, Agentic AI, AWS Agentic AI - Job ID: 10430758",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10430758/applied-scientist-agentic-ai-aws-agentic-ai",
+      "matched_keywords": [
+        "agentic ai",
+        "AI-title:agentic",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-05-27T18:48:03.712454"
+    }
   ]
 }

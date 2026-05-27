@@ -1,0 +1,95 @@
+{
+  "date": "2026-05-27",
+  "jobs": [
+    {
+      "job_id": "39b3da0a44",
+      "number": 1,
+      "number_display": "1",
+      "title": "Performance Tester with LoadRunner and JMeter experience",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://wfhforgeon.byethost7.com/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote-3",
+      "matched_keywords": [
+        "performance tester",
+        "LoadRunner-in-title",
+        "loadrunner",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "7297a1231b",
+      "number": 2,
+      "number_display": "2",
+      "title": "Performance Engineer (Remote) - Wfh",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 155,
+      "url": "https://wfh.hstn.me/job/performance-engineer-remote-2",
+      "matched_keywords": [
+        "neoload",
+        "performance engineer",
+        "jmeter",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "9dbd8b3457",
+      "number": 3,
+      "number_display": "3",
+      "title": "AVP, AI Engineering (Remote - EST)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://archgroup.wd1.myworkdayjobs.com/en-US/Careers/job/Raleigh-NC-United-States-of-America/AVP--AI-Engineering--Remote---EST-_R26_509-1",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer",
+        "prompt engineering",
+        "prompt engineer",
+        "agentic",
+        "observability"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "195adc104e",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI/MLOps Engineer - Vaco by Highspring - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/f0f39e8a-5311-405f-b634-acb72a5650b7",
+      "matched_keywords": [
+        "AI-title:mlops",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "69fdd7edc2",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Applied scientist, Agentic AI, AWS Agentic AI - Job ID: 10430758",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10430758/applied-scientist-agentic-ai-aws-agentic-ai",
+      "matched_keywords": [
+        "agentic ai",
+        "AI-title:agentic",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
