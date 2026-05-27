@@ -2479,36 +2479,53 @@ def generate_fit_analysis(job):
 
     title    = job.get("title", "")
     company  = job.get("company", "")
-    desc     = job.get("description", "")[:800]  # cap to keep prompt small
+    desc     = job.get("description", "")[:600]
     keywords = ", ".join(job.get("matched_keywords", []))
     track    = job.get("track", "")
     score    = job.get("score", 0)
 
-    prompt = f"""You are a career strategist evaluating job fit for Hans Richardson, a Senior Performance Test Engineer pivoting toward AI engineering.
+    prompt = f"""You are evaluating a job match for Hans Richardson.
 
-HANS'S PROFILE:
-- 24+ years IT, 14 years LoadRunner/VuGen/LRE specialist
-- Active Public Trust clearance (USDA contract 2021-2025)
-- Currently Amazon Warehouse Associate, actively job searching
-- Bridging into AI: prompt engineering, LLM ops, AI QA/SDET, AI reliability
-- Observability stack expert: AppDynamics, Splunk, Grafana, Prometheus
-- Building portfolio: FLAPBOARD (Flask flight app), job_search.py (this script), agentic loop project planned
+CANDIDATE SNAPSHOT:
+- 24+ years IT, 14 years LoadRunner/VuGen/LRE (Senior Performance Engineer)
+- Active Public Trust clearance (USDA contract)
+- Based in Lee's Summit, MO — seeking remote or KC-area
+- Building AI engineering skills: IBM GenAI cert, Claude API projects, agentic loop in progress
+- Observability stack: AppDynamics, Splunk, Grafana, Prometheus
+- Dual-track search: (1) LoadRunner/Performance roles, (2) AI Systems/Agent/Workflow Engineering
 
-THIS JOB:
-- Title: {title}
-- Company: {company}
-- Track: {track} (matched at {score} pts)
-- Matched keywords: {keywords}
-- Description (truncated): {desc}
+JOB POSTING:
+Title: {title}
+Company: {company}
+Track: {track} (matched at {score} pts)
+Matched keywords: {keywords}
+Description: {desc}
 
-TASK: Write a 3-4 sentence fit analysis. Be specific and honest. Cover:
-1. Why this is (or isn't) a strong fit given Hans's actual background
-2. The 1-2 strongest talking points to emphasize in his application
-3. Any concerns or gaps to be aware of
+TASK:
+Classify into ONE of five tiers and return a single short line.
 
-Be direct. If it's a weak fit, say so. If it's a stretch role but worth applying, say that. No fluff, no "passionate about" language. Output the analysis only, no preamble."""
+TIERS:
+- Excellent Fit: Bullseye — core skills match, remote-US or KC-area, right seniority, no major friction.
+- Strong Fit: Clear match on core skills with minor friction (one small gap, slight seniority mismatch).
+- Decent Fit: Partial match — adjacent skills or moderate friction, but realistic to apply.
+- Stretch Fit: Reach role — interesting target but notable gaps (skill, seniority, geography) requiring strong framing.
+- Weak Fit: Major mismatch (wrong geography, wrong stack, pure ML research). Return "Weak Fit" only — no explanation.
 
-    result = _call_claude_api(prompt, max_tokens=400)
+OUTPUT FORMAT (exactly one line, no preamble):
+**<Tier>** — <15-25 word sentence>. Bold 1-2 positive keywords with *asterisks* and 1-2 friction keywords with _underscores_.
+
+EXAMPLES:
+**Excellent Fit** — Remote US *Senior LoadRunner* role with *observability* depth needed; clean match on stack and seniority.
+**Strong Fit** — *Performance engineering* + *AI reliability* framing fits well; minor _hands-on ML_ gap but bridgeable.
+**Decent Fit** — *QA/SDET* angle works, but title leans _ML pipeline_; apply if JD mentions eval or monitoring.
+**Stretch Fit** — *Agent engineering* target aligns with portfolio direction, but _production LLM_ experience still in progress.
+**Weak Fit**
+
+Return ONLY the one line. No headers, no bullets, no follow-up text."""
+
+
+
+    result = _call_claude_api(prompt, max_tokens=80)
     return result or ""
 
 
@@ -2757,9 +2774,9 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         salary   = f"<p><strong>Salary:</strong> {job['salary']}</p>" if job.get("salary","").strip(" -") else ""
         track    = job.get("track", "")
 
-        # FIT ANALYSIS block — only if present
+        # FIT ANALYSIS block — only if present and not Weak Fit
         fit_block = ""
-        if fit:
+        if fit and not fit.lstrip().startswith("**Weak Fit**"):
             fit_block = f"""
             <div style="background:#f0f7ff;border-left:3px solid #1F3864;padding:10px 14px;margin:8px 0 12px;border-radius:0 4px 4px 0;">
               <p style="margin:0 0 4px;font-size:12px;font-weight:bold;color:#1F3864;">🎯 FIT ANALYSIS</p>
