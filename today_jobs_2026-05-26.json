@@ -2,72 +2,93 @@
   "date": "2026-05-26",
   "jobs": [
     {
-      "job_id": "89c5ec337a",
+      "job_id": "84d023c195",
       "number": 1,
       "number_display": "1",
-      "title": "dexter health (Remote): AI Engineer (LLM Products) - JOIN",
+      "title": "Software Engineer - Agentic AI - Myworkdayjobs.com",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 80,
-      "url": "https://join.com/companies/dexter-health/16204568-ai-engineer-llm-products-remote",
+      "score": 103,
+      "url": "https://comcast.wd5.myworkdayjobs.com/en-US/Comcast_Careers/job/Software-Engineer---Agentic-AI_R434812",
       "matched_keywords": [
-        "ai engineer",
-        "AI-title:ai engineer",
-        "llm",
-        "prompt engineer"
+        "agentic",
+        "prompt engineer",
+        "agentic ai",
+        "prompt engineering",
+        "AI-title:agentic",
+        "ai agent"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "5e4b6fa525",
+      "job_id": "7dff1cd60b",
       "number": 2,
       "number_display": "2",
-      "title": "Generative AI Engineer - Ford Pro Intelligence at Ford Motor Company",
+      "title": "Generative AI Engineer Virtual Internship - Careers at Robert Half",
       "company": "N/A",
       "track": "AI Engineering",
       "score": 80,
-      "url": "https://www.careers.ford.com/job/bellevue/generative-ai-engineer-ford-pro-intelligence/48560/95431583616",
+      "url": "https://careers.roberthalf.com/global/en/job/JR-260417/Generative-AI-Engineer-Virtual-Internship",
       "matched_keywords": [
-        "ai engineer",
+        "generative ai engineer",
         "generative ai",
-        "AI-title:generative ai engineer",
-        "generative ai engineer"
+        "ai engineer",
+        "AI-title:generative ai engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "29a46666b4",
+      "job_id": "85472a564d",
       "number": 3,
       "number_display": "3",
-      "title": "AI Integration Engineer at Creative Chaos - Remote Leaf",
+      "title": "AI Engineer, Remote Job, May 2026",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 40,
-      "url": "https://remoteleaf.com/company/creative-chaos/ai-integration-engineer-pakistan/",
+      "score": 63,
+      "url": "https://dynamitejobs.com/company/360learning/remote-job/ai-engineer",
       "matched_keywords": [
-        "AI-title:ai integration engineer",
-        "ai integration engineer"
+        "AI-title:ai engineer",
+        "llm",
+        "ai engineer",
+        "observability"
       ],
       "source": "Google Jobs",
       "is_amazon": false
     },
     {
-      "job_id": "a676e7b5e3",
+      "job_id": "6714ef87ba",
       "number": 4,
       "number_display": "4",
-      "title": "Applied AI Engineer @ LI.FI - Jobs",
+      "title": "AI Automation Engineer [Remote] - Job Search - ICIMS",
       "company": "N/A",
       "track": "AI Engineering",
-      "score": 40,
-      "url": "https://jobs.ashbyhq.com/li.fi/5f0b1f78-25c7-492c-aecf-e80d631623b2/application",
+      "score": 42,
+      "url": "https://careers-gdms.icims.com/jobs/71519/ai-automation-engineer-%5Bremote%5D/job",
       "matched_keywords": [
-        "ai engineer",
-        "AI-title:ai engineer"
+        "ims",
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false
+    },
+    {
+      "job_id": "653af2917c",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Vendor Agentic Experience - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10430188/software-development-engineer-vendor-agentic-experience",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
     }
   ]
 }
