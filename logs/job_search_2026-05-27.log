@@ -1,6 +1,6 @@
 
 ============================================================
-  Job Search Run: 2026-05-27 18:44:08
+  Job Search Run: 2026-05-27 19:11:35
 ============================================================
 [GIT] Pulling latest from GitHub...
    [OK] Already up to date.
@@ -114,6 +114,32 @@
    [DEBUG] Remotive FILTERED-date: Copywriter
    [DEBUG] Remotive FILTERED-level: Senior DevOps Engineer
    [OK] Remotive: 0 relevant jobs found
+[SEARCH] Searching Working Nomads...
+   [DEBUG] Working Nomads: 23 raw results, status 200
+   [DEBUG] WorkingNomads FILTERED-score: Junior Sales & Business Development Associate
+   [DEBUG] WorkingNomads FILTERED-level: Senior Project Manager
+   [DEBUG] WorkingNomads FILTERED-region (europe only): Multi-Jurisdiction Accountant for an International
+   [DEBUG] WorkingNomads FILTERED-level: Senior Angular Full-stack Developer
+   [DEBUG] WorkingNomads FILTERED-region (argentina, columbia, mexico, b): Short-Form & VSL Video Editor
+   [DEBUG] WorkingNomads FILTERED-level: Senior DevOps Engineer
+   [DEBUG] WorkingNomads FILTERED-score: Account Executive - Dental
+   [DEBUG] WorkingNomads FILTERED-level: Mid/Senior AI Cinematic Video Editor (Full Remote - Worldwid
+   [DEBUG] WorkingNomads FILTERED-region (internationally located (not i): Account Manager
+   [DEBUG] WorkingNomads FILTERED-region (internationally located (not i): Lead Generation Specialist - Dental - Internationa
+   [DEBUG] WorkingNomads FILTERED-level: Senior Full-stack React Developer
+   [DEBUG] WorkingNomads FILTERED-region (global): Software engineer
+   [DEBUG] WorkingNomads FILTERED-region (latam): Director of Revenue Systems and AI Automation (Off
+   [DEBUG] WorkingNomads FILTERED-region (australia): AI Content Analyst (No Experience Required)
+   [DEBUG] WorkingNomads FILTERED-level: Senior Full-stack Symfony Developer
+   [DEBUG] WorkingNomads FILTERED-date: Senior SEO Strategist - Remote (Work from Home)
+   [DEBUG] WorkingNomads FILTERED-level: Senior AI Agent Architect / AI Automation Architect
+   [DEBUG] WorkingNomads FILTERED-score: Data Analyst (No Experience Required)
+   [DEBUG] WorkingNomads FILTERED-region (europe): Machine Learning (ML) Engineer - Applied
+   [DEBUG] WorkingNomads FILTERED-level: Sales and Lead Generation Specialist (Real Estate)
+   [DEBUG] WorkingNomads FILTERED-date: Sales and Account Manager
+   [DEBUG] WorkingNomads FILTERED-level: Senior Vue Developer
+   [DEBUG] WorkingNomads FILTERED-region (global): Music Annotator
+   [OK] Working Nomads: 0 relevant jobs found
 [SEARCH] Searching Google Jobs via Serper...
    [DEBUG] Serper 'site:boards.greenhouse.io "loadrunner" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "performance engineer" "loadrunner"': 0 jobs, 0 organic, status 200
@@ -130,7 +156,7 @@
    [DEBUG] Serper 'site:dice.com/job-detail "vugen" remote': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "performance test engineer" remote': 0 jobs, 2 organic, status 200
    [DEBUG] Serper 'site:roberthalf.com "loadrunner" "performance" "remote"': 0 jobs, 0 organic, status 200
-   [DEBUG] Serper '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote': 0 jobs, 5 organic, status 200
+   [DEBUG] Serper '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote': 0 jobs, 6 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country argentina): Remote Performance Engineer - LoadRunner & Web/API
    [DEBUG] Serper FILTERED-non-US (urlslug canada): Senior Performance Testing Engineer Opportunity - 
    [DEBUG] Serper FILTERED-non-US (city/country vancouver): Senior Quality Performance Engineer | Vancouver | 
@@ -141,7 +167,7 @@
    [DEBUG] Serper '"performance test engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: 24432 Performance Testing Loadrunner Job Vacancies
    [DEBUG] Serper FILTERED-non-US (tld .co.uk): Performance Test Engineer Job Trends, Salaries & S
-   [DEBUG] Serper FILTERED-non-US (city/country bangalore): Senior Software Engineer - LoadRunner, Performance
+   [DEBUG] Serper FILTERED-searchpage: Performance Testing Jobs - Naukri.com
    [DEBUG] Serper '"performance engineer" "loadrunner" OR "vugen" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: 24432 Performance Testing Loadrunner Job Vacancies
    [DEBUG] Serper FILTERED-non-US (city/country mexico): Job Application for Intermediate Performance Engin
@@ -155,18 +181,19 @@
    [DEBUG] Serper 'site:jobs.lever.co "prompt engineer" "remote"': 0 jobs, 2 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country italy): Welo Global - Senior Prompt Engineer - Italy (Remo
    [DEBUG] Serper FILTERED-non-US (city/country germany): Welo Global - Lever
-   [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 1 organic, status 200
+   [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:myworkdayjobs.com "prompt engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country ireland): Staff Machine Learning Engineer - Myworkdayjobs.co
-   [DEBUG] Serper FILTERED-non-US (city/country bangalore): Principal Software Engineer - Myworkdayjobs.com
    [DEBUG] Serper 'site:dice.com/job-detail "prompt engineer" remote': 0 jobs, 2 organic, status 200
    [DEBUG] Serper '"prompt engineer" remote "generative ai"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Ai Prompt Engineer Remote jobs - Indeed
-   [DEBUG] Serper FILTERED-searchpage: Generative Ai Prompt Engineer Jobs, Employment | I
    [DEBUG] Serper FILTERED-non-US (city/country india): AES - DE - Generative AI Prompt Engineers at Zensa
+   [DEBUG] Serper FILTERED-searchpage: Ai prompt engineer remote no experience jobs - Ind
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Generative AI Engineer (Remote) - Quik Hire Staffi
    [DEBUG] Serper '"prompt engineer" remote "llm"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Ai Prompt Engineer Remote jobs - Indeed
    [DEBUG] Serper FILTERED-searchpage: Flexible Remote Entry Level Prompt Engineer Jobs -
+   [DEBUG] Serper FILTERED-non-US (city/country poland): Prompt Engineer (Healthcare) at Talkie sp. z o.o. 
    [DEBUG] Serper '"prompt engineering" remote entry level OR mid level': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Flexible Remote Entry Level Prompt Engineer Jobs -
    [DEBUG] Serper FILTERED-searchpage: Ai Prompt Engineer Remote jobs - Indeed
@@ -190,7 +217,6 @@
    [DEBUG] Serper FILTERED-non-US (city turin): Lead Agentic AI Engineer-US Remote - US-OH,Columbu
    [DEBUG] Serper FILTERED-searchpage: Agentic jobs in Remote - Indeed
    [DEBUG] Serper FILTERED-non-US (tld .co.uk): Agentic AI Engineer (Remote) in San Diego, Califor
-   [DEBUG] Serper FILTERED-searchpage: Agentic Ai jobs in Remote - Indeed
    [DEBUG] Serper '"langchain developer" OR "langchain engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Langchain jobs in Remote - Indeed
    [DEBUG] Serper FILTERED-non-US (city/country india): Capgemini मध्ये Associate Data Scientist hiring सु
@@ -204,11 +230,10 @@
    [DEBUG] Serper '"ai integration engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country united kingdom): AI Integration Engineer (Remote) - Quik Hire Staff
    [DEBUG] Serper FILTERED-searchpage: Entry Level Ai Ml jobs in Remote - Indeed
-   [DEBUG] Serper FILTERED-non-US (city/country united kingdom): AI Integration Engineer (Remote) (Nottingham) - Ou
-   [DEBUG] Serper FILTERED-non-US (city/country united kingdom): AI Integration Engineer (Remote) - Quik Hire Staff
    [DEBUG] Serper FILTERED-non-US (urlslug canada): AI Integration Engineer (Remote) - Outlier AI - Be
+   [DEBUG] Serper FILTERED-non-US (city/country united kingdom): AI Integration Engineer (Remote) - Quik Hire Staff
    [DEBUG] Serper '"ai solutions engineer" remote entry level OR mid': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-searchpage: IT Engineer jobs in Remote - Indeed
+   [DEBUG] Serper FILTERED-searchpage: 125 ai jobs in Remote, May 2026 | Glassdoor
    [DEBUG] Serper '"generative ai engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: 100+ Generative Ai Jobs, Employment 24 May 2026 - 
    [DEBUG] Serper FILTERED-non-US (city/country united kingdom): Generative AI Engineer (Remote) - Quik Hire Staffi
@@ -230,15 +255,14 @@
    [DEBUG] Serper '"cobol developer" remote "w2"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Flexible Cobol Remote Jobs - Indeed
    [DEBUG] Serper FILTERED-non-US (city/country montreal): Mainframe COBOL Developer Role – Exposant 3 – Job 
-   [DEBUG] Serper FILTERED-searchpage: Remote ETL Developer jobs - Indeed
    [DEBUG] Serper '"mainframe developer" "cobol" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Flexible Cobol Remote Jobs - Indeed
    [DEBUG] Serper FILTERED-searchpage: Cobol developer jobs in Remote - Indeed
    [DEBUG] Serper FILTERED-searchpage: 6 cobol jobs in Remote, May 2026 - Glassdoor
-   [DEBUG] Serper FILTERED-non-US (city/country toronto): Mainframe Developer @ CIBC - Teal
    [DEBUG] Serper 'site:himalayas.app "loadrunner" OR "performance engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper 'site:himalayas.app "ai engineer" OR "llm" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city turin): BreachLock hiring AI Developer (Generative AI & LL
+   [DEBUG] Serper FILTERED-non-US (city/country india): REMOTE (INDIA): AI Engineer- SaaS Platform - Himal
    [DEBUG] Serper 'site:builtin.com/job "ai engineer" OR "performance engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country canada): AI Engineer, Vision - Lutra | Built In
    [DEBUG] Serper FILTERED-non-US (city/country cairo): Graduate Agentic AI Engineer - Ericsson | Built In
@@ -250,7 +274,6 @@
    [DEBUG] Serper '"LLM evaluation engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-fp_domain:jobrapido.com: LLM Evaluation Engineer — AI Quality at FirstIgnit
    [DEBUG] Serper FILTERED-non-US (city/country delhi): CI/CD Engineer – HCL Technologies Limited – Job Pu
-   [DEBUG] Serper FILTERED-non-US (city/country delhi): MDM Engineer / Analyst – Vrinda International – Jo
    [DEBUG] Serper '"AI reliability engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country india): Comment 'PROOF' ai training jobs ai jobs india wor
    [DEBUG] Serper FILTERED-fp_path:/blog/: Forward Deployed Engineer (FDE): Career Guide for 
@@ -273,8 +296,9 @@
    [DEBUG] Serper FILTERED-searchpage: Jobs in AI & Automation - Talent Bridge HR Consult
    [DEBUG] Serper 'site:jobs.lever.co "ai sdet" OR "llm test" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"': 0 jobs, 1 organic, status 200
+   [DEBUG] Serper FILTERED-non-US (city/country sweden): Senior Cloud Architect, Field Engineering (GenAI F
    [DEBUG] Serper 'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"': 0 jobs, 0 organic, status 200
-   [OK] Google Jobs: 16 relevant jobs found
+   [OK] Google Jobs: 15 relevant jobs found
 [SEARCH] Searching Adzuna...
    [DEBUG] Adzuna 'loadrunner performance engineer': 0 raw results, status 200
    [DEBUG] Adzuna 'loadrunner': 20 raw results, status 200
@@ -323,121 +347,31 @@
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): Mainframe Developer Remote Location - Dice [14pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): Mainframe Developer - Aroha Technologies - Remote  [14pts]
    [DEBUG] FILTERED-minscore (Performance Engineering needs 30pts): COBOL Mainframe Application Developer - Kyndryl -  [8pts]
-   [DEBUG] FILTERED-minscore (QA Automation needs 30pts): 3Pillar - SDET - Java/Angular - Lever [3pts]
-[OK] Removed 6 jobs below minimum score thresholds
-[OK] Removed 6 duplicate jobs already sent previously
+[OK] Removed 5 jobs below minimum score thresholds
+[OK] Removed 10 duplicate jobs already sent previously
 
 =======================================================
-[STATS] Total relevant jobs found: 4
-[STATS] Sending all 4 jobs to harichardson68@gmail.com
+[STATS] Total relevant jobs found: 0
+[STATS] No matching jobs found today.
 =======================================================
 
-[STATS] Generating cover letters for 4 jobs...
+[STATS] Generating cover letters for 0 jobs...
 
-  [01] Score:170 | Google Jobs | Performance Tester with LoadRunner and JMeter expe
-        N/A | https://wfhforgeon.byethost7.com/job/performance-tester-with
-        [FIT] **Excellent Fit** — *LoadRunner* expertise and *Performance Center* knowledge match exactly; 100% remote removes all geo...
-
-  [02] Score:155 | Google Jobs | Performance Engineer (Remote) - Wfh
-        N/A | https://wfh.hstn.me/job/performance-engineer-remote-2
-        [FIT] **Excellent Fit** — Remote *LoadRunner/JMeter* performance role directly matches *14 years* hands-on expertise; no frict...
-
-  [03] Score: 86 | Google Jobs | AVP, AI Engineering (Remote - EST)
-        N/A | https://archgroup.wd1.myworkdayjobs.com/en-US/Careers/job/Ra
-        [FIT] **Stretch Fit** — *Agentic* and *observability* keywords align well, but _AVP leadership seniority_ and _EST timezone re...
-
-  [04] Score: 40 | Google Jobs | AI/MLOps Engineer - Vaco by Highspring - Remote | 
-        N/A | https://www.dice.com/job-detail/f0f39e8a-5311-405f-b634-acb7
-        [FIT] **Stretch Fit** — *AI engineering* portfolio is emerging, but _Azure MLOps_ and _production ML_ depth are significant ga...
-
-[OK] Saved 4 job URLs to seen_jobs.json
 
 [OK] Results saved to: job_results.json
 [SEARCH] Searching Amazon Jobs spotlight...
    [DEBUG] Amazon FILTERED-non-US (toronto): Software Development Engineer, Amazon Marketing Cloud - Job 
    [DEBUG] Amazon FILTERED-non-US (luxembourg): Results listed - Job search | Amazon.jobs
    [DEBUG] Amazon FILTERED-non-US (luxembourg): Business Intelligence Engineer, Amazon Groceries - Job ID: 1
-   [OK] Skipped 1 Amazon jobs already seen previously
-   [OK] Amazon Jobs: 1 relevant jobs found (10-day window)
+   [OK] Skipped 2 Amazon jobs already seen previously
+   [OK] Amazon Jobs: 0 relevant jobs found (10-day window)
 
 [EMAIL] Sending email notification...
-   [OK] Saved 4 regular + 1 Amazon jobs to today_jobs.json
+   [OK] Saved 0 regular + 0 Amazon jobs to today_jobs.json
    [OK] Archived to today_jobs_2026-05-27.json
-   [OK] Persisted 1 Amazon jobs to job_decisions.json
    Email sent to harichardson68@gmail.com
 =======================================================
 TOP 3 MATCHES WITH COVER LETTERS
 =======================================================
-
-[TOP] [170 pts] Performance Tester with LoadRunner and JMeter experience
-   Company : N/A
-   Source  : Google Jobs
-   URL     : https://wfhforgeon.byethost7.com/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote-3
-   Keywords: performance tester, LoadRunner-in-title, loadrunner, jmeter
-
---- FIT ANALYSIS ---
-**Excellent Fit** — *LoadRunner* expertise and *Performance Center* knowledge match exactly; 100% remote removes all geographic friction.
-
---- COVER LETTER ---
-Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
-
----
-
-With 14 years of specialized LoadRunner/VuGen expertise and deep hands-on experience with Performance Center infrastructure, I'm a direct match for your Performance Tester role.
-
-At the USDA, I led end-to-end performance testing initiatives using LoadRunner Enterprise, scripting complex protocols in VuGen, and managing load controller/agent configurations across distributed environments. I delivered measurable results: a 40% increase in system throughput, 35% reduction in defect resolution time, and consistent SLA compliance maintaining transactions under 5 seconds at scale. Earlier at Sprint/CenturyLink, I stress-tested systems handling 12,000+ transactions per minute using LoadRunner — the kind of infrastructure knowledge your role specifically requires.
-
-My JMeter certification (Coursera, 2025) complements that LoadRunner depth, and my observability stack — AppDynamics, Splunk, Grafana, Prometheus — ensures I can correlate load test results with real system behavior quickly and accurately.
-
-This is 100% aligned with my current work style and immediate availability. I'd welcome a conversation at your earliest convenience.
-----------------------------------------
-
-[TOP] [155 pts] Performance Engineer (Remote) - Wfh
-   Company : N/A
-   Source  : Google Jobs
-   URL     : https://wfh.hstn.me/job/performance-engineer-remote-2
-   Keywords: neoload, performance engineer, jmeter, loadrunner
-
---- FIT ANALYSIS ---
-**Excellent Fit** — Remote *LoadRunner/JMeter* performance role directly matches *14 years* hands-on expertise; no friction points detected.
-
---- COVER LETTER ---
-Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
-
----
-
-With 14 years of dedicated LoadRunner/VuGen expertise and a track record of measurable performance gains, I'm a strong match for the Performance Engineer role listed.
-
-At USDA, I led performance testing across AWS/Kubernetes migrations using LoadRunner and LRE, establishing SLA thresholds of under 5 seconds for transactions and under 2 seconds for services. Those efforts directly contributed to a 40% increase in throughput and a 35% reduction in defect resolution time. Earlier at Sprint/CenturyLink, I scaled enterprise systems — including SAP CRM and ERP platforms — to handle 12,000+ transactions per minute. I'm also trained in JMeter and NeoLoad, giving me immediate flexibility across the toolchain your team may rely on.
-
-I work fully remote, am available immediately, and would welcome the opportunity to discuss how my LoadRunner depth and observability experience with AppDynamics, Splunk, and Grafana can add value to your team. I'd love to connect.
-----------------------------------------
-
-[TOP] [86 pts] AVP, AI Engineering (Remote - EST)
-   Company : N/A
-   Source  : Google Jobs
-   URL     : https://archgroup.wd1.myworkdayjobs.com/en-US/Careers/job/Raleigh-NC-United-States-of-America/AVP--AI-Engineering--Remote---EST-_R26_509-1
-   Keywords: AI-title:ai engineer, ai engineer, prompt engineering, prompt engineer, agentic, observability
-
---- FIT ANALYSIS ---
-**Stretch Fit** — *Agentic* and *observability* keywords align well, but _AVP leadership seniority_ and _EST timezone requirement_ create notable friction.
-
---- COVER LETTER ---
-Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
-
----
-
-Leading offshore engineering teams through agentic patterns and observability practices requires someone who has already built those foundations in production environments — and that's exactly what I bring to the AVP, AI Engineering role.
-
-Over the past four years at the USDA, I established observability pipelines using AppDynamics, Splunk, Prometheus, and Grafana while leading performance engineering through a complex AWS/Kubernetes migration — increasing throughput 40% and cutting defect resolution time 35%. At Sprint/CenturyLink, I scaled distributed systems to 12,000+ transactions per minute, where reliability wasn't aspirational — it was contractual. I'm now deepening that foundation through active IBM Generative AI Engineering and AI Engineer Bootcamp certifications, specifically focused on prompt engineering and agentic architectures.
-
-I'm fully remote-capable on EST and ready to contribute immediately to establishing coding standards, evaluation frameworks, and observability practices across your AI engineering teams. I'd welcome the conversation.
-
-Sincerely,
-Hans Richardson
-----------------------------------------
 
 [LOGS] Snapshotting run logs...

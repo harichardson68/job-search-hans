@@ -1,6 +1,6 @@
 """
 Automated Job Search Script for Hans Richardson - Performance Engineer
-Searches: RemoteOK, Remotive, Serper (Google Jobs), Adzuna, USAJobs, Wellfound, Amazon Jobs
+Searches: RemoteOK, Remotive, Working Nomads, Serper (Google Jobs), Adzuna, USAJobs, Wellfound, Amazon Jobs
 Targets: LoadRunner, JMeter, NeoLoad, Performance Engineer, AI/Agentic, COBOL (Remote)
 
 SETUP:
@@ -983,7 +983,7 @@ EMAIL_TO       = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
 # Set to False to disable per-job fit blurbs in email digest.
 # Each call is ~1 API hit per top-tier job (15 jobs/day max).
 GENERATE_FIT_ANALYSIS = True
-FIT_ANALYSIS_MAX_JOBS = 5  # Only run on top N to save API calls
+FIT_ANALYSIS_MAX_JOBS = 15  # Run on all regular digest jobs (matches top_jobs slice)
 
 SEARCH_KEYWORDS = [
     # Track 1: Performance Engineering (core)
@@ -1590,6 +1590,87 @@ def search_remotive():
     except Exception as e:
         print(f"   [ERROR] Remotive error: {e}")
         log_error(f"Remotive error: {e}")
+    return jobs
+
+#
+# SOURCE 2b: Working Nomads (free public JSON, no auth)
+# Endpoint: https://www.workingnomads.co/api/exposed_jobs/
+# Curated remote jobs; we filter to Development/SysAdmin/Data categories
+# which map to LoadRunner/Performance (Tier 1) and AI/Perf hybrid (Tier 2).
+#
+def search_working_nomads():
+    print("[SEARCH] Searching Working Nomads...")
+    jobs = []
+    try:
+        headers = {"User-Agent": "JobSearchBot/1.0 (personal use)"}
+        resp = requests.get(
+            "https://www.workingnomads.co/api/exposed_jobs/",
+            headers=headers, timeout=20
+        )
+        # API returns a flat JSON list
+        items = resp.json() if resp.status_code == 200 else []
+        if not isinstance(items, list):
+            items = []
+        if DEBUG_MODE:
+            print(f"   [DEBUG] Working Nomads: {len(items)} raw results, status {resp.status_code}")
+
+        for item in items:
+            title    = item.get("title", "") or ""
+            desc     = item.get("description", "") or ""
+            url_job  = item.get("url", "") or ""
+            posted   = item.get("pub_date") or item.get("publication_date") or ""
+            company  = item.get("company_name", "") or "N/A"
+            location = (item.get("location", "") or "").lower()
+            tags     = " ".join(item.get("tags", []) or []).lower() if isinstance(item.get("tags"), list) else ""
+
+            # Region gate — Working Nomads tags some jobs to specific regions.
+            # Allow worldwide/anywhere/USA/Americas; reject obvious non-US restrictions.
+            if location and not any(loc in location for loc in
+                                    ["worldwide", "anywhere", "usa", "us only",
+                                     "united states", "americas", "north america",
+                                     "remote"]):
+                # Check tags too — sometimes region is in tags not location field
+                if not any(loc in tags for loc in
+                           ["worldwide", "anywhere", "usa", "united states",
+                            "americas", "north america"]):
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] WorkingNomads FILTERED-region ({location[:30]}): {title[:50]}")
+                    continue
+
+            funnel.add_raw("WorkingNomads")
+
+            if DEBUG_MODE and title:
+                score_quick, _ = score_job(title, desc)
+                track_quick, level_ok_quick = get_job_track(title, desc)
+                if score_quick == 0:
+                    print(f"   [DEBUG] WorkingNomads FILTERED-score: {title[:60]}")
+                elif not level_ok_quick:
+                    print(f"   [DEBUG] WorkingNomads FILTERED-level: {title[:60]}")
+                elif not is_recent(posted):
+                    print(f"   [DEBUG] WorkingNomads FILTERED-date: {title[:60]}")
+                elif not is_relevant_title(title):
+                    print(f"   [DEBUG] WorkingNomads FILTERED-title: {title[:60]}")
+
+            passed, score, matched, track = passes_filters(
+                title, desc, posted, location, url_job, company, "WorkingNomads"
+            )
+            if passed:
+                jobs.append({
+                    "source": "WorkingNomads",
+                    "title": title,
+                    "company": company,
+                    "url": url_job,
+                    "posted": posted,
+                    "description": desc[:500],
+                    "score": score,
+                    "matched_keywords": matched,
+                    "track": track,
+                    "salary": "",
+                })
+        print(f"   [OK] Working Nomads: {len(jobs)} relevant jobs found")
+    except Exception as e:
+        print(f"   [ERROR] Working Nomads error: {e}")
+        log_error(f"Working Nomads error: {e}")
     return jobs
 
 #
@@ -2473,16 +2554,35 @@ def generate_fit_analysis(job):
     Generate a short (3-4 sentence) fit analysis for a job using Claude.
     Returns empty string on failure or if disabled. Modeled after
     Jobright.ai's Orion copilot — gives Hans a quick read on each top match.
+
+    Logs skip/fallback/error reasons to job_search_run.log so missing
+    recommendations in the digest can be diagnosed after the fact.
     """
-    if not GENERATE_FIT_ANALYSIS or not CLAUDE_API_KEY:
+    job_id = job.get("id") or job.get("url", "unknown")
+    title  = job.get("title", "")
+    source = job.get("source", "unknown")
+
+    if not GENERATE_FIT_ANALYSIS:
+        logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=feature_disabled")
+        return ""
+    if not CLAUDE_API_KEY:
+        logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=no_api_key")
         return ""
 
-    title    = job.get("title", "")
     company  = job.get("company", "")
     desc     = job.get("description", "")[:600]
     keywords = ", ".join(job.get("matched_keywords", []))
     track    = job.get("track", "")
     score    = job.get("score", 0)
+
+    # Soft fallback for missing company (don't skip — internships and Serper
+    # organic results often have N/A company; let Claude infer from title/desc)
+    if not company or company.strip().upper() in ("N/A", "NONE", ""):
+        logging.info(
+            f"[FIT-FALLBACK] id={job_id} title={title!r} source={source} "
+            f"reason=missing_company"
+        )
+        company = "(not parsed — infer from title/description)"
 
     prompt = f"""You are evaluating a job match for Hans Richardson.
 
@@ -2525,8 +2625,21 @@ Return ONLY the one line. No headers, no bullets, no follow-up text."""
 
 
 
-    result = _call_claude_api(prompt, max_tokens=80)
-    return result or ""
+    try:
+        result = _call_claude_api(prompt, max_tokens=80)
+    except Exception as e:
+        logging.exception(
+            f"[FIT-ERROR] id={job_id} title={title!r} source={source} "
+            f"error={type(e).__name__}: {e}"
+        )
+        return ""
+
+    if not result or not result.strip():
+        logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=empty_response")
+        return ""
+
+    logging.info(f"[FIT-OK] id={job_id} title={title!r} source={source} score={score}")
+    return result
 
 
 #
@@ -2541,6 +2654,7 @@ def main():
     all_jobs = []
     all_jobs += search_remoteok()
     all_jobs += search_remotive()
+    all_jobs += search_working_nomads()
     all_jobs += search_serper_jobs()
     all_jobs += search_adzuna()
     all_jobs += search_usajobs()
@@ -2656,6 +2770,16 @@ def main():
 
     # Search Amazon jobs separately
     amazon_jobs = search_amazon_jobs()
+
+    # Generate fit analysis for Amazon Spotlight jobs (gap fix:
+    # Amazon jobs were on a separate path and never reached the main
+    # fit-analysis loop above)
+    if amazon_jobs and GENERATE_FIT_ANALYSIS:
+        print(f"[STATS] Generating fit analysis for {len(amazon_jobs)} Amazon Spotlight job{'s' if len(amazon_jobs) != 1 else ''}...")
+        for aj in amazon_jobs:
+            aj["fit_analysis"] = generate_fit_analysis(aj)
+            if aj.get("fit_analysis"):
+                print(f"        [FIT-AMZ] {aj['fit_analysis'][:120]}...")
 
     # Send email notification always — even if no jobs found
     send_email(top_jobs, amazon_jobs, funnel_summary=funnel.summary_dict())
@@ -2815,6 +2939,12 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             job_url  = job.get("url", "")
             id_match = re.search(r"/jobs/(\d+)", job_url)
             job_id   = id_match.group(1) if id_match else "N/A"
+            fit_amz  = job.get("fit_analysis", "")
+            fit_html = (
+                f'<p style="margin:6px 0 8px;font-size:12px;color:#1a3a5c;background:#fff8e7;'
+                f'border-left:3px solid #FF9900;padding:6px 10px;border-radius:3px;">'
+                f'<strong>Fit:</strong> {fit_amz}</p>'
+            ) if fit_amz else ""
             html += f"""
   <div style="border:1px solid #FFD700;border-radius:6px;padding:12px 14px;margin-bottom:12px;background:#fff;">
     <p style="margin:0 0 4px;font-weight:bold;font-size:13px;color:#232F3E;">#{i} — {job["title"]}</p>
@@ -2828,6 +2958,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
       <strong>Posted:</strong> {posted}{salary}
     </p>
     <p style="margin:0 0 8px;font-size:12px;color:#555;"><strong>Matched:</strong> {keywords}</p>
+    {fit_html}
     <a href="{job_url}" style="background:#FF9900;color:#232F3E;padding:7px 14px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:bold;">View on Amazon Jobs</a>
   </div>"""
 
