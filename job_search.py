@@ -478,6 +478,7 @@ BLOCKED_JOB_SITES = [
     "pitchmeai.com", "pitchmeai",
     "jobflarely.liveblog365.com", "jobflarely", "liveblog365.com",
     "remotelyusajobs.com", "remotely-usa-jobs",
+    "remotefront.com", "remotefront",  # email-wall aggregator (magic-link login)
     "jobsearcher.com",
     "hireza.com", "hireza",
     "remotejobsanywhere.com", "remotejobsanyworldwide",
@@ -657,6 +658,52 @@ def is_false_positive_url(url: str) -> tuple:
         if path in url_lower:
             return True, f"fp_path:{path}"
     return False, ""
+
+# ─── KC METRO LOCAL FILTER (for hybrid/on-site jobs within commuting range) ──
+# A hybrid/on-site job is only viable for Hans if the office is within
+# Kansas City metro commuting distance. is_us_remote() only handles the
+# remote/non-US gate; this pair of helpers adds the local-hybrid path so
+# main()/passes_filters() can keep BOTH: fully-remote-anywhere AND
+# hybrid/on-site-in-KC. Hybrid/on-site elsewhere should be rejected.
+
+KC_METRO_LOCATIONS = {
+    # MO side
+    "lee's summit", "lees summit", "kansas city, mo", "kansas city mo",
+    "independence, mo", "blue springs", "liberty, mo", "grandview, mo",
+    "raytown", "north kansas city", "gladstone, mo", "belton, mo",
+    "platte city", "parkville", "kearney, mo",
+    # KS side
+    "overland park", "olathe", "lenexa", "shawnee, ks", "leawood",
+    "prairie village", "merriam", "mission, ks", "roeland park",
+    "kansas city, ks", "kansas city ks", "bonner springs", "gardner, ks",
+    "spring hill, ks", "de soto, ks", "edwardsville, ks",
+    # Generic KC references
+    "kansas city metro", "kc metro", "greater kansas city",
+}
+
+def is_kc_metro_local(title, description, location=""):
+    """Return True if the job's location/text suggests a Kansas City metro
+    office location (within commute range of Lee's Summit, MO)."""
+    haystack = (location + " " + title + " " + description).lower()
+    return any(kc in haystack for kc in KC_METRO_LOCATIONS)
+
+# Phrases indicating the role requires on-site or hybrid presence
+ONSITE_HYBRID_SIGNALS = [
+    "hybrid", "on-site", "onsite", "on site", "in-office", "in office",
+    "days in office", "days in the office", "days per week in",
+    "days a week in", "in-person", "in person required",
+    "must be located in", "must reside in", "must be based in",
+    "must live in", "must be local", "local candidates only",
+    "no remote", "not remote", "fully on-site", "fully onsite",
+    "relocation required", "relocation assistance",
+]
+
+def is_onsite_or_hybrid(title, description, location=""):
+    """Return True if the job appears to be on-site or hybrid (i.e. it
+    requires physical presence at the office)."""
+    haystack = (location + " " + title + " " + description).lower()
+    return any(sig in haystack for sig in ONSITE_HYBRID_SIGNALS)
+
 
 def is_us_remote(title, description, location=""):
     # Check location field first - if it contains a non-US location, reject immediately.
@@ -1299,10 +1346,28 @@ def get_job_track(title, description):
             "no experience required", "training provided",
         ]
         senior_desc_signals = [
+            # Original (kept)
             "extensive experience", "proven track record", "expert level",
             "deep expertise", "seasoned", "7+ years", "8+ years", "10+ years",
             "subject matter expert", "sme ", "advanced degree required",
             "5+ years", "6+ years", "significant experience",
+            # Added — additional year-count phrasings the regex misses
+            "9+ years", "12+ years", "15+ years", "20+ years",
+            "a decade", "over a decade", "decade of experience", "decade plus",
+            "ten years", "fifteen years", "twenty years",
+            # Added — seniority-by-responsibility phrasings (implied senior)
+            "lead a team", "lead the team", "leading a team", "team lead",
+            "mentor junior", "mentor engineers", "mentor the team",
+            "manage engineers", "managing engineers", "manage a team",
+            "own the architecture", "set technical direction", "drive technical strategy",
+            "principal level", "principal-level", "staff level", "staff-level",
+            "distinguished engineer", "fellow engineer",
+            # Added — seniority-by-credential phrasings
+            "phd required", "phd preferred", "ph.d. required", "ph.d. preferred",
+            "doctorate required", "masters required", "master's required",
+            # Added — seniority-by-narrative phrasings
+            "highly experienced", "veteran engineer", "battle-tested",
+            "thought leader", "recognized expert", "deep domain knowledge",
         ]
         has_entry_mid = any(sig in full_text for sig in entry_mid_signals)
         has_senior_desc = any(sig in full_text for sig in senior_desc_signals)
@@ -1453,9 +1518,16 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name)
         return False, 0, [], ""
     funnel.record("after_score")
 
-    # Stage: US/remote
+    # Stage: US/remote (with KC-metro local-hybrid carve-out)
+    # Accept if: (1) fully remote-US-eligible, OR
+    #            (2) on-site/hybrid AND within KC metro commuting range
+    # Reject hybrid/on-site jobs outside KC metro.
     if not is_us_remote(title, desc, location):
-        return False, score, matched, track
+        # Failed remote check — last chance: is it KC-local hybrid/on-site?
+        if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
+            pass  # KC-local hybrid/on-site is acceptable
+        else:
+            return False, score, matched, track
     funnel.record("after_us")
 
     # Stage: blocked site/company
@@ -2356,35 +2428,78 @@ def search_wellfound():
 #
 RESUME_FULL = """
 Name: Hans Richardson
-Title: Senior Performance / QA Test Engineer
-Location: Lee's Summit, MO (Remote)
+Title: Senior Performance Engineer | AI Automation & Prompt Engineering
+Location: Lee's Summit, MO (Kansas City Metro — Remote or KC-area)
 LinkedIn: linkedin.com/in/hans-richardson
 Email: harichardson68@gmail.com
+Clearance: Active Public Trust (USDA contract)
 
-TOTAL EXPERIENCE: 24+ years IT experience, 14 years LoadRunner/performance testing specialist
+TOTAL EXPERIENCE: 24+ years IT, 14 years LoadRunner/VuGen/LRE specialist;
+actively building AI engineering skills through hands-on Python/Claude API
+work and IBM's Generative AI Engineering certification.
+
+POSITIONING:
+Performance/QA engineer bridging into AI Systems and Agent Engineering.
+Differentiator: I bring 24+ years of reliability, evaluation, and
+observability discipline to AI systems — the exact capabilities most
+AI engineers lack. Performance testing AI APIs and model inference
+endpoints is the same engineering as load testing web services;
+monitoring model latency, throughput, and SLA compliance is the same
+work I've done for two decades on production systems. Dual-track search:
+(1) LoadRunner/Performance Engineering, (2) AI Systems / Agent / Workflow
+Engineering / AI Reliability / LLM Evaluation.
 
 EXPERIENCE:
 - Sr. Performance/QA Test Engineer (Contract), USDA, Jan 2021 - Sep 2025
   * 14 years LoadRunner/VuGen/LRE expert
   * Led AWS/Kubernetes migration performance testing
-  * Integrated AppDynamics, Splunk, Prometheus, Grafana for observability
-  * Increased throughput 40%, reduced defect resolution time 35%
-  * Developed test plans in Jira/Confluence using Agile/Scrum
+  * Integrated AppDynamics, Splunk, Prometheus, Grafana for full-stack observability
+  * Increased system throughput 40%, reduced defect resolution time 35%
+  * Authored federal-grade documentation (Green Doc / RSO artifacts);
+    audit-ready traceability and compliance reporting
+  * Developed test plans and managed defects in Jira/Confluence (Agile/Scrum)
   * SLA compliance: <5s transactions, <2s services
 
 - Programmer/Software Engineer, Sprint/Embarq/CenturyLink, 1999-2017
-  * LoadRunner specialist for 9 years
-  * Scaled systems to 12,000+ transactions per minute
+  * LoadRunner performance specialist for 9 years
+  * Scaled telecom-grade systems to 12,000+ transactions per minute
   * SAP CRM, ERP, BRIM performance testing
   * Agile/Scrum ceremonies and sprint planning
 
+- Early Career: COBOL/CICS Programmer, Yellow Freight
+  * Mainframe development on enterprise-scale logistics systems
+  * Foundation of structured, modular engineering discipline carried
+    forward into every system since
+
+AI ENGINEERING PROJECTS (hands-on):
+- Multi-source automated job-search pipeline in Python integrating the
+  Anthropic Claude API for per-job fit analysis and tailored cover-letter
+  generation. Production deployment via Windows Task Scheduler with Gmail
+  digest delivery, structured decision logging, and continuous-improvement
+  feedback loop. Demonstrates prompt engineering, API integration,
+  evaluation framework design, and observability instrumentation.
+- RAG (Retrieval-Augmented Generation) layer over decision history using
+  ChromaDB and sentence-transformers (all-MiniLM-L6-v2 embeddings) —
+  semantic search infrastructure ready for similarity-based decision support.
+- FLAPBOARD: Flask web application (Solari split-flap UI) with SQLAlchemy
+  persistence, Flask-Login authentication, and CSRF protection — deployed
+  on Render.
+
 SKILLS:
-- Performance Tools: LoadRunner/VuGen/LRE (14 yrs expert), JMeter (trained), NeoLoad (trained)
-- Monitoring: AppDynamics, Splunk, Grafana, Prometheus, AWS X-Ray
-- Cloud/DevOps: AWS, Kubernetes, CI/CD, GitHub
-- QA: Selenium, test automation, regression testing
-- Programming: Python (in training), SQL, JavaScript, COBOL
-- Methodologies: Agile/Scrum, Waterfall
+- Performance: LoadRunner/VuGen/LRE (14 yrs expert), JMeter, NeoLoad,
+  workload modeling, SLA compliance, capacity planning
+- Observability/Monitoring: AppDynamics, Splunk, Grafana, Prometheus,
+  AWS X-Ray — directly applicable to AI/ML observability and LLM monitoring
+- AI/GenAI: Anthropic Claude API, prompt engineering, RAG architectures,
+  semantic search, vector databases (ChromaDB), sentence-transformers,
+  embeddings, LLM evaluation frameworks, model evaluation, AI observability,
+  agent/agentic concepts, tool-use prompting, few-shot/chain-of-thought
+- Cloud/DevOps: AWS, Kubernetes, CI/CD, Git, GitHub Actions
+- QA: Test automation, regression testing, integration testing, API testing,
+  defect tracking, federal documentation standards
+- Programming: Python (production — built multi-API pipeline with Claude
+  integration, RAG, structured logging), SQL, JavaScript, COBOL
+- Methodologies: Agile/Scrum, Waterfall, federal contract delivery
 
 EDUCATION:
 - BS Computer Information Science, Park University, 1996
@@ -2395,7 +2510,7 @@ CERTIFICATIONS:
 - JMeter Performance Testing (Coursera, 2025)
 - AWS Cloud Practitioner (Udemy, 2025)
 - AI Engineer Bootcamp (Udemy, 2025)
-- IBM Generative AI Engineering (Coursera, 2025-2026)
+- IBM Generative AI Engineering Professional Certificate (Coursera, 2025-2026)
 """
 
 def build_optimized_prompt(job):
