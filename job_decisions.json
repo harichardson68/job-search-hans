@@ -2050,6 +2050,95 @@
       "reviewed": false,
       "reviewed_date": "",
       "recorded_at": "2026-05-26T21:20:29.816694"
+    },
+    {
+      "job_id": "84d023c195",
+      "number": 1,
+      "title": "Software Engineer - Agentic AI - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://comcast.wd5.myworkdayjobs.com/en-US/Comcast_Careers/job/Software-Engineer---Agentic-AI_R434812",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "agentic",
+        "prompt engineer",
+        "agentic ai",
+        "prompt engineering",
+        "AI-title:agentic",
+        "ai agent"
+      ],
+      "decision": "not_in_us",
+      "reason": "Germany",
+      "raw_decision": "Not in United States",
+      "timestamp": "5/26/2026 19:01:32",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "7dff1cd60b",
+      "number": 2,
+      "title": "Generative AI Engineer Virtual Internship - Careers at Robert Half",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://careers.roberthalf.com/global/en/job/JR-260417/Generative-AI-Engineer-Virtual-Internship",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "generative ai engineer",
+        "generative ai",
+        "ai engineer",
+        "AI-title:generative ai engineer"
+      ],
+      "decision": "onsite",
+      "reason": null,
+      "raw_decision": "Onsite / Not Remote",
+      "timestamp": "5/26/2026 19:01:53",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "85472a564d",
+      "number": 3,
+      "title": "AI Engineer, Remote Job, May 2026",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://dynamitejobs.com/company/360learning/remote-job/ai-engineer",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "llm",
+        "ai engineer",
+        "observability"
+      ],
+      "decision": "not_in_us",
+      "reason": "Pakistan",
+      "raw_decision": "Not in United States",
+      "timestamp": "5/26/2026 19:02:45",
+      "reviewed": false,
+      "reviewed_date": null
+    },
+    {
+      "job_id": "6714ef87ba",
+      "number": 4,
+      "title": "AI Automation Engineer [Remote] - Job Search - ICIMS",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 42,
+      "url": "https://careers-gdms.icims.com/jobs/71519/ai-automation-engineer-%5Bremote%5D/job",
+      "source": "Google Jobs",
+      "matched_keywords": [
+        "ims",
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "decision": "bad_link",
+      "reason": "Job not found",
+      "raw_decision": "Bad Link",
+      "timestamp": "5/26/2026 19:03:12",
+      "reviewed": false,
+      "reviewed_date": null
     }
   ],
   "2026-05-27": [
