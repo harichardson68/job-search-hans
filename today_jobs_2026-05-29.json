@@ -1,0 +1,125 @@
+{
+  "date": "2026-05-29",
+  "jobs": [
+    {
+      "job_id": "0e443a8dfc",
+      "number": 1,
+      "number_display": "1",
+      "title": "Agentic AI Engineer \u2013 Benchling \u2013 Permanent contract \u2013 Fully-remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.welcometothejungle.com/en/companies/benchling/jobs/agentic-ai-engineer_us_fbjqpyhu",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai",
+        "AI-title:agentic ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "0580d589f0",
+      "number": 2,
+      "number_display": "2",
+      "title": "Saviynt - Marketing Ops AI Agent Engineer - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://jobs.lever.co/saviynt/09afb16e-e868-4369-8989-2c6aa7077154",
+      "matched_keywords": [
+        "AI-title:ai agent",
+        "agent engineer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "832463e06e",
+      "number": 3,
+      "number_display": "3",
+      "title": "MLOps Engineer - K-Tek Resourcing LLC - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/b15bbd59-df00-452b-a439-954d2ac1e5e3",
+      "matched_keywords": [
+        "jira",
+        "mlops engineer",
+        "AI-title:mlops"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "9a5b393541",
+      "number": 4,
+      "number_display": "4",
+      "title": "Full-Stack AI Engineer @ Hire Hangar - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/hirehangar/b26e2d5f-daba-4d1f-854a-ed81ebc22bdc",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "12d5a6d9c0",
+      "number": 5,
+      "number_display": "5",
+      "title": "Applied AI Engineer @ Titan AI - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/titan-ai/297cf9a9-289d-4cd5-a4a1-1e051f6f5d64/application",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "dd611c307d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Applied Scientist II, Amazon AWS Agentic AI, AWS AI Fundamental ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://www.amazon.jobs/en/jobs/10431050/applied-scientist-ii-amazon-aws-agentic-ai-aws-ai-fundamental-research",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "generative ai",
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    },
+    {
+      "job_id": "df01753a38",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Applied Scientist, Agentic Automated Reasoning Group - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10433609/applied-scientist-agentic-automated-reasoning-group",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "AI-title:agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}

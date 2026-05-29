@@ -2212,5 +2212,59 @@
       "raw_decision": "",
       "timestamp": "2026-05-28 23:00"
     }
+  ],
+  "2026-05-29": [
+    {
+      "job_id": "dd611c307d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Applied Scientist II, Amazon AWS Agentic AI, AWS AI Fundamental ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://www.amazon.jobs/en/jobs/10431050/applied-scientist-ii-amazon-aws-agentic-ai-aws-ai-fundamental-research",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "generative ai",
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-05-29T12:04:37.256542"
+    },
+    {
+      "job_id": "df01753a38",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Applied Scientist, Agentic Automated Reasoning Group - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10433609/applied-scientist-agentic-automated-reasoning-group",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "AI-title:agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-05-29T12:04:37.256576"
+    }
   ]
 }
