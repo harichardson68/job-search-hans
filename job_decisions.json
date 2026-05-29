@@ -2168,5 +2168,49 @@
       "reviewed_date": "",
       "recorded_at": "2026-05-27T18:48:03.712454"
     }
+  ],
+  "2026-05-28": [
+    {
+      "job_id": "c7417616bc",
+      "number": "1",
+      "title": "AVP, AI Engineering (Remote - EST)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://archgroup.wd1.myworkdayjobs.com/careers/job/raleigh-nc-united-states-of-america/avp--ai-engineering--remote---est-_r26_509-1",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "AI-title:ai engineer",
+        "agentic",
+        "observability",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-05-28 23:00"
+    },
+    {
+      "job_id": "efa222ece3",
+      "number": "2",
+      "title": "Remote Agentic AI Engineer - RemoteFront",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.remotefront.com/remote-jobs/apheris-agentic-ai-engineer-9f1td",
+      "matched_keywords": [
+        "AI-title:agentic ai engineer",
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-05-28 23:00"
+    }
   ]
 }
