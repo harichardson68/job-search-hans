@@ -254,7 +254,7 @@ review_decisions.bat      — Mondays + Thursdays, 10:00 AM
 [PIPELINE FUNNEL] 362 raw → 5 final (1.4% survival rate)
    Raw by source: Serper 227 | RemoteOK 99 | Remotive 16 | Wellfound 16 | USAJobs 4
 
-[GIT] Pushed: 'Nightly job search run — 2026-05-20'
+[GIT] Pushed: 'Nightly job search run — 2026-05-29'
 
 [RAG] Upserted 71 decisions into ChromaDB
 ```
@@ -273,7 +273,7 @@ review_decisions.bat      — Mondays + Thursdays, 10:00 AM
 
 - **Supervised classifier at 300 decisions** — train a model on the full corpus to predict decisions before the email sends, auto-skipping jobs the human would reject anyway. Raises email signal-to-noise dramatically.
 
-- **Apply the agentic-loop pattern to a second domain** — one project is a project; two is a replicable pattern.
+- **Apply the agentic-loop pattern to a second domain** — [FLAPBOARD](https://flapboard.onrender.com) is the second project: a Flask-based flight price comparison app with saved searches, price-drop email alerts, and Sky Scrapper API integration. One project is a project; two is a replicable pattern.
 
 **Future**
 
@@ -309,7 +309,7 @@ MIT
 
 ## Author
 
-Hans Richardson — 28 years in enterprise IT, pivoting from LoadRunner performance engineering into AI engineering.
+Hans Richardson — 24+ years in enterprise IT, pivoting from LoadRunner performance engineering into AI engineering.
 [linkedin.com/in/hans-richardson](https://linkedin.com/in/hans-richardson) | [github.com/harichardson68](https://github.com/harichardson68)
 
 ---

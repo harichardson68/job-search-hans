@@ -1,5 +1,5 @@
 # Hans Richardson - AI Engineering Progress Tracker
-# Updated: May 20, 2026 (evening)
+# Updated: May 29, 2026 (evening)
 # Share this file at the start of each Claude session for instant context!
 
 # ─────────────────────────────────────────────────────────────
@@ -37,18 +37,35 @@ GITHUB = {
             "name": "FLAPBOARD",
             "url": "github.com/harichardson68/FLAPBOARD",
             "live_url": "https://flapboard.onrender.com",
-            "description": "Flask-based flight price comparison app with split-flap aesthetic (amber on navy). Auth + mock flight search working on Render free tier.",
-            "stack": "Flask 3.0 app factory, SQLite/SQLAlchemy, Flask-Login, Flask-WTF CSRF, Werkzeug PBKDF2",
+            "description": "Flask-based flight price comparison app with Solari split-flap aesthetic (amber on navy). Full auth, real flight pricing via Sky Scrapper API, saved searches with price-drop email alerts, airport lookup modal. Live on Render.",
+            "stack": "Flask 3.0 app factory, SQLite/SQLAlchemy, Flask-Login, Flask-WTF CSRF, Flask-Migrate, Flask-Limiter, Werkzeug PBKDF2, Sky Scrapper RapidAPI, SMTP alerts",
             "tests": "11 integration tests passing",
+            "completed": [
+                "Sky Scrapper RapidAPI integration with SkyId caching + realistic mock fallback",
+                "Graceful degradation — is_live flag shows live/estimated banner in UI",
+                "SavedSearch model — origin, destination, date, alert_threshold, last_price, last_checked",
+                "Price-drop email alerts (alerts.py — reuses job_search.py SMTP pattern)",
+                "/run-checks endpoint protected by ALERT_SECRET — ready for cron-job.org",
+                "Airport lookup modal — 70 US airports, type city name OR IATA code, instant filter",
+                "Dashboard redesign matching Render aesthetic — centered card, / where to? heading",
+                "Flask-Migrate wired in — db init/migrate/upgrade working",
+                "Date picker color fix for dark theme",
+                "All deployed to Render with env vars",
+            ],
             "next_steps": [
-                "Postgres for persistent accounts (SQLite ephemeral on Render — wipes on redeploy)",
-                "Amadeus API for real prices + city autocomplete",
-                "Round trip toggle",
-                "Price-drop email alerts (reuse job_search.py SMTP pattern)",
+                "Set up cron-job.org to hit /run-checks?secret=ALERT_SECRET daily",
+                "Test full alert email flow with live data (quota resets June 1)",
+                "Fix skyid_cache.json persistence on Render (ephemeral — wipes on redeploy)",
+                "Swap SQLite → Postgres on Render (accounts wipe on redeploy until done)",
                 "Flask-Limiter on /auth/login and /auth/register (5/min per IP)",
                 "Password reset flow",
+                "Custom 404/500 error pages",
+                "Input validation on origin/destination fields",
+                "Update footer — still says Amadeus API coming soon",
+                "Round trip toggle",
             ],
-            "portfolio_role": "Second agentic project candidate — travel-planning agent applying the agentic loop pattern to a new domain. One project is a project; two is a replicable pattern.",
+            "api_quota_note": "Sky Scrapper RapidAPI free tier = 20 req/month hard limit. Quota resets June 1. Mock fallback covers demos until then.",
+            "portfolio_role": "Second agentic project — travel-planning agent applying agentic loop pattern to a new domain. Demonstrates: REST API integration, graceful degradation, persistent user data, email automation, scheduled background jobs.",
         },
     ],
     "created": "April 23, 2026",
@@ -469,6 +486,73 @@ PERFORMANCE_CREDENTIALS = {
 # SESSION NOTES
 # ─────────────────────────────────────────────────────────────
 SESSION_NOTES = [
+    {
+        "date": "May 29, 2026",
+        "accomplishments": [
+            # FLAPBOARD — Sky Scrapper API integration
+            "Investigated Kiwi Tequila API — discovered invitation-only lockdown (no new registrations)",
+            "Investigated Amadeus self-service — discovered decommissioning July 17, 2026",
+            "Selected Sky Scrapper API on RapidAPI (free tier, 20 req/month) as replacement",
+            "Built skyscrapper_flights.py — full Sky Scrapper integration with:",
+            "  - SkyId caching (skyid_cache.json) — each airport costs 1 API call ever",
+            "  - 30 pre-seeded US airports (seeds turned out to have wrong entityIds — removed)",
+            "  - Realistic mock fallback seeded by route (consistent prices, not random)",
+            "  - is_live flag — True=real Skyscanner data, False=mock fallback",
+            "  - Graceful degradation — falls back silently on any API failure",
+            "  - Windows-compatible strftime (_fmt_dt helper — no %-d or %-I)",
+            "Debugged SkyId field mapping — API returns skyId/entityId nested under navigation.relevantFlightParams not top level",
+            "Hit 429 Too Many Requests during debugging — exhausted 20 free calls for May",
+            "Mock fallback confirmed working perfectly — MCI→LAX realistic prices + booking URLs",
+            # FLAPBOARD — saved searches + alerts
+            "Added SavedSearch model to models.py (user_id, origin, destination, depart_date, return_date, adults, alert_threshold, last_price, last_checked, created_at)",
+            "Built alerts.py — SMTP email alerts reusing job_search.py pattern, HTML styled in amber/navy FLAPBOARD theme",
+            "Added /save-search POST route — saves with duplicate check",
+            "Added /delete-search/<int:search_id> POST route — first_or_404 + user ownership check",
+            "Added /run-checks GET route — protected by ALERT_SECRET env var, ready for cron-job.org",
+            "Updated results.html — new field names (airline_code, airline, depart_at, arrive_at, duration_h, duration_m), live/mock banner, Book/Search button with Skyscanner deep link, Save Search panel",
+            # FLAPBOARD — dashboard redesign
+            "Rebuilt dashboard.html — matching Render aesthetic: / where to? heading, centered card layout",
+            "Replaced simple Lookup button with full airport lookup modal:",
+            "  - 70 US airports, type city name OR IATA code",
+            "  - Instant filter as you type, click to select",
+            "  - Closes on Escape or overlay click",
+            "  - Zero API calls — pure client-side JS",
+            "Fixed date picker visibility — color-scheme: dark + filter: brightness(0) invert(1)",
+            # Flask setup
+            "Wired Flask-Migrate into __init__.py (migrate = Migrate(), migrate.init_app(app, db))",
+            "Fixed Alembic not detecting SavedSearch — added from app import models in env.py and __init__.py",
+            "Used db.create_all() direct approach to create saved_search table (bypassed Alembic)",
+            "pip install requests flask-migrate python-dotenv in venv",
+            "pip freeze > requirements.txt — fixed Render ModuleNotFoundError: flask_migrate",
+            # Deployment
+            "Fixed duplicate flash messages — removed flash block from dashboard.html (base.html handles globally)",
+            "All changes deployed to Render successfully",
+            "Confirmed Save Search end-to-end: search → save → dashboard shows saved search with threshold badge",
+            "Confirmed Delete working: ✕ button removes row with confirmation dialog",
+        ],
+        "concepts_learned": [
+            "Flight pricing APIs in 2026 are in chaos — Kiwi locked down, Amadeus self-service shutting down July 2026",
+            "RapidAPI free tiers often advertise 100/month but actual limit may be 20 — always check pricing page",
+            "SkyId vs IATA — Skyscanner uses internal entity IDs nested under navigation.relevantFlightParams",
+            "Windows strftime doesn't support %-d or %-I (Linux-only) — use .day and .lstrip('0') instead",
+            "Flask-Migrate requires models to be imported before Alembic scans — add to env.py and __init__.py",
+            "Render free tier has ephemeral storage — flat files (skyid_cache.json, SQLite) wipe on redeploy",
+            "Graceful degradation pattern — is_live flag lets UI adapt without crashing",
+            "Dynamic route /delete-search/<int:search_id> vs static /save-search — save doesn't need ID (DB assigns it), delete does",
+            "color-scheme: dark makes browser date picker use dark theme; filter: brightness(0) invert(1) makes icon white",
+        ],
+        "next_session_priorities": [
+            "1. June 1 — quota resets, test live Sky Scrapper pricing end-to-end",
+            "2. Commit skyid_cache.json to GitHub after first successful live search",
+            "3. Set up cron-job.org to hit /run-checks daily",
+            "4. Set MAIL_PASSWORD in Render env vars (new Gmail app password created today)",
+            "5. Fix footer — still says Amadeus API coming soon",
+            "6. Flask-Limiter on /auth/login and /auth/register",
+            "7. Password reset flow",
+            "8. Swap SQLite → Postgres on Render",
+        ],
+        "flapboard_status": "Live at flapboard.onrender.com — mock pricing, saved searches, airport lookup modal all working",
+    },
     {
         "date": "May 20, 2026",
         "accomplishments": [
