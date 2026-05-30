@@ -2348,5 +2348,81 @@
       "raw_decision": "",
       "timestamp": "2026-05-29 23:00"
     }
+  ],
+  "2026-05-30": [
+    {
+      "job_id": "3e319d9c45",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID: 10426914",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10426914/senior-specialist-solutions-architect-agentic-ai-ags-specialist-solutions-architects",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-05-30T12:08:42.719173"
+    },
+    {
+      "job_id": "c243a03035",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Applied Scientist, Agentic Automated Reasoning - Job ID: 10433445",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 26,
+      "url": "https://amazon.jobs/en/jobs/10433445/applied-scientist-agentic-automated-reasoning",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-05-30T12:08:42.719228"
+    },
+    {
+      "job_id": "e7f4e2e80a",
+      "number": "A3",
+      "number_display": "A3",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10431844/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-05-30T12:08:42.719251"
+    }
   ]
 }
