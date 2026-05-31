@@ -2229,9 +2229,9 @@
         "AI-title:agentic ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-29 23:00"
     },
     {
@@ -2248,9 +2248,9 @@
         "ai agent"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-29 23:00"
     },
     {
@@ -2267,9 +2267,9 @@
         "AI-title:mlops"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-29 23:00"
     },
     {
@@ -2285,9 +2285,9 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Bad Link",
       "timestamp": "2026-05-29 23:00"
     },
     {
@@ -2303,9 +2303,9 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-29 23:00"
     },
     {
@@ -2324,9 +2324,9 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-29 23:00"
     },
     {
@@ -2343,17 +2343,172 @@
         "AI-title:agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Too Senior",
       "timestamp": "2026-05-29 23:00"
     }
   ],
   "2026-05-30": [
     {
+      "job_id": "84b8e544e2",
+      "number": "1",
+      "title": "Need Performance Tester/Lead - Remote - SRS Consulting Inc - Dice",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/80ebda33-9b91-4bf0-97a9-c0f71c7a8fb9",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "c1b8a6d5bd",
+      "number": "2",
+      "title": "AI Prompt Engineer, Remote - Wfh",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 102,
+      "url": "https://wfh.hstn.me/job/ai-prompt-engineer-remote",
+      "matched_keywords": [
+        "AI-title:prompt engineer",
+        "natural",
+        "ai prompt",
+        "prompt engineering",
+        "prompt engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "e35b13fa92",
+      "number": "3",
+      "title": "Prompt Engineering Architect - Remote - Indeed.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.indeed.com/viewjob?jk=e0c69ecffc61480e",
+      "matched_keywords": [
+        "AI-title:prompt engineer",
+        "llm",
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "4971e544d4",
+      "number": "4",
+      "title": "Prompt Engineer (Healthcare) at Talkie sp. z o.o. - RemoteJobs.org",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://remotejobs.org/remote-jobs/prompt-engineer-healthcare-talkie-sp-z-oo",
+      "matched_keywords": [
+        "AI-title:prompt engineer",
+        "llm",
+        "prompt engineer",
+        "tool use"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "b0502f1823",
+      "number": "5",
+      "title": "Workforce Reinvention at OpenSesame - AI Engineer - Greenhouse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://boards.greenhouse.io/opensesame/jobs/7967740?gh_jid=7967740",
+      "matched_keywords": [
+        "rag",
+        "ai agent",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "89380915fe",
+      "number": "6",
+      "title": "Machine Learning Engineer II - Affirm - | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/b398af11-8ee9-4784-947d-c567296e821f",
+      "matched_keywords": [
+        "mlops engineer",
+        "machine learning engineer",
+        "AI-title:machine learning engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "2ca96dea44",
+      "number": "7",
+      "title": "AI Integration Engineer\u200b/AI Automation Specialist; Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wfhforgeon.byethost7.com/job/ai-integration-engineer-ai-automation-specialist-remote-6",
+      "matched_keywords": [
+        "ai integration engineer",
+        "AI-title:ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "bad_link",
+      "reason": null,
+      "raw_decision": "Bad Link",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
+      "job_id": "9808fa539a",
+      "number": "8",
+      "title": "Mid MLOps Engineer - Booz Allen Hamilton - Chantilly, VA, US - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/1e6a0ed4-f661-4e17-9294-2f68eb4e6556",
+      "matched_keywords": [
+        "mlops engineer",
+        "AI-title:mlops"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
+    },
+    {
       "job_id": "3e319d9c45",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID: 10426914",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -2365,20 +2520,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-05-30T12:08:42.719173"
+      "decision": "other",
+      "reason": "Job no longer available",
+      "raw_decision": "Other",
+      "timestamp": "2026-05-30 23:00"
     },
     {
       "job_id": "c243a03035",
       "number": "A2",
-      "number_display": "A2",
       "title": "Applied Scientist, Agentic Automated Reasoning - Job ID: 10433445",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -2390,20 +2539,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-05-30T12:08:42.719228"
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-30 23:00"
     },
     {
       "job_id": "e7f4e2e80a",
       "number": "A3",
-      "number_display": "A3",
       "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -2414,15 +2557,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-05-30T12:08:42.719251"
+      "decision": "not_interested",
+      "reason": "Sales",
+      "raw_decision": "Not Interested",
+      "timestamp": "2026-05-30 23:00"
     }
   ]
 }
