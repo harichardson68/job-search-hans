@@ -2562,5 +2562,66 @@
       "raw_decision": "Not Interested",
       "timestamp": "2026-05-30 23:00"
     }
+  ],
+  "2026-05-31": [
+    {
+      "job_id": "c23f1ee090",
+      "number": "1",
+      "title": "AI Developer - Georgia IT - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/ddf1d194-4b73-4d44-af05-62c48338ac9e",
+      "matched_keywords": [
+        "llm",
+        "ai engineer",
+        "observability",
+        "AI-title:ai developer",
+        "ai developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-05-31 23:00"
+    },
+    {
+      "job_id": "982542b856",
+      "number": "2",
+      "title": "Agentic AI Engineer - General Dynamics - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/12b54331-236d-42df-842f-95c88b26a60e",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:agentic ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-05-31 23:00"
+    },
+    {
+      "job_id": "aece455cc2",
+      "number": "3",
+      "title": "AI Automation Engineer - (HR85702) - Sagan Recruitment",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://saganrecruitment.com/job/ai-automation-engineer-hr85702/",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "salary_too_low",
+      "reason": "Low pay",
+      "raw_decision": "Salary Too Low",
+      "timestamp": "2026-05-31 23:00"
+    }
   ]
 }
