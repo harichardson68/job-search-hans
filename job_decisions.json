@@ -2523,7 +2523,9 @@
       "decision": "other",
       "reason": "Job no longer available",
       "raw_decision": "Other",
-      "timestamp": "2026-05-30 23:00"
+      "timestamp": "2026-05-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-01"
     },
     {
       "job_id": "c243a03035",
