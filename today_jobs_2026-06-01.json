@@ -1,0 +1,77 @@
+{
+  "date": "2026-06-01",
+  "jobs": [
+    {
+      "job_id": "9288ec9def",
+      "number": 1,
+      "number_display": "1",
+      "title": "Agentic AI Engineer - Shaarpro - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.dice.com/job-detail/64923ff1-f28a-430e-b6f2-6d23c833ee87",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "generative ai",
+        "ai engineer",
+        "AI-title:agentic ai engineer",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "14177303cc",
+      "number": 2,
+      "number_display": "2",
+      "title": "Post Prompt Engineer Jobs Free \u2014 Hire Fast | RemoteAI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remoteai.io/post-a-job/prompt-engineer",
+      "matched_keywords": [
+        "prompt engineer",
+        "llm",
+        "AI-title:prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "c658be8305",
+      "number": 3,
+      "number_display": "3",
+      "title": "Agentic Software Developer / AI Agent Developer (Contract)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.workable.com/view/jMwMEAySdW2xCiLTeHRrqb/remote-agentic-software-developer-%2F-ai-agent-developer-(contract)-in-central-visayas-at-blueflag-llp",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:ai agent",
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "510fd6436e",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI/MLOps Engineer - Vaco by Highspring - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/5e08ba7b-0e9b-41ba-85c6-c4d91b787a54",
+      "matched_keywords": [
+        "AI-title:mlops",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    }
+  ]
+}
