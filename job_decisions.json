@@ -2710,9 +2710,123 @@
   ],
   "2026-06-02": [
     {
+      "job_id": "9a6f97044e",
+      "number": "1",
+      "title": "Associate AI Engineer - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://msd.wd5.myworkdayjobs.com/SearchJobs/job/CZE---Central-Bohemian---Prague-Five/Associate-AI-Engineer_R400661-1",
+      "matched_keywords": [
+        "prompt engineering",
+        "AI-title:ai engineer",
+        "ai engineer",
+        "rag",
+        "prompt engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Prague",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-02 23:00"
+    },
+    {
+      "job_id": "1f2dae8398",
+      "number": "2",
+      "title": "LLM Engineer Staffing - KORE1",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.kore1.com/llm-engineer-staffing/",
+      "matched_keywords": [
+        "llm",
+        "llm engineer",
+        "prompt engineer",
+        "AI-title:llm engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-06-02 23:00"
+    },
+    {
+      "job_id": "e848327bfd",
+      "number": "3",
+      "title": "Generative AI Automation Engineer - Remote Job - Full-time - Wfh",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://wfh.hstn.me/job/generative-ai-automation-engineer-remote-job-full-time",
+      "matched_keywords": [
+        "generative ai",
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-02 23:00"
+    },
+    {
+      "job_id": "fd50ea942f",
+      "number": "4",
+      "title": "AI Automation Engineer, Remote Job, June 2026",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://dynamitejobs.com/company/route/remote-job/ai-automation-engineer",
+      "matched_keywords": [
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-06-02 23:00"
+    },
+    {
+      "job_id": "86ef3333c8",
+      "number": "5",
+      "title": "MLOps Engineer - Everest Technologies - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/7e9ceb08-e068-463f-b84d-1da6e6deee9a",
+      "matched_keywords": [
+        "mlops engineer",
+        "AI-title:mlops"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-02 23:00"
+    },
+    {
+      "job_id": "972fa407f6",
+      "number": "6",
+      "title": "Marriott International - AI QA Engineer (Agents) - careers.sh",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://careers.sh/uk/kompaniya/marriott-international/robochi-mistsya/251295",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Ireland",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-02 23:00"
+    },
+    {
       "job_id": "f1fd872f8c",
       "number": "A1",
-      "number_display": "A1",
       "title": "Consultant, AWS Professional Services, Agentic Delivery Acceleration",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -2725,20 +2839,14 @@
         "rag"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-02T12:04:35.307502"
+      "decision": "not_interested",
+      "reason": null,
+      "raw_decision": "Not Interested",
+      "timestamp": "2026-06-02 23:00"
     },
     {
       "job_id": "096db97a8d",
       "number": "A2",
-      "number_display": "A2",
       "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -2749,15 +2857,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-02T12:04:35.307516"
+      "decision": "not_interested",
+      "reason": null,
+      "raw_decision": "Not Interested",
+      "timestamp": "2026-06-02 23:00"
     }
   ]
 }
