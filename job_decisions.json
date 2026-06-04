@@ -2862,5 +2862,104 @@
       "raw_decision": "Not Interested",
       "timestamp": "2026-06-02 23:00"
     }
+  ],
+  "2026-06-03": [
+    {
+      "job_id": "26a46fef57",
+      "number": "1",
+      "title": "Guidewire Performance Tester - Up2date Technologies - Dice",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 155,
+      "url": "https://www.dice.com/job-detail/61ef0d3c-e8d6-49b2-82b5-f992524439b9",
+      "matched_keywords": [
+        "loadrunner",
+        "performance engineer",
+        "jmeter",
+        "performance tester"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "No Longer Exists",
+      "raw_decision": "Other",
+      "timestamp": "2026-06-03 23:00"
+    },
+    {
+      "job_id": "337411dee9",
+      "number": "2",
+      "title": "AI Agent Builder - Careers at UW",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 123,
+      "url": "https://uw.wd5.myworkdayjobs.com/en-US/UWHires/job/AI-Agent-Builder_REQ-0000132798-1",
+      "matched_keywords": [
+        "llm",
+        "ai agent",
+        "AI-title:ai agent",
+        "prompt engineering",
+        "anthropic",
+        "openai",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "onsite",
+      "reason": null,
+      "raw_decision": "Onsite / Not Remote",
+      "timestamp": "2026-06-03 23:00"
+    },
+    {
+      "job_id": "f393d4c653",
+      "number": "3",
+      "title": "Remote AI Automation Engineer: Build Scalable Pipelines",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.monster.com/job-openings/remote-ai-automation-engineer-build-scalable-pipelines-las-vegas-nv--1ba7fb48-1642-4d2a-9862-3791e077541a",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-03 23:00"
+    },
+    {
+      "job_id": "ac2879bb78",
+      "number": "4",
+      "title": "AI Engineer - Model Performance @ Fathom - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/fathom.video/faff982d-4fc5-47d9-9af8-6efad4f2b636",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-03 23:00"
+    },
+    {
+      "job_id": "e8fe26c818",
+      "number": "5",
+      "title": "AI Engineer - Data Intelligence @ Clarium - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/clarium/83332693-7e11-41db-8b62-8225cb818abf",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-03 23:00"
+    }
   ]
 }
