@@ -2882,7 +2882,9 @@
       "decision": "other",
       "reason": "No Longer Exists",
       "raw_decision": "Other",
-      "timestamp": "2026-06-03 23:00"
+      "timestamp": "2026-06-03 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-04"
     },
     {
       "job_id": "337411dee9",
