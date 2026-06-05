@@ -458,6 +458,7 @@ NON_US_LOCATIONS = [
     "canadian and listed in french",
     "great britian",
     "europe",
+    "philippines and too senior",
 ]
 
 # Job site URL blacklist - sites that are hard to apply on or are middlemen

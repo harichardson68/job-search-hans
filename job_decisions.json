@@ -2963,5 +2963,177 @@
       "raw_decision": "Too Senior",
       "timestamp": "2026-06-03 23:00"
     }
+  ],
+  "2026-06-04": [
+    {
+      "job_id": "cd21fb7355",
+      "number": "1",
+      "title": "AI Engineer (Anthropic Claude) - Python - 3A Soft Inc - Remote - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 146,
+      "url": "https://www.dice.com/job-detail/105272c6-6914-4117-96d3-8fd1822112d1",
+      "matched_keywords": [
+        "python",
+        "prompt engineering",
+        "llm",
+        "anthropic",
+        "generative ai",
+        "ai engineer",
+        "AI-title:ai engineer",
+        "claude api",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Not available",
+      "raw_decision": "Other",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "e5f0494968",
+      "number": "2",
+      "title": "AI/ML ENGINEER - Talent Software Services, Inc - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 123,
+      "url": "https://www.dice.com/job-detail/c4b73c48-d290-45ef-83c9-4a533fa3815f",
+      "matched_keywords": [
+        "ml engineer",
+        "prompt engineering",
+        "agentic",
+        "llm",
+        "agentic ai",
+        "prompt engineer",
+        "AI-title:ml engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "ab7a423782",
+      "number": "3",
+      "title": "Senior Performance Test Engineer - Miramar, FL - INSPYR Solutions",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 91,
+      "url": "https://www.inspyrsolutions.com/job/26-157187-senior-performance-test-engineer-miramar-fl/",
+      "matched_keywords": [
+        "loadrunner",
+        "splunk",
+        "jmeter",
+        "appdynamics"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "845bddc46a",
+      "number": "4",
+      "title": "AI Engineer - Kforce Technology Staffing - Remote in Draper, UT, US",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/42edd154-8888-4ec7-b3fb-c9e399f31bb2",
+      "matched_keywords": [
+        "agentic",
+        "generative ai",
+        "agentic ai",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "onsite",
+      "reason": null,
+      "raw_decision": "Onsite / Not Remote",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "4a457deee0",
+      "number": "5",
+      "title": "Generative AI Engineer Virtual Internship - Careers at Robert Half",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://careers.roberthalf.com/global/en/job/JR-260536/Generative-AI-Engineer-Virtual-Internship",
+      "matched_keywords": [
+        "AI-title:generative ai engineer",
+        "generative ai engineer",
+        "ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_interested",
+      "reason": "Robert Half internship, already turned down",
+      "raw_decision": "Not Interested",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "02c93f02a1",
+      "number": "6",
+      "title": "Agentic AI/ML Engineer / Architect - Photon - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 72,
+      "url": "https://www.dice.com/job-detail/d721bc65-0c5b-4223-b8e2-fde7ddc49022",
+      "matched_keywords": [
+        "python",
+        "ml engineer",
+        "agentic",
+        "pytorch",
+        "AI-title:agentic",
+        "tensorflow",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "b8a46c1eac",
+      "number": "7",
+      "title": "Agentic Software Developer / AI Agent Developer (Contract)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://remoteleaf.com/company/blueflag/agentic-software-developer-ai-agent-developer-contract-philippines/",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent",
+        "AI-title:ai agent",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "philippines and too senior",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-04 23:00"
+    },
+    {
+      "job_id": "6360f398a4",
+      "number": "8",
+      "title": "Remote AI Automation Engineer for Venture Capital & Family Office",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://apply.workable.com/pearltalent/j/1E6F27874E",
+      "matched_keywords": [
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Latin America",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-04 23:00"
+    }
   ]
 }
