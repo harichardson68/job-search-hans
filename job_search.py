@@ -593,6 +593,7 @@ BLOCKED_JOB_SITES = [
     "aidoos.com",
     "www.linkedin.com",
     "wfhforgeon.byethost7.com",
+    "hstn.me", 
 ]
 
 def is_blocked_site(url):
