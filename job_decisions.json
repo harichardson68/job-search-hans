@@ -3135,5 +3135,177 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-06-04 23:00"
     }
+  ],
+  "2026-06-05": [
+    {
+      "job_id": "59359c8c26",
+      "number": "1",
+      "title": "Performance Tester with Loadrunner and JMeter experience - Wfh",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://wfh.hstn.me/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote-2",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner",
+        "LoadRunner-in-title",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "6744bee04f",
+      "number": "2",
+      "title": "Senior Performance Engineer (Retail) \u0432 Omega Solutions | Hirify",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://hirify.me/jobs/613127-senior-performance-engineer-retail",
+      "matched_keywords": [
+        "performance engineer",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "bb3a838744",
+      "number": "3",
+      "title": "Workiy - Generative AI Engineer - Remote Job",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://workiy.zohorecruit.com/jobs/careers/574222000019291070/Generative-AI-Engineer?source=CareerSite",
+      "matched_keywords": [
+        "sla",
+        "generative ai",
+        "ai engineer",
+        "generative ai engineer",
+        "AI-title:generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "96a99032e3",
+      "number": "4",
+      "title": "MLOps Engineer - Saicon Consultants Inc. - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/71cf2f65-a6c7-45a8-be00-33f577feffe7",
+      "matched_keywords": [
+        "mlops engineer",
+        "sla",
+        "ml engineer",
+        "AI-title:mlops"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "de3d1ff633",
+      "number": "5",
+      "title": "AI Agent Developer & Tester - Techgene Solutions LLC - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/b2f54696-287f-410c-a120-3dcaa9698a85",
+      "matched_keywords": [
+        "AI-title:ai agent",
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "4b7a3999d2",
+      "number": "6",
+      "title": "AI Automation Engineer at Pearl Talent \u2014 Remote - RemoteJobs.org",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotejobs.org/remote-jobs/ai-automation-engineer-pearl-talent",
+      "matched_keywords": [
+        "AI-title:ai automation engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "7173e74ec9",
+      "number": "7",
+      "title": "Legal AI Integration Engineer - Remote - Indeed.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.indeed.com/viewjob?jk=ea6f8ce9f17868cc",
+      "matched_keywords": [
+        "AI-title:ai integration engineer",
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "9fc505c0c5",
+      "number": "8",
+      "title": "Associate Applied AI Engineer - Greenhouse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://boards.greenhouse.io/guidepointsecurity/jobs/6014563004",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    },
+    {
+      "job_id": "97beaa27b3",
+      "number": "9",
+      "title": "Forward Deployed AI Engineer @ webAI - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/webAI/9cb245f4-2c27-4262-9067-ae3aae26a404/application?source=linkedin",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-05 23:00"
+    }
   ]
 }
