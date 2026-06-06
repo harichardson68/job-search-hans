@@ -3307,5 +3307,30 @@
       "raw_decision": "",
       "timestamp": "2026-06-05 23:00"
     }
+  ],
+  "2026-06-06": [
+    {
+      "job_id": "4f5bb33218",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Program Mgr. AI Automation , WW Prime - Benefits, Pricing ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 20,
+      "url": "https://www.amazon.jobs/en/jobs/10441518/program-mgr-ai-automation-ww-prime-benefits-pricing-constructs",
+      "matched_keywords": [
+        "AI-title:ai automation"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-06T12:05:07.159570"
+    }
   ]
 }
