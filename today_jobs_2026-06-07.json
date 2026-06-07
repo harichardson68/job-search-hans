@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-07",
+  "jobs": [
+    {
+      "job_id": "c1915189cf",
+      "number": 1,
+      "number_display": "1",
+      "title": "Software Development Engineer in Test (SDET)",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://wellfound.com/jobs/4307673-software-development-engineer-in-test-sdet",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Wellfound",
+      "is_amazon": false
+    },
+    {
+      "job_id": "ac0a83d966",
+      "number": 2,
+      "number_display": "2",
+      "title": "Agentic AI Engineer / Applied AI Engineer || Remote - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 109,
+      "url": "https://www.dice.com/job-detail/619223b1-a4b4-4ea1-8d0f-8f6a8089d869",
+      "matched_keywords": [
+        "ai observability",
+        "agentic ai",
+        "observability",
+        "AI-title:agentic ai engineer",
+        "prompt engineer",
+        "agentic",
+        "ai engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "8817dfe17e",
+      "number": 3,
+      "number_display": "3",
+      "title": "Performance Test Engineer at Algotale - Metaintro",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.metaintro.com/en/job/08c71fd7-45e9-5869-9955-98768cc74bfd",
+      "matched_keywords": [
+        "loadrunner",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "37feac6f91",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI Engineer - Remote - Mutual of Omaha Insurance Company - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/79a04dec-9f5f-4d3a-80a5-566c38487713",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "7dee192199",
+      "number": 5,
+      "number_display": "5",
+      "title": "100% Remote_Full time_AI Engineer Manager_Irvine, California ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/c863ee6b-d448-4ed3-8c95-a5486687d348",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "c80a80b89d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en-gb/jobs/10437000/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true
+    }
+  ]
+}
