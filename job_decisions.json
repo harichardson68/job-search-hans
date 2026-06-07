@@ -3310,9 +3310,145 @@
   ],
   "2026-06-06": [
     {
+      "job_id": "8e9689496b",
+      "number": "1",
+      "title": "Generative AI Engineer Staffing - KORE1",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 143,
+      "url": "https://www.kore1.com/generative-ai-engineer-staffing/",
+      "matched_keywords": [
+        "prompt engineer",
+        "AI-title:generative ai engineer",
+        "generative ai engineer",
+        "ai engineer",
+        "llm engineer",
+        "llm",
+        "nlp",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
+      "job_id": "4a30cd09cd",
+      "number": "2",
+      "title": "Performance Test Engineer - ONLY W2 - Akshaya Inc - Remote - Dice",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/a9231147-3265-484b-b07e-c567b5165c97",
+      "matched_keywords": [
+        "jmeter",
+        "neoload",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "already_seen",
+      "reason": "Already applied",
+      "raw_decision": "Already Seen / Duplicate",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
+      "job_id": "9d20d2a238",
+      "number": "3",
+      "title": "General Application \u2014 Data & AI/ML Engineering - Greenhouse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://boards.greenhouse.io/system/jobs/6014363004",
+      "matched_keywords": [
+        "AI-title:ml engineer",
+        "ai engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
+      "job_id": "095415f745",
+      "number": "4",
+      "title": "Gen AI Engineer - Whiztek Corp - Hybrid in Chicago, IL, US | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/3961de77-7021-4143-9308-afb8e98082e2",
+      "matched_keywords": [
+        "AI-title:gen ai engineer",
+        "ai engineer",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
+      "job_id": "c8538a2d81",
+      "number": "5",
+      "title": "AI Engineer Job - PlayStation - Remote/Virtual - ShowbizJobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.showbizjobs.com/jobs/playstation-ai-engineer-in-london/jid-j6q4nb",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer",
+        "ai observability",
+        "observability"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
+      "job_id": "d7af3111a3",
+      "number": "6",
+      "title": "AI Engineer - Data Intelligence @ Clarium - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/clarium/83332693-7e11-41db-8b62-8225cb818abf/application",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
+      "job_id": "a279400138",
+      "number": "7",
+      "title": "MLOps Engineer with Azure Databricks ML - Everest Technologies",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/29d52675-6d31-4395-951d-13a1b67b99a9",
+      "matched_keywords": [
+        "mlops engineer",
+        "AI-title:mlops"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-06 23:00"
+    },
+    {
       "job_id": "4f5bb33218",
       "number": "A1",
-      "number_display": "A1",
       "title": "Program Mgr. AI Automation , WW Prime - Benefits, Pricing ...",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -3322,15 +3458,10 @@
         "AI-title:ai automation"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-06T12:05:07.159570"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-06 23:00"
     }
   ]
 }

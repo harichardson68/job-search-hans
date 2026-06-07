@@ -15,7 +15,7 @@ RUN:
 """
 
 import tkinter as tk
-from tkinter import ttk, scrolledtext
+from tkinter import ttk, scrolledtext, simpledialog
 import threading
 import requests
 import json
@@ -29,16 +29,18 @@ load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
 # ─────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────
-CLAUDE_API_KEY = os.environ.get("CLAUDE_API_KEY", "")
-JOB_RESULTS_FILE = os.path.join(os.path.dirname(__file__), "job_results.json")
-JOB_SCRIPT       = os.path.join(os.path.dirname(__file__), "job_search.py")
+CLAUDE_API_KEY    = os.environ.get("CLAUDE_API_KEY", "")
+JOB_RESULTS_FILE  = os.path.join(os.path.dirname(__file__), "job_results.json")
+JOB_SCRIPT        = os.path.join(os.path.dirname(__file__), "job_search.py")
+CLAUDE_MODEL      = "claude-sonnet-4-6"
+CLAUDE_MAX_TOKENS = 1024
 
 # ─────────────────────────────────────────────
 # SYSTEM PROMPTS
 # ─────────────────────────────────────────────
 CLAUDIO_PROMPT = """You are Claudio, a personal job search assistant for Hans Richardson.
 
-Hans is a Senior Performance/QA Test Engineer with 28+ years of experience, expert in LoadRunner (14 years), trained in JMeter and NeoLoad. He is looking for remote work - contract or full-time. He is also pursuing AI Engineering and QA Automation roles.
+Hans is a Senior Performance/QA Test Engineer with 24+ years of experience, expert in LoadRunner (14 years), trained in JMeter and NeoLoad. He is looking for remote work - contract or full-time. He is also pursuing AI Engineering and QA Automation roles.
 
 You help Hans with:
 1. Reviewing today's job results
@@ -53,7 +55,7 @@ When rewriting cover letters, make them more targeted and powerful using his rea
 
 PYTHON_TUTOR_PROMPT = """You are PyCoach, a Python tutor for Hans Richardson.
 
-Hans is a Senior Performance Engineer with 28+ years of experience. He is currently learning Python through Coursera. He has a strong technical background in LoadRunner, VuGen, SQL, COBOL, and performance engineering. He has already built real Python scripts (an automated job search tool using requests, feedparser, and smtplib).
+Hans is a Senior Performance Engineer with 24+ years of experience. He is currently learning Python through Coursera. He has a strong technical background in LoadRunner, VuGen, SQL, COBOL, and performance engineering. He has already built real Python scripts (an automated job search tool using requests, feedparser, and smtplib).
 
 Your job is to teach Hans Python in the context of performance engineering and automation.
 
@@ -63,7 +65,6 @@ Teaching style:
 - Keep explanations concise and hands-on
 - Provide working code examples he can run immediately
 - When he shares code, review it and suggest improvements
-- Encourage him - he is further along than he thinks since he already built a real Python app!
 
 Focus areas:
 - Python basics (variables, loops, functions, classes)
@@ -77,14 +78,13 @@ Focus areas:
 AI_STUDY_PROMPT = """You are AImentor, an AI/ML study coach for Hans Richardson.
 
 Hans is pursuing AI Engineering through multiple courses including:
-- AI Engineer Course: Complete AI Engineer Bootcamp (Udemy)
 - IBM Generative AI Engineering Professional Certificate (Coursera)
 - Python for Data Science, AI & Development (Coursera)
 - Generative AI: Introduction and Applications (Coursera)
 - Generative AI: Prompt Engineering Basics (Coursera)
 - Introduction to Artificial Intelligence (Coursera)
 
-Hans has already built real AI applications - he built Claudio (an AI job search agent) and a Learning Agent hub using the Claude API. He is further along than he thinks!
+Hans has already built real AI applications - he built Claudio (an AI job search agent) and a Learning Agent hub using the Claude API.
 
 Your job is to:
 - Quiz Hans on AI/ML concepts from his courses
@@ -116,7 +116,7 @@ KEY MAPPINGS:
 - Web/HTTP Protocol = HTTP Request Sampler
 - SiteScope = Backend Listener / InfluxDB + Grafana
 
-Always frame JMeter in terms Hans already knows from LoadRunner. His LR expertise is a massive advantage!"""
+Always frame JMeter in terms Hans already knows from LoadRunner."""
 
 # ─────────────────────────────────────────────
 # COLORS
@@ -131,6 +131,7 @@ TEXT_BOT     = "#E8EAF6"
 BORDER       = "#2D3154"
 ACCENT_DIM   = "#2A4A8A"
 BTN_HOVER    = "#3D6FD4"
+AGENT_COLOR  = "#00FFB2"  # distinct color for Run Agent button
 
 TAB_ACCENTS = {
     "Job Search":   "#4F8EF7",
@@ -141,9 +142,10 @@ TAB_ACCENTS = {
 
 QUICK_BUTTONS = {
     "Job Search": [
-        ("Today's Jobs",  "Show me today's job matches"),
-        ("Top Match",     "Tell me about the #1 job match"),
-        ("Run Search",    "RUN_SEARCH"),
+        ("Today's Jobs", "Show me today's job matches"),
+        ("Top Match",    "Tell me about the #1 job match"),
+        ("Run Search",   "RUN_SEARCH"),
+        ("Run Agent",    "RUN_AGENT"),
     ],
     "Python Tutor": [
         ("Start Lesson",  "I'm ready to learn. Where should we start based on my background?"),
@@ -173,6 +175,7 @@ WELCOME_MSGS = {
     "Job Search":
         "Hey Hans! I'm Claudio, your job search agent.\n\n"
         "Ask me about today's job matches, cover letters, or click 'Run Search' to search now!\n\n"
+        "Click 'Run Agent' to run an intelligent agentic job search with a custom goal.\n\n"
         "What can I help you with?",
     "Python Tutor":
         "Hey Hans! I'm PyCoach, your Python tutor.\n\n"
@@ -214,7 +217,7 @@ def format_jobs_for_context(jobs, generated_at):
         lines.append(f"  URL: {job.get('url','N/A')}")
         lines.append(f"  Keywords: {', '.join(job.get('matched_keywords',[]))}")
         lines.append(f"  Description: {job.get('description','')[:200]}")
-        cover = job.get('cover_letter','')
+        cover = job.get('cover_letter', '')
         if cover:
             lines.append(f"  Cover Letter: {cover[:300]}...")
         lines.append("")
@@ -224,7 +227,6 @@ def format_jobs_for_context(jobs, generated_at):
 # CLAUDE API
 # ─────────────────────────────────────────────
 def ask_claude(system_prompt, history, user_message, tab_name):
-    # Inject job data for Claudio tab
     system = system_prompt
     if tab_name == "Job Search":
         jobs, gen = load_job_results()
@@ -238,8 +240,8 @@ def ask_claude(system_prompt, history, user_message, tab_name):
             "content-type": "application/json"
         }
         payload = {
-            "model": "claude-sonnet-4-6",
-            "max_tokens": 1024,
+            "model": CLAUDE_MODEL,
+            "max_tokens": CLAUDE_MAX_TOKENS,
             "system": system,
             "messages": history[-20:]
         }
@@ -255,6 +257,50 @@ def ask_claude(system_prompt, history, user_message, tab_name):
             return f"API Error {resp.status_code}: {resp.json().get('error',{}).get('message','Unknown error')}"
     except Exception as e:
         return f"Connection error: {e}"
+
+# ─────────────────────────────────────────────
+# AGENTIC LOOP STUB
+# Replace run_agent_loop internals once job-agent module is built.
+# The stream_callback and done_callback interfaces stay the same.
+# ─────────────────────────────────────────────
+def run_agent_loop(goal, stream_callback, done_callback):
+    """
+    Stub agentic loop simulating observe->plan->act->observe cycle.
+    Wire real job-agent module here once built.
+    """
+    import time
+
+    def agent_thread():
+        stream_callback(f"Goal: {goal}\n")
+        time.sleep(0.5)
+
+        stream_callback("\nIteration 1: Deciding first action...")
+        time.sleep(0.8)
+        stream_callback("\nIteration 1: Searching Adzuna for LoadRunner and AI roles...")
+        time.sleep(1.0)
+        stream_callback("\nIteration 1: Results retrieved. Scoring...")
+        time.sleep(0.8)
+
+        stream_callback("\n\nIteration 2: Evaluating result quality...")
+        time.sleep(0.8)
+        stream_callback("\nIteration 2: Results thin. Expanding to Serper...")
+        time.sleep(1.0)
+        stream_callback("\nIteration 2: Combined results scored.")
+        time.sleep(0.5)
+
+        stream_callback("\n\nIteration 3: Running fit analysis on top matches...")
+        time.sleep(1.2)
+        stream_callback("\nIteration 3: Analysis complete. Sufficient results. Stopping.")
+        time.sleep(0.5)
+
+        stream_callback("\n\n--- Agent Report (Stub) ---")
+        stream_callback("\nReal job-agent module will be wired here once built.")
+        stream_callback(f"\nGoal executed: {goal}")
+        stream_callback("\n---------------------------\n")
+
+        done_callback()
+
+    threading.Thread(target=agent_thread, daemon=True).start()
 
 # ─────────────────────────────────────────────
 # CHAT TAB
@@ -282,24 +328,29 @@ class ChatTab:
         self.chat.tag_configure("system",     foreground=TEXT_SEC,    font=("Courier New", 10, "italic"))
         self.chat.tag_configure("label_user", foreground=self.accent, font=("Courier New", 9, "bold"))
         self.chat.tag_configure("label_bot",  foreground=TEXT_SEC,    font=("Courier New", 9))
+        self.chat.tag_configure("agent",      foreground=AGENT_COLOR, font=("Courier New", 10))
+        self.chat.tag_configure("agent_hdr",  foreground=AGENT_COLOR, font=("Courier New", 10, "bold"))
 
         # Quick buttons
         btn_frame = tk.Frame(self.frame, bg=BG_PANEL, pady=6)
         btn_frame.pack(fill=tk.X)
         for label, cmd in QUICK_BUTTONS.get(name, []):
+            is_agent = (cmd == "RUN_AGENT")
             b = tk.Button(
                 btn_frame, text=label, font=("Courier New", 8),
-                fg=self.accent, bg=BG_INPUT, relief=tk.FLAT,
+                fg=AGENT_COLOR if is_agent else self.accent,
+                bg=BG_INPUT, relief=tk.FLAT,
                 padx=8, pady=4, cursor="hand2",
                 command=lambda c=cmd: self._quick_send(c),
                 activebackground=ACCENT_DIM, activeforeground=TEXT_PRIMARY,
-                bd=1, highlightthickness=1, highlightbackground=BORDER
+                bd=1, highlightthickness=1,
+                highlightbackground=AGENT_COLOR if is_agent else BORDER
             )
             b.pack(side=tk.LEFT, padx=(8, 0))
 
         tk.Frame(self.frame, bg=BORDER, height=1).pack(fill=tk.X)
 
-        # Input
+        # Input area
         input_frame = tk.Frame(self.frame, bg=BG_PANEL, pady=10)
         input_frame.pack(fill=tk.X, padx=12, pady=(8, 4))
 
@@ -322,7 +373,7 @@ class ChatTab:
         tk.Label(self.frame, text="Enter to send  |  Shift+Enter for new line",
                  font=("Courier New", 8), fg=TEXT_SEC, bg=BG_PANEL).pack(pady=(0, 6))
 
-        # Welcome
+        # Welcome message
         self._add_message(AGENT_NAMES[name], WELCOME_MSGS[name], "bot")
 
     def _add_message(self, sender, text, tag):
@@ -336,13 +387,46 @@ class ChatTab:
         self.chat.configure(state=tk.DISABLED)
         self.chat.see(tk.END)
 
+    def _append_agent_text(self, text):
+        """Stream agent iteration text into chat window."""
+        self.chat.configure(state=tk.NORMAL)
+        self.chat.insert(tk.END, text, "agent")
+        self.chat.configure(state=tk.DISABLED)
+        self.chat.see(tk.END)
+
+    def _run_agent(self):
+        """Prompt for goal and kick off agentic loop."""
+        goal = simpledialog.askstring(
+            "Run Agent",
+            "Enter your search goal:",
+            initialvalue="Find LoadRunner and Agentic AI roles matching my profile",
+            parent=self.frame
+        )
+        if not goal:
+            return
+
+        # Print agent header into chat
+        self.chat.configure(state=tk.NORMAL)
+        ts = datetime.now().strftime("%I:%M %p")
+        self.chat.insert(tk.END, f"\n  Agent  {ts}\n", "agent_hdr")
+        self.chat.configure(state=tk.DISABLED)
+
+        def stream(text):
+            self.frame.after(0, lambda t=text: self._append_agent_text(t))
+
+        def done():
+            self.frame.after(0, lambda: self._append_agent_text(
+                "\nAgent run complete.\n"
+            ))
+
+        run_agent_loop(goal, stream, done)
+
     def _send(self):
         msg = self.input.get("1.0", tk.END).strip()
         if not msg:
             return
         self.input.delete("1.0", tk.END)
 
-        # Special: Run Search button
         if msg == "RUN_SEARCH":
             self._add_message(AGENT_NAMES[self.name],
                 "Running job search now... check your email in a few minutes!", "bot")
@@ -350,6 +434,10 @@ class ChatTab:
                 target=lambda: subprocess.run([sys.executable, JOB_SCRIPT], capture_output=True),
                 daemon=True
             ).start()
+            return
+
+        if msg == "RUN_AGENT":
+            self._run_agent()
             return
 
         self._add_message("Hans", msg, "user")
@@ -394,7 +482,6 @@ class AgentHub:
         self.root.configure(bg=BG_DARK)
         self.root.resizable(True, True)
 
-        # Center on screen
         sw = self.root.winfo_screenwidth()
         sh = self.root.winfo_screenheight()
         self.root.geometry(f"580x720+{sw//2 - 290}+{sh//2 - 360}")
@@ -412,7 +499,6 @@ class AgentHub:
         tk.Label(header, text="Hans Richardson", font=("Courier New", 9),
                  fg=TEXT_SEC, bg=BG_PANEL).pack(side=tk.LEFT, padx=(4, 0), pady=20)
 
-        # Job count
         jobs, _ = load_job_results()
         badge = f"{len(jobs)} jobs today" if jobs else "no jobs yet"
         tk.Label(header, text=badge, font=("Courier New", 8),
@@ -420,11 +506,10 @@ class AgentHub:
 
         tk.Frame(self.root, bg=BORDER, height=1).pack(fill=tk.X)
 
-        # Style tabs
         style = ttk.Style()
         style.theme_use("default")
-        style.configure("TNotebook",       background=BG_PANEL, borderwidth=0)
-        style.configure("TNotebook.Tab",   background=BG_INPUT, foreground=TEXT_SEC,
+        style.configure("TNotebook",     background=BG_PANEL, borderwidth=0)
+        style.configure("TNotebook.Tab", background=BG_INPUT, foreground=TEXT_SEC,
                         font=("Courier New", 9, "bold"), padding=[12, 8])
         style.map("TNotebook.Tab",
                   background=[("selected", BG_DARK)],
@@ -433,7 +518,6 @@ class AgentHub:
         notebook = ttk.Notebook(self.root)
         notebook.pack(fill=tk.BOTH, expand=True)
 
-        # All 4 tabs
         tabs = [
             ("Job Search",   CLAUDIO_PROMPT),
             ("Python Tutor", PYTHON_TUTOR_PROMPT),
