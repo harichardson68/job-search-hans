@@ -1,0 +1,45 @@
+{
+  "date": "2026-06-08",
+  "jobs": [
+    {
+      "job_id": "8aeada3c13",
+      "number": 1,
+      "number_display": "1",
+      "title": "Applied AI Engineer",
+      "company": "Bjak ",
+      "track": "AI Engineering",
+      "score": 78,
+      "url": "https://remoteOK.com/remote-jobs/remote-applied-ai-engineer-bjak-1132964",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "fine-tuning",
+        "openai",
+        "python",
+        "latency",
+        "sla",
+        "pytorch",
+        "llm",
+        "ai engineer"
+      ],
+      "source": "RemoteOK",
+      "is_amazon": false
+    },
+    {
+      "job_id": "366ac611d9",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Engineer (Mid-Level) @ Clera - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://jobs.ashbyhq.com/Clera/27d20b1f-1a81-4d51-8644-c262db628f7d",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    }
+  ]
+}
