@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-09",
+  "jobs": [
+    {
+      "job_id": "2a1f405ecc",
+      "number": 1,
+      "number_display": "1",
+      "title": "Performance Test Engineer - Akshaya Inc - Remote | Dice.com",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/7afddf83-5faf-4091-93de-8681416bb2a4",
+      "matched_keywords": [
+        "loadrunner",
+        "jmeter",
+        "neoload"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "5c381631f7",
+      "number": 2,
+      "number_display": "2",
+      "title": "Agentic AI Developer 8+ - TekVivid - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/528cbad1-8d70-4aff-bf6c-0d28e94be8d5",
+      "matched_keywords": [
+        "ai developer",
+        "agentic ai",
+        "AI-title:agentic ai developer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "d9e2fceeb9",
+      "number": 3,
+      "number_display": "3",
+      "title": "AI/ML Engineers - Gen AI - Remote / Telecommute - Cary, NC, US",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/5bd6cf7f-956e-4de7-999f-a6736d65eee9",
+      "matched_keywords": [
+        "AI-title:ml engineer",
+        "mlops engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    }
+  ]
+}
