@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-10",
+  "jobs": [
+    {
+      "job_id": "b9978159b7",
+      "number": 1,
+      "number_display": "1",
+      "title": "Generative AI Engineer - Avanciers LLC - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/479f79fd-82ea-4da0-8523-ee21757dd863",
+      "matched_keywords": [
+        "generative ai engineer",
+        "AI-title:generative ai engineer",
+        "ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "57932b6b61",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Agentic Engineer Job Details | Foundever\u00ae",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.foundever.com/job/Remote-AI-Agentic-Engineer-Any/1380860200/",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:ai agent",
+        "agentic ai",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "8d4c39dad0",
+      "number": 3,
+      "number_display": "3",
+      "title": "AI Engineer @ Scale Army Careers - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.ashbyhq.com/Scale%20Army%20Careers/f1afb5ab-24e7-4ff6-99e5-f0cb3794a3ae/application?embed=js",
+      "matched_keywords": [
+        "llm",
+        "python",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "9eb999c8e1",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI Engineer Job - PlayStation - Remote/Virtual - ShowbizJobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.showbizjobs.com/jobs/playstation-ai-engineer-in-london/jid-02nxq8",
+      "matched_keywords": [
+        "observability",
+        "ai observability",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "e87ffa4b2c",
+      "number": 5,
+      "number_display": "5",
+      "title": "AI Automation Engineer 0626 - Remote - Indeed.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.indeed.com/viewjob?jk=588df3a70d9a83fd",
+      "matched_keywords": [
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "9b59e3b881",
+      "number": 6,
+      "number_display": "6",
+      "title": "Azure MLOps Architect / Consultant - Resource 1 - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/0c8ab8ef-1cec-4ad2-a751-ce5a3530aaaa",
+      "matched_keywords": [
+        "AI-title:mlops",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    }
+  ]
+}
