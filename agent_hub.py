@@ -147,7 +147,12 @@ TEXT_BOT     = "#E8EAF6"
 BORDER       = "#2D3154"
 ACCENT_DIM   = "#2A4A8A"
 BTN_HOVER    = "#3D6FD4"
-AGENT_COLOR  = "#00FFB2"  # distinct color for Run Agent button
+AGENT_COLOR      = "#00FFB2"  # distinct color for Run Agent button
+TEST_MODE_COLOR  = "#FFB347"  # orange — warns you test mode is on
+
+# Test-mode agent settings (overrides when TEST MODE checkbox is checked)
+TEST_PLANNER_MODEL  = "claude-haiku-4-5-20251001"
+TEST_MAX_ITERATIONS = 4
 
 TAB_ACCENTS = {
     "Job Search":   "#4F8EF7",
@@ -158,10 +163,11 @@ TAB_ACCENTS = {
 
 QUICK_BUTTONS = {
     "Job Search": [
-        ("Today's Jobs", "Show me today's job matches"),
-        ("Top Match",    "Tell me about the #1 job match"),
-        ("Run Search",   "RUN_SEARCH"),
-        ("Run Agent",    "RUN_AGENT"),
+        ("Today's Jobs",   "Show me today's job matches"),
+        ("Top Match",      "Tell me about the #1 job match"),
+        ("Run Search",     "RUN_SEARCH"),
+        ("Run Agent",      "RUN_AGENT"),
+        ("Email Results",  "EMAIL_RESULTS"),
     ],
     "Python Tutor": [
         ("Start Lesson",  "I'm ready to learn. Where should we start based on my background?"),
@@ -277,11 +283,14 @@ def ask_claude(system_prompt, history, user_message, tab_name):
 # ─────────────────────────────────────────────
 # AGENTIC LOOP
 # ─────────────────────────────────────────────
-def run_agent_loop(goal, stream_callback, done_callback):
+def run_agent_loop(goal, stream_callback, done_callback, test_mode=False):
     """
     Run the real job-agent loop in a background thread so the UI stays
     responsive.  stream_callback(text) is called for each line of the
     live trace; done_callback() is called when the run finishes.
+
+    test_mode=True: uses Haiku planner, 4 iterations, skips fit analysis
+    to minimize token cost while testing loop mechanics.
     """
     if not _AGENT_AVAILABLE:
         stream_callback(f"Agent unavailable — could not import job-agent "
@@ -292,7 +301,16 @@ def run_agent_loop(goal, stream_callback, done_callback):
 
     def agent_thread():
         try:
-            _run_agent(goal, stream_callback=stream_callback)
+            if test_mode:
+                _run_agent(
+                    goal,
+                    stream_callback=stream_callback,
+                    skip_fit=True,
+                    planner_model=TEST_PLANNER_MODEL,
+                    max_iterations=TEST_MAX_ITERATIONS,
+                )
+            else:
+                _run_agent(goal, stream_callback=stream_callback)
         except Exception as e:
             stream_callback(f"\nAgent error: {e}\n")
         finally:
@@ -304,11 +322,12 @@ def run_agent_loop(goal, stream_callback, done_callback):
 # CHAT TAB
 # ─────────────────────────────────────────────
 class ChatTab:
-    def __init__(self, parent, name, system_prompt):
+    def __init__(self, parent, name, system_prompt, test_mode_var=None):
         self.name          = name
         self.system_prompt = system_prompt
         self.accent        = TAB_ACCENTS[name]
         self.history       = []
+        self.test_mode_var = test_mode_var
 
         self.frame = tk.Frame(parent, bg=BG_DARK)
 
@@ -394,8 +413,9 @@ class ChatTab:
 
     def _run_agent(self):
         """Prompt for goal and kick off agentic loop."""
+        test_mode = self.test_mode_var.get() if self.test_mode_var else False
         goal = simpledialog.askstring(
-            "Run Agent",
+            "Run Agent" + (" [TEST MODE]" if test_mode else ""),
             "Enter your search goal:",
             initialvalue="Find LoadRunner and Agentic AI roles matching my profile",
             parent=self.frame
@@ -403,10 +423,11 @@ class ChatTab:
         if not goal:
             return
 
-        # Print agent header into chat
+        # Print agent header into chat (show mode so it's always visible in log)
         self.chat.configure(state=tk.NORMAL)
         ts = datetime.now().strftime("%I:%M %p")
-        self.chat.insert(tk.END, f"\n  Agent  {ts}\n", "agent_hdr")
+        mode_tag = "  [TEST: Haiku · 4 iter · no fit]" if test_mode else ""
+        self.chat.insert(tk.END, f"\n  Agent  {ts}{mode_tag}\n", "agent_hdr")
         self.chat.configure(state=tk.DISABLED)
 
         def stream(text):
@@ -417,7 +438,52 @@ class ChatTab:
                 "\nAgent run complete.\n"
             ))
 
-        run_agent_loop(goal, stream, done)
+        run_agent_loop(goal, stream, done, test_mode=test_mode)
+
+    def _email_results(self):
+        """Load last_run.json and send the HTML digest email."""
+        import json as _json
+        last_run = os.path.join(_JOB_AGENT_DIR, "last_run.json")
+        if not os.path.exists(last_run):
+            self._add_message(AGENT_NAMES[self.name],
+                "No agent run found yet — run the agent first, then email.", "bot")
+            return
+
+        try:
+            with open(last_run, "r", encoding="utf-8") as f:
+                data = _json.load(f)
+            jobs = data.get("jobs", [])
+            goal = data.get("goal", "")
+        except Exception as e:
+            self._add_message(AGENT_NAMES[self.name],
+                f"Could not read last run: {e}", "bot")
+            return
+
+        if not jobs:
+            self._add_message(AGENT_NAMES[self.name],
+                "Last agent run had no results to email.", "bot")
+            return
+
+        self._add_message(AGENT_NAMES[self.name],
+            f"Generating cover letters and sending digest of {len(jobs)} job(s)...", "bot")
+
+        def send_worker():
+            try:
+                from tools.cover_letter import generate_cover_letters
+                from tools.email_results import send_digest
+
+                class _State:
+                    def __init__(self, j): self.jobs = j
+
+                generate_cover_letters(_State(jobs))
+                result = send_digest(jobs, goal=goal)
+                msg = result.get("note", "Done.")
+            except Exception as e:
+                msg = f"Email error: {e}"
+            self.frame.after(0, lambda m=msg: self._add_message(
+                AGENT_NAMES[self.name], m, "bot"))
+
+        threading.Thread(target=send_worker, daemon=True).start()
 
     def _send(self):
         msg = self.input.get("1.0", tk.END).strip()
@@ -436,6 +502,10 @@ class ChatTab:
 
         if msg == "RUN_AGENT":
             self._run_agent()
+            return
+
+        if msg == "EMAIL_RESULTS":
+            self._email_results()
             return
 
         self._add_message("Hans", msg, "user")
@@ -484,6 +554,7 @@ class AgentHub:
         sh = self.root.winfo_screenheight()
         self.root.geometry(f"580x720+{sw//2 - 290}+{sh//2 - 360}")
 
+        self.test_mode_var = tk.BooleanVar(value=False)
         self._build_ui()
 
     def _build_ui(self):
@@ -501,6 +572,17 @@ class AgentHub:
         badge = f"{len(jobs)} jobs today" if jobs else "no jobs yet"
         tk.Label(header, text=badge, font=("Courier New", 8),
                  fg=TAB_ACCENTS["Job Search"], bg=BG_PANEL).pack(side=tk.RIGHT, padx=16, pady=20)
+
+        tk.Checkbutton(
+            header, text="TEST MODE",
+            variable=self.test_mode_var,
+            font=("Courier New", 8, "bold"),
+            fg=TEST_MODE_COLOR, bg=BG_PANEL,
+            selectcolor=BG_INPUT,
+            activebackground=BG_PANEL,
+            activeforeground=TEST_MODE_COLOR,
+            relief=tk.FLAT, cursor="hand2",
+        ).pack(side=tk.RIGHT, padx=(0, 4), pady=16)
 
         tk.Frame(self.root, bg=BORDER, height=1).pack(fill=tk.X)
 
@@ -524,7 +606,7 @@ class AgentHub:
         ]
 
         for name, prompt in tabs:
-            tab = ChatTab(notebook, name, prompt)
+            tab = ChatTab(notebook, name, prompt, test_mode_var=self.test_mode_var)
             notebook.add(tab.frame, text=f"  {name}  ")
 
     def run(self):
