@@ -36,6 +36,22 @@ CLAUDE_MODEL      = "claude-sonnet-4-6"
 CLAUDE_MAX_TOKENS = 1024
 
 # ─────────────────────────────────────────────
+# JOB-AGENT IMPORT
+# job-agent/ lives one level up from this file.
+# ─────────────────────────────────────────────
+_JOB_AGENT_DIR = os.path.normpath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "job-agent")
+)
+if _JOB_AGENT_DIR not in sys.path:
+    sys.path.insert(0, _JOB_AGENT_DIR)
+
+try:
+    from agent import run_agent as _run_agent
+    _AGENT_AVAILABLE = True
+except Exception as _agent_import_err:
+    _AGENT_AVAILABLE = False
+
+# ─────────────────────────────────────────────
 # SYSTEM PROMPTS
 # ─────────────────────────────────────────────
 CLAUDIO_PROMPT = """You are Claudio, a personal job search assistant for Hans Richardson.
@@ -259,46 +275,28 @@ def ask_claude(system_prompt, history, user_message, tab_name):
         return f"Connection error: {e}"
 
 # ─────────────────────────────────────────────
-# AGENTIC LOOP STUB
-# Replace run_agent_loop internals once job-agent module is built.
-# The stream_callback and done_callback interfaces stay the same.
+# AGENTIC LOOP
 # ─────────────────────────────────────────────
 def run_agent_loop(goal, stream_callback, done_callback):
     """
-    Stub agentic loop simulating observe->plan->act->observe cycle.
-    Wire real job-agent module here once built.
+    Run the real job-agent loop in a background thread so the UI stays
+    responsive.  stream_callback(text) is called for each line of the
+    live trace; done_callback() is called when the run finishes.
     """
-    import time
+    if not _AGENT_AVAILABLE:
+        stream_callback(f"Agent unavailable — could not import job-agent "
+                        f"from {_JOB_AGENT_DIR}\n")
+        stream_callback(f"Error: {_agent_import_err}\n")
+        done_callback()
+        return
 
     def agent_thread():
-        stream_callback(f"Goal: {goal}\n")
-        time.sleep(0.5)
-
-        stream_callback("\nIteration 1: Deciding first action...")
-        time.sleep(0.8)
-        stream_callback("\nIteration 1: Searching Adzuna for LoadRunner and AI roles...")
-        time.sleep(1.0)
-        stream_callback("\nIteration 1: Results retrieved. Scoring...")
-        time.sleep(0.8)
-
-        stream_callback("\n\nIteration 2: Evaluating result quality...")
-        time.sleep(0.8)
-        stream_callback("\nIteration 2: Results thin. Expanding to Serper...")
-        time.sleep(1.0)
-        stream_callback("\nIteration 2: Combined results scored.")
-        time.sleep(0.5)
-
-        stream_callback("\n\nIteration 3: Running fit analysis on top matches...")
-        time.sleep(1.2)
-        stream_callback("\nIteration 3: Analysis complete. Sufficient results. Stopping.")
-        time.sleep(0.5)
-
-        stream_callback("\n\n--- Agent Report (Stub) ---")
-        stream_callback("\nReal job-agent module will be wired here once built.")
-        stream_callback(f"\nGoal executed: {goal}")
-        stream_callback("\n---------------------------\n")
-
-        done_callback()
+        try:
+            _run_agent(goal, stream_callback=stream_callback)
+        except Exception as e:
+            stream_callback(f"\nAgent error: {e}\n")
+        finally:
+            done_callback()
 
     threading.Thread(target=agent_thread, daemon=True).start()
 

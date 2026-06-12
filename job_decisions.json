@@ -3807,5 +3807,116 @@
       "raw_decision": "Too Senior",
       "timestamp": "2026-06-10 23:00"
     }
+  ],
+  "2026-06-11": [
+    {
+      "job_id": "b9bc51fe0b",
+      "number": "1",
+      "title": "Prompt Engineer",
+      "company": "Acclaim AI",
+      "track": "AI Engineering",
+      "score": 135,
+      "url": "https://remoteOK.com/remote-jobs/remote-prompt-engineer-acclaim-ai-1133274",
+      "matched_keywords": [
+        "AI-title:prompt engineer",
+        "ai agent",
+        "nlp",
+        "generative ai",
+        "gemini",
+        "prompt engineer",
+        "llm",
+        "sla",
+        "python",
+        "prompt engineering",
+        "agentic"
+      ],
+      "source": "RemoteOK",
+      "decision": "not_in_us",
+      "reason": "native to Portugal",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-11 23:00"
+    },
+    {
+      "job_id": "a13d03e180",
+      "number": "2",
+      "title": "Dijital Team - Agentic AI Developer - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 92,
+      "url": "https://jobs.lever.co/dijital-team-pty-ltd/89cd7af0-7167-4c24-a9da-9003dc0b7d20",
+      "matched_keywords": [
+        "agentic ai",
+        "agent framework",
+        "ai developer",
+        "rag",
+        "vector database",
+        "ai agent",
+        "AI-title:agentic ai developer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Columbia",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-11 23:00"
+    },
+    {
+      "job_id": "bfa5910855",
+      "number": "3",
+      "title": "Agentic AI Workflow Engineer Project Experience Program - Teal",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.tealhq.com/job/agentic-ai-workflow-engineer-project-experience-program_7ea1a204a79e1d75c98e8673a105949146227",
+      "matched_keywords": [
+        "agentic ai",
+        "AI-title:agentic",
+        "ai workflow",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Training program",
+      "raw_decision": "Other",
+      "timestamp": "2026-06-11 23:00"
+    },
+    {
+      "job_id": "42e2254dd8",
+      "number": "4",
+      "title": "AI prompt engineer Only w2 - Symphony Corporation - Remote - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/27c11a86-7106-4cf9-95e1-cebbf3ce94d1",
+      "matched_keywords": [
+        "prompt engineer",
+        "AI-title:prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "No longer available",
+      "raw_decision": "Other",
+      "timestamp": "2026-06-11 23:00"
+    },
+    {
+      "job_id": "3b672c217c",
+      "number": "5",
+      "title": "AI Agent Developer & Test - JBS Technologies - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/345805c5-bf9e-48aa-9be1-80ffc97d2518",
+      "matched_keywords": [
+        "ai agent developer",
+        "AI-title:ai agent",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-11 23:00"
+    }
   ]
 }
