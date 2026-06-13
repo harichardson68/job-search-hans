@@ -3918,5 +3918,107 @@
       "raw_decision": "",
       "timestamp": "2026-06-11 23:00"
     }
+  ],
+  "2026-06-12": [
+    {
+      "job_id": "9b31317d9f",
+      "number": "1",
+      "title": "Machine Learning Engineer at Scale.jobs - aijobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.aijobs.com/jobs/490130270-machine-learning-engineer",
+      "matched_keywords": [
+        "agentic ai",
+        "ai workflow",
+        "AI-title:machine learning engineer",
+        "machine learning engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-12 23:00"
+    },
+    {
+      "job_id": "6565899cde",
+      "number": "2",
+      "title": "Performance Tester - UNICOM TECHNOLOGIES INC - Remote - Dice",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 75,
+      "url": "https://www.dice.com/job-detail/46bf81d0-c4ac-427c-b42d-2fabe133751f",
+      "matched_keywords": [
+        "jmeter-only-penalty",
+        "performance testing",
+        "performance tester",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-12 23:00"
+    },
+    {
+      "job_id": "0c2d1cb32a",
+      "number": "3",
+      "title": "116+ CrewAI Developer Jobs (June 2026) - Agentic Engineering Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 69,
+      "url": "https://agentic-engineering-jobs.com/jobs/crewai",
+      "matched_keywords": [
+        "ai developer",
+        "sla",
+        "AI-title:ai developer",
+        "langchain developer",
+        "agentic",
+        "langchain"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-12 23:00"
+    },
+    {
+      "job_id": "ff6e9cbb00",
+      "number": "4",
+      "title": "AI Agent Developer in | Careers at US Remote Nationwide",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://careers-mci2.icims.com/jobs/50158/ai-agent-developer/job",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer",
+        "AI-title:ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-12 23:00"
+    },
+    {
+      "job_id": "52c41ca355",
+      "number": "5",
+      "title": "Azure AI Integration Engineer (Only W2) - Tekfortune Inc. - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/f2743421-0cdf-41ca-9538-7031a125eabc",
+      "matched_keywords": [
+        "ai integration engineer",
+        "AI-title:ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-12 23:00"
+    }
   ]
 }

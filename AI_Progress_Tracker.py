@@ -1,5 +1,5 @@
 # Hans Richardson - AI Engineering Progress Tracker
-# Updated: May 29, 2026 (evening)
+# Updated: June 12, 2026 (evening)
 # Share this file at the start of each Claude session for instant context!
 
 # ─────────────────────────────────────────────────────────────
@@ -22,9 +22,40 @@ GITHUB = {
     "username": "harichardson68",
     "repos": [
         {
+            "name": "job-agent",
+            "url": "github.com/harichardson68/job-agent",
+            "description": "FLAGSHIP AI PROJECT — autonomous agentic job search. Claude decides each action in an observe-plan-act loop (NOT a fixed pipeline). Built June 2026.",
+            "topics": ["python", "agentic-ai", "claude-api", "llm-tool-use", "ai-agents", "observability"],
+            "architecture": {
+                "agent.py": "the loop — plan -> act -> observe -> repeat until stop()",
+                "core/state.py": "run state: history, accumulated jobs, dedup, 15-iter safety cap",
+                "core/planner.py": "calls Claude for next action (forced JSON, fail-safe to stop)",
+                "core/logger.py": "streaming THINK/ACT/SEE reasoning trace -> console + GUI + logs/",
+                "tools/registry.py": "ONE dict generates the planner menu AND the function lookup",
+                "tools/search.py": "Adzuna + Serper, classify_location() (US-remote OR KC ~30min)",
+                "tools/score.py": "2-layer dedup (across-run + cross-source) -> tiered scoring -> rank",
+                "tools/analyze_fit.py": "LLM fit tiers (Excellent->Weak) + gap-flagging, top-5 cost cap",
+                "tools/cover_letter.py": "on-demand, chosen roles only",
+                "tools/email_results.py": "HTML digest — act from anywhere",
+                "config/": "goals.py, salary_config.py (LR $110k/$55hr hard, AI $90k/$45hr soft), watch_vectors.py (OPM/Oracle Federal HR 2.0 intel)",
+            },
+            "key_design": [
+                "Registry = single source of truth: add a tool in one place, menu + loop both get it",
+                "Planner is tool-agnostic — reads the generated menu, zero changes per new tool",
+                "Fail-safe by default: bad JSON / unknown tool / tool error -> safe stop, never crash/loop forever",
+                "Dev/prod TEST MODE toggle (Agent Hub): Haiku planner + 4-iter cap + skip fit = cheap iteration; default OFF",
+                "Track-aware AI seniority filter: drops Staff/Principal/Lead AI, lets borderline through to fit analysis",
+                "Cross-source dedup: company-gated + 75% title-ratio (catches 'Agentic AI Engineer' vs '...Platform Engineer', avoids false-merging 'AI Engineer' vs 'Senior AI Platform Engineer')",
+                "Human-in-the-loop by deliberate choice — NOT unsupervised self-modification",
+            ],
+            "status": "Working end-to-end, live in Agent Hub via 'Run Agent' button. README written. Pushed public June 12, 2026.",
+            "portfolio_role": "CENTERPIECE of AI portfolio. The agentic loop pipeline (job_search.py) and FLAPBOARD are supporting projects.",
+            "built_with": "Claude.ai as architect/PM + Claude Code (CLI) as file-level executor",
+        },
+        {
             "name": "job-search-hans",
             "url": "github.com/harichardson68/job-search-hans",
-            "description": "Automated performance engineering job search pipeline",
+            "description": "Automated performance engineering job search pipeline (deterministic — fixed sequence each run). Houses agent_hub.py which now calls job-agent's run_agent().",
             "topics": ["python", "job-search", "performance-testing", "loadrunner", "automation", "claude-api"],
         },
         {
@@ -292,12 +323,12 @@ AGENT_HUB = {
 # RESUME STATUS
 # ─────────────────────────────────────────────────────────────
 RESUME = {
-    "file": "Hans-Richardson-Performance_Engineer.docx",
-    "generator": "generate_resume.js",
-    "command": "cd C:/Users/haric/Jobsearch && node generate_resume.js",
-    "pages": 2,
-    "last_updated": "April 10, 2026",
-    "ats_score": "91%",
+    "file": "Hans-Richardson-Performance_AI_Engineer.docx (+ PDF version)",
+    "pages": 3,
+    "last_updated": "June 12, 2026",
+    "ats_score": "91%+",
+    "june_2026_update": "Reworked to feature job-agent (agentic loop) as flagship. Summary leads with 'building production AI agents + reliability/observability mindset'. Projects section rewritten around the loop/registry/observability/eval layer. Certs regrouped (AI/ML, Performance, Cloud & Foundations) with IBM track as umbrella. Plain human voice, no buzzword salad. Both .docx and .pdf generated.",
+    "two_versions_note": "Current version leans AI. A LoadRunner-leading variant may be worth making for performance-track applications.",
 }
 
 # ─────────────────────────────────────────────────────────────
@@ -350,7 +381,7 @@ IBM_COURSE_PROGRESS = {
     "key_insights": [
         "Supervised = labeled data, Unsupervised = unlabeled data",
         "Performance testing IS model training - same iterative process!",
-        "Threshold = SLA target (28 years of experience applies!)",
+        "Threshold = SLA target (24+ years of experience applies!)",
         "MLOps/AI Test Engineer roles are realistic targets for Hans",
         "Performance testing background is a COMPETITIVE ADVANTAGE in AI",
         "Exploratory K-Means at 100 records = data audit before committing to 300; matches the smoke-test-before-load-test pattern from performance engineering",
@@ -366,7 +397,11 @@ AI_SKILLS_HANDS_ON = {
     "Multi-Agent Architecture": {"level": "Practical", "evidence": "5-tab Agent Hub", "date": "March 29, 2026"},
     "REST API Integration": {"level": "Practical", "evidence": "6 job board APIs, Serper, Adzuna, USAJobs, Gmail SMTP, Google Sheets API, Google Custom Search", "date": "April 23, 2026"},
     "Python Automation": {"level": "Practical - Growing", "evidence": "job_search.py + evan_job_search.py + update_scoring.py - all production systems running daily", "date": "April 23, 2026"},
-    "Agentic Systems": {"level": "Practical", "evidence": "Self-improving feedback loop: email → Google Form → Google Sheets → midnight script → auto-patches job_search.py → git commit", "date": "April 23, 2026"},
+    "Agentic Systems (TRUE agentic loop)": {"level": "Practical - Strong", "evidence": "job-agent: Claude as decision-maker in observe-plan-act loop, tool registry, planner, streaming reasoning traces, 2-layer dedup, LLM fit-tiering. Ran live with unprompted query/track pivots. THIS is the real thing, not just a feedback loop.", "date": "June 12, 2026"},
+    "LLM Tool-Use / Orchestration": {"level": "Practical", "evidence": "job-agent registry pattern — one dict generates planner menu + function lookup; planner returns structured JSON tool calls Claude chooses each iteration", "date": "June 12, 2026"},
+    "AI Evaluation / Fit-Scoring": {"level": "Practical", "evidence": "analyze_fit.py — LLM tiers each match Excellent->Weak with honest single-gap callout; track-aware seniority capping; the perf-engineer eval crossover", "date": "June 12, 2026"},
+    "Reasoning-Trace Observability": {"level": "Practical", "evidence": "logger.py — THINK/ACT/SEE trace streamed live + saved per run; the trace IS the portfolio artifact", "date": "June 12, 2026"},
+    "Agentic Systems (legacy feedback loop)": {"level": "Practical", "evidence": "Self-improving loop: email -> Google Form -> Google Sheets -> midnight script -> auto-patches job_search.py -> git commit", "date": "April 23, 2026"},
     "Git / GitHub": {"level": "Practical", "evidence": "Two public repos with portfolio-grade READMEs, automated nightly commits from update scripts", "date": "April 23, 2026"},
     "RAG / Vector Search": {"level": "Practical", "evidence": "ChromaDB + sentence-transformers (all-MiniLM-L6-v2) wired into job_search.py — 92 decisions ingested, chroma_db folder live on disk", "date": "May 07, 2026"},
     "ChromaDB": {"level": "Practical", "evidence": "Local persistent vector store, upsert/query pipeline built and running nightly", "date": "May 07, 2026"},
@@ -420,38 +455,90 @@ PERF_TO_AI_VOCABULARY = {
 }
 
 INTERVIEW_TALKING_POINTS = [
+    # ── job-agent stories (June 2026) — lead with these, they're the strongest ──
     {
-        "question": "Tell me about your AI engineering experience",
-        "answer": """Built two fully autonomous job search pipelines using Python and the Claude API.
-Each system aggregates jobs from 6-8 sources daily, scores them with a multi-track weighted
-classification engine, generates AI cover letters, and emails a digest. A human-in-the-loop
-feedback system via Google Forms feeds a midnight script that reads decisions, auto-patches
-the source code, updates scoring weights, and commits everything to GitHub — fully autonomous.
-Also built a 5-tab multi-agent hub using the Claude API for job analysis, Python tutoring,
-AI coaching, LR-to-JMeter translation, and ATS resume scoring."""
+        "question": "Tell me about the most interesting thing you've built with AI / What's a real agentic system you've built?",
+        "answer": """I built an autonomous agentic job search where Claude — not a fixed
+script — decides each action in an observe-plan-act loop. Each iteration the planner sends Claude
+the goal, a summary of what's happened, and a menu of tools; Claude returns a structured decision
+about which tool to call and why. The loop runs it, folds the result into state, logs the reasoning,
+and repeats until Claude decides it has enough. The key difference from a normal pipeline: it ADAPTS.
+In a live run it searched LoadRunner roles, got nothing, and pivoted to broader performance queries
+on its own — a fixed pipeline would've just returned zero. The architecture is a tool registry that's
+the single source of truth (one dict generates both the planner's menu and the function lookup, so
+adding a tool is one entry), a forced-JSON planner that fails safe to 'stop' on any error, and a
+streaming THINK/ACT/SEE reasoning trace that's the real observability artifact."""
     },
     {
-        "question": "What's the most complex AI agent you've built?",
-        "answer": """An autonomous self-improving job search pipeline. It runs daily, sends an email
-digest, captures user decisions via Google Forms, and a midnight update script reads those
-decisions from Google Sheets, automatically patches filtering logic (blocking bad locations,
-sites, companies), updates scoring weights, and commits changes to GitHub. The system literally
-rewrites parts of its own source code based on human feedback, with Git as the audit trail.
-Built entirely in Python with Anthropic SDK, Google Sheets API, SMTP, and subprocess Git calls."""
+        "question": "Tell me about a hard technical problem you debugged",
+        "answer": """My agent's Adzuna search kept returning zero results while another source
+returned plenty for the same query. I diagnosed it methodically — confirmed the API was healthy and
+keys were valid, then inspected the actual requests. Root cause: Adzuna AND-matches every word in the
+query against the job's body text, and the planner was appending 'remote' — but remote postings rarely
+write 'remote' in the description, they put it in location metadata. So 'loadrunner remote' required
+both words present and matched almost nothing. The fix was a layered one: strip location words from the
+query before the API call AND steer the planner away from adding them — because location belongs in a
+separate filter, not the search text. It's the kind of bug where the obvious answer (bad keys, rate
+limit) is wrong and you have to actually read what the system is doing."""
     },
     {
-        "question": "How does your performance testing background apply to AI?",
-        "answer": """Testing AI model inference endpoints is the same as load testing web services.
-My observability stack (AppDynamics, Splunk, Grafana, Prometheus) maps directly to ML monitoring.
-Model training = performance tuning - same iterative process I've done for 28 years.
-I bring performance engineering expertise that most AI engineers simply don't have."""
+        "question": "Tell me about a time you caught a mistake before it caused damage / How do you think about AI safety in practice?",
+        "answer": """While fixing deduplication in my agent, the proposed fix passed the obvious
+test — it correctly merged two postings of the same job. But I caught that it would also FALSE-merge
+genuinely different roles: a generic 'AI Engineer' would collapse into 'Senior AI Platform Engineer'
+because one title's words were a subset of the other. A false merge silently loses a real job — worse
+than a duplicate. I tightened it to require a 75% word-overlap ratio, which catches the real duplicate
+but keeps distinct roles separate, and verified it against both cases. More broadly, I deliberately did
+NOT build self-modifying logic into the agent — it could rewrite its own scoring from patterns in past
+decisions, but unsupervised self-modification is hard to debug and prone to silent drift. I kept a
+human approving each change with a full audit trail. Knowing when NOT to automate is part of the
+engineering."""
+    },
+    {
+        "question": "How does your performance engineering background apply to AI?",
+        "answer": """Directly — AI systems are non-deterministic systems that need to prove they
+hold up, which is exactly what I've done for 14 years. My agent has a full observability layer:
+streaming reasoning traces, per-run logs, latency and cost awareness — that's performance-engineering
+instinct applied to LLM systems. The evaluation layer (tiered fit-scoring, honest gap analysis, the
+discipline of asking 'does this actually hold up' instead of trusting the happy path) is eval thinking
+I've done my whole career. I even built a dev/prod 'test mode' that swaps to a cheaper model and trims
+the loop so I could iterate cheaply and reserve full-cost runs for verification — measure cheap, spend
+deliberately. My observability stack (AppDynamics, Splunk, Grafana, Prometheus) maps straight to ML/LLM
+monitoring. I bring reliability and eval discipline most people pivoting into AI simply don't have."""
+    },
+    {
+        "question": "How do you work / what's your engineering process?",
+        "answer": """For the agent I used a two-tool workflow: I acted as architect and PM —
+making design decisions, holding the big-picture context, catching judgment calls — while using an
+agentic coding CLI (Claude Code) as the file-level executor. The interesting part is the division of
+labor: the executor is fast and good at finding bugs, but it makes locally-reasonable mistakes that
+miss broader context. I caught several before they shipped — the false-merge dedup fix, an over-rated
+job fit score — by reviewing its output against the design intent before committing. That's the same
+discipline as code review, and it's how a lot of AI-augmented engineering actually works now: the human
+holds judgment and architecture, the tool does the labor."""
+    },
+    # ── earlier talking points (pre-job-agent) ──
+    {
+        "question": "Tell me about your broader AI engineering portfolio",
+        "answer": """Beyond the agentic system, I built a production deterministic job-search
+pipeline (Python + Claude API) that aggregates 7-8 sources daily, scores with a multi-track weighted
+classifier, generates AI cover letters, and emails a digest — with a human-in-the-loop feedback system
+via Google Forms feeding a nightly script that auto-patches filter logic and commits to GitHub. I also
+built a 5-assistant desktop hub (Agent Hub) on the Claude API, and FLAPBOARD, a live Flask app with
+real flight pricing and price-drop email alerts. The agentic loop is the centerpiece; these show range."""
+    },
+    {
+        "question": "How does your performance testing background apply to AI? (short version)",
+        "answer": """Testing AI inference endpoints is the same as load testing web services.
+My observability stack maps directly to ML monitoring, and iterative model tuning is the same loop I've
+run for 24+ years in performance engineering. I bring expertise most AI engineers don't have."""
     },
     {
         "question": "Do you have startup experience?",
         "answer": """I run a side business (H&G Lighting) giving me direct early-stage exposure.
-My AI engineering work is self-directed and entrepreneurial — designed, built, and deployed
-production-grade autonomous systems without a team or infrastructure, which mirrors the
-scrappy, figure-it-out culture of early-stage startups."""
+My AI work is self-directed and entrepreneurial — I designed, built, and deployed production-grade
+autonomous systems solo, without a team or infrastructure, which mirrors the scrappy, figure-it-out
+culture of early-stage startups."""
     },
 ]
 
@@ -486,6 +573,38 @@ PERFORMANCE_CREDENTIALS = {
 # SESSION NOTES
 # ─────────────────────────────────────────────────────────────
 SESSION_NOTES = [
+    {
+        "date": "June 6-12, 2026",
+        "title": "BUILT job-agent — the agentic loop (AI portfolio centerpiece)",
+        "summary": "Designed and built a complete autonomous agentic job search from scratch, in a new separate repo, distinct from the job_search.py pipeline. Claude makes each decision in an observe-plan-act loop. Built with Claude.ai as architect/PM + Claude Code (CLI) as executor.",
+        "what_got_built": [
+            "core/state.py (spine), core/logger.py (THINK/ACT/SEE trace), core/planner.py (Claude picks next tool, forced JSON, fail-safe)",
+            "tools/registry.py (ONE dict -> menu + function lookup), search.py (Adzuna+Serper, classify_location), score.py (2-layer dedup + tiered scoring), analyze_fit.py (LLM tiers + gap-flagging), cover_letter.py, email_results.py",
+            "config/: goals.py, salary_config.py (LR $110k/$55hr HARD floor, AI $90k/$45hr SOFT floor), watch_vectors.py (OPM/Oracle Federal HR 2.0 $395.8M contract intel as first vector)",
+            "agent.py loop wired into Agent Hub 'Run Agent' button — streams real trace into Claudio's window",
+            "TEST MODE toggle: Haiku planner + 4-iter cap + skip fit for cheap dev iteration (default OFF = full Sonnet/prod)",
+        ],
+        "real_bugs_debugged": [
+            "Adzuna returned 0: it AND-matches every query word vs body text, so 'loadrunner remote' = 0. Fixed: strip location words before sending + registry steer. 'remote' belongs in classify_location, not the query.",
+            "Serper company-parsing: put 'ONLY W2' as a company. Fixed parser to strip employment-type junk, empty-string fallback not 'N/A'.",
+            "Dedup false-merge risk: first fix (word-subset) would merge 'AI Engineer' into 'Senior AI Platform Engineer'. Caught it before commit. Final: company-gated + 75% title-ratio.",
+            "Track-aware AI seniority: 'senior' is GOOD on LoadRunner track, BAD on AI track. Drops Staff/Principal/Lead AI, lets borderline Senior AI through to fit analysis.",
+        ],
+        "key_lessons": [
+            "Agentic = Claude decides the SEQUENCE; hardcoded scoring is correct (policy, not intelligence). Intelligence in decisions, consistency in policies.",
+            "Human-in-the-loop by deliberate choice — parked unsupervised self-modification (Option 3). Knowing NOT to build it is the senior judgment.",
+            "Two-tool workflow: Claude.ai = architect (context, judgment, catches false-merges), Claude Code = executor (file-level, fast). Caught multiple judgment errors by reviewing Claude Code output before commit.",
+            "Cross-source dedup logic proven but rarely WITNESSED (Adzuna returns so little it rarely overlaps Serper). Across-run dedup fires reliably (seen-before N).",
+        ],
+        "shipped": "Pushed public to github.com/harichardson68/job-agent June 12 with portfolio-grade README. Resume reworked to feature it. .env/.claude/last_run.json/cl_debug.txt correctly gitignored.",
+        "next": [
+            "Remote/headless execution (cloud-triggered, emails results) — run_agent() is already GUI-independent",
+            "Outcome-driven LEARNING LOOP: logged decisions feed scoring refinements a HUMAN approves (the K-Means/pattern-recognition idea, matured — pattern engine vs the propose-approve loop are decoupled, don't gate one on the other)",
+            "Liveness check on top picks (FlairTech-type: live-looking snippet, dead page — only a fetch catches it)",
+            "AWS Bedrock + Lambda = the clear next SKILL target (job postings for agentic-platform roles in Hans's niche all want it)",
+            "Possible LoadRunner-leading resume variant for performance-track apps",
+        ],
+    },
     {
         "date": "May 29, 2026",
         "accomplishments": [
@@ -873,7 +992,7 @@ SESSION_NOTES = [
             "Decision tree nodes = decision points (what get_job_track() builds manually)",
             "Google Custom Search API requires both API key AND CX from same Google project",
             "Adzuna 'where: remote' is invalid — must filter remote in code after fetch",
-            "28 years of performance engineering IS AI engineering vocabulary — just different names",
+            "24+ years of enterprise IT (14 in performance engineering) IS AI engineering vocabulary — just different names",
         ],
         "next_steps": [
             "Set up GitHub repo — completed April 23",
