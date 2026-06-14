@@ -1,0 +1,109 @@
+{
+  "date": "2026-06-14",
+  "jobs": [
+    {
+      "job_id": "bf079113f9",
+      "number": 1,
+      "number_display": "1",
+      "title": "Serotonin - AI Workflow Engineer - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://jobs.lever.co/serotonin/eca20c47-3b04-44e9-a45e-34882833015b",
+      "matched_keywords": [
+        "prompt engineer",
+        "prompt engineering",
+        "ai workflow",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "33f51805ce",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Agent Developer at N/A - Removiet",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://removiet.com/jobs/ai-agent-developer-na-fmnhfp",
+      "matched_keywords": [
+        "ai agent developer",
+        "llm",
+        "ai agent",
+        "AI-title:ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "26ef9fa653",
+      "number": 3,
+      "number_display": "3",
+      "title": "Agentic Engineer - Netomi - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.lever.co/netomi/ba379f47-091b-4f2d-82d3-e97a0821227e",
+      "matched_keywords": [
+        "prompt engineer",
+        "prompt engineering",
+        "agentic",
+        "AI-title:agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "675f6437c8",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI/ML Engineer - Frontier Technology Inc - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/659e71d8-dcc3-4ae2-ae29-1f71fc689ecd",
+      "matched_keywords": [
+        "ml engineer",
+        "mlops engineer",
+        "AI-title:ml engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "63648d4525",
+      "number": 5,
+      "number_display": "5",
+      "title": "We are hiring an AI Automation Engineer | $90k-$160k",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://community.make.com/t/we-are-hiring-an-ai-automation-engineer-90k-160k/110737",
+      "matched_keywords": [
+        "ai workflow",
+        "ai automation engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "5abd5e98f1",
+      "number": 6,
+      "number_display": "6",
+      "title": "Junior ML Engineer",
+      "company": "Work Force Nexus",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteOK.com/remote-jobs/remote-junior-ml-engineer-work-force-nexus-1133365",
+      "matched_keywords": [
+        "ml engineer",
+        "AI-title:ml engineer"
+      ],
+      "source": "RemoteOK",
+      "is_amazon": false
+    }
+  ]
+}
