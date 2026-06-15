@@ -3878,7 +3878,9 @@
       "decision": "other",
       "reason": "Training program",
       "raw_decision": "Other",
-      "timestamp": "2026-06-11 23:00"
+      "timestamp": "2026-06-11 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-15"
     },
     {
       "job_id": "42e2254dd8",
@@ -3897,7 +3899,9 @@
       "decision": "other",
       "reason": "No longer available",
       "raw_decision": "Other",
-      "timestamp": "2026-06-11 23:00"
+      "timestamp": "2026-06-11 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-15"
     },
     {
       "job_id": "3b672c217c",
