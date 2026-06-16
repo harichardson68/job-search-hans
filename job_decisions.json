@@ -4220,5 +4220,31 @@
       "raw_decision": "",
       "timestamp": "2026-06-15 23:00"
     }
+  ],
+  "2026-06-16": [
+    {
+      "job_id": "6452593144",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Vendor Agentic Experience - \u804c\u4f4dID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/zh/jobs/10430188/software-development-engineer-vendor-agentic-experience",
+      "matched_keywords": [
+        "AI-title:agentic",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-16T12:04:32.858529"
+    }
   ]
 }
