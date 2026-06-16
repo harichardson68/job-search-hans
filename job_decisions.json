@@ -4162,5 +4162,63 @@
       "raw_decision": "Search Page Listing",
       "timestamp": "2026-06-14 23:00"
     }
+  ],
+  "2026-06-15": [
+    {
+      "job_id": "47be620ac4",
+      "number": "1",
+      "title": "Associate AI Engineer - T-Mobile - Overland Park, KS, US | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/cfa58087-d04c-4b93-8fb8-393c9c5450e6",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer",
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-15 23:00"
+    },
+    {
+      "job_id": "d915a76e39",
+      "number": "2",
+      "title": "Agentic AI Software Engineer - Remote (75% travel potential) - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/2fc092cc-63c5-4a0d-a2c2-25fea74ebd9d",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-15 23:00"
+    },
+    {
+      "job_id": "7103145dbb",
+      "number": "3",
+      "title": "Performance Engineer- Austin TX | Quickswoop",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://quickswoop.infinityfree.me/job/performance-engineer-austin-tx",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-15 23:00"
+    }
   ]
 }
