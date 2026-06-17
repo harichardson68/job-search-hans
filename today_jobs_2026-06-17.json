@@ -1,0 +1,74 @@
+{
+  "date": "2026-06-17",
+  "jobs": [
+    {
+      "job_id": "09cd49e82d",
+      "number": 1,
+      "number_display": "1",
+      "title": "Senior Performance Engineer / Performance Tester | Remotepulse",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 190,
+      "url": "https://remotepulse.likesyou.org/job/senior-performance-engineer-performance-tester",
+      "matched_keywords": [
+        "performance engineer",
+        "performance tester",
+        "neoload",
+        "loadrunner",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "e8a3aea11e",
+      "number": 2,
+      "number_display": "2",
+      "title": "AI Automation Engineer - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://themutualgroup.wd108.myworkdayjobs.com/TMG/job/Iowa---TMG-Home-Office/AI-Automation-Engineer_R-100220",
+      "matched_keywords": [
+        "ai automation engineer",
+        "ai solutions engineer",
+        "AI-title:ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "e0e2f1bd8c",
+      "number": 3,
+      "number_display": "3",
+      "title": "Agentic AI Architect & Value Engineer - Job Listings at Granicus, LLC",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://careers-granicus.icims.com/jobs/10291/agentic-ai-architect-%26-value-engineer/job?in_iframe=1",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "AI-title:agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    },
+    {
+      "job_id": "395f7da834",
+      "number": 4,
+      "number_display": "4",
+      "title": "AI Engineer (Life Sciences & Healthcare) - Greenhouse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://boards.greenhouse.io/coherentsolutions/jobs/4896325101",
+      "matched_keywords": [
+        "AI-title:ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false
+    }
+  ]
+}
