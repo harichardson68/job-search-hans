@@ -366,7 +366,7 @@ class FunnelCounter:
     Stages mirror the actual filter order used by the source functions:
       raw → recency → title → level → score → us_remote → blocked → kept
     Plus post-aggregation stages:
-      → minscore → cross_dedup → seen_dedup → final
+      → minscore → cross_dedup → seen_dedup → fit_hard_disqualify → final
     """
     def __init__(self):
         # Per-stage cumulative counts
@@ -380,8 +380,11 @@ class FunnelCounter:
             "after_blocked": 0, # Survived blocked-site/company check
             "kept_by_sources": 0,  # Total returned by all sources (before main() filters)
             "after_minscore": 0,   # Survived per-track min score thresholds
+            "after_cobol_hybrid": 0,  # Survived COBOL hybrid pay-tier filter ($55/hr rule)
+            "after_pay_floor": 0,  # Survived Track 4 pay-floor filter (other tracks pass through)
             "after_cross_dedup": 0,  # Survived cross-source dedup
             "after_seen_dedup": 0,   # Survived seen_jobs.json dedup
+            "after_fit_hard_disqualify": 0,  # Survived AI-track fit-eval hard disqualify drop
             "final": 0,            # Made it to the email
         }
         # Per-source raw count for context (not used in main funnel, but useful)
@@ -416,8 +419,11 @@ class FunnelCounter:
             ("after_us",         "US/remote filter"),
             ("after_blocked",    "Blocked site/company filter"),
             ("after_minscore",   "Min score threshold"),
+            ("after_cobol_hybrid", "COBOL hybrid pay-tier ($55/hr)"),
+            ("after_pay_floor",  "Track 4 pay floor"),
             ("after_cross_dedup", "Cross-source dedup"),
             ("after_seen_dedup",  "Already-seen dedup"),
+            ("after_fit_hard_disqualify", "AI fit hard-disqualify"),
             ("final",            "Final"),
         ]
         biggest_label = None
@@ -686,6 +692,105 @@ KC_METRO_LOCATIONS = {
     # Generic KC references
     "kansas city metro", "kc metro", "greater kansas city",
 }
+
+# ─── PAY FLOOR PARSING (Track 4: Remote Income Floor) ─────────
+# Strict filter per Hans's explicit choice: if pay can't be parsed from the
+# listing text at all, OR it parses below the floor, the job is dropped.
+# Real tradeoff acknowledged: a lot of legitimate remote QA postings don't
+# list pay at all, so this WILL cut the candidate pool down hard. Flagged
+# to Hans — if the pool ends up too thin after a few runs, loosening this
+# to a soft filter (show pay-unknown jobs too) is a one-line change.
+REMOTE_FLOOR_MIN_HOURLY  = 30.0
+REMOTE_FLOOR_MIN_ANNUAL  = REMOTE_FLOOR_MIN_HOURLY * 2080  # ~$62,400/yr equivalent
+
+def _parse_pay_to_hourly(text):
+    """
+    Try to extract an hourly-rate-equivalent number from free-text pay info
+    (salary field, title, or description). Returns a float (highest
+    plausible hourly rate found) or None if nothing parseable.
+
+    Handles:
+      - Explicit hourly: "$28/hr", "$28 per hour", "$28-32/hour"
+      - Annual salary, converted to hourly equivalent at 2080 hrs/yr:
+        "$65,000/year", "$60K-$70K", "$65,000 annually"
+    Deliberately conservative: if a range is given, uses the HIGH end,
+    since "floor" filtering should give the benefit of the doubt on
+    ranges rather than reject a $28-38/hr posting outright.
+    """
+    if not text:
+        return None
+    t = text.lower().replace(",", "")
+
+    # Hourly patterns: $XX/hr, $XX per hour, $XX-$YY/hour, $XX/hour
+    hourly_matches = re.findall(
+        r"\$\s?(\d+(?:\.\d+)?)\s*(?:-|to)?\s*\$?\s?(\d+(?:\.\d+)?)?\s*/?\s*(?:hr|hour|per hour|/hr|/hour)",
+        t,
+    )
+    hourly_candidates = []
+    for low, high in hourly_matches:
+        vals = [float(v) for v in (low, high) if v]
+        if vals:
+            hourly_candidates.append(max(vals))
+    if hourly_candidates:
+        return max(hourly_candidates)
+
+    # Annual patterns: require an explicit salary/year qualifier nearby so we
+    # don't mistake a signing bonus, referral bonus, or unrelated dollar
+    # figure for the actual pay rate. Window-based: look for "$XXk"-style
+    # numbers that have a qualifier word within ~25 chars on either side.
+    annual_qualifiers = r"(?:salary|/\s?yr|/\s?year|per year|annually|annual|base pay|base salary|compensation)"
+    annual_matches = re.findall(
+        r"\$\s?(\d+(?:\.\d+)?)\s*k?\s*(?:-|to)?\s*\$?\s?(\d+(?:\.\d+)?)?\s*k?\s*"
+        rf"(?:[^.$]{{0,25}}{annual_qualifiers})",
+        t,
+    )
+    annual_candidates = []
+    for low, high in annual_matches:
+        for v in (low, high):
+            if not v:
+                continue
+            val = float(v)
+            # Heuristic: if the raw number is small (e.g. "65" meaning "65k"),
+            # and the original text had a 'k' suffix nearby, scale it up.
+            # Simpler/safer approach: if value < 1000, assume it's already
+            # in thousands (typical "$65k" / "$65,000" shorthand written as
+            # "65"); otherwise treat as already a full annual figure.
+            if val < 1000:
+                val *= 1000
+            annual_candidates.append(val)
+    if annual_candidates:
+        best_annual = max(annual_candidates)
+        # Sanity bound: ignore clearly bogus parses (e.g. > $500k or < $10k
+        # for what's supposed to be an entry-level QA role; likely a parse
+        # artifact, not real pay data).
+        if 10_000 <= best_annual <= 500_000:
+            return best_annual / 2080.0
+
+    return None
+
+
+def meets_pay_floor(job):
+    """
+    Returns True only if a pay figure can be parsed from the job's salary
+    field, title, or description, AND that figure meets or exceeds the
+    $30/hr floor. Strict per Hans's choice — no parseable pay = rejected.
+    """
+    # Fast-path rejection: explicit low hourly rate signals
+    haystack = (
+        (job.get("salary", "") or "") + " " +
+        (job.get("title", "") or "") + " " +
+        (job.get("description", "") or "")
+    ).lower()
+    if any(sig in haystack for sig in REMOTE_FLOOR_LOW_PAY_SIGNALS):
+        return False
+
+    for field in (job.get("salary", ""), job.get("title", ""), job.get("description", "")):
+        hourly = _parse_pay_to_hourly(field)
+        if hourly is not None:
+            return hourly >= REMOTE_FLOOR_MIN_HOURLY
+    # Nothing parseable anywhere — strict filter means reject.
+    return False
+
 
 def is_kc_metro_local(title, description, location=""):
     """Return True if the job's location/text suggests a Kansas City metro
@@ -1032,11 +1137,26 @@ GMAIL_ADDRESS  = os.environ.get("GMAIL_ADDRESS", "")
 GMAIL_APP_PASS = os.environ.get("GMAIL_APP_PASS", "")
 EMAIL_TO       = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
 
-# ─── FIT ANALYSIS (Claude-powered per-job blurb) ─────────────
+# ─── FIT ANALYSIS (Claude-powered per-job blurb + gate) ──────
 # Set to False to disable per-job fit blurbs in email digest.
-# Each call is ~1 API hit per top-tier job (15 jobs/day max).
-GENERATE_FIT_ANALYSIS = True
-FIT_ANALYSIS_MAX_JOBS = 15  # Run on all regular digest jobs (matches top_jobs slice)
+# Fit analysis now runs on ALL AI-track jobs that pass filters (not just
+# top 15) BEFORE the top-15 cut, because fit tier is now part of the sort
+# key — a job can't be correctly ranked into the top 15 until we know
+# whether it's a real chance or a pipe dream. Uses Haiku (cheap, fast,
+# not latency-sensitive — this runs behind the scenes, not in real time)
+# rather than Sonnet, since this is a 5-bucket classification task, not
+# creative writing. Cover letters stay on Sonnet.
+GENERATE_FIT_ANALYSIS   = True
+FIT_ANALYSIS_MODEL      = "claude-haiku-4-5-20251001"
+FIT_ANALYSIS_TRACKS     = {"AI Engineering", "QA Automation", "Remote Income Floor"}  # tracks that get fit-eval/gating; Performance Engineering excluded (keyword match there IS reliable fit signal already)
+HARD_DISQUALIFY_TERMS   = [
+    # If these appear in the fit_reason/description signal, drop silently —
+    # no realistic chance, not worth a slot in the digest at all.
+    "phd required", "phd preferred", "publication required",
+    "published research", "research scientist", "train models from scratch",
+    "build models from scratch", "novel model architecture",
+    "pure ml research", "applied scientist",
+]
 
 SEARCH_KEYWORDS = [
     # Track 1: Performance Engineering (core)
@@ -1159,6 +1279,47 @@ AI_BONUS_KEYWORDS = [
 ]
 HIGH_VALUE_KEYWORDS = PERF_HIGH_KEYWORDS + QA_HIGH_KEYWORDS + AI_HIGH_KEYWORDS + COBOL_HIGH_KEYWORDS
 BONUS_KEYWORDS      = PERF_BONUS_KEYWORDS + QA_BONUS_KEYWORDS + AI_BONUS_KEYWORDS + COBOL_BONUS_KEYWORDS
+
+# ─── TRACK 4: REMOTE INCOME FLOOR ─────────────────────────────
+# Purpose is different from the other 3 tracks: this is NOT about career
+# direction, it's about getting Hans out of in-person warehouse work onto
+# something remote that pays at least $30/hr, broad enough to include
+# "will train" postings. Kept entirely separate from QA Automation/SDET
+# (that track's strict title list is untouched) — this is intentionally
+# wider and lower-bar.
+REMOTE_FLOOR_TITLE_KEYWORDS = [
+    # Generic/manual QA — explicitly broader than SDET_TITLE_KEYWORDS
+    "qa tester", "qa analyst", "qa specialist", "quality assurance tester",
+    "quality assurance analyst", "quality assurance specialist",
+    "manual qa", "manual tester", "software tester", "test analyst",
+    "qa engineer", "quality engineer", "test engineer",
+    # Automation tool-specific (tool exposure = realistic entry point)
+    "selenium", "cypress tester", "automation tester", "automation analyst",
+    "api tester", "api testing", "postman tester",
+    # Remote/entry framing common in "will train" postings
+    "remote qa", "work from home qa", "wfh qa", "entry level qa",
+    "junior qa", "associate qa", "qa trainee",
+    "no experience qa", "will train qa", "training provided qa",
+]
+REMOTE_FLOOR_HIGH_KEYWORDS = [
+    "manual testing", "test cases", "test case design", "bug tracking",
+    "regression testing", "functional testing", "uat", "user acceptance testing",
+    "selenium", "cypress", "postman", "api testing", "test plans",
+    "defect tracking", "black box testing", "exploratory testing",
+]
+REMOTE_FLOOR_BONUS_KEYWORDS = [
+    "jira", "testrail", "zephyr", "qtest", "agile", "scrum",
+    "sql", "python", "javascript", "ci/cd", "jenkins", "github actions",
+    "will train", "training provided", "no experience necessary",
+    "no prior experience required", "entry level welcome",
+]
+# Phrases that signal pay is well below the $30/hr floor even before we
+# try to parse exact numbers — fast-path rejection.
+REMOTE_FLOOR_LOW_PAY_SIGNALS = [
+    "$15/hr", "$16/hr", "$17/hr", "$18/hr", "$19/hr", "$20/hr",
+    "$21/hr", "$22/hr", "$23/hr", "$24/hr", "$25/hr", "$26/hr",
+    "$27/hr", "$28/hr", "$29/hr",
+]
 
 #
 # STRICT TITLE FILTER
@@ -1286,10 +1447,16 @@ def is_relevant_title(title):
     for pattern in search_page_patterns:
         if re.search(pattern, t):
             return False
-    # First check it has a required keyword
-    if not any(kw in t for kw in REQUIRED_TITLE_KEYWORDS):
+    # First check it has a required keyword — EITHER the existing strict
+    # list (Performance/AI/COBOL/SDET) OR the broader Remote Floor list
+    # (Track 4 — manual QA/automation/will-train, intentionally wider).
+    has_required = any(kw in t for kw in REQUIRED_TITLE_KEYWORDS)
+    has_remote_floor = any(kw in t for kw in REMOTE_FLOOR_TITLE_KEYWORDS)
+    if not (has_required or has_remote_floor):
         return False
-    # Then make sure it is not a management role
+    # Then make sure it is not a management role — shared exclusion list
+    # applies to every track, including Remote Floor (e.g. "QA Manager"
+    # should be rejected here too).
     if any(excl in t for excl in EXCLUDED_TITLE_TERMS):
         return False
     return True
@@ -1398,6 +1565,29 @@ def get_job_track(title, description):
         )
         return "QA Automation", level_ok
 
+    # ── Track 4: Remote Income Floor ────────────────────────────
+    # Checked AFTER AI/SDET/QA-hybrid (those are higher-priority, more
+    # specific matches and should never get reclassified down into this
+    # broader bucket). This track exists for relief, not career direction —
+    # broad manual QA / automation-tool / will-train postings, PLUS COBOL
+    # (Hans has the experience; COBOL was previously falling through to
+    # Performance Engineering with no real track of its own). Senior-only
+    # roles are excluded here too (this track is meant to be an accessible
+    # entry point, not a senior IC role) — except COBOL, where Hans's
+    # actual 24+ years includes COBOL/CICS depth, so seniority isn't a
+    # disqualifier for that subset.
+    is_cobol = any(kw in text for kw in COBOL_HIGH_KEYWORDS)
+    is_remote_floor = any(kw in t for kw in REMOTE_FLOOR_TITLE_KEYWORDS) or \
+                       any(kw in text for kw in REMOTE_FLOOR_HIGH_KEYWORDS)
+    if is_cobol:
+        # No seniority exclusion for COBOL — Hans's background covers it.
+        return "Remote Income Floor", True
+    if is_remote_floor:
+        is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "manager"])
+        if is_senior:
+            return "Remote Income Floor", False
+        return "Remote Income Floor", True
+
     # Performance Engineering - Senior OK only if LoadRunner/VuGen/LRE mentioned
     is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead", "principal", "staff", "director", "head of", "vp"])
     has_loadrunner = any(kw in text for kw in ["loadrunner", "vugen", "lre", "load runner", "vuser"])
@@ -1489,15 +1679,38 @@ def score_job(title, description):
         if kw in text and kw not in matched:
             score += 2
             matched.append(kw)
+
+    # ── Track 4: Remote Income Floor scoring ─────────────────────
+    # Separate, modest point values — this track's purpose is "realistic
+    # and pays the floor," not "maximize keyword density." 25pts in title
+    # is enough to clear the per-track MIN_SCORES threshold on its own.
+    for kw in REMOTE_FLOOR_TITLE_KEYWORDS:
+        if kw in t and kw not in matched:
+            score += 25
+            matched.append(f"remote-floor-title:{kw}")
+            break  # only count once, same pattern as AI_TITLE_PRIORITY
+    for kw in REMOTE_FLOOR_HIGH_KEYWORDS:
+        if kw in text and kw not in matched:
+            score += 15
+            matched.append(kw)
+    for kw in REMOTE_FLOOR_BONUS_KEYWORDS:
+        if kw in text and kw not in matched:
+            score += 3
+            matched.append(kw)
+
     return score, list(set(matched))
 
 
-def passes_filters(title, desc, posted, location, url_job, company, source_name):
+def passes_filters(title, desc, posted, location, url_job, company, source_name, salary=""):
     """
     Run a candidate through every filter stage and record the funnel count
     at each stage it survives. Returns:
       (passed: bool, score: int, matched: list, track: str)
     The job has already been counted in funnel.add_raw() before this is called.
+
+    salary is optional — defaults to "" for sources that don't pass it.
+    Pay-floor checking (Track 4 only) falls back to scanning title+description
+    for pay info if salary isn't supplied; it never raises on a missing salary.
 
     Uses short-circuit evaluation: as soon as a filter rejects, returns False
     without checking later stages.
@@ -1528,13 +1741,37 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name)
     # Accept if: (1) fully remote-US-eligible, OR
     #            (2) on-site/hybrid AND within KC metro commuting range
     # Reject hybrid/on-site jobs outside KC metro.
-    if not is_us_remote(title, desc, location):
+    # EXCEPTION: Track 4 (Remote Income Floor) gets NO hybrid/onsite
+    # carve-out at all, even for KC metro — the entire point of this track
+    # is "no commute, work from home, save gas, save the body." A KC-local
+    # hybrid QA role doesn't satisfy that goal even though it would for
+    # the other tracks.
+    # SUB-EXCEPTION (COBOL): Hans is willing to do KC-metro hybrid/onsite
+    # COBOL work IF it pays $55+/hr — but pay text isn't available at this
+    # stage (salary field is populated post-aggregation in main()). So
+    # COBOL jobs get the standard KC-metro carve-out treatment HERE (same
+    # as Performance/AI/QA — don't reject yet), and the real $55/hr-based
+    # accept/reject decision for hybrid COBOL jobs happens in main(),
+    # where job["salary"] actually exists.
+    is_cobol_job = any(kw in (title + " " + desc).lower() for kw in COBOL_HIGH_KEYWORDS)
+    if track == "Remote Income Floor" and not is_cobol_job:
+        if not is_us_remote(title, desc, location):
+            return False, score, matched, track
+    elif not is_us_remote(title, desc, location):
         # Failed remote check — last chance: is it KC-local hybrid/on-site?
         if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
-            pass  # KC-local hybrid/on-site is acceptable
+            pass  # KC-local hybrid/on-site is acceptable (final $/hr-based
+                   # decision for COBOL happens later in main())
         else:
             return False, score, matched, track
     funnel.record("after_us")
+
+    # NOTE: pay-floor checking for Track 4 (Remote Income Floor) happens
+    # post-aggregation in main(), not here — salary text isn't extracted
+    # from the raw source APIs until after passes_filters() runs and the
+    # job dict is built (same point MIN_SCORES per-track thresholds are
+    # applied). Doing it here would mean checking against title+description
+    # only, missing each source's actual salary field.
 
     # Stage: blocked site/company
     if is_blocked_site(url_job) or is_blocked_company(title, desc, company):
@@ -2597,8 +2834,10 @@ Write only the cover letter text, no subject line or extra commentary."""
     return prompt
 
 
-def _call_claude_api(prompt, max_tokens=1000):
-    """Shared Claude API call helper. Returns text on success, None on failure."""
+def _call_claude_api(prompt, max_tokens=1000, model="claude-sonnet-4-6"):
+    """Shared Claude API call helper. Returns text on success, None on failure.
+    model defaults to Sonnet (cover letters); pass FIT_ANALYSIS_MODEL for
+    cheaper classification-style calls like fit analysis."""
     if not CLAUDE_API_KEY:
         return None
     try:
@@ -2608,7 +2847,7 @@ def _call_claude_api(prompt, max_tokens=1000):
             "content-type": "application/json"
         }
         payload = {
-            "model": "claude-sonnet-4-6",
+            "model": model,
             "max_tokens": max_tokens,
             "messages": [{"role": "user", "content": prompt}]
         }
@@ -2642,7 +2881,8 @@ def generate_cover_letter_claude(job):
 
 
 def generate_cover_letter_template(job):
-    """Fallback template-based cover letter."""
+    """Fallback template-based cover letter — Performance/career-track flavor.
+    Used when Claude API fails for Performance/AI Engineering jobs."""
     skills_str = ", ".join(job["matched_keywords"][:5]) if job["matched_keywords"] else "LoadRunner, JMeter, NeoLoad"
     return f"""Dear Hiring Manager,
 
@@ -2658,8 +2898,71 @@ Lee's Summit, MO | linkedin.com/in/hans-richardson
 """
 
 
+def generate_cover_letter_qa_template(job):
+    """
+    Free, no-API-call template for income-track QA/testing jobs (Track 4:
+    Remote Income Floor, plus QA Automation). These jobs get volume over
+    precision — a solid generic pitch beats spending Sonnet tokens on
+    career-direction-quality tailoring for a relief-track role.
+    """
+    skills_str = ", ".join(job["matched_keywords"][:5]) if job.get("matched_keywords") else "manual testing, test case design, defect tracking"
+    return f"""Dear Hiring Manager,
+
+I'm writing to apply for the {job["title"]} role at {job["company"]}. With over 24 years of IT experience spanning software testing, quality assurance, and production support, I bring a steady, detail-oriented approach to {skills_str} that translates directly to this role.
+
+Throughout my career — including as a Senior Performance Test Engineer and earlier hands-on QA and development work — I've built test plans, tracked defects, and worked closely with development teams to ensure releases meet quality standards before they reach production. I'm comfortable picking up new tools quickly and have a strong track record of reliability and follow-through.
+
+I'm available immediately for remote work and would welcome the opportunity to bring that same reliability to your team.
+
+Best regards,
+Hans Richardson
+Lee's Summit, MO | linkedin.com/in/hans-richardson
+"""
+
+
+def generate_cover_letter_cobol_template(job):
+    """
+    Free, no-API-call template for income-track COBOL/mainframe jobs
+    (folded into Track 4: Remote Income Floor). Leads with early-career
+    COBOL/CICS experience — the actual differentiator for these roles.
+    """
+    skills_str = ", ".join(job["matched_keywords"][:5]) if job.get("matched_keywords") else "COBOL, CICS, mainframe systems"
+    return f"""Dear Hiring Manager,
+
+I'm writing to apply for the {job["title"]} role at {job["company"]}. I began my IT career as a COBOL/CICS programmer on enterprise mainframe systems, and that early foundation in {skills_str} has stayed with me through 24+ years in IT.
+
+While much of my recent work has been in performance testing and modern systems, I understand mainframe environments and enterprise batch/transaction processing at a level that most newer developers simply haven't been exposed to. That combination — solid COBOL/CICS fundamentals plus decades of broader production IT experience — means I can step in productively with minimal ramp-up time.
+
+I'm available immediately for remote work (or hybrid/onsite in the Kansas City metro area, depending on the role) and would welcome the chance to discuss how my background fits your team's needs.
+
+Best regards,
+Hans Richardson
+Lee's Summit, MO | linkedin.com/in/hans-richardson
+"""
+
+
 def generate_cover_letter(job):
-    """Generate cover letter — use Claude if key set, otherwise template."""
+    """
+    Generate cover letter. Routing:
+      - Income tracks (QA Automation, Remote Income Floor) ALWAYS use a
+        free template — never call the API for these, regardless of
+        GENERATE_COVER_LETTERS. Volume-over-precision track; Sonnet tokens
+        are better spent on career-direction roles. COBOL jobs (folded
+        into Remote Income Floor) get their own COBOL-flavored template
+        rather than the generic QA one, since the pitch is different.
+      - Career tracks (Performance Engineering, AI Engineering) use Claude
+        (Sonnet) if available, falling back to the Performance-flavored
+        template if the API call fails or GENERATE_COVER_LETTERS is off.
+    """
+    track = job.get("track", "")
+    if track in {"QA Automation", "Remote Income Floor"}:
+        is_cobol = any(
+            kw in (job.get("title", "") + " " + job.get("description", "")).lower()
+            for kw in COBOL_HIGH_KEYWORDS
+        )
+        if is_cobol:
+            return generate_cover_letter_cobol_template(job)
+        return generate_cover_letter_qa_template(job)
     # FIXED: removed broken `if OPENAI_API_KEY: return generate_cover_letter_claude()`
     # OpenAI key is not currently wired up; only Claude or template.
     if CLAUDE_API_KEY:
@@ -2670,11 +2973,37 @@ def generate_cover_letter(job):
 #
 # FIT ANALYSIS (Claude-powered per-job "why this fits" blurb)
 #
+FIT_TIER_RANK = {
+    "Excellent Fit": 4,
+    "Strong Fit": 3,
+    "Decent Fit": 2,
+    "Stretch Fit": 1,
+    "Weak Fit": 0,
+}
+
 def generate_fit_analysis(job):
     """
-    Generate a short (3-4 sentence) fit analysis for a job using Claude.
-    Returns empty string on failure or if disabled. Modeled after
-    Jobright.ai's Orion copilot — gives Hans a quick read on each top match.
+    Classify a job's real fit for Hans using Claude (Haiku — cheap/fast,
+    this is a 5-bucket classification task, not creative writing, and
+    runs behind the scenes so latency doesn't matter).
+
+    Returns a dict:
+        {
+          "tier": "Excellent Fit"|"Strong Fit"|"Decent Fit"|"Stretch Fit"|"Weak Fit"|"",
+          "display": "<one-line markdown blurb for the email>",
+          "hard_disqualified": bool,
+        }
+    Returns tier="" / display="" on failure or if disabled, so callers can
+    treat that as "unknown — don't gate on it."
+
+    Hard disqualification (PhD/publication/research-scientist/train-models-
+    from-scratch asks) is checked against the raw description text directly,
+    not just the LLM's own "Weak Fit" call — belt and suspenders, since a
+    real disqualifier should never end up shown, even if the model is
+    lenient. A job that hits HARD_DISQUALIFY_TERMS is dropped silently;
+    Stretch Fit (credential/title mismatch but real overlap) is demoted and
+    shown with the reason; everything else (Excellent/Strong/Decent) is
+    shown normally.
 
     Logs skip/fallback/error reasons to job_search_run.log so missing
     recommendations in the digest can be diagnosed after the fact.
@@ -2682,19 +3011,27 @@ def generate_fit_analysis(job):
     job_id = job.get("id") or job.get("url", "unknown")
     title  = job.get("title", "")
     source = job.get("source", "unknown")
+    empty_result = {"tier": "", "display": "", "hard_disqualified": False}
 
     if not GENERATE_FIT_ANALYSIS:
         logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=feature_disabled")
-        return ""
+        return empty_result
     if not CLAUDE_API_KEY:
         logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=no_api_key")
-        return ""
+        return empty_result
 
     company  = job.get("company", "")
     desc     = job.get("description", "")[:600]
     keywords = ", ".join(job.get("matched_keywords", []))
     track    = job.get("track", "")
     score    = job.get("score", 0)
+
+    # Belt-and-suspenders hard disqualifier check directly on description text
+    # (case-insensitive), independent of what the LLM decides — a real
+    # disqualifier should never slip through to "shown" just because the
+    # model was lenient on a given call.
+    full_text_lower = (title + " " + job.get("description", "")).lower()
+    hard_disqualified = any(term in full_text_lower for term in HARD_DISQUALIFY_TERMS)
 
     # Soft fallback for missing company (don't skip — internships and Serper
     # organic results often have N/A company; let Claude infer from title/desc)
@@ -2705,7 +3042,56 @@ def generate_fit_analysis(job):
         )
         company = "(not parsed — infer from title/description)"
 
-    prompt = f"""You are evaluating a job match for Hans Richardson.
+    is_income_track = track in {"QA Automation", "Remote Income Floor"}
+
+    if is_income_track:
+        prompt = f"""You are evaluating a job match for Hans Richardson — but for a DIFFERENT
+purpose than his career-direction search. This is his "Remote Income Floor"
+track: the goal is NOT career advancement, it's getting him out of in-person
+warehouse work onto something remote that pays at least $30/hr. Breadth and
+realism matter more than career fit here.
+
+CANDIDATE SNAPSHOT:
+- 24+ years IT experience, including QA/testing-adjacent work throughout his career
+- Technically capable, comfortable learning new tools quickly
+- Based in Lee's Summit, MO — remote-only for this track (commute is the whole
+  point of avoiding); COBOL/mainframe roles are the one exception where
+  KC-metro hybrid/onsite is acceptable if pay is $55+/hr
+- Goal: remote, $30+/hr floor, realistic for him to get hired and ramp quickly
+  — NOT "is this the ideal next career step"
+
+JOB POSTING:
+Title: {title}
+Company: {company}
+Track: {track} (matched at {score} pts)
+Matched keywords: {keywords}
+Description: {desc}
+
+TASK:
+Classify into ONE of five tiers and return a single short line. Judge on
+"can Hans realistically get and do this job" — NOT on career advancement,
+prestige, or long-term direction.
+
+TIERS:
+- Excellent Fit: Clear match — Hans's background or transferable skills line up directly, remote (or COBOL hybrid/onsite at $55+/hr), no real barrier to getting hired.
+- Strong Fit: Good match with one minor gap (e.g. a specific tool he hasn't used, but the role type is squarely accessible).
+- Decent Fit: Realistic to apply and get traction — adjacent skills, "will train" language, or generalist QA/testing work he could ramp into quickly.
+- Stretch Fit: Possible but a real reach — meaningfully more specialized/senior than this track is meant for, though not disqualifying.
+- Weak Fit: Hard disqualifier — requires years of specific tool/certification experience Hans doesn't have and wouldn't be considered for, or the role is clearly senior/specialized beyond this track's accessible-entry-point purpose. (Pay floor and remote requirements are already enforced before this job reached you — don't re-judge those.) Return "Weak Fit" only — no explanation.
+
+OUTPUT FORMAT (exactly one line, no preamble):
+**<Tier>** — <15-25 word sentence>. Bold 1-2 positive keywords with *asterisks* and 1-2 friction keywords with _underscores_.
+
+EXAMPLES:
+**Excellent Fit** — *Remote* manual QA role, *will train* on their tools; straightforward to land and start.
+**Strong Fit** — *Selenium* automation testing remote role; minor gap in _Cypress_ but transferable skill.
+**Decent Fit** — Generalist *QA Analyst* role, broad responsibilities; realistic ramp-up with his testing background.
+**Stretch Fit** — Role wants 3+ years _dedicated automation framework_ ownership; possible but a real reach for this track.
+**Weak Fit**
+
+Return ONLY the one line. No headers, no bullets, no follow-up text."""
+    else:
+        prompt = f"""You are evaluating a job match for Hans Richardson.
 
 CANDIDATE SNAPSHOT:
 - 24+ years IT, 14 years LoadRunner/VuGen/LRE (Senior Performance Engineer)
@@ -2729,8 +3115,8 @@ TIERS:
 - Excellent Fit: Bullseye — core skills match, remote-US or KC-area, right seniority, no major friction.
 - Strong Fit: Clear match on core skills with minor friction (one small gap, slight seniority mismatch).
 - Decent Fit: Partial match — adjacent skills or moderate friction, but realistic to apply.
-- Stretch Fit: Reach role — interesting target but notable gaps (skill, seniority, geography) requiring strong framing.
-- Weak Fit: Major mismatch (wrong geography, wrong stack, pure ML research). Return "Weak Fit" only — no explanation.
+- Stretch Fit: Reach role — title/credential pattern mismatch but real day-to-day overlap with Hans's actual strengths (e.g. observability, reliability, performance-testing-adjacent work). Still realistic enough that Hans might choose to apply.
+- Weak Fit: Hard disqualifier present — PhD/publication required, must have trained/built production ML models from scratch, dedicated ML research role, or other major mismatch (wrong geography, wrong stack). Return "Weak Fit" only — no explanation.
 
 OUTPUT FORMAT (exactly one line, no preamble):
 **<Tier>** — <15-25 word sentence>. Bold 1-2 positive keywords with *asterisks* and 1-2 friction keywords with _underscores_.
@@ -2744,23 +3130,32 @@ EXAMPLES:
 
 Return ONLY the one line. No headers, no bullets, no follow-up text."""
 
-
-
     try:
-        result = _call_claude_api(prompt, max_tokens=80)
+        result = _call_claude_api(prompt, max_tokens=80, model=FIT_ANALYSIS_MODEL)
     except Exception as e:
         logging.exception(
             f"[FIT-ERROR] id={job_id} title={title!r} source={source} "
             f"error={type(e).__name__}: {e}"
         )
-        return ""
+        return {"tier": "", "display": "", "hard_disqualified": hard_disqualified}
 
     if not result or not result.strip():
         logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=empty_response")
-        return ""
+        return {"tier": "", "display": "", "hard_disqualified": hard_disqualified}
 
-    logging.info(f"[FIT-OK] id={job_id} title={title!r} source={source} score={score}")
-    return result
+    # Parse tier out of the leading **<Tier>** marker
+    tier = ""
+    m = re.match(r"\*\*(Excellent Fit|Strong Fit|Decent Fit|Stretch Fit|Weak Fit)\*\*", result.strip())
+    if m:
+        tier = m.group(1)
+    else:
+        logging.info(f"[FIT-WARN] id={job_id} title={title!r} unparsed tier from: {result[:60]!r}")
+
+    if tier == "Weak Fit":
+        hard_disqualified = True
+
+    logging.info(f"[FIT-OK] id={job_id} title={title!r} source={source} score={score} tier={tier or 'unparsed'}")
+    return {"tier": tier, "display": result, "hard_disqualified": hard_disqualified}
 
 
 #
@@ -2791,6 +3186,7 @@ def main():
         "AI Engineering": 40,           # Lowered from 51 - catching real jobs
         "QA Automation": 30,            # SDET / QA hybrid
         "COBOL/Mainframe": 10,          # Last resort - low threshold
+        "Remote Income Floor": 20,      # Modest bar — relief track, breadth over precision
     }
     filtered_by_score = []
     for job in all_jobs:
@@ -2805,6 +3201,70 @@ def main():
         print(f"[OK] Removed {removed} jobs below minimum score thresholds")
     all_jobs = filtered_by_score
     funnel.set_stage("after_minscore", len(all_jobs))
+
+    # ── COBOL hybrid pay-tier filter (within Track 4) ───────────
+    # Hans's explicit rule, COBOL only: KC-metro hybrid/onsite is
+    # acceptable IF pay parses to $55+/hr. Below that (but still $30+/hr),
+    # the job must be fully remote — same standard as the rest of Track 4.
+    # Below $30/hr entirely, dropped by the general pay-floor filter below
+    # regardless of hybrid/remote. Non-COBOL Remote Floor jobs are
+    # untouched here — they already got hard-rejected for being
+    # hybrid/onsite back in passes_filters().
+    COBOL_HYBRID_MIN_HOURLY = 55.0
+    cobol_hybrid_filtered = []
+    cobol_hybrid_dropped = 0
+    for job in all_jobs:
+        if job.get("track") != "Remote Income Floor":
+            cobol_hybrid_filtered.append(job)
+            continue
+        is_cobol = any(kw in (job.get("title","") + " " + job.get("description","")).lower()
+                        for kw in COBOL_HIGH_KEYWORDS)
+        if not is_cobol:
+            cobol_hybrid_filtered.append(job)
+            continue
+        job_is_hybrid = is_onsite_or_hybrid(job.get("title",""), job.get("description",""), job.get("location",""))
+        if not job_is_hybrid:
+            # Fully remote COBOL job — no pay-tier hybrid question applies,
+            # falls through to the standard $30/hr floor check below.
+            cobol_hybrid_filtered.append(job)
+            continue
+        # Hybrid/onsite COBOL job — only acceptable at $55+/hr.
+        hourly = _parse_pay_to_hourly(job.get("salary","")) or _parse_pay_to_hourly(job.get("description",""))
+        if hourly is not None and hourly >= COBOL_HYBRID_MIN_HOURLY:
+            cobol_hybrid_filtered.append(job)
+        else:
+            cobol_hybrid_dropped += 1
+            if DEBUG_MODE:
+                print(f"   [DEBUG] FILTERED-cobol-hybrid (hybrid/onsite needs \u2265${COBOL_HYBRID_MIN_HOURLY:.0f}/hr): {job['title'][:50]} | parsed: {hourly}")
+    if cobol_hybrid_dropped > 0:
+        print(f"[OK] Removed {cobol_hybrid_dropped} hybrid/onsite COBOL job(s) below ${COBOL_HYBRID_MIN_HOURLY:.0f}/hr threshold")
+    all_jobs = cobol_hybrid_filtered
+    funnel.set_stage("after_cobol_hybrid", len(all_jobs))
+
+    # ── Pay floor filter (Track 4 only) ─────────────────────────
+    # Strict per Hans's choice: drop if pay can't be parsed at all, or
+    # parses below $30/hr. Runs here (post-aggregation) because this is
+    # the first point where job["salary"] is actually populated from each
+    # source's raw API response — passes_filters() runs before that field
+    # exists. Real tradeoff: many legit remote QA postings list no pay at
+    # all, so this will cut the pool down hard. If it's too thin after a
+    # few runs, this is the one line to relax (drop the `else reject`).
+    pay_filtered = []
+    pay_dropped_count = 0
+    for job in all_jobs:
+        if job.get("track") == "Remote Income Floor":
+            if meets_pay_floor(job):
+                pay_filtered.append(job)
+            else:
+                pay_dropped_count += 1
+                if DEBUG_MODE:
+                    print(f"   [DEBUG] FILTERED-payfloor (no parseable \u226530/hr pay): {job['title'][:50]} | salary text: {job.get('salary','')[:40]!r}")
+        else:
+            pay_filtered.append(job)
+    if pay_dropped_count > 0:
+        print(f"[OK] Removed {pay_dropped_count} Remote Income Floor job(s) below ${REMOTE_FLOOR_MIN_HOURLY:.0f}/hr floor or with unparseable pay")
+    all_jobs = pay_filtered
+    funnel.set_stage("after_pay_floor", len(all_jobs))
 
     # Deduplicate within this run by title + company AND by title alone
     seen_title_company = set()
@@ -2840,14 +3300,109 @@ def main():
     print(f"\n{'='*55}")
     print(f"[STATS] Total relevant jobs found: {len(all_jobs)}")
 
-    top_jobs = all_jobs[:15]  # Send top 15 jobs per day
+    # ── FIT EVAL PASS (AI track only) — BEFORE the top-15 cut ──────────
+    # Why before: the keyword score has no idea what "Weak Fit" or "hard
+    # disqualifier" means. If we cut to top-15 by score first and THEN
+    # eval, a real Stretch/Decent fit sitting at #18 by score never gets
+    # seen, while a high-keyword-score Weak Fit occupies a slot it doesn't
+    # deserve. So: eval every AI-track survivor, drop hard disqualifiers,
+    # then re-sort with fit tier as the PRIMARY key (score as tiebreaker)
+    # before slicing to the top 15. Non-AI tracks are untouched — their
+    # keyword score IS a reliable fit signal already (e.g. LoadRunner match
+    # = real fit), so we don't spend API calls there.
+    fit_evaluated = 0
+    hard_dropped = []
+    for job in all_jobs:
+        track = job.get("track", "")
+        if GENERATE_FIT_ANALYSIS and track in FIT_ANALYSIS_TRACKS:
+            fit_result = generate_fit_analysis(job)
+            fit_evaluated += 1
+        else:
+            fit_result = {"tier": "", "display": "", "hard_disqualified": False}
+        job["fit_tier"] = fit_result["tier"]
+        job["fit_analysis"] = fit_result["display"]
+        job["fit_hard_disqualified"] = fit_result["hard_disqualified"]
+
+    if fit_evaluated:
+        print(f"[OK] Ran fit evaluation on {fit_evaluated} AI-track job(s)")
+
+    pre_drop_count = len(all_jobs)
+    survivors = []
+    for job in all_jobs:
+        if job.get("fit_hard_disqualified"):
+            hard_dropped.append(job)
+        else:
+            survivors.append(job)
+    all_jobs = survivors
+    if hard_dropped:
+        print(f"[OK] Dropped {len(hard_dropped)} job(s) with hard fit disqualifiers (not shown — not realistic chances):")
+        for j in hard_dropped[:10]:
+            print(f"   [DROPPED] {j['title'][:60]} @ {j.get('company','')[:30]}")
+    funnel.set_stage("after_fit_hard_disqualify", len(all_jobs))
+
+    # Re-sort: fit tier primary (jobs with no fit tier, e.g. non-AI tracks,
+    # default to rank 2 = "Decent" so they sit with their existing score
+    # order rather than being pushed artificially high or low), score
+    # secondary as tiebreaker within each tier.
+    def _sort_key(job):
+        tier = job.get("fit_tier", "")
+        tier_rank = FIT_TIER_RANK.get(tier, 2)
+        return (tier_rank, job.get("score", 0))
+    all_jobs.sort(key=_sort_key, reverse=True)
+    funnel.set_stage("final", len(all_jobs))
+
+    top_jobs = all_jobs  # kept for backward-compat references below; real split happens next
+
+    # ── DUAL POOL SPLIT ──────────────────────────────────────────
+    # Two separate pools with separate caps and separate purposes:
+    #   Pool A (Performance + AI) — career-direction tracks, 10 slots.
+    #   Pool B (QA Automation + Remote Income Floor, incl. COBOL) —
+    #     relief/income tracks, 15 slots. Broader bar, bigger cap, since
+    #     volume matters more than precision here.
+    # Each pool is sorted and capped independently — Remote Income Floor
+    # jobs never compete against Performance/AI jobs for a slot, and
+    # vice versa.
+    CAREER_TRACKS = {"Performance Engineering", "AI Engineering"}
+    INCOME_TRACKS = {"QA Automation", "Remote Income Floor"}
+
+    pool_career = [j for j in all_jobs if j.get("track") in CAREER_TRACKS]
+    pool_income = [j for j in all_jobs if j.get("track") in INCOME_TRACKS]
+    pool_other  = [j for j in all_jobs if j.get("track") not in CAREER_TRACKS and j.get("track") not in INCOME_TRACKS]
+    if pool_other:
+        # Shouldn't normally happen (every track should map to one of the
+        # two pools above) — log it so an unmapped track doesn't silently
+        # vanish from the digest.
+        print(f"[WARN] {len(pool_other)} job(s) had an unmapped track and were added to the career pool by default:")
+        for j in pool_other[:5]:
+            print(f"   [UNMAPPED] track={j.get('track')!r} {j['title'][:50]}")
+        pool_career += pool_other
+
+    pool_career.sort(key=_sort_key, reverse=True)
+    pool_income.sort(key=_sort_key, reverse=True)
+
+    CAREER_POOL_CAP = 10
+    INCOME_POOL_CAP = 15
+    career_jobs = pool_career[:CAREER_POOL_CAP]
+    income_jobs = pool_income[:INCOME_POOL_CAP]
+    top_jobs = career_jobs + income_jobs
+    funnel.set_stage("final", len(top_jobs))
+
+    # Split top_jobs into normal vs. demoted Stretch Fit section for email.
+    # Stretch Fit = title/credential mismatch but real overlap — still
+    # worth a glance, just not mixed in with the strong matches. Applied
+    # within EACH pool separately so Stretch Fit demotion doesn't bleed
+    # career-track jobs into the income-track section or vice versa.
+    normal_jobs = [j for j in top_jobs if j.get("fit_tier") != "Stretch Fit"]
+    stretch_jobs = [j for j in top_jobs if j.get("fit_tier") == "Stretch Fit"]
 
     if len(all_jobs) == 0:
         print(f"[STATS] No matching jobs found today.")
-    elif len(all_jobs) <= 50:
-        print(f"[STATS] Sending all {len(top_jobs)} job{'s' if len(top_jobs) != 1 else ''} to {EMAIL_TO}")
     else:
-        print(f"[STATS] Found {len(all_jobs)} jobs — sending top {len(top_jobs)} highest scoring to {EMAIL_TO}")
+        print(f"[STATS] Found {len(all_jobs)} jobs total")
+        print(f"[STATS] Pool A (Performance/AI): sending top {len(career_jobs)} of {len(pool_career)} candidates")
+        print(f"[STATS] Pool B (QA Automation/Remote Income Floor incl. COBOL): sending top {len(income_jobs)} of {len(pool_income)} candidates")
+    if stretch_jobs:
+        print(f"[STATS] {len(stretch_jobs)} of those are Stretch Fit — will show in demoted section")
 
     print(f"{'='*55}\n")
     print(f"[STATS] Generating cover letters for {len(top_jobs)} job{'s' if len(top_jobs) != 1 else ''}...\n")
@@ -2856,12 +3411,9 @@ def main():
             job["cover_letter"] = generate_cover_letter(job)
         else:
             job["cover_letter"] = ""
-        # FIT ANALYSIS for top N jobs only
-        if i <= FIT_ANALYSIS_MAX_JOBS:
-            job["fit_analysis"] = generate_fit_analysis(job)
-        else:
-            job["fit_analysis"] = ""
-        print(f"  [{i:02d}] Score:{job['score']:3d} | {job['source']:<10} | {job['title'][:50]}")
+        # fit_analysis was already generated above (pre-sort) for AI-track
+        # jobs; non-AI-track jobs simply have fit_analysis == "" and that's fine.
+        print(f"  [{i:02d}] Score:{job['score']:3d} | Tier:{job.get('fit_tier') or '—':<13} | {job['source']:<10} | {job['title'][:50]}")
         print(f"        {job['company']} | {job['url'][:60]}")
         if job.get("fit_analysis"):
             print(f"        [FIT] {job['fit_analysis'][:120]}...")
@@ -2894,13 +3446,27 @@ def main():
 
     # Generate fit analysis for Amazon Spotlight jobs (gap fix:
     # Amazon jobs were on a separate path and never reached the main
-    # fit-analysis loop above)
+    # fit-analysis loop above). Scoped to FIT_ANALYSIS_TRACKS same as the
+    # regular pipeline — only AI-track Amazon postings get evaluated.
     if amazon_jobs and GENERATE_FIT_ANALYSIS:
-        print(f"[STATS] Generating fit analysis for {len(amazon_jobs)} Amazon Spotlight job{'s' if len(amazon_jobs) != 1 else ''}...")
+        ai_amazon_jobs = [aj for aj in amazon_jobs if aj.get("track", "") in FIT_ANALYSIS_TRACKS]
+        if ai_amazon_jobs:
+            print(f"[STATS] Generating fit analysis for {len(ai_amazon_jobs)} AI-track Amazon Spotlight job(s)...")
         for aj in amazon_jobs:
-            aj["fit_analysis"] = generate_fit_analysis(aj)
+            if aj.get("track", "") in FIT_ANALYSIS_TRACKS:
+                fit_result = generate_fit_analysis(aj)
+            else:
+                fit_result = {"tier": "", "display": "", "hard_disqualified": False}
+            aj["fit_tier"] = fit_result["tier"]
+            aj["fit_analysis"] = fit_result["display"]
+            aj["fit_hard_disqualified"] = fit_result["hard_disqualified"]
             if aj.get("fit_analysis"):
                 print(f"        [FIT-AMZ] {aj['fit_analysis'][:120]}...")
+        # Drop hard-disqualified Amazon jobs too — same standard applies.
+        amazon_dropped = [aj for aj in amazon_jobs if aj.get("fit_hard_disqualified")]
+        if amazon_dropped:
+            amazon_jobs = [aj for aj in amazon_jobs if not aj.get("fit_hard_disqualified")]
+            print(f"[OK] Dropped {len(amazon_dropped)} Amazon job(s) with hard fit disqualifiers")
 
     # Send email notification always — even if no jobs found
     send_email(top_jobs, amazon_jobs, funnel_summary=funnel.summary_dict())
@@ -2988,7 +3554,9 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>
     <div style="background:#f0f4ff;border:1px solid #c5d0e8;border-radius:8px;padding:12px 16px;margin:12px 0 16px;font-size:12px;color:#444;">
       <strong>Submit decisions:</strong> Use the form link at the bottom of this email.<br>
-      Regular jobs are numbered <strong>1–10</strong> &nbsp;|&nbsp; Amazon Spotlight jobs are numbered <strong>A1–A5</strong>
+      Performance/AI Career jobs are numbered <strong>1–10</strong> &nbsp;|&nbsp;
+      QA/Remote Income Floor jobs are numbered <strong>R1–R15</strong> &nbsp;|&nbsp;
+      Amazon Spotlight jobs are numbered <strong>A1–A5</strong>
     </div>"""
 
     if count == 0:
@@ -3012,37 +3580,112 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         </div>"""
     html += "<hr/>"
 
-    for i, job in enumerate(top_jobs, 1):
+    # Hard-disqualified (Weak Fit) jobs are already dropped upstream in
+    # main() before send_email() is ever called — no need to re-check text
+    # here.
+    #
+    # ── Dual pool rendering ──────────────────────────────────────
+    # Pool A (Performance + AI, career-direction) and Pool B (QA
+    # Automation + Remote Income Floor incl. COBOL, relief/income) are
+    # rendered as two separate sections, each with its own normal/Stretch
+    # Fit split — so a Performance Stretch Fit never gets mixed in with a
+    # Remote Income Floor Stretch Fit, and the numbering inside each
+    # section makes sense on its own.
+    CAREER_TRACKS = {"Performance Engineering", "AI Engineering"}
+    INCOME_TRACKS = {"QA Automation", "Remote Income Floor"}
+    career_section_jobs = [j for j in top_jobs if j.get("track") in CAREER_TRACKS]
+    income_section_jobs = [j for j in top_jobs if j.get("track") in INCOME_TRACKS]
+
+    def _render_job_card(job, number_label, accent="#1F3864", bg="#f0f7ff", border="#ddd", card_bg="#fff"):
         keywords = ", ".join(job["matched_keywords"][:6])
         cover    = job.get("cover_letter", "").replace("\n", "<br>")
         fit      = job.get("fit_analysis", "").replace("\n", "<br>")
         salary   = f"<p><strong>Salary:</strong> {job['salary']}</p>" if job.get("salary","").strip(" -") else ""
         track    = job.get("track", "")
-
-        # FIT ANALYSIS block — only if present and not Weak Fit
         fit_block = ""
-        if fit and not fit.lstrip().startswith("**Weak Fit**"):
+        if fit:
             fit_block = f"""
-            <div style="background:#f0f7ff;border-left:3px solid #1F3864;padding:10px 14px;margin:8px 0 12px;border-radius:0 4px 4px 0;">
-              <p style="margin:0 0 4px;font-size:12px;font-weight:bold;color:#1F3864;">🎯 FIT ANALYSIS</p>
+            <div style="background:{bg};border-left:3px solid {accent};padding:10px 14px;margin:8px 0 12px;border-radius:0 4px 4px 0;">
+              <p style="margin:0 0 4px;font-size:12px;font-weight:bold;color:{accent};">🎯 FIT ANALYSIS</p>
               <p style="margin:0;font-size:13px;color:#444;line-height:1.4;">{fit}</p>
             </div>"""
-
-        html += f"""<div style="border:1px solid #ddd;border-radius:8px;padding:16px;margin-bottom:24px;">
-            <h3 style="color:#1F3864;margin:0 0 4px;">#{i} - {job["title"]}
-            <span style="font-size:12px;background:#e8f0fe;color:#1F3864;padding:2px 8px;border-radius:10px;">{track}</span></h3>
+        return f"""<div style="border:1px solid {border};border-radius:8px;padding:16px;margin-bottom:24px;background:{card_bg};">
+            <h3 style="color:{accent};margin:0 0 4px;">{number_label} - {job["title"]}
+            <span style="font-size:12px;background:#e8f0fe;color:{accent};padding:2px 8px;border-radius:10px;">{track}</span></h3>
             <p><strong>Company:</strong> {job["company"]} | <strong>Source:</strong> {job["source"]} | <strong>Score:</strong> {job["score"]} pts</p>
             <p><strong>Posted:</strong> <span style="color:#e65100;font-weight:500;">{job.get("posted","Unknown")[:10] if job.get("posted") else "Date unknown - verify before applying!"}</span> | <strong>Track:</strong> {job.get("track","N/A")}</p>
             {salary}
             <p><strong>Matched Skills:</strong> {keywords}</p>
             {fit_block}
             <p>
-                {f"<a href='{job.get('url', '')}' style='background:#1F3864;color:#fff;padding:8px 16px;border-radius:4px;text-decoration:none;'>View and Apply</a>"}
+                {f"<a href='{job.get('url', '')}' style='background:{accent};color:#fff;padding:8px 16px;border-radius:4px;text-decoration:none;'>View and Apply</a>"}
             </p>
             <hr style="border:none;border-top:1px solid #eee;margin:12px 0"/>
             <p><strong>Cover Letter:</strong></p>
             <div style="background:#f9f9f9;padding:12px;border-radius:4px;font-size:14px;">{cover}</div>
         </div>"""
+
+    def _render_stretch_card(job, number_label):
+        keywords = ", ".join(job["matched_keywords"][:6])
+        cover    = job.get("cover_letter", "").replace("\n", "<br>")
+        fit      = job.get("fit_analysis", "").replace("\n", "<br>")
+        track    = job.get("track", "")
+        fit_block = ""
+        if fit:
+            fit_block = f"""
+                <div style="background:#fffaf0;border-left:3px solid #d9a441;padding:8px 12px;margin:6px 0 10px;border-radius:0 4px 4px 0;">
+                  <p style="margin:0;font-size:12px;color:#5c4413;line-height:1.4;">🎯 {fit}</p>
+                </div>"""
+        return f"""
+  <div style="border:1px solid #e8d4a4;border-radius:6px;padding:12px 14px;margin-bottom:12px;background:#fffdf7;">
+    <p style="margin:0 0 4px;font-weight:bold;font-size:13px;color:#5c4413;">{number_label} — {job["title"]}
+    <span style="font-size:11px;background:#f3e3bd;color:#5c4413;padding:2px 6px;border-radius:8px;margin-left:6px;">{track}</span></p>
+    <p style="margin:0 0 6px;font-size:12px;color:#777;"><strong>{job["company"]}</strong> | {job["source"]} | {job["score"]} pts</p>
+    <p style="margin:0 0 8px;font-size:12px;color:#777;"><strong>Matched:</strong> {keywords}</p>
+    {fit_block}
+    <a href="{job.get('url','')}" style="background:#d9a441;color:#fff;padding:6px 14px;border-radius:4px;text-decoration:none;font-size:12px;">View and Apply</a>
+    <details style="margin-top:8px;">
+      <summary style="font-size:11px;color:#999;cursor:pointer;">Cover letter draft</summary>
+      <div style="background:#f9f9f9;padding:10px;border-radius:4px;font-size:13px;margin-top:6px;">{cover}</div>
+    </details>
+  </div>"""
+
+    def _render_pool_section(jobs, heading, intro, accent, bg, prefix):
+        """Renders one full pool's section: header/intro, normal job cards,
+        then a demoted Stretch Fit sub-section (only if any exist)."""
+        if not jobs:
+            return ""
+        normal = [j for j in jobs if j.get("fit_tier") != "Stretch Fit"]
+        stretch = [j for j in jobs if j.get("fit_tier") == "Stretch Fit"]
+        section_html = f"""
+<div style="margin:28px 0 8px;">
+  <h2 style="color:{accent};margin:0 0 4px;font-size:18px;border-bottom:2px solid {accent};padding-bottom:6px;">{heading}</h2>
+  <p style="margin:6px 0 16px;font-size:12px;color:#666;">{intro}</p>
+</div>"""
+        for i, job in enumerate(normal, 1):
+            section_html += _render_job_card(job, f"{prefix}{i}", accent=accent, bg=bg)
+        if stretch:
+            section_html += f"""
+<div style="background:#fff9ed;border:2px dashed #d9a441;border-radius:8px;padding:16px;margin:16px 0 24px;">
+  <h3 style="color:#7a5b16;margin:0 0 4px;font-size:15px;">⚠️ Stretch Fits ({len(stretch)})</h3>
+  <p style="margin:0 0 12px;font-size:12px;color:#7a5b16;">Title/credential pattern doesn't fully match, but there's real overlap with your actual strengths. Worth a quick look — your call.</p>"""
+            for i, job in enumerate(stretch, 1):
+                section_html += _render_stretch_card(job, f"{prefix}S{i}")
+            section_html += "</div>"
+        return section_html
+
+    html += _render_pool_section(
+        career_section_jobs,
+        "🎯 Performance & AI Engineering — Career Track",
+        "Your core direction: Performance Engineering and AI Systems/Agent roles. Numbered 1–10.",
+        accent="#1F3864", bg="#f0f7ff", prefix="",
+    )
+    html += _render_pool_section(
+        income_section_jobs,
+        "💼 QA, Testing & Remote Income Floor — Relief Track",
+        "Remote-only, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, will-train postings, and COBOL/mainframe. Numbered R1–R15.",
+        accent="#8a6d1a", bg="#fff8e7", prefix="R",
+    )
 
     # ── Amazon Jobs Spotlight ─────────────────────────────────
     if amazon_jobs:
@@ -3187,8 +3830,11 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             ("after_blocked",    "After blocked-site filter"),
             ("kept_by_sources",  "Kept by sources"),
             ("after_minscore",   "After min-score threshold"),
+            ("after_cobol_hybrid", "After COBOL hybrid pay-tier filter"),
+            ("after_pay_floor",  "After Track 4 pay-floor filter"),
             ("after_cross_dedup", "After cross-source dedup"),
             ("after_seen_dedup",  "After already-seen dedup"),
+            ("after_fit_hard_disqualify", "After AI fit hard-disqualify"),
             ("final",            "→ Final email"),
         ]
         rows_html = ""
@@ -3267,6 +3913,8 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "matched_keywords": j.get("matched_keywords", []),
                 "source":           j.get("source", ""),
                 "is_amazon":        False,
+                "fit_tier":         j.get("fit_tier", ""),
+                "fit_analysis":     j.get("fit_analysis", ""),
             }
             for idx, j in enumerate(top_jobs, 1)
         ]
@@ -3284,6 +3932,8 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "matched_keywords": j.get("matched_keywords", []),
                 "source":           "Amazon Jobs",
                 "is_amazon":        True,
+                "fit_tier":         j.get("fit_tier", ""),
+                "fit_analysis":     j.get("fit_analysis", ""),
             }
             for idx, j in enumerate(amazon_jobs or [], 1)
         ]
@@ -3372,6 +4022,8 @@ def _persist_amazon_to_decisions(amazon_batch, today_key):
                 "matched_keywords": job.get("matched_keywords", []),
                 "source":           job.get("source", "Amazon Jobs"),
                 "is_amazon":        True,
+                "fit_tier":         job.get("fit_tier", ""),
+                "fit_analysis":     job.get("fit_analysis", ""),
                 "decision":         "pending",
                 "reason":           "",
                 "detection_method": "auto",

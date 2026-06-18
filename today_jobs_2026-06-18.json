@@ -1,0 +1,84 @@
+{
+  "date": "2026-06-18",
+  "jobs": [
+    {
+      "job_id": "7b22761dbe",
+      "number": 1,
+      "number_display": "1",
+      "title": "Generative AI Engineer - Genesis10 - Remote in Green Bay, WI, US",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/b4d732db-9816-4774-a0d4-2c4e17d8f829",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:generative ai engineer",
+        "generative ai",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI Engineer* role matches Hans's active GenAI upskilling and *remote* location; _production LLM deployment_ experience still emerging but portfolio-demonstrated."
+    },
+    {
+      "job_id": "e9c7ef084a",
+      "number": 2,
+      "number_display": "2",
+      "title": "QA Engineer - GTM Applications (Remote, IND) - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/QA-Engineer---GTM-Applications--Remote--IND-_R29124",
+      "matched_keywords": [
+        "remote-floor-title:qa engineer",
+        "rag",
+        "observability",
+        "llm",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *QA + observability* fundamentals solid; *AI eval frameworks* (RAGAS, LangSmith) are _new stack_ but GenAI certs and agent work bridge gap well."
+    },
+    {
+      "job_id": "603ebb5888",
+      "number": 3,
+      "number_display": "3",
+      "title": "Full Stack AI Engineer (Data) @ Techtorch - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/techtorch/916acee0-eb0e-4d4a-8e5f-9bc1b039f1e4",
+      "matched_keywords": [
+        "ai engineer",
+        "AI-title:ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Full stack AI engineering* and *remote* alignment strong; _data foundation_ depth and production ML model experience gaps are bridgeable given GenAI certs and agent projects."
+    },
+    {
+      "job_id": "c319c0ddcc",
+      "number": 4,
+      "number_display": "4",
+      "title": "Machine Learning Engineer - Aliso Viejo, CALIFORNIA, US - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/34e1242f-f0a2-40a4-8c37-2f2045436862",
+      "matched_keywords": [
+        "machine learning engineer",
+        "ml engineer",
+        "AI-title:machine learning engineer",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* trajectory and *prompt engineering* skills emerging; _production ML model training_ gap and California location offset by agent/workflow momentum."
+    }
+  ]
+}

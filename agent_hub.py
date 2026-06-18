@@ -417,7 +417,7 @@ class ChatTab:
         goal = simpledialog.askstring(
             "Run Agent" + (" [TEST MODE]" if test_mode else ""),
             "Enter your search goal:",
-            initialvalue="Find LoadRunner and Agentic AI roles matching my profile",
+            initialvalue="Find me strong remote US matches across all four of my tracks: 1) LoadRunner / Performance Engineering  2) AI Hybrid (AI Systems, Agent Engineer, LLM Platform)  3) QA / Test Engineering (SDET, QA Automation, API testing, manual QA)  4) COBOL / Mainframe (if any postings exist). Remote only, no hybrid or onsite. Contract or full-time.",
             parent=self.frame
         )
         if not goal:
@@ -469,13 +469,22 @@ class ChatTab:
 
         def send_worker():
             try:
+                from tools.score import score_results
+                from tools.analyze_fit import analyze_fit
                 from tools.cover_letter import generate_cover_letters
                 from tools.email_results import send_digest
 
                 class _State:
                     def __init__(self, j): self.jobs = j
 
-                generate_cover_letters(_State(jobs))
+                state = _State(jobs)
+
+                if all(j.get("score", 0) == 0 for j in jobs):
+                    score_results(state)
+                if not any(j.get("fit_tier") for j in jobs):
+                    analyze_fit(state)
+
+                generate_cover_letters(state)
                 result = send_digest(jobs, goal=goal)
                 msg = result.get("note", "Done.")
             except Exception as e:
