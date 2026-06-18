@@ -1,46 +1,4 @@
 {
   "date": "2026-06-18",
-  "jobs": [
-    {
-      "job_id": "94e18fd4f1",
-      "number": "R1",
-      "number_display": "R1",
-      "title": "Senior Mainframe COBOL Developer - Remote in Olympia, WA, US",
-      "company": "N/A",
-      "track": "Remote Income Floor",
-      "score": 65,
-      "url": "https://www.dice.com/job-detail/62e30a46-653e-41d9-90a0-e857d10067ec",
-      "matched_keywords": [
-        "mainframe",
-        "cics",
-        "cobol-title-match",
-        "cobol",
-        "cobol developer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false,
-      "fit_tier": "Excellent Fit",
-      "fit_analysis": "**Excellent Fit** \u2014 *Remote* Senior COBOL/CICS role matching his 24+ year IT background; _mainframe_ expertise directly applicable, realistic hire and rapid ramp."
-    },
-    {
-      "job_id": "d75b1b6dd1",
-      "number": "R2",
-      "number_display": "R2",
-      "title": "Software Engineer (Mainframe, Cobol, CICS) - Elite Technical - Dice",
-      "company": "N/A",
-      "track": "Remote Income Floor",
-      "score": 55,
-      "url": "https://www.dice.com/job-detail/c0e7501e-54fb-4c65-8576-47222102d310",
-      "matched_keywords": [
-        "mainframe",
-        "cobol",
-        "cics",
-        "cobol-title-match"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false,
-      "fit_tier": "Excellent Fit",
-      "fit_analysis": "**Excellent Fit** \u2014 *Remote* mainframe COBOL/CICS role at *$75\u201380/hr*; direct 24-year IT match, no _ramp barriers_."
-    }
-  ]
+  "jobs": []
 }
