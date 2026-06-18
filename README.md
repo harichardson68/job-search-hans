@@ -4,6 +4,11 @@
 
 A Python pipeline that aggregates listings from 7 sources, scores them against a configurable skill profile, delivers results as an HTML email digest, and **literally edits its own source code based on submitted feedback**. Built and iterated in production — running nightly since April 2026.
 
+## 🎬 Live Demo
+
+[![Watch the Demo](https://img.shields.io/badge/Watch-Loom%20Demo-orange?logo=loom)](https://www.loom.com/share/48f145f6ee6d42c7b6c2798c940e010e)
+
+> End-to-end walkthrough of the automated job search pipeline — multi-source scraping, keyword scoring, dual-pool email digest (Career Track + Gap Track), AI fit analysis, and K-Means decision tracking.
 ---
 
 ## What Makes This Different
