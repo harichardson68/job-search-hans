@@ -481,12 +481,12 @@ class ChatTab:
 
                 if all(j.get("score", 0) == 0 for j in jobs):
                     score_results(state, min_score=0)
-                if not any(j.get("fit_tier") for j in jobs):
+                if not any(j.get("fit_tier") for j in state.jobs):
                     analyze_fit(state)
 
                 _VALID_TRACKS = {"LoadRunner / Performance", "AI Hybrid",
                                  "QA / Test Engineering", "COBOL / Mainframe"}
-                sendable = [j for j in jobs
+                sendable = [j for j in state.jobs
                             if j.get("fit_tier", "") != "Weak"
                             and j.get("score", 0) > -100
                             and j.get("track", "") in _VALID_TRACKS]
