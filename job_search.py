@@ -1268,6 +1268,23 @@ AI_HIGH_KEYWORDS = [
     "mlops engineer", "llm engineer", "ai reliability engineer",
     "performance ai", "ai testing", "ai qa", "quality engineer ai",
 ]
+# ── AI classification split (fix for QA/other-track jobs getting stolen
+# into AI Engineering just for mentioning an AI buzzword in passing) ──
+# GENERIC/BARE terms are single words or short generic phrases that show
+# up constantly as throwaway tech-stack mentions in job descriptions that
+# AREN'T about AI engineering at all (e.g. "QA Engineer" posting that
+# mentions "our platform uses LLM-based RAG retrieval" as one line of
+# product description). These only count toward AI track classification
+# if they appear in the TITLE — a real AI role's title says so.
+AI_GENERIC_TERMS = {
+    "llm", "generative ai", "deep learning", "large language model", "anthropic",
+}
+# SPECIFIC PHRASES are distinctive enough (multi-word, role-specific) that
+# they essentially never appear as a passing buzzword in an unrelated
+# job's description — if a posting says "prompt engineer" or "mlops
+# engineer" or "ai agent" anywhere, the role really is about that. Safe
+# to keep as full-text (title OR description) triggers.
+AI_SPECIFIC_PHRASES = [kw for kw in AI_HIGH_KEYWORDS if kw not in AI_GENERIC_TERMS]
 AI_BONUS_KEYWORDS = [
     "python", "tensorflow", "pytorch", "openai", "langchain", "hugging face",
     "prompt engineering", "rag", "vector database", "nlp", "api integration",
@@ -1474,7 +1491,14 @@ def get_job_track(title, description):
     text = (title + " " + description).lower()
     t = title.lower()
 
-    is_ai = any(kw in text for kw in AI_HIGH_KEYWORDS)
+    # FIX: generic/bare AI terms (llm, generative ai, deep learning, etc.)
+    # only count if they're in the TITLE — otherwise a QA/other-track job
+    # whose description mentions "LLM observability" or "uses generative AI
+    # features" in passing gets wrongly classified as AI Engineering,
+    # stealing a career-track slot and never reaching its real track.
+    # Specific multi-word phrases (prompt engineer, ai agent, mlops
+    # engineer, etc.) are distinctive enough to stay as full-text triggers.
+    is_ai = any(kw in t for kw in AI_GENERIC_TERMS) or any(kw in text for kw in AI_SPECIFIC_PHRASES)
     is_sdet = any(kw in t for kw in SDET_TITLE_KEYWORDS)
     is_qa = any(kw in text for kw in QA_HIGH_KEYWORDS)
 
@@ -1664,8 +1688,15 @@ def score_job(title, description):
         if kw in text and kw not in matched:
             score += 20
             matched.append(kw)
-    # AI keywords = 20 pts (title already scored above)
-    for kw in AI_HIGH_KEYWORDS:
+    # AI keywords = 20 pts (title already scored above). Same generic/
+    # specific split as classification: generic bare terms only score if
+    # in the title (avoid inflating score from a passing description
+    # mention); specific phrases still score from anywhere in the text.
+    for kw in AI_GENERIC_TERMS:
+        if kw in t and kw not in matched:
+            score += 20
+            matched.append(kw)
+    for kw in AI_SPECIFIC_PHRASES:
         if kw in text and kw not in matched:
             score += 20
             matched.append(kw)

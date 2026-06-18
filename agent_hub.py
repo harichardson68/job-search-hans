@@ -484,8 +484,14 @@ class ChatTab:
                 if not any(j.get("fit_tier") for j in jobs):
                     analyze_fit(state)
 
+                _VALID_TRACKS = {"LoadRunner / Performance", "AI Hybrid",
+                                 "QA / Test Engineering", "COBOL / Mainframe"}
+                sendable = [j for j in jobs
+                            if j.get("fit_tier", "") != "Weak"
+                            and j.get("score", 0) > -100
+                            and j.get("track", "") in _VALID_TRACKS]
                 generate_cover_letters(state)
-                result = send_digest(jobs, goal=goal)
+                result = send_digest(sendable, goal=goal)
                 msg = result.get("note", "Done.")
             except Exception as e:
                 msg = f"Email error: {e}"
