@@ -354,7 +354,7 @@ if not git_pull_or_abort():
 #
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
-GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
 
 # ─── PIPELINE FUNNEL INSTRUMENTATION ─────────────────────────
 # Tracks where jobs get filtered out at each stage of the pipeline.
@@ -1148,7 +1148,7 @@ EMAIL_TO       = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
 # creative writing. Cover letters stay on Sonnet.
 GENERATE_FIT_ANALYSIS   = True
 FIT_ANALYSIS_MODEL      = "claude-haiku-4-5-20251001"
-FIT_ANALYSIS_TRACKS     = {"AI Engineering", "QA Automation", "Remote Income Floor"}  # tracks that get fit-eval/gating; Performance Engineering excluded (keyword match there IS reliable fit signal already)
+FIT_ANALYSIS_TRACKS     = {"AI Engineering", "QA Automation", "Gap Track"}  # tracks that get fit-eval/gating; Performance Engineering excluded (keyword match there IS reliable fit signal already)
 HARD_DISQUALIFY_TERMS   = [
     # If these appear in the fit_reason/description signal, drop silently —
     # no realistic chance, not worth a slot in the digest at all.
@@ -1628,13 +1628,13 @@ def get_job_track(title, description):
                        any(kw in text for kw in REMOTE_FLOOR_HIGH_KEYWORDS)
     if is_cobol:
         # No seniority exclusion for COBOL — Hans's background covers it.
-        return "Remote Income Floor", True, "none:cobol-seniority-exempt"
+        return "Gap Track", True, "none:cobol-seniority-exempt"
     if is_remote_floor:
         senior_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "manager"]
         matched_senior_kw = next((s for s in senior_kws if s in t), None)
         if matched_senior_kw:
-            return "Remote Income Floor", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
-        return "Remote Income Floor", True, "none:no-seniority-signal-found"
+            return "Gap Track", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
+        return "Gap Track", True, "none:no-seniority-signal-found"
 
     # Performance Engineering - Senior OK only if LoadRunner/VuGen/LRE mentioned
     senior_kws = ["senior", "sr.", "sr ", "lead", "principal", "staff", "director", "head of", "vp"]
@@ -1688,7 +1688,7 @@ def score_job(title, description):
             break  # only count once
 
     # NOTE: COBOL-specific scoring removed from here — COBOL jobs always
-    # classify into "Remote Income Floor" before get_job_track() ever
+    # classify into "Gap Track" before get_job_track() ever
     # falls through to Performance Engineering (see is_cobol check), so
     # the old "COBOL = 2pts, last resort" weights below were dead code:
     # they could never actually run for an actual COBOL job. Proper COBOL
@@ -1850,7 +1850,7 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     # accept/reject decision for hybrid COBOL jobs happens in main(),
     # where job["salary"] actually exists.
     is_cobol_job = any(kw in (title + " " + desc).lower() for kw in COBOL_HIGH_KEYWORDS)
-    if track == "Remote Income Floor" and not is_cobol_job:
+    if track == "Gap Track" and not is_cobol_job:
         if not is_us_remote(title, desc, location):
             return False, score, matched, track, level_signal
     elif not is_us_remote(title, desc, location):
@@ -3060,7 +3060,7 @@ def generate_cover_letter(job):
         template if the API call fails or GENERATE_COVER_LETTERS is off.
     """
     track = job.get("track", "")
-    if track in {"QA Automation", "Remote Income Floor"}:
+    if track in {"QA Automation", "Gap Track"}:
         is_cobol = any(
             kw in (job.get("title", "") + " " + job.get("description", "")).lower()
             for kw in COBOL_HIGH_KEYWORDS
@@ -3147,11 +3147,11 @@ def generate_fit_analysis(job):
         )
         company = "(not parsed — infer from title/description)"
 
-    is_income_track = track in {"QA Automation", "Remote Income Floor"}
+    is_income_track = track in {"QA Automation", "Gap Track"}
 
     if is_income_track:
         prompt = f"""You are evaluating a job match for Hans Richardson — but for a DIFFERENT
-purpose than his career-direction search. This is his "Remote Income Floor"
+purpose than his career-direction search. This is his "Gap Track"
 track: the goal is NOT career advancement, it's getting him out of in-person
 warehouse work onto something remote that pays at least $30/hr. Breadth and
 realism matter more than career fit here.
@@ -3291,7 +3291,7 @@ def main():
         "AI Engineering": 40,           # Lowered from 51 - catching real jobs
         "QA Automation": 30,            # SDET / QA hybrid
         "COBOL/Mainframe": 10,          # Last resort - low threshold
-        "Remote Income Floor": 20,      # Modest bar — relief track, breadth over precision
+        "Gap Track": 20,      # Modest bar — relief track, breadth over precision
     }
     filtered_by_score = []
     for job in all_jobs:
@@ -3319,7 +3319,7 @@ def main():
     cobol_hybrid_filtered = []
     cobol_hybrid_dropped = 0
     for job in all_jobs:
-        if job.get("track") != "Remote Income Floor":
+        if job.get("track") != "Gap Track":
             cobol_hybrid_filtered.append(job)
             continue
         is_cobol = any(kw in (job.get("title","") + " " + job.get("description","")).lower()
@@ -3357,7 +3357,7 @@ def main():
     pay_filtered = []
     pay_dropped_count = 0
     for job in all_jobs:
-        if job.get("track") == "Remote Income Floor":
+        if job.get("track") == "Gap Track":
             if meets_pay_floor(job):
                 pay_filtered.append(job)
             else:
@@ -3468,7 +3468,7 @@ def main():
     # jobs never compete against Performance/AI jobs for a slot, and
     # vice versa.
     CAREER_TRACKS = {"Performance Engineering", "AI Engineering"}
-    INCOME_TRACKS = {"QA Automation", "Remote Income Floor"}
+    INCOME_TRACKS = {"QA Automation", "Gap Track"}
 
     pool_career = [j for j in all_jobs if j.get("track") in CAREER_TRACKS]
     pool_income = [j for j in all_jobs if j.get("track") in INCOME_TRACKS]
@@ -3566,7 +3566,14 @@ def main():
     print(f"{'='*55}\n")
     print(f"[STATS] Generating cover letters for {len(top_jobs)} job{'s' if len(top_jobs) != 1 else ''}...\n")
     for i, job in enumerate(top_jobs, 1):
-        if GENERATE_COVER_LETTERS:
+        track = job.get("track", "")
+        is_income_track = track in {"QA Automation", "Gap Track"}
+        if is_income_track:
+            # Income-track jobs always use the free template — never gated
+            # by GENERATE_COVER_LETTERS, since templates cost nothing and
+            # the flag only guards Sonnet API calls.
+            job["cover_letter"] = generate_cover_letter(job)
+        elif GENERATE_COVER_LETTERS:
             job["cover_letter"] = generate_cover_letter(job)
         else:
             job["cover_letter"] = ""
@@ -3751,7 +3758,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     # Remote Income Floor Stretch Fit, and the numbering inside each
     # section makes sense on its own.
     CAREER_TRACKS = {"Performance Engineering", "AI Engineering"}
-    INCOME_TRACKS = {"QA Automation", "Remote Income Floor"}
+    INCOME_TRACKS = {"QA Automation", "Gap Track"}
     career_section_jobs = [j for j in top_jobs if j.get("track") in CAREER_TRACKS]
     income_section_jobs = [j for j in top_jobs if j.get("track") in INCOME_TRACKS]
 

@@ -2,42 +2,43 @@
   "date": "2026-06-18",
   "jobs": [
     {
-      "job_id": "e0e2f1bd8c",
+      "job_id": "7b22761dbe",
       "number": "1",
       "number_display": "1",
-      "title": "Agentic AI Architect & Value Engineer - Job Listings at Granicus, LLC",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 43,
-      "url": "https://careers-granicus.icims.com/jobs/10291/agentic-ai-architect-%26-value-engineer/job?in_iframe=1",
-      "matched_keywords": [
-        "agentic ai",
-        "agentic"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false,
-      "fit_tier": "Excellent Fit",
-      "fit_analysis": "**Excellent Fit** \u2014 Remote US *Agentic AI Architect* role matches Hans's active GenAI/agent upskilling; *dual-track search* alignment with no _geography friction_.",
-      "level_signal": "none:no-seniority-signal-found"
-    },
-    {
-      "job_id": "7b22761dbe",
-      "number": "2",
-      "number_display": "2",
       "title": "Generative AI Engineer - Genesis10 - Remote in Green Bay, WI, US",
       "company": "N/A",
       "track": "AI Engineering",
       "score": 80,
       "url": "https://www.dice.com/job-detail/b4d732db-9816-4774-a0d4-2c4e17d8f829",
       "matched_keywords": [
-        "generative ai",
         "generative ai engineer",
+        "generative ai",
         "ai engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Generative AI Engineer* role matches Hans's active upskilling trajectory; remote location ideal, minor _production LLM deployment_ experience gap but portfolio projects bridge it.",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI engineer* role matches Hans's active upskilling; remote US location fits; minor _production LLM deployment_ gap but GenAI cert and Claude projects bridge it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "ee732d77ec",
+      "number": "2",
+      "number_display": "2",
+      "title": "Kobie Marketing - AI Engineer - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 75,
+      "url": "https://jobs.lever.co/kobie/d14582bd-64a2-439e-a7e3-a50ce7270a3d/apply",
+      "matched_keywords": [
+        "ai agent",
+        "ai engineer",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent engineering* and *observability* skills align well; _production LLM evaluation_ experience still building but demonstrated through recent projects.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
@@ -50,16 +51,16 @@
       "score": 69,
       "url": "https://agentic-engineering-jobs.com/jobs/crewai",
       "matched_keywords": [
-        "ai developer",
         "agentic",
+        "langchain",
         "sla",
         "langchain developer",
-        "langchain"
+        "ai developer"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic engineering* and *CrewAI developer* roles align with Hans's AI upskilling; minor _production LLM deployment_ depth but GenAI cert and Claude projects bridge gap well.",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic engineering* and *LangChain* align with Hans's AI upskilling; minor _production LLM ops_ depth needed but core agent/workflow skills present.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
@@ -72,13 +73,13 @@
       "score": 60,
       "url": "https://themutualgroup.wd108.myworkdayjobs.com/TMG/job/Iowa---TMG-Home-Office/AI-Automation-Engineer_R-100220",
       "matched_keywords": [
-        "ai automation engineer",
-        "ai solutions engineer"
+        "ai solutions engineer",
+        "ai automation engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *AI automation* and *agent engineering* align with Hans's active portfolio; minor _production deployment_ depth gap but hybrid/remote location match is clean.",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation engineer* role matches Hans's active GenAI/agent portfolio; minor _production LLM deployment_ gap but direct relevance to dual-track search.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
@@ -91,22 +92,41 @@
       "score": 52,
       "url": "https://motionrecruitment.com/tech-jobs/detroit-/contract/full-stack-ai-engineer-python-remote/880274",
       "matched_keywords": [
-        "multi-agent",
-        "observability",
-        "python",
         "ai engineer",
-        "ai observability"
+        "observability",
+        "multi-agent",
+        "ai observability",
+        "python"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *AI observability* and *multi-agent* exposure match Hans's pivot direction; _production LLM deployment_ depth still emerging but Python and consulting background solid.",
+      "fit_analysis": "**Strong Fit** \u2014 *AI systems* and *observability* expertise align well; _production multi-agent_ depth still building but realistic application.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e0e2f1bd8c",
+      "number": "6",
+      "number_display": "6",
+      "title": "Agentic AI Architect & Value Engineer - Job Listings at Granicus, LLC",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://careers-granicus.icims.com/jobs/10291/agentic-ai-architect-%26-value-engineer/job?in_iframe=1",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* role matches Hans's active upskilling and *Claude API* projects; _production agent deployment_ experience still building but trajectory clear.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "f5afd724db",
-      "number": "6",
-      "number_display": "6",
+      "number": "7",
+      "number_display": "7",
       "title": "Foxelli Group - AI Engineer (Technical Product Owner) - Jobs",
       "company": "N/A",
       "track": "AI Engineering",
@@ -118,13 +138,13 @@
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role with *remote* setting matches career pivot; _product ownership_ and founder-direct work require validation of depth.",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role matches Hans's emerging GenAI/agent skills; minor _product ownership_ friction but founder-direct build aligns with his technical depth.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "603ebb5888",
-      "number": "7",
-      "number_display": "7",
+      "number": "8",
+      "number_display": "8",
       "title": "Full Stack AI Engineer (Data) @ Techtorch - Jobs",
       "company": "N/A",
       "track": "AI Engineering",
@@ -136,13 +156,13 @@
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Full stack AI engineering* + *remote* location ideal; Hans's GenAI/Claude skills and observability depth apply well, though _production data systems_ experience is emerging.",
+      "fit_analysis": "**Strong Fit** \u2014 *Full Stack AI Engineer* role matches Hans's active GenAI/agent learning trajectory; _data foundation_ depth and production ML experience still building but realistic fit.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "6dce74de50",
-      "number": "8",
-      "number_display": "8",
+      "number": "9",
+      "number_display": "9",
       "title": "MLOps Engineer (Arize AI) - AgreeYa Solutions - Remote | Dice.com",
       "company": "N/A",
       "track": "AI Engineering",
@@ -154,89 +174,51 @@
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *MLOps* and *observability stack* (AppDynamics, Splunk, Grafana) align well; _production ML model training_ experience gap but GenAI cert and agent work bridge it.",
+      "fit_analysis": "**Strong Fit** \u2014 *MLOps* and *AI systems* monitoring align with observability depth; _production ML model training_ experience gap is manageable given GenAI foundation.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "cabf276a4e",
-      "number": "9",
-      "number_display": "9",
+      "number": "10",
+      "number_display": "10",
       "title": "AI Prompt Specialist - MCI - | Dice.com",
       "company": "N/A",
       "track": "AI Engineering",
       "score": 60,
       "url": "https://www.dice.com/job-detail/8777b176-e829-4f02-ba25-f6af2129b3a6",
       "matched_keywords": [
-        "prompt engineer",
-        "ai prompt"
+        "ai prompt",
+        "prompt engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Decent Fit",
-      "fit_analysis": "**Decent Fit** \u2014 *AI prompt engineering* aligns with GenAI cert and agent projects; _contact center domain_ and sparse JD details create moderate friction.",
-      "level_signal": "none:no-seniority-signal-found"
-    },
-    {
-      "job_id": "395f7da834",
-      "number": "10",
-      "number_display": "10",
-      "title": "AI Engineer (Life Sciences & Healthcare) - Greenhouse",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://boards.greenhouse.io/coherentsolutions/jobs/4896325101",
-      "matched_keywords": [
-        "ai engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false,
-      "fit_tier": "Decent Fit",
-      "fit_analysis": "**Decent Fit** \u2014 *AI engineering* skills and *GenAI certification* align, but _Bulgaria location_ and _life sciences domain_ create friction against remote-US/KC preference.",
-      "level_signal": "none:no-seniority-signal-found"
-    },
-    {
-      "job_id": "ee732d77ec",
-      "number": "S1",
-      "number_display": "S1",
-      "title": "Kobie Marketing - AI Engineer - Lever",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 75,
-      "url": "https://jobs.lever.co/kobie/d14582bd-64a2-439e-a7e3-a50ce7270a3d/apply",
-      "matched_keywords": [
-        "ai agent",
-        "uat",
-        "ai engineer"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI agent* and *LLM evaluation* skills emerging strongly, but _production deployment experience_ still building; realistic pivot from observability expertise.",
+      "fit_analysis": "**Decent Fit** \u2014 *AI prompt engineering* aligns with emerging GenAI skills; _contact center / agent-facing_ context differs from Hans's systems/infrastructure trajectory, but realistic apply if JD emphasizes workflow design.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "5890cbcae8",
-      "number": "S2",
-      "number_display": "S2",
+      "number": "S1",
+      "number_display": "S1",
       "title": "Prompt Engineer Internship at Zenotalent | Remote - Unstop",
       "company": "N/A",
       "track": "AI Engineering",
       "score": 43,
       "url": "https://unstop.com/internships/prompt-engineer-internship-zenotalent-1699198",
       "matched_keywords": [
-        "prompt engineer",
-        "gemini"
+        "gemini",
+        "prompt engineer"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* pivot aligns with Hans's GenAI cert and Claude projects; _internship level_ and _prompt-focused_ role below his 24yr seniority, but realistic stepping stone.",
+      "fit_analysis": "**Stretch Fit** \u2014 *Prompt engineering* and *GenAI* skills align with Hans's new trajectory, but _internship-level role_ mismatches 24+ years seniority and _no production agent deployment_ yet.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "0c4aa1f390",
-      "number": "S3",
-      "number_display": "S3",
+      "number": "S2",
+      "number_display": "S2",
       "title": "Sitetracker - Operations Associate - Salesforce Admin & AI Developer",
       "company": "N/A",
       "track": "AI Engineering",
@@ -248,8 +230,26 @@
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agent engineering* and *AI developer* skills align with Hans's active portfolio direction, but _Salesforce admin_ and operational ownership context differ from performance/reliability core.",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI agent* and *workflow engineering* align with Hans's GenAI trajectory, but _Salesforce admin_ focus and _production agent delivery_ at scale are emerging strengths.",
       "level_signal": "desc:entry_mid_signal:associate"
+    },
+    {
+      "job_id": "395f7da834",
+      "number": "S3",
+      "number_display": "S3",
+      "title": "AI Engineer (Life Sciences & Healthcare) - Greenhouse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://boards.greenhouse.io/coherentsolutions/jobs/4896325101",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* trajectory and *agentic workflows* align with Hans's upskilling; _life sciences domain_ and Bulgaria location create friction against remote-US preference.",
+      "level_signal": "none:no-seniority-signal-found"
     },
     {
       "job_id": "4a3333dcc7",
@@ -266,7 +266,7 @@
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* target aligns with Hans's emerging GenAI and agent portfolio, but _production LLM systems_ experience limited and _San Francisco in-person_ conflicts with remote preference.",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* ambition and *GenAI certification* align with career pivot, but _production ML/agent deployment_ experience nascent and _San Francisco on-site_ conflicts with remote preference.",
       "level_signal": "none:no-seniority-signal-found"
     },
     {
@@ -275,19 +275,19 @@
       "number_display": "G1",
       "title": "Senior Mainframe COBOL Developer - Remote in Olympia, WA, US",
       "company": "N/A",
-      "track": "Remote Income Floor",
+      "track": "Gap Track",
       "score": 65,
       "url": "https://www.dice.com/job-detail/62e30a46-653e-41d9-90a0-e857d10067ec",
       "matched_keywords": [
-        "mainframe",
-        "cics",
         "cobol developer",
+        "cics",
+        "mainframe",
         "cobol"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
       "fit_tier": "Excellent Fit",
-      "fit_analysis": "**Excellent Fit** \u2014 *Remote* Senior COBOL/CICS role with *24+ years IT background*; direct mainframe expertise, _no ramp-up friction_.",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* Senior COBOL/CICS role matching his 24+ years IT experience; _mainframe specialist_ title is high but skill/pay align perfectly.",
       "level_signal": "none:cobol-seniority-exempt"
     },
     {
@@ -296,18 +296,18 @@
       "number_display": "G2",
       "title": "Software Engineer (Mainframe, Cobol, CICS) - Elite Technical - Dice",
       "company": "N/A",
-      "track": "Remote Income Floor",
+      "track": "Gap Track",
       "score": 55,
       "url": "https://www.dice.com/job-detail/c0e7501e-54fb-4c65-8576-47222102d310",
       "matched_keywords": [
-        "mainframe",
         "cics",
+        "mainframe",
         "cobol"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
-      "fit_tier": "Excellent Fit",
-      "fit_analysis": "**Excellent Fit** \u2014 *COBOL/mainframe* contract role at *$75\u201380/hr* remote; direct match to his 24+ years IT experience and _no travel_ required.",
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Remote* mainframe COBOL/CICS role at *$75\u201380/hr*; 24+ years IT experience covers foundations, _language syntax_ is learnable.",
       "level_signal": "none:cobol-seniority-exempt"
     }
   ]
