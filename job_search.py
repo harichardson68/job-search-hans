@@ -596,6 +596,7 @@ BLOCKED_JOB_SITES = [
     "www.linkedin.com",
     "wfhforgeon.byethost7.com",
     "hstn.me", 
+    "remotepulse.likesyou.org",
 ]
 
 def is_blocked_site(url):
