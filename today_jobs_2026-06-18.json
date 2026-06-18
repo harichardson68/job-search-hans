@@ -2,43 +2,41 @@
   "date": "2026-06-18",
   "jobs": [
     {
-      "job_id": "ee732d77ec",
+      "job_id": "cabf276a4e",
       "number": 1,
       "number_display": "1",
-      "title": "Kobie Marketing - AI Engineer - Lever",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 75,
-      "url": "https://jobs.lever.co/kobie/d14582bd-64a2-439e-a7e3-a50ce7270a3d/apply",
-      "matched_keywords": [
-        "ai agent",
-        "AI-title:ai engineer",
-        "ai engineer",
-        "uat"
-      ],
-      "source": "Google Jobs",
-      "is_amazon": false,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *AI agent engineering* and *observability* expertise align well; minor _production LLM evaluation_ depth gap but actively building."
-    },
-    {
-      "job_id": "c310d4fe9b",
-      "number": 2,
-      "number_display": "2",
-      "title": "Hire the 64 Best Remote AI Automation English Men Available for ...",
+      "title": "AI Prompt Specialist - MCI - | Dice.com",
       "company": "N/A",
       "track": "AI Engineering",
       "score": 60,
-      "url": "https://remoteok.com/hire-remotely/ai-automation+available-now+english+men",
+      "url": "https://www.dice.com/job-detail/8777b176-e829-4f02-ba25-f6af2129b3a6",
       "matched_keywords": [
-        "llm application",
-        "AI-title:ai automation",
-        "ai automation engineer"
+        "prompt engineer",
+        "ai prompt",
+        "AI-title:prompt specialist"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *AI automation engineer* profile matches Hans's active GenAI/agent work; minor _production LLM depth_ gap but clear trajectory and remote eligibility."
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 Hans's *AI engineering trajectory* and *prompt/agent work* align with role direction, but _contact-center ops_ domain and limited production LLM deployment experience create friction."
+    },
+    {
+      "job_id": "4733e77411",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10443716/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic",
+        "AI-title:agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": ""
     }
   ]
 }
