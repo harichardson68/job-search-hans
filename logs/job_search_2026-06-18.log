@@ -1,6 +1,6 @@
 
 ============================================================
-  Job Search Run: 2026-06-18 11:44:58
+  Job Search Run: 2026-06-18 12:00:02
 ============================================================
 [GIT] Pulling latest from GitHub...
    [OK] Already up to date.
@@ -11,6 +11,9 @@
 =======================================================
 
 [SEARCH] Searching RemoteOK...
+   [DEBUG] RemoteOK FILTERED-title: Client Success Manager
+   [DEBUG] RemoteOK FILTERED-title: Virtual Assistant
+   [DEBUG] RemoteOK FILTERED-score: Farm Hand
    [DEBUG] RemoteOK FILTERED-score: Receptionist Front Office Executive
    [DEBUG] RemoteOK FILTERED-score: Designer
    [DEBUG] RemoteOK FILTERED-level: Head of Communications
@@ -108,9 +111,6 @@
    [DEBUG] RemoteOK FILTERED-title: TEST Australia
    [DEBUG] RemoteOK FILTERED-title: Design Engineer
    [DEBUG] RemoteOK FILTERED-title: Creative Project Manager
-   [DEBUG] RemoteOK FILTERED-score: Handyman
-   [DEBUG] RemoteOK FILTERED-score: Receptionist
-   [DEBUG] RemoteOK FILTERED-score: Caretaker
    [OK] RemoteOK: 0 relevant jobs found
 [SEARCH] Searching Remotive...
    [DEBUG] Remotive: 32 raw results, status 200
@@ -210,7 +210,7 @@
    [DEBUG] Serper 'site:dice.com/job-detail "vugen" remote': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "performance test engineer" remote': 0 jobs, 5 organic, status 200
    [DEBUG] Serper 'site:roberthalf.com "loadrunner" "performance" "remote"': 0 jobs, 0 organic, status 200
-   [DEBUG] Serper '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote': 0 jobs, 3 organic, status 200
+   [DEBUG] Serper '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote': 0 jobs, 4 organic, status 200
    [DEBUG] Serper '"performance center" "loadrunner" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country toronto): Performance Test Lead Job - Toronto, ON, Canada (A
    [DEBUG] Serper FILTERED-non-US (city/country india): 2848 Performance Testing Jobs in India - foundit
@@ -218,26 +218,29 @@
    [DEBUG] Serper '"performance test engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Senior Performance Test Engineer - 7 to 12 years o
    [DEBUG] Serper FILTERED-searchpage: Mainframe Tester jobs in Remote - Indeed
+   [DEBUG] Serper FILTERED-non-US (city/country chennai): Senior Performance Test Engineer - LoadRunner - Ta
    [DEBUG] Serper '"performance engineer" "loadrunner" OR "vugen" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country mexico): Intermediate Performance Engineer | CareerSprint
+   [DEBUG] Serper FILTERED-searchpage: Performance Tester jobs in Toronto, On - Indeed
+   [DEBUG] Serper FILTERED-searchpage: Senior Performance Test Engineer - 7 to 12 years o
    [DEBUG] Serper '"load test engineer" "loadrunner" remote': 0 jobs, 0 organic, status 200
    [DEBUG] Serper '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (tld .co.uk): Senior Performance Engineer Job Trends, Salaries &
    [DEBUG] Serper FILTERED-non-US (tld .it): Senior Performance Engineer - DCG - Just Join IT
    [DEBUG] Serper FILTERED-fp_domain:jobrapido.com: Senior Performance Engineer in Banking - Jobrapido
    [DEBUG] Serper FILTERED-non-US (city/country pune): Senior Performance Engineer - Barclays | Pune, Mah
-   [DEBUG] Serper 'site:boards.greenhouse.io "prompt engineer" "remote"': 0 jobs, 0 organic, status 200
+   [DEBUG] Serper 'site:boards.greenhouse.io "prompt engineer" "remote"': 0 jobs, 1 organic, status 200
    [DEBUG] Serper 'site:jobs.lever.co "prompt engineer" "remote"': 0 jobs, 2 organic, status 200
-   [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 3 organic, status 200
+   [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 2 organic, status 200
    [DEBUG] Serper 'site:myworkdayjobs.com "prompt engineer" remote': 0 jobs, 1 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "prompt engineer" remote': 0 jobs, 6 organic, status 200
    [DEBUG] Serper '"prompt engineer" remote "generative ai"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Prompt Engineer jobs in Remote - Indeed
+   [DEBUG] Serper FILTERED-searchpage: Flexible Ai Prompt Engineer Remote No Experience J
    [DEBUG] Serper FILTERED-non-US (city/country india): Prompt Engineer – Contract at Netomi - India Remot
    [DEBUG] Serper '"prompt engineer" remote "llm"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Prompt Engineer jobs in Remote - Indeed
    [DEBUG] Serper FILTERED-searchpage: Llm engineer jobs in Remote - Indeed
-   [DEBUG] Serper FILTERED-non-US (city/country vancouver): Remote Prompt Engineer (LLM Automation for Data La
    [DEBUG] Serper '"prompt engineering" remote entry level OR mid level': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Flexible Remote Entry Level Prompt Engineer Jobs -
    [DEBUG] Serper FILTERED-searchpage: Flexible Ai Prompt Engineer Remote No Experience J
@@ -247,29 +250,28 @@
    [DEBUG] Serper FILTERED-non-US (city/country india): Jobgether - AI Engineer – Python & Snowflake - Lev
    [DEBUG] Serper '"llm application developer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country mumbai): Python & LLM Application Developer - BeBee
-   [DEBUG] Serper FILTERED-searchpage: T24 Deployment Jobs - Naukri.com
    [DEBUG] Serper FILTERED-non-US (city/country poland): SAP Developer in Krakow, Lesser Poland, Poland | I
-   [DEBUG] Serper FILTERED-non-US (city/country bengaluru): Mendix Developer – Procyon Technostructure – Job B
+   [DEBUG] Serper FILTERED-non-US (city/country bengaluru): Java Application Developer – LTM – Job Bengaluru, 
+   [DEBUG] Serper FILTERED-searchpage: T24 Deployment Jobs - Naukri.com
    [DEBUG] Serper '"ai agent developer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-non-US (city/country manila): Agentic Software Developer / AI Agent Developer (C
    [DEBUG] Serper FILTERED-searchpage: Ai Developer Jobs, Employment in Sparks, NV | Inde
+   [DEBUG] Serper FILTERED-non-US (city/country manila): Agentic Software Developer / AI Agent Developer (C
    [DEBUG] Serper '"agentic ai" engineer remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Agentic Ai jobs in Remote - Indeed
    [DEBUG] Serper FILTERED-non-US (city/country bengaluru): Lead AI Engineer (Agentic AI) - Myworkdayjobs.com
    [DEBUG] Serper '"langchain developer" OR "langchain engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Langchain jobs in Remote - Indeed
-   [DEBUG] Serper FILTERED-searchpage: Remote ai jobs in Charlotte, NC - Indeed
    [DEBUG] Serper FILTERED-non-US (city/country india): Hire LangChain Developers in India
+   [DEBUG] Serper FILTERED-searchpage: Remote ai jobs in Charlotte, NC - Indeed
    [DEBUG] Serper FILTERED-non-US (city/country mumbai): Singapore & Malayasia Openings on Instagram
    [DEBUG] Serper 'site:boards.greenhouse.io "ai automation engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.lever.co "ai integration engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper '"ai automation engineer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-non-US (city/country ho chi minh): We're Hiring: AI / Automation Engineer – SOCOM Age
    [DEBUG] Serper FILTERED-searchpage: 25+ Ai Engineer Jobs, Employment in Remote June 13
    [DEBUG] Serper '"ai integration engineer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-searchpage: Integration Engineer jobs in Vancouver, BC - Indee
-   [DEBUG] Serper FILTERED-non-US (city/country brazil): Senior AI Integration Engineer - Jalasoft - Applic
+   [DEBUG] Serper FILTERED-searchpage: Flexible Remote Ai Backend Engineer Jobs - Indeed
    [DEBUG] Serper FILTERED-non-US (city/country noida): 40 Ai Integration Engineer Remote Internships in N
+   [DEBUG] Serper FILTERED-non-US (city münchen): Senior Software Engineer, Applied AI (Remote) - Re
    [DEBUG] Serper '"ai solutions engineer" remote entry level OR mid': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Azure Ai Engineer jobs in Remote - Indeed
    [DEBUG] Serper '"generative ai engineer" remote': 0 jobs, 10 organic, status 200
@@ -306,11 +308,11 @@
    [DEBUG] Serper FILTERED-non-US (city/country france): AI Engineer - FDE (Forward Deployed Engineer) - Da
    [DEBUG] Serper FILTERED-non-US (city/country cairo): AI Engineer - BlackStone eIT - Built In
    [DEBUG] Serper FILTERED-non-US (city/country india): ERDS-MJ - Gen AI Engineer - Capco - Built In
-   [DEBUG] Serper FILTERED-non-US (city/country sydney): Chubb - AI Engineer (12 Month Contract) - Built In
+   [DEBUG] Serper FILTERED-non-US (city/country paris): Staff AI Engineer - Data Visualization - Datadog |
    [DEBUG] Serper 'site:builtin.com/job "ai qa" OR "ai test" remote': 0 jobs, 1 organic, status 200
    [DEBUG] Serper '"AI QA engineer" OR "AI test engineer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-fp_domain:jobrapido.com: Remote AI Test Engineer — Data en Link-Worldwide e
-   [DEBUG] Serper FILTERED-searchpage: Qa Analyst Remote jobs in Minneapolis, Mn - Indeed
+   [DEBUG] Serper FILTERED-fp_domain:jobrapido.com: Remote AI Test Engineer — Data & AI Quality - Jobr
+   [DEBUG] Serper FILTERED-searchpage: Computer Full Remote jobs in New Jersey - Indeed
    [DEBUG] Serper '"LLM evaluation engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city turin): Remote Software Engineer – AI Research & Evaluatio
    [DEBUG] Serper FILTERED-non-US (city/country london): LLM Training Researcher - Architecture & Efficienc
@@ -318,7 +320,7 @@
    [DEBUG] Serper '"AI reliability engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country india): Ai Jobs in Raleigh, NC (NOW HIRING) - ZipRecruiter
    [DEBUG] Serper '"AI observability" engineer remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-searchpage: 8607 Observability Job Vacancies In June 2026 - Na
+   [DEBUG] Serper FILTERED-searchpage: 9051 Observability Job Vacancies In June 2026 - Na
    [DEBUG] Serper '"LLM observability" engineer remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Llm evaluation jobs in Remote - Indeed
    [DEBUG] Serper '"AI SDET" remote': 0 jobs, 10 organic, status 200
@@ -328,12 +330,11 @@
    [DEBUG] Serper FILTERED-non-US (city/country bangalore): Build AI agents that make healthcare less painful.
    [DEBUG] Serper FILTERED-non-US (city/country bangalore): We're hiring an AI Engineer! Build LLM-powered age
    [DEBUG] Serper FILTERED-non-US (city/country hyderabad): WFH Testing Jobs 2026 | Manual & Automation QA Job
-   [DEBUG] Serper FILTERED-non-US (city/country bangalore): Automation Testing We are looking for an experienc
    [DEBUG] Serper '"AI workflow engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper 'site:jobs.lever.co "ai sdet" OR "llm test" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"': 0 jobs, 1 organic, status 200
    [DEBUG] Serper 'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"': 0 jobs, 0 organic, status 200
-   [OK] Google Jobs: 28 relevant jobs found
+   [OK] Google Jobs: 26 relevant jobs found
 [SEARCH] Searching Adzuna...
    [DEBUG] Adzuna 'loadrunner performance engineer': 0 raw results, status 200
    [DEBUG] Adzuna 'loadrunner': 20 raw results, status 200
@@ -376,77 +377,97 @@
    [OK] Wellfound: 0 relevant jobs found
    [DEBUG] FILTERED-minscore (AI Engineering needs 40pts): AI Workflow Engineer and Developer (Remote) - IBM  [23pts]
    [DEBUG] FILTERED-minscore (AI Engineering needs 40pts): AI Workflow Engineer at Serotonin - Remote - Remot [20pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): Senior Mainframe Developer (COBOL/DB2/CICS) - Dice [12pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): Senior Mainframe Developer (COBOL) - System One -  [10pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): Senior Mainframe COBOL Developer - Remote in Olymp [10pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): COBOL AS/400 Developer - Shakti Solutions - Remote [8pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): Software Engineer (Mainframe, Cobol, CICS) - Elite [8pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): COBOL Programmer with SMS Invision - Remote - Dice [6pts]
-   [DEBUG] FILTERED-minscore (Remote Income Floor needs 20pts): AS400 with COBOL - Shakti Solutions - Remote | Dic [6pts]
-[OK] Removed 9 jobs below minimum score thresholds
-   [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): Software Test Analyst - CSZNet, Inc - Hybrid in La | salary text: ''
+[OK] Removed 2 jobs below minimum score thresholds
+   [DEBUG] FILTERED-cobol-hybrid (hybrid/onsite needs ≥$55/hr): COBOL AS/400 Developer - Shakti Solutions - Remote | parsed: None
+[OK] Removed 1 hybrid/onsite COBOL job(s) below $55/hr threshold
    [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): Software Test Analyst 5 --Michigan - I2U Systems,  | salary text: ''
+   [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): Senior Mainframe Developer (COBOL/DB2/CICS) - Dice | salary text: ''
+   [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): Senior Mainframe Developer (COBOL) - System One -  | salary text: ''
    [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): QA Engineer - GTM Applications (Remote, IND) - Myw | salary text: ''
+   [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): COBOL Programmer with SMS Invision - Remote - Dice | salary text: ''
+   [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): AS400 with COBOL - Shakti Solutions - Remote | Dic | salary text: ''
    [DEBUG] FILTERED-payfloor (no parseable ≥30/hr pay): Performance Test Engineer || Jersey City NJ, Tampa | salary text: ''
-[OK] Removed 4 Remote Income Floor job(s) below $30/hr floor or with unparseable pay
-   [DEBUG] Cross-source duplicate removed: AI Automation Engineer - Myworkdayjobs.com @ N/A (Google Jobs)
-[OK] Removed 1 cross-source duplicate jobs (same job on multiple sites)
-[OK] Removed 13 duplicate jobs already sent previously
+[OK] Removed 7 Remote Income Floor job(s) below $30/hr floor or with unparseable pay
+[OK] Removed 14 duplicate jobs already sent previously
 
 =======================================================
-[STATS] Total relevant jobs found: 1
-[OK] Ran fit evaluation on 1 AI-track job(s)
-[STATS] Found 1 jobs total
-[STATS] Pool A (Performance/AI): sending top 1 of 1 candidates
-[STATS] Pool B (QA Automation/Remote Income Floor incl. COBOL): sending top 0 of 0 candidates
-[STATS] 1 of those are Stretch Fit — will show in demoted section
+[STATS] Total relevant jobs found: 2
+[OK] Ran fit evaluation on 2 AI-track job(s)
+[STATS] Found 2 jobs total
+[STATS] Pool A (Performance/AI): sending top 0 of 0 candidates
+[STATS] Pool B (QA Automation/Remote Income Floor incl. COBOL): sending top 2 of 2 candidates
 =======================================================
 
-[STATS] Generating cover letters for 1 job...
+[STATS] Generating cover letters for 2 jobs...
 
-  [01] Score: 60 | Tier:Stretch Fit   | Google Jobs | AI Prompt Specialist - MCI - | Dice.com
-        N/A | https://www.dice.com/job-detail/8777b176-e829-4f02-ba25-f6af
-        [FIT] **Stretch Fit** — Hans's *AI engineering trajectory* and *prompt/agent work* align with role direction, but _contact-cen...
+  [01] Score: 65 | Tier:Excellent Fit | Google Jobs | Senior Mainframe COBOL Developer - Remote in Olymp
+        N/A | https://www.dice.com/job-detail/62e30a46-653e-41d9-90a0-e857
+        [FIT] **Excellent Fit** — *Remote* Senior COBOL/CICS role matching his 24+ year IT background; _mainframe_ expertise directly ...
 
-[OK] Saved 1 job URLs to seen_jobs.json
+  [02] Score: 55 | Tier:Excellent Fit | Google Jobs | Software Engineer (Mainframe, Cobol, CICS) - Elite
+        N/A | https://www.dice.com/job-detail/c0e7501e-54fb-4c65-8576-4722
+        [FIT] **Excellent Fit** — *Remote* mainframe COBOL/CICS role at *$75–80/hr*; direct 24-year IT match, no _ramp barriers_....
+
+[OK] Saved 2 job URLs to seen_jobs.json
 
 [OK] Results saved to: job_results.json
 [SEARCH] Searching Amazon Jobs spotlight...
-   [OK] Amazon Jobs: 1 relevant jobs found (10-day window)
+   [OK] Amazon Jobs: 0 relevant jobs found (10-day window)
 
 [EMAIL] Sending email notification...
-   [OK] Saved 1 regular + 1 Amazon jobs to today_jobs.json
+   [OK] Saved 2 regular + 0 Amazon jobs to today_jobs.json
    [OK] Archived to today_jobs_2026-06-18.json
-   [OK] Persisted 1 Amazon jobs to job_decisions.json
    Email sent to harichardson68@gmail.com
 =======================================================
 TOP 3 MATCHES WITH COVER LETTERS
 =======================================================
 
-[TOP] [60 pts] AI Prompt Specialist - MCI - | Dice.com
+[TOP] [65 pts] Senior Mainframe COBOL Developer - Remote in Olympia, WA, US
    Company : N/A
    Source  : Google Jobs
-   URL     : https://www.dice.com/job-detail/8777b176-e829-4f02-ba25-f6af2129b3a6
-   Keywords: prompt engineer, ai prompt, AI-title:prompt specialist
+   URL     : https://www.dice.com/job-detail/62e30a46-653e-41d9-90a0-e857d10067ec
+   Keywords: mainframe, cics, cobol-title-match, cobol, cobol developer
 
 --- FIT ANALYSIS ---
-**Stretch Fit** — Hans's *AI engineering trajectory* and *prompt/agent work* align with role direction, but _contact-center ops_ domain and limited production LLM deployment experience create friction.
+**Excellent Fit** — *Remote* Senior COBOL/CICS role matching his 24+ year IT background; _mainframe_ expertise directly applicable, realistic hire and rapid ramp.
 
 --- COVER LETTER ---
+Dear Hiring Manager,
+
+I'm writing to apply for the Senior Mainframe COBOL Developer - Remote in Olympia, WA, US role at N/A. I began my IT career as a COBOL/CICS programmer on enterprise mainframe systems, and that early foundation in mainframe, cics, cobol-title-match, cobol, cobol developer has stayed with me through 24+ years in IT.
+
+While much of my recent work has been in performance testing and modern systems, I understand mainframe environments and enterprise batch/transaction processing at a level that most newer developers simply haven't been exposed to. That combination — solid COBOL/CICS fundamentals plus decades of broader production IT experience — means I can step in productively with minimal ramp-up time.
+
+I'm available immediately for remote work (or hybrid/onsite in the Kansas City metro area, depending on the role) and would welcome the chance to discuss how my background fits your team's needs.
+
+Best regards,
 Hans Richardson
-harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote-Ready)
+Lee's Summit, MO | linkedin.com/in/hans-richardson
 
----
+----------------------------------------
 
-MCI's AI-powered contact center environment is exactly the kind of production-scale, reliability-critical system where my prompt engineering and AI automation work delivers immediate value.
+[TOP] [55 pts] Software Engineer (Mainframe, Cobol, CICS) - Elite Technical - Dice
+   Company : N/A
+   Source  : Google Jobs
+   URL     : https://www.dice.com/job-detail/c0e7501e-54fb-4c65-8576-47222102d310
+   Keywords: mainframe, cobol, cics, cobol-title-match
 
-Over the past year I've built hands-on Claude API integrations — designing structured prompts for automated fit analysis, cover letter generation, and decision logging across a multi-source Python pipeline. That work required the same discipline I've applied for 24+ years in production engineering: precision, iteration, and measurable outcomes. On the performance side, I increased system throughput 40% and reduced defect resolution time 35% on a federal USDA contract, while maintaining strict SLA compliance across high-volume transaction workloads.
+--- FIT ANALYSIS ---
+**Excellent Fit** — *Remote* mainframe COBOL/CICS role at *$75–80/hr*; direct 24-year IT match, no _ramp barriers_.
 
-What I bring to an AI Prompt Specialist role that most candidates don't: evaluation rigor. I think in baselines, variance, and observability — which means I don't just write prompts, I instrument and improve them systematically.
+--- COVER LETTER ---
+Dear Hiring Manager,
 
-I'm fully available for remote work and would welcome a conversation about contributing to MCI's AI initiatives. Thank you for your consideration.
+I'm writing to apply for the Software Engineer (Mainframe, Cobol, CICS) - Elite Technical - Dice role at N/A. I began my IT career as a COBOL/CICS programmer on enterprise mainframe systems, and that early foundation in mainframe, cobol, cics, cobol-title-match has stayed with me through 24+ years in IT.
 
-— Hans Richardson
+While much of my recent work has been in performance testing and modern systems, I understand mainframe environments and enterprise batch/transaction processing at a level that most newer developers simply haven't been exposed to. That combination — solid COBOL/CICS fundamentals plus decades of broader production IT experience — means I can step in productively with minimal ramp-up time.
+
+I'm available immediately for remote work (or hybrid/onsite in the Kansas City metro area, depending on the role) and would welcome the chance to discuss how my background fits your team's needs.
+
+Best regards,
+Hans Richardson
+Lee's Summit, MO | linkedin.com/in/hans-richardson
+
 ----------------------------------------
 
 [LOGS] Snapshotting run logs...

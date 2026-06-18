@@ -2,41 +2,45 @@
   "date": "2026-06-18",
   "jobs": [
     {
-      "job_id": "cabf276a4e",
-      "number": 1,
-      "number_display": "1",
-      "title": "AI Prompt Specialist - MCI - | Dice.com",
+      "job_id": "94e18fd4f1",
+      "number": "R1",
+      "number_display": "R1",
+      "title": "Senior Mainframe COBOL Developer - Remote in Olympia, WA, US",
       "company": "N/A",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.dice.com/job-detail/8777b176-e829-4f02-ba25-f6af2129b3a6",
+      "track": "Remote Income Floor",
+      "score": 65,
+      "url": "https://www.dice.com/job-detail/62e30a46-653e-41d9-90a0-e857d10067ec",
       "matched_keywords": [
-        "prompt engineer",
-        "ai prompt",
-        "AI-title:prompt specialist"
+        "mainframe",
+        "cics",
+        "cobol-title-match",
+        "cobol",
+        "cobol developer"
       ],
       "source": "Google Jobs",
       "is_amazon": false,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 Hans's *AI engineering trajectory* and *prompt/agent work* align with role direction, but _contact-center ops_ domain and limited production LLM deployment experience create friction."
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* Senior COBOL/CICS role matching his 24+ year IT background; _mainframe_ expertise directly applicable, realistic hire and rapid ramp."
     },
     {
-      "job_id": "4733e77411",
-      "number": "A1",
-      "number_display": "A1",
-      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
-      "company": "Amazon",
-      "track": "Performance Engineering",
-      "score": 23,
-      "url": "https://amazon.jobs/en/jobs/10443716/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "job_id": "d75b1b6dd1",
+      "number": "R2",
+      "number_display": "R2",
+      "title": "Software Engineer (Mainframe, Cobol, CICS) - Elite Technical - Dice",
+      "company": "N/A",
+      "track": "Remote Income Floor",
+      "score": 55,
+      "url": "https://www.dice.com/job-detail/c0e7501e-54fb-4c65-8576-47222102d310",
       "matched_keywords": [
-        "agentic",
-        "AI-title:agentic"
+        "mainframe",
+        "cobol",
+        "cics",
+        "cobol-title-match"
       ],
-      "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": ""
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* mainframe COBOL/CICS role at *$75\u201380/hr*; direct 24-year IT match, no _ramp barriers_."
     }
   ]
 }
