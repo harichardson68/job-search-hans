@@ -1659,10 +1659,13 @@ def score_job(title, description):
             matched.append(f"AI-title:{kw}")
             break  # only count once
 
-    # COBOL in title gets small bonus (last resort - lowest priority)
-    if any(kw in t for kw in ["cobol", "cics", "mainframe"]):
-        score += 2
-        matched.append("COBOL-in-title")
+    # NOTE: COBOL-specific scoring removed from here — COBOL jobs always
+    # classify into "Remote Income Floor" before get_job_track() ever
+    # falls through to Performance Engineering (see is_cobol check), so
+    # the old "COBOL = 2pts, last resort" weights below were dead code:
+    # they could never actually run for an actual COBOL job. Proper COBOL
+    # scoring now lives in the Remote Income Floor section below, sized
+    # to actually clear that track's 20pt threshold.
 
     # LoadRunner anywhere in description = high priority
     for kw in LOADRUNNER_PRIORITY:
@@ -1705,11 +1708,6 @@ def score_job(title, description):
         if kw in text and kw not in matched:
             score += 3
             matched.append(kw)
-    # COBOL = 2 pts - absolute last resort
-    for kw in COBOL_HIGH_KEYWORDS + COBOL_BONUS_KEYWORDS:
-        if kw in text and kw not in matched:
-            score += 2
-            matched.append(kw)
 
     # ── Track 4: Remote Income Floor scoring ─────────────────────
     # Separate, modest point values — this track's purpose is "realistic
@@ -1727,6 +1725,21 @@ def score_job(title, description):
     for kw in REMOTE_FLOOR_BONUS_KEYWORDS:
         if kw in text and kw not in matched:
             score += 3
+            matched.append(kw)
+
+    # COBOL scoring (within Remote Income Floor) — sized to actually clear
+    # that track's 20pt threshold on a title match alone, same pattern as
+    # REMOTE_FLOOR_TITLE_KEYWORDS above. 25 in title mirrors the rest of
+    # the track; 10 in description (anywhere) gives partial credit even
+    # without a title hit, since COBOL/CICS/mainframe terms are specific
+    # enough not to need the generic/specific split treatment AI needed.
+    if any(kw in t for kw in ["cobol", "cics", "mainframe", "jcl", "vsam", "z/os", "zos", "mvs"]) and \
+       not any(m.startswith("remote-floor-title:") for m in matched):
+        score += 25
+        matched.append("cobol-title-match")
+    for kw in COBOL_HIGH_KEYWORDS + COBOL_BONUS_KEYWORDS:
+        if kw in text and kw not in matched:
+            score += 10
             matched.append(kw)
 
     return score, list(set(matched))
@@ -3418,6 +3431,31 @@ def main():
     top_jobs = career_jobs + income_jobs
     funnel.set_stage("final", len(top_jobs))
 
+    # ── Display numbering (single source of truth) ──────────────
+    # Computed ONCE here and stored on each job as job["display_number"],
+    # then reused by BOTH the email renderer and the today_jobs.json
+    # persistence step below. Previously these were computed independently
+    # in two places (send_email's local enumerate() calls vs. today_jobs.json's
+    # flat enumerate(top_jobs, 1)), which silently drifted out of sync once
+    # the dual-pool/R-prefix scheme was added — a decision submitted via the
+    # form referencing "R3" had no matching "R3" in today_jobs.json at all,
+    # since that file was still numbering everything 1..N flat. Computing
+    # the number once, here, and threading it through everywhere else,
+    # closes that gap structurally instead of needing the two call sites
+    # to be kept manually in sync.
+    career_normal  = [j for j in career_jobs if j.get("fit_tier") != "Stretch Fit"]
+    career_stretch = [j for j in career_jobs if j.get("fit_tier") == "Stretch Fit"]
+    income_normal  = [j for j in income_jobs if j.get("fit_tier") != "Stretch Fit"]
+    income_stretch = [j for j in income_jobs if j.get("fit_tier") == "Stretch Fit"]
+    for i, j in enumerate(career_normal, 1):
+        j["display_number"] = str(i)
+    for i, j in enumerate(career_stretch, 1):
+        j["display_number"] = f"S{i}"
+    for i, j in enumerate(income_normal, 1):
+        j["display_number"] = f"R{i}"
+    for i, j in enumerate(income_stretch, 1):
+        j["display_number"] = f"RS{i}"
+
     # Split top_jobs into normal vs. demoted Stretch Fit section for email.
     # Stretch Fit = title/credential mismatch but real overlap — still
     # worth a glance, just not mixed in with the strong matches. Applied
@@ -3681,9 +3719,12 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     </details>
   </div>"""
 
-    def _render_pool_section(jobs, heading, intro, accent, bg, prefix):
+    def _render_pool_section(jobs, heading, intro, accent, bg):
         """Renders one full pool's section: header/intro, normal job cards,
-        then a demoted Stretch Fit sub-section (only if any exist)."""
+        then a demoted Stretch Fit sub-section (only if any exist). Uses
+        each job's pre-computed display_number (set once in main(), single
+        source of truth shared with today_jobs.json persistence) rather
+        than recomputing a number here."""
         if not jobs:
             return ""
         normal = [j for j in jobs if j.get("fit_tier") != "Stretch Fit"]
@@ -3693,15 +3734,15 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
   <h2 style="color:{accent};margin:0 0 4px;font-size:18px;border-bottom:2px solid {accent};padding-bottom:6px;">{heading}</h2>
   <p style="margin:6px 0 16px;font-size:12px;color:#666;">{intro}</p>
 </div>"""
-        for i, job in enumerate(normal, 1):
-            section_html += _render_job_card(job, f"{prefix}{i}", accent=accent, bg=bg)
+        for job in normal:
+            section_html += _render_job_card(job, job.get("display_number", "?"), accent=accent, bg=bg)
         if stretch:
             section_html += f"""
 <div style="background:#fff9ed;border:2px dashed #d9a441;border-radius:8px;padding:16px;margin:16px 0 24px;">
   <h3 style="color:#7a5b16;margin:0 0 4px;font-size:15px;">⚠️ Stretch Fits ({len(stretch)})</h3>
   <p style="margin:0 0 12px;font-size:12px;color:#7a5b16;">Title/credential pattern doesn't fully match, but there's real overlap with your actual strengths. Worth a quick look — your call.</p>"""
-            for i, job in enumerate(stretch, 1):
-                section_html += _render_stretch_card(job, f"{prefix}S{i}")
+            for job in stretch:
+                section_html += _render_stretch_card(job, job.get("display_number", "?"))
             section_html += "</div>"
         return section_html
 
@@ -3709,13 +3750,13 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         career_section_jobs,
         "🎯 Performance & AI Engineering — Career Track",
         "Your core direction: Performance Engineering and AI Systems/Agent roles. Numbered 1–10.",
-        accent="#1F3864", bg="#f0f7ff", prefix="",
+        accent="#1F3864", bg="#f0f7ff",
     )
     html += _render_pool_section(
         income_section_jobs,
         "💼 QA, Testing & Remote Income Floor — Relief Track",
         "Remote-only, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, will-train postings, and COBOL/mainframe. Numbered R1–R15.",
-        accent="#8a6d1a", bg="#fff8e7", prefix="R",
+        accent="#8a6d1a", bg="#fff8e7",
     )
 
     # ── Amazon Jobs Spotlight ─────────────────────────────────
@@ -3930,12 +3971,18 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     today_key  = datetime.now().strftime("%Y-%m-%d")
     batch_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "today_jobs.json")
     try:
-        # Regular jobs numbered 1-N
+        # Regular jobs use their pre-computed display_number (set once in
+        # the dual-pool split above) — career jobs get "1".."10"/"S1".. and
+        # income jobs get "R1".."R15"/"RS1".. This is the SAME number the
+        # email shows, so a form submission referencing "R3" will actually
+        # match a "R3" entry here. "number" stores the raw string/int form;
+        # "number_display" is kept for backward-compat with anything that
+        # reads it as display text.
         regular_batch = [
             {
                 "job_id":           _job_id(j),
-                "number":           idx,
-                "number_display":   str(idx),
+                "number":           j.get("display_number", str(idx)),
+                "number_display":   j.get("display_number", str(idx)),
                 "title":            j.get("title", ""),
                 "company":          j.get("company", ""),
                 "track":            j.get("track", ""),

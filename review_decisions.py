@@ -108,8 +108,11 @@ def normalise_decision(raw):
 def normalise_job_number(raw):
     """
     Normalise job number from form.
-    Returns an int for regular jobs (1-10) or a string like 'A1' for Amazon.
-    Returns None if unparseable.
+    Returns an int for regular Performance/AI career-track jobs (1-10),
+    or a string like 'A1' for Amazon Spotlight jobs, 'R1'-'R15' for
+    QA/Remote Income Floor (gap/bridge) jobs, 'S1'... for career-track
+    Stretch Fit, or 'RS1'... for income-track Stretch Fit. Returns None
+    if unparseable.
     """
     if not raw:
         return None
@@ -118,6 +121,29 @@ def normalise_job_number(raw):
     if s.startswith("A"):
         try:
             int(s[1:])   # validate the numeric part
+            return s
+        except ValueError:
+            return None
+    # QA / Remote Income Floor (gap/bridge) Stretch Fit: RS1, RS2 ...
+    # Checked BEFORE the bare "R" check below, since "RS1" also starts
+    # with "R" — order matters here.
+    if s.startswith("RS"):
+        try:
+            int(s[2:])
+            return s
+        except ValueError:
+            return None
+    # QA / Remote Income Floor (gap/bridge) jobs: R1, R2, ... R15
+    if s.startswith("R"):
+        try:
+            int(s[1:])
+            return s
+        except ValueError:
+            return None
+    # Career-track Stretch Fit: S1, S2 ...
+    if s.startswith("S"):
+        try:
+            int(s[1:])
             return s
         except ValueError:
             return None
@@ -282,7 +308,9 @@ def load_archived_jobs():
     """
     Load all today_jobs_YYYY-MM-DD.json archive files from the script folder.
     Returns a dict keyed by (date_str, job_number) → job metadata dict.
-    job_number is an int for regular jobs or a string like 'A1' for Amazon.
+    job_number is an int for regular career-track jobs, or a string like
+    'A1' for Amazon Spotlight, or 'R1'-'R15'/'RS1'... for QA/Remote Income
+    Floor (gap/bridge) jobs.
     """
     lookup = {}
     for fname in os.listdir(SCRIPT_DIR):
@@ -296,10 +324,12 @@ def load_archived_jobs():
                 data = json.load(f)
             for job in data.get("jobs", []):
                 num_raw = job.get("number")
-                # number may be stored as int (1) or string ('A1')
+                # number may be stored as int (1), or string ('A1', 'R3',
+                # 'RS2', 'S1' for career-track Stretch Fit). Check all
+                # letter-prefixed forms before falling back to int() coercion.
                 if isinstance(num_raw, int):
                     key = (date_part, num_raw)
-                elif isinstance(num_raw, str) and num_raw.upper().startswith("A"):
+                elif isinstance(num_raw, str) and num_raw.upper().startswith(("A", "R", "S")):
                     key = (date_part, num_raw.upper())
                 else:
                     # Try coercing to int

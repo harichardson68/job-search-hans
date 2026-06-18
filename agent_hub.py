@@ -480,7 +480,7 @@ class ChatTab:
                 state = _State(jobs)
 
                 if all(j.get("score", 0) == 0 for j in jobs):
-                    score_results(state)
+                    score_results(state, min_score=0)
                 if not any(j.get("fit_tier") for j in jobs):
                     analyze_fit(state)
 
