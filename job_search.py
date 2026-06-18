@@ -1487,7 +1487,18 @@ SDET_TITLE_KEYWORDS = [
 
 def get_job_track(title, description):
     """Identify which track a job belongs to and check level requirements.
-    Returns (track_name, level_ok)."""
+    Returns (track_name, level_ok, level_signal).
+
+    level_signal is a short diagnostic string describing WHICH specific
+    rule produced the level_ok value — e.g. "title:senior-keyword",
+    "desc:10+ years pattern", "desc:senior_desc_signal:lead a team",
+    or "none:no-seniority-signal-found" when level_ok=True because
+    nothing disqualifying was detected (as opposed to something
+    explicitly confirming entry/mid level). This exists so
+    job_decisions.json can persist WHY a job passed or failed seniority
+    screening — without it, a "too_senior" decision from Hans can never
+    be checked against what the filter actually saw, since the original
+    job description text isn't otherwise stored anywhere."""
     text = (title + " " + description).lower()
     t = title.lower()
 
@@ -1503,9 +1514,10 @@ def get_job_track(title, description):
     is_qa = any(kw in text for kw in QA_HIGH_KEYWORDS)
 
     if is_ai:
-        is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "head of", "vp "])
-        if is_senior:
-            return "AI Engineering", False
+        senior_title_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "head of", "vp "]
+        matched_senior_kw = next((s for s in senior_title_kws if s in t), None)
+        if matched_senior_kw:
+            return "AI Engineering", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
 
         # Check description for experience requirements
         full_text = text
@@ -1531,7 +1543,7 @@ def get_job_track(title, description):
                 try:
                     first_num = next((x for x in match if x and x.isdigit()), None)
                     if first_num and int(first_num) >= exp_threshold:
-                        return "AI Engineering", False
+                        return "AI Engineering", False, f"desc:experience-pattern:{first_num}+years (threshold {exp_threshold})"
                 except Exception:
                     pass
 
@@ -1566,28 +1578,39 @@ def get_job_track(title, description):
             "highly experienced", "veteran engineer", "battle-tested",
             "thought leader", "recognized expert", "deep domain knowledge",
         ]
-        has_entry_mid = any(sig in full_text for sig in entry_mid_signals)
-        has_senior_desc = any(sig in full_text for sig in senior_desc_signals)
+        matched_entry_mid = [sig for sig in entry_mid_signals if sig in full_text]
+        matched_senior_desc = [sig for sig in senior_desc_signals if sig in full_text]
+        has_entry_mid = bool(matched_entry_mid)
+        has_senior_desc = bool(matched_senior_desc)
 
         if has_senior_desc and not has_entry_mid:
-            return "AI Engineering", False
+            return "AI Engineering", False, f"desc:senior_desc_signal:{matched_senior_desc[0]}"
 
-        return "AI Engineering", True
+        if has_entry_mid:
+            return "AI Engineering", True, f"desc:entry_mid_signal:{matched_entry_mid[0]}"
+        return "AI Engineering", True, "none:no-seniority-signal-found"
 
     if is_sdet:
         # FIXED: was falling through to QA branch. Now correctly returns.
         level_ok = any(lvl in t for lvl in ["junior", "entry", "associate", "entry-level"])
+        if level_ok:
+            return "QA Automation", True, "title:explicit-junior-keyword"
         # If no level signal in title, allow it through (mid-level SDET is fine)
-        if not level_ok:
-            is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead ", "principal", "staff "])
-            level_ok = not is_senior
-        return "QA Automation", level_ok
+        senior_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff "]
+        matched_senior_kw = next((s for s in senior_kws if s in t), None)
+        if matched_senior_kw:
+            return "QA Automation", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
+        return "QA Automation", True, "none:no-seniority-signal-found"
 
     if is_qa:
-        level_ok = any(lvl in t for lvl in QA_AUTOMATION_LEVEL_FILTER) or not any(
-            senior in t for senior in ["senior", "lead", "principal", "staff", "director"]
-        )
-        return "QA Automation", level_ok
+        matched_level_kw = next((lvl for lvl in QA_AUTOMATION_LEVEL_FILTER if lvl in t), None)
+        if matched_level_kw:
+            return "QA Automation", True, f"title:explicit-level-keyword:{matched_level_kw}"
+        senior_kws = ["senior", "lead", "principal", "staff", "director"]
+        matched_senior_kw = next((s for s in senior_kws if s in t), None)
+        if matched_senior_kw:
+            return "QA Automation", False, f"title:senior-keyword:{matched_senior_kw}"
+        return "QA Automation", True, "none:no-seniority-signal-found"
 
     # ── Track 4: Remote Income Floor ────────────────────────────
     # Checked AFTER AI/SDET/QA-hybrid (those are higher-priority, more
@@ -1605,19 +1628,24 @@ def get_job_track(title, description):
                        any(kw in text for kw in REMOTE_FLOOR_HIGH_KEYWORDS)
     if is_cobol:
         # No seniority exclusion for COBOL — Hans's background covers it.
-        return "Remote Income Floor", True
+        return "Remote Income Floor", True, "none:cobol-seniority-exempt"
     if is_remote_floor:
-        is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "manager"])
-        if is_senior:
-            return "Remote Income Floor", False
-        return "Remote Income Floor", True
+        senior_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "manager"]
+        matched_senior_kw = next((s for s in senior_kws if s in t), None)
+        if matched_senior_kw:
+            return "Remote Income Floor", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
+        return "Remote Income Floor", True, "none:no-seniority-signal-found"
 
     # Performance Engineering - Senior OK only if LoadRunner/VuGen/LRE mentioned
-    is_senior = any(s in t for s in ["senior", "sr.", "sr ", "lead", "principal", "staff", "director", "head of", "vp"])
+    senior_kws = ["senior", "sr.", "sr ", "lead", "principal", "staff", "director", "head of", "vp"]
+    matched_senior_kw = next((s for s in senior_kws if s in t), None)
     has_loadrunner = any(kw in text for kw in ["loadrunner", "vugen", "lre", "load runner", "vuser"])
-    if is_senior and not has_loadrunner:
-        return "Performance Engineering", False  # Senior but no LoadRunner = skip
-    return "Performance Engineering", True
+    if matched_senior_kw and not has_loadrunner:
+        return "Performance Engineering", False, f"title:senior-keyword:{matched_senior_kw.strip()}-no-loadrunner"  # Senior but no LoadRunner = skip
+    if matched_senior_kw and has_loadrunner:
+        return "Performance Engineering", True, f"none:senior-but-loadrunner-present"
+    return "Performance Engineering", True, "none:no-seniority-signal-found"
+
 
 # LoadRunner-specific terms get highest priority
 LOADRUNNER_PRIORITY = ["loadrunner", "vugen", "lre", "vuser", "lr enterprise"]
@@ -1742,15 +1770,39 @@ def score_job(title, description):
             score += 10
             matched.append(kw)
 
-    return score, list(set(matched))
+    # ── Strip internal bookkeeping tags before returning ─────────
+    # AI-title:<kw>, remote-floor-title:<kw>, and cobol-title-match are
+    # sentinel entries used only to prevent double-counting within this
+    # function (e.g. "don't also award the description-level COBOL bonus
+    # if we already scored a title match"). They were never meant to be
+    # real, displayable keywords — but matched_keywords feeds the email's
+    # "Matched Skills" line AND the free cover letter templates directly,
+    # so a raw sentinel like "cobol-title-match" was leaking into actual
+    # cover letter text as if it were a skill. Strip them all here, once,
+    # so every call site (there are 9+) gets clean data automatically.
+    display_keywords = [
+        m for m in matched
+        if not m.startswith("AI-title:")
+        and not m.startswith("remote-floor-title:")
+        and m != "cobol-title-match"
+        and m != "jmeter-only-penalty"
+    ]
+    return score, list(set(display_keywords))
 
 
 def passes_filters(title, desc, posted, location, url_job, company, source_name, salary=""):
     """
     Run a candidate through every filter stage and record the funnel count
     at each stage it survives. Returns:
-      (passed: bool, score: int, matched: list, track: str)
+      (passed: bool, score: int, matched: list, track: str, level_signal: str)
     The job has already been counted in funnel.add_raw() before this is called.
+
+    level_signal is "" for any rejection that happens BEFORE classification
+    runs (recency/title stages) — there's nothing meaningful to report yet.
+    Once get_job_track() has run, level_signal carries its diagnostic
+    string through every subsequent return point, pass or fail, so the
+    eventual job_decisions.json record can show WHY level_ok came out the
+    way it did (see get_job_track's docstring for the full rationale).
 
     salary is optional — defaults to "" for sources that don't pass it.
     Pay-floor checking (Track 4 only) falls back to scanning title+description
@@ -1761,24 +1813,24 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     """
     # Stage: recency
     if not is_recent(posted):
-        return False, 0, [], ""
+        return False, 0, [], "", ""
     funnel.record("after_recency")
 
     # Stage: title
     if not is_relevant_title(title):
-        return False, 0, [], ""
+        return False, 0, [], "", ""
     funnel.record("after_title")
 
     # Stage: level (track + level_ok)
-    track, level_ok = get_job_track(title, desc)
+    track, level_ok, level_signal = get_job_track(title, desc)
     if not level_ok:
-        return False, 0, [], ""
+        return False, 0, [], "", level_signal
     funnel.record("after_level")
 
     # Stage: score
     score, matched = score_job(title, desc)
     if score <= 0:
-        return False, 0, [], ""
+        return False, 0, [], "", level_signal
     funnel.record("after_score")
 
     # Stage: US/remote (with KC-metro local-hybrid carve-out)
@@ -1800,14 +1852,14 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     is_cobol_job = any(kw in (title + " " + desc).lower() for kw in COBOL_HIGH_KEYWORDS)
     if track == "Remote Income Floor" and not is_cobol_job:
         if not is_us_remote(title, desc, location):
-            return False, score, matched, track
+            return False, score, matched, track, level_signal
     elif not is_us_remote(title, desc, location):
         # Failed remote check — last chance: is it KC-local hybrid/on-site?
         if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
             pass  # KC-local hybrid/on-site is acceptable (final $/hr-based
                    # decision for COBOL happens later in main())
         else:
-            return False, score, matched, track
+            return False, score, matched, track, level_signal
     funnel.record("after_us")
 
     # NOTE: pay-floor checking for Track 4 (Remote Income Floor) happens
@@ -1819,12 +1871,12 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
 
     # Stage: blocked site/company
     if is_blocked_site(url_job) or is_blocked_company(title, desc, company):
-        return False, score, matched, track
+        return False, score, matched, track, level_signal
     funnel.record("after_blocked")
 
     # NOTE: kept_by_sources is set in main() via funnel.set_stage()
     # using len(all_jobs) after aggregation, so we don't double-count here.
-    return True, score, matched, track
+    return True, score, matched, track, level_signal
 
 
 #
@@ -1848,17 +1900,17 @@ def search_remoteok():
             # Debug breadcrumb (preserve existing log style)
             if DEBUG_MODE and title:
                 score_quick, _ = score_job(title, desc)
-                track_quick, level_ok_quick = get_job_track(title, desc)
+                track_quick, level_ok_quick, level_signal_quick = get_job_track(title, desc)
                 if score_quick == 0:
                     print(f"   [DEBUG] RemoteOK FILTERED-score: {title[:60]}")
                 elif not level_ok_quick:
-                    print(f"   [DEBUG] RemoteOK FILTERED-level: {title[:60]}")
+                    print(f"   [DEBUG] RemoteOK FILTERED-level ({level_signal_quick}): {title[:60]}")
                 elif not is_recent(posted):
                     print(f"   [DEBUG] RemoteOK FILTERED-date: {title[:60]}")
                 elif not is_relevant_title(title):
                     print(f"   [DEBUG] RemoteOK FILTERED-title: {title[:60]}")
 
-            passed, score, matched, track = passes_filters(
+            passed, score, matched, track, level_signal = passes_filters(
                 title, desc, posted, "", url_job, company, "RemoteOK"
             )
             if passed:
@@ -1872,6 +1924,7 @@ def search_remoteok():
                     "score": score,
                     "matched_keywords": matched,
                     "track": track,
+                    "level_signal": level_signal,
                 })
         print(f"   [OK] RemoteOK: {len(jobs)} relevant jobs found")
     except Exception as e:
@@ -1920,17 +1973,17 @@ def search_remotive():
             # Debug breadcrumb matching RemoteOK style
             if DEBUG_MODE and title:
                 score_quick, _ = score_job(title, desc)
-                track_quick, level_ok_quick = get_job_track(title, desc)
+                track_quick, level_ok_quick, level_signal_quick = get_job_track(title, desc)
                 if score_quick == 0:
                     print(f"   [DEBUG] Remotive FILTERED-score: {title[:60]}")
                 elif not level_ok_quick:
-                    print(f"   [DEBUG] Remotive FILTERED-level: {title[:60]}")
+                    print(f"   [DEBUG] Remotive FILTERED-level ({level_signal_quick}): {title[:60]}")
                 elif not is_recent(posted):
                     print(f"   [DEBUG] Remotive FILTERED-date: {title[:60]}")
                 elif not is_relevant_title(title):
                     print(f"   [DEBUG] Remotive FILTERED-title: {title[:60]}")
 
-            passed, score, matched, track = passes_filters(
+            passed, score, matched, track, level_signal = passes_filters(
                 title, desc, posted, location, url_job, company, "Remotive"
             )
             if passed:
@@ -1944,6 +1997,7 @@ def search_remotive():
                     "score": score,
                     "matched_keywords": matched,
                     "track": track,
+                    "level_signal": level_signal,
                 })
         print(f"   [OK] Remotive: {len(jobs)} relevant jobs found")
     except Exception as e:
@@ -2000,17 +2054,17 @@ def search_working_nomads():
 
             if DEBUG_MODE and title:
                 score_quick, _ = score_job(title, desc)
-                track_quick, level_ok_quick = get_job_track(title, desc)
+                track_quick, level_ok_quick, level_signal_quick = get_job_track(title, desc)
                 if score_quick == 0:
                     print(f"   [DEBUG] WorkingNomads FILTERED-score: {title[:60]}")
                 elif not level_ok_quick:
-                    print(f"   [DEBUG] WorkingNomads FILTERED-level: {title[:60]}")
+                    print(f"   [DEBUG] WorkingNomads FILTERED-level ({level_signal_quick}): {title[:60]}")
                 elif not is_recent(posted):
                     print(f"   [DEBUG] WorkingNomads FILTERED-date: {title[:60]}")
                 elif not is_relevant_title(title):
                     print(f"   [DEBUG] WorkingNomads FILTERED-title: {title[:60]}")
 
-            passed, score, matched, track = passes_filters(
+            passed, score, matched, track, level_signal = passes_filters(
                 title, desc, posted, location, url_job, company, "WorkingNomads"
             )
             if passed:
@@ -2024,6 +2078,7 @@ def search_working_nomads():
                     "score": score,
                     "matched_keywords": matched,
                     "track": track,
+                    "level_signal": level_signal,
                     "salary": "",
                 })
         print(f"   [OK] Working Nomads: {len(jobs)} relevant jobs found")
@@ -2196,7 +2251,7 @@ def search_serper_jobs():
 
                 # Pre-pipeline filters survived — count as raw candidate for funnel
                 funnel.add_raw("Google Jobs (Serper)")
-                passed, score, matched, track = passes_filters(
+                passed, score, matched, track, level_signal = passes_filters(
                     title, desc, posted, location, url_job, company, "Google Jobs"
                 )
                 if passed:
@@ -2210,6 +2265,7 @@ def search_serper_jobs():
                         "score": score,
                         "matched_keywords": matched,
                         "track": track,
+                        "level_signal": level_signal,
                         "salary": item.get("salary", ""),
                     })
         except Exception as e:
@@ -2414,7 +2470,7 @@ def search_amazon_jobs():
                         pass  # If can't parse date, include it
 
                 score, matched = score_job(title, desc)
-                track, level_ok = get_job_track(title, desc)
+                track, level_ok, level_signal = get_job_track(title, desc)
 
                 # Lower score threshold for Amazon — worth seeing even at lower scores
                 if score >= 15 and level_ok and is_relevant_title(title) and not is_blocked_company(title, desc, company):
@@ -2428,6 +2484,8 @@ def search_amazon_jobs():
                         "score":            score,
                         "matched_keywords": matched,
                         "track":            track,
+                        "level_ok":         level_ok,
+                        "level_signal":     level_signal,
                         "salary":           item.get("salary", ""),
                     })
         except Exception as e:
@@ -2528,7 +2586,7 @@ def search_adzuna():
                 # Adzuna-specific: For Performance Engineering track, prefer
                 # LR signal, but allow senior perf roles with observability
                 # stack to pass through.
-                track_quick, _ = get_job_track(title, desc)
+                track_quick, _, _ = get_job_track(title, desc)
                 if track_quick == "Performance Engineering":
                     has_lr = any(sig in combined for sig in LR_SIGNALS)
                     perf_stack_signals = ["appdynamics", "dynatrace", "splunk",
@@ -2550,7 +2608,7 @@ def search_adzuna():
 
                 # Count as raw and run full pipeline
                 funnel.add_raw("Adzuna")
-                passed, score, matched, track = passes_filters(
+                passed, score, matched, track, level_signal = passes_filters(
                     title, desc, posted, "", url_job, company, "Adzuna"
                 )
                 if passed:
@@ -2564,6 +2622,7 @@ def search_adzuna():
                         "score": score,
                         "matched_keywords": matched,
                         "track": track,
+                        "level_signal": level_signal,
                         "salary": "",
                     })
         except Exception as e:
@@ -2623,7 +2682,7 @@ def search_usajobs():
                 location = mv.get("PositionLocationDisplay", "") or ""
 
                 funnel.add_raw("USAJobs")
-                passed, score, matched, track = passes_filters(
+                passed, score, matched, track, level_signal = passes_filters(
                     title, desc, posted, location, url_job, company, "USAJobs"
                 )
                 if passed:
@@ -2637,6 +2696,7 @@ def search_usajobs():
                         "score": score,
                         "matched_keywords": matched,
                         "track": track,
+                        "level_signal": level_signal,
                         "salary": mv.get("PositionRemuneration", [{}])[0].get("MinimumRange", "")
                               + " - " + mv.get("PositionRemuneration", [{}])[0].get("MaximumRange", ""),
                     })
@@ -2688,7 +2748,7 @@ def search_wellfound():
                 seen.add(url_job)
 
                 funnel.add_raw("Wellfound")
-                passed, score, matched, track = passes_filters(
+                passed, score, matched, track, level_signal = passes_filters(
                     title, desc, posted, "", url_job, "", "Wellfound"
                 )
                 if passed:
@@ -2702,6 +2762,7 @@ def search_wellfound():
                         "score": score,
                         "matched_keywords": matched,
                         "track": track,
+                        "level_signal": level_signal,
                     })
         except Exception as e:
             print(f"   [ERROR] Wellfound error ({query}): {e}")
@@ -3424,10 +3485,40 @@ def main():
     pool_career.sort(key=_sort_key, reverse=True)
     pool_income.sort(key=_sort_key, reverse=True)
 
-    CAREER_POOL_CAP = 10
-    INCOME_POOL_CAP = 15
-    career_jobs = pool_career[:CAREER_POOL_CAP]
-    income_jobs = pool_income[:INCOME_POOL_CAP]
+    # ── Split normal vs. Stretch Fit BEFORE capping ──────────────
+    # Each pool gets its OWN normal cap and its OWN stretch cap, so a
+    # surplus of Stretch Fit jobs can never crowd out normal-tier jobs
+    # (or vice versa) — they're independent buckets, not one pool that
+    # Stretch Fit competes within. Symmetric across both pools per Hans's
+    # spec: 10 normal + 5 Stretch Fit each.
+    CAREER_NORMAL_CAP  = 10
+    CAREER_STRETCH_CAP = 5
+    GAP_NORMAL_CAP      = 10
+    GAP_STRETCH_CAP     = 5
+
+    career_pool_normal  = [j for j in pool_career if j.get("fit_tier") != "Stretch Fit"]
+    career_pool_stretch = [j for j in pool_career if j.get("fit_tier") == "Stretch Fit"]
+    gap_pool_normal     = [j for j in pool_income if j.get("fit_tier") != "Stretch Fit"]
+    gap_pool_stretch    = [j for j in pool_income if j.get("fit_tier") == "Stretch Fit"]
+
+    career_normal  = career_pool_normal[:CAREER_NORMAL_CAP]
+    career_stretch = career_pool_stretch[:CAREER_STRETCH_CAP]
+    income_normal  = gap_pool_normal[:GAP_NORMAL_CAP]
+    income_stretch = gap_pool_stretch[:GAP_STRETCH_CAP]
+
+    # Log anything dropped purely for being over-cap, so a surplus day
+    # doesn't silently vanish without a trace in the console/log.
+    for label, pool, cap in [
+        ("career normal", career_pool_normal, CAREER_NORMAL_CAP),
+        ("career stretch", career_pool_stretch, CAREER_STRETCH_CAP),
+        ("gap normal", gap_pool_normal, GAP_NORMAL_CAP),
+        ("gap stretch", gap_pool_stretch, GAP_STRETCH_CAP),
+    ]:
+        if len(pool) > cap:
+            print(f"[OK] {label}: {len(pool)} candidates exceeded cap of {cap} — top {cap} kept, {len(pool) - cap} dropped")
+
+    career_jobs = career_normal + career_stretch
+    income_jobs = income_normal + income_stretch
     top_jobs = career_jobs + income_jobs
     funnel.set_stage("final", len(top_jobs))
 
@@ -3437,24 +3528,23 @@ def main():
     # persistence step below. Previously these were computed independently
     # in two places (send_email's local enumerate() calls vs. today_jobs.json's
     # flat enumerate(top_jobs, 1)), which silently drifted out of sync once
-    # the dual-pool/R-prefix scheme was added — a decision submitted via the
-    # form referencing "R3" had no matching "R3" in today_jobs.json at all,
-    # since that file was still numbering everything 1..N flat. Computing
-    # the number once, here, and threading it through everywhere else,
-    # closes that gap structurally instead of needing the two call sites
-    # to be kept manually in sync.
-    career_normal  = [j for j in career_jobs if j.get("fit_tier") != "Stretch Fit"]
-    career_stretch = [j for j in career_jobs if j.get("fit_tier") == "Stretch Fit"]
-    income_normal  = [j for j in income_jobs if j.get("fit_tier") != "Stretch Fit"]
-    income_stretch = [j for j in income_jobs if j.get("fit_tier") == "Stretch Fit"]
+    # the dual-pool numbering scheme was added — a decision submitted via
+    # the form referencing a gap-track number had no match in
+    # today_jobs.json at all, since that file was still numbering
+    # everything 1..N flat. Computing the number once, here, and threading
+    # it through everywhere else, closes that gap structurally instead of
+    # needing the two call sites to be kept manually in sync.
+    # Prefix scheme: career = "1".."10" / "S1".."S5"; gap/income track =
+    # "G1".."G10" / "GS1".."GS5" (renamed from the earlier "R"/"RS" prefix
+    # per Hans's request).
     for i, j in enumerate(career_normal, 1):
         j["display_number"] = str(i)
     for i, j in enumerate(career_stretch, 1):
         j["display_number"] = f"S{i}"
     for i, j in enumerate(income_normal, 1):
-        j["display_number"] = f"R{i}"
+        j["display_number"] = f"G{i}"
     for i, j in enumerate(income_stretch, 1):
-        j["display_number"] = f"RS{i}"
+        j["display_number"] = f"GS{i}"
 
     # Split top_jobs into normal vs. demoted Stretch Fit section for email.
     # Stretch Fit = title/credential mismatch but real overlap — still
@@ -3623,8 +3713,8 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>
     <div style="background:#f0f4ff;border:1px solid #c5d0e8;border-radius:8px;padding:12px 16px;margin:12px 0 16px;font-size:12px;color:#444;">
       <strong>Submit decisions:</strong> Use the form link at the bottom of this email.<br>
-      Performance/AI Career jobs are numbered <strong>1–10</strong> &nbsp;|&nbsp;
-      QA/Remote Income Floor jobs are numbered <strong>R1–R15</strong> &nbsp;|&nbsp;
+      Career Track jobs are numbered <strong>1–10</strong> (Stretch Fit: <strong>S1–S5</strong>) &nbsp;|&nbsp;
+      Gap Track jobs are numbered <strong>G1–G10</strong> (Stretch Fit: <strong>GS1–GS5</strong>) &nbsp;|&nbsp;
       Amazon Spotlight jobs are numbered <strong>A1–A5</strong>
     </div>"""
 
@@ -3749,13 +3839,13 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     html += _render_pool_section(
         career_section_jobs,
         "🎯 Performance & AI Engineering — Career Track",
-        "Your core direction: Performance Engineering and AI Systems/Agent roles. Numbered 1–10.",
+        "Your core direction: Performance Engineering and AI Systems/Agent roles. Numbered 1–10 (Stretch Fit: S1–S5).",
         accent="#1F3864", bg="#f0f7ff",
     )
     html += _render_pool_section(
         income_section_jobs,
-        "💼 QA, Testing & Remote Income Floor — Relief Track",
-        "Remote-only, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, will-train postings, and COBOL/mainframe. Numbered R1–R15.",
+        "💼 QA, Testing & Gap Track",
+        "Remote-only, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, will-train postings, and COBOL/mainframe. Numbered G1–G10 (Stretch Fit: GS1–GS5).",
         accent="#8a6d1a", bg="#fff8e7",
     )
 
@@ -3993,6 +4083,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "is_amazon":        False,
                 "fit_tier":         j.get("fit_tier", ""),
                 "fit_analysis":     j.get("fit_analysis", ""),
+                "level_signal":     j.get("level_signal", ""),
             }
             for idx, j in enumerate(top_jobs, 1)
         ]
@@ -4012,6 +4103,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "is_amazon":        True,
                 "fit_tier":         j.get("fit_tier", ""),
                 "fit_analysis":     j.get("fit_analysis", ""),
+                "level_signal":     j.get("level_signal", ""),
             }
             for idx, j in enumerate(amazon_jobs or [], 1)
         ]

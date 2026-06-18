@@ -109,9 +109,9 @@ def normalise_job_number(raw):
     """
     Normalise job number from form.
     Returns an int for regular Performance/AI career-track jobs (1-10),
-    or a string like 'A1' for Amazon Spotlight jobs, 'R1'-'R15' for
-    QA/Remote Income Floor (gap/bridge) jobs, 'S1'... for career-track
-    Stretch Fit, or 'RS1'... for income-track Stretch Fit. Returns None
+    or a string like 'A1' for Amazon Spotlight jobs, 'G1'-'G10' for
+    Gap Track (QA/Remote Income Floor) jobs, 'S1'-'S5' for career-track
+    Stretch Fit, or 'GS1'-'GS5' for Gap Track Stretch Fit. Returns None
     if unparseable.
     """
     if not raw:
@@ -124,17 +124,17 @@ def normalise_job_number(raw):
             return s
         except ValueError:
             return None
-    # QA / Remote Income Floor (gap/bridge) Stretch Fit: RS1, RS2 ...
-    # Checked BEFORE the bare "R" check below, since "RS1" also starts
-    # with "R" — order matters here.
-    if s.startswith("RS"):
+    # Gap Track (QA/Remote Income Floor) Stretch Fit: GS1, GS2 ...
+    # Checked BEFORE the bare "G" check below, since "GS1" also starts
+    # with "G" — order matters here.
+    if s.startswith("GS"):
         try:
             int(s[2:])
             return s
         except ValueError:
             return None
-    # QA / Remote Income Floor (gap/bridge) jobs: R1, R2, ... R15
-    if s.startswith("R"):
+    # Gap Track (QA/Remote Income Floor) jobs: G1, G2, ... G10
+    if s.startswith("G"):
         try:
             int(s[1:])
             return s
@@ -324,12 +324,12 @@ def load_archived_jobs():
                 data = json.load(f)
             for job in data.get("jobs", []):
                 num_raw = job.get("number")
-                # number may be stored as int (1), or string ('A1', 'R3',
-                # 'RS2', 'S1' for career-track Stretch Fit). Check all
+                # number may be stored as int (1), or string ('A1', 'G3',
+                # 'GS2', 'S1' for career-track Stretch Fit). Check all
                 # letter-prefixed forms before falling back to int() coercion.
                 if isinstance(num_raw, int):
                     key = (date_part, num_raw)
-                elif isinstance(num_raw, str) and num_raw.upper().startswith(("A", "R", "S")):
+                elif isinstance(num_raw, str) and num_raw.upper().startswith(("A", "G", "S")):
                     key = (date_part, num_raw.upper())
                 else:
                     # Try coercing to int
@@ -520,6 +520,9 @@ def sync_form_responses_to_decisions(decisions_data):
             "url":              job_meta.get("url", ""),
             "source":           job_meta.get("source", ""),
             "matched_keywords": job_meta.get("matched_keywords", []),
+            "fit_tier":         job_meta.get("fit_tier", ""),
+            "fit_analysis":     job_meta.get("fit_analysis", ""),
+            "level_signal":     job_meta.get("level_signal", ""),
             "decision":         decision_code,
             "reason":           resp["reason"] or None,
             "raw_decision":     resp["decision"],
