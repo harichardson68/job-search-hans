@@ -4434,5 +4434,334 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-06-17 23:00"
     }
+  ],
+  "2026-06-18": [
+    {
+      "job_id": "e0e2f1bd8c",
+      "number": "1",
+      "title": "Agentic AI Architect & Value Engineer - Job Listings at Granicus, LLC",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://careers-granicus.icims.com/jobs/10291/agentic-ai-architect-%26-value-engineer/job?in_iframe=1",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "onsite",
+      "reason": "location in certain cities",
+      "raw_decision": "Onsite / Not Remote",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "7b22761dbe",
+      "number": "2",
+      "title": "Generative AI Engineer - Genesis10 - Remote in Green Bay, WI, US",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/b4d732db-9816-4774-a0d4-2c4e17d8f829",
+      "matched_keywords": [
+        "generative ai engineer",
+        "generative ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "ee732d77ec",
+      "number": "3",
+      "title": "Kobie Marketing - AI Engineer - Lever",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 75,
+      "url": "https://jobs.lever.co/kobie/d14582bd-64a2-439e-a7e3-a50ce7270a3d/apply",
+      "matched_keywords": [
+        "uat",
+        "ai agent",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "bee6ffa9e7",
+      "number": "4",
+      "title": "121+ CrewAI Developer Jobs (June 2026) - Agentic Engineering Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 69,
+      "url": "https://agentic-engineering-jobs.com/jobs/crewai",
+      "matched_keywords": [
+        "sla",
+        "langchain",
+        "agentic",
+        "ai developer",
+        "langchain developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "e8a3aea11e",
+      "number": "5",
+      "title": "AI Automation Engineer - Myworkdayjobs.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://themutualgroup.wd108.myworkdayjobs.com/TMG/job/Iowa---TMG-Home-Office/AI-Automation-Engineer_R-100220",
+      "matched_keywords": [
+        "ai solutions engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "6d742ab364",
+      "number": "6",
+      "title": "Full Stack AI Engineer // Python // Remote - Motion Recruitment",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 52,
+      "url": "https://motionrecruitment.com/tech-jobs/detroit-/contract/full-stack-ai-engineer-python-remote/880274",
+      "matched_keywords": [
+        "ai observability",
+        "ai engineer",
+        "python",
+        "observability",
+        "multi-agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "603ebb5888",
+      "number": "7",
+      "title": "Full Stack AI Engineer (Data) @ Techtorch - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/techtorch/916acee0-eb0e-4d4a-8e5f-9bc1b039f1e4",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "6dce74de50",
+      "number": "8",
+      "title": "MLOps Engineer (Arize AI) - AgreeYa Solutions - Remote | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/6905add0-bc81-4444-a558-4ef04ad73ee5",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "cabf276a4e",
+      "number": "9",
+      "title": "AI Prompt Specialist - MCI - | Dice.com",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/8777b176-e829-4f02-ba25-f6af2129b3a6",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "f5afd724db",
+      "number": "10",
+      "title": "Foxelli Group - AI Engineer (Technical Product Owner) - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/foxelligroup/9420f440-dac4-41b4-bbc0-16dfcf60f8db",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "5890cbcae8",
+      "number": "S1",
+      "title": "Prompt Engineer Internship at Zenotalent | Remote - Unstop",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://unstop.com/internships/prompt-engineer-internship-zenotalent-1699198",
+      "matched_keywords": [
+        "prompt engineer",
+        "gemini"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "0c4aa1f390",
+      "number": "S2",
+      "title": "Sitetracker - Operations Associate - Salesforce Admin & AI Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.lever.co/sitetracker/e6872a52-493c-489a-a60d-01e00bf8e0f4",
+      "matched_keywords": [
+        "ai developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "395f7da834",
+      "number": "S3",
+      "title": "AI Engineer (Life Sciences & Healthcare) - Greenhouse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://boards.greenhouse.io/coherentsolutions/jobs/4896325101",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "4a3333dcc7",
+      "number": "S4",
+      "title": "AI Engineer @ Roger Healthcare - Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/rogerhealthcare/5c5a96ca-819b-4fe2-97c3-50e7245f8937",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "10470e67b7",
+      "number": "S5",
+      "title": "MLOps Engineer - Atlanta, GA - Remote - W2 - ASCII Group LLC - Dice",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/41505a69-362c-4748-a54c-e0502493cc58",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "94e18fd4f1",
+      "number": "G1",
+      "title": "Senior Mainframe COBOL Developer - Remote in Olympia, WA, US",
+      "company": "N/A",
+      "track": "Gap Track",
+      "score": 65,
+      "url": "https://www.dice.com/job-detail/62e30a46-653e-41d9-90a0-e857d10067ec",
+      "matched_keywords": [
+        "cobol developer",
+        "cics",
+        "mainframe",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "d75b1b6dd1",
+      "number": "G2",
+      "title": "Software Engineer (Mainframe, Cobol, CICS) - Elite Technical - Dice",
+      "company": "N/A",
+      "track": "Gap Track",
+      "score": 55,
+      "url": "https://www.dice.com/job-detail/c0e7501e-54fb-4c65-8576-47222102d310",
+      "matched_keywords": [
+        "cics",
+        "mainframe",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    },
+    {
+      "job_id": "4733e77411",
+      "number": "A1",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10443716/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-18 23:00"
+    }
   ]
 }
