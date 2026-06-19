@@ -4763,5 +4763,243 @@
       "raw_decision": "",
       "timestamp": "2026-06-18 23:00"
     }
+  ],
+  "2026-06-19": [
+    {
+      "url": "https://www.dice.com/job-detail/14d9fadb-091f-4269-a9cc-64ee7cd1c479",
+      "title": "Senior Quality Engineer",
+      "company": "Kforce Technology Staffing",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://ph.indeed.com/viewjob?jk=21f6667705ea9d75",
+      "title": "Senior Software Quality Assurance Engineer",
+      "company": "",
+      "track": "LoadRunner / Performance",
+      "score": 138
+    },
+    {
+      "url": "https://it.indeed.com/viewjob?jk=453ba38c7de64bac",
+      "title": "Software Engineer (QA)",
+      "company": "",
+      "track": "LoadRunner / Performance",
+      "score": 88
+    },
+    {
+      "url": "https://www.adzuna.com/details/5768958733?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "Senior QA Automation Engineer (Contract) Remote",
+      "company": "nextSource",
+      "track": "QA / Test Engineering",
+      "score": 65
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7c6f6fdb-2c27-4c68-b4f3-e9f8dec76473",
+      "title": "Senior Software Engineer",
+      "company": ".NET SDET",
+      "track": "LoadRunner / Performance",
+      "score": 35
+    },
+    {
+      "url": "https://www.adzuna.com/details/5767585914?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "Senior QA Automation Engineer (Contract) - Remote",
+      "company": "nextSource Connect",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/86b3e1d5-4a54-44da-b58b-5123ed9d2820",
+      "title": "QA Engineer II",
+      "company": "INSPYR Solutions",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=42d3a50cbcf491b1",
+      "title": "LoadRunner Performance Tester",
+      "company": "",
+      "track": "LoadRunner / Performance",
+      "score": 85
+    },
+    {
+      "url": "https://www.adzuna.com/details/5766473512?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "LoadRunner Performance Tester | Remote",
+      "company": "Trace3",
+      "track": "LoadRunner / Performance",
+      "score": 85
+    },
+    {
+      "url": "https://www.dice.com/job-detail/3c7e0ae0-316d-4cac-951a-808fcebe14e9",
+      "title": "Senior Software Test Analyst",
+      "company": "Stellar Professionals LLC",
+      "track": "LoadRunner / Performance",
+      "score": 70
+    },
+    {
+      "url": "https://www.dice.com/job-detail/f80bd45b-2328-402e-93a7-f018ff667e8f",
+      "title": "Automation Engineer",
+      "company": "Trigent Software, Inc. Account Number",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/test-1",
+      "title": "Senior Performance Engineer",
+      "company": "INSPYR Solutions",
+      "track": "LoadRunner / Performance",
+      "score": 120
+    },
+    {
+      "url": "https://www.dice.com/job-detail/test-2",
+      "title": "AI Systems Engineer",
+      "company": "Cerner",
+      "track": "AI Hybrid",
+      "score": 65
+    },
+    {
+      "url": "https://www.dice.com/job-detail/test-3",
+      "title": "QA Automation Engineer",
+      "company": "H&R Block",
+      "track": "QA / Test Engineering",
+      "score": 55
+    },
+    {
+      "url": "https://www.dice.com/job-detail/test-4",
+      "title": "COBOL Programmer",
+      "company": "Citi",
+      "track": "COBOL / Mainframe",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/f0df83d1-1699-4016-8f83-f1a1bc58bc19",
+      "title": "Senior Automation Engineer",
+      "company": "Trigent Software, Inc. Account Number",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5768329088?se=Qud6GOlr8RG5w7Wkd94x6w&utm_medium=api&utm_source=aa7dfcd9&v=875B23E443D551D043FABF64E376F4F02A589E9D",
+      "title": "Senior COBOL Developer [C] //Local to NJ",
+      "company": "Mahantech Corporation",
+      "track": "COBOL / Mainframe",
+      "score": 102
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5767388928?se=Qud6GOlr8RG5w7Wkd94x6w&utm_medium=api&utm_source=aa7dfcd9&v=FB3C5A70D4FD8BA5D226741DFAADF037B044D1B2",
+      "title": "Senior Mainframe Developer / COBOL Senior Consultant",
+      "company": "Zettalogix INC",
+      "track": "COBOL / Mainframe",
+      "score": 102
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5768843627?se=DJS3I-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=aa7dfcd9&v=3EB43B7641A7A7399F7113DE08BA07C2F89F4A95",
+      "title": "Automation QA",
+      "company": "Insight Global",
+      "track": "COBOL / Mainframe",
+      "score": 73
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5766992202?se=Qud6GOlr8RG5w7Wkd94x6w&utm_medium=api&utm_source=aa7dfcd9&v=A8939274BE200D5D8BDE3040E7F0F81E4470331E",
+      "title": "COBOL Programmer with SMS Invision",
+      "company": "Integrated Technology Strategies, Inc.",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/bec37206-2669-4482-9b32-e42d3001c9df",
+      "title": "COBOL / SQL Developer",
+      "company": "Infinite Computer Solutions (ICS)",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/eebe2bfb-0d0d-4b2a-b052-e363dc5dbd4e",
+      "title": "AS400 Cobol Technical Lead",
+      "company": "Ztek Consulting",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/b59a6348-7d7f-4eb5-aaec-b7af95aeea4a",
+      "title": "Remote: Mainframe Systems Analyst",
+      "company": "KE Staffing",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.adzuna.com/details/5766173130?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "Senior Mainframe Developer (COBOL)",
+      "company": "System One",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/88c5fb53-78d3-4bdf-ab5d-436c18d7f9a0",
+      "title": "Senior COBOL Developer",
+      "company": "Charter Global, Inc.",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/100cc179-1625-4306-b911-f19a43e88ed5",
+      "title": "Mainframe Lead",
+      "company": "Valiant Tek Group, Inc",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/adb343b4-dcf0-466d-a0c7-e1e3b0db799f",
+      "title": "COBOL AS/400 Developer",
+      "company": "Shakti Solutions",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5768881761?se=DJS3I-lr8RG5w7Wkd94x6w&utm_medium=api&utm_source=aa7dfcd9&v=6C6489359236174CC7D6FD7175589CD132A622BA",
+      "title": "Linux Administrator",
+      "company": "TEKsystems",
+      "track": "COBOL / Mainframe",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/9ce95e8f-6e35-48c8-9783-47c9f379ec95",
+      "title": "Mainframe",
+      "company": "S3 Connections LLC",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=5d74843167156207",
+      "title": "Software Engineer, AI Agents",
+      "company": "",
+      "track": "AI Hybrid",
+      "score": 20
+    },
+    {
+      "job_id": "3b62620ed0",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "ML Kernel Performance Engineer, AWS Neuron, Annapurna Labs",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 38,
+      "url": "https://www.amazon.jobs/en/jobs/10378255/ml-kernel-performance-engineer-aws-neuron-annapurna-labsutm_source=talent",
+      "matched_keywords": [
+        "aws",
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-19T12:05:16.046522"
+    }
   ]
 }
