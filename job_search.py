@@ -2208,7 +2208,20 @@ def search_serper_jobs():
             all_results = data.get("jobs", []) + data.get("organic", [])
             for item in all_results:
                 title    = item.get("title", "")
-                company  = item.get("company", item.get("source", "N/A"))
+                company  = (
+                    item.get("company_name")
+                    or item.get("company")
+                    or item.get("source")
+                    or ""
+                )
+                if not company:
+                    # Best-effort: many aggregator/ATS titles follow the
+                    # "Title - Company - Location" convention (Dice, etc.)
+                    parts = [p.strip() for p in title.split(" - ") if p.strip()]
+                    if len(parts) >= 2:
+                        company = parts[1]
+                if not company:
+                    company = "N/A"
                 desc     = item.get("description", item.get("snippet", ""))
                 url_job  = item.get("applyLink", "") or item.get("link", "") or item.get("url", "")
                 posted   = item.get("date", item.get("publishedDate", ""))
@@ -2226,10 +2239,29 @@ def search_serper_jobs():
                     "dice.com/jobs/q-", "dice.com/jobs?",
                     "jobs-in-remote", "jobs-in-usa", "job-vacancies",
                     "vacancies-in", "/remote-jobs?", "remote-jobs-in",
+                    # Aggregator/listing pages (not single postings) —
+                    # added after 2026-06-19 review found these scoring
+                    # as top "matches" with cover letters generated for them
+                    "/jobs/united-states", "/jobs/remote", "/jobs/usa",
+                    "hire-remotely", "/hire-talent", "/talent/hire",
                 ]
                 if any(indicator in url_job.lower() for indicator in search_page_indicators):
                     if DEBUG_MODE:
                         print(f"   [DEBUG] Serper FILTERED-searchpage: {title[:50]}")
+                    continue
+                # Title-based aggregator detection — catches listing pages
+                # whose URL doesn't match a known pattern but whose title
+                # gives it away (e.g. "578+ Agentic AI Jobs in United States",
+                # "Hire the 64 Best Remote AI Automation...")
+                _agg_title = title.lower()
+                _looks_like_listing = (
+                    re.match(r"^\d+\+?\s+.*\bjobs?\b", _agg_title)
+                    or re.search(r"\bhire the \d+\b", _agg_title)
+                    or re.search(r"\bbest remote\b.*\bjobs?\b", _agg_title)
+                )
+                if _looks_like_listing:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Serper FILTERED-listing-title: {title[:50]}")
                     continue
                 fp, fp_reason = is_false_positive_url(url_job)
                 if fp:
@@ -2455,7 +2487,13 @@ def search_amazon_jobs():
                         print(f"   [DEBUG] Amazon FILTERED-non-US ({non_us_hit}): {title[:60]}")
                     continue
 
-                # Apply 10-day freshness filter
+                # Apply 10-day freshness filter.
+                # Looser-fix design (2026-06-19): a missing or unparseable
+                # date does NOT exclude the job (Amazon spotlight recall
+                # matters more than strict filtering), but it IS tracked via
+                # age_verified so the email can flag it instead of silently
+                # claiming "Recent" for an unknown-age posting.
+                age_verified = False
                 if posted:
                     try:
                         parsed = parse_relative_date(str(posted))
@@ -2466,8 +2504,9 @@ def search_amazon_jobs():
                                 parsed = parsed.replace(tzinfo=timezone.utc)
                             if parsed < cutoff:
                                 continue
+                            age_verified = True
                     except Exception:
-                        pass  # If can't parse date, include it
+                        pass  # If can't parse date, include it but flag as unverified
 
                 score, matched = score_job(title, desc)
                 track, level_ok, level_signal = get_job_track(title, desc)
@@ -2480,6 +2519,7 @@ def search_amazon_jobs():
                         "company":          "Amazon",
                         "url":              url_job,
                         "posted":           posted,
+                        "age_verified":     age_verified,
                         "description":      desc[:500],
                         "score":            score,
                         "matched_keywords": matched,
@@ -3867,7 +3907,19 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         for i, job in enumerate(amazon_jobs, 1):
             keywords = ", ".join(job["matched_keywords"][:5])
             salary   = f"<span style='color:#232F3E;'> | <strong>Salary:</strong> {job['salary']}</span>" if job.get("salary","").strip(" -") else ""
-            posted   = job.get("posted","")[:10] if job.get("posted") else "Recent"
+            age_verified = job.get("age_verified", False)
+            raw_posted   = job.get("posted", "")
+            if raw_posted and age_verified:
+                posted      = raw_posted[:10]
+                posted_warn = ""
+            else:
+                # Don't claim "Recent" for a date we never actually verified —
+                # this is the gap that let a 30+ day-old posting through on
+                # 2026-06-19. Flag it instead so Hans can eyeball it himself.
+                posted      = "Unknown"
+                posted_warn = (
+                    ' <span style="color:#c0392b;font-weight:bold;">⚠ age unverified — check listing</span>'
+                )
             # Extract Job ID from URL (e.g. amazon.jobs/en/jobs/1234567/title)
             job_url  = job.get("url", "")
             id_match = re.search(r"/jobs/(\d+)", job_url)
@@ -3888,7 +3940,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     <p style="margin:0 0 4px;font-size:12px;color:#555;">
       <strong>Track:</strong> {job.get("track","")} &nbsp;|&nbsp;
       <strong>Score:</strong> {job["score"]} pts &nbsp;|&nbsp;
-      <strong>Posted:</strong> {posted}{salary}
+      <strong>Posted:</strong> {posted}{posted_warn}{salary}
     </p>
     <p style="margin:0 0 8px;font-size:12px;color:#555;"><strong>Matched:</strong> {keywords}</p>
     {fit_html}
