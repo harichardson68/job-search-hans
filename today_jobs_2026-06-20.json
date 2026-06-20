@@ -1,0 +1,185 @@
+{
+  "date": "2026-06-20",
+  "jobs": [
+    {
+      "job_id": "760e87ed0c",
+      "number": "1",
+      "number_display": "1",
+      "title": "AI Automation Engineer / AI Agent Developer (Python, AI ... - Wellfound",
+      "company": "Wellfound",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://wellfound.com/jobs/4365651-ai-automation-engineer-ai-agent-developer-python-ai-automations",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai automation engineer",
+        "ai agent",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent developer* + *Python automation* align with Hans's active GenAI upskilling; minor _production LLM depth_ gap but 24-year engineering foundation is solid.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1ba06e5725",
+      "number": "2",
+      "number_display": "2",
+      "title": "Junior AI Engineer at Amazech Solutions - aijobs.com",
+      "company": "aijobs.com",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.aijobs.com/jobs/494978416-junior-ai-engineer",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer",
+        "ai workflow"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI workflow* engineering matches Hans's active GenAI projects; remote eligibility strong, but _junior title_ slightly undervalues 24-year seniority arc.",
+      "level_signal": "desc:entry_mid_signal:junior"
+    },
+    {
+      "job_id": "d6a450355d",
+      "number": "3",
+      "number_display": "3",
+      "title": "Agentic AI Engineer (Dynatrace Integration & AI Observability) - Dice",
+      "company": "Dice",
+      "track": "AI Engineering",
+      "score": 69,
+      "url": "https://www.dice.com/job-detail/e427ebd1-da63-401a-92b9-368a85013c7b",
+      "matched_keywords": [
+        "observability",
+        "agentic ai",
+        "ai engineer",
+        "ai observability",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *observability* expertise align well; _Dynatrace-specific_ gap minor given AppDynamics/Splunk depth and active GenAI upskilling.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "a6f7f92b9c",
+      "number": "4",
+      "number_display": "4",
+      "title": "Agentic AI Engineer - TechniPros, LLC - Remote in Boston, MA, US",
+      "company": "TechniPros, LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/d7133fe2-bcd9-45cf-901e-e935aedbdaf6",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role aligns with active upskilling; _onsite Boston_ conflicts remote preference, but W2 and long-term contract appeal.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "2cf56d2ad9",
+      "number": "5",
+      "number_display": "5",
+      "title": "AI Engineer \u2013 Agentic AI \u2013 Remote (all genders) | Jobs at eschbach",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://eschbach.jobs.personio.com/job/2678555?language=en",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches portfolio direction well; remote location ideal, but _production agent deployment_ experience limited to learning phase.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "2eae38401d",
+      "number": "6",
+      "number_display": "6",
+      "title": "Agentic AI Engineer Co-Op - Job - Lensa",
+      "company": "Job",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://lensa.com/job-v1/the-campbell039s-company/remote/engineering-co-op/29171f30c49a6f9828d5ae8b9b262ed3",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active GenAI/Claude projects; minor _co-op/junior level_ positioning against 24yr seniority, but remote and aligned.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9e98284240",
+      "number": "S1",
+      "number_display": "S1",
+      "title": "Trend Health Partners - AI Test Engineer II - Lever",
+      "company": "AI Test Engineer II",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://jobs.lever.co/Trend-Health-Partners/ab55dae4-517e-4037-af1c-913875064331",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* pivot and *agentic systems* portfolio align well; _test engineer_ title and production LLM depth still building, but realistic apply target.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1720599c33",
+      "number": "G1",
+      "number_display": "G1",
+      "title": "Mainframe Developer (Cool Gen / CA Gen) - Dice",
+      "company": "Dice",
+      "track": "Gap Track",
+      "score": 55,
+      "url": "https://www.dice.com/job-detail/2e952fa3-f4e3-4c69-a41d-22f71c12d67f",
+      "matched_keywords": [
+        "cobol",
+        "mainframe developer",
+        "mainframe"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* Senior Mainframe Developer role; *COBOL* expertise directly matches, $83/hr exceeds floor, monthly travel acceptable.",
+      "level_signal": "none:cobol-seniority-exempt"
+    },
+    {
+      "job_id": "d79882df8b",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, CloudFront Console and Agentic ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10453924/software-development-engineer-cloudfront-console-and-agentic-experience",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

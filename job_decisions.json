@@ -5177,6 +5177,31 @@
       "company": "Crowdstrike",
       "track": "QA / Test Engineering",
       "score": 20
+    },
+    {
+      "job_id": "d79882df8b",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, CloudFront Console and Agentic ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10453924/software-development-engineer-cloudfront-console-and-agentic-experience",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-20T12:05:19.893032"
     }
   ]
 }
