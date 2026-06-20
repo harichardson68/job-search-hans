@@ -4966,5 +4966,49 @@
       "raw_decision": "",
       "timestamp": "2026-06-19 23:00"
     }
+  ],
+  "2026-06-20": [
+    {
+      "url": "https://www.dice.com/job-detail/f0df83d1-1699-4016-8f83-f1a1bc58bc19",
+      "title": "Senior Automation Engineer",
+      "company": "Trigent Software, Inc. Account Number",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7c6f6fdb-2c27-4c68-b4f3-e9f8dec76473",
+      "title": "Senior Software Engineer",
+      "company": ".NET SDET",
+      "track": "LoadRunner / Performance",
+      "score": 120
+    },
+    {
+      "url": "https://www.dice.com/job-detail/9de7b94e-8c61-4adc-a5e0-6142b3defdb5",
+      "title": "Senior Performance Test Engineer",
+      "company": "Kforce Technology Staffing",
+      "track": "LoadRunner / Performance",
+      "score": 55
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=82235c1ecf1aff77",
+      "title": "Software Development Engineer in Test (SDET), remote | 1058708",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://jobs.ashbyhq.com/truelogic/5e22da0f-9ca4-4816-9be2-9ef6ede8e353",
+      "title": "Senior Software Development Engineer in Test (SDET/AI) - Jobs",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/ce5e7d14-c8a9-40a4-9549-951e76affb10",
+      "title": "SDET Training Program s & Career Gap Candidates",
+      "company": "NMK Global Inc.",
+      "track": "QA / Test Engineering",
+      "score": 20
+    }
   ]
 }
