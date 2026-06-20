@@ -5079,6 +5079,83 @@
       "company": "Noor Staffing Group",
       "track": "QA / Test Engineering",
       "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7d08dbee-1950-48f0-bf6c-d6f1249a0555",
+      "title": "Mainframe z/OS Developer",
+      "company": "Zolon Tech Solutions Inc",
+      "track": "COBOL / Mainframe",
+      "score": 122
+    },
+    {
+      "url": "https://www.dice.com/job-detail/21ddb56c-cddc-4c56-aea6-19d4d047a3e0",
+      "title": "Senior Mainframe Developer/ Cobol Developer",
+      "company": "Trenton, NJ, US",
+      "track": "COBOL / Mainframe",
+      "score": 82
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7c1fe58a-e93b-4f80-9b68-8bb04abd235e",
+      "title": "Senior AI Automation Test Engineer",
+      "company": "ASSYST",
+      "track": "AI Hybrid",
+      "score": 55
+    },
+    {
+      "url": "https://www.dice.com/job-detail/fe0369c2-2684-4703-b76b-5a511f49b611",
+      "title": "Senior Mainframe Developer (COBOL)",
+      "company": "System One",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/ba227cf0-554d-4fff-8ca6-574b7817b8a3",
+      "title": "Mainframe Developer",
+      "company": "Lucid Technologies",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/dbef2b30-e3d8-4ae8-880a-cc24da335ca5",
+      "title": "Mainframe Developer / Programmer",
+      "company": "Stanley David and Associates",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/15b5bc48-2eb9-441d-a46d-1f0e5796a088",
+      "title": "SDET/Automation Engineer AI Platforms",
+      "company": "BirdsVue LLC",
+      "track": "AI Hybrid",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/8576af0f-1338-4973-b9c6-c7073725448c",
+      "title": "SDET Traning",
+      "company": "NMK Global Inc.",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/2e952fa3-f4e3-4c69-a41d-22f71c12d67f",
+      "title": "Mainframe Developer (Cool Gen / CA Gen)",
+      "company": "",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7dd8b598-bbc1-4e75-9ea8-9c9bf03d68aa",
+      "title": "SDET Automation Engineer",
+      "company": "Systems Management Group, Inc",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/4ed6472a-beae-4b54-8a02-2b6774ae42d0",
+      "title": "Software Development Engineer SDET",
+      "company": "Ascensus -",
+      "track": "QA / Test Engineering",
+      "score": 20
     }
   ]
 }
