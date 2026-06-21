@@ -1,0 +1,43 @@
+{
+  "date": "2026-06-21",
+  "jobs": [
+    {
+      "job_id": "8679ea5d26",
+      "number": "1",
+      "number_display": "1",
+      "title": "AI Engineer (Agents) - Gem",
+      "company": "Gem",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://jobs.gem.com/felix/am9icG9zdDoDpKgtipH8lvfrI8ZQlAPL",
+      "matched_keywords": [
+        "ai engineer",
+        "observability",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent engineering* and *observability* expertise align well; _production LLM systems_ experience still building but demonstrated trajectory strong.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "ee6b85a6bb",
+      "number": "S1",
+      "number_display": "S1",
+      "title": "Trend Health Partners - AI Test Engineer II - Lever",
+      "company": "AI Test Engineer II",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://jobs.lever.co/Trend-Health-Partners/ab55dae4-517e-4037-af1c-913875064331/apply",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* ambition and *observability* skills align with testing needs, but _production LLM validation_ experience still emerging.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
