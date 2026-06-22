@@ -37,3 +37,4 @@ jobsearch_errors.log
 
 # But DO commit the snapshot folder
 !logs/
+*.docx

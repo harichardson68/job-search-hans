@@ -29,6 +29,7 @@ Logging:
 import os
 import sys
 import json
+import re
 import smtplib
 import subprocess
 import traceback
@@ -65,6 +66,7 @@ SHEET_ID = "1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE"
 # Column names in the Google Sheet (must match exactly)
 COL_TIMESTAMP   = "Timestamp"
 COL_JOB_NUMBER  = "Question 1: Job Number"
+COL_JOB_TOKEN   = "Job Token"
 COL_DECISION    = "Decision"
 COL_REASON      = "Reason for Not Applying (Other)"
 
@@ -306,15 +308,22 @@ def _job_id_from_parts(title, company, url):
 
 def load_archived_jobs():
     """
-    Load all today_jobs_YYYY-MM-DD.json archive files from the script folder.
-    Returns a dict keyed by (date_str, job_number) → job metadata dict.
-    job_number is an int for regular career-track jobs, or a string like
-    'A1' for Amazon Spotlight, or 'R1'-'R15'/'RS1'... for QA/Remote Income
-    Floor (gap/bridge) jobs.
+    Load all legacy today_jobs_YYYY-MM-DD.json archive files from the
+    script folder. Returns a dict keyed by (date_str, job_number) → job
+    metadata dict. job_number is an int for regular career-track jobs,
+    or a string like 'A1' for Amazon Spotlight, or 'R1'-'R15'/'RS1'...
+    for QA/Remote Income Floor (gap/bridge) jobs.
+
+    This is now the FALLBACK lookup, used only when a form response
+    has no job_token (i.e. it was submitted before the token field
+    existed). See load_archived_jobs_by_token() for the primary path.
     """
     lookup = {}
     for fname in os.listdir(SCRIPT_DIR):
-        if not (fname.startswith("today_jobs_") and fname.endswith(".json")):
+        # Only legacy date-keyed archives (today_jobs_YYYY-MM-DD.json) --
+        # explicitly excludes today_jobs_run_*.json, which is loaded
+        # separately by load_archived_jobs_by_token().
+        if not re.match(r"^today_jobs_\d{4}-\d{2}-\d{2}\.json$", fname):
             continue
         # Extract date from filename: today_jobs_2026-04-23.json
         date_part = fname.replace("today_jobs_", "").replace(".json", "")
@@ -340,7 +349,38 @@ def load_archived_jobs():
                 lookup[key] = job
         except Exception as e:
             print(f"   [WARN] Could not load {fname}: {e}")
-    print(f"[SYNC] Loaded {len(lookup)} archived job slots from today_jobs_*.json files")
+    print(f"[SYNC] Loaded {len(lookup)} archived job slots from today_jobs_*.json files (legacy fallback)")
+    return lookup
+
+
+def load_archived_jobs_by_token():
+    """
+    Load all today_jobs_run_*.json archive files -- one per
+    job_search.py execution, never overwritten regardless of how many
+    times the script runs in a day or how long a response sits
+    unanswered. Returns a dict keyed by token → job metadata dict.
+
+    This is the PRIMARY lookup for the sync. It sidesteps both bugs in
+    the legacy (date_str, job_number) scheme: same-day reruns no longer
+    collide (each run gets its own file), and a response submitted on
+    a different day than the email was sent still resolves to the
+    correct job, since the token never depended on submission date.
+    """
+    lookup = {}
+    for fname in os.listdir(SCRIPT_DIR):
+        if not (fname.startswith("today_jobs_run_") and fname.endswith(".json")):
+            continue
+        fpath = os.path.join(SCRIPT_DIR, fname)
+        try:
+            with open(fpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for job in data.get("jobs", []):
+                token = job.get("token")
+                if token:
+                    lookup[token] = job
+        except Exception as e:
+            print(f"   [WARN] Could not load {fname}: {e}")
+    print(f"[SYNC] Loaded {len(lookup)} archived job slots from today_jobs_run_*.json files (token sync)")
     return lookup
 
 
@@ -394,6 +434,7 @@ def fetch_form_responses():
 
         idx_ts       = col_idx(COL_TIMESTAMP)
         idx_jobnum   = col_idx(COL_JOB_NUMBER)
+        idx_token    = col_idx(COL_JOB_TOKEN)   # optional -- absent on pre-token responses
         idx_decision = col_idx(COL_DECISION)
         idx_reason   = col_idx(COL_REASON)
 
@@ -412,6 +453,7 @@ def fetch_form_responses():
 
             ts_raw   = safe_get(idx_ts)
             job_raw  = safe_get(idx_jobnum)
+            tok_raw  = safe_get(idx_token)
             dec_raw  = safe_get(idx_decision)
             rea_raw  = safe_get(idx_reason) if idx_reason is not None else ""
 
@@ -440,6 +482,7 @@ def fetch_form_responses():
                 "timestamp": ts_raw,
                 "date_str":  date_str,
                 "job_number": job_number,
+                "job_token": tok_raw,
                 "decision":  dec_raw,
                 "reason":    rea_raw,
             })
@@ -454,15 +497,46 @@ def fetch_form_responses():
         return []
 
 
+def _resolve_job_meta(resp, token_jobs, archived_jobs):
+    """
+    Resolve a form response to its job metadata. Tries the token first
+    (works regardless of submission date or how many reruns happened
+    that day); falls back to the legacy (date_str, job_number) lookup
+    for responses submitted before the token field existed, or in the
+    rare case a token got garbled in transit.
+
+    Returns (job_meta_or_None, method) where method is one of
+    "token", "legacy_fallback", or "unmatched" -- used for logging so
+    it's visible which path each response took.
+    """
+    token = resp.get("job_token")
+    if token:
+        job_meta = token_jobs.get(token)
+        if job_meta is not None:
+            return job_meta, "token"
+        # Token present but not found -- garbled in transit, or from a
+        # run whose archive file is gone. Fall through to legacy match
+        # rather than giving up immediately.
+
+    legacy_key = (resp["date_str"], resp["job_number"])
+    job_meta = archived_jobs.get(legacy_key)
+    if job_meta is not None:
+        return job_meta, "legacy_fallback"
+
+    return None, "unmatched"
+
+
 def sync_form_responses_to_decisions(decisions_data):
     """
     Main sync function. Reads Google Form responses, matches each to an
-    archived job, and writes missing records into decisions_data in place.
+    archived job (token-based primary lookup, date+number legacy
+    fallback), and writes missing records into decisions_data in place.
 
     Returns (decisions_data, new_count, skipped_count)
     """
     print("\n[SYNC] Starting Google Form → job_decisions.json sync...")
 
+    token_jobs    = load_archived_jobs_by_token()
     archived_jobs = load_archived_jobs()
     responses     = fetch_form_responses()
 
@@ -479,23 +553,30 @@ def sync_form_responses_to_decisions(decisions_data):
                 if jid:
                     existing_ids.add(jid)
 
-    new_count     = 0
-    skipped_count = 0
-    unmatched     = 0
+    new_count       = 0
+    skipped_count   = 0
+    unmatched       = 0
+    via_token       = 0
+    via_legacy      = 0
 
     for resp in responses:
         date_str   = resp["date_str"]
         job_number = resp["job_number"]
-        key        = (date_str, job_number)
 
-        # Look up the archived job metadata
-        job_meta = archived_jobs.get(key)
+        job_meta, method = _resolve_job_meta(resp, token_jobs, archived_jobs)
 
         if job_meta is None:
-            # No archived file for this date/number — can't enrich metadata
             unmatched += 1
-            print(f"   [WARN] No archived job for {date_str} #{job_number} — skipping")
+            print(f"   [WARN] No archived job for {date_str} #{job_number} "
+                  f"(token={resp.get('job_token') or 'none'}) — skipping")
             continue
+
+        if method == "token":
+            via_token += 1
+        else:
+            via_legacy += 1
+            print(f"   [INFO] Matched {date_str} #{job_number} via legacy "
+                  f"date+number fallback (no usable token on this response)")
 
         job_id = job_meta.get("job_id") or _job_id_from_parts(
             job_meta.get("title", ""),
@@ -527,6 +608,7 @@ def sync_form_responses_to_decisions(decisions_data):
             "reason":           resp["reason"] or None,
             "raw_decision":     resp["decision"],
             "timestamp":        resp["timestamp"],
+            "match_method":     method,
             "reviewed":         False,
             "reviewed_date":    None,
         }
@@ -537,7 +619,8 @@ def sync_form_responses_to_decisions(decisions_data):
         existing_ids.add(job_id)
         new_count += 1
 
-    print(f"[SYNC] Complete — {new_count} new records written, "
+    print(f"[SYNC] Complete — {new_count} new records written "
+          f"({via_token} via token, {via_legacy} via legacy fallback), "
           f"{skipped_count} already present, {unmatched} unmatched (no archive file)")
 
     # Save immediately after sync

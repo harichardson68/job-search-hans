@@ -19,6 +19,8 @@ import json
 import re
 import os
 import time
+import hashlib
+import urllib.parse
 from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
 import logging
@@ -33,6 +35,53 @@ CHROMA_DIR      = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chro
 DECISIONS_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "job_decisions.json")
 RAG_ENABLED     = True
 RAG_TOP_K       = 3
+
+# ─── JOB DECISION TOKEN SYNC ──────────────────────────────────
+# Per-run, per-job opaque tokens that get baked directly into a
+# pre-filled Google Form link in the email, instead of relying on
+# Hans typing in a date + job number by hand. This fixes two real bugs
+# found in the old (date_str, job_number) matching scheme:
+#   1. Same-day reruns overwrote today_jobs_{date}.json, silently
+#      orphaning/misrouting any pending decision from an earlier run.
+#   2. review_decisions.py derived "date_str" from the FORM SUBMISSION
+#      timestamp, not the email's date -- so any decision submitted a
+#      day (or more) after the email was sent could resolve to the
+#      wrong job entirely, not just fail to match.
+# A token is unique per (run_id, job_number) regardless of how many
+# times the script runs per day or how late the response comes in.
+FORM_BASE_URL         = "https://docs.google.com/forms/d/e/1FAIpQLScWITASM6c25lmv7f6RrGAyUizh6Dz7UIijfTBg7WBSUlJ6Cg/viewform"
+FORM_ENTRY_JOB_NUMBER = "1727644971"   # "Job Number" field entry ID
+FORM_ENTRY_JOB_TOKEN  = "1012235280"   # "Job Token" field entry ID
+RUN_ARCHIVE_PREFIX    = "today_jobs_run_"  # one file per run, never overwritten
+
+
+def generate_run_id():
+    """One run_id per job_search.py execution -- includes seconds so
+    multiple runs in the same day (or same minute) still get distinct
+    archive files instead of overwriting each other."""
+    return datetime.now().strftime("%Y%m%d_%H%M%S")
+
+
+def make_job_token(run_id, job_number):
+    """Short, opaque, globally-unique token for one job in one run.
+    Deliberately not human-readable -- nothing meaningful to mis-type,
+    and if it ever does get garbled in transit, the lookup just fails
+    to match (loud, logged) rather than silently resolving to the
+    wrong job."""
+    raw = f"{run_id}:{job_number}"
+    return hashlib.sha256(raw.encode()).hexdigest()[:10]
+
+
+def build_decision_link(run_id, job_number):
+    """Pre-filled Google Form URL carrying both the job number and the
+    token, so Hans doesn't have to type either one by hand."""
+    token = make_job_token(run_id, job_number)
+    params = {
+        f"entry.{FORM_ENTRY_JOB_NUMBER}": str(job_number),
+        f"entry.{FORM_ENTRY_JOB_TOKEN}":  token,
+        "usp": "pp_url",
+    }
+    return f"{FORM_BASE_URL}?{urllib.parse.urlencode(params)}"
 
 class JobRAG:
     """
@@ -3751,6 +3800,10 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     from email.mime.text import MIMEText
 
     print("\n[EMAIL] Sending email notification...")
+    # One run_id for this entire execution -- threaded through every job's
+    # decision-link token AND the run-scoped archive file below, so same-day
+    # reruns and late/backlogged form responses both resolve correctly.
+    run_id = generate_run_id()
     today = datetime.now().strftime("%B %d, %Y")
     count = len(top_jobs)
     subject = f"Job Search Results - {count} Top Matches - {today}" if count > 0 else f"Job Search Ran - No Matches Found - {today}"
@@ -3825,6 +3878,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             {fit_block}
             <p>
                 {f"<a href='{job.get('url', '')}' style='background:{accent};color:#fff;padding:8px 16px;border-radius:4px;text-decoration:none;'>View and Apply</a>"}
+                <a href="{build_decision_link(run_id, number_label)}" style="margin-left:10px;color:{accent};font-size:13px;text-decoration:none;border-bottom:1px solid {accent};">&#10003; Submit Decision</a>
             </p>
             <hr style="border:none;border-top:1px solid #eee;margin:12px 0"/>
             <p><strong>Cover Letter:</strong></p>
@@ -3850,6 +3904,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     <p style="margin:0 0 8px;font-size:12px;color:#777;"><strong>Matched:</strong> {keywords}</p>
     {fit_block}
     <a href="{job.get('url','')}" style="background:#d9a441;color:#fff;padding:6px 14px;border-radius:4px;text-decoration:none;font-size:12px;">View and Apply</a>
+    <a href="{build_decision_link(run_id, number_label)}" style="margin-left:8px;color:#5c4413;font-size:12px;text-decoration:none;border-bottom:1px solid #5c4413;">&#10003; Submit Decision</a>
     <details style="margin-top:8px;">
       <summary style="font-size:11px;color:#999;cursor:pointer;">Cover letter draft</summary>
       <div style="background:#f9f9f9;padding:10px;border-radius:4px;font-size:13px;margin-top:6px;">{cover}</div>
@@ -3945,19 +4000,20 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     <p style="margin:0 0 8px;font-size:12px;color:#555;"><strong>Matched:</strong> {keywords}</p>
     {fit_html}
     <a href="{job_url}" style="background:#FF9900;color:#232F3E;padding:7px 14px;border-radius:4px;text-decoration:none;font-size:12px;font-weight:bold;">View on Amazon Jobs</a>
+    <a href="{build_decision_link(run_id, f'A{i}')}" style="margin-left:8px;color:#232F3E;font-size:12px;text-decoration:none;border-bottom:1px solid #232F3E;">&#10003; Submit Decision</a>
   </div>"""
 
         html += "</div>"
 
-    FORM_URL = "https://docs.google.com/forms/d/1gLcCAhFvOpDWFgCGbu1r9Xubl9o7RVGQbyHwWYJPHIw/viewform"
     html += f"""
 <div style="background:#eaf3ff;border:1px solid #b5d4f4;border-radius:8px;padding:14px 18px;margin:16px 0 20px;">
   <p style="margin:0 0 10px;font-weight:bold;color:#1a3a5c;font-size:13px;">SUBMIT YOUR DECISIONS</p>
+  <p style="margin:0 0 12px;font-size:12px;color:#555;">Each job above has its own <strong>Submit Decision</strong> link that pre-fills the job number and a tracking token for you. Prefer to fill it out manually instead? Use the blank form:</p>
   <p style="margin:0 0 12px;">
-    <a href="{FORM_URL}" style="background:#1a3a5c;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:bold;">Submit Job Decisions</a>
+    <a href="{FORM_BASE_URL}" style="background:#1a3a5c;color:#fff;padding:10px 20px;border-radius:4px;text-decoration:none;font-size:13px;font-weight:bold;">Open Blank Form</a>
   </p>
-  <p style="margin:8px 0 6px;font-size:12px;color:#555;">Click the button above anytime before midnight to submit your decisions. You can submit one job at a time or all at once.</p>
-  <p style="margin:6px 0 4px;font-size:12px;color:#888;"><strong>Decision options:</strong> Applied &nbsp;|&nbsp; Bad Link &nbsp;|&nbsp; Too Senior &nbsp;|&nbsp; Salary Too Low &nbsp;|&nbsp; Not Interested &nbsp;|&nbsp; Already Seen &nbsp;|&nbsp; Search Page &nbsp;|&nbsp; Not in United States &nbsp;|&nbsp; Other</p>
+  <p style="margin:8px 0 6px;font-size:12px;color:#555;">You can submit one job at a time or all at once, anytime before midnight.</p>
+  <p style="margin:6px 0 4px;font-size:12px;color:#888;"><strong>Decision options:</strong> Applied &nbsp;|&nbsp; Bad Link/Job Not Available &nbsp;|&nbsp; Onsite/Not Remote &nbsp;|&nbsp; Too Senior &nbsp;|&nbsp; Salary Too Low &nbsp;|&nbsp; Not Interested &nbsp;|&nbsp; Already Seen/Duplicate &nbsp;|&nbsp; Search Page Listing &nbsp;|&nbsp; Not in United States &nbsp;|&nbsp; Other</p>
   <p style="margin:4px 0 0;font-size:11px;color:#aaa;"><em>Unanswered jobs are treated as neutral — no action taken.</em></p>
 </div>
 <hr/>"""
@@ -4132,6 +4188,8 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "job_id":           _job_id(j),
                 "number":           j.get("display_number", str(idx)),
                 "number_display":   j.get("display_number", str(idx)),
+                "token":            make_job_token(run_id, j.get("display_number", str(idx))),
+                "run_id":           run_id,
                 "title":            j.get("title", ""),
                 "company":          j.get("company", ""),
                 "track":            j.get("track", ""),
@@ -4152,6 +4210,8 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "job_id":           _job_id(j),
                 "number":           f"A{idx}",
                 "number_display":   f"A{idx}",
+                "token":            make_job_token(run_id, f"A{idx}"),
+                "run_id":           run_id,
                 "title":            j.get("title", ""),
                 "company":          "Amazon",
                 "track":            j.get("track", ""),
@@ -4168,12 +4228,16 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         ]
         batch = {
             "date": today_key,
+            "run_id": run_id,
             "jobs": regular_batch + amazon_batch,
         }
         with open(batch_file, "w") as f:
             json.dump(batch, f, indent=2)
         print(f"   [OK] Saved {len(regular_batch)} regular + {len(amazon_batch)} Amazon jobs to today_jobs.json")
         # Archive a dated copy so backfills always have full metadata
+        # (legacy, date-keyed -- kept for backward compat with any
+        # already-sent emails that predate the token system; gets
+        # overwritten on same-day reruns, same as before)
         archive_file = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             f"today_jobs_{today_key}.json"
@@ -4181,6 +4245,17 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         with open(archive_file, "w") as f:
             json.dump(batch, f, indent=2)
         print(f"   [OK] Archived to today_jobs_{today_key}.json")
+
+        # Run-scoped archive -- NEVER overwritten, regardless of how many
+        # times the script runs today or how long a response sits
+        # unanswered. This is what the token-based sync reads from.
+        run_archive_file = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            f"{RUN_ARCHIVE_PREFIX}{run_id}.json"
+        )
+        with open(run_archive_file, "w") as f:
+            json.dump(batch, f, indent=2)
+        print(f"   [OK] Archived to {RUN_ARCHIVE_PREFIX}{run_id}.json (token sync source)")
 
         # ── Write Amazon jobs to job_decisions.json ───────────
         # FIXED 4/30 gap: Amazon Spotlight jobs (A1–A5) were not being
