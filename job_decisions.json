@@ -5142,95 +5142,40 @@
   ],
   "2026-06-21": [
     {
-      "url": "https://www.dice.com/job-detail/3d533b8b-765b-4687-b221-8f6b06a0dd54",
-      "title": "Mainframe Remote Support (z/OS, z/VM, z/Linux, CICS, DB2 ...",
-      "company": "",
-      "track": "COBOL / Mainframe",
-      "score": 122
+      "job_id": "8679ea5d26",
+      "number": "1",
+      "title": "AI Engineer (Agents) - Gem",
+      "company": "Gem",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://jobs.gem.com/felix/am9icG9zdDoDpKgtipH8lvfrI8ZQlAPL",
+      "matched_keywords": [
+        "ai engineer",
+        "observability",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-21 23:00"
     },
     {
-      "url": "https://www.adzuna.com/land/ad/5768329088?se=6maW331t8RGrKszqFbIEfQ&utm_medium=api&utm_source=aa7dfcd9&v=875B23E443D551D043FABF64E376F4F02A589E9D",
-      "title": "Senior COBOL Developer [C] //Local to NJ",
-      "company": "Mahantech Corporation",
-      "track": "COBOL / Mainframe",
-      "score": 102
-    },
-    {
-      "url": "https://www.adzuna.com/land/ad/5767388928?se=6maW331t8RGrKszqFbIEfQ&utm_medium=api&utm_source=aa7dfcd9&v=FB3C5A70D4FD8BA5D226741DFAADF037B044D1B2",
-      "title": "Senior Mainframe Developer / COBOL Senior Consultant",
-      "company": "Zettalogix INC",
-      "track": "COBOL / Mainframe",
-      "score": 102
-    },
-    {
-      "url": "https://www.dice.com/job-detail/bec37206-2669-4482-9b32-e42d3001c9df",
-      "title": "COBOL / SQL Developer",
-      "company": "Infinite Computer Solutions (ICS)",
-      "track": "COBOL / Mainframe",
-      "score": 62
-    },
-    {
-      "url": "https://www.adzuna.com/land/ad/5769849284?se=6maW331t8RGrKszqFbIEfQ&utm_medium=api&utm_source=aa7dfcd9&v=7A8667209779813FA7D091C43F584950D8B6E416",
-      "title": "Developer COBOL",
-      "company": "Hansen Talent Group",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://www.dice.com/job-detail/fe0369c2-2684-4703-b76b-5a511f49b611",
-      "title": "Senior Mainframe Developer (COBOL)",
-      "company": "System One",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://www.dice.com/job-detail/ba227cf0-554d-4fff-8ca6-574b7817b8a3",
-      "title": "Mainframe Developer",
-      "company": "Lucid Technologies",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://www.indeed.com/viewjob?jk=370bd8ff49a36834",
-      "title": "Remote Mainframe Cobol Developer",
-      "company": "",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://www.dice.com/job-detail/7c6f6fdb-2c27-4c68-b4f3-e9f8dec76473",
-      "title": "Senior Software Engineer",
-      "company": ".NET SDET",
-      "track": "LoadRunner / Performance",
-      "score": 35
-    },
-    {
-      "url": "https://www.indeed.com/viewjob?jk=82235c1ecf1aff77",
-      "title": "Software Development Engineer in Test (SDET), remote | 1058708",
-      "company": "",
-      "track": "QA / Test Engineering",
-      "score": 35
-    },
-    {
-      "url": "https://www.adzuna.com/land/ad/5769613853?se=6maW331t8RGrKszqFbIEfQ&utm_medium=api&utm_source=aa7dfcd9&v=8DA26E41E054B420782B8D88034ADDF782CADB05",
-      "title": "Mainframe Migration Engineer with YAML",
-      "company": "Digitech Services",
-      "track": "COBOL / Mainframe",
-      "score": 22
-    },
-    {
-      "url": "https://crowdstrike.wd5.myworkdayjobs.com/en-US/crowdstrikecareers/job/QA-Engineer---GTM-Applications--Remote--IND-_R29124",
-      "title": "QA Engineer - GTM Applications (Remote, IND)",
-      "company": "Crowdstrike",
-      "track": "QA / Test Engineering",
-      "score": 20
-    },
-    {
-      "url": "https://jobs.ashbyhq.com/truelogic/5e22da0f-9ca4-4816-9be2-9ef6ede8e353",
-      "title": "Senior Software Development Engineer in Test (SDET/AI) - Jobs",
-      "company": "",
-      "track": "QA / Test Engineering",
-      "score": 20
+      "job_id": "ee6b85a6bb",
+      "number": "S1",
+      "title": "Trend Health Partners - AI Test Engineer II - Lever",
+      "company": "AI Test Engineer II",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://jobs.lever.co/Trend-Health-Partners/ab55dae4-517e-4037-af1c-913875064331/apply",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-21 23:00"
     }
   ]
 }
