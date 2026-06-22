@@ -18,11 +18,14 @@ from tkinter import ttk, scrolledtext
 import threading
 import requests
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # ─────────────────────────────────────────────
 # CONFIGURATION
 # ─────────────────────────────────────────────
-api_key = os.environ.get("ANTHROPIC_API_KEY")
+CLAUDE_API_KEY = os.environ.get("ANTHROPIC_API_KEY")
 
 # ─────────────────────────────────────────────
 # SYSTEM PROMPTS
