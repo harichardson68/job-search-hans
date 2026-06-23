@@ -5179,5 +5179,63 @@
       "raw_decision": "",
       "timestamp": "2026-06-21 23:00"
     }
+  ],
+  "2026-06-22": [
+    {
+      "url": "https://www.dice.com/job-detail/f0df83d1-1699-4016-8f83-f1a1bc58bc19",
+      "title": "Senior Automation Engineer",
+      "company": "Trigent Software, Inc. Account Number",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.dice.com/job-detail/2b7f66f4-9a3b-4fc8-ae7e-fcab0676d360",
+      "title": "Senior QA Automation Engineer",
+      "company": "Raas Infotek LLC",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7c6f6fdb-2c27-4c68-b4f3-e9f8dec76473",
+      "title": "Senior Software Engineer",
+      "company": ".NET SDET",
+      "track": "LoadRunner / Performance",
+      "score": 120
+    },
+    {
+      "url": "https://jobs.lever.co/trueml/a843d9f4-24e7-41d0-b364-49ba74cff486?lever-source%5B%5D=jobs.tenoneten.net",
+      "title": "TrueML",
+      "company": "Sr Quality Engineer II",
+      "track": "LoadRunner / Performance",
+      "score": 88
+    },
+    {
+      "url": "https://ingrammicro.wd5.myworkdayjobs.com/ingrammicro/job/Irvine-CA-United-States-of-America/Software-Engineer---AI_R-116063",
+      "title": "Software Engineer - AI",
+      "company": "Ingrammicro",
+      "track": "AI Hybrid",
+      "score": 60
+    },
+    {
+      "url": "https://jobs.ashbyhq.com/truelogic/5e22da0f-9ca4-4816-9be2-9ef6ede8e353",
+      "title": "Senior Software Development Engineer in Test (SDET/AI) - Jobs",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/b7f3a172-9b4b-4575-9c17-5da2a4b67d12",
+      "title": "QA Engineer",
+      "company": "Video Streaming, Playback & Automation",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/3d21084c-3bf7-4fa4-b1eb-16b96b2c4d4b",
+      "title": "QA Automation Specialist",
+      "company": "Corpay -",
+      "track": "QA / Test Engineering",
+      "score": 15
+    }
   ]
 }
