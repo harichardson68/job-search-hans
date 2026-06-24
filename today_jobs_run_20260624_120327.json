@@ -1,0 +1,313 @@
+{
+  "date": "2026-06-24",
+  "run_id": "20260624_120327",
+  "jobs": [
+    {
+      "job_id": "e38b3cbecb",
+      "number": "1",
+      "number_display": "1",
+      "token": "64154ee5d2",
+      "run_id": "20260624_120327",
+      "title": "Generative AI Engineer \u2013 Internship",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 169,
+      "url": "https://frontendnode-production.up.railway.app/job/generative-ai-engineer-internship",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "prompt engineer",
+        "aws",
+        "agentic",
+        "rag",
+        "ml engineer",
+        "prompt engineering",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "desc:entry_mid_signal:mid-level"
+    },
+    {
+      "job_id": "96d25a1705",
+      "number": "2",
+      "number_display": "2",
+      "token": "cbb5e53b5e",
+      "run_id": "20260624_120327",
+      "title": "Agentic AI Engineer - Remote - United States | Deep Seas Careers",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://deepseas.pinpointhq.com/en/postings/e10b6a6a-b47b-4be8-88b1-5d824295a33e",
+      "matched_keywords": [
+        "ai agent",
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "221d7e08f7",
+      "number": "3",
+      "number_display": "3",
+      "token": "57a1e379c5",
+      "run_id": "20260624_120327",
+      "title": "Remote LLM Engineer Jobs \u2014 Find Work | RemoteAI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remoteai.io/find-work/llm-engineer",
+      "matched_keywords": [
+        "llm engineer",
+        "llm",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "2c190bd199",
+      "number": "4",
+      "number_display": "4",
+      "token": "104f8f4c70",
+      "run_id": "20260624_120327",
+      "title": "Quality Engineer (Automation & AI) - Remote - Zyte - Workable Jobs",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 71,
+      "url": "https://apply.workable.com/zyte/j/EBE4663EB8",
+      "matched_keywords": [
+        "prompt engineering",
+        "observability",
+        "prompt engineer",
+        "ai observability"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "edcd52b30e",
+      "number": "5",
+      "number_display": "5",
+      "token": "d5f4fa832d",
+      "run_id": "20260624_120327",
+      "title": "AI QA Engineer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.indeed.com/viewjob?jk=7d5b61d3886d9655",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1eb020339d",
+      "number": "6",
+      "number_display": "6",
+      "token": "b716938f79",
+      "run_id": "20260624_120327",
+      "title": "AI Engineer (Agentic ) - Shrive Technologies LLC - Remote | Dice.com",
+      "company": "Shrive Technologies LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/e258aaf7-6ad0-44f6-97eb-541702f4a56b",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "11f4864804",
+      "number": "7",
+      "number_display": "7",
+      "token": "60f841d82c",
+      "run_id": "20260624_120327",
+      "title": "Agentic AI Engineer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.indeed.com/viewjob?jk=5fc3cc5d3cd884d5",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d6e460689b",
+      "number": "8",
+      "number_display": "8",
+      "token": "0735b365f3",
+      "run_id": "20260624_120327",
+      "title": "AI Agent Developer - CoHire.com",
+      "company": "CoHire.com",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.cohire.com/viewjob/ai-agent-developer-job2606000023",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "067ed7f27d",
+      "number": "9",
+      "number_display": "9",
+      "token": "ebb245070a",
+      "run_id": "20260624_120327",
+      "title": "Machine Learning Engineer (Healthcare) - Javen Technologies, Inc",
+      "company": "Javen Technologies, Inc",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/1899321a-a306-4aba-9de5-05f42b1a547d",
+      "matched_keywords": [
+        "machine learning engineer",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "faba281093",
+      "number": "10",
+      "number_display": "10",
+      "token": "3ae31b5c81",
+      "run_id": "20260624_120327",
+      "title": "AI Machine Learning Engineer - Lockheed Martin Corporation - Dice",
+      "company": "Lockheed Martin Corporation",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/5fb33af7-16ea-45fc-a3f3-e9fb96d2ceef",
+      "matched_keywords": [
+        "machine learning engineer",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d283424dbe",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "a3012a1971",
+      "run_id": "20260624_120327",
+      "title": "Automation Test Engineer/Remote/W2 Only - Apetan Consulting - Dice",
+      "company": "Apetan Consulting",
+      "track": "QA Automation",
+      "score": 145,
+      "url": "https://www.dice.com/job-detail/02a8e48c-4a86-4bf1-9396-e7db8df66246",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "ac1ab8271c",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "7e60471c02",
+      "run_id": "20260624_120327",
+      "title": "ML Kernel Performance Engineer, Edge AI and Science - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://amazon.jobs/jobs/10456773",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "cccc4b313e",
+      "number": "A2",
+      "number_display": "A2",
+      "token": "5936877927",
+      "run_id": "20260624_120327",
+      "title": "ML Kernel Performance Engineer, Edge AI and Science - ID da vaga",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://amazon.jobs/pt/jobs/10456773/ml-kernel-performance-engineer-edge-ai-and-science",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "aea07fadb5",
+      "number": "A3",
+      "number_display": "A3",
+      "token": "272a07b755",
+      "run_id": "20260624_120327",
+      "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10457293/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

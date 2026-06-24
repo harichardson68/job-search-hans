@@ -5601,6 +5601,81 @@
       "company": "",
       "track": "QA / Test Engineering",
       "score": 20
+    },
+    {
+      "job_id": "ac1ab8271c",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "ML Kernel Performance Engineer, Edge AI and Science - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://amazon.jobs/jobs/10456773",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-24T12:03:27.394613"
+    },
+    {
+      "job_id": "cccc4b313e",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "ML Kernel Performance Engineer, Edge AI and Science - ID da vaga",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://amazon.jobs/pt/jobs/10456773/ml-kernel-performance-engineer-edge-ai-and-science",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-24T12:03:27.394628"
+    },
+    {
+      "job_id": "aea07fadb5",
+      "number": "A3",
+      "number_display": "A3",
+      "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10457293/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-24T12:03:27.394634"
     }
   ]
 }
