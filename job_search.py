@@ -236,6 +236,20 @@ print(f"{'='*60}")
 ERROR_LOG_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "jobsearch_errors.log")
 SCRIPT_NAME = "job_search.py"
 
+# Wire up Python's logging module -- WITHOUT this, every logging.info()/
+# logging.exception() call in this file (the [FIT-OK]/[FIT-SKIP]/[FIT-WARN]/
+# [FIT-ERROR] diagnostic lines) is silently dropped: the root logger
+# defaults to WARNING level with no handler, so .info() never reaches
+# anywhere and even .exception() only hits a stderr "last resort" handler
+# that isn't captured in the run log. This makes them real, writing to a
+# dedicated file alongside jobsearch_errors.log.
+FIT_DEBUG_LOG_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "fit_analysis_debug.log")
+logging.basicConfig(
+    filename=FIT_DEBUG_LOG_FILE,
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s",
+)
+
 def log_error(message):
     """Append a timestamped error to the shared persistent error log."""
     try:
@@ -3327,6 +3341,7 @@ Return ONLY the one line. No headers, no bullets, no follow-up text."""
     try:
         result = _call_claude_api(prompt, max_tokens=80, model=FIT_ANALYSIS_MODEL)
     except Exception as e:
+        print(f"   [WARN] Fit analysis exception for {title!r} ({source}): {type(e).__name__}: {e}")
         logging.exception(
             f"[FIT-ERROR] id={job_id} title={title!r} source={source} "
             f"error={type(e).__name__}: {e}"
@@ -3334,6 +3349,7 @@ Return ONLY the one line. No headers, no bullets, no follow-up text."""
         return {"tier": "", "display": "", "hard_disqualified": hard_disqualified}
 
     if not result or not result.strip():
+        print(f"   [WARN] Fit analysis returned empty for: {title!r} ({source}) — raw response: {result!r}")
         logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=empty_response")
         return {"tier": "", "display": "", "hard_disqualified": hard_disqualified}
 
@@ -3343,6 +3359,7 @@ Return ONLY the one line. No headers, no bullets, no follow-up text."""
     if m:
         tier = m.group(1)
     else:
+        print(f"   [WARN] Fit analysis tier unparsed for {title!r} — raw response: {result[:100]!r}")
         logging.info(f"[FIT-WARN] id={job_id} title={title!r} unparsed tier from: {result[:60]!r}")
 
     if tier == "Weak Fit":
