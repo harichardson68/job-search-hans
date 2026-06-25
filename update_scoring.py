@@ -30,17 +30,18 @@ from google.oauth2 import service_account
 
 # ─── SETUP ───────────────────────────────────────────────────
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_DIR   = os.path.join(SCRIPT_DIR, "json_files")  # all pipeline data .json files live here
 load_dotenv(os.path.join(SCRIPT_DIR, ".env"))
 
 SHEET_ID         = "1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE"
 SHEET_RANGE      = "Form Responses 1!A:D"
-CREDENTIALS_FILE = os.path.join(SCRIPT_DIR, "google_credentials.json")
+CREDENTIALS_FILE = os.path.join(JSON_DIR, "google_credentials.json")
 
-DECISIONS_FILE   = os.path.join(SCRIPT_DIR, "job_decisions.json")
-TODAY_JOBS_FILE  = os.path.join(SCRIPT_DIR, "today_jobs.json")
-WEIGHTS_FILE     = os.path.join(SCRIPT_DIR, "scoring_weights.json")
+DECISIONS_FILE   = os.path.join(JSON_DIR, "job_decisions.json")
+TODAY_JOBS_FILE  = os.path.join(JSON_DIR, "today_jobs.json")
+WEIGHTS_FILE     = os.path.join(JSON_DIR, "scoring_weights.json")
 JOB_SEARCH_FILE  = os.path.join(SCRIPT_DIR, "job_search.py")
-SUMMARY_FILE     = os.path.join(SCRIPT_DIR, "overnight_summary.json")
+SUMMARY_FILE     = os.path.join(JSON_DIR, "overnight_summary.json")
 BACKUP_FILE      = os.path.join(SCRIPT_DIR, "job_search.py.bak")
 
 TODAY = date.today().isoformat()

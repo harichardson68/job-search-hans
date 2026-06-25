@@ -67,9 +67,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DECISIONS_FILE = os.path.join(SCRIPT_DIR, "job_decisions.json")
+JSON_DIR = os.path.join(SCRIPT_DIR, "json_files")  # all pipeline data .json files live here
+DECISIONS_FILE = os.path.join(JSON_DIR, "job_decisions.json")
 TODAY = date.today().isoformat()
-OUTPUT_FILE = os.path.join(SCRIPT_DIR, f"cluster_analysis_{TODAY}.json")
+OUTPUT_FILE = os.path.join(JSON_DIR, f"cluster_analysis_{TODAY}.json")
 
 KMEANS_EXPLORATORY = 100   # data-audit milestone (this script's intended trigger point)
 KMEANS_PRODUCTION  = 300   # full supervised-classifier milestone (future, separate effort)

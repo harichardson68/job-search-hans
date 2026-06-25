@@ -43,13 +43,14 @@ from dotenv import load_dotenv
 
 # ─── PATHS & ENV ─────────────────────────────────────────────
 SCRIPT_DIR         = os.path.dirname(os.path.abspath(__file__))
+JSON_DIR           = os.path.join(SCRIPT_DIR, "json_files")  # all pipeline data .json files live here
 load_dotenv(os.path.join(SCRIPT_DIR, ".env"))
 
 GMAIL_ADDRESS      = os.environ.get("GMAIL_ADDRESS", "")
 GMAIL_APP_PASS     = os.environ.get("GMAIL_APP_PASS", "")
 EMAIL_TO           = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
 
-DECISIONS_FILE     = os.path.join(SCRIPT_DIR, "job_decisions.json")
+DECISIONS_FILE     = os.path.join(JSON_DIR, "job_decisions.json")
 RUN_LOG_FILE       = os.path.join(SCRIPT_DIR, "review_decisions_run.log")
 ERROR_LOG_FILE     = os.path.join(SCRIPT_DIR, "jobsearch_errors.log")
 
@@ -57,8 +58,9 @@ TODAY              = date.today().isoformat()
 SCRIPT_NAME        = "review_decisions.py"
 
 # ─── GOOGLE SHEETS CONFIG ────────────────────────────────────
-# Path to your service account JSON key file (place in same folder as this script)
-SERVICE_ACCOUNT_FILE = os.path.join(SCRIPT_DIR, "google_credentials.json")
+# Path to your service account JSON key file (now lives in json_files/)
+SERVICE_ACCOUNT_FILE = os.path.join(JSON_DIR, "google_credentials.json")
+
 
 # The Google Sheet ID from your Form responses spreadsheet URL
 SHEET_ID = "1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE"
@@ -319,7 +321,7 @@ def load_archived_jobs():
     existed). See load_archived_jobs_by_token() for the primary path.
     """
     lookup = {}
-    for fname in os.listdir(SCRIPT_DIR):
+    for fname in os.listdir(JSON_DIR):
         # Only legacy date-keyed archives (today_jobs_YYYY-MM-DD.json) --
         # explicitly excludes today_jobs_run_*.json, which is loaded
         # separately by load_archived_jobs_by_token().
@@ -327,7 +329,7 @@ def load_archived_jobs():
             continue
         # Extract date from filename: today_jobs_2026-04-23.json
         date_part = fname.replace("today_jobs_", "").replace(".json", "")
-        fpath = os.path.join(SCRIPT_DIR, fname)
+        fpath = os.path.join(JSON_DIR, fname)
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)
@@ -367,10 +369,10 @@ def load_archived_jobs_by_token():
     correct job, since the token never depended on submission date.
     """
     lookup = {}
-    for fname in os.listdir(SCRIPT_DIR):
+    for fname in os.listdir(JSON_DIR):
         if not (fname.startswith("today_jobs_run_") and fname.endswith(".json")):
             continue
-        fpath = os.path.join(SCRIPT_DIR, fname)
+        fpath = os.path.join(JSON_DIR, fname)
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 data = json.load(f)

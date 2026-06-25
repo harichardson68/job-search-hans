@@ -28,11 +28,14 @@ import sys
 from dotenv import load_dotenv
 
 # Load .env file from same directory as this script
-load_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+JSON_DIR   = os.path.join(SCRIPT_DIR, "json_files")  # all pipeline data .json files live here
+os.makedirs(JSON_DIR, exist_ok=True)
+load_dotenv(os.path.join(SCRIPT_DIR, ".env"))
 
 # ─── RAG SETUP (ChromaDB + sentence-transformers) ────────────
-CHROMA_DIR      = os.path.join(os.path.dirname(os.path.abspath(__file__)), "chroma_db")
-DECISIONS_FILE  = os.path.join(os.path.dirname(os.path.abspath(__file__)), "job_decisions.json")
+CHROMA_DIR      = os.path.join(SCRIPT_DIR, "chroma_db")
+DECISIONS_FILE  = os.path.join(JSON_DIR, "job_decisions.json")
 RAG_ENABLED     = True
 RAG_TOP_K       = 3
 
@@ -53,6 +56,45 @@ FORM_BASE_URL         = "https://docs.google.com/forms/d/e/1FAIpQLScWITASM6c25lm
 FORM_ENTRY_JOB_NUMBER = "1727644971"   # "Job Number" field entry ID
 FORM_ENTRY_JOB_TOKEN  = "1012235280"   # "Job Token" field entry ID
 RUN_ARCHIVE_PREFIX    = "today_jobs_run_"  # one file per run, never overwritten
+
+# Legacy date-keyed archives (today_jobs_YYYY-MM-DD.json) pile up forever
+# with no cleanup. They're only kept for backward compat with any decision
+# email sent before the token system existed -- once that buffer has long
+# passed, they're just clutter in the main Jobsearch folder. Rotate (move,
+# never delete) anything older than the retention window into a subfolder
+# once per run, so the folder stays readable without losing any history.
+LEGACY_ARCHIVE_RETENTION_DAYS = 30
+LEGACY_ARCHIVE_SUBFOLDER      = "archive_today_jobs"
+LEGACY_ARCHIVE_PATTERN        = re.compile(r"^today_jobs_(\d{4}-\d{2}-\d{2})\.json$")
+
+
+def rotate_legacy_today_jobs_archives():
+    """Move legacy date-keyed today_jobs_YYYY-MM-DD.json files older than
+    LEGACY_ARCHIVE_RETENTION_DAYS into archive_today_jobs/. Never touches
+    today_jobs_run_*.json (token-sync source) or today_jobs.json (latest
+    snapshot). Moves rather than deletes -- cheap to keep, expensive to
+    regret. Wrapped in try/except by the caller so a filesystem hiccup
+    here never breaks the actual job search run."""
+    archive_dir = os.path.join(JSON_DIR, LEGACY_ARCHIVE_SUBFOLDER)
+    cutoff = datetime.now() - timedelta(days=LEGACY_ARCHIVE_RETENTION_DAYS)
+
+    moved = 0
+    for fname in os.listdir(JSON_DIR):
+        match = LEGACY_ARCHIVE_PATTERN.match(fname)
+        if not match:
+            continue
+        try:
+            file_date = datetime.strptime(match.group(1), "%Y-%m-%d")
+        except ValueError:
+            continue
+        if file_date < cutoff:
+            os.makedirs(archive_dir, exist_ok=True)
+            _shutil.move(os.path.join(JSON_DIR, fname), os.path.join(archive_dir, fname))
+            moved += 1
+
+    if moved:
+        print(f"[OK] Rotated {moved} legacy today_jobs archive(s) older than "
+              f"{LEGACY_ARCHIVE_RETENTION_DAYS} days into {LEGACY_ARCHIVE_SUBFOLDER}/")
 
 
 def generate_run_id():
@@ -1193,7 +1235,7 @@ ADZUNA_APP_KEY  = os.environ.get("ADZUNA_APP_KEY", "")
 USAJOBS_API_KEY = os.environ.get("USAJOBS_API_KEY", "")
 USAJOBS_EMAIL   = os.environ.get("USAJOBS_EMAIL", "")
 OPENAI_API_KEY  = os.environ.get("OPENAI_API_KEY", "")   # optional, not currently used
-CLAUDE_API_KEY  = os.environ.get("CLAUDE_API_KEY", "")
+CLAUDE_API_KEY  = os.environ.get("CLAUDE_API_KEY") or os.environ.get("ANTHROPIC_API_KEY", "")
 
 #  Email notifications
 GMAIL_ADDRESS  = os.environ.get("GMAIL_ADDRESS", "")
@@ -1246,8 +1288,8 @@ CANDIDATE = {
                    "Scalability Testing", "SLA Compliance"],
 }
 
-OUTPUT_FILE    = "job_results.json"
-SEEN_JOBS_FILE = "seen_jobs.json"
+OUTPUT_FILE    = os.path.join(JSON_DIR, "job_results.json")
+SEEN_JOBS_FILE = os.path.join(JSON_DIR, "seen_jobs.json")
 
 def load_seen_jobs():
     """Load previously seen job URLs."""
@@ -3521,13 +3563,21 @@ def main():
     # before slicing to the top 15. Non-AI tracks are untouched — their
     # keyword score IS a reliable fit signal already (e.g. LoadRunner match
     # = real fit), so we don't spend API calls there.
+    if GENERATE_FIT_ANALYSIS and not CLAUDE_API_KEY:
+        print("   [WARN] GENERATE_FIT_ANALYSIS is on but no Claude API key was found "
+              "(checked CLAUDE_API_KEY and ANTHROPIC_API_KEY env vars) — every fit "
+              "evaluation this run will silently return empty. Check .env.")
+
     fit_evaluated = 0
+    fit_succeeded = 0
     hard_dropped = []
     for job in all_jobs:
         track = job.get("track", "")
         if GENERATE_FIT_ANALYSIS and track in FIT_ANALYSIS_TRACKS:
             fit_result = generate_fit_analysis(job)
             fit_evaluated += 1
+            if fit_result["display"]:
+                fit_succeeded += 1
         else:
             fit_result = {"tier": "", "display": "", "hard_disqualified": False}
         job["fit_tier"] = fit_result["tier"]
@@ -3535,7 +3585,8 @@ def main():
         job["fit_hard_disqualified"] = fit_result["hard_disqualified"]
 
     if fit_evaluated:
-        print(f"[OK] Ran fit evaluation on {fit_evaluated} AI-track job(s)")
+        print(f"[OK] Ran fit evaluation on {fit_evaluated} AI-track job(s) "
+              f"({fit_succeeded} succeeded, {fit_evaluated - fit_succeeded} empty/failed)")
 
     pre_drop_count = len(all_jobs)
     survivors = []
@@ -3772,7 +3823,7 @@ def get_decision_stats():
       - pct: progress toward KMEANS_THRESHOLD (capped at 100)
     Returns None if file doesn't exist or can't be read.
     """
-    decisions_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "job_decisions.json")
+    decisions_file = os.path.join(JSON_DIR, "job_decisions.json")
     try:
         if not os.path.exists(decisions_file):
             return None
@@ -4191,7 +4242,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         return hashlib.md5(raw.encode()).hexdigest()[:10]
 
     today_key  = datetime.now().strftime("%Y-%m-%d")
-    batch_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "today_jobs.json")
+    batch_file = os.path.join(JSON_DIR, "today_jobs.json")
     try:
         # Regular jobs use their pre-computed display_number (set once in
         # the dual-pool split above) — career jobs get "1".."10"/"S1".. and
@@ -4256,7 +4307,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         # already-sent emails that predate the token system; gets
         # overwritten on same-day reruns, same as before)
         archive_file = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            JSON_DIR,
             f"today_jobs_{today_key}.json"
         )
         with open(archive_file, "w") as f:
@@ -4267,7 +4318,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         # times the script runs today or how long a response sits
         # unanswered. This is what the token-based sync reads from.
         run_archive_file = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
+            JSON_DIR,
             f"{RUN_ARCHIVE_PREFIX}{run_id}.json"
         )
         with open(run_archive_file, "w") as f:
@@ -4364,6 +4415,14 @@ def _persist_amazon_to_decisions(amazon_batch, today_key):
     except Exception as e:
         print(f"   [WARN] Could not persist Amazon jobs to decisions: {e}")
         log_error(f"Amazon decisions persist failed: {e}")
+
+    # Tidy up the legacy date-keyed archive pile once per run. Never
+    # fatal -- a rotation failure shouldn't take down an otherwise-good run.
+    try:
+        rotate_legacy_today_jobs_archives()
+    except Exception as e:
+        print(f"   [WARN] Legacy archive rotation failed: {e}")
+        log_error(f"Legacy archive rotation failed: {e}")
 
 
 if __name__ == "__main__":
