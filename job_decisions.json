@@ -5491,121 +5491,222 @@
   ],
   "2026-06-24": [
     {
-      "url": "https://www.dice.com/job-detail/7c6f6fdb-2c27-4c68-b4f3-e9f8dec76473",
-      "title": "Senior Software Engineer",
-      "company": ".NET SDET",
-      "track": "LoadRunner / Performance",
-      "score": 120
+      "job_id": "e38b3cbecb",
+      "number": "1",
+      "title": "Generative AI Engineer \u2013 Internship",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 169,
+      "url": "https://frontendnode-production.up.railway.app/job/generative-ai-engineer-internship",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "prompt engineer",
+        "aws",
+        "agentic",
+        "rag",
+        "ml engineer",
+        "prompt engineering",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-24 23:00"
     },
     {
-      "url": "https://bbinsurance.wd1.myworkdayjobs.com/Careers_Europe/job/London-England-United-Kingdom/Software-Tester_R26_0000002107",
-      "title": "Software Tester",
-      "company": "Bbinsurance",
-      "track": "LoadRunner / Performance",
-      "score": 105
+      "job_id": "96d25a1705",
+      "number": "2",
+      "title": "Agentic AI Engineer - Remote - United States | Deep Seas Careers",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://deepseas.pinpointhq.com/en/postings/e10b6a6a-b47b-4be8-88b1-5d824295a33e",
+      "matched_keywords": [
+        "ai agent",
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-24 23:00"
     },
     {
-      "url": "https://www.dice.com/job-detail/3aca98c8-9a23-49b5-9697-03f86819ba57",
-      "title": "Mainframe z/OS Developer",
-      "company": "isolve technology inc",
-      "track": "COBOL / Mainframe",
-      "score": 102
+      "job_id": "221d7e08f7",
+      "number": "3",
+      "title": "Remote LLM Engineer Jobs \u2014 Find Work | RemoteAI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remoteai.io/find-work/llm-engineer",
+      "matched_keywords": [
+        "llm engineer",
+        "llm",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-06-24 23:00"
     },
     {
-      "url": "https://jobs.lever.co/trueml/a843d9f4-24e7-41d0-b364-49ba74cff486?lever-source%5B%5D=jobs.tenoneten.net",
-      "title": "TrueML",
-      "company": "Sr Quality Engineer II",
-      "track": "LoadRunner / Performance",
-      "score": 88
+      "job_id": "2c190bd199",
+      "number": "4",
+      "title": "Quality Engineer (Automation & AI) - Remote - Zyte - Workable Jobs",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 71,
+      "url": "https://apply.workable.com/zyte/j/EBE4663EB8",
+      "matched_keywords": [
+        "prompt engineering",
+        "observability",
+        "prompt engineer",
+        "ai observability"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-24 23:00"
     },
     {
-      "url": "https://www.dice.com/job-detail/8cc25571-13e5-4c9d-9413-8a822878fd5d",
-      "title": "Test Lead",
-      "company": "Selenium & API",
-      "track": "LoadRunner / Performance",
-      "score": 85
+      "job_id": "edcd52b30e",
+      "number": "5",
+      "title": "AI QA Engineer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.indeed.com/viewjob?jk=7d5b61d3886d9655",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Expired",
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-24 23:00"
     },
     {
-      "url": "https://www.dice.com/job-detail/21ddb56c-cddc-4c56-aea6-19d4d047a3e0",
-      "title": "Senior Mainframe Developer/ Cobol Developer",
-      "company": "Trenton, NJ, US",
-      "track": "COBOL / Mainframe",
-      "score": 82
+      "job_id": "1eb020339d",
+      "number": "6",
+      "title": "AI Engineer (Agentic ) - Shrive Technologies LLC - Remote | Dice.com",
+      "company": "Shrive Technologies LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/e258aaf7-6ad0-44f6-97eb-541702f4a56b",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-24 23:00"
     },
     {
-      "url": "https://www.dice.com/job-detail/02a8e48c-4a86-4bf1-9396-e7db8df66246",
-      "title": "Automation Test Engineer/Remote/W2 Only",
+      "job_id": "11f4864804",
+      "number": "7",
+      "title": "Agentic AI Engineer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.indeed.com/viewjob?jk=5fc3cc5d3cd884d5",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Expired",
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-24 23:00"
+    },
+    {
+      "job_id": "d6e460689b",
+      "number": "8",
+      "title": "AI Agent Developer - CoHire.com",
+      "company": "CoHire.com",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.cohire.com/viewjob/ai-agent-developer-job2606000023",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "India",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-24 23:00"
+    },
+    {
+      "job_id": "067ed7f27d",
+      "number": "9",
+      "title": "Machine Learning Engineer (Healthcare) - Javen Technologies, Inc",
+      "company": "Javen Technologies, Inc",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/1899321a-a306-4aba-9de5-05f42b1a547d",
+      "matched_keywords": [
+        "machine learning engineer",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-24 23:00"
+    },
+    {
+      "job_id": "faba281093",
+      "number": "10",
+      "title": "AI Machine Learning Engineer - Lockheed Martin Corporation - Dice",
+      "company": "Lockheed Martin Corporation",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/5fb33af7-16ea-45fc-a3f3-e9fb96d2ceef",
+      "matched_keywords": [
+        "machine learning engineer",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-06-24 23:00"
+    },
+    {
+      "job_id": "d283424dbe",
+      "number": "G1",
+      "title": "Automation Test Engineer/Remote/W2 Only - Apetan Consulting - Dice",
       "company": "Apetan Consulting",
-      "track": "LoadRunner / Performance",
-      "score": 63
-    },
-    {
-      "url": "https://kyndryl.wd5.myworkdayjobs.com/en-US/KyndrylProfessionalCareers/job/COBOL-Mainframe-Application-Developer_R-61371",
-      "title": "COBOL Mainframe Application Developer",
-      "company": "Kyndryl",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://www.indeed.com/viewjob?jk=370bd8ff49a36834",
-      "title": "Remote Mainframe Cobol Developer",
-      "company": "",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://gdit.wd5.myworkdayjobs.com/external_career_site/job/any-location--remote/cobol-developer_rq222891",
-      "title": "COBOL Developer - GDIT Logo - Art of the Possible",
-      "company": "Gdit",
-      "track": "COBOL / Mainframe",
-      "score": 42
-    },
-    {
-      "url": "https://www.adzuna.com/details/5773011479?utm_medium=api&utm_source=aa7dfcd9",
-      "title": "AI Developer (Automation Tester with Selenium, Python, and AI Experience)",
-      "company": "DivIHN Integration Inc",
-      "track": "AI Hybrid",
-      "score": 35
-    },
-    {
-      "url": "https://www.dice.com/job-detail/4daae4d3-0b11-4c42-b692-63a48b6cad81",
-      "title": "Software Engineer (Quality Assurance/SDET Focus)",
-      "company": "",
-      "track": "QA / Test Engineering",
-      "score": 35
-    },
-    {
-      "url": "https://www.indeed.com/viewjob?jk=f79b4aa3b9dcb858",
-      "title": "Quality Assurance / Software Development Engineer in Test (SDET)",
-      "company": "",
-      "track": "QA / Test Engineering",
-      "score": 35
-    },
-    {
-      "url": "https://www.adzuna.com/land/ad/5774349359?se=nBJaTtxv8RGA_J_s4PS1Ig&utm_medium=api&utm_source=aa7dfcd9&v=D78B2D008E5DB71085A84FAC0F3201C906EE4AEF",
-      "title": "Software Development Engineer in Test (SDET)",
-      "company": "Smart-Tag",
-      "track": "QA / Test Engineering",
-      "score": 20
-    },
-    {
-      "url": "https://www.adzuna.com/details/5769354649?utm_medium=api&utm_source=aa7dfcd9",
-      "title": "SDET, Remote opportunity",
-      "company": "Noor Staffing Group",
-      "track": "QA / Test Engineering",
-      "score": 20
-    },
-    {
-      "url": "https://jobs.ashbyhq.com/truelogic/854ec4a7-0214-4bd8-8cb0-dbff30d1180d",
-      "title": "Senior Software Development Engineer in Test (SDET) - Ecommerce",
-      "company": "",
-      "track": "QA / Test Engineering",
-      "score": 20
+      "track": "QA Automation",
+      "score": 145,
+      "url": "https://www.dice.com/job-detail/02a8e48c-4a86-4bf1-9396-e7db8df66246",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "ac1ab8271c",
       "number": "A1",
-      "number_display": "A1",
       "title": "ML Kernel Performance Engineer, Edge AI and Science - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -5615,22 +5716,14 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-24T12:03:27.394613"
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "cccc4b313e",
       "number": "A2",
-      "number_display": "A2",
       "title": "ML Kernel Performance Engineer, Edge AI and Science - ID da vaga",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -5640,22 +5733,14 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-24T12:03:27.394628"
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "aea07fadb5",
       "number": "A3",
-      "number_display": "A3",
       "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -5665,17 +5750,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-24T12:03:27.394634"
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-24 23:00"
     }
   ]
 }
