@@ -5755,5 +5755,98 @@
       "raw_decision": "Too Senior",
       "timestamp": "2026-06-24 23:00"
     }
+  ],
+  "2026-06-25": [
+    {
+      "url": "https://bbinsurance.wd1.myworkdayjobs.com/Careers_Europe/job/London-England-United-Kingdom/Software-Tester_R26_0000002107",
+      "title": "Software Tester",
+      "company": "Bbinsurance",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.dice.com/job-detail/8cc25571-13e5-4c9d-9413-8a822878fd5d",
+      "title": "Test Lead",
+      "company": "Selenium & API",
+      "track": "LoadRunner / Performance",
+      "score": 123
+    },
+    {
+      "url": "https://sentara.wd1.myworkdayjobs.com/en-US/SCS/job/Senior-MLOps---Generative-AI-Engineer---Remote_JR-99616",
+      "title": "Senior MLOps & Generative AI Engineer",
+      "company": "Sentara",
+      "track": "AI Hybrid",
+      "score": 100
+    },
+    {
+      "url": "https://ingrammicro.wd5.myworkdayjobs.com/ingrammicro/job/Irvine-CA-United-States-of-America/Software-Engineer---AI_R-116063",
+      "title": "Software Engineer - AI",
+      "company": "Ingrammicro",
+      "track": "AI Hybrid",
+      "score": 60
+    },
+    {
+      "url": "https://www.adzuna.com/details/5773011479?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "AI Developer (Automation Tester with Selenium, Python, and AI Experience)",
+      "company": "DivIHN Integration Inc",
+      "track": "AI Hybrid",
+      "score": 35
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=a5da8a6407476ed6",
+      "title": "Lead SDET / QA Automation Engineer with Playwright & AI Exp.",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/4daae4d3-0b11-4c42-b692-63a48b6cad81",
+      "title": "Software Engineer (Quality Assurance/SDET Focus)",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5774994416?se=qKlEnKVw8RGem4TAUNlqXw&utm_medium=api&utm_source=aa7dfcd9&v=E27978574CAF6F88DDFF3720C73787A6CFEC09CC",
+      "title": "Senior Software Developer in Test (Kafka/Confluent)",
+      "company": "Precision System Design Inc.",
+      "track": "QA / Test Engineering",
+      "score": 30
+    },
+    {
+      "url": "https://servicetitan.wd1.myworkdayjobs.com/en-US/ServiceTitan/job/Senior-AI-Engineer--Agent-OS-Platform-_JR114907",
+      "title": "Senior AI Engineer (Agent OS Platform)",
+      "company": "Servicetitan",
+      "track": "AI Hybrid",
+      "score": 20
+    },
+    {
+      "url": "https://www.adzuna.com/details/5769354649?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "SDET, Remote opportunity",
+      "company": "Noor Staffing Group",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/5de6a1c1-54bc-428d-80ec-d9fdd11bed6b",
+      "title": "Senior SDET",
+      "company": "Automation Quality & Test Engineering",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/4331e227-a4e7-4650-845f-6cc672993ed2",
+      "title": "SDET/QA (W2 Position only)",
+      "company": "Teknosys Inc",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/b905a286-030a-4d1b-a581-b9743c9e0ddc",
+      "title": "Sr. Automation Software Developer Engineer in Test (SDET)",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 20
+    }
   ]
 }
