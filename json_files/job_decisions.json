@@ -5960,5 +5960,62 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-06-25 23:00"
     }
+  ],
+  "2026-06-26": [
+    {
+      "job_id": "43d12bb2cf",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "GTM Specialist, Agentic AI-Led Mainframe Transformation, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 81,
+      "url": "https://amazon.jobs/en/jobs/10457204/gtm-specialist-agentic-ai-led-mainframe-transformation-aws-transform-aws-wwso",
+      "matched_keywords": [
+        "mainframe",
+        "agentic",
+        "aws",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* skills align with Hans's learning trajectory, but _GTM/mainframe_ expertise and sales-strategy focus sit outside his core engineering background.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-26T12:05:21.811551"
+    },
+    {
+      "job_id": "669147da6d",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10459692/partner-solutions-architect-agentic-business-processes-aws-partner-field-emea",
+      "matched_keywords": [
+        "agentic",
+        "aws",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging portfolio, but _Partner Solutions Architect_ role requires consulting/GTM experience outside performance testing background.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-26T12:05:21.811564"
+    }
   ]
 }

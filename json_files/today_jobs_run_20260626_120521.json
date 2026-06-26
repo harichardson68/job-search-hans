@@ -1,0 +1,239 @@
+{
+  "date": "2026-06-26",
+  "run_id": "20260626_120521",
+  "jobs": [
+    {
+      "job_id": "3ef66b3bca",
+      "number": "1",
+      "number_display": "1",
+      "token": "77c63653be",
+      "run_id": "20260626_120521",
+      "title": "Remote Contract AI Engineer - building & deploying production ...",
+      "company": "building & deploying production ...",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/27f67fc6-8a33-4fc1-8270-4f261431e959",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *remote contract* alignment strong; _production deployment experience_ gap offset by GenAI certs and observable systems depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c9879eda40",
+      "number": "2",
+      "number_display": "2",
+      "token": "62ae99659b",
+      "run_id": "20260626_120521",
+      "title": "Agentic AI Engineer - Remote - United States | Deep Seas Careers",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://deepseas.pinpointhq.com/en/postings/f931f510-2dda-423c-908d-f55f8e730a97",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active GenAI projects and *agent-loop development*; _production deployment_ scale unclear but skills trajectory aligned.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "89f8cad50f",
+      "number": "3",
+      "number_display": "3",
+      "token": "409ca93fdc",
+      "run_id": "20260626_120521",
+      "title": "AI Agent Developer Job [REMOTE] in San Francisco / Bay Area, CA",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.careerbuilder.com/job-details/ai-agent-developer-san-francisco-ca--f0e38b55-02af-4f40-9ad1-760fc389006d",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *AI Agent Developer* role matches portfolio trajectory; minor _production LLM depth_ gap but GenAI certs and agentic projects show serious momentum.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f5aeee050e",
+      "number": "4",
+      "number_display": "4",
+      "token": "2899decb09",
+      "run_id": "20260626_120521",
+      "title": "AiMi Technologies AB (Remote): Full Stack AI Engineer - JOIN",
+      "company": "JOIN",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://join.com/companies/aimitechnology/16347434-full-stack-ai-engineer",
+      "matched_keywords": [
+        "observability",
+        "ai engineer",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI observability* and *agent pipeline* monitoring match dual-track skills; _full-stack production depth_ gap but realistic application path.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c4b646345d",
+      "number": "5",
+      "number_display": "5",
+      "token": "7b579b11f2",
+      "run_id": "20260626_120521",
+      "title": "MLOps Engineer at dv01 \u2022 Remote (Work from Home)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wellfound.com/jobs/4379189-mlops-engineer",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Wellfound",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI systems engineering* and *observability* expertise align well; _ML model training_ background limited but MLOps platform work is achievable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "84f583f852",
+      "number": "S1",
+      "number_display": "S1",
+      "token": "548fafd40a",
+      "run_id": "20260626_120521",
+      "title": "AI Agent Developer at Winbold \u2014 Remote - RemoteJobs.org",
+      "company": "RemoteJobs.org",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotejobs.org/remote-jobs/ai-agent-developer-winbold",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI agent* skills align with Hans's active learning trajectory, but _India-based salary and AI Training focus_ create geography and role-depth friction.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "740883b0e1",
+      "number": "S2",
+      "number_display": "S2",
+      "token": "882006829d",
+      "run_id": "20260626_120521",
+      "title": "Prompt Engineer (Fulltime-Remote role) - The Avian Consulting LLC",
+      "company": "The Avian Consulting LLC",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/f8a57c36-d04f-48c1-aca0-c2777f83eee9",
+      "matched_keywords": [
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI systems* and *agentic* skills align with Hans's emerging direction, but _prompt engineering_ lacks his performance/reliability depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f00c92c016",
+      "number": "S3",
+      "number_display": "S3",
+      "token": "8dd9326896",
+      "run_id": "20260626_120521",
+      "title": "MLOps Engineer - Javen Technologies, Inc - Remote | Dice.com",
+      "company": "Javen Technologies, Inc",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/4c7b7885-9c66-4d8d-aa7b-7ca19149d07f",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* and *observability* strengths apply to MLOps, but _production ML model training_ experience gap and nascent GenAI skills require bridging.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "aacbd23612",
+      "number": "S4",
+      "number_display": "S4",
+      "token": "767f990079",
+      "run_id": "20260626_120521",
+      "title": "MLOps Engineer with Azure Experience - Everest Technologies - Dice",
+      "company": "Everest Technologies",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/14d2df22-7329-445d-9b19-a60cc68d483f",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI systems engineering* direction matches Hans's GenAI pivot; MLOps *Azure* role requires _production ML model_ experience Hans is still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "43d12bb2cf",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "79f5fe06e0",
+      "run_id": "20260626_120521",
+      "title": "GTM Specialist, Agentic AI-Led Mainframe Transformation, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 81,
+      "url": "https://amazon.jobs/en/jobs/10457204/gtm-specialist-agentic-ai-led-mainframe-transformation-aws-transform-aws-wwso",
+      "matched_keywords": [
+        "mainframe",
+        "agentic",
+        "aws",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* skills align with Hans's learning trajectory, but _GTM/mainframe_ expertise and sales-strategy focus sit outside his core engineering background.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "669147da6d",
+      "number": "A2",
+      "number_display": "A2",
+      "token": "cab5deabdf",
+      "run_id": "20260626_120521",
+      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10459692/partner-solutions-architect-agentic-business-processes-aws-partner-field-emea",
+      "matched_keywords": [
+        "agentic",
+        "aws",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging portfolio, but _Partner Solutions Architect_ role requires consulting/GTM experience outside performance testing background.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
