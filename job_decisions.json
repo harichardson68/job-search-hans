@@ -5848,5 +5848,49 @@
       "track": "QA / Test Engineering",
       "score": 20
     }
+  ],
+  "2026-06-26": [
+    {
+      "url": "https://www.dice.com/job-detail/6bd1f8fc-789b-4c25-b710-a5b441df7419",
+      "title": "Performance Tester // VA",
+      "company": "Key Business Solutions, Inc.",
+      "track": "LoadRunner / Performance",
+      "score": 85
+    },
+    {
+      "url": "https://www.adzuna.com/details/5776521767?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "Mainframe Engineer",
+      "company": "BVA Bear's IT Solutions",
+      "track": "AI Hybrid",
+      "score": 42
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=370bd8ff49a36834",
+      "title": "Remote Mainframe Cobol Developer",
+      "company": "",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/db0c3d7e-c8e9-47c4-87f7-904a88d58463",
+      "title": "Senior Mainframe z/OS Developer",
+      "company": "Ace Technologies, Inc.",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/dc680bb2-91c2-4ac9-b248-bd68bdacfedf",
+      "title": "Mainframe Programmer",
+      "company": "Wavespire",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/685d1330-bc45-4f7f-bc28-19cb623fac65",
+      "title": "JAVA SDET API & UI Automation",
+      "company": "Compunnel Inc.",
+      "track": "QA / Test Engineering",
+      "score": 20
+    }
   ]
 }
