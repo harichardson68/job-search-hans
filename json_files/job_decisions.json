@@ -5758,9 +5758,192 @@
   ],
   "2026-06-25": [
     {
+      "job_id": "77c7865b57",
+      "number": "1",
+      "title": "Agentic AI Engineer - Remote - United States | Deep Seas Careers",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://deepseas.pinpointhq.com/postings/f931f510-2dda-423c-908d-f55f8e730a97",
+      "matched_keywords": [
+        "agentic ai",
+        "ai engineer",
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "2397c2f293",
+      "number": "2",
+      "title": "AI Prompt Engineer Job Remote Ukraine | Career at Luxoft",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://career.luxoft.com/jobs/ai-prompt-engineer-25393",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer",
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Ukraine",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "5fcaf01aa0",
+      "number": "3",
+      "title": "AI Agent Developer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.indeed.com/viewjob?jk=83d9bf45a2cdf660",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "068a585a21",
+      "number": "4",
+      "title": "AI Engineer @ MeritFirst - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/meritfirst/cee234df-d937-4ef1-acd9-b08dbab7e1b4/application",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "b3e930a043",
+      "number": "5",
+      "title": "Intermediate Performance Engineer | Hirevista",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://hirevista.2a.infinityfree.me/job/2336523",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "e466ddd1b9",
+      "number": "S1",
+      "title": "Distinguished AI Engineer (Agentic AI Platform) - Capital One Career",
+      "company": "Capital One Career",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.capitalonecareers.com/job/san-francisco/distinguished-ai-engineer-agentic-ai-platform/1732/96846031728",
+      "matched_keywords": [
+        "agentic ai",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "86793d9a17",
+      "number": "S2",
+      "title": "Prompt Engineer - Smartwork IT Services - | Dice.com",
+      "company": "Smartwork IT Services",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/d90e0931-9a2d-4aa1-9fd0-2736e2d29f63",
+      "matched_keywords": [
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "befe80bfba",
+      "number": "S3",
+      "title": "AI Agent Developer QA Specializatio - Warren, NJ - Techfetch",
+      "company": "Warren, NJ",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.techfetch.com/job-description/ai-agent-developer-qa-specialization-warren-nj-j3631843",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "c48f05a835",
+      "number": "S4",
+      "title": "AI/ML Engineer (REMOTE :: W2 Only) - VAAM Technologies - Dice",
+      "company": "VAAM Technologies",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/b23b3eaf-9153-4049-9ad6-e071005eff84",
+      "matched_keywords": [
+        "mlops engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
+      "job_id": "39aed97e5b",
+      "number": "S5",
+      "title": "AI/ML Engineer (Local to Texas Candidates) - Dice",
+      "company": "Dice",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/2d216fc2-1183-4f27-a882-f521aed955dd",
+      "matched_keywords": [
+        "mlops engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-25 23:00"
+    },
+    {
       "job_id": "495c7580e8",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI Product Leader, AWS Professional Services - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -5772,17 +5955,10 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; _product leadership_ and _solution delivery_ require domain maturity Hans is actively building.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-25T16:21:52.198569"
+      "decision": "not_in_us",
+      "reason": "Australia",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-25 23:00"
     }
   ]
 }
