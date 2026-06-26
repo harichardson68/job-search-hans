@@ -459,6 +459,9 @@ if not git_pull_or_abort():
 #
 MAX_AGE_HOURS = 120  # 5 days
 DEBUG_MODE = True   # Set to False once confirmed working
+# 2026-06-26: Set to False for a zero-cost test run while validating the
+# Gap Track widening — set back to True once you've reviewed the output
+# and want real cover letters again.
 GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
 
 # ─── PIPELINE FUNNEL INSTRUMENTATION ─────────────────────────
@@ -572,7 +575,94 @@ NON_US_LOCATIONS = [
     "philippines and too senior",
     "native to portugal",
     "columbia",
+    # 2026-06-26: Africa — was entirely missing, which is how a South
+    # Africa-located "AI Automation Engineer" posting on remote4africa.com
+    # slipped through. Covers the continent-level terms plus the specific
+    # countries that appeared.
+    "africa", "south africa", "nigeria", "kenya", "ghana", "egypt",
+    "morocco", "ethiopia", "rwanda", "senegal", "tanzania", "uganda",
+    "cameroon", "lagos", "nairobi", "cairo", "johannesburg", "cape town",
+    "accra", "kampala",
 ]
+
+# 2026-06-26: US states + major non-MO cities, hoisted to module level so
+# is_us_remote() can use it both as a positive ("this IS a US location")
+# allowlist check on the structured location field, and as the existing
+# state-restriction detection later in the same function. Single source
+# of truth instead of two separately-maintained copies.
+US_STATE_NAMES_AND_MAJOR_CITIES = [
+    "alabama", "alaska", "arizona", "arkansas", "california",
+    "colorado", "connecticut", "delaware", "florida", "georgia",
+    "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas",
+    "kentucky", "louisiana", "maine", "maryland", "massachusetts",
+    "michigan", "minnesota", "mississippi", "montana", "nebraska",
+    "nevada", "new hampshire", "new jersey", "new mexico", "new york",
+    "north carolina", "north dakota", "ohio", "oklahoma", "oregon",
+    "pennsylvania", "rhode island", "south carolina", "south dakota",
+    "tennessee", "texas", "utah", "vermont", "virginia",
+    "washington", "west virginia", "wisconsin", "wyoming",
+    "missouri",
+    # Major non-MO cities
+    "bellevue", "seattle", "new york", "atlanta", "dallas", "austin",
+    "chicago", "boston", "denver", "phoenix", "los angeles", "san francisco",
+    "miami", "orlando", "charlotte", "houston", "philadelphia",
+]
+
+# 2026-06-26: State abbreviations, split out from the list above and matched
+# with real \b word boundaries instead of substring + padded spaces. The old
+# " in "/" or "/" me " style padding collided with ordinary English words —
+# confirmed bug: "must be located in Missouri" contains the literal substring
+# " in " (the word "in" surrounded by spaces), so it falsely matched the
+# Indiana abbreviation and got the posting rejected despite Missouri being
+# explicitly named. Same root cause could also cause false ACCEPTS in the
+# allowlist check below (e.g. a Romania posting phrased "work in Romania"
+# would match " in " too). \b-bounded regex matches the actual 2-letter
+# token only, not "in"/"or"/"me" inside ordinary words or phrases.
+US_STATE_ABBREVIATIONS = [
+    "al", "ak", "az", "ar", "ca", "co", "ct", "de",
+    "fl", "ga", "hi", "id", "il", "in", "ia", "ks",
+    "ky", "la", "me", "md", "ma", "mi", "mn", "ms",
+    "mt", "ne", "nv", "nh", "nj", "nm", "ny", "nc",
+    "nd", "oh", "ok", "or", "pa", "ri", "sc", "sd",
+    "tn", "tx", "ut", "vt", "va", "wa", "wv", "wi", "wy",
+]
+US_STATE_ABBREV_PATTERN = re.compile(r"\b(?:" + "|".join(US_STATE_ABBREVIATIONS) + r")\b")
+# Missouri's own abbreviation excluded — used wherever we need "any OTHER
+# state's abbreviation," same purpose as filtering "missouri" out of the
+# full-name list below.
+OTHER_STATE_ABBREV_PATTERN = re.compile(r"\b(?:" + "|".join(a for a in US_STATE_ABBREVIATIONS if a != "mo") + r")\b")
+# 2026-06-26: Comma-anchored variant for FREE TEXT (title/description)
+# specifically. Plain \b matching still isn't enough there: "must be
+# located in Missouri" contains the real, grammatically standalone word
+# "in" — \bin\b matches it correctly as a word, but that word IS the
+# English preposition, not the Indiana abbreviation, and \b can't tell
+# the two apart. Confirmed by testing the literal phrase from the bug
+# report — plain \b still falsely flagged it.
+# Real postings write abbreviations in "City, ST" form ("Springfield, MO",
+# "remote, TX"), never as "located in Missouri" — so for free text,
+# require a preceding comma (the actual structural signal) instead of a
+# bare word boundary. The structured location FIELD allowlist check above
+# keeps plain \b matching, since that field is short/place-name-only and
+# doesn't contain prepositions like a sentence does.
+OTHER_STATE_ABBREV_COMMA_PATTERN = re.compile(
+    r",\s*\b(?:" + "|".join(a for a in US_STATE_ABBREVIATIONS if a != "mo") + r")\b"
+)
+# 2026-06-26: Same padded-space fragility applied to Missouri's own
+# abbreviation check ("MO mentioned") — " mo " requires a trailing space,
+# which fails when "MO" is the last word in the text (e.g. "...must
+# reside in MO" with no trailing punctuation/space). \bmo\b doesn't have
+# that edge case.
+MO_ABBREV_PATTERN = re.compile(r"\bmo\b")
+
+# 2026-06-26: Explicit "this location IS the US" phrases — used by the new
+# allowlist check on the structured location field. Word-boundary regex
+# guards against false positives like "campus" or "latin america".
+US_LOCATION_PHRASES = [
+    "usa", "u.s.a", "u.s.", "united states", "north america",
+    "americas", "us-based", "us based", "us remote", "remote us",
+    "remote, us", "remote - us",
+]
+US_STANDALONE_TOKEN_PATTERN = re.compile(r"\bus\b")
 
 # Job site URL blacklist - sites that are hard to apply on or are middlemen
 BLOCKED_JOB_SITES = [
@@ -708,6 +798,12 @@ BLOCKED_JOB_SITES = [
     "wfhforgeon.byethost7.com",
     "hstn.me", 
     "remotepulse.likesyou.org",
+
+    # 2026-06-26: African remote job board — explicitly "open for Africans
+    # to apply" per its own site copy, paywalled lead-gen aggregator with
+    # affiliate links, slipped through via Serper on an "AI Automation
+    # Engineer" title match (South Africa location).
+    "remote4africa.com", "remote4africa",
 ]
 
 def is_blocked_site(url):
@@ -932,9 +1028,20 @@ def is_onsite_or_hybrid(title, description, location=""):
 
 
 def is_us_remote(title, description, location=""):
-    # Check location field first - if it contains a non-US location, reject immediately.
-    # EXCEPTION: Canada in the location field is handled later, after we check
-    # the description for "US/Canada" / "North America" eligibility signals.
+    # 2026-06-26: Flipped from denylist to allowlist for the structured
+    # location field, per Hans's explicit request — the old approach was
+    # "reject if it matches a known non-US place," which is structurally
+    # leaky (it took a South Africa posting slipping through to notice
+    # Africa was missing entirely; the same gap exists for any country
+    # nobody's spotted yet). Now: if the location field is non-empty and
+    # specific, it must match a recognized US signal or it's rejected —
+    # no more discovering missing countries one at a time.
+    # An EMPTY location field is NOT auto-rejected — many of Hans's
+    # sources (USAJobs, Adzuna-US, RemoteOK) just don't always populate
+    # it for genuinely US-eligible postings, so blank stays ambiguous and
+    # falls through to the title/description checks below instead.
+    # Canada is still handled separately, deferred until after we check
+    # the description for "US/Canada" / "North America" eligibility.
     loc_lower = location.lower().strip()
     canada_in_location = False
     canada_location_terms = {"canada", "toronto", "vancouver", "montreal",
@@ -942,12 +1049,27 @@ def is_us_remote(title, description, location=""):
                              "calgary", "edmonton", "ottawa", "winnipeg",
                              "quebec", "halifax"}
     if loc_lower:
-        for non_us in NON_US_LOCATIONS:
-            term = non_us.strip()
-            if term in loc_lower:
-                if term in canada_location_terms:
-                    canada_in_location = True  # defer decision
-                    continue
+        if any(term in loc_lower for term in canada_location_terms):
+            canada_in_location = True  # defer decision, same as before
+        else:
+            # "worldwide"/"anywhere" overrides a bare "remote" match —
+            # "Remote (Worldwide)" should reject despite containing
+            # "remote", since worldwide-open is explicitly not US-only.
+            worldwide_signal = any(
+                term in loc_lower for term in ("worldwide", "anywhere in the world", "global remote", "remote global")
+            )
+            is_us_signal = (
+                not worldwide_signal
+                and (
+                    "remote" in loc_lower
+                    or any(phrase in loc_lower for phrase in US_LOCATION_PHRASES)
+                    or any(state_or_city in loc_lower for state_or_city in US_STATE_NAMES_AND_MAJOR_CITIES)
+                    or bool(US_STATE_ABBREV_PATTERN.search(loc_lower))
+                    or bool(US_STANDALONE_TOKEN_PATTERN.search(loc_lower))
+                    or any(kc in loc_lower for kc in KC_METRO_LOCATIONS)
+                )
+            )
+            if not is_us_signal:
                 return False
     # Also check title and description for strong non-US indicators
     check = (title + " " + description).lower()
@@ -1073,29 +1195,13 @@ def is_us_remote(title, description, location=""):
                 return False
     # Detect state-restricted remote jobs (remote but must live in specific state)
     # List of all US states to detect restrictions (excluding Missouri - Hans is there!)
-    us_states = [
-        "alabama", "alaska", "arizona", "arkansas", "california",
-        "colorado", "connecticut", "delaware", "florida", "georgia",
-        "hawaii", "idaho", "illinois", "indiana", "iowa", "kansas",
-        "kentucky", "louisiana", "maine", "maryland", "massachusetts",
-        "michigan", "minnesota", "mississippi", "montana", "nebraska",
-        "nevada", "new hampshire", "new jersey", "new mexico", "new york",
-        "north carolina", "north dakota", "ohio", "oklahoma", "oregon",
-        "pennsylvania", "rhode island", "south carolina", "south dakota",
-        "tennessee", "texas", "utah", "vermont", "virginia",
-        "washington", "west virginia", "wisconsin", "wyoming",
-        # Abbreviations (excluding MO)
-        " al ", " ak ", " az ", " ar ", " ca ", " co ", " ct ", " de ",
-        " fl ", " ga ", " hi ", " id ", " il ", " in ", " ia ", " ks ",
-        " ky ", " la ", " me ", " md ", " ma ", " mi ", " mn ", " ms ",
-        " mt ", " ne ", " nv ", " nh ", " nj ", " nm ", " ny ", " nc ",
-        " nd ", " oh ", " ok ", " or ", " pa ", " ri ", " sc ", " sd ",
-        " tn ", " tx ", " ut ", " vt ", " va ", " wa ", " wv ", " wi ", " wy ",
-        # Major non-MO cities
-        "bellevue", "seattle", "new york", "atlanta", "dallas", "austin",
-        "chicago", "boston", "denver", "phoenix", "los angeles", "san francisco",
-        "miami", "orlando", "charlotte", "houston", "philadelphia",
-    ]
+    # 2026-06-26: Sourced from the hoisted US_STATE_NAMES_AND_MAJOR_CITIES /
+    # OTHER_STATE_ABBREV_PATTERN constants (Missouri filtered out of both —
+    # this check needs Missouri absent, or "must be located in Missouri"
+    # would trip the other_state_mentioned branch and reject itself, which
+    # is exactly the bug that motivated splitting abbreviations out into
+    # their own \b-bounded pattern instead of padded-space substrings).
+    us_state_names = [s for s in US_STATE_NAMES_AND_MAJOR_CITIES if s != "missouri"]
 
     # Patterns that indicate state restrictions
     state_restriction_patterns = [
@@ -1121,16 +1227,22 @@ def is_us_remote(title, description, location=""):
     for pattern in state_restriction_patterns:
         if re.search(pattern, check):
             # Check if Missouri is the ONLY state mentioned - if so allow it!
-            mo_mentioned = "missouri" in check or " mo " in check or "lee's summit" in check or "kansas city" in check
-            other_state_mentioned = any(state in check for state in us_states)
+            mo_mentioned = "missouri" in check or bool(MO_ABBREV_PATTERN.search(check)) or "lee's summit" in check or "kansas city" in check
+            other_state_mentioned = (
+                any(state in check for state in us_state_names)
+                or bool(OTHER_STATE_ABBREV_COMMA_PATTERN.search(check))
+            )
             if not mo_mentioned or other_state_mentioned:
                 return False
 
     # Check for remote + specific state (not Missouri)
-    remote_state_pattern = r"remote.{0,30}(" + "|".join(us_states[:40]) + r")"
-    if re.search(remote_state_pattern, check):
+    remote_name_pattern = r"remote.{0,30}(" + "|".join(us_state_names[:40]) + r")"
+    remote_abbrev_pattern = r"remote.{0,30},\s*\b(?:" + "|".join(
+        a for a in US_STATE_ABBREVIATIONS if a != "mo"
+    ) + r")\b"
+    if re.search(remote_name_pattern, check) or re.search(remote_abbrev_pattern, check):
         # Allow if Missouri is mentioned
-        if "missouri" not in check and " mo " not in check:
+        if "missouri" not in check and not MO_ABBREV_PATTERN.search(check):
             return False
 
     # Block jobs with onsite city in the TITLE (e.g. "SDET - Seattle, WA")
