@@ -805,8 +805,13 @@ KC_METRO_LOCATIONS = {
 # list pay at all, so this WILL cut the candidate pool down hard. Flagged
 # to Hans — if the pool ends up too thin after a few runs, loosening this
 # to a soft filter (show pay-unknown jobs too) is a one-line change.
-REMOTE_FLOOR_MIN_HOURLY  = 30.0
-REMOTE_FLOOR_MIN_ANNUAL  = REMOTE_FLOOR_MIN_HOURLY * 2080  # ~$62,400/yr equivalent
+# 2026-06-26: Tiered per Hans's explicit instruction — remote and KC-metro
+# hybrid/onsite no longer share one floor. Applies to non-COBOL Gap Track
+# only; COBOL keeps its existing $30/hr-remote / $55/hr-hybrid rule
+# (handled separately, earlier in main(), before this floor ever runs).
+REMOTE_FLOOR_MIN_HOURLY  = 25.0   # non-COBOL Gap Track, fully remote
+GAP_HYBRID_MIN_HOURLY    = 30.0   # non-COBOL Gap Track, KC-metro hybrid/onsite
+REMOTE_FLOOR_MIN_ANNUAL  = REMOTE_FLOOR_MIN_HOURLY * 2080  # ~$52,000/yr equivalent
 
 def _parse_pay_to_hourly(text):
     """
@@ -874,12 +879,17 @@ def _parse_pay_to_hourly(text):
     return None
 
 
-def meets_pay_floor(job):
+def meets_pay_floor(job, min_hourly=None):
     """
     Returns True only if a pay figure can be parsed from the job's salary
     field, title, or description, AND that figure meets or exceeds the
-    $30/hr floor. Strict per Hans's choice — no parseable pay = rejected.
+    floor. Strict per Hans's choice — no parseable pay = rejected.
+
+    min_hourly overrides the default $25/hr remote floor — pass
+    GAP_HYBRID_MIN_HOURLY for KC-metro hybrid/onsite non-COBOL jobs, which
+    have a higher $30/hr bar per Hans's explicit instruction.
     """
+    floor = min_hourly if min_hourly is not None else REMOTE_FLOOR_MIN_HOURLY
     # Fast-path rejection: explicit low hourly rate signals
     haystack = (
         (job.get("salary", "") or "") + " " +
@@ -892,7 +902,7 @@ def meets_pay_floor(job):
     for field in (job.get("salary", ""), job.get("title", ""), job.get("description", "")):
         hourly = _parse_pay_to_hourly(field)
         if hourly is not None:
-            return hourly >= REMOTE_FLOOR_MIN_HOURLY
+            return hourly >= floor
     # Nothing parseable anywhere — strict filter means reject.
     return False
 
@@ -1460,12 +1470,15 @@ REMOTE_FLOOR_BONUS_KEYWORDS = [
     "itil", "comptia", "comptia a+", "network+", "security+",
     "servicenow", "zendesk", "freshservice", "remedy",
 ]
-# Phrases that signal pay is well below the $30/hr floor even before we
-# try to parse exact numbers — fast-path rejection.
+# Phrases that signal pay is well below even the lower ($25/hr remote)
+# floor, even before we try to parse exact numbers — fast-path rejection.
+# 2026-06-26: Trimmed from $15-29 down to $15-24 — $25-29/hr now needs to
+# go through the real floor comparison in meets_pay_floor(), since $25/hr
+# is a valid remote rate post-tiering (it was uniformly rejected when the
+# floor was a flat $30/hr).
 REMOTE_FLOOR_LOW_PAY_SIGNALS = [
     "$15/hr", "$16/hr", "$17/hr", "$18/hr", "$19/hr", "$20/hr",
-    "$21/hr", "$22/hr", "$23/hr", "$24/hr", "$25/hr", "$26/hr",
-    "$27/hr", "$28/hr", "$29/hr",
+    "$21/hr", "$22/hr", "$23/hr", "$24/hr",
 ]
 
 #
@@ -3523,26 +3536,39 @@ def main():
 
     # ── Pay floor filter (Track 4 only) ─────────────────────────
     # Strict per Hans's choice: drop if pay can't be parsed at all, or
-    # parses below $30/hr. Runs here (post-aggregation) because this is
+    # parses below the floor. Runs here (post-aggregation) because this is
     # the first point where job["salary"] is actually populated from each
     # source's raw API response — passes_filters() runs before that field
     # exists. Real tradeoff: many legit remote QA postings list no pay at
     # all, so this will cut the pool down hard. If it's too thin after a
     # few runs, this is the one line to relax (drop the `else reject`).
+    # 2026-06-26: Floor is now tiered per Hans's explicit instruction —
+    # $25/hr for remote, $30/hr for KC-metro hybrid/onsite. COBOL keeps
+    # its existing flat $30/hr floor here (unchanged); a hybrid COBOL job
+    # reaching this point has already cleared the separate $55/hr hybrid
+    # check above, so $30 is always satisfied trivially for it.
+    COBOL_REMOTE_FLOOR_MIN_HOURLY = 30.0
     pay_filtered = []
     pay_dropped_count = 0
     for job in all_jobs:
         if job.get("track") == "Gap Track":
-            if meets_pay_floor(job):
+            is_cobol = any(kw in (job.get("title","") + " " + job.get("description","")).lower()
+                            for kw in COBOL_HIGH_KEYWORDS)
+            if is_cobol:
+                floor = COBOL_REMOTE_FLOOR_MIN_HOURLY
+            else:
+                is_hybrid = is_onsite_or_hybrid(job.get("title",""), job.get("description",""), job.get("location",""))
+                floor = GAP_HYBRID_MIN_HOURLY if is_hybrid else REMOTE_FLOOR_MIN_HOURLY
+            if meets_pay_floor(job, min_hourly=floor):
                 pay_filtered.append(job)
             else:
                 pay_dropped_count += 1
                 if DEBUG_MODE:
-                    print(f"   [DEBUG] FILTERED-payfloor (no parseable \u226530/hr pay): {job['title'][:50]} | salary text: {job.get('salary','')[:40]!r}")
+                    print(f"   [DEBUG] FILTERED-payfloor (no parseable \u2265${floor:.0f}/hr pay): {job['title'][:50]} | salary text: {job.get('salary','')[:40]!r}")
         else:
             pay_filtered.append(job)
     if pay_dropped_count > 0:
-        print(f"[OK] Removed {pay_dropped_count} Remote Income Floor job(s) below ${REMOTE_FLOOR_MIN_HOURLY:.0f}/hr floor or with unparseable pay")
+        print(f"[OK] Removed {pay_dropped_count} Remote Income Floor job(s) below their pay floor (${REMOTE_FLOOR_MIN_HOURLY:.0f}/hr remote, ${GAP_HYBRID_MIN_HOURLY:.0f}/hr KC-hybrid, ${COBOL_REMOTE_FLOOR_MIN_HOURLY:.0f}/hr COBOL) or with unparseable pay")
     all_jobs = pay_filtered
     funnel.set_stage("after_pay_floor", len(all_jobs))
 
@@ -4046,7 +4072,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     html += _render_pool_section(
         income_section_jobs,
         "💼 QA, Testing & Gap Track",
-        "Remote OR KC-metro hybrid/onsite, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, general IT support/helpdesk/sysadmin, will-train postings, and COBOL/mainframe. Numbered G1–G10.",
+        "Remote $25+/hr OR KC-metro hybrid/onsite $30+/hr (COBOL: $30+/hr remote, $55+/hr hybrid/onsite). Broad — manual QA, automation tooling, general IT support/helpdesk/sysadmin, will-train postings, and COBOL/mainframe. Numbered G1–G10.",
         accent="#8a6d1a", bg="#fff8e7",
     )
 
