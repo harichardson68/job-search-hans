@@ -6041,6 +6041,34 @@
       "reviewed": false,
       "reviewed_date": "",
       "recorded_at": "2026-06-26T16:07:41.523834"
+    },
+    {
+      "job_id": "a8681796ab",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "GTM Specialist, Agentic AI-Led Mainframe Transformation, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 81,
+      "url": "https://prod.gamma.amazon.jobs/es/jobs/10457204/gtm-specialist-agentic-ai-led-mainframe-transformation-aws-transform-aws-wwso",
+      "matched_keywords": [
+        "mainframe",
+        "agentic",
+        "agentic ai",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment with Hans's learning trajectory, but _GTM/mainframe domain_ and sales-strategy focus diverge from engineering background.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-26T16:50:54.838993"
     }
   ]
 }
