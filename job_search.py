@@ -1409,6 +1409,10 @@ BONUS_KEYWORDS      = PERF_BONUS_KEYWORDS + QA_BONUS_KEYWORDS + AI_BONUS_KEYWORD
 # "will train" postings. Kept entirely separate from QA Automation/SDET
 # (that track's strict title list is untouched) — this is intentionally
 # wider and lower-bar.
+# 2026-06-26: Widened beyond manual QA/automation to general remote IT
+# support/sysadmin/helpdesk roles per Hans's request — manual QA testing
+# itself had become its own grind, and his actual IT background covers
+# this broader set directly.
 REMOTE_FLOOR_TITLE_KEYWORDS = [
     # Generic/manual QA — explicitly broader than SDET_TITLE_KEYWORDS
     "qa tester", "qa analyst", "qa specialist", "quality assurance tester",
@@ -1422,18 +1426,39 @@ REMOTE_FLOOR_TITLE_KEYWORDS = [
     "remote qa", "work from home qa", "wfh qa", "entry level qa",
     "junior qa", "associate qa", "qa trainee",
     "no experience qa", "will train qa", "training provided qa",
+    # 2026-06-26: General remote IT — added per Hans's request to widen
+    # this track beyond manual QA/testing grind into broader IT support/
+    # admin work, leveraging his 24+ years general IT background.
+    "help desk", "helpdesk", "service desk", "desktop support",
+    "it support", "it support specialist", "it support technician",
+    "it support analyst", "remote it support", "technical support specialist",
+    "technical support analyst", "technical support representative",
+    "technical support engineer", "systems administrator",
+    "system administrator", "sysadmin", "network administrator",
+    "it technician", "it analyst", "it specialist", "it generalist",
+    "computer support specialist", "end user support", "end-user support",
+    "noc analyst", "noc technician", "network operations center",
 ]
 REMOTE_FLOOR_HIGH_KEYWORDS = [
     "manual testing", "test cases", "test case design", "bug tracking",
     "regression testing", "functional testing", "uat", "user acceptance testing",
     "selenium", "cypress", "postman", "api testing", "test plans",
     "defect tracking", "black box testing", "exploratory testing",
+    # General IT support/admin signals
+    "active directory", "windows server", "network troubleshooting",
+    "ticketing system", "remote desktop support", "hardware troubleshooting",
+    "software installation", "vpn troubleshooting", "office 365", "azure ad",
+    "printer support", "password reset", "incident management",
+    "tier 1 support", "tier 2 support", "tier 1 it", "tier 2 it",
 ]
 REMOTE_FLOOR_BONUS_KEYWORDS = [
     "jira", "testrail", "zephyr", "qtest", "agile", "scrum",
     "sql", "python", "javascript", "ci/cd", "jenkins", "github actions",
     "will train", "training provided", "no experience necessary",
     "no prior experience required", "entry level welcome",
+    # General IT support tools/certs
+    "itil", "comptia", "comptia a+", "network+", "security+",
+    "servicenow", "zendesk", "freshservice", "remedy",
 ]
 # Phrases that signal pay is well below the $30/hr floor even before we
 # try to parse exact numbers — fast-path rejection.
@@ -1954,11 +1979,13 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     # as Performance/AI/QA — don't reject yet), and the real $55/hr-based
     # accept/reject decision for hybrid COBOL jobs happens in main(),
     # where job["salary"] actually exists.
+    # 2026-06-26: Removed the "Gap Track gets NO hybrid carve-out" rule
+    # above per Hans's request — he's now fine with KC-metro hybrid for
+    # this track too (not just COBOL), since the broader general-IT
+    # postings added to this track are often local/hybrid. Gap Track now
+    # gets the SAME standard KC-metro carve-out as every other track.
     is_cobol_job = any(kw in (title + " " + desc).lower() for kw in COBOL_HIGH_KEYWORDS)
-    if track == "Gap Track" and not is_cobol_job:
-        if not is_us_remote(title, desc, location):
-            return False, score, matched, track, level_signal
-    elif not is_us_remote(title, desc, location):
+    if not is_us_remote(title, desc, location):
         # Failed remote check — last chance: is it KC-local hybrid/on-site?
         if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
             pass  # KC-local hybrid/on-site is acceptable (final $/hr-based
@@ -3648,10 +3675,14 @@ def main():
     # (or vice versa) — they're independent buckets, not one pool that
     # Stretch Fit competes within. Symmetric across both pools per Hans's
     # spec: 10 normal + 5 Stretch Fit each.
+    # 2026-06-26: Stretch caps zeroed per Hans — too much reach-role noise
+    # right now. fit_tier classification still runs underneath, so set
+    # these back to 5 later to restore the demoted Stretch Fit section
+    # with no other code changes needed.
     CAREER_NORMAL_CAP  = 10
-    CAREER_STRETCH_CAP = 5
+    CAREER_STRETCH_CAP = 0
     GAP_NORMAL_CAP      = 10
-    GAP_STRETCH_CAP     = 5
+    GAP_STRETCH_CAP     = 0
 
     career_pool_normal  = [j for j in pool_career if j.get("fit_tier") != "Stretch Fit"]
     career_pool_stretch = [j for j in pool_career if j.get("fit_tier") == "Stretch Fit"]
@@ -3881,8 +3912,8 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     <p>Hi Hans, here are your top matches for <strong>{today}</strong>.</p>
     <div style="background:#f0f4ff;border:1px solid #c5d0e8;border-radius:8px;padding:12px 16px;margin:12px 0 16px;font-size:12px;color:#444;">
       <strong>Submit decisions:</strong> Use the form link at the bottom of this email.<br>
-      Career Track jobs are numbered <strong>1–10</strong> (Stretch Fit: <strong>S1–S5</strong>) &nbsp;|&nbsp;
-      Gap Track jobs are numbered <strong>G1–G10</strong> (Stretch Fit: <strong>GS1–GS5</strong>) &nbsp;|&nbsp;
+      Career Track jobs are numbered <strong>1–10</strong> &nbsp;|&nbsp;
+      Gap Track jobs are numbered <strong>G1–G10</strong> &nbsp;|&nbsp;
       Amazon Spotlight jobs are numbered <strong>A1–A5</strong>
     </div>"""
 
@@ -4015,7 +4046,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     html += _render_pool_section(
         income_section_jobs,
         "💼 QA, Testing & Gap Track",
-        "Remote-only, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, will-train postings, and COBOL/mainframe. Numbered G1–G10 (Stretch Fit: GS1–GS5).",
+        "Remote OR KC-metro hybrid/onsite, $30+/hr floor (COBOL hybrid/onsite OK at $55+/hr). Broad — manual QA, automation tooling, general IT support/helpdesk/sysadmin, will-train postings, and COBOL/mainframe. Numbered G1–G10.",
         accent="#8a6d1a", bg="#fff8e7",
     )
 
