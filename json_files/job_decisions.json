@@ -5963,89 +5963,8 @@
   ],
   "2026-06-26": [
     {
-      "job_id": "43d12bb2cf",
-      "number": "A1",
-      "number_display": "A1",
-      "title": "GTM Specialist, Agentic AI-Led Mainframe Transformation, AWS ...",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 81,
-      "url": "https://amazon.jobs/en/jobs/10457204/gtm-specialist-agentic-ai-led-mainframe-transformation-aws-transform-aws-wwso",
-      "matched_keywords": [
-        "mainframe",
-        "agentic",
-        "aws",
-        "agentic ai"
-      ],
-      "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* skills align with Hans's learning trajectory, but _GTM/mainframe_ expertise and sales-strategy focus sit outside his core engineering background.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-26T12:05:21.811551"
-    },
-    {
-      "job_id": "669147da6d",
-      "number": "A2",
-      "number_display": "A2",
-      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 46,
-      "url": "https://www.amazon.jobs/en/jobs/10459692/partner-solutions-architect-agentic-business-processes-aws-partner-field-emea",
-      "matched_keywords": [
-        "agentic",
-        "aws",
-        "agentic ai"
-      ],
-      "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging portfolio, but _Partner Solutions Architect_ role requires consulting/GTM experience outside performance testing background.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-26T12:05:21.811564"
-    },
-    {
-      "job_id": "e5c5ebba28",
-      "number": "A1",
-      "number_display": "A1",
-      "title": "Software Development Engineer, Agentic WorkSpaces - \u804c\u4f4d ID",
-      "company": "Amazon",
-      "track": "Performance Engineering",
-      "score": 23,
-      "url": "https://amazon.jobs/zh/jobs/10457293/software-development-engineer-agentic-workspaces",
-      "matched_keywords": [
-        "agentic"
-      ],
-      "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-26T16:07:41.523834"
-    },
-    {
       "job_id": "a8681796ab",
       "number": "A1",
-      "number_display": "A1",
       "title": "GTM Specialist, Agentic AI-Led Mainframe Transformation, AWS ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -6058,17 +5977,10 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment with Hans's learning trajectory, but _GTM/mainframe domain_ and sales-strategy focus diverge from engineering background.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-26T16:50:54.838993"
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-26 23:00"
     }
   ]
 }
