@@ -1,0 +1,49 @@
+{
+  "date": "2026-06-27",
+  "run_id": "20260627_120350",
+  "jobs": [
+    {
+      "job_id": "581bba881b",
+      "number": "1",
+      "number_display": "1",
+      "token": "8f701964f8",
+      "run_id": "20260627_120350",
+      "title": "AI Agent Developer Job [REMOTE] - Braintrust - San Francisco / Bay ...",
+      "company": "Braintrust",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.monster.com/job-openings/ai-agent-developer-san-francisco-ca--f0e38b55-02af-4f40-9ad1-760fc389006d?mstr_dist=true",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches Hans's active GenAI upskilling and agentic loop work; minor _production deployment_ experience gap but clearly aligned trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "8a8c9c01a3",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "4aac22bb7b",
+      "run_id": "20260627_120350",
+      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/jobs/10459692",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging agent engineering track, but _EMEA partner focus_ and _solutions architect_ seniority gap require strategic positioning.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

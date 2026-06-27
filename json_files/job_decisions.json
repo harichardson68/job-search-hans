@@ -5982,5 +5982,34 @@
       "raw_decision": "Too Senior",
       "timestamp": "2026-06-26 23:00"
     }
+  ],
+  "2026-06-27": [
+    {
+      "job_id": "8a8c9c01a3",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/jobs/10459692",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging agent engineering track, but _EMEA partner focus_ and _solutions architect_ seniority gap require strategic positioning.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-27T12:03:50.626424"
+    }
   ]
 }
