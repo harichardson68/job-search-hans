@@ -5920,5 +5920,21 @@
       "track": "QA / Test Engineering",
       "score": 20
     }
+  ],
+  "2026-06-27": [
+    {
+      "url": "https://www.adzuna.com/land/ad/5778384528?se=kHEPJjFy8RGe4ZwL0wNS6w&utm_medium=api&utm_source=aa7dfcd9&v=55FE22E4FEA94E79F016C1E019470594789A569F",
+      "title": "SDET (Software Development Engineer in Test)",
+      "company": "eSolutionsFirst, LLC",
+      "track": "QA / Test Engineering",
+      "score": 50
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=b8d33b31d61bd513",
+      "title": "Lead SDET / QA Automation Engineer (Playwright & AI)",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 35
+    }
   ]
 }
