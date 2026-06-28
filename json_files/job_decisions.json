@@ -6021,5 +6021,84 @@
       "raw_decision": "Too Senior",
       "timestamp": "2026-06-27 23:00"
     }
+  ],
+  "2026-06-28": [
+    {
+      "job_id": "3ff7da121d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10459692/partner-solutions-architect-agentic-business-processes-aws-partner-field-emea",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS partner enablement* match Hans's dual-track pivot; minor _EMEA focus_ and _solutions architecture_ depth gaps but realistic upskilling.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-28T12:03:58.479183"
+    },
+    {
+      "job_id": "caa9d002ab",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10457292/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-28T12:03:58.479225"
+    },
+    {
+      "job_id": "3850d557f1",
+      "number": "A3",
+      "number_display": "A3",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10431844/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-06-28T12:03:58.479241"
+    }
   ]
 }
