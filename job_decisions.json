@@ -5936,5 +5936,42 @@
       "track": "QA / Test Engineering",
       "score": 35
     }
+  ],
+  "2026-06-28": [
+    {
+      "url": "https://www.dice.com/job-detail/d07f7afb-e157-4df3-b660-091d2a7f90c7",
+      "title": "Cobol Developer",
+      "company": "NavaTech LLC",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/b3a87ab6-1d08-4d8a-ba5d-c6418deee4a0",
+      "title": "COBOL Developer",
+      "company": "General Dynamics -",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/c6f3ed03-4673-4999-8f46-4405f15072d4",
+      "title": "Cobol Developer",
+      "company": "Hansen Talent Group",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://bcbst.wd1.myworkdayjobs.com/en-US/External/job/Senior-AI-Workflow-Engineers_R-49368",
+      "title": "Senior AI Workflow Engineers",
+      "company": "Bcbst",
+      "track": "AI Hybrid",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/af496560-e048-4a97-96f4-aef8fee364e2",
+      "title": "Software Engineer, AI Agents",
+      "company": "NxT Level",
+      "track": "AI Hybrid",
+      "score": 20
+    }
   ]
 }
