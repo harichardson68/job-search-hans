@@ -5973,5 +5973,28 @@
       "track": "AI Hybrid",
       "score": 20
     }
+  ],
+  "2026-06-29": [
+    {
+      "url": "https://illumina.wd1.myworkdayjobs.com/illumina-careers/job/US---California---San-Diego/AI-Engineer_42963-JOB-1",
+      "title": "AI Engineer",
+      "company": "Illumina",
+      "track": "AI Hybrid",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/b8f7f1a3-5eb4-4480-9776-2afa49805e32",
+      "title": "Lead Engineer",
+      "company": "Payments (iSeries)",
+      "track": "COBOL / Mainframe",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/67c10383-8a99-4b2e-8ae3-32965f3db206",
+      "title": "SDET(Java Selenium with Data Batch Testing)",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 35
+    }
   ]
 }
