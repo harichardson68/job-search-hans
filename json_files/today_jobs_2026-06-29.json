@@ -1,0 +1,95 @@
+{
+  "date": "2026-06-29",
+  "run_id": "20260629_120349",
+  "jobs": [
+    {
+      "job_id": "c050516597",
+      "number": "1",
+      "number_display": "1",
+      "token": "cf8d726f27",
+      "run_id": "20260629_120349",
+      "title": "Quality Engineer (AI Testing) @ CGI - Teal",
+      "company": "Teal",
+      "track": "AI Engineering",
+      "score": 85,
+      "url": "https://www.tealhq.com/job/quality-engineer-ai-testing_7ea1a151e0b273d0253e81671cee37c79a267",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai testing",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA engineering* and *observability* skills align well; _LoadRunner-to-AI-testing transition_ requires applied LLM testing depth but realistic pivot.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0bb8d2ed7e",
+      "number": "2",
+      "number_display": "2",
+      "token": "d7f2f8faa5",
+      "run_id": "20260629_120349",
+      "title": "Applied AI Engineer @ Bjak - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/efa63933-b5b1-4b41-8b78-a196363833b7",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "prompt engineering",
+        "tool use"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* + *prompt/tool-use* skills match well; _production LLM deployment_ experience still emerging but portfolio trajectory solid.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "a0db76369c",
+      "number": "3",
+      "number_display": "3",
+      "token": "617164b09f",
+      "run_id": "20260629_120349",
+      "title": "AI Engineer / AI Solutions Analyst - Eliassen Group - Remote - Dice",
+      "company": "Eliassen Group",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/2394afb8-11e3-4199-978d-4793c03f4309",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* + *prompt engineering* skills match Hans's active upskilling; _production LLM deployment_ experience gap is minor and bridgeable with his systems depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "57932b6b61",
+      "number": "4",
+      "number_display": "4",
+      "token": "82e5e934bd",
+      "run_id": "20260629_120349",
+      "title": "AI Agentic Engineer Job Details | Foundever\u00ae",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.foundever.com/job/Remote-AI-Agentic-Engineer-Any/1380860200/",
+      "matched_keywords": [
+        "agentic",
+        "ai agent",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *orchestration* align with active skill-building; remote eligibility matches; minor _production agent deployment_ depth still ramping.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
