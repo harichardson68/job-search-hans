@@ -5222,7 +5222,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-22 23:00"
+      "timestamp": "2026-06-22 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "4b553090e8",
@@ -5241,7 +5243,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-06-22 23:00"
+      "timestamp": "2026-06-22 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     }
   ],
   "2026-06-23": [
@@ -5264,7 +5268,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "cf37d3f424",
@@ -5304,7 +5310,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "8cef432560",
@@ -5323,7 +5331,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "5a33b8fbc7",
@@ -5342,7 +5352,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "8228795f01",
@@ -5417,7 +5429,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "b0e7ee7d72",
@@ -5435,7 +5449,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "02ea3d34de",
@@ -5486,7 +5502,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
-      "timestamp": "2026-06-23 23:00"
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     }
   ],
   "2026-06-24": [
@@ -5514,7 +5532,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00"
+      "timestamp": "2026-06-24 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "96d25a1705",
@@ -5573,7 +5593,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00"
+      "timestamp": "2026-06-24 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "edcd52b30e",
@@ -5591,7 +5613,9 @@
       "decision": "other",
       "reason": "Expired",
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00"
+      "timestamp": "2026-06-24 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "1eb020339d",
@@ -5629,7 +5653,9 @@
       "decision": "other",
       "reason": "Expired",
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00"
+      "timestamp": "2026-06-24 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "d6e460689b",
@@ -5683,7 +5709,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-06-24 23:00"
+      "timestamp": "2026-06-24 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "d283424dbe",
@@ -5848,7 +5876,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-25 23:00"
+      "timestamp": "2026-06-25 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     },
     {
       "job_id": "e466ddd1b9",
@@ -6091,7 +6121,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
-      "timestamp": "2026-06-28 23:00"
+      "timestamp": "2026-06-28 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-06-29"
     }
   ]
 }
