@@ -1,0 +1,93 @@
+{
+  "date": "2026-06-30",
+  "run_id": "20260630_120412",
+  "jobs": [
+    {
+      "job_id": "beea8a1c35",
+      "number": "1",
+      "number_display": "1",
+      "token": "6bd594da62",
+      "run_id": "20260630_120412",
+      "title": "Applied AI Engineer @ Bjak - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/07f77951-b023-4a97-9d42-df673874eae1",
+      "matched_keywords": [
+        "prompt engineering",
+        "tool use",
+        "ai engineer",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineer* with *prompt engineering* and tool-use fundamentals; minor _production LLM deployment_ experience gap but actively building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0e60f426f7",
+      "number": "2",
+      "number_display": "2",
+      "token": "ae86d35eb4",
+      "run_id": "20260630_120412",
+      "title": "AI Engineer (Agentic AI Experience) - Yochana IT Solutions - Dice",
+      "company": "Yochana IT Solutions",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/72b83f6d-03c9-4787-817b-83a4f4dec3b8",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "machine learning engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *GenAI certifications* align well; minor _production ML model deployment_ gap but hands-on agent projects bridge it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "bf053e9e0a",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "471ab1bef2",
+      "run_id": "20260630_120412",
+      "title": "COBOL Developer - Remote - IT Trailblazers, LLC - Dice",
+      "company": "Remote",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://www.dice.com/job-detail/d5810865-a676-43ad-a757-a08abdd42697",
+      "matched_keywords": [
+        "cobol developer",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* COBOL role at *$65\u201370/hr*; 24+ years IT experience and technical aptitude make this directly accessible and realistic to land.",
+      "level_signal": "none:cobol-seniority-exempt"
+    },
+    {
+      "job_id": "74497065a7",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "a12de369ef",
+      "run_id": "20260630_120412",
+      "title": "Software Development Engineer, Catalog Diagnostics (Agentic ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10461352/software-development-engineer-catalog-diagnostics-agentic-analytics",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
