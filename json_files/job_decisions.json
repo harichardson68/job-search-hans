@@ -6125,5 +6125,84 @@
       "reviewed": true,
       "reviewed_date": "2026-06-29"
     }
+  ],
+  "2026-06-29": [
+    {
+      "job_id": "c050516597",
+      "number": "1",
+      "title": "Quality Engineer (AI Testing) @ CGI - Teal",
+      "company": "Teal",
+      "track": "AI Engineering",
+      "score": 85,
+      "url": "https://www.tealhq.com/job/quality-engineer-ai-testing_7ea1a151e0b273d0253e81671cee37c79a267",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai testing",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-29 23:00"
+    },
+    {
+      "job_id": "0bb8d2ed7e",
+      "number": "2",
+      "title": "Applied AI Engineer @ Bjak - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/efa63933-b5b1-4b41-8b78-a196363833b7",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "prompt engineering",
+        "tool use"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-29 23:00"
+    },
+    {
+      "job_id": "a0db76369c",
+      "number": "3",
+      "title": "AI Engineer / AI Solutions Analyst - Eliassen Group - Remote - Dice",
+      "company": "Eliassen Group",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/2394afb8-11e3-4199-978d-4793c03f4309",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-29 23:00"
+    },
+    {
+      "job_id": "57932b6b61",
+      "number": "4",
+      "title": "AI Agentic Engineer Job Details | Foundever\u00ae",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.foundever.com/job/Remote-AI-Agentic-Engineer-Any/1380860200/",
+      "matched_keywords": [
+        "agentic",
+        "ai agent",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-29 23:00"
+    }
   ]
 }
