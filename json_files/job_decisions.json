@@ -6207,9 +6207,66 @@
   ],
   "2026-06-30": [
     {
+      "job_id": "beea8a1c35",
+      "number": "1",
+      "title": "Applied AI Engineer @ Bjak - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/07f77951-b023-4a97-9d42-df673874eae1",
+      "matched_keywords": [
+        "prompt engineering",
+        "tool use",
+        "ai engineer",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-30 23:00"
+    },
+    {
+      "job_id": "0e60f426f7",
+      "number": "2",
+      "title": "AI Engineer (Agentic AI Experience) - Yochana IT Solutions - Dice",
+      "company": "Yochana IT Solutions",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/72b83f6d-03c9-4787-817b-83a4f4dec3b8",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "machine learning engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-30 23:00"
+    },
+    {
+      "job_id": "bf053e9e0a",
+      "number": "G1",
+      "title": "COBOL Developer - Remote - IT Trailblazers, LLC - Dice",
+      "company": "Remote",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://www.dice.com/job-detail/d5810865-a676-43ad-a757-a08abdd42697",
+      "matched_keywords": [
+        "cobol developer",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-30 23:00"
+    },
+    {
       "job_id": "74497065a7",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Catalog Diagnostics (Agentic ...",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -6219,17 +6276,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-06-30T12:04:12.404093"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-06-30 23:00"
     }
   ]
 }
