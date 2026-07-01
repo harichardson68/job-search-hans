@@ -1,0 +1,114 @@
+{
+  "date": "2026-07-01",
+  "run_id": "20260701_120344",
+  "jobs": [
+    {
+      "job_id": "233bda5e5d",
+      "number": "1",
+      "number_display": "1",
+      "token": "1777868185",
+      "run_id": "20260701_120344",
+      "title": "AI Engineer - Qualysoft - Lever",
+      "company": "Qualysoft",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.lever.co/qualysoft/41c0074c-e67f-437d-a786-b13ff8855d50",
+      "matched_keywords": [
+        "ai agent",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent* and *agentic frameworks* directly match skill-building trajectory; minor _production deployment_ depth gap but actively developed.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "058263dbb7",
+      "number": "2",
+      "number_display": "2",
+      "token": "7ed79c9255",
+      "run_id": "20260701_120344",
+      "title": "AI Agent Developer - Qualizeal - Remote | Dice.com",
+      "company": "Qualizeal",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/2719ce50-3516-4042-b065-9d226954976d",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches Hans's GenAI cert and *Python* skills; minor _LangGraph production depth_ gap but aligned with dual-track trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "8ea6078723",
+      "number": "3",
+      "number_display": "3",
+      "token": "673519ad06",
+      "run_id": "20260701_120344",
+      "title": "LLM QA Engineer - Ohm Systems, Inc - Remote | Dice.com",
+      "company": "Ohm Systems, Inc",
+      "track": "AI Engineering",
+      "score": 57,
+      "url": "https://www.dice.com/job-detail/ec9df11c-7398-446b-882a-5972c22ce171",
+      "matched_keywords": [
+        "observability",
+        "langchain",
+        "openai",
+        "ai observability",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI observability* and *LLM stack* (Claude, LangChain) align well; _QA-focused_ role differs from Hans's engineer trajectory but leverages his testing depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d35c23f2dc",
+      "number": "4",
+      "number_display": "4",
+      "token": "c0e1d0094d",
+      "run_id": "20260701_120344",
+      "title": "AI Engineer - Forward Deployed @ Edison Scientific - Jobs",
+      "company": "Forward Deployed @ Edison Scientific",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/edison%20scientific/69572d5c-36ff-4a38-a1da-e1130d14b031",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineer* credentials and *agentic systems* skills align well; _forward-deployed production experience_ gap is minor and bridgeable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "24042d4dd4",
+      "number": "5",
+      "number_display": "5",
+      "token": "a73e838d9a",
+      "run_id": "20260701_120344",
+      "title": "AI Engineer @ MeritFirst - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/meritfirst/2d387ca2-68a4-451a-a69c-caff3d5f023e",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* pivot aligns with GenAI certs and agent projects; remote US available, but _production LLM deployment_ experience still emerging.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
