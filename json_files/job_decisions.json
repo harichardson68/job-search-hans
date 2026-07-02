@@ -6281,5 +6281,100 @@
       "raw_decision": "",
       "timestamp": "2026-06-30 23:00"
     }
+  ],
+  "2026-07-01": [
+    {
+      "job_id": "233bda5e5d",
+      "number": "1",
+      "title": "AI Engineer - Qualysoft - Lever",
+      "company": "Qualysoft",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.lever.co/qualysoft/41c0074c-e67f-437d-a786-b13ff8855d50",
+      "matched_keywords": [
+        "ai agent",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-01 23:00"
+    },
+    {
+      "job_id": "058263dbb7",
+      "number": "2",
+      "title": "AI Agent Developer - Qualizeal - Remote | Dice.com",
+      "company": "Qualizeal",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/2719ce50-3516-4042-b065-9d226954976d",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-01 23:00"
+    },
+    {
+      "job_id": "8ea6078723",
+      "number": "3",
+      "title": "LLM QA Engineer - Ohm Systems, Inc - Remote | Dice.com",
+      "company": "Ohm Systems, Inc",
+      "track": "AI Engineering",
+      "score": 57,
+      "url": "https://www.dice.com/job-detail/ec9df11c-7398-446b-882a-5972c22ce171",
+      "matched_keywords": [
+        "observability",
+        "langchain",
+        "openai",
+        "ai observability",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-01 23:00"
+    },
+    {
+      "job_id": "d35c23f2dc",
+      "number": "4",
+      "title": "AI Engineer - Forward Deployed @ Edison Scientific - Jobs",
+      "company": "Forward Deployed @ Edison Scientific",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/edison%20scientific/69572d5c-36ff-4a38-a1da-e1130d14b031",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": "Not remote as well",
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-01 23:00"
+    },
+    {
+      "job_id": "24042d4dd4",
+      "number": "5",
+      "title": "AI Engineer @ MeritFirst - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/meritfirst/2d387ca2-68a4-451a-a69c-caff3d5f023e",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-07-01 23:00"
+    }
   ]
 }
