@@ -6063,5 +6063,56 @@
       "track": "COBOL / Mainframe",
       "score": 20
     }
+  ],
+  "2026-07-02": [
+    {
+      "url": "https://www.dice.com/job-detail/92f47ef7-a19a-4934-b3ea-d2ac7822c81e",
+      "title": "Mainframe Developer (Natural & Adabas",
+      "company": "Beacon Systems, Inc",
+      "track": "COBOL / Mainframe",
+      "score": 102
+    },
+    {
+      "url": "https://www.dice.com/job-detail/ecd9b374-e452-4b82-922c-012efbc51f41",
+      "title": "Mainframe QA Engineer (Only W2",
+      "company": "Independent Visa)",
+      "track": "COBOL / Mainframe",
+      "score": 82
+    },
+    {
+      "url": "https://www.dice.com/job-detail/5cfa36f3-54fd-4c12-8f51-e27925f34ba7",
+      "title": "Mainframe Developer",
+      "company": "Infinite Computer Solutions (ICS)",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/8c8412d3-57a4-4fbd-b341-d2b4d9723f86",
+      "title": "Mainframe Developer COBOL/CICS",
+      "company": "Tidal Impact LLC",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/560b5ec8-d43a-471c-b6ea-917cb8ce0501",
+      "title": "Mainframe Developer",
+      "company": "W2",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/4d85179a-54a1-4bc0-aef4-ccd8f16f5f6c",
+      "title": "Application Developer",
+      "company": "Mainframe",
+      "track": "COBOL / Mainframe",
+      "score": 60
+    },
+    {
+      "url": "https://www.dice.com/job-detail/534624dd-ffb8-4a19-b96e-7daa363213e5",
+      "title": "Senior Mainframe Developer & Production Support",
+      "company": "Apex Systems",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    }
   ]
 }
