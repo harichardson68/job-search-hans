@@ -1,0 +1,137 @@
+{
+  "date": "2026-07-02",
+  "run_id": "20260702_120428",
+  "jobs": [
+    {
+      "job_id": "f63507f043",
+      "number": "1",
+      "number_display": "1",
+      "token": "2ad04a8b6b",
+      "run_id": "20260702_120428",
+      "title": "Applied AI Engineer @ Bjak - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/46b27111-9003-4ce3-8333-1e53e3d6611f",
+      "matched_keywords": [
+        "tool use",
+        "prompt engineering",
+        "ai engineer",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineer* role with *prompt engineering* and tool use matches Hans's GenAI upskilling; minor _production LLM deployment_ experience gap but actively building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "34be39368e",
+      "number": "2",
+      "number_display": "2",
+      "token": "607fbc369e",
+      "run_id": "20260702_120428",
+      "title": "Open apply - Generative AI Engineer in Remote | Maandag\u00ae",
+      "company": "Generative AI Engineer in Remote | Maandag\u00ae",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.maandag.com/vacancies/it/vacancy/open-apply--generative-ai-engineer-remote/55056",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI engineer* role matches Hans's active upskilling and *Claude API projects*; _production deployment depth_ still developing but trajectory clear.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "77e9a11b95",
+      "number": "3",
+      "number_display": "3",
+      "token": "c4729775ae",
+      "run_id": "20260702_120428",
+      "title": "Hire a LangChain Developer \u2014 No Agency Fees | RemoteAI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://remoteai.io/v2/hr/ps/langchain",
+      "matched_keywords": [
+        "langchain developer",
+        "langchain",
+        "llm application"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *LangChain/LLM application* skills actively building with *GenAI certs* and projects; remote eligible with minor _production deployment_ depth to demonstrate.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0efbda8453",
+      "number": "4",
+      "number_display": "4",
+      "token": "2c12bbb0b6",
+      "run_id": "20260702_120428",
+      "title": "Android Performance Engineer - Wise Skulls Corp. - Dice",
+      "company": "Wise Skulls Corp.",
+      "track": "Performance Engineering",
+      "score": 123,
+      "url": "https://www.dice.com/job-detail/95dcd2a8-dc7b-4a08-8be1-935aff5864d9",
+      "matched_keywords": [
+        "jmeter",
+        "rag",
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c1111fa0c4",
+      "number": "5",
+      "number_display": "5",
+      "token": "d4f51f7fa3",
+      "run_id": "20260702_120428",
+      "title": "Specialist - Performance Testing at Sun Life Assurance Company of",
+      "company": "Performance Testing at Sun Life Assurance Company of",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://startup.jobs/specialist-performance-testing-sun-life-assurance-company-o-8662047",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f08fa8bfa0",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "3c68ef7215",
+      "run_id": "20260702_120428",
+      "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10464369/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
