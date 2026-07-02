@@ -5222,9 +5222,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-22 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-22 23:00"
     },
     {
       "job_id": "4b553090e8",
@@ -5243,9 +5241,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-06-22 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-22 23:00"
     }
   ],
   "2026-06-23": [
@@ -5268,9 +5264,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     },
     {
       "job_id": "cf37d3f424",
@@ -5310,9 +5304,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     },
     {
       "job_id": "8cef432560",
@@ -5331,9 +5323,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     },
     {
       "job_id": "5a33b8fbc7",
@@ -5352,9 +5342,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     },
     {
       "job_id": "8228795f01",
@@ -5429,9 +5417,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     },
     {
       "job_id": "b0e7ee7d72",
@@ -5449,9 +5435,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     },
     {
       "job_id": "02ea3d34de",
@@ -5502,9 +5486,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
-      "timestamp": "2026-06-23 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-23 23:00"
     }
   ],
   "2026-06-24": [
@@ -5532,9 +5514,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "96d25a1705",
@@ -5593,9 +5573,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "edcd52b30e",
@@ -5613,9 +5591,7 @@
       "decision": "other",
       "reason": "Expired",
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "1eb020339d",
@@ -5653,9 +5629,7 @@
       "decision": "other",
       "reason": "Expired",
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-24 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "d6e460689b",
@@ -5709,9 +5683,7 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-06-24 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "timestamp": "2026-06-24 23:00"
     },
     {
       "job_id": "d283424dbe",
@@ -5782,601 +5754,6 @@
       "reason": null,
       "raw_decision": "Too Senior",
       "timestamp": "2026-06-24 23:00"
-    }
-  ],
-  "2026-06-25": [
-    {
-      "job_id": "77c7865b57",
-      "number": "1",
-      "title": "Agentic AI Engineer - Remote - United States | Deep Seas Careers",
-      "company": "Remote",
-      "track": "AI Engineering",
-      "score": 83,
-      "url": "https://deepseas.pinpointhq.com/postings/f931f510-2dda-423c-908d-f55f8e730a97",
-      "matched_keywords": [
-        "agentic ai",
-        "ai engineer",
-        "ai agent",
-        "agentic"
-      ],
-      "source": "Google Jobs",
-      "decision": "applied",
-      "reason": null,
-      "raw_decision": "Applied",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "2397c2f293",
-      "number": "2",
-      "title": "AI Prompt Engineer Job Remote Ukraine | Career at Luxoft",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 80,
-      "url": "https://career.luxoft.com/jobs/ai-prompt-engineer-25393",
-      "matched_keywords": [
-        "ai prompt",
-        "prompt engineer",
-        "ai integration engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "not_in_us",
-      "reason": "Ukraine",
-      "raw_decision": "Not in United States",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "5fcaf01aa0",
-      "number": "3",
-      "title": "AI Agent Developer - Remote - Indeed.com",
-      "company": "Remote",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.indeed.com/viewjob?jk=83d9bf45a2cdf660",
-      "matched_keywords": [
-        "ai agent",
-        "ai agent developer"
-      ],
-      "source": "Google Jobs",
-      "decision": "applied",
-      "reason": null,
-      "raw_decision": "Applied",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "068a585a21",
-      "number": "4",
-      "title": "AI Engineer @ MeritFirst - Jobs",
-      "company": "Jobs",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://jobs.ashbyhq.com/meritfirst/cee234df-d937-4ef1-acd9-b08dbab7e1b4/application",
-      "matched_keywords": [
-        "ai engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "applied",
-      "reason": null,
-      "raw_decision": "Applied",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "b3e930a043",
-      "number": "5",
-      "title": "Intermediate Performance Engineer | Hirevista",
-      "company": "N/A",
-      "track": "Performance Engineering",
-      "score": 120,
-      "url": "https://hirevista.2a.infinityfree.me/job/2336523",
-      "matched_keywords": [
-        "jmeter",
-        "loadrunner",
-        "performance engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "other",
-      "reason": null,
-      "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-06-25 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
-    },
-    {
-      "job_id": "e466ddd1b9",
-      "number": "S1",
-      "title": "Distinguished AI Engineer (Agentic AI Platform) - Capital One Career",
-      "company": "Capital One Career",
-      "track": "AI Engineering",
-      "score": 63,
-      "url": "https://www.capitalonecareers.com/job/san-francisco/distinguished-ai-engineer-agentic-ai-platform/1732/96846031728",
-      "matched_keywords": [
-        "agentic ai",
-        "ai engineer",
-        "agentic"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "86793d9a17",
-      "number": "S2",
-      "title": "Prompt Engineer - Smartwork IT Services - | Dice.com",
-      "company": "Smartwork IT Services",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.dice.com/job-detail/d90e0931-9a2d-4aa1-9fd0-2736e2d29f63",
-      "matched_keywords": [
-        "prompt engineer",
-        "prompt engineering"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "befe80bfba",
-      "number": "S3",
-      "title": "AI Agent Developer QA Specializatio - Warren, NJ - Techfetch",
-      "company": "Warren, NJ",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.techfetch.com/job-description/ai-agent-developer-qa-specialization-warren-nj-j3631843",
-      "matched_keywords": [
-        "ai agent",
-        "ai agent developer"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "c48f05a835",
-      "number": "S4",
-      "title": "AI/ML Engineer (REMOTE :: W2 Only) - VAAM Technologies - Dice",
-      "company": "VAAM Technologies",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.dice.com/job-detail/b23b3eaf-9153-4049-9ad6-e071005eff84",
-      "matched_keywords": [
-        "mlops engineer",
-        "ml engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "39aed97e5b",
-      "number": "S5",
-      "title": "AI/ML Engineer (Local to Texas Candidates) - Dice",
-      "company": "Dice",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.dice.com/job-detail/2d216fc2-1183-4f27-a882-f521aed955dd",
-      "matched_keywords": [
-        "mlops engineer",
-        "ml engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
-    },
-    {
-      "job_id": "495c7580e8",
-      "number": "A1",
-      "title": "Agentic AI Product Leader, AWS Professional Services - Job ID",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 46,
-      "url": "https://www.amazon.jobs/en/jobs/10458532/agentic-ai-product-leader-aws-professional-services",
-      "matched_keywords": [
-        "agentic ai",
-        "agentic",
-        "aws"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "not_in_us",
-      "reason": "Australia",
-      "raw_decision": "Not in United States",
-      "timestamp": "2026-06-25 23:00"
-    }
-  ],
-  "2026-06-26": [
-    {
-      "job_id": "a8681796ab",
-      "number": "A1",
-      "title": "GTM Specialist, Agentic AI-Led Mainframe Transformation, AWS ...",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 81,
-      "url": "https://prod.gamma.amazon.jobs/es/jobs/10457204/gtm-specialist-agentic-ai-led-mainframe-transformation-aws-transform-aws-wwso",
-      "matched_keywords": [
-        "mainframe",
-        "agentic",
-        "agentic ai",
-        "aws"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "too_senior",
-      "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-06-26 23:00"
-    }
-  ],
-  "2026-06-27": [
-    {
-      "job_id": "581bba881b",
-      "number": "1",
-      "title": "AI Agent Developer Job [REMOTE] - Braintrust - San Francisco / Bay ...",
-      "company": "Braintrust",
-      "track": "AI Engineering",
-      "score": 60,
-      "url": "https://www.monster.com/job-openings/ai-agent-developer-san-francisco-ca--f0e38b55-02af-4f40-9ad1-760fc389006d?mstr_dist=true",
-      "matched_keywords": [
-        "ai agent",
-        "ai agent developer"
-      ],
-      "source": "Google Jobs",
-      "decision": "too_senior",
-      "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-06-27 23:00"
-    },
-    {
-      "job_id": "8a8c9c01a3",
-      "number": "A1",
-      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 46,
-      "url": "https://amazon.jobs/jobs/10459692",
-      "matched_keywords": [
-        "agentic ai",
-        "aws",
-        "agentic"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "too_senior",
-      "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-06-27 23:00"
-    }
-  ],
-  "2026-06-28": [
-    {
-      "job_id": "395113d6ab",
-      "number": "1",
-      "title": "AI Automation Engineer - Remote - Indeed.com",
-      "company": "Remote",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://www.indeed.com/viewjob?jk=39bf4a01d7f6b578",
-      "matched_keywords": [
-        "ai automation engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "applied",
-      "reason": null,
-      "raw_decision": "Applied",
-      "timestamp": "2026-06-28 23:00"
-    },
-    {
-      "job_id": "3ff7da121d",
-      "number": "A1",
-      "title": "Partner Solutions Architect, Agentic Business Processes, AWS ...",
-      "company": "Amazon",
-      "track": "AI Engineering",
-      "score": 46,
-      "url": "https://amazon.jobs/en/jobs/10459692/partner-solutions-architect-agentic-business-processes-aws-partner-field-emea",
-      "matched_keywords": [
-        "aws",
-        "agentic",
-        "agentic ai"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "too_senior",
-      "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-06-28 23:00"
-    },
-    {
-      "job_id": "caa9d002ab",
-      "number": "A2",
-      "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
-      "company": "Amazon",
-      "track": "Performance Engineering",
-      "score": 23,
-      "url": "https://www.amazon.jobs/en/jobs/10457292/software-development-engineer-agentic-workspaces",
-      "matched_keywords": [
-        "agentic"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "applied",
-      "reason": null,
-      "raw_decision": "Applied",
-      "timestamp": "2026-06-28 23:00"
-    },
-    {
-      "job_id": "3850d557f1",
-      "number": "A3",
-      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
-      "company": "Amazon",
-      "track": "Performance Engineering",
-      "score": 23,
-      "url": "https://amazon.jobs/en/jobs/10431844/agentic-workspaces-sales-specialist-applied-ai-solutions",
-      "matched_keywords": [
-        "agentic"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "other",
-      "reason": null,
-      "raw_decision": "Not Interested/Not a match",
-      "timestamp": "2026-06-28 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-06-29"
-    }
-  ],
-  "2026-06-29": [
-    {
-      "job_id": "c050516597",
-      "number": "1",
-      "title": "Quality Engineer (AI Testing) @ CGI - Teal",
-      "company": "Teal",
-      "track": "AI Engineering",
-      "score": 85,
-      "url": "https://www.tealhq.com/job/quality-engineer-ai-testing_7ea1a151e0b273d0253e81671cee37c79a267",
-      "matched_keywords": [
-        "ai qa engineer",
-        "ai testing",
-        "ai qa"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
-    },
-    {
-      "job_id": "0bb8d2ed7e",
-      "number": "2",
-      "title": "Applied AI Engineer @ Bjak - Jobs",
-      "company": "Jobs",
-      "track": "AI Engineering",
-      "score": 83,
-      "url": "https://jobs.ashbyhq.com/bjakcareer/efa63933-b5b1-4b41-8b78-a196363833b7",
-      "matched_keywords": [
-        "ai engineer",
-        "prompt engineer",
-        "prompt engineering",
-        "tool use"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
-    },
-    {
-      "job_id": "a0db76369c",
-      "number": "3",
-      "title": "AI Engineer / AI Solutions Analyst - Eliassen Group - Remote - Dice",
-      "company": "Eliassen Group",
-      "track": "AI Engineering",
-      "score": 80,
-      "url": "https://www.dice.com/job-detail/2394afb8-11e3-4199-978d-4793c03f4309",
-      "matched_keywords": [
-        "ai engineer",
-        "prompt engineer",
-        "prompt engineering"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
-    },
-    {
-      "job_id": "57932b6b61",
-      "number": "4",
-      "title": "AI Agentic Engineer Job Details | Foundever\u00ae",
-      "company": "N/A",
-      "track": "AI Engineering",
-      "score": 63,
-      "url": "https://jobs.foundever.com/job/Remote-AI-Agentic-Engineer-Any/1380860200/",
-      "matched_keywords": [
-        "agentic",
-        "ai agent",
-        "agentic ai"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
-    }
-  ],
-  "2026-06-30": [
-    {
-      "job_id": "beea8a1c35",
-      "number": "1",
-      "title": "Applied AI Engineer @ Bjak - Jobs",
-      "company": "Jobs",
-      "track": "AI Engineering",
-      "score": 83,
-      "url": "https://jobs.ashbyhq.com/bjakcareer/07f77951-b023-4a97-9d42-df673874eae1",
-      "matched_keywords": [
-        "prompt engineering",
-        "tool use",
-        "ai engineer",
-        "prompt engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-30 23:00"
-    },
-    {
-      "job_id": "0e60f426f7",
-      "number": "2",
-      "title": "AI Engineer (Agentic AI Experience) - Yochana IT Solutions - Dice",
-      "company": "Yochana IT Solutions",
-      "track": "AI Engineering",
-      "score": 83,
-      "url": "https://www.dice.com/job-detail/72b83f6d-03c9-4787-817b-83a4f4dec3b8",
-      "matched_keywords": [
-        "agentic ai",
-        "agentic",
-        "machine learning engineer",
-        "ai engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-30 23:00"
-    },
-    {
-      "job_id": "bf053e9e0a",
-      "number": "G1",
-      "title": "COBOL Developer - Remote - IT Trailblazers, LLC - Dice",
-      "company": "Remote",
-      "track": "Gap Track",
-      "score": 45,
-      "url": "https://www.dice.com/job-detail/d5810865-a676-43ad-a757-a08abdd42697",
-      "matched_keywords": [
-        "cobol developer",
-        "cobol"
-      ],
-      "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-30 23:00"
-    },
-    {
-      "job_id": "74497065a7",
-      "number": "A1",
-      "title": "Software Development Engineer, Catalog Diagnostics (Agentic ...",
-      "company": "Amazon",
-      "track": "Performance Engineering",
-      "score": 23,
-      "url": "https://amazon.jobs/en/jobs/10461352/software-development-engineer-catalog-diagnostics-agentic-analytics",
-      "matched_keywords": [
-        "agentic"
-      ],
-      "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-30 23:00"
-    }
-  ],
-  "2026-07-01": [
-    {
-      "job_id": "233bda5e5d",
-      "number": "1",
-      "title": "AI Engineer - Qualysoft - Lever",
-      "company": "Qualysoft",
-      "track": "AI Engineering",
-      "score": 63,
-      "url": "https://jobs.lever.co/qualysoft/41c0074c-e67f-437d-a786-b13ff8855d50",
-      "matched_keywords": [
-        "ai agent",
-        "ai engineer",
-        "agentic"
-      ],
-      "source": "Google Jobs",
-      "decision": "too_senior",
-      "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-07-01 23:00"
-    },
-    {
-      "job_id": "058263dbb7",
-      "number": "2",
-      "title": "AI Agent Developer - Qualizeal - Remote | Dice.com",
-      "company": "Qualizeal",
-      "track": "AI Engineering",
-      "score": 63,
-      "url": "https://www.dice.com/job-detail/2719ce50-3516-4042-b065-9d226954976d",
-      "matched_keywords": [
-        "ai agent developer",
-        "ai agent",
-        "python"
-      ],
-      "source": "Google Jobs",
-      "decision": "too_senior",
-      "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-07-01 23:00"
-    },
-    {
-      "job_id": "8ea6078723",
-      "number": "3",
-      "title": "LLM QA Engineer - Ohm Systems, Inc - Remote | Dice.com",
-      "company": "Ohm Systems, Inc",
-      "track": "AI Engineering",
-      "score": 57,
-      "url": "https://www.dice.com/job-detail/ec9df11c-7398-446b-882a-5972c22ce171",
-      "matched_keywords": [
-        "observability",
-        "langchain",
-        "openai",
-        "ai observability",
-        "llm"
-      ],
-      "source": "Google Jobs",
-      "decision": "applied",
-      "reason": null,
-      "raw_decision": "Applied",
-      "timestamp": "2026-07-01 23:00"
-    },
-    {
-      "job_id": "d35c23f2dc",
-      "number": "4",
-      "title": "AI Engineer - Forward Deployed @ Edison Scientific - Jobs",
-      "company": "Forward Deployed @ Edison Scientific",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://jobs.ashbyhq.com/edison%20scientific/69572d5c-36ff-4a38-a1da-e1130d14b031",
-      "matched_keywords": [
-        "ai engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "too_senior",
-      "reason": "Not remote as well",
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-07-01 23:00"
-    },
-    {
-      "job_id": "24042d4dd4",
-      "number": "5",
-      "title": "AI Engineer @ MeritFirst - Jobs",
-      "company": "Jobs",
-      "track": "AI Engineering",
-      "score": 40,
-      "url": "https://jobs.ashbyhq.com/meritfirst/2d387ca2-68a4-451a-a69c-caff3d5f023e",
-      "matched_keywords": [
-        "ai engineer"
-      ],
-      "source": "Google Jobs",
-      "decision": "other",
-      "reason": null,
-      "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-07-01 23:00",
-      "reviewed": true,
-      "reviewed_date": "2026-07-02"
     }
   ]
 }
