@@ -1,0 +1,112 @@
+{
+  "date": "2026-07-03",
+  "run_id": "20260703_120354",
+  "jobs": [
+    {
+      "job_id": "5d08b8ecd8",
+      "number": "1",
+      "number_display": "1",
+      "token": "ff87e406e8",
+      "run_id": "20260703_120354",
+      "title": "Agentic AI Engineer at Fervo Energy Company | Remote Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.remotejobs.com/jobs/agentic-ai-engineer-1792c7ce",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 Remote *agentic AI engineer* role matches dual-track search perfectly; *IBM GenAI cert* and Claude API projects directly relevant, minimal _production agent deployment_ friction.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "60e26109b1",
+      "number": "2",
+      "number_display": "2",
+      "token": "2fce4e6424",
+      "run_id": "20260703_120354",
+      "title": "Agentic AI Engineer - ConglomerateIT - Hybrid in Georgia, VT, US",
+      "company": "ConglomerateIT",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/2209d4d8-3381-4f76-8e55-c716ded6f736",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* skills and *AI engineering* trajectory align well; minor _production deployment experience_ gap but directly in stated career pivot.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "5c7096befa",
+      "number": "3",
+      "number_display": "3",
+      "token": "e07567d1f2",
+      "run_id": "20260703_120354",
+      "title": "Hybrid (2 Days a Week) :: GenAI Prompt Engineer (G.C / U.S.C ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/5f0239bb-fd07-406a-b40d-f85570653154",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *GenAI prompt engineering* aligns with Hans's active AI upskilling; hybrid KC-area location and W2 structure fit well, though _production LLM agents_ experience still nascent.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "94600f6a3d",
+      "number": "4",
+      "number_display": "4",
+      "token": "a4aa32165e",
+      "run_id": "20260703_120354",
+      "title": "AI Engineer 1 - Platform Integration & AI/Data - Teal",
+      "company": "Platform Integration & AI/Data",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.tealhq.com/job/ai-engineer-1-platform-integration-ai-data_7ea1a5d8e64d17f32c50d463cf9e225b0ae0d",
+      "matched_keywords": [
+        "ai integration engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI integration* and *agentic systems* align with Hans's active upskilling; minor _production ML deployment_ depth gap but realistic trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "877e98900e",
+      "number": "5",
+      "number_display": "5",
+      "token": "f26fd37455",
+      "run_id": "20260703_120354",
+      "title": "Performance Analyst - Ibility - Lever",
+      "company": "Ibility",
+      "track": "Performance Engineering",
+      "score": 50,
+      "url": "https://jobs.lever.co/ibility/d3d8336d-2453-4096-aaf7-e59336a79919",
+      "matched_keywords": [
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
