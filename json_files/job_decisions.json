@@ -6381,9 +6381,104 @@
   ],
   "2026-07-02": [
     {
+      "job_id": "f63507f043",
+      "number": "1",
+      "title": "Applied AI Engineer @ Bjak - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/46b27111-9003-4ce3-8333-1e53e3d6611f",
+      "matched_keywords": [
+        "tool use",
+        "prompt engineering",
+        "ai engineer",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-02 23:00"
+    },
+    {
+      "job_id": "34be39368e",
+      "number": "2",
+      "title": "Open apply - Generative AI Engineer in Remote | Maandag\u00ae",
+      "company": "Generative AI Engineer in Remote | Maandag\u00ae",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.maandag.com/vacancies/it/vacancy/open-apply--generative-ai-engineer-remote/55056",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-02 23:00"
+    },
+    {
+      "job_id": "77e9a11b95",
+      "number": "3",
+      "title": "Hire a LangChain Developer \u2014 No Agency Fees | RemoteAI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://remoteai.io/v2/hr/ps/langchain",
+      "matched_keywords": [
+        "langchain developer",
+        "langchain",
+        "llm application"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-07-02 23:00"
+    },
+    {
+      "job_id": "0efbda8453",
+      "number": "4",
+      "title": "Android Performance Engineer - Wise Skulls Corp. - Dice",
+      "company": "Wise Skulls Corp.",
+      "track": "Performance Engineering",
+      "score": 123,
+      "url": "https://www.dice.com/job-detail/95dcd2a8-dc7b-4a08-8be1-935aff5864d9",
+      "matched_keywords": [
+        "jmeter",
+        "rag",
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-07-02 23:00"
+    },
+    {
+      "job_id": "c1111fa0c4",
+      "number": "5",
+      "title": "Specialist - Performance Testing at Sun Life Assurance Company of",
+      "company": "Performance Testing at Sun Life Assurance Company of",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://startup.jobs/specialist-performance-testing-sun-life-assurance-company-o-8662047",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-02 23:00"
+    },
+    {
       "job_id": "f08fa8bfa0",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Agentic WorkSpaces - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -6393,17 +6488,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-02T12:04:29.041210"
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-02 23:00"
     }
   ]
 }
