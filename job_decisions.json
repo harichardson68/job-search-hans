@@ -1,0 +1,81 @@
+{
+  "2026-07-03": [
+    {
+      "url": "https://www.dice.com/job-detail/5b556ab6-9cfa-4d86-8774-17874fa858d9",
+      "title": "Application Automation",
+      "company": "Unique System Skills LLC",
+      "track": "LoadRunner / Performance",
+      "score": 120
+    },
+    {
+      "url": "https://www.dice.com/job-detail/92f47ef7-a19a-4934-b3ea-d2ac7822c81e",
+      "title": "Mainframe Developer (Natural & Adabas",
+      "company": "Beacon Systems, Inc",
+      "track": "COBOL / Mainframe",
+      "score": 102
+    },
+    {
+      "url": "https://www.dice.com/job-detail/bc536d05-ff68-4e89-9abb-e6c929f988ba",
+      "title": "Quality Assurance Tester",
+      "company": "GovCIO -",
+      "track": "LoadRunner / Performance",
+      "score": 68
+    },
+    {
+      "url": "https://www.dice.com/job-detail/4d85179a-54a1-4bc0-aef4-ccd8f16f5f6c",
+      "title": "Application Developer",
+      "company": "Mainframe",
+      "track": "COBOL / Mainframe",
+      "score": 60
+    },
+    {
+      "url": "https://www.adzuna.com/details/5786157388?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "NICE CXone SDET Engineer",
+      "company": "Tech3pillars Technologies",
+      "track": "QA / Test Engineering",
+      "score": 50
+    },
+    {
+      "url": "https://www.dice.com/job-detail/7d2d7208-6f13-469b-b964-ebb043e19927",
+      "title": "Mainframe Z/OS Developer",
+      "company": "iTek People, Inc.",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5782607481?se=CBI8pOt28RGw99DSBwaIyw&utm_medium=api&utm_source=aa7dfcd9&v=BB11D1C55F6C340CBD6758348C4DA9ECD768F494",
+      "title": "Lead SDET Engineer / Python / Lunix /PyTest / C Embedded / Onsite / Irvine",
+      "company": "Kelly Services",
+      "track": "QA / Test Engineering",
+      "score": 40
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5781562801?se=CBI8pOt28RGw99DSBwaIyw&utm_medium=api&utm_source=aa7dfcd9&v=046A191C207F33F3EF81BE0B8ECD35A30CB3DB2D",
+      "title": "Lead SDET Engineer / Python / Lunix /PyTest / C Embedded / Onsite / Irvine",
+      "company": "Motion Recruitment Partners, LLC",
+      "track": "QA / Test Engineering",
+      "score": 40
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5786127325?se=CBI8pOt28RGw99DSBwaIyw&utm_medium=api&utm_source=aa7dfcd9&v=44BC925AA2E6A6C335318D5C0C81317BB36BB9A2",
+      "title": "SDET/Automation Engineer (NiCE CXone) - Remote",
+      "company": "Orange Top Services, LLC",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/d5810865-a676-43ad-a757-a08abdd42697",
+      "title": "COBOL Developer",
+      "company": "IT Trailblazers, LLC",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    },
+    {
+      "url": "https://www.dice.com/job-detail/5cfa36f3-54fd-4c12-8f51-e27925f34ba7",
+      "title": "Mainframe Developer",
+      "company": "Infinite Computer Solutions (ICS)",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    }
+  ]
+}
