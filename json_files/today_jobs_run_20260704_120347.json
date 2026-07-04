@@ -1,0 +1,71 @@
+{
+  "date": "2026-07-04",
+  "run_id": "20260704_120347",
+  "jobs": [
+    {
+      "job_id": "a4753e055c",
+      "number": "1",
+      "number_display": "1",
+      "token": "d451e309dd",
+      "run_id": "20260704_120347",
+      "title": "AI Engineer-Agentic AI - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.indeed.com/viewjob?jk=a2133aefe8c5fc66",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active upskilling and *Claude API* portfolio work; minor _production deployment depth_ gap but realistic progression.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f6a4e765d8",
+      "number": "2",
+      "number_display": "2",
+      "token": "53e8994c36",
+      "run_id": "20260704_120347",
+      "title": "AI Engineer-Agentic AI - Confidential | Remote - SimplyHired",
+      "company": "Confidential | Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.simplyhired.com/job/63KXfusxSCJFbQ4fBGUnBCr5Zdo8pHymL8bZv9DPZWqWeaT1RzS5_g",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* + *AI engineering* alignment with active GenAI cert; minor _production deployment_ gap but realistic upskilling path.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "bbfcfb8851",
+      "number": "3",
+      "number_display": "3",
+      "token": "326cfc58cf",
+      "run_id": "20260704_120347",
+      "title": "Remote Automation & AI Engineering Jobs | OnNetPulse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://onnetpulse.com/remote-automation-ai-jobs?page=3",
+      "matched_keywords": [
+        "ai solutions engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Solutions Engineer* role matches Hans's active GenAI/Claude projects and *remote* location; _production deployment_ depth still building but realistic progression.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
