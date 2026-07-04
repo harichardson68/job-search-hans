@@ -77,5 +77,49 @@
       "track": "COBOL / Mainframe",
       "score": 22
     }
+  ],
+  "2026-07-04": [
+    {
+      "url": "https://www.adzuna.com/details/5786212192?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "Mainframe COBOL Developer (Debit Card Processing)",
+      "company": "The Corporate",
+      "track": "COBOL / Mainframe",
+      "score": 82
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5782614512?se=nuxKFLB38RG-2tHAxNAnZQ&utm_medium=api&utm_source=aa7dfcd9&v=1FACC91E4C56B17B96005F3A791717ED5BD80F9D",
+      "title": "Application Developer - Mainframe",
+      "company": "Prominent Technology",
+      "track": "COBOL / Mainframe",
+      "score": 82
+    },
+    {
+      "url": "https://wexinc.wd5.myworkdayjobs.com/en-US/WEXInc/job/Software-Engineer-2-----AI-Platform_R21768",
+      "title": "Software Engineer 2 - AI Platform",
+      "company": "Wexinc",
+      "track": "AI Hybrid",
+      "score": 40
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5786211465?se=nuxKFLB38RG-2tHAxNAnZQ&utm_medium=api&utm_source=aa7dfcd9&v=B42E13DC485E61C10E7C78F2889C21C283222633",
+      "title": "Sr. Applicaion Engineer (Mainframe)",
+      "company": "HAYS",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    },
+    {
+      "url": "https://www.dice.com/job-detail/1079f780-6545-4c6f-9e13-1cf900648228",
+      "title": "Applied AI Engineer, Work From Home",
+      "company": "M",
+      "track": "AI Hybrid",
+      "score": 20
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5782229041?se=nuxKFLB38RG-2tHAxNAnZQ&utm_medium=api&utm_source=aa7dfcd9&v=0C9A11F1715356808D9F35A2C1A7464157B5C0DC",
+      "title": "Hogan Engineer",
+      "company": "Apex Systems",
+      "track": "COBOL / Mainframe",
+      "score": 20
+    }
   ]
 }
