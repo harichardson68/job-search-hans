@@ -6586,5 +6586,63 @@
       "raw_decision": "Applied",
       "timestamp": "2026-07-03 23:00"
     }
+  ],
+  "2026-07-04": [
+    {
+      "job_id": "a4753e055c",
+      "number": "1",
+      "title": "AI Engineer-Agentic AI - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.indeed.com/viewjob?jk=a2133aefe8c5fc66",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Indeed would not let me apply",
+      "raw_decision": "Other",
+      "timestamp": "2026-07-04 23:00"
+    },
+    {
+      "job_id": "f6a4e765d8",
+      "number": "2",
+      "title": "AI Engineer-Agentic AI - Confidential | Remote - SimplyHired",
+      "company": "Confidential | Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.simplyhired.com/job/63KXfusxSCJFbQ4fBGUnBCr5Zdo8pHymL8bZv9DPZWqWeaT1RzS5_g",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-04 23:00"
+    },
+    {
+      "job_id": "bbfcfb8851",
+      "number": "3",
+      "title": "Remote Automation & AI Engineering Jobs | OnNetPulse",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://onnetpulse.com/remote-automation-ai-jobs?page=3",
+      "matched_keywords": [
+        "ai solutions engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-07-04 23:00"
+    }
   ]
 }
