@@ -1,0 +1,28 @@
+{
+  "date": "2026-07-05",
+  "run_id": "20260705_120345",
+  "jobs": [
+    {
+      "job_id": "49968cb9ce",
+      "number": "1",
+      "number_display": "1",
+      "token": "836918c0d8",
+      "run_id": "20260705_120345",
+      "title": "AI Engineer Jobs in AR | AIEngineer.careers",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://www.aiengineer.careers/jobs/country/ar",
+      "matched_keywords": [
+        "anthropic",
+        "uat",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineer* role at *Anthropic* with remote option; active GenAI upskilling and Claude API projects strong, but _production LLM deployment_ experience still developing.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
