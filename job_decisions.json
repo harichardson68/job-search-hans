@@ -121,5 +121,35 @@
       "track": "COBOL / Mainframe",
       "score": 20
     }
+  ],
+  "2026-07-05": [
+    {
+      "url": "https://www.dice.com/job-detail/05bdf846-298c-4a3d-8748-d0e1ac874160",
+      "title": "QA Automation Engineer",
+      "company": "AIT Global, Inc.",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/93ef7988-4527-4bfb-b2d3-25d4c65bf3dc",
+      "title": "QA Automation Engineer (SDET)",
+      "company": "Photon",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/0bbc151e-91b9-414f-b7f6-1c7f3ed3ce17",
+      "title": "SDET/Automation Engineer (NiCE CXone)",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 20
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=1219eed6d1abd29a",
+      "title": "Software Development Engineer in Test (SDET)",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 20
+    }
   ]
 }
