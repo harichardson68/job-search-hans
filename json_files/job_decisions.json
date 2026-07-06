@@ -6644,5 +6644,26 @@
       "raw_decision": "Search Page Listing",
       "timestamp": "2026-07-04 23:00"
     }
+  ],
+  "2026-07-05": [
+    {
+      "job_id": "49968cb9ce",
+      "number": "1",
+      "title": "AI Engineer Jobs in AR | AIEngineer.careers",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://www.aiengineer.careers/jobs/country/ar",
+      "matched_keywords": [
+        "anthropic",
+        "uat",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Argentina",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-05 23:00"
+    }
   ]
 }
