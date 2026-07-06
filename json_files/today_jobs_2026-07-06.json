@@ -1,0 +1,72 @@
+{
+  "date": "2026-07-06",
+  "run_id": "20260706_120352",
+  "jobs": [
+    {
+      "job_id": "9ac09344ea",
+      "number": "1",
+      "number_display": "1",
+      "token": "3519146f12",
+      "run_id": "20260706_120352",
+      "title": "MLOps Engineer AWS SageMaker, Terraform - DataAffect - Dice",
+      "company": "DataAffect",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/d12f423c-bb21-4678-9561-2cd22f8e1719",
+      "matched_keywords": [
+        "ml engineer",
+        "aws",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Remote AWS* role aligns with AI track; solid *observability/reliability* foundation, but _hands-on MLOps production_ experience limited and needs ramp.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "6409134076",
+      "number": "2",
+      "number_display": "2",
+      "token": "b4e6dcb20c",
+      "run_id": "20260706_120352",
+      "title": "AiMi Technologies AB (Remote): Full Stack AI Engineer - JOIN",
+      "company": "JOIN",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://join.com/companies/aimitechnology/16404038-full-stack-ai-engineer?pid=4455b0663ceac5b2c22c",
+      "matched_keywords": [
+        "uat",
+        "observability",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent observability* and *full-stack* framing align well; minor _production LLM systems_ depth still building but core monitoring expertise translates cleanly.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "130a959a26",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "c4aebb04ae",
+      "run_id": "20260706_120352",
+      "title": "Worldwide Partner Specialist - Agentic AI, WW AI Partner GTM - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en-gb/jobs/10464987/worldwide-partner-specialist-agentic-ai-ww-ai-partner-gtm",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; Hans's GenAI skills building but _partner GTM enablement_ and _sales-track_ positioning diverge from hands-on engineering.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

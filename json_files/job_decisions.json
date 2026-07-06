@@ -6673,5 +6673,34 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-07-05 23:00"
     }
+  ],
+  "2026-07-06": [
+    {
+      "job_id": "130a959a26",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Worldwide Partner Specialist - Agentic AI, WW AI Partner GTM - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en-gb/jobs/10464987/worldwide-partner-specialist-agentic-ai-ww-ai-partner-gtm",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; Hans's GenAI skills building but _partner GTM enablement_ and _sales-track_ positioning diverge from hands-on engineering.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-06T12:03:52.026255"
+    }
   ]
 }
