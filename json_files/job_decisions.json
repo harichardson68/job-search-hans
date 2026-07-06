@@ -6456,7 +6456,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-07-02 23:00"
+      "timestamp": "2026-07-02 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-06"
     },
     {
       "job_id": "c1111fa0c4",
@@ -6567,7 +6569,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-07-03 23:00"
+      "timestamp": "2026-07-03 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-06"
     },
     {
       "job_id": "877e98900e",
@@ -6605,7 +6609,9 @@
       "decision": "other",
       "reason": "Indeed would not let me apply",
       "raw_decision": "Other",
-      "timestamp": "2026-07-04 23:00"
+      "timestamp": "2026-07-04 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-06"
     },
     {
       "job_id": "f6a4e765d8",
@@ -6624,7 +6630,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-07-04 23:00"
+      "timestamp": "2026-07-04 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-06"
     },
     {
       "job_id": "bbfcfb8851",
