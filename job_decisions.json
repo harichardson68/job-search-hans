@@ -151,5 +151,35 @@
       "track": "QA / Test Engineering",
       "score": 20
     }
+  ],
+  "2026-07-06": [
+    {
+      "url": "https://www.dice.com/job-detail/3568149b-7f7c-47ab-af85-48760cd39d05",
+      "title": "Cobol Developer",
+      "company": "Innova Solutions, Inc",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://kyndryl.wd5.myworkdayjobs.com/en-US/KyndrylProfessionalCareers/job/COBOL-Mainframe-Application-Developer_R-61371",
+      "title": "COBOL Mainframe Application Developer",
+      "company": "Kyndryl",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5789974991?se=fOXt0lJ58RGeubU5_-8OGg&utm_medium=api&utm_source=aa7dfcd9&v=9BD77A268332B5EBD93042B1657F50E35A3EF930",
+      "title": "Sr. SDET Engineer with manufacturing client experience",
+      "company": "Pull Skill Technologies",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/d5ee18fe-9b62-4f38-85ee-118701b0111a",
+      "title": "Full Stack Engineer, AI Systems, Work From Home",
+      "company": "M",
+      "track": "AI Hybrid",
+      "score": 20
+    }
   ]
 }
