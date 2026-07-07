@@ -6676,9 +6676,46 @@
   ],
   "2026-07-06": [
     {
+      "job_id": "9ac09344ea",
+      "number": "1",
+      "title": "MLOps Engineer AWS SageMaker, Terraform - DataAffect - Dice",
+      "company": "DataAffect",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/d12f423c-bb21-4678-9561-2cd22f8e1719",
+      "matched_keywords": [
+        "ml engineer",
+        "aws",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-06 23:00"
+    },
+    {
+      "job_id": "6409134076",
+      "number": "2",
+      "title": "AiMi Technologies AB (Remote): Full Stack AI Engineer - JOIN",
+      "company": "JOIN",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://join.com/companies/aimitechnology/16404038-full-stack-ai-engineer?pid=4455b0663ceac5b2c22c",
+      "matched_keywords": [
+        "uat",
+        "observability",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-06 23:00"
+    },
+    {
       "job_id": "130a959a26",
       "number": "A1",
-      "number_display": "A1",
       "title": "Worldwide Partner Specialist - Agentic AI, WW AI Partner GTM - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -6690,17 +6727,10 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; Hans's GenAI skills building but _partner GTM enablement_ and _sales-track_ positioning diverge from hands-on engineering.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-06T12:03:52.026255"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-06 23:00"
     }
   ]
 }
