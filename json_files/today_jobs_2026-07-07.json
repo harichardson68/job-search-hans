@@ -1,0 +1,112 @@
+{
+  "date": "2026-07-07",
+  "run_id": "20260707_120422",
+  "jobs": [
+    {
+      "job_id": "7cbfcf16f4",
+      "number": "1",
+      "number_display": "1",
+      "token": "90d7541fa7",
+      "run_id": "20260707_120422",
+      "title": "AI Prompt Engineer Job Remote Bulgaria | Career at Luxoft",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://career.luxoft.com/jobs/ai-prompt-engineer-25769",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer",
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Claude API* and *AI integration* skills align well; remote location matches, but _prompt engineering_ is newer track versus 14-year LoadRunner depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "3cdc22fb97",
+      "number": "2",
+      "number_display": "2",
+      "token": "526447f93d",
+      "run_id": "20260707_120422",
+      "title": "AI Test Engineer, Pittsburgh, PA - Remote - W2 Position - Tech Rakers",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.dice.com/job-detail/868f4987-3ea5-431e-888b-7368b6c6547f",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI test engineer* role matches Hans's *observability* and *reliability* expertise; minor _production LLM systems_ experience gap but GenAI certs bridge it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "6742c52301",
+      "number": "3",
+      "number_display": "3",
+      "token": "2512afec50",
+      "run_id": "20260707_120422",
+      "title": "Agentic AI Developer - Swanktek Inc - Remote | Dice.com",
+      "company": "Swanktek Inc",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/7163a61a-6e16-47f2-aff1-0fc55d7ad6b7",
+      "matched_keywords": [
+        "agentic",
+        "ai developer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI developer* role matches emerging skillset and portfolio direction; _production deployment experience_ gap is bridgeable with GenAI credentials and observability depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d326dc4a38",
+      "number": "4",
+      "number_display": "4",
+      "token": "86543b1470",
+      "run_id": "20260707_120422",
+      "title": "AI Engineer Jobs in Annapolis Junction, Maryland | Migrate Mate",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://migratemate.co/ai-engineer-jobs/maryland/annapolis-junction",
+      "matched_keywords": [
+        "ai integration engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Integration Engineer* role aligns with GenAI skills and agent work; _Annapolis Junction location_ requires relocation from KC preference, but clearance and seniority are assets.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "b0d3c7c28b",
+      "number": "5",
+      "number_display": "5",
+      "token": "cbb57cc18b",
+      "run_id": "20260707_120422",
+      "title": "MLOps Engineer AWS SageMaker - EdgeAll - Remote | Dice.com",
+      "company": "EdgeAll",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/26ee0613-7cf0-4bc3-981c-6f40a97ec24b",
+      "matched_keywords": [
+        "aws",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AWS* and *MLOps* align with AI track goals; _SageMaker production ML_ experience gap but observability and automation skills transfer well.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
