@@ -181,5 +181,49 @@
       "track": "AI Hybrid",
       "score": 20
     }
+  ],
+  "2026-07-07": [
+    {
+      "url": "https://www.dice.com/job-detail/3c725451-02a1-4d52-9804-cf67abd74f6e",
+      "title": "Performance Test Engineer",
+      "company": "Data Computer Corp America",
+      "track": "LoadRunner / Performance",
+      "score": 140
+    },
+    {
+      "url": "https://www.dice.com/job-detail/bf1f1846-8208-4d25-9846-59d28ec1a622",
+      "title": "Mainframe Programmer",
+      "company": "W2- Remote",
+      "track": "COBOL / Mainframe",
+      "score": 82
+    },
+    {
+      "url": "https://www.dice.com/job-detail/53b55728-7292-449c-8af4-692fb7d53bb2",
+      "title": "Advanced Mainframe Programmer (COBOL / IDMS)",
+      "company": "",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://intel.wd1.myworkdayjobs.com/en-US/External/job/US-California-Santa-Clara/Senior-AI-Software-Engineer---Agentic-AI-System_JR0285456?locations=1e4a4eb3adf10118b1dfe877bf8162d0",
+      "title": "Senior AI Software Engineer \u2013 Agentic AI System - Intel",
+      "company": "Intel",
+      "track": "AI Hybrid",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/a48f0e5b-2b1b-45b5-a6fa-a41a8c63394c",
+      "title": "Quality Engineer",
+      "company": "Stefanini",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.indeed.com/viewjob?jk=3857cf8ba18a7709",
+      "title": "Senior SDET \u2014 Automation Quality & Test Engineering",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 20
+    }
   ]
 }
