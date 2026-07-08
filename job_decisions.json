@@ -225,5 +225,42 @@
       "track": "QA / Test Engineering",
       "score": 20
     }
+  ],
+  "2026-07-08": [
+    {
+      "url": "https://www.adzuna.com/land/ad/5791309817?se=ekK8mNp68RGh7s21nxs1bw&utm_medium=api&utm_source=aa7dfcd9&v=196786F7DFD007B584D43B63D1E1B6EC2AD3D5E3",
+      "title": "Cobol Mainframe Developer with Assembler Exp",
+      "company": "RapidIT, Inc",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.adzuna.com/details/5791606828?utm_medium=api&utm_source=aa7dfcd9",
+      "title": "CA-ADS Mainframe Developer - Contract - Remote",
+      "company": "SUNSHINE ENTERPRISE USA LLC",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5791309876?se=ekK8mNp68RGh7s21nxs1bw&utm_medium=api&utm_source=aa7dfcd9&v=90F47532F923CC81CC637A52F5510809A2C0FD8D",
+      "title": "Mainframe COBOL Developer",
+      "company": "Neodym Technologies",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5791215003?se=ekK8mNp68RGh7s21nxs1bw&utm_medium=api&utm_source=aa7dfcd9&v=72A28DB753EE475C4EA31A1A30FDDDD353343B50",
+      "title": "Senior Mainframe COBOL/IDMS Developer (MMIS/MEDS) - REMOTE (W2 Only)",
+      "company": "Chandra Technologies, Inc.",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/23b3e011-f454-4fab-af82-80ff75b47ea8",
+      "title": "ServiceNow Developer",
+      "company": "ATF/SDET",
+      "track": "QA / Test Engineering",
+      "score": 15
+    }
   ]
 }
