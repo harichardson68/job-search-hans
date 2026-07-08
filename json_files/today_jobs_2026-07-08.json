@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-08",
+  "run_id": "20260708_120400",
+  "jobs": [
+    {
+      "job_id": "c8e1e5aa84",
+      "number": "1",
+      "number_display": "1",
+      "token": "701bf622a3",
+      "run_id": "20260708_120400",
+      "title": "AI / LLM Engineer - cyberThink, Inc. - Remote | Dice.com",
+      "company": "cyberThink, Inc.",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://www.dice.com/job-detail/f7913edc-802a-493b-a79c-b9fc085f8879",
+      "matched_keywords": [
+        "llm engineer",
+        "llm",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI/GenAI engineer* role matches Hans's active upskilling; remote CST location perfect, but _production LLM deployment_ depth still emerging.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "544e9c56b1",
+      "number": "2",
+      "number_display": "2",
+      "token": "85f1d6eefd",
+      "run_id": "20260708_120400",
+      "title": "Agentic AI Engineer in United States | SPECTRAFORCE",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://spectraforce.com/careers/jobs/agentic-ai-engineer-remote-usa-490895",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active upskilling; remote location ideal, but _production agent deployment_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
