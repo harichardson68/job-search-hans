@@ -305,6 +305,34 @@
       "company": "Konane Solutions",
       "track": "QA / Test Engineering",
       "score": 20
+    },
+    {
+      "url": "https://www.dice.com/job-detail/ec391d76-f326-4e51-9f1f-5b7e51675f01",
+      "title": "Mainframe developer",
+      "company": "StratG Inc",
+      "track": "COBOL / Mainframe",
+      "score": 62
+    },
+    {
+      "url": "https://www.dice.com/job-detail/614f65ec-450d-4a96-9510-fc909d5dcde4",
+      "title": "Remote AI/LLM Engineer",
+      "company": "Kforce Technology Staffing",
+      "track": "AI Hybrid",
+      "score": 40
+    },
+    {
+      "url": "https://www.dice.com/job-detail/2d8345f8-1de1-4680-9576-3560e5bb4431",
+      "title": "SDET",
+      "company": "Software Development in Test, AWS, Java, AI Tools, LLM",
+      "track": "QA / Test Engineering",
+      "score": 35
+    },
+    {
+      "url": "https://www.dice.com/job-detail/12a4b09c-aed6-4ac5-9a84-324fa623bfc2",
+      "title": "Quality Assurance Web & Automation Engineer",
+      "company": "",
+      "track": "QA / Test Engineering",
+      "score": 35
     }
   ]
 }
