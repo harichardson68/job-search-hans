@@ -1,27 +1,25 @@
 
 ============================================================
-  Review Decisions Run: 2026-07-06 12:00:02
+  Review Decisions Run: 2026-07-09 12:00:03
 ============================================================
 
 [GIT] Pulling latest from GitHub...
-   [OK] Updating 39c6a76..66c1421
+   [OK] Updating ad9ad4e..f5fc26c
 Fast-forward
- job_decisions.json | 30 ++++++++++++++++++++++++++++++
- 1 file changed, 30 insertions(+)
+ job_decisions.json | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
 
 [SYNC] Starting Google Form → job_decisions.json sync...
-[SYNC] Loaded 90 archived job slots from today_jobs_run_*.json files (token sync)
-[SYNC] Loaded 194 archived job slots from today_jobs_*.json files (legacy fallback)
+[SYNC] Loaded 100 archived job slots from today_jobs_run_*.json files (token sync)
+[SYNC] Loaded 174 archived job slots from today_jobs_*.json files (legacy fallback)
 [SYNC] Sheet headers: ['Timestamp', 'Job Number', 'Decision', 'Reason for not Applying (Other)', 'Job Token', 'Column 1', 'Question 1: Job Number', 'Decision', 'Reason for Not Applying (Other)', 'Question 1: Job Number', 'Question 1: Job Number']
-[SYNC] 411 form response rows found
+[SYNC] 416 form response rows found
 [SYNC] Parsed 0 valid form responses
 [SYNC] No responses to sync — skipping.
 [SYNC] 0 new decisions added from Google Form, 0 already present
-[OK] Found 4 unreviewed 'Other' decision(s) in job_decisions.json
-   [OK] Attached job_decisions_2026-07-06.json (backup)
+[OK] Found 0 unreviewed 'Other' decision(s) in job_decisions.json
+   [OK] Attached job_decisions_2026-07-09.json (backup)
 [OK] Review email sent to harichardson68@gmail.com
-[OK] Marked 4 entry/entries as reviewed in job_decisions.json
-[GIT] Committing and pushing updated job_decisions.json...
-   [OK] Pushed: 'Review decisions sent — items marked reviewed — 2026-07-06'
+[INFO] Empty digest sent — nothing to flag, nothing to push.
 
-[DONE] Review run completed at 2026-07-06 12:00:12
+[DONE] Review run completed at 2026-07-09 12:00:13
