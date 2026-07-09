@@ -262,5 +262,49 @@
       "track": "QA / Test Engineering",
       "score": 15
     }
+  ],
+  "2026-07-09": [
+    {
+      "url": "https://www.dice.com/job-detail/86bd2c43-d93e-4426-9b6e-eb59711034b0",
+      "title": "Direct Client: Senior QA Automation Engineer @ Lansing, MI Hybrid ...",
+      "company": "",
+      "track": "LoadRunner / Performance",
+      "score": 143
+    },
+    {
+      "url": "https://www.dice.com/job-detail/07df929b-eb91-43fa-bd86-2e2fb0dd0921",
+      "title": "Senior Mainframe COBOL Developer",
+      "company": "Lumen Solutions Group Inc.",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/ac6dc549-e240-41fa-a3e0-b0c58ec12089",
+      "title": "Mainframe Developer",
+      "company": "Shakti Solutions",
+      "track": "COBOL / Mainframe",
+      "score": 42
+    },
+    {
+      "url": "https://www.dice.com/job-detail/0da44015-2669-4f0b-91db-ec0cc92f4551",
+      "title": "Senior Mainframe Developer (Medicaid- W2 Only)",
+      "company": "",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    },
+    {
+      "url": "https://www.dice.com/job-detail/0ed707c3-412c-442b-8778-342309665452",
+      "title": "Medicaid IT Systems Mainframe- Remote 100%",
+      "company": "Devbytes inc",
+      "track": "COBOL / Mainframe",
+      "score": 22
+    },
+    {
+      "url": "https://www.adzuna.com/land/ad/5792954337?se=Bq2TU6t78RGD_JySugrbTQ&utm_medium=api&utm_source=aa7dfcd9&v=ABDEE88E53ADC91B463B8D55AAD9CFE18C7EDE4A",
+      "title": "Automation Test Engineer (SDET)- Active Q OR TS",
+      "company": "Konane Solutions",
+      "track": "QA / Test Engineering",
+      "score": 20
+    }
   ]
 }
