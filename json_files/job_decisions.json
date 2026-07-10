@@ -6866,5 +6866,122 @@
       "raw_decision": "",
       "timestamp": "2026-07-08 23:00"
     }
+  ],
+  "2026-07-09": [
+    {
+      "job_id": "35d8109d4b",
+      "number": "1",
+      "title": "Agentic AI Developer Job In Annapolis, MD 21401 - Nexxt",
+      "company": "Nexxt",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.nexxt.com/jobs/agentic-ai-developer-annapolis-md-3314079759-job.html",
+      "matched_keywords": [
+        "ai developer",
+        "agentic ai",
+        "agentic",
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-09 23:00"
+    },
+    {
+      "job_id": "609455674c",
+      "number": "2",
+      "title": "Agentic AI Engineer / Software Engineer - AI Applications (Remote US)",
+      "company": "AI Applications (Remote US)",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://job-boards.greenhouse.io/yurtsai/jobs/5182958007",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-09 23:00"
+    },
+    {
+      "job_id": "52f608d8b1",
+      "number": "3",
+      "title": "Generative AI Engineer at Weekday - Remote - RemoteLeaf",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remoteleaf.com/company/weekday/generative-ai-engineer-india/",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-09 23:00"
+    },
+    {
+      "job_id": "748ea504f5",
+      "number": "4",
+      "title": "Actian Corporation - AI Engineer [gn] (Agentic AI & Automation) - Lever",
+      "company": "AI Engineer [gn] (Agentic AI & Automation)",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.lever.co/actian/e50a6b94-63af-47d7-aba7-837d5346003e",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-09 23:00"
+    },
+    {
+      "job_id": "2146627aa1",
+      "number": "5",
+      "title": "AiMi Technologies AB (Remote): Full Stack AI Engineer - Join",
+      "company": "Join",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://join.com/companies/aimitechnology/16404038-full-stack-ai-engineer",
+      "matched_keywords": [
+        "uat",
+        "observability",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-09 23:00"
+    },
+    {
+      "job_id": "1edc1004ab",
+      "number": "6",
+      "title": "Embedded AI Engineer @ SPACE44 - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/space44/f979e516-c354-4017-90bc-1882768beb8a",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-07-09 23:00"
+    }
   ]
 }
