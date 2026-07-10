@@ -6983,5 +6983,32 @@
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-09 23:00"
     }
+  ],
+  "2026-07-10": [
+    {
+      "job_id": "be65f010f2",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "AI Automation Software Development Engineer, Ring - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10403067/ai-automation-software-development-engineer-ring",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-10T12:04:04.526257"
+    }
   ]
 }
