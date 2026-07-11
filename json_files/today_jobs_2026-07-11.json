@@ -1,0 +1,50 @@
+{
+  "date": "2026-07-11",
+  "run_id": "20260711_120353",
+  "jobs": [
+    {
+      "job_id": "0b2f8f4001",
+      "number": "1",
+      "number_display": "1",
+      "token": "6d88c34fb1",
+      "run_id": "20260711_120353",
+      "title": "Agentic AI Engineer, Remote Job, July 2026",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://dynamitejobs.com/company/benchling/remote-job/agentic-ai-engineer",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* role matches emerging skillset; remote location ideal, but _production LLM deployment_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "47688fef40",
+      "number": "2",
+      "number_display": "2",
+      "token": "9cd700f56b",
+      "run_id": "20260711_120353",
+      "title": "Agentic AI Engineer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.indeed.com/viewjob?jk=39daed781b908d9a",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI Engineer* role matches Hans's *AI skills trajectory* and remote setup; _production agent deployment_ experience still building but credentials solid.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
