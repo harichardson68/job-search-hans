@@ -1,0 +1,123 @@
+{
+  "date": "2026-07-12",
+  "run_id": "20260712_120413",
+  "jobs": [
+    {
+      "job_id": "0e05ff46c0",
+      "number": "1",
+      "number_display": "1",
+      "token": "7dbb75d344",
+      "run_id": "20260712_120413",
+      "title": "Remote, ML, Prompt Engineer, Generative AI - Jobs - AI is Everywhere",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://aiiseverywhere.com/jobs",
+      "matched_keywords": [
+        "prompt engineer",
+        "openai",
+        "generative ai",
+        "machine learning engineer",
+        "anthropic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI* and *prompt engineering* skills actively building; remote US location matches, but _production ML models_ experience remains foundational.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7e28c0c047",
+      "number": "2",
+      "number_display": "2",
+      "token": "c2cf12afce",
+      "run_id": "20260712_120413",
+      "title": "Agentic AI Engineer / Software Engineer - AI Applications (Remote US)",
+      "company": "AI Applications (Remote US)",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.tealhq.com/job/agentic-ai-engineer-software-engineer-ai-applications_7ea1ac7e886d303282cfc45dc4b9d1452c129",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *agent orchestration* skills directly match; minor _production LLM deployment_ depth but portfolio trajectory and remote eligibility strong.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d4328c2dd4",
+      "number": "3",
+      "number_display": "3",
+      "token": "c93fb9a3c9",
+      "run_id": "20260712_120413",
+      "title": "Software Engineering MTS - Full-Stack/Agentic AI Engineer",
+      "company": "Full-Stack/Agentic AI Engineer",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-MTS---Full-Stack-Agentic-AI-Engineer_JR350332",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *agent workflow* skills align with portfolio trajectory; _full-stack_ breadth and San Francisco location require consideration.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "5e32e86adf",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "c148697659",
+      "run_id": "20260712_120413",
+      "title": "Remote Senior Mainframe COBOL Developer job at Lumen ... - Lensa",
+      "company": "Lensa",
+      "track": "Gap Track",
+      "score": 95,
+      "url": "https://lensa.com/job-v1/lumen-solutions-group-inc/remote/senior-mainframe-developer/a4d9eb2712d9d5a443df2d20fd24976c",
+      "matched_keywords": [
+        "mainframe developer",
+        "mainframe",
+        "jcl",
+        "cics",
+        "vsam",
+        "cobol",
+        "cobol developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* mainframe COBOL developer role with *direct skill match* on VSAM/JCL/CICS; straightforward hire and ramp.",
+      "level_signal": "none:cobol-seniority-exempt"
+    },
+    {
+      "job_id": "c3f5e52b41",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "54ce35f885",
+      "run_id": "20260712_120413",
+      "title": "Product Engineer - AI Agents, IES LATech & GIS - Job ID: 10471062",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10471062/product-engineer-ai-agents-ies-latech-gis",
+      "matched_keywords": [
+        "agentic",
+        "latency",
+        "ai agent"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic systems* and *latency optimization* align with Hans's AI direction, but _production LLM deployment_ experience remains early-stage.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

@@ -7149,5 +7149,34 @@
       "raw_decision": "",
       "timestamp": "2026-07-11 23:00"
     }
+  ],
+  "2026-07-12": [
+    {
+      "job_id": "c3f5e52b41",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Product Engineer - AI Agents, IES LATech & GIS - Job ID: 10471062",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10471062/product-engineer-ai-agents-ies-latech-gis",
+      "matched_keywords": [
+        "agentic",
+        "latency",
+        "ai agent"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic systems* and *latency optimization* align with Hans's AI direction, but _production LLM deployment_ experience remains early-stage.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-12T12:04:13.143482"
+    }
   ]
 }
