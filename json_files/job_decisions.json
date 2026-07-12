@@ -7109,5 +7109,45 @@
       "raw_decision": "",
       "timestamp": "2026-07-10 23:00"
     }
+  ],
+  "2026-07-11": [
+    {
+      "job_id": "0b2f8f4001",
+      "number": "1",
+      "title": "Agentic AI Engineer, Remote Job, July 2026",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://dynamitejobs.com/company/benchling/remote-job/agentic-ai-engineer",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-11 23:00"
+    },
+    {
+      "job_id": "47688fef40",
+      "number": "2",
+      "title": "Agentic AI Engineer - Remote - Indeed.com",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.indeed.com/viewjob?jk=39daed781b908d9a",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-11 23:00"
+    }
   ]
 }
