@@ -1,0 +1,24 @@
+
+============================================================
+  Review Decisions Run: 2026-07-13 12:00:02
+============================================================
+
+[GIT] Pulling latest from GitHub...
+   [OK] Already up to date.
+
+[SYNC] Starting Google Form → job_decisions.json sync...
+[SYNC] Loaded 120 archived job slots from today_jobs_run_*.json files (token sync)
+[SYNC] Loaded 167 archived job slots from today_jobs_*.json files (legacy fallback)
+[SYNC] Sheet headers: ['Timestamp', 'Job Number', 'Decision', 'Reason for not Applying (Other)', 'Job Token', 'Column 1', 'Question 1: Job Number', 'Decision', 'Reason for Not Applying (Other)', 'Question 1: Job Number', 'Question 1: Job Number']
+[SYNC] 421 form response rows found
+[SYNC] Parsed 0 valid form responses
+[SYNC] No responses to sync — skipping.
+[SYNC] 0 new decisions added from Google Form, 0 already present
+[OK] Found 1 unreviewed 'Other' decision(s) in job_decisions.json
+   [OK] Attached job_decisions_2026-07-13.json (backup)
+[OK] Review email sent to harichardson68@gmail.com
+[OK] Marked 1 entry/entries as reviewed in job_decisions.json
+[GIT] Committing and pushing updated job_decisions.json...
+   [OK] Pushed: 'Review decisions sent — items marked reviewed — 2026-07-13'
+
+[DONE] Review run completed at 2026-07-13 12:00:14
