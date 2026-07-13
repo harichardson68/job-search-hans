@@ -7152,9 +7152,91 @@
   ],
   "2026-07-12": [
     {
+      "job_id": "0e05ff46c0",
+      "number": "1",
+      "title": "Remote, ML, Prompt Engineer, Generative AI - Jobs - AI is Everywhere",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://aiiseverywhere.com/jobs",
+      "matched_keywords": [
+        "prompt engineer",
+        "openai",
+        "generative ai",
+        "machine learning engineer",
+        "anthropic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-12 23:00"
+    },
+    {
+      "job_id": "7e28c0c047",
+      "number": "2",
+      "title": "Agentic AI Engineer / Software Engineer - AI Applications (Remote US)",
+      "company": "AI Applications (Remote US)",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.tealhq.com/job/agentic-ai-engineer-software-engineer-ai-applications_7ea1ac7e886d303282cfc45dc4b9d1452c129",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-12 23:00"
+    },
+    {
+      "job_id": "d4328c2dd4",
+      "number": "3",
+      "title": "Software Engineering MTS - Full-Stack/Agentic AI Engineer",
+      "company": "Full-Stack/Agentic AI Engineer",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Software-Engineering-MTS---Full-Stack-Agentic-AI-Engineer_JR350332",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-12 23:00"
+    },
+    {
+      "job_id": "5e32e86adf",
+      "number": "G1",
+      "title": "Remote Senior Mainframe COBOL Developer job at Lumen ... - Lensa",
+      "company": "Lensa",
+      "track": "Gap Track",
+      "score": 95,
+      "url": "https://lensa.com/job-v1/lumen-solutions-group-inc/remote/senior-mainframe-developer/a4d9eb2712d9d5a443df2d20fd24976c",
+      "matched_keywords": [
+        "mainframe developer",
+        "mainframe",
+        "jcl",
+        "cics",
+        "vsam",
+        "cobol",
+        "cobol developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-12 23:00"
+    },
+    {
       "job_id": "c3f5e52b41",
       "number": "A1",
-      "number_display": "A1",
       "title": "Product Engineer - AI Agents, IES LATech & GIS - Job ID: 10471062",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -7166,17 +7248,10 @@
         "ai agent"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic systems* and *latency optimization* align with Hans's AI direction, but _production LLM deployment_ experience remains early-stage.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-12T12:04:13.143482"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-12 23:00"
     }
   ]
 }
