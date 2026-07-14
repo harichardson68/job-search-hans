@@ -7255,5 +7255,97 @@
       "raw_decision": "",
       "timestamp": "2026-07-12 23:00"
     }
+  ],
+  "2026-07-13": [
+    {
+      "job_id": "8181cd6e23",
+      "number": "1",
+      "title": "Hire LangChain Developers & AI Agent Developers",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://remoteai.io/v2/hr/langchain-developers",
+      "matched_keywords": [
+        "ai agent developer",
+        "langchain developer",
+        "langchain",
+        "llm application",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": "Freelancer",
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-07-13 23:00"
+    },
+    {
+      "job_id": "e27834e625",
+      "number": "2",
+      "title": "AI QA Engineer @ State Street",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://testdevjobs.com/job/state-street-ai-qa-engineer-22225/",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-07-13 23:00"
+    },
+    {
+      "job_id": "fe24536497",
+      "number": "3",
+      "title": "AI Automation Engineer (AI Implementer) at QuickTeam",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteleaf.com/company/quickteam/ai-automation-engineer-ai-implementer-mexico/",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Mexico",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-13 23:00"
+    },
+    {
+      "job_id": "51d11ad65e",
+      "number": "4",
+      "title": "AI Integration Engineer (Fullstack) at WorkorAI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://hirify.me/jobs/732700-ai-integration-engineer-fullstack",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Unknown location and sketchy",
+      "raw_decision": "Other",
+      "timestamp": "2026-07-13 23:00"
+    },
+    {
+      "job_id": "c60ef72eeb",
+      "number": "5",
+      "title": "AI Engineer \u2013 Marketing & GTM Systems @ Rwazi, Inc.",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/rwazi/21ca2582-5797-4488-b46f-5103f9d77226",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-13 23:00"
+    }
   ]
 }
