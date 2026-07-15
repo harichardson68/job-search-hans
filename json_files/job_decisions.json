@@ -7347,5 +7347,45 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-07-13 23:00"
     }
+  ],
+  "2026-07-14": [
+    {
+      "job_id": "b608acbaca",
+      "number": "1",
+      "title": "Agentic AI Engineer - QTech US Inc - Remote in Chicago ...",
+      "company": "QTech US Inc",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/47e725e8-e656-461a-aad1-a312a8585447",
+      "matched_keywords": [
+        "ai engineer",
+        "ai agent",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-14 23:00"
+    },
+    {
+      "job_id": "4db96b357b",
+      "number": "2",
+      "title": "AI Automation Engineer [Remote] - Job Search - ICIMS",
+      "company": "Job Search",
+      "track": "AI Engineering",
+      "score": 50,
+      "url": "https://careers-gdms.icims.com/jobs/72798/ai-automation-engineer-%5Bremote%5D/job",
+      "matched_keywords": [
+        "ai automation engineer",
+        "ims"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-14 23:00"
+    }
   ]
 }
