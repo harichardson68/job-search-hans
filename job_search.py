@@ -462,7 +462,7 @@ DEBUG_MODE = True   # Set to False once confirmed working
 # 2026-06-26: Set to False for a zero-cost test run while validating the
 # Gap Track widening — set back to True once you've reviewed the output
 # and want real cover letters again.
-GENERATE_COVER_LETTERS = False  # Set to False to disable cover letter generation
+GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
 
 # ─── PIPELINE FUNNEL INSTRUMENTATION ─────────────────────────
 # Tracks where jobs get filtered out at each stage of the pipeline.
