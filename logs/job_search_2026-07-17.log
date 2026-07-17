@@ -1,6 +1,6 @@
 
 ============================================================
-  Job Search Run: 2026-07-17 12:00:12
+  Job Search Run: 2026-07-17 12:19:47
 ============================================================
 [GIT] Pulling latest from GitHub...
    [OK] Already up to date.
@@ -11,6 +11,9 @@
 =======================================================
 
 [SEARCH] Searching RemoteOK...
+   [DEBUG] RemoteOK FILTERED-title: Content & Digital Marketing Specialist
+   [DEBUG] RemoteOK FILTERED-title: Sales Development Representative
+   [DEBUG] RemoteOK FILTERED-score: Administrative Assistant
    [DEBUG] RemoteOK FILTERED-score: Graphic Designer
    [DEBUG] RemoteOK FILTERED-title: Python Developer
    [DEBUG] RemoteOK FILTERED-score: Junior Software Engineer
@@ -60,6 +63,7 @@
    [DEBUG] RemoteOK FILTERED-score: Technical Officer Major Projects
    [DEBUG] RemoteOK FILTERED-level (title:senior-keyword:vp-no-loadrunner): Servpro is Hiring
    [DEBUG] RemoteOK FILTERED-score: Operador de Portaria Remota Recife PE Vagas Profissionais
+   [DEBUG] RemoteOK FILTERED-title: Department Supervisor SAANICH
    [DEBUG] RemoteOK FILTERED-score: TEMPLATER
    [DEBUG] RemoteOK FILTERED-score: Virtual Executive Assistant
    [DEBUG] RemoteOK FILTERED-title: Entry Level Administrative Assistant
@@ -106,10 +110,6 @@
    [DEBUG] RemoteOK FILTERED-score: Bookkeeper
    [DEBUG] RemoteOK FILTERED-title: Data Entry Clerk Data Entry Specialist
    [DEBUG] RemoteOK FILTERED-title: Online Tutoring Jobs Teaching Vacancy
-   [DEBUG] RemoteOK FILTERED-title: English Language Teacher Jobs Karachi Join GCE Academy
-   [DEBUG] RemoteOK FILTERED-title: Create Your Own
-   [DEBUG] RemoteOK FILTERED-title: Entry Level Administrative Professional Operations &amp; Off
-   [DEBUG] RemoteOK FILTERED-score: AtenciÃ³n a Clientes Remoto
    [OK] RemoteOK: 1 relevant jobs found
 [SEARCH] Searching Remotive...
    [DEBUG] Remotive: 41 raw results, status 200
@@ -209,6 +209,7 @@
    [DEBUG] Serper 'site:roberthalf.com "loadrunner" "performance" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper '"performance center" "loadrunner" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper FILTERED-searchpage: Remote qa jobs in Charlotte, NC
    [DEBUG] Serper FILTERED-searchpage: Senior Performance Test Engineer Jobs
    [DEBUG] Serper FILTERED-non-US (city/country india): Loadrunner Engineer- LMCO Job in remotepromsp at A
    [DEBUG] Serper '"performance test engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
@@ -217,21 +218,20 @@
    [DEBUG] Serper FILTERED-non-US (city/country india): Loadrunner Jobs in the Middle East (Jul 2026)
    [DEBUG] Serper '"load test engineer" "loadrunner" remote': 0 jobs, 0 organic, status 200
    [DEBUG] Serper '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper FILTERED-non-US (city/country madrid): Fully Remote Performance Testing Expert Architect
    [DEBUG] Serper FILTERED-non-US (tld .co.uk): Senior Performance Engineer Job Trends, Salaries &
-   [DEBUG] Serper FILTERED-non-US (city/country canada): Dayforce hiring Performance Engineer Sr in Canada
    [DEBUG] Serper FILTERED-non-US (city/country pune): Senior Performance Engineer
    [DEBUG] Serper FILTERED-listing-title: 73 Performance Engineer Jobs in Chennai
-   [DEBUG] Serper 'site:boards.greenhouse.io "prompt engineer" "remote"': 0 jobs, 1 organic, status 200
-   [DEBUG] Serper 'site:jobs.lever.co "prompt engineer" "remote"': 0 jobs, 4 organic, status 200
+   [DEBUG] Serper 'site:boards.greenhouse.io "prompt engineer" "remote"': 0 jobs, 0 organic, status 200
+   [DEBUG] Serper 'site:jobs.lever.co "prompt engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.ashbyhq.com "prompt engineer" "remote"': 0 jobs, 2 organic, status 200
    [DEBUG] Serper 'site:myworkdayjobs.com "prompt engineer" remote': 0 jobs, 1 organic, status 200
    [DEBUG] Serper 'site:dice.com/job-detail "prompt engineer" remote': 0 jobs, 4 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country korea): English & Korean (South Korea ONLY) - Entry level 
    [DEBUG] Serper '"prompt engineer" remote "generative ai"': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-searchpage: Ai prompt engineer remote jobs
    [DEBUG] Serper FILTERED-searchpage: Prompt Engineer jobs in Remote
+   [DEBUG] Serper FILTERED-searchpage: Ai prompt engineer remote jobs
    [DEBUG] Serper FILTERED-non-US (city/country chennai): Hiring Applied AI / Generative AI Engineer (Freshe
-   [DEBUG] Serper FILTERED-non-US (city/country dubai): Get certified in AI prompt engineering with Dubai'
    [DEBUG] Serper FILTERED-searchpage: 496 prompt engineer remote jobs in India, July 202
    [DEBUG] Serper '"prompt engineer" remote "llm"': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Ai prompt engineer remote jobs
@@ -248,29 +248,29 @@
    [DEBUG] Serper FILTERED-non-US (city/country johannesburg): Architect – Application Development - Job with Hir
    [DEBUG] Serper FILTERED-non-US (tld .cz): Programátor Python
    [DEBUG] Serper FILTERED-non-US (city/country johannesburg): IT Developer Jobs in Paulshof
+   [DEBUG] Serper FILTERED-non-US (city/country hyderabad): Banking software company Jobs in Hyderabad - July 
    [DEBUG] Serper '"ai agent developer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-non-US (tld .it): AI Agent Middle/Senior Developer - Itransition
    [DEBUG] Serper '"agentic ai" engineer remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper FILTERED-non-US (city/country toronto): Insight Global hiring Agentic AI Engineer in Ontar
+   [DEBUG] Serper FILTERED-non-US (city turin): Senior Forward Deployed Engineer (Agentic AI, RAG,
    [DEBUG] Serper '"langchain developer" OR "langchain engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country india): $51-$67/hr Ai Jobs in Indiana (NOW HIRING) Jul 202
    [DEBUG] Serper FILTERED-non-US (city/country mumbai): Photo by Siliguri Institute of Technology
    [DEBUG] Serper FILTERED-non-US (city/country australia): Zero Knowledge: Solution for Digital Identity? w/ 
-   [DEBUG] Serper FILTERED-non-US (city/country mumbai): BlackRock is Hiring Python Developers (Analyst)! L
+   [DEBUG] Serper FILTERED-non-US (city/country mumbai): 🚀 BlackRock is Hiring Python Developers (Analyst)!
    [DEBUG] Serper 'site:boards.greenhouse.io "ai automation engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.lever.co "ai integration engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper '"ai automation engineer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-searchpage: 347 automation engineer Jobs in Remote, July 2026
    [DEBUG] Serper '"ai integration engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: What AI Integration Engineer Jobs are in Remote?
    [DEBUG] Serper FILTERED-non-US (city/country london): AI Integration Engineer Contract Job
    [DEBUG] Serper '"ai solutions engineer" remote entry level OR mid': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-non-US (city/country canada): [Hiring] AI Solutions Engineer @WellnessLiving
+   [DEBUG] Serper FILTERED-searchpage: Ai solutions engineer jobs in Virginia, USA
    [DEBUG] Serper FILTERED-searchpage: Ai prompt engineer remote jobs
    [DEBUG] Serper '"generative ai engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (tld .it): Remote Generative AI Engineer - Get.It
    [DEBUG] Serper FILTERED-searchpage: 13131 ai engineer Jobs in United States, July 2026
    [DEBUG] Serper FILTERED-non-US (city/country bangalore): Lead Generative AI Engineer job in Bangalore, Karn
-   [DEBUG] Serper FILTERED-non-US (city/country montreal): Generative AI Engineer - Apertera - Montreal, QC
    [DEBUG] Serper 'site:boards.greenhouse.io "mlops engineer" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "ai engineer" "remote"': 0 jobs, 4 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country uk): Staff AI Engineer - 2nd Horizon | UK | Remote
@@ -295,6 +295,7 @@
    [DEBUG] Serper FILTERED-searchpage: Cobol jobs in Remote
    [DEBUG] Serper FILTERED-searchpage: Cobol developer jobs in Remote
    [DEBUG] Serper FILTERED-searchpage: 24 cobol remote jobs in India, July 2026
+   [DEBUG] Serper FILTERED-non-US (city/country melbourne): Cobol Jobs in All Melbourne VIC - Jul 2026
    [DEBUG] Serper 'site:himalayas.app "loadrunner" OR "performance engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country united kingdom): Automattic Remote Salaries
    [DEBUG] Serper FILTERED-non-US (city/country singapore): Remote Senior Server Engineer Job at Adstify Searc
@@ -304,23 +305,24 @@
    [DEBUG] Serper 'site:builtin.com/job "ai engineer" OR "performance engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country poland): Applied AI Engineer -Poland(Remote) - DoiT
    [DEBUG] Serper FILTERED-non-US (city/country germany): Staff AI Engineer - 2nd Horizon | Germany | Remote
-   [DEBUG] Serper FILTERED-non-US (city/country canada): AI Engineer - Metova, Inc.
    [DEBUG] Serper 'site:builtin.com/job "ai qa" OR "ai test" remote': 0 jobs, 3 organic, status 200
    [DEBUG] Serper '"AI QA engineer" OR "AI test engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (tld .co.in): AI QA Engineer - Playwright Job in Remote
+   [DEBUG] Serper FILTERED-non-US (tld .in): AI QA Engineer vs SDET: Key Differences in 2026
    [DEBUG] Serper FILTERED-non-US (tld .co.uk): Ai Test Lead Contract Job
    [DEBUG] Serper '"LLM evaluation engineer" remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-non-US (city/country singapore): Multilingual LLM Evaluation Engineer - Singapore
    [DEBUG] Serper FILTERED-non-US (city/country johannesburg): Senior Generative AI Engineer | LLM Solutions & Au
+   [DEBUG] Serper FILTERED-non-US (city/country singapore): Multilingual LLM Evaluation Engineer - Singapore
    [DEBUG] Serper FILTERED-non-US (city turin): Remote Software Engineer – AI Research & Evaluatio
-   [DEBUG] Serper FILTERED-non-US (city/country johannesburg): Principal Architect Jobs in Secunda
-   [DEBUG] Serper '"AI reliability engineer" remote': 0 jobs, 7 organic, status 200
+   [DEBUG] Serper FILTERED-non-US (city/country johannesburg): AWS Architect Jobs in Pixley Ka Seme Karoo
+   [DEBUG] Serper FILTERED-non-US (city/country johannesburg): Principal AWS Architect - Job with Hi-Tech Recruit
+   [DEBUG] Serper '"AI reliability engineer" remote': 0 jobs, 8 organic, status 200
    [DEBUG] Serper FILTERED-searchpage: Search | Parallel
-   [DEBUG] Serper FILTERED-fp_domain:jobrapido.com: Senior AI Reliability Engineer — Production System
+   [DEBUG] Serper FILTERED-non-US (city/country dubai): Senior AI Reliability Engineer — Production System
    [DEBUG] Serper FILTERED-non-US (city/country berlin): Healthtech Jobs at European Startups (675 open) | 
    [DEBUG] Serper '"AI observability" engineer remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper '"LLM observability" engineer remote': 0 jobs, 10 organic, status 200
-   [DEBUG] Serper FILTERED-non-US (city/country canada): Sr. Observability Engineering - McKesson
+   [DEBUG] Serper FILTERED-non-US (city/country argentina): Ryz Labs hiring Applied AI Engineer in Argentina
    [DEBUG] Serper '"AI SDET" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country hyderabad): WFH Testing Jobs 2026 | Manual & Automation QA Job
    [DEBUG] Serper FILTERED-non-US (tld .in): SDET (Software Development Engineer in Test) with 
@@ -330,12 +332,11 @@
    [DEBUG] Serper '"AI workflow engineer" remote': 0 jobs, 10 organic, status 200
    [DEBUG] Serper FILTERED-non-US (city/country mexico): micro1 hiring AI Workflow Specialist in Latin Amer
    [DEBUG] Serper FILTERED-non-US (city/country berlin): XpertDirect hiring AI Workflow Engineer in Europea
-   [DEBUG] Serper FILTERED-searchpage: Senior software engineer jobs in Livermore, CA
    [DEBUG] Serper FILTERED-searchpage: 496 prompt engineer remote jobs in India, July 202
    [DEBUG] Serper 'site:jobs.lever.co "ai sdet" OR "llm test" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"': 0 jobs, 0 organic, status 200
    [DEBUG] Serper 'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"': 0 jobs, 0 organic, status 200
-   [OK] Google Jobs: 25 relevant jobs found
+   [OK] Google Jobs: 24 relevant jobs found
 [SEARCH] Searching Adzuna...
    [DEBUG] Adzuna 'loadrunner performance engineer': 0 raw results, status 200
    [DEBUG] Adzuna 'loadrunner': 20 raw results, status 200
@@ -391,55 +392,51 @@
 [OK] Removed 3 duplicate jobs already sent previously
 
 =======================================================
-[STATS] Total relevant jobs found: 16
-[OK] Ran fit evaluation on 14 AI-track job(s) (14 succeeded, 0 empty/failed)
+[STATS] Total relevant jobs found: 15
+[OK] Ran fit evaluation on 13 AI-track job(s) (13 succeeded, 0 empty/failed)
 [OK] career stretch: 6 candidates exceeded cap of 0 — top 0 kept, 6 dropped
-[STATS] Found 16 jobs total
-[STATS] Pool A (Performance/AI): sending top 8 of 14 candidates
+[STATS] Found 15 jobs total
+[STATS] Pool A (Performance/AI): sending top 7 of 13 candidates
 [STATS] Pool B (QA Automation/Remote Income Floor incl. COBOL): sending top 2 of 2 candidates
 =======================================================
 
-[STATS] Generating cover letters for 10 jobs...
+[STATS] Generating cover letters for 9 jobs...
 
-  [01] Score: 63 | Tier:Strong Fit    | Google Jobs | AI Engineer (Agentic)--100% Remote - Saxon Global 
-        Saxon Global Inc. | https://www.dice.com/job-detail/b8a9995e-6835-45ac-a749-9835
-        [FIT] **Strong Fit** — *Agentic AI* development matches career pivot; *IBM GenAI cert* and Claude projects solid, but _product...
+  [01] Score: 63 | Tier:Strong Fit    | Google Jobs | Healx - Agentic AI Engineer (life sciences)
+        Agentic AI Engineer (life sciences) | https://jobs.lever.co/healx/c1dc1b43-066f-427f-a299-0a0b0dc4
+        [FIT] **Strong Fit** — *Agentic AI* and *GenAI certification* align well; _Cambridge location_ and life sciences domain specif...
 
   [02] Score: 40 | Tier:Strong Fit    | Google Jobs | AI Automation Engineer [Remote]
         N/A | https://www.indeed.com/viewjob?jk=8385eb6b0d0713f9
-        [FIT] **Strong Fit** — *AI automation* + *agent engineering* aligns with Hans's dual-track skills; _production deployment dept...
+        [FIT] **Strong Fit** — *AI automation* and *agent engineering* align with Hans's active GenAI projects; _production deployment...
 
   [03] Score: 40 | Tier:Strong Fit    | Google Jobs | Applied AI Engineer @ OpenRouter
         N/A | https://jobs.ashbyhq.com/openrouter/407f71b5-4b1f-4666-91bd-
-        [FIT] **Strong Fit** — *Remote AI engineering* role matches career pivot; *GenAI/Claude* skills evident, but _production LLM d...
+        [FIT] **Strong Fit** — *Remote US* *AI engineer* role matches Hans's active GenAI upskilling; minor _production LLM deployment...
 
-  [04] Score: 40 | Tier:Strong Fit    | Google Jobs | AI Engineer @ Vytalize Health
-        N/A | https://jobs.ashbyhq.com/vytalize%20health/6ecd6562-db2f-470
-        [FIT] **Strong Fit** — *AI engineering* trajectory matches Hans's GenAI certs and agent projects; _production ML experience_ g...
-
-  [05] Score: 40 | Tier:Strong Fit    | Google Jobs | Applied AI Engineer (US) @ Bjak
+  [04] Score: 40 | Tier:Strong Fit    | Google Jobs | Applied AI Engineer (US) @ Bjak
         N/A | https://jobs.ashbyhq.com/bjakcareer/a88550fb-d5ce-4ecf-ba8a-
-        [FIT] **Strong Fit** — *Applied AI Engineer* role matches Hans's active GenAI/Claude projects and *remote US* location; _produ...
+        [FIT] **Strong Fit** — *Applied AI Engineer* role matches Hans's active GenAI/Claude upskilling; remote US location ideal, but...
 
-  [06] Score:173 | Tier:—             | Google Jobs | Senior Performance Engineer - Tranzeal, Inc. - Rem
+  [05] Score:173 | Tier:—             | Google Jobs | Senior Performance Engineer - Tranzeal, Inc. - Rem
         Tranzeal, Inc. | https://www.dice.com/job-detail/b5987adf-5e0b-439f-8554-1168
 
-  [07] Score:155 | Tier:—             | Google Jobs | Google Cloud Platform Performance Testing
+  [06] Score:155 | Tier:—             | Google Jobs | Google Cloud Platform Performance Testing
         N/A | https://www.dice.com/job-detail/d2631021-fea8-479f-b869-b5c4
 
-  [08] Score: 63 | Tier:Decent Fit    | Google Jobs | ML Engineer - eCom Solutions, Inc. - Remote
-        eCom Solutions, Inc. | https://www.dice.com/job-detail/59d413ca-8068-4c09-abfb-430c
-        [FIT] **Decent Fit** — *AWS* and *MLOps infrastructure* align with observability depth, but _production ML model training_ exp...
+  [07] Score: 40 | Tier:Decent Fit    | Google Jobs | AI Engineer @ Vytalize Health
+        N/A | https://jobs.ashbyhq.com/vytalize%20health/6ecd6562-db2f-470
+        [FIT] **Decent Fit** — *AI engineering* trajectory matches Hans's active learning, but JD lacks detail on _production implemen...
+
+  [08] Score: 95 | Tier:Excellent Fit | Google Jobs | Mainframe Developer Jobs | COBOL, DB2, IMS, CICS
+        N/A | https://www.aptask.com/jobs/skills/mainframe-developer-jobs
+        [FIT] **Excellent Fit** — *COBOL/mainframe* modernization role with *remote/hybrid* option at $60/hr; direct skill match and r...
 
   [09] Score: 45 | Tier:Excellent Fit | Google Jobs | Systems Administrator (COBOL Developer) IV Job [RE
         N/A | https://www.monster.com/job-openings/systems-administrator-c
-        [FIT] **Excellent Fit** — *COBOL developer* remote role at *$55–60/hr*; 24+ years IT and testing background align directly, _n...
+        [FIT] **Excellent Fit** — *COBOL developer* role at *$55–60/hr remote*; 24+ years IT experience and _mainframe-adjacent_ QA wo...
 
-  [10] Score: 95 | Tier:Strong Fit    | Google Jobs | Mainframe Developer Jobs | COBOL, DB2, IMS, CICS
-        N/A | https://www.aptask.com/jobs/skills/mainframe-developer-jobs
-        [FIT] **Strong Fit** — *COBOL/mainframe* modernization role with *direct skill match*; _contract/onsite hybrid_ structure requ...
-
-[OK] Saved 10 sent job URLs to seen_jobs.json
+[OK] Saved 9 sent job URLs to seen_jobs.json
 [OK] 6 additional jobs will appear in tomorrow's report
 
 [OK] Results saved to: C:\Users\haric\Jobsearch\json_files\job_results.json
@@ -449,35 +446,47 @@
    [DEBUG] Amazon FILTERED-non-US (sao paulo): Software Developer, IES LATECH & GIS - Job ID: 10474376
    [DEBUG] Amazon FILTERED-non-US (luxembourg): Business Intelligence - ND, Network Design Insights - Job ID
    [DEBUG] Amazon FILTERED-non-US (sao paulo): Sao Paulo, Brazil
-   [OK] Amazon Jobs: 3 relevant jobs found (10-day window)
-[STATS] Generating fit analysis for 3 AI-track Amazon Spotlight job(s)...
-        [FIT-AMZ] **Strong Fit** — *Agentic AI* and *AWS* alignment with active GenAI projects; _full-stack production deployment_ experie...
-        [FIT-AMZ] **Strong Fit** — *Agentic AI* and *AWS* align with dual-track pivot; minor _full-stack SDE_ production depth gap but sol...
-        [FIT-AMZ] **Stretch Fit** — *Agentic AI* and *AWS* alignment with Hans's active learning trajectory, but _production ML science_ b...
-[OK] Dropped 1 Amazon job(s) with hard fit disqualifiers
+   [OK] Skipped 1 Amazon jobs already seen previously
+   [OK] Amazon Jobs: 2 relevant jobs found (10-day window)
+[STATS] Generating fit analysis for 2 AI-track Amazon Spotlight job(s)...
+        [FIT-AMZ] **Strong Fit** — *Agentic AI* and *AWS* keywords match portfolio direction; _production agent deployment_ experience sti...
+        [FIT-AMZ] **Stretch Fit** — *Agentic AI* direction matches Hans's active upskilling and portfolio; _full-stack SDE_ role requires ...
 
 [EMAIL] Sending email notification...
-   [OK] Saved 10 regular + 2 Amazon jobs to today_jobs.json
+   [OK] Saved 9 regular + 2 Amazon jobs to today_jobs.json
    [OK] Archived to today_jobs_2026-07-17.json
-   [OK] Archived to today_jobs_run_20260717_120523.json (token sync source)
-   [OK] Persisted 2 Amazon jobs to job_decisions.json
-[OK] Rotated 2 legacy today_jobs archive(s) older than 30 days into archive_today_jobs/
+   [OK] Archived to today_jobs_run_20260717_122512.json (token sync source)
    Email sent to harichardson68@gmail.com
 =======================================================
 TOP 3 MATCHES WITH COVER LETTERS
 =======================================================
 
-[TOP] [63 pts] AI Engineer (Agentic)--100% Remote - Saxon Global Inc.
-   Company : Saxon Global Inc.
+[TOP] [63 pts] Healx - Agentic AI Engineer (life sciences)
+   Company : Agentic AI Engineer (life sciences)
    Source  : Google Jobs
-   URL     : https://www.dice.com/job-detail/b8a9995e-6835-45ac-a749-983526d5618d
-   Keywords: agentic, agentic ai, ai engineer
+   URL     : https://jobs.lever.co/healx/c1dc1b43-066f-427f-a299-0a0b0dc4748f?lever-source%5B%5D=jobs.vuventurepartners.com
+   Keywords: ai engineer, agentic ai, agentic
 
 --- FIT ANALYSIS ---
-**Strong Fit** — *Agentic AI* development matches career pivot; *IBM GenAI cert* and Claude projects solid, but _production LLM hands-on_ experience still building.
+**Strong Fit** — *Agentic AI* and *GenAI certification* align well; _Cambridge location_ and life sciences domain specificity are minor friction against remote preference.
 
 --- COVER LETTER ---
+Hans Richardson
+harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Open to Remote)
 
+---
+
+Dear Healx Hiring Team,
+
+Agentic AI engineering in life sciences requires exactly what most AI engineers don't have: rigorous evaluation discipline, observability instrumentation, and the systems thinking to know when an agent is *actually* working versus just appearing to. That's where my background directly applies.
+
+I've built production agentic pipelines in Python using the Claude API — multi-source orchestration, tool-use prompting, structured decision logging, and a RAG layer with ChromaDB and sentence-transformers for semantic decision support. These aren't toy projects; they run on schedules, log structured outputs, and are instrumented for continuous improvement.
+
+My 24-year engineering background means I bring reliability and observability rigor — Grafana, Prometheus, Splunk, AppDynamics — that translates directly to monitoring agentic AI systems in production. I increased system throughput 40% and reduced defect resolution time 35% at USDA by applying exactly this discipline.
+
+Healx's mission to accelerate rare disease research is genuinely compelling work. I'd welcome a conversation about contributing to it.
+
+Hans Richardson
 ----------------------------------------
 
 [TOP] [40 pts] AI Automation Engineer [Remote]
@@ -487,10 +496,23 @@ TOP 3 MATCHES WITH COVER LETTERS
    Keywords: ai automation engineer
 
 --- FIT ANALYSIS ---
-**Strong Fit** — *AI automation* + *agent engineering* aligns with Hans's dual-track skills; _production deployment depth_ still building but GenAI certs and observability stack are solid.
+**Strong Fit** — *AI automation* and *agent engineering* align with Hans's active GenAI projects; _production deployment scale_ at General Dynamics requires verification against JD details.
 
 --- COVER LETTER ---
+Hans Richardson
+harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
 
+---
+
+General Dynamics Mission Systems builds systems where failure isn't an option — and that's precisely the discipline I bring to AI automation engineering.
+
+With 24+ years in IT and an active Public Trust clearance from my current USDA contract, I've spent my career engineering reliability into complex, high-stakes systems. I'm now applying that same rigor to AI automation: I've built a production Python pipeline integrating the Anthropic Claude API for automated analysis and decision logging, implemented a RAG layer using ChromaDB and sentence-transformers for semantic retrieval, and instrumented the entire system with structured observability — the same discipline that helped me increase USDA system throughput 40% and reduce defect resolution time 35% across AWS/Kubernetes environments.
+
+My observability stack — Splunk, Grafana, Prometheus, AppDynamics — translates directly to AI system monitoring. Most AI engineers don't come with that production reliability background. I do.
+
+I'm fully remote-ready and available immediately. I'd welcome a conversation about how this background supports your mission-critical AI automation requirements.
+
+Hans Richardson
 ----------------------------------------
 
 [TOP] [40 pts] Applied AI Engineer @ OpenRouter
@@ -500,10 +522,24 @@ TOP 3 MATCHES WITH COVER LETTERS
    Keywords: ai engineer
 
 --- FIT ANALYSIS ---
-**Strong Fit** — *Remote AI engineering* role matches career pivot; *GenAI/Claude* skills evident, but _production LLM deployment_ experience still emerging.
+**Strong Fit** — *Remote US* *AI engineer* role matches Hans's active GenAI upskilling; minor _production LLM deployment_ depth gap but portfolio projects bridge it.
 
 --- COVER LETTER ---
+Hans Richardson
+harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO
 
+---
+
+Dear OpenRouter Hiring Team,
+
+Applied AI engineering at OpenRouter — a platform routing traffic across dozens of LLM providers — is precisely where my background lands hardest. I've spent 24 years engineering reliability into production systems, and for the past two years I've been building directly with LLM APIs, including a production Python pipeline integrating the Claude API for automated inference, structured decision logging, and a RAG layer using ChromaDB and sentence-transformers for semantic retrieval.
+
+What I bring that most AI engineers don't: two decades of observability and throughput discipline. At USDA I increased system throughput 40%, cut defect resolution 35%, and enforced sub-5-second SLA compliance at scale. At Sprint I load-tested systems to 12,000+ transactions per minute. Monitoring model latency, token throughput, and inference SLAs across multiple providers is the same engineering — I simply know how to instrument it.
+
+I'm fully remote-ready and available immediately. I'd welcome a conversation about how I can bring that reliability-first lens to OpenRouter's applied AI work.
+
+Respectfully,
+Hans Richardson
 ----------------------------------------
 
 [LOGS] Snapshotting run logs...
