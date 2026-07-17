@@ -1,0 +1,268 @@
+{
+  "date": "2026-07-17",
+  "run_id": "20260717_120523",
+  "jobs": [
+    {
+      "job_id": "d53a75a67f",
+      "number": "1",
+      "number_display": "1",
+      "token": "b6620f2f9b",
+      "run_id": "20260717_120523",
+      "title": "AI Engineer (Agentic)--100% Remote - Saxon Global Inc.",
+      "company": "Saxon Global Inc.",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/b8a9995e-6835-45ac-a749-983526d5618d",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* development matches career pivot; *IBM GenAI cert* and Claude projects solid, but _production LLM hands-on_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "38ca9d7ddc",
+      "number": "2",
+      "number_display": "2",
+      "token": "a016dbd9b7",
+      "run_id": "20260717_120523",
+      "title": "AI Automation Engineer [Remote]",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.indeed.com/viewjob?jk=8385eb6b0d0713f9",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation* + *agent engineering* aligns with Hans's dual-track skills; _production deployment depth_ still building but GenAI certs and observability stack are solid.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7ca10e6d6f",
+      "number": "3",
+      "number_display": "3",
+      "token": "c7b69d92db",
+      "run_id": "20260717_120523",
+      "title": "Applied AI Engineer @ OpenRouter",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/openrouter/407f71b5-4b1f-4666-91bd-394f3c26f19d",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Remote AI engineering* role matches career pivot; *GenAI/Claude* skills evident, but _production LLM deployment_ experience still emerging.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "68dc1109b6",
+      "number": "4",
+      "number_display": "4",
+      "token": "071fe0d48e",
+      "run_id": "20260717_120523",
+      "title": "AI Engineer @ Vytalize Health",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/vytalize%20health/6ecd6562-db2f-470b-b836-b69a4f6a30b2",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* trajectory matches Hans's GenAI certs and agent projects; _production ML experience_ gap offset by observability and systems depth.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "19dff24755",
+      "number": "5",
+      "number_display": "5",
+      "token": "703d84aafc",
+      "run_id": "20260717_120523",
+      "title": "Applied AI Engineer (US) @ Bjak",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/a88550fb-d5ce-4ecf-ba8a-9583629a02d7",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Applied AI Engineer* role matches Hans's active GenAI/Claude projects and *remote US* location; _production LLM deployment_ experience still building but foundational skills solid.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9fffd6ffc8",
+      "number": "6",
+      "number_display": "6",
+      "token": "7128d2d509",
+      "run_id": "20260717_120523",
+      "title": "Senior Performance Engineer - Tranzeal, Inc. - Remote",
+      "company": "Tranzeal, Inc.",
+      "track": "Performance Engineering",
+      "score": 173,
+      "url": "https://www.dice.com/job-detail/b5987adf-5e0b-439f-8554-116891f7a880",
+      "matched_keywords": [
+        "lre",
+        "loadrunner",
+        "performance engineer",
+        "jmeter",
+        "microservices"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:senior-but-loadrunner-present"
+    },
+    {
+      "job_id": "523f33fb8c",
+      "number": "7",
+      "number_display": "7",
+      "token": "6b2c494f01",
+      "run_id": "20260717_120523",
+      "title": "Google Cloud Platform Performance Testing",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 155,
+      "url": "https://www.dice.com/job-detail/d2631021-fea8-479f-b869-b5c49626420e",
+      "matched_keywords": [
+        "performance engineer",
+        "lre",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "bbfd646ca5",
+      "number": "8",
+      "number_display": "8",
+      "token": "d4a2717230",
+      "run_id": "20260717_120523",
+      "title": "ML Engineer - eCom Solutions, Inc. - Remote",
+      "company": "eCom Solutions, Inc.",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/59d413ca-8068-4c09-abfb-430c2e5eb13f",
+      "matched_keywords": [
+        "ml engineer",
+        "aws",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AWS* and *MLOps infrastructure* align with observability depth, but _production ML model training_ experience gap requires bridging through AI cert projects.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9cf270e057",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "3c823cdb82",
+      "run_id": "20260717_120523",
+      "title": "Systems Administrator (COBOL Developer) IV Job [REMOTE]",
+      "company": "N/A",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://www.monster.com/job-openings/systems-administrator-cobol-developer-iv-home-wa--e15e0d93-c21a-4e43-a601-d68bbe2b7a53",
+      "matched_keywords": [
+        "cobol developer",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *COBOL developer* remote role at *$55\u201360/hr*; 24+ years IT and testing background align directly, _no friction_.",
+      "level_signal": "none:cobol-seniority-exempt"
+    },
+    {
+      "job_id": "d328f19cf0",
+      "number": "G2",
+      "number_display": "G2",
+      "token": "a3453680bb",
+      "run_id": "20260717_120523",
+      "title": "Mainframe Developer Jobs | COBOL, DB2, IMS, CICS",
+      "company": "N/A",
+      "track": "Gap Track",
+      "score": 95,
+      "url": "https://www.aptask.com/jobs/skills/mainframe-developer-jobs",
+      "matched_keywords": [
+        "mainframe",
+        "cics",
+        "cobol",
+        "db2",
+        "mainframe developer",
+        "ims",
+        "jcl"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *COBOL/mainframe* modernization role with *direct skill match*; _contract/onsite hybrid_ structure requires clarity but pay exceeds floor.",
+      "level_signal": "none:cobol-seniority-exempt"
+    },
+    {
+      "job_id": "7d2ed90b6d",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "b1d49bca23",
+      "run_id": "20260717_120523",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10476205/sr-delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI projects; _full-stack production deployment_ experience gap is bridgeable given senior SDE background.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1a2e069024",
+      "number": "A2",
+      "number_display": "A2",
+      "token": "e9f271e90e",
+      "run_id": "20260717_120523",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10476976/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* align with dual-track pivot; minor _full-stack SDE_ production depth gap but solid GenAI foundation and observability background transfer well.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
