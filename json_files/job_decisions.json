@@ -7518,58 +7518,211 @@
   ],
   "2026-07-17": [
     {
+      "job_id": "65b74c6b50",
+      "number": "1",
+      "title": "Healx - Agentic AI Engineer (life sciences)",
+      "company": "Agentic AI Engineer (life sciences)",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.lever.co/healx/c1dc1b43-066f-427f-a299-0a0b0dc4748f?lever-source%5B%5D=jobs.vuventurepartners.com",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "38ca9d7ddc",
+      "number": "2",
+      "title": "AI Automation Engineer [Remote]",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.indeed.com/viewjob?jk=8385eb6b0d0713f9",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "7ca10e6d6f",
+      "number": "3",
+      "title": "Applied AI Engineer @ OpenRouter",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/openrouter/407f71b5-4b1f-4666-91bd-394f3c26f19d",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "19dff24755",
+      "number": "4",
+      "title": "Applied AI Engineer (US) @ Bjak",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/bjakcareer/a88550fb-d5ce-4ecf-ba8a-9583629a02d7",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "9fffd6ffc8",
+      "number": "5",
+      "title": "Senior Performance Engineer - Tranzeal, Inc. - Remote",
+      "company": "Tranzeal, Inc.",
+      "track": "Performance Engineering",
+      "score": 173,
+      "url": "https://www.dice.com/job-detail/b5987adf-5e0b-439f-8554-116891f7a880",
+      "matched_keywords": [
+        "microservices",
+        "jmeter",
+        "performance engineer",
+        "loadrunner",
+        "lre"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "523f33fb8c",
+      "number": "6",
+      "title": "Google Cloud Platform Performance Testing",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 155,
+      "url": "https://www.dice.com/job-detail/d2631021-fea8-479f-b869-b5c49626420e",
+      "matched_keywords": [
+        "jmeter",
+        "lre",
+        "performance testing",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "68dc1109b6",
+      "number": "7",
+      "title": "AI Engineer @ Vytalize Health",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/vytalize%20health/6ecd6562-db2f-470b-b836-b69a4f6a30b2",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "d328f19cf0",
+      "number": "G1",
+      "title": "Mainframe Developer Jobs | COBOL, DB2, IMS, CICS",
+      "company": "N/A",
+      "track": "Gap Track",
+      "score": 95,
+      "url": "https://www.aptask.com/jobs/skills/mainframe-developer-jobs",
+      "matched_keywords": [
+        "cobol",
+        "jcl",
+        "cics",
+        "mainframe",
+        "db2",
+        "mainframe developer",
+        "ims"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
+      "job_id": "9cf270e057",
+      "number": "G2",
+      "title": "Systems Administrator (COBOL Developer) IV Job [REMOTE]",
+      "company": "N/A",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://www.monster.com/job-openings/systems-administrator-cobol-developer-iv-home-wa--e15e0d93-c21a-4e43-a601-d68bbe2b7a53",
+      "matched_keywords": [
+        "cobol developer",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-17 23:00"
+    },
+    {
       "job_id": "7d2ed90b6d",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
       "score": 46,
       "url": "https://www.amazon.jobs/en/jobs/10476205/sr-delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
       "matched_keywords": [
-        "aws",
+        "agentic ai",
         "agentic",
-        "agentic ai"
+        "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI projects; _full-stack production deployment_ experience gap is bridgeable given senior SDE background.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-17T12:05:23.731036"
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-17 23:00"
     },
     {
       "job_id": "1a2e069024",
       "number": "A2",
-      "number_display": "A2",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
       "score": 46,
       "url": "https://www.amazon.jobs/en/jobs/10476976/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
       "matched_keywords": [
-        "aws",
+        "agentic ai",
         "agentic",
-        "agentic ai"
+        "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* align with dual-track pivot; minor _full-stack SDE_ production depth gap but solid GenAI foundation and observability background transfer well.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-17T12:05:23.731087"
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-17 23:00"
     }
   ]
 }
