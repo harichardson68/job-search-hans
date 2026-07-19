@@ -7727,9 +7727,80 @@
   ],
   "2026-07-18": [
     {
+      "job_id": "a904fec7b1",
+      "number": "1",
+      "title": "AI Engineer \u2013 Agentic AI \u2013 Remote (all genders) at",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.remotejobs.com/jobs/ai-engineer-agentic-ai-remote-all-genders-c2937e35",
+      "matched_keywords": [
+        "agentic ai",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-18 23:00"
+    },
+    {
+      "job_id": "295780114d",
+      "number": "2",
+      "title": "Applied AI Engineer, Work From Home - Parallel Partners",
+      "company": "Parallel Partners",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/0131d24a-bd7e-459f-833e-53eec5ed3f68",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-18 23:00"
+    },
+    {
+      "job_id": "880af3d520",
+      "number": "3",
+      "title": "AI Reliability Engineer & AIOps - Magno Silva",
+      "company": "Magno Silva",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://magnosilva.com/en/",
+      "matched_keywords": [
+        "ai reliability engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "search_page",
+      "reason": null,
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-07-18 23:00"
+    },
+    {
+      "job_id": "b67c9a5924",
+      "number": "4",
+      "title": "AI Engineer - MHK TECH INC - Remote",
+      "company": "MHK TECH INC",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/d08a049a-0915-4941-9822-b69ba937f419",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-18 23:00"
+    },
+    {
       "job_id": "4527d2c628",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -7741,22 +7812,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment strong; active GenAI learning and _full-stack production depth_ still building, but realistic near-term match.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-18T12:04:31.277865"
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-18 23:00"
     },
     {
       "job_id": "c8ea5d0901",
       "number": "A2",
-      "number_display": "A2",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -7768,17 +7831,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* skills align with Hans's active GenAI trajectory; minor _full-stack SDE_ depth needed but realistic bridge from performance engineering.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-18T12:04:31.277883"
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-18 23:00"
     }
   ]
 }
