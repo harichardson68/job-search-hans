@@ -7294,7 +7294,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-07-13 23:00"
+      "timestamp": "2026-07-13 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "fe24536497",
@@ -7328,7 +7330,9 @@
       "decision": "other",
       "reason": "Unknown location and sketchy",
       "raw_decision": "Other",
-      "timestamp": "2026-07-13 23:00"
+      "timestamp": "2026-07-13 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "c60ef72eeb",
@@ -7551,7 +7555,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-07-17 23:00"
+      "timestamp": "2026-07-17 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "7ca10e6d6f",
@@ -7585,7 +7591,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
-      "timestamp": "2026-07-17 23:00"
+      "timestamp": "2026-07-17 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "9fffd6ffc8",
@@ -7626,7 +7634,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-07-17 23:00"
+      "timestamp": "2026-07-17 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "68dc1109b6",
@@ -7760,7 +7770,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-07-18 23:00"
+      "timestamp": "2026-07-18 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "880af3d520",
@@ -7945,7 +7957,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Already Seen/Duplicate",
-      "timestamp": "2026-07-19 23:00"
+      "timestamp": "2026-07-19 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-20"
     },
     {
       "job_id": "9346d1f31e",
