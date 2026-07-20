@@ -1,0 +1,155 @@
+{
+  "date": "2026-07-19",
+  "run_id": "20260719_195640",
+  "jobs": [
+    {
+      "job_id": "eb758194dc",
+      "number": "1",
+      "number_display": "1",
+      "token": "897cb12bea",
+      "run_id": "20260719_195640",
+      "title": "AI Engineer - SYSTEM SOFT TECHNOLOGIES LLC",
+      "company": "SYSTEM SOFT TECHNOLOGIES LLC",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/3923c567-b42b-49fa-9741-319cb8f29980",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role matches active GenAI upskilling and *prompt engineering* focus; minor _production LLM deployment_ depth still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "990fbf3ce9",
+      "number": "2",
+      "number_display": "2",
+      "token": "e23dd4a308",
+      "run_id": "20260719_195640",
+      "title": "LLM Engineer jobs at Anicalls",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 75,
+      "url": "https://www.pnet.co.za/cmp/en/anicalls-11633/jobs/llm-engineer",
+      "matched_keywords": [
+        "llm engineer",
+        "uat",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *LLM Engineer* role matches Hans's active AI upskilling and *GenAI credentials*; minor _geographic uncertainty_ (South Africa vs. remote-US preference) and _production LLM depth_ still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7f6c954385",
+      "number": "3",
+      "number_display": "3",
+      "token": "f711f0cc31",
+      "run_id": "20260719_195640",
+      "title": "AI Engineer in United States",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://careers.plansource.com/jobs/4843?lang=en-us",
+      "matched_keywords": [
+        "ai engineer",
+        "ai workflow"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Workflow Engineer* role matches Hans's active *agentic loop* projects; minor _production deployment_ depth needed but upskilling trajectory clear.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "be968f7fb6",
+      "number": "4",
+      "number_display": "4",
+      "token": "d37c08c419",
+      "run_id": "20260719_195640",
+      "title": "AI Automation Engineer [Remote] - General Dynamics",
+      "company": "General Dynamics",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/f61eabf3-dc5c-4bc9-adb9-97c4b48bdd79",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation engineer* remote role matches career pivot trajectory; minor _production LLM deployment_ gap offset by strong observability and engineering foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0fca2a2452",
+      "number": "5",
+      "number_display": "5",
+      "token": "c6d9784aa6",
+      "run_id": "20260719_195640",
+      "title": "AI Automation Engineer at StockX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wellfound.com/jobs/4481181-ai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation* and *agent engineering* align with Hans's active GenAI projects; remote US match, but _production deployment_ depth still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d8385a6810",
+      "number": "6",
+      "number_display": "6",
+      "token": "6ecc140e9a",
+      "run_id": "20260719_195640",
+      "title": "AI Engineer (LLM Products) - dexter health (Remote) - Join",
+      "company": "dexter health (Remote)",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://join.com/companies/dexter-health/16460878-ai-engineer-llm-products-remote",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AI engineer* trajectory and *prompt engineering* interest align, but JD emphasizes _non-coding_ skills while Hans builds full-stack agent systems.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9346d1f31e",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "920a88e5a3",
+      "run_id": "20260719_195640",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/es/jobs/10476205/sr-delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's active upskilling trajectory, but _production agent deployment_ experience remains nascent and _fullstack SDE_ requires broader coding depth than current portfolio shows.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

@@ -7836,5 +7836,34 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-07-18 23:00"
     }
+  ],
+  "2026-07-19": [
+    {
+      "job_id": "9346d1f31e",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/es/jobs/10476205/sr-delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's active upskilling trajectory, but _production agent deployment_ experience remains nascent and _fullstack SDE_ requires broader coding depth than current portfolio shows.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-19T19:56:40.885353"
+    }
   ]
 }
