@@ -7980,5 +7980,77 @@
       "raw_decision": "Too Senior",
       "timestamp": "2026-07-19 23:00"
     }
+  ],
+  "2026-07-20": [
+    {
+      "job_id": "6345ff921b",
+      "number": "1",
+      "title": "Generative AI Engineer at OurRitual \u2014 Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remotejobs.org/remote-jobs/generative-ai-engineer-ourritual",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-20 23:00"
+    },
+    {
+      "job_id": "5031f00328",
+      "number": "2",
+      "title": "AI Automation Engineer - Remote",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.indeed.com/viewjob?jk=fe6fd7ff41f69ea8",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-20 23:00"
+    },
+    {
+      "job_id": "232821e86b",
+      "number": "3",
+      "title": "Founding AI Engineer @ Paires",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/paires/8fdbb379-1ef0-47a8-ada5-37d5a0e75bf8",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-20 23:00"
+    },
+    {
+      "job_id": "4c5da681ce",
+      "number": "4",
+      "title": "GTM Engineer / AI Engineer @ The Global Talent Co.",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/the-global-talent-co/3f8ab5f5-b2b5-4926-8671-0e46b1e80912",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-20 23:00"
+    }
   ]
 }
