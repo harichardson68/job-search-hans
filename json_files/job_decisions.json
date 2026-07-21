@@ -8052,5 +8052,34 @@
       "raw_decision": "",
       "timestamp": "2026-07-20 23:00"
     }
+  ],
+  "2026-07-21": [
+    {
+      "job_id": "fcce51ba35",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/zh/jobs/10476977/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* skills and *AWS* foundation match well; _fullstack SDE_ title and production agent experience are minor gaps but directly aligned with Hans's trajectory.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-21T12:04:36.919340"
+    }
   ]
 }

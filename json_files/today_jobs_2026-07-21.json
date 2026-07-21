@@ -1,0 +1,111 @@
+{
+  "date": "2026-07-21",
+  "run_id": "20260721_120436",
+  "jobs": [
+    {
+      "job_id": "2f4e2da039",
+      "number": "1",
+      "number_display": "1",
+      "token": "58686d2aef",
+      "run_id": "20260721_120436",
+      "title": "Agentic AI Integration Engineer (Remote)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.vetjobs.org/virtual-usa/agentic-ai-integration-engineer-remote/54BEB8EF0FC24CB09EB550A922C15DE9/job/",
+      "matched_keywords": [
+        "ai integration engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 Remote *agentic AI integration* role matches Hans's *active GenAI/Claude projects* and seniority; no _credential_ friction.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "60f23dc7df",
+      "number": "2",
+      "number_display": "2",
+      "token": "aa6e2ae507",
+      "run_id": "20260721_120436",
+      "title": "AI Agent Developer for Custom Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Agent-Developer-for-Custom-Automation_~022078394407077908935/",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches dual-track pivot; remote eligibility and *GenAI cert* strong, but _production agent deployment_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "24668257ad",
+      "number": "3",
+      "number_display": "3",
+      "token": "c89d13b6e5",
+      "run_id": "20260721_120436",
+      "title": "AI Automation Engineer @ StockX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://testdevjobs.com/job/stock-x-ai-automation-engineer-22569/",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation* and *agent engineering* trajectory align well; _production deployment scale_ experience gap is bridgeable with existing observability and reliability strengths.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "fe31c56021",
+      "number": "4",
+      "number_display": "4",
+      "token": "a40bb54b8f",
+      "run_id": "20260721_120436",
+      "title": "Applied AI Engineer @ Laurel",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/laurel/ff5a33ce-c255-49ad-b926-9bcd1135d06d",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* trajectory and *GenAI credentials* align well; _production agent deployment_ experience still developing but realistic progression.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "fcce51ba35",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "e8be4c87e7",
+      "run_id": "20260721_120436",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/zh/jobs/10476977/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* skills and *AWS* foundation match well; _fullstack SDE_ title and production agent experience are minor gaps but directly aligned with Hans's trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
