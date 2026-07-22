@@ -8144,5 +8144,34 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-07-21 23:00"
     }
+  ],
+  "2026-07-22": [
+    {
+      "job_id": "74f4d87f4c",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/es/jobs/10476979/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; _full-stack SDE and production LLM_ experience still building, but realistic fit with portfolio trajectory.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-22T12:04:03.919565"
+    }
   ]
 }

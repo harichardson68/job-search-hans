@@ -1,0 +1,73 @@
+{
+  "date": "2026-07-22",
+  "run_id": "20260722_120403",
+  "jobs": [
+    {
+      "job_id": "c5860466de",
+      "number": "1",
+      "number_display": "1",
+      "token": "954d4cf39e",
+      "run_id": "20260722_120403",
+      "title": "Prompt Engineer (LLM Systems, Evals & Safety)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotejobs.org/remote-jobs/prompt-engineer-llm-systems-evals-safety-webookcom",
+      "matched_keywords": [
+        "llm",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* trajectory and *prompt/LLM* coursework align well; minor _production ML ops_ depth gap but observable systems expertise transfers.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "93bf50eda9",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "a2bbb78527",
+      "run_id": "20260722_120403",
+      "title": "QA Performance Engineer x 2 - HAYS",
+      "company": "HAYS",
+      "track": "QA Automation",
+      "score": 175,
+      "url": "https://www.dice.com/job-detail/59a3a936-003c-44d7-90eb-7cab3eb79db9",
+      "matched_keywords": [
+        "performance testing",
+        "loadrunner",
+        "qa performance engineer",
+        "performance engineer",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Performance testing* and *JMeter* align with his QA depth; _LoadRunner_ specificity is minor gap he can absorb quickly.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "74f4d87f4c",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "7d062923c5",
+      "run_id": "20260722_120403",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/es/jobs/10476979/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; _full-stack SDE and production LLM_ experience still building, but realistic fit with portfolio trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
