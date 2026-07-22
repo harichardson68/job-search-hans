@@ -8055,9 +8055,79 @@
   ],
   "2026-07-21": [
     {
+      "job_id": "2f4e2da039",
+      "number": "1",
+      "title": "Agentic AI Integration Engineer (Remote)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://jobs.vetjobs.org/virtual-usa/agentic-ai-integration-engineer-remote/54BEB8EF0FC24CB09EB550A922C15DE9/job/",
+      "matched_keywords": [
+        "ai integration engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-21 23:00"
+    },
+    {
+      "job_id": "60f23dc7df",
+      "number": "2",
+      "title": "AI Agent Developer for Custom Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Agent-Developer-for-Custom-Automation_~022078394407077908935/",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": "Upwork",
+      "raw_decision": "Other",
+      "timestamp": "2026-07-21 23:00"
+    },
+    {
+      "job_id": "24668257ad",
+      "number": "3",
+      "title": "AI Automation Engineer @ StockX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://testdevjobs.com/job/stock-x-ai-automation-engineer-22569/",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-21 23:00"
+    },
+    {
+      "job_id": "fe31c56021",
+      "number": "4",
+      "title": "Applied AI Engineer @ Laurel",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/laurel/ff5a33ce-c255-49ad-b926-9bcd1135d06d",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-21 23:00"
+    },
+    {
       "job_id": "fcce51ba35",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -8069,17 +8139,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* skills and *AWS* foundation match well; _fullstack SDE_ title and production agent experience are minor gaps but directly aligned with Hans's trajectory.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-21T12:04:36.919340"
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-21 23:00"
     }
   ]
 }
