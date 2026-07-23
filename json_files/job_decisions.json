@@ -8206,5 +8206,57 @@
       "raw_decision": "",
       "timestamp": "2026-07-22 23:00"
     }
+  ],
+  "2026-07-23": [
+    {
+      "job_id": "992d9b530a",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Agentic Workspaces",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10482153/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-23T12:04:55.039679"
+    },
+    {
+      "job_id": "8938b2b663",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Manager III, Software Dev, Agentic WorkSpaces - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en-gb/jobs/10482046/manager-iii-software-dev-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-23T12:04:55.039698"
+    }
   ]
 }
