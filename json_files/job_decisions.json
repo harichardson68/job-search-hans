@@ -8089,7 +8089,9 @@
       "decision": "other",
       "reason": "Upwork",
       "raw_decision": "Other",
-      "timestamp": "2026-07-21 23:00"
+      "timestamp": "2026-07-21 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-23"
     },
     {
       "job_id": "24668257ad",
