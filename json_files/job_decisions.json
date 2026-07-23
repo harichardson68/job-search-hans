@@ -8147,9 +8147,47 @@
   ],
   "2026-07-22": [
     {
+      "job_id": "c5860466de",
+      "number": "1",
+      "title": "Prompt Engineer (LLM Systems, Evals & Safety)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotejobs.org/remote-jobs/prompt-engineer-llm-systems-evals-safety-webookcom",
+      "matched_keywords": [
+        "llm",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-22 23:00"
+    },
+    {
+      "job_id": "93bf50eda9",
+      "number": "G1",
+      "title": "QA Performance Engineer x 2 - HAYS",
+      "company": "HAYS",
+      "track": "QA Automation",
+      "score": 175,
+      "url": "https://www.dice.com/job-detail/59a3a936-003c-44d7-90eb-7cab3eb79db9",
+      "matched_keywords": [
+        "performance testing",
+        "loadrunner",
+        "qa performance engineer",
+        "performance engineer",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-22 23:00"
+    },
+    {
       "job_id": "74f4d87f4c",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -8161,17 +8199,10 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; _full-stack SDE and production LLM_ experience still building, but realistic fit with portfolio trajectory.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-22T12:04:03.919565"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-22 23:00"
     }
   ]
 }
