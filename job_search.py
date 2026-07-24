@@ -584,6 +584,7 @@ NON_US_LOCATIONS = [
     "cameroon", "lagos", "nairobi", "cairo", "johannesburg", "cape town",
     "accra", "kampala",
     "and sketchy",
+    "jordan",
 ]
 
 # 2026-06-26: US states + major non-MO cities, hoisted to module level so

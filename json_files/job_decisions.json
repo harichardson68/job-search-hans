@@ -8209,9 +8209,132 @@
   ],
   "2026-07-23": [
     {
+      "job_id": "705f0b5d6e",
+      "number": "1",
+      "title": "Generative AI Engineer Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://migratemate.co/generative-ai-engineer-jobs",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": "Jordan",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
+      "job_id": "8996dbbe9c",
+      "number": "2",
+      "title": "AI Agent Developer - UnivEdge Consulting LLC - Remote",
+      "company": "UnivEdge Consulting LLC",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/9d59cc6d-975e-4b31-bb79-cd1c340b5f09",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
+      "job_id": "1eabb70100",
+      "number": "3",
+      "title": "AI Engineer (Intermediate) - Brooksource - Remote",
+      "company": "Brooksource",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/4177546f-dab3-479b-912e-96803271f49f",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
+      "job_id": "4d64d5117e",
+      "number": "4",
+      "title": "Agentic AI and NLU Engineer - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://genesys.wd1.myworkdayjobs.com/en-US/Genesys/job/Agentic-AI-and-NLU-Engineer_JR111277-2",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
+      "job_id": "73d32f85f8",
+      "number": "5",
+      "title": "AI Automation Engineer \u2014 D2C Telehealth Platform",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.workopolis.com/jobsearch/viewjob/t4BmkoQBLzVlSWULHgqVxDeCAUahNldsGeVHxFVWsFbGo467V9CO48F8NuiFVnCM",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
+      "job_id": "d1d79247fb",
+      "number": "6",
+      "title": "AI Engineer @ Certa",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/certa/da4d5879-d94d-4f8c-ada4-24bd955520e3",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
+      "job_id": "733d228d8e",
+      "number": "7",
+      "title": "Applied AI Engineer @ Paires",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/paires/4d2844ff-b108-490e-b22a-6f4f727a0f57",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
+    },
+    {
       "job_id": "992d9b530a",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Agentic Workspaces",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -8221,22 +8344,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-23T12:04:55.039679"
+      "decision": "not_in_us",
+      "reason": "Australia",
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-23 23:00"
     },
     {
       "job_id": "8938b2b663",
       "number": "A2",
-      "number_display": "A2",
       "title": "Manager III, Software Dev, Agentic WorkSpaces - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -8246,17 +8361,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-23T12:04:55.039698"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00"
     }
   ]
 }
