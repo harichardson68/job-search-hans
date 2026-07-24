@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-24",
+  "run_id": "20260724_120400",
+  "jobs": [
+    {
+      "job_id": "c5e01f0505",
+      "number": "1",
+      "number_display": "1",
+      "token": "d49b29d456",
+      "run_id": "20260724_120400",
+      "title": "AI Engineer - AI Agents (Remote-United States) @ Hatch",
+      "company": "AI Agents (Remote-United States) @ Hatch",
+      "track": "AI Engineering",
+      "score": 115,
+      "url": "https://jobs.ashbyhq.com/hatch/302d3f5d-2d99-4962-8ce3-4480cd4330d5",
+      "matched_keywords": [
+        "uat",
+        "ai engineer",
+        "prompt engineering",
+        "prompt engineer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent* and *prompt engineering* align with active GenAI learning; _production LLM depth_ still building but realistic trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "77bee7fde7",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "c9dbe107d4",
+      "run_id": "20260724_120400",
+      "title": "Visual COBOL Developer - Remote at Genesis10 - Haystack",
+      "company": "Remote at Genesis10",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://haystackapp.io/jobs/46fcdc25-c31a-4d48-a097-06080ec8f2c0",
+      "matched_keywords": [
+        "cobol",
+        "cobol developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *Remote* Visual COBOL contract at *$85\u201395/hr*; 24+ years IT and _COBOL experience_ align directly with role requirements.",
+      "level_signal": "none:cobol-seniority-exempt"
+    }
+  ]
+}
