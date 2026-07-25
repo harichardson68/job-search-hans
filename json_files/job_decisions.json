@@ -8366,5 +8366,46 @@
       "raw_decision": "",
       "timestamp": "2026-07-23 23:00"
     }
+  ],
+  "2026-07-24": [
+    {
+      "job_id": "c5e01f0505",
+      "number": "1",
+      "title": "AI Engineer - AI Agents (Remote-United States) @ Hatch",
+      "company": "AI Agents (Remote-United States) @ Hatch",
+      "track": "AI Engineering",
+      "score": 115,
+      "url": "https://jobs.ashbyhq.com/hatch/302d3f5d-2d99-4962-8ce3-4480cd4330d5",
+      "matched_keywords": [
+        "uat",
+        "ai engineer",
+        "prompt engineering",
+        "prompt engineer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-24 23:00"
+    },
+    {
+      "job_id": "77bee7fde7",
+      "number": "G1",
+      "title": "Visual COBOL Developer - Remote at Genesis10 - Haystack",
+      "company": "Remote at Genesis10",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://haystackapp.io/jobs/46fcdc25-c31a-4d48-a097-06080ec8f2c0",
+      "matched_keywords": [
+        "cobol",
+        "cobol developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-24 23:00"
+    }
   ]
 }
