@@ -1,0 +1,189 @@
+{
+  "date": "2026-07-26",
+  "run_id": "20260726_120502",
+  "jobs": [
+    {
+      "job_id": "95f148420d",
+      "number": "1",
+      "number_display": "1",
+      "token": "fcba533f25",
+      "run_id": "20260726_120502",
+      "title": "ML Engineer @ Docker",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 101,
+      "url": "https://jobs.ashbyhq.com/docker/29af4c7f-6c9b-4bb4-a5fa-4950fa292be4?action=apply",
+      "matched_keywords": [
+        "uat",
+        "ml engineer",
+        "agent framework",
+        "fine-tuning",
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agent framework* and *prompt engineering* skills emerging; remote eligibility strong, but _production LLM systems_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0e4388d2c2",
+      "number": "2",
+      "number_display": "2",
+      "token": "cb7ed1ac41",
+      "run_id": "20260726_120502",
+      "title": "Hire AI Engineers for AI Teams - MCP, RAG, LLM | QuickHire",
+      "company": "MCP, RAG, LLM | QuickHire",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.quickhire.services/for-ai-teams",
+      "matched_keywords": [
+        "llm",
+        "ai engineer",
+        "rag",
+        "langchain",
+        "langchain engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* and *LangChain/LLM* alignment strong; minor _production agent deployment_ gap but actively building those skills.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "6bb600c34f",
+      "number": "3",
+      "number_display": "3",
+      "token": "57135b7bdb",
+      "run_id": "20260726_120502",
+      "title": "AI Engineer - AI Agents (Remote-United States) at Hatch",
+      "company": "AI Agents (Remote-United States) at Hatch",
+      "track": "AI Engineering",
+      "score": 81,
+      "url": "https://www.aijobs.com/jobs/552012069-ai-engineer-ai-agents-remote-united-states",
+      "matched_keywords": [
+        "uat",
+        "ai agent",
+        "ai engineer",
+        "ai observability",
+        "observability"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI observability* and *agent evaluation* align with emerging skillset; minor _production LLM deployment_ gap but performance-testing rigor transfers well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f514eb81de",
+      "number": "4",
+      "number_display": "4",
+      "token": "91d7275095",
+      "run_id": "20260726_120502",
+      "title": "Fiyaz M. - AI Prompt Engineer & Response Validator",
+      "company": "AI Prompt Engineer & Response Validator",
+      "track": "AI Engineering",
+      "score": 75,
+      "url": "https://www.opentrain.ai/profile/fiyaz-m",
+      "matched_keywords": [
+        "uat",
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *AI prompt engineering* role matches emerging skillset; minor _production LLM evaluation_ depth gap but directly on Hans's dual-track trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "6cbe5d541f",
+      "number": "5",
+      "number_display": "5",
+      "token": "2a7221dff5",
+      "run_id": "20260726_120502",
+      "title": "Ai Qa Engineer 3083062 I.Html at Virtual Vocations, Inc.",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://applywave.app/visa-sponsorship-jobs/ai-qa-engineer-3083062-ihtml-virtual-vocations-inc-ai6a4f",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA Engineer* role matches dual-track pivot; remote-US eligible with *observability* + testing depth, minor _production LLM model_ gap but realistic bridge.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7fbfa45e79",
+      "number": "6",
+      "number_display": "6",
+      "token": "0a18c055ee",
+      "run_id": "20260726_120502",
+      "title": "Agentic AI Engineer - Elastic",
+      "company": "Elastic",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.builtinchicago.org/job/agentic-ai-engineer/10338656",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active AI skilling trajectory; minor _production agent deployment_ experience gap but realistic next step.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "811b104868",
+      "number": "7",
+      "number_display": "7",
+      "token": "ce980850eb",
+      "run_id": "20260726_120502",
+      "title": "Performance Tester with LoadRunner and JMeter experience",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://remotezest.up.railway.app/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote-2",
+      "matched_keywords": [
+        "loadrunner",
+        "performance tester",
+        "jmeter",
+        "LoadRunner-in-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "b9e47b715a",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "7ae0059ed3",
+      "run_id": "20260726_120502",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10476203/sr-delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "agentic",
+        "aws",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI projects; _full-stack SDE_ breadth and production LLM ops experience still developing but realistic trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
