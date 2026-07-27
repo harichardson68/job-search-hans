@@ -8621,7 +8621,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-07-26 23:00"
+      "timestamp": "2026-07-26 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-07-27"
     },
     {
       "job_id": "b9e47b715a",
