@@ -8484,9 +8484,148 @@
   ],
   "2026-07-26": [
     {
+      "job_id": "95f148420d",
+      "number": "1",
+      "title": "ML Engineer @ Docker",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 101,
+      "url": "https://jobs.ashbyhq.com/docker/29af4c7f-6c9b-4bb4-a5fa-4950fa292be4?action=apply",
+      "matched_keywords": [
+        "uat",
+        "ml engineer",
+        "agent framework",
+        "fine-tuning",
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
+      "job_id": "0e4388d2c2",
+      "number": "2",
+      "title": "Hire AI Engineers for AI Teams - MCP, RAG, LLM | QuickHire",
+      "company": "MCP, RAG, LLM | QuickHire",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.quickhire.services/for-ai-teams",
+      "matched_keywords": [
+        "llm",
+        "ai engineer",
+        "rag",
+        "langchain",
+        "langchain engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
+      "job_id": "6bb600c34f",
+      "number": "3",
+      "title": "AI Engineer - AI Agents (Remote-United States) at Hatch",
+      "company": "AI Agents (Remote-United States) at Hatch",
+      "track": "AI Engineering",
+      "score": 81,
+      "url": "https://www.aijobs.com/jobs/552012069-ai-engineer-ai-agents-remote-united-states",
+      "matched_keywords": [
+        "uat",
+        "ai agent",
+        "ai engineer",
+        "ai observability",
+        "observability"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
+      "job_id": "f514eb81de",
+      "number": "4",
+      "title": "Fiyaz M. - AI Prompt Engineer & Response Validator",
+      "company": "AI Prompt Engineer & Response Validator",
+      "track": "AI Engineering",
+      "score": 75,
+      "url": "https://www.opentrain.ai/profile/fiyaz-m",
+      "matched_keywords": [
+        "uat",
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
+      "job_id": "6cbe5d541f",
+      "number": "5",
+      "title": "Ai Qa Engineer 3083062 I.Html at Virtual Vocations, Inc.",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://applywave.app/visa-sponsorship-jobs/ai-qa-engineer-3083062-ihtml-virtual-vocations-inc-ai6a4f",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
+      "job_id": "7fbfa45e79",
+      "number": "6",
+      "title": "Agentic AI Engineer - Elastic",
+      "company": "Elastic",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.builtinchicago.org/job/agentic-ai-engineer/10338656",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
+      "job_id": "811b104868",
+      "number": "7",
+      "title": "Performance Tester with LoadRunner and JMeter experience",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://remotezest.up.railway.app/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote-2",
+      "matched_keywords": [
+        "loadrunner",
+        "performance tester",
+        "jmeter",
+        "LoadRunner-in-title"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-26 23:00"
+    },
+    {
       "job_id": "b9e47b715a",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -8498,17 +8637,10 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI projects; _full-stack SDE_ breadth and production LLM ops experience still developing but realistic trajectory.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-26T12:05:02.505850"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-26 23:00"
     }
   ]
 }
