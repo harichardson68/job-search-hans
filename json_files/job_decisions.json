@@ -8647,9 +8647,45 @@
   ],
   "2026-07-27": [
     {
+      "job_id": "7beffe7cbc",
+      "number": "1",
+      "title": "[Remote] AI Automation Engineer [Remote]",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotezest.up.railway.app/job/remote-ai-automation-engineer-remote",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-27 23:00"
+    },
+    {
+      "job_id": "2818f92adc",
+      "number": "G1",
+      "title": "SDET intern/Associate Agile Developer in Test Internship ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 123,
+      "url": "https://www.dice.com/job-detail/cf26f659-a88d-4af5-9f58-41c59e2411f7",
+      "matched_keywords": [
+        "jmeter",
+        "load testing",
+        "loadrunner",
+        "agile"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-27 23:00"
+    },
+    {
       "job_id": "3723c91882",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Vendor Agentic Experience",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -8659,17 +8695,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-07-27T12:04:09.127024"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-27 23:00"
     }
   ]
 }
