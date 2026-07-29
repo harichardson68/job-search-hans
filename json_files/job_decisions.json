@@ -8700,5 +8700,84 @@
       "raw_decision": "",
       "timestamp": "2026-07-27 23:00"
     }
+  ],
+  "2026-07-28": [
+    {
+      "job_id": "48d4a7b052",
+      "number": "1",
+      "title": "AWS AI/ML Engineer \u2013 Medicaid (Python & SageMaker)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://www.dice.com/job-detail/4166c452-4735-4d3e-accb-7bed2c3ef214",
+      "matched_keywords": [
+        "ml engineer",
+        "python",
+        "mlops engineer",
+        "aws"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-28 23:00"
+    },
+    {
+      "job_id": "f08a165949",
+      "number": "2",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/ai-automation-expert-ai-automation-engineer-remote-ai-automation-6",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-28 23:00"
+    },
+    {
+      "job_id": "dd12f61182",
+      "number": "3",
+      "title": "Senior Performance Engineer - Remote",
+      "company": "Remote",
+      "track": "Performance Engineering",
+      "score": 126,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/senior-performance-engineer-remote",
+      "matched_keywords": [
+        "loadrunner",
+        "appdynamics",
+        "performance engineer",
+        "jmeter",
+        "grafana"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-28 23:00"
+    },
+    {
+      "job_id": "c38b596dc1",
+      "number": "G1",
+      "title": "Mainframe COBOL Developer - Genesis10",
+      "company": "Genesis10",
+      "track": "Gap Track",
+      "score": 55,
+      "url": "https://www.dice.com/job-detail/4e715988-b29a-47f8-a383-ca0f4dd85ba9",
+      "matched_keywords": [
+        "cobol",
+        "mainframe",
+        "cobol developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-07-28 23:00"
+    }
   ]
 }
