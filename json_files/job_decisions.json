@@ -8779,5 +8779,33 @@
       "raw_decision": "",
       "timestamp": "2026-07-28 23:00"
     }
+  ],
+  "2026-07-29": [
+    {
+      "job_id": "40edf68302",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "AI Automation Engineer, Content, Brand TEchnology and ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/en/jobs/10459090/ai-automation-engineer-content-brand-technology-and-applied-ai",
+      "matched_keywords": [
+        "agentic",
+        "ai automation engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic orchestration* and *AI automation* directly match Hans's new direction; minor _production LLM deployment_ depth still building but IBM GenAI cert + Claude projects show real momentum.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-07-29T12:05:03.783911"
+    }
   ]
 }
