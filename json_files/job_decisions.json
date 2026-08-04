@@ -8935,9 +8935,227 @@
   ],
   "2026-08-03": [
     {
+      "job_id": "3d0a07ed71",
+      "number": "1",
+      "title": "GenAI Engineer AI Builder AI Agent Associate Specialist",
+      "company": "Magic Compass Limited",
+      "track": "AI Engineering",
+      "score": 182,
+      "url": "https://remoteOK.com/remote-jobs/remote-genai-engineer-ai-builder-ai-agent-associate-specialist-magic-compass-limited-1135735",
+      "matched_keywords": [
+        "openai",
+        "prompt engineer",
+        "ai engineer",
+        "python",
+        "uat",
+        "agentic",
+        "gemini",
+        "agent framework",
+        "sla",
+        "agentic ai",
+        "rag",
+        "multi-agent",
+        "observability",
+        "ai workflow",
+        "prompt engineering",
+        "ai agent"
+      ],
+      "source": "RemoteOK",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "b80a3248eb",
+      "number": "2",
+      "title": "Agentic AI Engineer (W2) - ISite Technologies Inc - Remote",
+      "company": "ISite Technologies Inc",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.dice.com/job-detail/be3d110f-ff82-4fb2-b15c-fcd011366825",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai",
+        "ai developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "0ca60cb7a3",
+      "number": "3",
+      "title": "AI Engineer - SAI Systems Intl., Inc. - Remote",
+      "company": "SAI Systems Intl., Inc.",
+      "track": "AI Engineering",
+      "score": 89,
+      "url": "https://www.dice.com/job-detail/580f55f2-5f9a-4dee-b3f3-bb94046fd077",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai engineer",
+        "vector database",
+        "rag",
+        "embeddings",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "f5634f7423",
+      "number": "4",
+      "title": "Agentic AI Engineer \u2013 Elastic \u2013 Permanent contract",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.welcometothejungle.com/en/companies/elastic/jobs/agentic-ai-engineer_us_n6wwcktq",
+      "matched_keywords": [
+        "agentic ai",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "5a00620633",
+      "number": "5",
+      "title": "AI Prompt Engineer (IRS MBI Cleared) - System One",
+      "company": "System One",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/87c96a1b-5352-47dd-b0b0-932f355e6bdb",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "af26cc8f65",
+      "number": "6",
+      "title": "AI Automation Engineer at Broadcastwell",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wellfound.com/jobs/4538869-ai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "31ba0980ad",
+      "number": "7",
+      "title": "[Remote] Associate AI Automation Engineer ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/remote-associate-ai-automation-engineerai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "6d04a2d333",
+      "number": "8",
+      "title": "Applied AI Engineer @ Rillet",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/rillet/fa5a733f-84aa-41af-8b4d-0b5be16d1e64?src=LinkedIn&weekdayJdUid=1280122",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "957ce38d76",
+      "number": "9",
+      "title": "Founding AI Engineer @ Clera",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/Clera/44229dcf-7054-4632-b1c9-10bad4c09005",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "447e16d21a",
+      "number": "10",
+      "title": "Performance Tester with Loadrunner and JMeter experience",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://remotezest.up.railway.app/job/performance-tester-with-loadrunner-and-jmeter-experience-100-remote",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "LoadRunner-in-title",
+        "performance tester"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
+      "job_id": "206bc075ff",
+      "number": "G1",
+      "title": "Sr. Performance QA Engineer-REMOTE - Shine",
+      "company": "Shine",
+      "track": "QA Automation",
+      "score": 98,
+      "url": "https://www.shine.com/jobs/sr-performance-qa-engineer-remote/remote-zest-jobs/19231905",
+      "matched_keywords": [
+        "aws",
+        "loadrunner",
+        "performance qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
+    },
+    {
       "job_id": "794d164d6e",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI FullStack SDE, AWS Professional Services",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -8949,22 +9167,14 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; _full-stack SDE_ and production agent deployment experience still developing but portfolio-relevant.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-03T19:13:07.755903"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
     },
     {
       "job_id": "8483260e9a",
       "number": "A2",
-      "number_display": "A2",
       "title": "Applied Scientist, Agentic Automated Reasoning - ID da vaga",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -8975,17 +9185,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-03T19:13:07.755917"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-03 23:00"
     }
   ]
 }
