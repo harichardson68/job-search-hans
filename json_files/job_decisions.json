@@ -9190,5 +9190,60 @@
       "raw_decision": "",
       "timestamp": "2026-08-03 23:00"
     }
+  ],
+  "2026-08-04": [
+    {
+      "job_id": "ae791d4c14",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10490501/senior-specialist-solutions-architect-agentic-ai-ags-specialist-solutions-architects",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AI systems* architecture match Hans's active GenAI upskilling; _solutions architect sales cadence_ differs from IC engineer preference but credible pivot.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-04T12:04:31.439708"
+    },
+    {
+      "job_id": "5943e74d52",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Consultant, AWS Professional Services, Agentic Delivery ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 29,
+      "url": "https://amazon.jobs/en/jobs/10436298/consultant-aws-professional-services-agentic-delivery-acceleration",
+      "matched_keywords": [
+        "aws",
+        "rag",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-04T12:04:31.439725"
+    }
   ]
 }
