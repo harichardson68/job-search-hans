@@ -8932,5 +8932,60 @@
       "raw_decision": "",
       "timestamp": "2026-07-29 23:00"
     }
+  ],
+  "2026-08-03": [
+    {
+      "job_id": "794d164d6e",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/jobs/10485442",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong; _full-stack SDE_ and production agent deployment experience still developing but portfolio-relevant.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-03T19:13:07.755903"
+    },
+    {
+      "job_id": "8483260e9a",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Applied Scientist, Agentic Automated Reasoning - ID da vaga",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 26,
+      "url": "https://www.amazon.jobs/pt/jobs/10433445/applied-scientist-agentic-automated-reasoning",
+      "matched_keywords": [
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-03T19:13:07.755917"
+    }
   ]
 }

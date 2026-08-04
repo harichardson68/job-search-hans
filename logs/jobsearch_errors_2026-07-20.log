@@ -1,1 +1,0 @@
-[2026-06-18 12:54:59] [job_search.py] RemoteOK error: HTTPSConnectionPool(host='remoteok.com', port=443): Read timed out. (read timeout=15)
