@@ -1,0 +1,114 @@
+{
+  "date": "2026-08-05",
+  "run_id": "20260805_120457",
+  "jobs": [
+    {
+      "job_id": "e00aa49937",
+      "number": "1",
+      "number_display": "1",
+      "token": "e8db40246f",
+      "run_id": "20260805_120457",
+      "title": "[Remote] AI Reliability Engineer (AI SRE)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotezest.up.railway.app/job/remote-ai-reliability-engineer-ai-sre",
+      "matched_keywords": [
+        "ai reliability engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 Remote *AI Reliability Engineer* role leverages *observability stack* and performance expertise; active clearance and _AI systems_ upskilling perfectly positioned.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "3aaa2f2e85",
+      "number": "2",
+      "number_display": "2",
+      "token": "cf3f1f18ef",
+      "run_id": "20260805_120457",
+      "title": "Python ML Engineer (LLM Ops) (Remote)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.dice.com/job-detail/f6bfe675-ac6b-43df-903e-c547a8e7d290",
+      "matched_keywords": [
+        "llm ops",
+        "mlops engineer",
+        "ml engineer",
+        "llm",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Remote Python/LLM* role aligns with AI track pivot; _PST timezone requirement_ and hands-on ML model experience are minor gaps but bridgeable given GenAI certs and active projects.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "8885b11efd",
+      "number": "3",
+      "number_display": "3",
+      "token": "4c7f634ada",
+      "run_id": "20260805_120457",
+      "title": "AI QA Engineer / AI Test Architect at Togal AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://startup.jobs/ai-qa-engineer-ai-test-architect-togal-ai-8909711",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA Engineer* role aligns with dual-track pivot; *remote* location matches; minor _production LLM implementation_ gap but GenAI cert and agent projects bridge it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "5fe9667f57",
+      "number": "4",
+      "number_display": "4",
+      "token": "4d4bf4d09b",
+      "run_id": "20260805_120457",
+      "title": "AI QA Engineer / AI Test Architect @ Togal AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://jobs.ashbyhq.com/togal-ai/66de8866-08ab-423e-b823-9c945efcc293",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA Engineer* role aligns with Hans's *AI systems* trajectory and remote eligibility; _production GenAI experience_ still building but QA/test architecture skills transfer well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "367bb00e81",
+      "number": "5",
+      "number_display": "5",
+      "token": "09bb79313b",
+      "run_id": "20260805_120457",
+      "title": "Agentic AI Platform (Remote Eligible) at Capital One - Haystack",
+      "company": "Haystack",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://haystackapp.io/jobs/cfffa788-85c4-496c-b2bd-6510746c4809",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AI systems* skills building directly match; minor _production LLM deployment_ depth gap but clear trajectory and remote eligibility.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
