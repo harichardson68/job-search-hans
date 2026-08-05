@@ -9193,9 +9193,103 @@
   ],
   "2026-08-04": [
     {
+      "job_id": "0b0f23de3e",
+      "number": "1",
+      "title": "AI/ML & Generative AI Engineer - Cognitive Minds LLC",
+      "company": "Cognitive Minds LLC",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://www.dice.com/job-detail/a8f79956-86a9-40b7-be1d-75abf8e50589",
+      "matched_keywords": [
+        "generative ai",
+        "ai engineer",
+        "ml engineer",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
+    },
+    {
+      "job_id": "f878833ce9",
+      "number": "2",
+      "title": "Find Remote NLP & Prompt Engineering Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://remoteai.io/v2/jobs/nlp-prompt-engineering",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "nlp",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
+    },
+    {
+      "job_id": "2122a65709",
+      "number": "3",
+      "title": "Open Source AI Engineer (Typescript) - Arize AI - Remote",
+      "company": "Arize AI",
+      "track": "AI Engineering",
+      "score": 58,
+      "url": "https://www.dice.com/job-detail/5e9a0a17-b331-461a-96de-666b7a4ac22f",
+      "matched_keywords": [
+        "ai engineer",
+        "observability",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
+    },
+    {
+      "job_id": "5e2f689e41",
+      "number": "4",
+      "title": "AI Integration Engineer @ reputed company",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotezest.up.railway.app/job/ai-integration-engineer-reputed-company",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
+    },
+    {
+      "job_id": "873b735dcd",
+      "number": "5",
+      "title": "FRFS Fedwire Performance Tester, Non-Employee",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://remotezest.up.railway.app/job/frfs-fedwire-performance-tester-non-employee-2",
+      "matched_keywords": [
+        "jmeter",
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
+    },
+    {
       "job_id": "ae791d4c14",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -9206,22 +9300,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AI systems* architecture match Hans's active GenAI upskilling; _solutions architect sales cadence_ differs from IC engineer preference but credible pivot.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-04T12:04:31.439708"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
     },
     {
       "job_id": "5943e74d52",
       "number": "A2",
-      "number_display": "A2",
       "title": "Consultant, AWS Professional Services, Agentic Delivery ...",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -9233,17 +9319,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-04T12:04:31.439725"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-04 23:00"
     }
   ]
 }
