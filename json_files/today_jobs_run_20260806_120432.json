@@ -1,0 +1,88 @@
+{
+  "date": "2026-08-06",
+  "run_id": "20260806_120432",
+  "jobs": [
+    {
+      "job_id": "908a2d01b6",
+      "number": "1",
+      "number_display": "1",
+      "token": "e9a8dd1ca4",
+      "run_id": "20260806_120432",
+      "title": "AI QA Engineer / AI Test Architect at Togal.AI \u2022 United States",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://wellfound.com/jobs/4547625-ai-qa-engineer-ai-test-architect",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA* role matches dual-track pivot; *performance testing* foundation transfers well, minor _hands-on production AI_ gap but GenAI cert + agent projects bridge it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "5e9f664720",
+      "number": "2",
+      "number_display": "2",
+      "token": "112db3a2a7",
+      "run_id": "20260806_120432",
+      "title": "[Remote] AI Automation Engineer V",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/remote-ai-automation-engineer-v-2",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Automation Engineer* role matches dual-track search; remote eligibility + *agentic systems* skills strong, minor _production LLM depth_ gap but actively closing.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "3f099b9ad6",
+      "number": "3",
+      "number_display": "3",
+      "token": "7076fbadf4",
+      "run_id": "20260806_120432",
+      "title": "AI Engineer @ Clera",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/Clera/33b7fe21-1c4d-41a5-a20c-5a38d99f5b99",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role matches Hans's emerging *agent/GenAI* track; minor _production ML depth_ gap but active skill-building and remote eligibility offset it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9a360160a4",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "ba30471880",
+      "run_id": "20260806_120432",
+      "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/en/jobs/10490501/senior-specialist-solutions-architect-agentic-ai-ags-specialist-solutions-architects",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *systems architecture* align with Hans's AI pivot; minor _AWS-specific solutions architect_ pattern and _production agent deployment_ depth to develop.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
