@@ -9324,5 +9324,100 @@
       "raw_decision": "",
       "timestamp": "2026-08-04 23:00"
     }
+  ],
+  "2026-08-05": [
+    {
+      "job_id": "e00aa49937",
+      "number": "1",
+      "title": "[Remote] AI Reliability Engineer (AI SRE)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotezest.up.railway.app/job/remote-ai-reliability-engineer-ai-sre",
+      "matched_keywords": [
+        "ai reliability engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-08-05 23:00"
+    },
+    {
+      "job_id": "3aaa2f2e85",
+      "number": "2",
+      "title": "Python ML Engineer (LLM Ops) (Remote)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.dice.com/job-detail/f6bfe675-ac6b-43df-903e-c547a8e7d290",
+      "matched_keywords": [
+        "llm ops",
+        "mlops engineer",
+        "ml engineer",
+        "llm",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-08-05 23:00"
+    },
+    {
+      "job_id": "8885b11efd",
+      "number": "3",
+      "title": "AI QA Engineer / AI Test Architect at Togal AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://startup.jobs/ai-qa-engineer-ai-test-architect-togal-ai-8909711",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-08-05 23:00"
+    },
+    {
+      "job_id": "5fe9667f57",
+      "number": "4",
+      "title": "AI QA Engineer / AI Test Architect @ Togal AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://jobs.ashbyhq.com/togal-ai/66de8866-08ab-423e-b823-9c945efcc293",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Already Seen/Duplicate",
+      "timestamp": "2026-08-05 23:00"
+    },
+    {
+      "job_id": "367bb00e81",
+      "number": "5",
+      "title": "Agentic AI Platform (Remote Eligible) at Capital One - Haystack",
+      "company": "Haystack",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://haystackapp.io/jobs/cfffa788-85c4-496c-b2bd-6510746c4809",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-08-05 23:00"
+    }
   ]
 }
