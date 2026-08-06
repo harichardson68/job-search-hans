@@ -8758,7 +8758,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-07-28 23:00"
+      "timestamp": "2026-07-28 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-08-06"
     },
     {
       "job_id": "c38b596dc1",
@@ -9398,7 +9400,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Already Seen/Duplicate",
-      "timestamp": "2026-08-05 23:00"
+      "timestamp": "2026-08-05 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-08-06"
     },
     {
       "job_id": "367bb00e81",
@@ -9417,7 +9421,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
-      "timestamp": "2026-08-05 23:00"
+      "timestamp": "2026-08-05 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-08-06"
     }
   ]
 }
