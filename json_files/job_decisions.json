@@ -9428,9 +9428,60 @@
   ],
   "2026-08-06": [
     {
+      "job_id": "908a2d01b6",
+      "number": "1",
+      "title": "AI QA Engineer / AI Test Architect at Togal.AI \u2022 United States",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://wellfound.com/jobs/4547625-ai-qa-engineer-ai-test-architect",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-08-06 23:00"
+    },
+    {
+      "job_id": "5e9f664720",
+      "number": "2",
+      "title": "[Remote] AI Automation Engineer V",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/remote-ai-automation-engineer-v-2",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-06 23:00"
+    },
+    {
+      "job_id": "3f099b9ad6",
+      "number": "3",
+      "title": "AI Engineer @ Clera",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/Clera/33b7fe21-1c4d-41a5-a20c-5a38d99f5b99",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-08-06 23:00"
+    },
+    {
       "job_id": "9a360160a4",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -9441,17 +9492,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *systems architecture* align with Hans's AI pivot; minor _AWS-specific solutions architect_ pattern and _production agent deployment_ depth to develop.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-06T12:04:32.630519"
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-08-06 23:00"
     }
   ]
 }
