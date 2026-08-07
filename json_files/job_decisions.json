@@ -9497,5 +9497,34 @@
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-08-06 23:00"
     }
+  ],
+  "2026-08-07": [
+    {
+      "job_id": "a8347c2c71",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "GenAI / Agentic AI Sales Manager, AWS Global ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10492490/genai-agentic-ai-sales-manager-aws-global-sales-specialist",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* portfolio and *AWS* exposure align with career pivot; _sales manager_ title and production GenAI deployment gap are real friction.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-07T12:04:27.360335"
+    }
   ]
 }
