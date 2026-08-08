@@ -9500,9 +9500,86 @@
   ],
   "2026-08-07": [
     {
+      "job_id": "270df434c4",
+      "number": "1",
+      "title": "Generative AI Engineer Staffing",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 123,
+      "url": "https://www.kore1.com/generative-ai-engineer-staffing/",
+      "matched_keywords": [
+        "nlp",
+        "llm engineer",
+        "generative ai engineer",
+        "ai engineer",
+        "generative ai",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-07 23:00"
+    },
+    {
+      "job_id": "28ee617513",
+      "number": "2",
+      "title": "AI Engineer(Entry Level / Associate)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://career.kean.edu/jobs/new-york-technology-management-ai-engineerentry-level-associate/",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineering",
+        "rag",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-07 23:00"
+    },
+    {
+      "job_id": "33f263efe4",
+      "number": "3",
+      "title": "Generative AI Engineer - Remote",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.indeed.com/viewjob?jk=e0f3e37bc4e95b11",
+      "matched_keywords": [
+        "ai engineer",
+        "generative ai",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-07 23:00"
+    },
+    {
+      "job_id": "bcd66e8ba0",
+      "number": "4",
+      "title": "Voice AI Integration Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://job-boards.greenhouse.io/aspenviewtech/jobs/4355186009?gh_src=my.greenhouse.search",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-07 23:00"
+    },
+    {
       "job_id": "a8347c2c71",
       "number": "A1",
-      "number_display": "A1",
       "title": "GenAI / Agentic AI Sales Manager, AWS Global ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -9514,17 +9591,10 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* portfolio and *AWS* exposure align with career pivot; _sales manager_ title and production GenAI deployment gap are real friction.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-07T12:04:27.360335"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-07 23:00"
     }
   ]
 }
