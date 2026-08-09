@@ -9599,9 +9599,81 @@
   ],
   "2026-08-08": [
     {
+      "job_id": "f47d0b7b4f",
+      "number": "1",
+      "title": "AI Engineer - Remote - Mutual of Omaha Insurance Company - Dice",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/79a04dec-9f5f-4d3a-80a5-566c38487713",
+      "matched_keywords": [
+        "prompt engineer",
+        "prompt engineering",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-08 23:01"
+    },
+    {
+      "job_id": "7814a200f3",
+      "number": "2",
+      "title": "Agentic AI Forward Deployment Engineer / Architect - Photon - Dice",
+      "company": "Photon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/9a2e5f8e-84be-424d-bd11-ae9733bcb293",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-08 23:01"
+    },
+    {
+      "job_id": "d12b497754",
+      "number": "3",
+      "title": "AI Automation engineer - QUANTUM TECHNOLOGIES LLC - Remote",
+      "company": "QUANTUM TECHNOLOGIES LLC",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/baf18ad8-ed34-4bc2-8709-918b6e322eff",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-08 23:01"
+    },
+    {
+      "job_id": "520b7319de",
+      "number": "4",
+      "title": "AI Engineer - Lorvin Technologies - Remote | Dice.com",
+      "company": "Lorvin Technologies",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/24cae4a4-bad5-43da-aabe-abc38866ade2",
+      "matched_keywords": [
+        "prompt engineer",
+        "prompt engineering",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-08 23:01"
+    },
+    {
       "job_id": "9be0f640f0",
       "number": "A1",
-      "number_display": "A1",
       "title": "Machine Learning Engineer, Alexa AI - Job ID - Amazon Careers",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -9611,17 +9683,10 @@
         "machine learning engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI systems engineering* trajectory and *observability* depth relevant, but _production ML model development_ experience not yet demonstrated at scale.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-08T12:04:35.478770"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-08 23:01"
     }
   ]
 }
