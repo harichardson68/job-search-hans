@@ -9691,9 +9691,99 @@
   ],
   "2026-08-09": [
     {
+      "job_id": "b3346b6065",
+      "number": "1",
+      "title": "AI Test Engineer :: Remote - Job Details",
+      "company": "Job Details",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://nvoids.com/job_details.jsp?id=3589180&uid=786794d514de4d8ab07667d2ca69eea4",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-09 23:00"
+    },
+    {
+      "job_id": "1e94e63e8a",
+      "number": "2",
+      "title": "AI Agent Developer \u2014 Redmond | remote click jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/ai-agent-developer-redmond",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-09 23:00"
+    },
+    {
+      "job_id": "edd0e5cfb1",
+      "number": "3",
+      "title": "AI Automation engineer at QUANTUM TECHNOLOGIES LLC",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://haystackapp.io/jobs/8a0b2796-0116-434b-b76f-130f0bba7420",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-09 23:00"
+    },
+    {
+      "job_id": "c33a2116b7",
+      "number": "4",
+      "title": "reputed company Performance Engineer | remote click jobs",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 190,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/reputed-company-performance-engineer",
+      "matched_keywords": [
+        "loadrunner",
+        "neoload",
+        "jmeter",
+        "performance testing",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-09 23:00"
+    },
+    {
+      "job_id": "25f61f3109",
+      "number": "5",
+      "title": "AI Prompt Engineer at BPM - Remote - RemoteLeaf",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remoteleaf.com/company/bpm/ai-prompt-engineer-india/",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-09 23:00"
+    },
+    {
       "job_id": "5ce4800d41",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Dev Engineer - AI Agents, IES LATech - Job ID: 10496456",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -9705,17 +9795,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI agent* primitives and *latency* optimization align with emerging skills; _production LLM systems_ experience still building but portfolio shows real momentum.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-09T12:04:50.451080"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-09 23:00"
     }
   ]
 }
