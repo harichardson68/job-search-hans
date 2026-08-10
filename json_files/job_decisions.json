@@ -9802,5 +9802,32 @@
       "raw_decision": "",
       "timestamp": "2026-08-09 23:00"
     }
+  ],
+  "2026-08-10": [
+    {
+      "job_id": "096db97a8d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10437000/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-10T12:05:00.863690"
+    }
   ]
 }
