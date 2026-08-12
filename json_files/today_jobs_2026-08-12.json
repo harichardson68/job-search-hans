@@ -1,0 +1,130 @@
+{
+  "date": "2026-08-12",
+  "run_id": "20260812_120513",
+  "jobs": [
+    {
+      "job_id": "dea7734298",
+      "number": "1",
+      "number_display": "1",
+      "token": "5c42d7006d",
+      "run_id": "20260812_120513",
+      "title": "[Remote] AI QA Engineer / AI Test Architect",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/remote-ai-qa-engineer-ai-test-architect",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA* role matches Hans's dual-track search; *remote* location ideal, but _QA architect_ depth vs. his AI systems engineering pivot requires bridging.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "4de1c44c7c",
+      "number": "2",
+      "number_display": "2",
+      "token": "a19c31f154",
+      "run_id": "20260812_120513",
+      "title": "GenAI/Agentic AI Engineer - Reliable Software Resources",
+      "company": "Reliable Software Resources",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/b4c9596d-c22f-4a22-899b-dae41439c696",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches dual-track pivot; *GenAI cert* and Claude projects solid, minor _production deployment_ depth still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c3e2ca0f91",
+      "number": "3",
+      "number_display": "3",
+      "token": "1bcb47cec9",
+      "run_id": "20260812_120513",
+      "title": "AI Agent Developer - Remote / Telecommute - Cynet Systems",
+      "company": "Remote / Telecommute",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/4ab67d31-3f1f-40cf-977f-66c549471764",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* remote role matches Hans's *agentic loop* projects and GenAI cert; minor _production deployment_ depth but aligned with dual-track search.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "081f8f22ad",
+      "number": "4",
+      "number_display": "4",
+      "token": "4bba31ed8c",
+      "run_id": "20260812_120513",
+      "title": "[Remote] AI Automation Engineer [Remote]",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/remote-ai-automation-engineer-remote",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation engineer* role matches Hans's *GenAI certification* and agent-building trajectory; _production deployment experience_ still emerging but clearly intentional.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "852523a416",
+      "number": "5",
+      "number_display": "5",
+      "token": "f53eeb040f",
+      "run_id": "20260812_120513",
+      "title": "AI Automation Jobs for End-to-End Workflow Builders",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.ai-native-builder.com/ai-automation-jobs",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation* + *workflow engineering* align with Hans's agent/agentic loop projects; _production ML depth_ still building but remote US salary/location clean match.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "a9109714b9",
+      "number": "6",
+      "number_display": "6",
+      "token": "cdc06dd4b8",
+      "run_id": "20260812_120513",
+      "title": "AI Backend Engineer / AI Integration Engineer (Remote)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.onlinejobs.ph/jobseekers/job/ai-backend-engineer-ai-integration-engineer-remote-1707376",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AI integration* and *backend* skills align with Hans's GenAI trajectory, but _PHP/daily support_ and potential _Filipino-preference_ language suggest moderate friction.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
