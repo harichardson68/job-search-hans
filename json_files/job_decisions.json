@@ -9931,5 +9931,116 @@
       "raw_decision": "",
       "timestamp": "2026-08-10 23:00"
     }
+  ],
+  "2026-08-11": [
+    {
+      "job_id": "2d030fe304",
+      "number": "1",
+      "title": "AI QA Engineer / AI Test Architect @ Togal AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://testdevjobs.com/job/togal-ai-ai-qa-engineer-ai-test-architect-23527/",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-11 23:00"
+    },
+    {
+      "job_id": "31d1188d47",
+      "number": "2",
+      "title": "Generative AI (GenAI) | Prompt Engineer @ Medfar",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.tealhq.com/job/generative-ai-genai-prompt-engineer_7ea1a4837ab577130f2fb634ed1286ab24639",
+      "matched_keywords": [
+        "prompt engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-11 23:00"
+    },
+    {
+      "job_id": "8df8d65dfd",
+      "number": "3",
+      "title": "AI Integration Engineer - LaSalle Network - Remote",
+      "company": "LaSalle Network",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/e3967243-99d8-4119-a081-39198f3c12fe",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-11 23:00"
+    },
+    {
+      "job_id": "25cf44bdca",
+      "number": "4",
+      "title": "Applied AI Engineer @ Praecipio Consulting",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/praecipio/ac0c2324-4f27-48b1-9bc2-4f724c6f822c",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-11 23:00"
+    },
+    {
+      "job_id": "c48048e0dc",
+      "number": "5",
+      "title": "Performance Tester - Neoload - SSTech LLC - Remote",
+      "company": "Neoload",
+      "track": "Performance Engineering",
+      "score": 175,
+      "url": "https://www.dice.com/job-detail/e7c9f846-2532-4f60-86d9-3913303341df",
+      "matched_keywords": [
+        "load testing",
+        "performance testing",
+        "neoload",
+        "performance engineer",
+        "performance tester"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-11 23:00"
+    },
+    {
+      "job_id": "afcb92a15f",
+      "number": "6",
+      "title": "Salesforce Performance Tester Remote / Telecommute Jobs",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.clearancejobs.com/jobs/9085268/salesforce-performance-tester",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-11 23:00"
+    }
   ]
 }
