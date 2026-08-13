@@ -10150,5 +10150,34 @@
       "raw_decision": "",
       "timestamp": "2026-08-12 23:00"
     }
+  ],
+  "2026-08-13": [
+    {
+      "job_id": "aa6069673f",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Dev Engineer - AI Agents, IES LATech - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10496456/software-dev-engineer-ai-agents-ies-latech",
+      "matched_keywords": [
+        "latency",
+        "agentic",
+        "ai agent"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent* systems and *latency* optimization align with Hans's emerging agentic focus; _production LLM deployment_ experience still building but realistic bridge from performance engineering.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-13T12:06:09.130547"
+    }
   ]
 }
