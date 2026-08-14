@@ -10153,9 +10153,100 @@
   ],
   "2026-08-13": [
     {
+      "job_id": "86c3d04931",
+      "number": "1",
+      "title": "AI QA Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 85,
+      "url": "https://cazvid.com/en/job/ai-qa-engineer-750422d0",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer",
+        "ai testing"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-13 23:00"
+    },
+    {
+      "job_id": "cb41b8f47f",
+      "number": "2",
+      "title": "AI Engineer- Agentic AI Solutions at Ford Motor Company",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.aijobs.com/jobs/602703916-ai-engineer-agentic-ai-solutions",
+      "matched_keywords": [
+        "agentic ai",
+        "ai integration engineer",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-13 23:00"
+    },
+    {
+      "job_id": "f3465c1559",
+      "number": "3",
+      "title": "AI Integration Engineer at LaSalle Network - United States",
+      "company": "United States",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://haystackapp.io/jobs/78d173ea-b7ee-4ab4-b4b4-158b42525da3",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-13 23:00"
+    },
+    {
+      "job_id": "2e10b12003",
+      "number": "4",
+      "title": "[Remote] AI Reliability Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remoteclickjobs-production.up.railway.app/job/remote-ai-reliability-engineer",
+      "matched_keywords": [
+        "ai reliability engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-13 23:00"
+    },
+    {
+      "job_id": "a30160f39f",
+      "number": "5",
+      "title": "Sr. Performance Tester, Hybrid/Reston, VA",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.elitetechnicaljobs.com/job/?id",
+      "matched_keywords": [
+        "loadrunner",
+        "neoload",
+        "performance tester"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-13 23:00"
+    },
+    {
       "job_id": "aa6069673f",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Dev Engineer - AI Agents, IES LATech - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -10167,17 +10258,10 @@
         "ai agent"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *AI agent* systems and *latency* optimization align with Hans's emerging agentic focus; _production LLM deployment_ experience still building but realistic bridge from performance engineering.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-13T12:06:09.130547"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-13 23:00"
     }
   ]
 }
