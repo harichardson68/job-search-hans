@@ -10266,9 +10266,82 @@
   ],
   "2026-08-14": [
     {
+      "job_id": "135d2c77a1",
+      "number": "1",
+      "title": "AI Agent Developer - Intellisoft Technologies - Remote",
+      "company": "Intellisoft Technologies",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/f9d246b0-fbde-4d38-9dd1-12add381487a",
+      "matched_keywords": [
+        "ai agent developer",
+        "gemini",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-14 23:00"
+    },
+    {
+      "job_id": "26829117d6",
+      "number": "2",
+      "title": "Sr. Performance Tester - Mind Ware Inc - Hybrid in Reston ...",
+      "company": "Mind Ware Inc",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/96a90fa1-ba2f-44ab-b41d-c5d4901fba70",
+      "matched_keywords": [
+        "neoload",
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-14 23:00"
+    },
+    {
+      "job_id": "7947fe1be4",
+      "number": "3",
+      "title": "Sr. Performance Tester at Voto Consulting LLC - Jobs",
+      "company": "Jobs",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://haystackapp.io/jobs/3dc57acb-a79d-42fd-96b5-e304629ccf0a",
+      "matched_keywords": [
+        "neoload",
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-14 23:00"
+    },
+    {
+      "job_id": "56bc4fa616",
+      "number": "4",
+      "title": "Intermediate AI Engineer - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://axos.wd5.myworkdayjobs.com/en-US/Axos/job/Intermediate-AI-Engineer_JR5102",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-14 23:00"
+    },
+    {
       "job_id": "a3d6de06e8",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Agentic Workspaces",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -10279,22 +10352,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-14T12:05:47.250904"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-14 23:00"
     },
     {
       "job_id": "11e51f318c",
       "number": "A2",
-      "number_display": "A2",
       "title": "Software Development Engineer, Agentic WorkSpaces",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -10304,17 +10369,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-14T12:05:47.250919"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-14 23:00"
     }
   ]
 }
