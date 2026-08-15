@@ -10374,5 +10374,59 @@
       "raw_decision": "",
       "timestamp": "2026-08-14 23:00"
     }
+  ],
+  "2026-08-15": [
+    {
+      "job_id": "22759138fd",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Agentic AI - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10502322/software-development-engineer-agentic-ai",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong with portfolio projects; _production agent deployment_ experience still building, but realistic upside fit.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-15T12:04:46.215469"
+    },
+    {
+      "job_id": "e6988b0eb2",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Software Development Engineer, Agentic WorkSpaces",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10501333/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-15T12:04:46.215487"
+    }
   ]
 }
