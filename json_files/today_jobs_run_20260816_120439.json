@@ -1,0 +1,72 @@
+{
+  "date": "2026-08-16",
+  "run_id": "20260816_120439",
+  "jobs": [
+    {
+      "job_id": "e107fa454d",
+      "number": "1",
+      "number_display": "1",
+      "token": "dc2cb5eb62",
+      "run_id": "20260816_120439",
+      "title": "Agentic AI engineer in United States",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://spectraforce.com/careers/jobs/agentic-ai-engineer-remote-usa-495147",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai",
+        "aws"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active GenAI/Claude projects; remote location ideal, but _AWS-specific_ hands-on experience not yet demonstrated.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "cb98f964c0",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "f4590ede99",
+      "run_id": "20260816_120439",
+      "title": "SDET Automation Engineer- St Louis, MO - Onsite",
+      "company": "Onsite",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/a555f372-25b0-4ee8-ba7e-f5038457c275",
+      "matched_keywords": [
+        "performance testing",
+        "loadrunner",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Performance testing* automation role with *JMeter/LoadRunner* experience; _onsite requirement_ conflicts but remote option mentioned, realistic ramp-up.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7481b3952d",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "a9f3dfd331",
+      "run_id": "20260816_120439",
+      "title": "Software Development Engineer, Ads Agentic Solutions",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/jobs/10502947",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* portfolio aligns with Hans's GenAI trajectory, but _production agent systems at scale_ experience is emerging rather than proven.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
