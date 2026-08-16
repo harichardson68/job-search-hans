@@ -10377,9 +10377,121 @@
   ],
   "2026-08-15": [
     {
+      "job_id": "aabb174fe3",
+      "number": "1",
+      "title": "True Zero Technologies - AI/ML Engineer (R-00194)",
+      "company": "AI/ML Engineer (R-00194)",
+      "track": "AI Engineering",
+      "score": 98,
+      "url": "https://jobs.lever.co/truezerotech/69f748f9-f6af-4ed4-bddb-05c138102c47",
+      "matched_keywords": [
+        "ml engineer",
+        "prompt engineer",
+        "uat",
+        "prompt engineering",
+        "embeddings"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-08-15 23:00"
+    },
+    {
+      "job_id": "a9f1932a12",
+      "number": "2",
+      "title": "AI Prompt Engineer at Team Red Dog - Redmond | Haystack",
+      "company": "Redmond | Haystack",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://haystackapp.io/jobs/91d1138e-ae52-43a7-9fb8-e92ff970f8f1",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-08-15 23:00"
+    },
+    {
+      "job_id": "16920a6034",
+      "number": "3",
+      "title": "AI/ML Solutions Architect (Agentic Systems)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://guidehouse.wd1.myworkdayjobs.com/External/job/US---Remote-Any-location/AI-ML-Solutions-Architect--Agentic-Systems-_37697",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-15 23:00"
+    },
+    {
+      "job_id": "06e5b7a161",
+      "number": "4",
+      "title": "AI Agent Developer \u2013 Microsoft Fabric & Power BI (remote ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.aijobs.com/jobs/599536152-ai-agent-developer-microsoft-fabric-power-bi-remote-contract",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-08-15 23:00"
+    },
+    {
+      "job_id": "45902b923a",
+      "number": "5",
+      "title": "AI Automation Engineer - Remote at City of Hope in United ...",
+      "company": "Remote at City of Hope in United ...",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.cityofhopejobs.org/job/11796/ai-automation-engineer-information-technology-us/",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-15 23:00"
+    },
+    {
+      "job_id": "067c635e89",
+      "number": "6",
+      "title": "Sr. Performance Tester - Voto Consulting LLC",
+      "company": "Voto Consulting LLC",
+      "track": "Performance Engineering",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/7f9b196b-d883-41f3-b43b-a6926394b721",
+      "matched_keywords": [
+        "neoload",
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-15 23:00"
+    },
+    {
       "job_id": "22759138fd",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Agentic AI - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -10391,22 +10503,14 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* alignment strong with portfolio projects; _production agent deployment_ experience still building, but realistic upside fit.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-15T12:04:46.215469"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-15 23:00"
     },
     {
       "job_id": "e6988b0eb2",
       "number": "A2",
-      "number_display": "A2",
       "title": "Software Development Engineer, Agentic WorkSpaces",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -10416,17 +10520,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-15T12:04:46.215487"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-15 23:00"
     }
   ]
 }
