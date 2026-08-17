@@ -10528,9 +10528,47 @@
   ],
   "2026-08-16": [
     {
+      "job_id": "e107fa454d",
+      "number": "1",
+      "title": "Agentic AI engineer in United States",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://spectraforce.com/careers/jobs/agentic-ai-engineer-remote-usa-495147",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai",
+        "aws"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-16 23:00"
+    },
+    {
+      "job_id": "cb98f964c0",
+      "number": "G1",
+      "title": "SDET Automation Engineer- St Louis, MO - Onsite",
+      "company": "Onsite",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://www.dice.com/job-detail/a555f372-25b0-4ee8-ba7e-f5038457c275",
+      "matched_keywords": [
+        "performance testing",
+        "loadrunner",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-16 23:00"
+    },
+    {
       "job_id": "7481b3952d",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Ads Agentic Solutions",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -10541,17 +10579,10 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* portfolio aligns with Hans's GenAI trajectory, but _production agent systems at scale_ experience is emerging rather than proven.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-16T12:04:39.290155"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-16 23:00"
     }
   ]
 }
