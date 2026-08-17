@@ -10451,7 +10451,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
-      "timestamp": "2026-08-15 23:00"
+      "timestamp": "2026-08-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-08-17"
     },
     {
       "job_id": "45902b923a",
