@@ -10589,9 +10589,27 @@
   ],
   "2026-08-17": [
     {
+      "job_id": "c225797208",
+      "number": "1",
+      "title": "dexter health (Remote): AI Engineer (LLM Products) - Join",
+      "company": "Join",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://join.com/companies/dexter-health/16578165-ai-engineer-llm-products-remote",
+      "matched_keywords": [
+        "llm",
+        "prompt engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-17 23:00"
+    },
+    {
       "job_id": "bbcaf6e53a",
       "number": "A1",
-      "number_display": "A1",
       "title": "Machine Learning Performance Engineer, Annapurna Labs",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -10601,22 +10619,14 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-17T12:04:33.551051"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-17 23:00"
     },
     {
       "job_id": "a3bb18d279",
       "number": "A2",
-      "number_display": "A2",
       "title": "Software Development Engineer, Agentic Workspaces",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -10626,17 +10636,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-17T12:04:33.551070"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-17 23:00"
     }
   ]
 }
