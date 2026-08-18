@@ -1,0 +1,90 @@
+{
+  "date": "2026-08-18",
+  "run_id": "20260818_120601",
+  "jobs": [
+    {
+      "job_id": "9f401821fa",
+      "number": "1",
+      "number_display": "1",
+      "token": "394964a42a",
+      "run_id": "20260818_120601",
+      "title": "AI Engineer III - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 55,
+      "url": "https://oneok.wd1.myworkdayjobs.com/oneok/job/remote/ai-engineer-iii_r8592-1",
+      "matched_keywords": [
+        "ai engineer",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role with *prompt/tool design* directly matches emerging skills; remote-eligible and _early-stage agent_ experience is developing fast.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "218f9f6de6",
+      "number": "2",
+      "number_display": "2",
+      "token": "b12a5565d5",
+      "run_id": "20260818_120601",
+      "title": "Quality Engineer \u2013 AI & Test Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 45,
+      "url": "https://www.dice.com/job-detail/ca9123d0-914b-4fcd-a2cf-ebae2fc1005d",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI test engineering* + *quality automation* align with Hans's GenAI upskilling; minor _production LLM depth_ gap but PST timezone constraint is manageable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "66279eb7da",
+      "number": "3",
+      "number_display": "3",
+      "token": "516ec1d8cc",
+      "run_id": "20260818_120601",
+      "title": "AI Automation Engineer II - iSpace, Inc - Remote",
+      "company": "iSpace, Inc",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/9be92d5d-f0dd-4f9c-8aed-d7555c6a2602",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation* role matches stated dual-track search; *remote* location ideal, but _limited production LLM deployment_ experience and contract-only duration are minor friction.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "71aebaf76e",
+      "number": "4",
+      "number_display": "4",
+      "token": "d8c18413a2",
+      "run_id": "20260818_120601",
+      "title": "Performance Engineer - NeoLoad, LoadRunner ...",
+      "company": "NeoLoad, LoadRunner ...",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://ca.linkedin.com/jobs/view/performance-engineer-neoload-loadrunner-ecommerce-at-astra-north-infoteck-inc-~-conquering-today%E2%80%99s-challenges-achieving-tomorrow%E2%80%99s-vision%21-4454401671",
+      "matched_keywords": [
+        "performance engineer",
+        "loadrunner",
+        "neoload",
+        "LoadRunner-in-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
