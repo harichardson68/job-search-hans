@@ -10715,5 +10715,64 @@
       "raw_decision": "",
       "timestamp": "2026-08-18 23:00"
     }
+  ],
+  "2026-08-19": [
+    {
+      "job_id": "c8cd2657fb",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Solutions Architect \u2014 Agentic WorkSpaces AI - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://amazon.jobs/en/jobs/10505463/solutions-architect-agentic-workspaces-ai",
+      "matched_keywords": [
+        "ai agent",
+        "prompt engineer",
+        "prompt engineering",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *prompt engineering* skills align with role; _Solutions Architect_ title seniority match less certain than IC engineer positioning.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-19T12:06:04.904953"
+    },
+    {
+      "job_id": "513f6b528f",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Software Development Engineer, AWS AI Agentic ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://amazon.jobs/en/jobs/10499066/software-development-engineer-aws-ai-agentic-automated-reasoning-ar",
+      "matched_keywords": [
+        "ai agent",
+        "agentic ai",
+        "agentic",
+        "aws"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agentic systems* and *AWS* align with Hans's active upskilling; minor _production LLM deployment_ gap but realistic hands-on foundation.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-19T12:06:04.904970"
+    }
   ]
 }
