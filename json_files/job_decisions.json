@@ -10871,5 +10871,33 @@
       "raw_decision": "",
       "timestamp": "2026-08-19 23:00"
     }
+  ],
+  "2026-08-20": [
+    {
+      "job_id": "785713a405",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10506290/senior-specialist-solutions-architect-agentic-ai-ags-specialist-solutions-architects",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* expertise and *senior architect* level match well; _AWS-specific solutions_ experience gap is minor and learnable.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-20T12:05:22.533495"
+    }
   ]
 }
