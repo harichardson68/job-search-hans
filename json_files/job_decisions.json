@@ -10874,9 +10874,48 @@
   ],
   "2026-08-20": [
     {
+      "job_id": "2c0470bf35",
+      "number": "1",
+      "title": "Agentic AI Engineer \u2013 Python & Azure - Remote (USA)",
+      "company": "Remote (USA)",
+      "track": "AI Engineering",
+      "score": 89,
+      "url": "https://www.dice.com/job-detail/6eeba7d0-c692-4d05-a0d8-8be6cd207166",
+      "matched_keywords": [
+        "python",
+        "agentic ai",
+        "agentic",
+        "ai agent",
+        "ai engineer",
+        "agent framework"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-20 23:00"
+    },
+    {
+      "job_id": "ecdfa93769",
+      "number": "2",
+      "title": "MLOPS Engineer - MetaSense, Inc. - Hybrid in Hollywood, ...",
+      "company": "MetaSense, Inc.",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.dice.com/job-detail/4d7b6a5e-8146-46b8-86a1-d2f90412a24d",
+      "matched_keywords": [
+        "mlops engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-20 23:00"
+    },
+    {
       "job_id": "785713a405",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI, AGS Specialist Solutions Architects - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -10887,17 +10926,10 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* expertise and *senior architect* level match well; _AWS-specific solutions_ experience gap is minor and learnable.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-20T12:05:22.533495"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-20 23:00"
     }
   ]
 }
