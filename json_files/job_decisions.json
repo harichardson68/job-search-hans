@@ -10950,5 +10950,33 @@
       "raw_decision": "",
       "timestamp": "2026-08-21 23:00"
     }
+  ],
+  "2026-08-22": [
+    {
+      "job_id": "6f51ba6bd4",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Agentic Workspaces",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 33,
+      "url": "https://www.amazon.jobs/en/jobs/10501321/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic",
+        "natural"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-22T12:05:52.925699"
+    }
   ]
 }
