@@ -10931,5 +10931,24 @@
       "raw_decision": "",
       "timestamp": "2026-08-20 23:00"
     }
+  ],
+  "2026-08-21": [
+    {
+      "job_id": "de8f8d59af",
+      "number": "1",
+      "title": "MLOPs Engineer only W2 - E-Solutions, Inc. - Remote",
+      "company": "E-Solutions, Inc.",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/d6e3f2bd-5ad6-4a3a-95c4-9f22196bd068",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-21 23:00"
+    }
   ]
 }
