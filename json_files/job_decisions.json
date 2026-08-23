@@ -11007,5 +11007,61 @@
       "raw_decision": "",
       "timestamp": "2026-08-22 23:00"
     }
+  ],
+  "2026-08-23": [
+    {
+      "job_id": "f36ca9c28d",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Solutions Architect \u2014 Agentic WorkSpaces AI - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.amazon.jobs/en/jobs/10505463/solutions-architect-agentic-workspaces-ai",
+      "matched_keywords": [
+        "ai agent",
+        "prompt engineer",
+        "prompt engineering",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *prompt engineering* skills directly match; _Solutions Architect_ title slightly senior but real agent-building portfolio bridges gap.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-23T12:07:08.318711"
+    },
+    {
+      "job_id": "1e0fd9412a",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Software Development Engineer, Agentic Workspace - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10501325/software-development-engineer-agentic-workspace",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-23T12:07:08.318767"
+    }
   ]
 }
