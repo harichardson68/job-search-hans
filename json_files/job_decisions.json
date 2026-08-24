@@ -11010,9 +11010,156 @@
   ],
   "2026-08-23": [
     {
+      "job_id": "bcb99fd71f",
+      "number": "1",
+      "title": "Agentic AI Engineer/Remote at Apetan Consulting - Haystack",
+      "company": "Haystack",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://haystackapp.io/jobs/e650f375-80ec-4e1b-b8d9-85c656004b0b",
+      "matched_keywords": [
+        "ai agent",
+        "multi-agent",
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "55d82df2b8",
+      "number": "2",
+      "title": "AI/ML Engineer - Agentic AI (Remote)",
+      "company": "Agentic AI (Remote)",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://careers.cognizant.com/us-en/jobs/00070289401/aiml-engineer-agentic-ai-remote/",
+      "matched_keywords": [
+        "rag",
+        "ml engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "863daf4fa7",
+      "number": "3",
+      "title": "AI QA Engineer - Test Specialist",
+      "company": "Test Specialist",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://remotezest.up.railway.app/job/ai-qa-engineer-test-specialist",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "a1aaf155db",
+      "number": "4",
+      "title": "Agentic AI Engineer - Learn Beyond Consulting LLC",
+      "company": "Learn Beyond Consulting LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/a031b490-0660-4e75-b7ca-691e8ba3a87c",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "22021f99ac",
+      "number": "5",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotezest.up.railway.app/job/ai-automation-expert-ai-automation-engineer-remote-ai-automation-4",
+      "matched_keywords": [
+        "ai integration engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "15f3a13891",
+      "number": "6",
+      "title": "[Remote] AI Automation Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotezest.up.railway.app/job/remote-ai-automation-engineer-remote-1",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "2682fce50f",
+      "number": "7",
+      "title": "Performance Engineer- Austin TX",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 70,
+      "url": "https://remotezest.up.railway.app/job/performance-engineer-austin-tx",
+      "matched_keywords": [
+        "performance engineer",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
+      "job_id": "d79dbf9e5d",
+      "number": "8",
+      "title": "AI Engineer @ TextYess",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/textyess/d69a6429-67e9-4168-9970-75d4891df62a",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
+    },
+    {
       "job_id": "f36ca9c28d",
       "number": "A1",
-      "number_display": "A1",
       "title": "Solutions Architect \u2014 Agentic WorkSpaces AI - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -11026,22 +11173,14 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *prompt engineering* skills directly match; _Solutions Architect_ title slightly senior but real agent-building portfolio bridges gap.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-23T12:07:08.318711"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
     },
     {
       "job_id": "1e0fd9412a",
       "number": "A2",
-      "number_display": "A2",
       "title": "Software Development Engineer, Agentic Workspace - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -11051,17 +11190,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-23T12:07:08.318767"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-23 23:00"
     }
   ]
 }
