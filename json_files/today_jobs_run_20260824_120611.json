@@ -1,0 +1,92 @@
+{
+  "date": "2026-08-24",
+  "run_id": "20260824_120611",
+  "jobs": [
+    {
+      "job_id": "b53d2b33c2",
+      "number": "1",
+      "number_display": "1",
+      "token": "49455ce1d7",
+      "run_id": "20260824_120611",
+      "title": "Agentic AI Engineer......Atlanta, GA or Seattle, WA",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/1692f49a-fa67-4e8e-9e47-171a18ef8638",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active GenAI upskilling and *agent loop* projects; minor _location friction_ (Atlanta/Seattle vs. remote-seeking) but realistic pivot from performance engineering.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1c35005def",
+      "number": "2",
+      "number_display": "2",
+      "token": "fc910ce4b3",
+      "run_id": "20260824_120611",
+      "title": "Applied AI Engineer, Internal Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://boards.greenhouse.io/opensesame/jobs/8152738",
+      "matched_keywords": [
+        "ai engineer",
+        "ai agent",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent* and *RAG* skills directly match Hans's emerging GenAI portfolio; remote-first location ideal, minor _production LLM depth_ still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f9b24627e7",
+      "number": "3",
+      "number_display": "3",
+      "token": "a26b2c2625",
+      "run_id": "20260824_120611",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotezest.up.railway.app/job/ai-automation-expert-ai-automation-engineer-remote-ai-automation-3",
+      "matched_keywords": [
+        "ai integration engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation engineer* role matches Hans's active GenAI/agent learning; remote eligibility and *integration* focus align, minor _production LLM depth_ gap but realistic pathway.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0ca387721c",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "fae8aa5e4d",
+      "run_id": "20260824_120611",
+      "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10507514/agentic-workspaces-sales-specialist-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
