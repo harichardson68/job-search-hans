@@ -11198,9 +11198,65 @@
   ],
   "2026-08-24": [
     {
+      "job_id": "b53d2b33c2",
+      "number": "1",
+      "title": "Agentic AI Engineer......Atlanta, GA or Seattle, WA",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/1692f49a-fa67-4e8e-9e47-171a18ef8638",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-24 23:00"
+    },
+    {
+      "job_id": "1c35005def",
+      "number": "2",
+      "title": "Applied AI Engineer, Internal Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://boards.greenhouse.io/opensesame/jobs/8152738",
+      "matched_keywords": [
+        "ai engineer",
+        "ai agent",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-24 23:00"
+    },
+    {
+      "job_id": "f9b24627e7",
+      "number": "3",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotezest.up.railway.app/job/ai-automation-expert-ai-automation-engineer-remote-ai-automation-3",
+      "matched_keywords": [
+        "ai integration engineer",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-24 23:00"
+    },
+    {
       "job_id": "0ca387721c",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -11210,17 +11266,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-24T12:06:11.323969"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-24 23:00"
     }
   ]
 }
