@@ -11271,5 +11271,34 @@
       "raw_decision": "",
       "timestamp": "2026-08-24 23:00"
     }
+  ],
+  "2026-08-25": [
+    {
+      "job_id": "f2cd3fd98b",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic WorkSpaces, AWS Applied AI Solutions",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/pt/jobs/10459768/sr-specialist-solutions-architect-agentic-workspaces-aws-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* + *AWS* alignment with active GenAI portfolio; _production agent deployment_ experience still building but realistic bridge.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-25T12:06:22.777105"
+    }
   ]
 }

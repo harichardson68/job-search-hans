@@ -1,0 +1,159 @@
+{
+  "date": "2026-08-25",
+  "run_id": "20260825_120622",
+  "jobs": [
+    {
+      "job_id": "6c79d9fa76",
+      "number": "1",
+      "number_display": "1",
+      "token": "0e3fc87911",
+      "run_id": "20260825_120622",
+      "title": "Agentic AI Engineer/Remote - Apetan Consulting",
+      "company": "Apetan Consulting",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.dice.com/job-detail/e31cd6a5-1999-4ddc-9623-9cdf587482f8",
+      "matched_keywords": [
+        "ai engineer",
+        "ai agent",
+        "multi-agent",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *agentic AI* role matches stated dual-track goal; *GenAI foundation* solid but _production agent deployment_ experience limited.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "719bb62a4b",
+      "number": "2",
+      "number_display": "2",
+      "token": "e19a22aabb",
+      "run_id": "20260825_120622",
+      "title": "AI Engineer @ Ncontracts",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://jobs.ashbyhq.com/ncontracts/dc88e4d2-9476-4faf-ad5c-9211fd00b51b",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *AI Engineer* role matches dual-track pivot; *prompt engineering* aligns with GenAI skills, though _production LLM systems_ experience still developing.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e34d034837",
+      "number": "3",
+      "number_display": "3",
+      "token": "9f5128e38f",
+      "run_id": "20260825_120622",
+      "title": "Prompt Engineer / LLM Application Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Prompt-Engineer-LLM-Application-Developer_~022091833914072286906/",
+      "matched_keywords": [
+        "llm application",
+        "prompt engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *LLM application* and *prompt engineering* align with Hans's active AI upskilling; minor _production LLM depth_ gap but IBM GenAI cert and Claude projects are solid foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "5faf6c2121",
+      "number": "4",
+      "number_display": "4",
+      "token": "ab9150c33e",
+      "run_id": "20260825_120622",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote - Shine",
+      "company": "Shine",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.shine.com/jobs/ai-automation-expert-ai-automation-engineer-remote-ai-automation/flexboard/19491472",
+      "matched_keywords": [
+        "ai automation engineer",
+        "ai workflow"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI automation* + *workflow engineering* align with Hans's GenAI portfolio; _limited production deployment_ experience is minor gap.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "3ddfeb3ed9",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "fc9d6da56a",
+      "run_id": "20260825_120622",
+      "title": "Software Development Engineer in Test (SDET) with a ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://boards.greenhouse.io/cayuse/jobs/8743421002",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Performance testing automation* remote role; minor gap in _K6_ but LoadRunner/JMeter directly transferable from his QA background.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "de0a60f529",
+      "number": "G2",
+      "number_display": "G2",
+      "token": "9e65f8033d",
+      "run_id": "20260825_120622",
+      "title": "Test Engineer (Full Stack / SDET) at Marvedge",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 60,
+      "url": "https://wellfound.com/jobs/4617756-test-engineer-full-stack-sdet",
+      "matched_keywords": [
+        "performance testing"
+      ],
+      "source": "Wellfound",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Full-stack QA automation* remote role leveraging his 24+ years testing experience; minor _SDET specialization_ gap but directly accessible.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f2cd3fd98b",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "f8abb39c86",
+      "run_id": "20260825_120622",
+      "title": "Agentic WorkSpaces, AWS Applied AI Solutions",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/pt/jobs/10459768/sr-specialist-solutions-architect-agentic-workspaces-aws-applied-ai-solutions",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* + *AWS* alignment with active GenAI portfolio; _production agent deployment_ experience still building but realistic bridge.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
