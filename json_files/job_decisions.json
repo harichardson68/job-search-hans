@@ -11274,9 +11274,121 @@
   ],
   "2026-08-25": [
     {
+      "job_id": "6c79d9fa76",
+      "number": "1",
+      "title": "Agentic AI Engineer/Remote - Apetan Consulting",
+      "company": "Apetan Consulting",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.dice.com/job-detail/e31cd6a5-1999-4ddc-9623-9cdf587482f8",
+      "matched_keywords": [
+        "ai engineer",
+        "ai agent",
+        "multi-agent",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
+    },
+    {
+      "job_id": "719bb62a4b",
+      "number": "2",
+      "title": "AI Engineer @ Ncontracts",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://jobs.ashbyhq.com/ncontracts/dc88e4d2-9476-4faf-ad5c-9211fd00b51b",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
+    },
+    {
+      "job_id": "e34d034837",
+      "number": "3",
+      "title": "Prompt Engineer / LLM Application Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Prompt-Engineer-LLM-Application-Developer_~022091833914072286906/",
+      "matched_keywords": [
+        "llm application",
+        "prompt engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
+    },
+    {
+      "job_id": "5faf6c2121",
+      "number": "4",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote - Shine",
+      "company": "Shine",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.shine.com/jobs/ai-automation-expert-ai-automation-engineer-remote-ai-automation/flexboard/19491472",
+      "matched_keywords": [
+        "ai automation engineer",
+        "ai workflow"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
+    },
+    {
+      "job_id": "3ddfeb3ed9",
+      "number": "G1",
+      "title": "Software Development Engineer in Test (SDET) with a ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://boards.greenhouse.io/cayuse/jobs/8743421002",
+      "matched_keywords": [
+        "loadrunner",
+        "performance testing",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
+    },
+    {
+      "job_id": "de0a60f529",
+      "number": "G2",
+      "title": "Test Engineer (Full Stack / SDET) at Marvedge",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 60,
+      "url": "https://wellfound.com/jobs/4617756-test-engineer-full-stack-sdet",
+      "matched_keywords": [
+        "performance testing"
+      ],
+      "source": "Wellfound",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
+    },
+    {
       "job_id": "f2cd3fd98b",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic WorkSpaces, AWS Applied AI Solutions",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -11288,17 +11400,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* + *AWS* alignment with active GenAI portfolio; _production agent deployment_ experience still building but realistic bridge.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-25T12:06:22.777105"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-25 23:00"
     }
   ]
 }
