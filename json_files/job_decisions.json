@@ -11535,5 +11535,34 @@
       "raw_decision": "",
       "timestamp": "2026-08-26 23:00"
     }
+  ],
+  "2026-08-27": [
+    {
+      "job_id": "e077f9c17a",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Front End Engineer, AWS Agentic AI Automated ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/de/jobs/10515062/front-end-engineer-aws-agentic-ai-automated-reasoning-ar",
+      "matched_keywords": [
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging focus, but _frontend_ emphasis and production LLM depth create moderate friction against performance-engineering baseline.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-27T12:07:00.033764"
+    }
   ]
 }

@@ -1,0 +1,2 @@
+[2026-06-18 12:54:59] [job_search.py] RemoteOK error: HTTPSConnectionPool(host='remoteok.com', port=443): Read timed out. (read timeout=15)
+[2026-08-20 12:00:11] [review_decisions.py] Google Sheets API error: <HttpError 503 when requesting https://sheets.googleapis.com/v4/spreadsheets/1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE/values/Form%20Responses%201?alt=json returned "The service is currently unavailable.". Details: "The service is currently unavailable.">
