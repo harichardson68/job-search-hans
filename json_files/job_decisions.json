@@ -11408,9 +11408,119 @@
   ],
   "2026-08-26": [
     {
+      "job_id": "a955bc06ec",
+      "number": "1",
+      "title": "100 % Remote \u2013 AI Engineer \u2013 Generative AI / Agentic AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://bhsg.com/jobs/job/ns-aiec-ns_1787707879-100-remote-ai-engineer-generative-ai-agentic-ai-chicago-illinois/",
+      "matched_keywords": [
+        "ai engineer",
+        "generative ai",
+        "agentic",
+        "ai agent",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
+    },
+    {
+      "job_id": "38b9bfaa0a",
+      "number": "2",
+      "title": "AI Developer - W2 only - ASCII Group LLC - Remote",
+      "company": "W2 only",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/5fb94320-1506-4d02-be12-d8c456927b15",
+      "matched_keywords": [
+        "ai agent",
+        "ai developer",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
+    },
+    {
+      "job_id": "3feb89b17c",
+      "number": "3",
+      "title": "Generative AI Engineer - Innovative IT Solutions Inc - Remote",
+      "company": "Innovative IT Solutions Inc",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/cf95e918-53a1-4f0c-bc1b-5494e8c6e175",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
+    },
+    {
+      "job_id": "482e88004d",
+      "number": "4",
+      "title": "Senior Performance Engineer - Intercontinental Exchange ...",
+      "company": "Intercontinental Exchange ...",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.dice.com/job-detail/64e26314-0b04-4afa-9e4c-03fa5f9158ca",
+      "matched_keywords": [
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
+    },
+    {
+      "job_id": "989e5db484",
+      "number": "5",
+      "title": "AI Automation Engineer Job [REMOTE] - WorkHero",
+      "company": "WorkHero",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.monster.com/job-openings/ai-automation-engineer-new-york-ny--946a5b7b-8f6f-4ac3-8f9c-a92ce116babc",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
+    },
+    {
+      "job_id": "8428f5c1ae",
+      "number": "6",
+      "title": "AI Engineer @ Ditto",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/ditto/50646667-e435-4245-9194-588138ae886a",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
+    },
+    {
       "job_id": "921798c536",
       "number": "A1",
-      "number_display": "A1",
       "title": "AI/ML Engineer, Amazon Global Data Center Ops Central ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -11420,17 +11530,10 @@
         "ml engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* trajectory and *observability* depth align with MLOps reliability work, but _hands-on MLflow/SageMaker pipeline_ production experience gap requires ramp.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-26T12:06:47.250922"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-26 23:00"
     }
   ]
 }
