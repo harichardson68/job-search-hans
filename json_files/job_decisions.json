@@ -11538,9 +11538,166 @@
   ],
   "2026-08-27": [
     {
+      "job_id": "6f2da0b651",
+      "number": "1",
+      "title": "AI/ML Engineer - GDIT Logo - Art of the Possible",
+      "company": "GDIT Logo",
+      "track": "AI Engineering",
+      "score": 106,
+      "url": "https://gdit.wd5.myworkdayjobs.com/external_career_site/job/any-location--remote/ai-ml-engineer_rq227314",
+      "matched_keywords": [
+        "agentic ai",
+        "prompt engineer",
+        "ml engineer",
+        "agentic",
+        "prompt engineering",
+        "vector database"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "373973ce3d",
+      "number": "2",
+      "title": "100 % Remote - AI Engineer - Generative AI / Agentic AI",
+      "company": "AI Engineer",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.dice.com/job-detail/8dca0d33-5340-4644-812e-258d976623af",
+      "matched_keywords": [
+        "agentic ai",
+        "generative ai",
+        "ai agent",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "a9551c808c",
+      "number": "3",
+      "title": "100 % Remote \u2013 AI Engineer \u2013 Generative AI / Agentic AI",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://bhsg.com/jobs/job/ns-aiec-ns_1787707879-100-remote-ai-engineer-generative-ai-agentic-ai-chicago-illinois/?amp",
+      "matched_keywords": [
+        "agentic ai",
+        "generative ai",
+        "ai agent",
+        "ai engineer",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "337a3078a4",
+      "number": "4",
+      "title": "Generative AI Engineer - 100% Remote",
+      "company": "100% Remote",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/55d54289-bf1d-4cfd-832e-97b7a42ad1ef",
+      "matched_keywords": [
+        "generative ai engineer",
+        "generative ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "a675389de0",
+      "number": "5",
+      "title": "AI Engineer, Enablement @ LangChain",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://jobs.ashbyhq.com/langchain/47ad420c-9302-4a4f-a35f-7dd29e1d9d28?workplaceType",
+      "matched_keywords": [
+        "ai engineer",
+        "langchain"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "de1aee5b99",
+      "number": "6",
+      "title": "AI Engineer and Data Systems Architect @ Nudge Security ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/nudgesecurity/f50639b0-03dc-485c-8392-d4fa38052a22",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "e13cd02ac9",
+      "number": "7",
+      "title": "AI Workflow Engineer (Silicon Engineering Productivity)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/15bcd15b-c0cb-4188-83c2-475a5ebf068b",
+      "matched_keywords": [
+        "ai workflow",
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
+      "job_id": "577086cdff",
+      "number": "8",
+      "title": "Senior Performance Engineer ID84179 - AgileEngine",
+      "company": "AgileEngine",
+      "track": "Performance Engineering",
+      "score": 193,
+      "url": "https://www.dice.com/job-detail/c118e56f-a293-43f0-80c2-cd008c17a2e7",
+      "matched_keywords": [
+        "loadrunner",
+        "jmeter",
+        "neoload",
+        "performance testing",
+        "agile",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
+    },
+    {
       "job_id": "e077f9c17a",
       "number": "A1",
-      "number_display": "A1",
       "title": "Front End Engineer, AWS Agentic AI Automated ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -11552,17 +11709,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging focus, but _frontend_ emphasis and production LLM depth create moderate friction against performance-engineering baseline.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-27T12:07:00.033764"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-27 23:00"
     }
   ]
 }
