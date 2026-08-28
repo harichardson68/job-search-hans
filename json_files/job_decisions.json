@@ -11714,5 +11714,59 @@
       "raw_decision": "",
       "timestamp": "2026-08-27 23:00"
     }
+  ],
+  "2026-08-28": [
+    {
+      "job_id": "b546f8b9ee",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Front End Engineer, AWS Agentic AI Automated ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10515062/front-end-engineer-aws-agentic-ai-automated-reasoning-ar",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging portfolio; _frontend development_ and production agent deployment experience gaps, but agent safety/reliability work overlaps observability strengths.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-28T12:07:09.899095"
+    },
+    {
+      "job_id": "9b59dea0ea",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Software Development Engineer, Agentic Workspaces",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10517465/software-development-engineer-agentic-workspaces-watchtower",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-08-28T12:07:09.899150"
+    }
   ]
 }

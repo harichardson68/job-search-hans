@@ -1,0 +1,269 @@
+{
+  "date": "2026-08-28",
+  "run_id": "20260828_120709",
+  "jobs": [
+    {
+      "job_id": "da666c39cd",
+      "number": "1",
+      "number_display": "1",
+      "token": "2692ae1148",
+      "run_id": "20260828_120709",
+      "title": "AI Developer AI Agents & ServiceNow Remote Location",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/d47c9214-6fb0-4890-9050-2c9ff7e37605",
+      "matched_keywords": [
+        "ai agent developer",
+        "servicenow",
+        "ai agent",
+        "ai developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent developer* role matches dual-track search and remote location; _ServiceNow platform_ specificity is minor gap but learnable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "15f29c0c2b",
+      "number": "2",
+      "number_display": "2",
+      "token": "af02322351",
+      "run_id": "20260828_120709",
+      "title": "Agentic AI Engineer - Showman Staffing - Remote",
+      "company": "Showman Staffing",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/c01e3d52-5e92-4be2-b537-1a2883e20a05",
+      "matched_keywords": [
+        "agentic ai",
+        "ai agent",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's AI trajectory and remote location; minor _production agent deployment_ gap but GenAI cert and Claude projects bridge it well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f1b770f36f",
+      "number": "3",
+      "number_display": "3",
+      "token": "b832c81a23",
+      "run_id": "20260828_120709",
+      "title": "Agentic AI Engineer - Stellar Consulting Solutions - Remote",
+      "company": "Stellar Consulting Solutions",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/28906d38-9d43-430d-9b00-4a8d0cc1ef1f",
+      "matched_keywords": [
+        "agentic ai",
+        "mlops engineer",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *MLOps* alignment with Hans's emerging GenAI skills; minor _production ML ops_ depth gap but remote location and seniority match well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7aa7893a98",
+      "number": "4",
+      "number_display": "4",
+      "token": "957b748e96",
+      "run_id": "20260828_120709",
+      "title": "Remote AI/ML Engineering Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remoteai.io/v2/jobs/ai-ml-engineering",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* trajectory + *prompt engineering* skills match well; _production ML model_ depth still building but realistic apply.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9a541f536a",
+      "number": "5",
+      "number_display": "5",
+      "token": "a62014adf3",
+      "run_id": "20260828_120709",
+      "title": "Prompt Engineer AI Specialist in LLM & AI Platforms",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/f10ea487-b0b0-4862-a4a9-af99d2217cb7",
+      "matched_keywords": [
+        "prompt engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* and *prompt/LLM* skills align with dual-track search; minor _production GenAI deployment_ depth still building, but remote location and seniority match cleanly.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "dd48fb7ee7",
+      "number": "6",
+      "number_display": "6",
+      "token": "5b4d847c70",
+      "run_id": "20260828_120709",
+      "title": "Workiy - AI Agent Developer - Remote Job",
+      "company": "AI Agent Developer",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://workiy.zohorecruit.com/jobs/careers/574222000023040009/AI-Agent-Developer?source=CareerSite",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* remote role aligns with Hans's active GenAI/Claude projects; minor _production deployment_ depth needed but skill trajectory matches.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "957c3f9f8f",
+      "number": "7",
+      "number_display": "7",
+      "token": "017b721ab7",
+      "run_id": "20260828_120709",
+      "title": "AI Agent Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://cazvid.com/en/job/ai-agent-developer-a514ccd7",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches Hans's active GenAI/Claude projects and *remote* eligibility; _production agent deployment_ depth still building but portfolio-ready.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9242545566",
+      "number": "8",
+      "number_display": "8",
+      "token": "9c49c119fc",
+      "run_id": "20260828_120709",
+      "title": "AI Agent Developer at HonorHealth: 100% Remote (AZ)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.flexjobs.com/gjw/honorhealth/ai-agent-developer/publicjobs?id=85fe020d-56c9-4505-955c-da39f579457a",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent developer* role matches Hans's active GenAI skills and *remote* location preference; _production agent deployment_ experience gap is minor and bridgeable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "f258448164",
+      "number": "9",
+      "number_display": "9",
+      "token": "0b965be15e",
+      "run_id": "20260828_120709",
+      "title": "AI Engineer, Enablement @ LangChain",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://jobs.ashbyhq.com/langchain/47ad420c-9302-4a4f-a35f-7dd29e1d9d28?workplaceType=Remote",
+      "matched_keywords": [
+        "langchain",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role aligns with active GenAI/Claude projects; remote eligible and *enablement/customer* focus suits breadth; _LangChain-specific_ depth is learnable gap.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "610e1a4162",
+      "number": "10",
+      "number_display": "10",
+      "token": "fb99f0562a",
+      "run_id": "20260828_120709",
+      "title": "Senior Performance Engineer ID84179 - AgileEngine",
+      "company": "AgileEngine",
+      "track": "Performance Engineering",
+      "score": 193,
+      "url": "https://www.dice.com/job-detail/3dfa9543-ac69-46ea-ae8a-061f4e891f98",
+      "matched_keywords": [
+        "agile",
+        "performance engineer",
+        "performance testing",
+        "jmeter",
+        "neoload",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:senior-but-loadrunner-present"
+    },
+    {
+      "job_id": "b546f8b9ee",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "6fabf029b9",
+      "run_id": "20260828_120709",
+      "title": "Front End Engineer, AWS Agentic AI Automated ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en/jobs/10515062/front-end-engineer-aws-agentic-ai-automated-reasoning-ar",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging portfolio; _frontend development_ and production agent deployment experience gaps, but agent safety/reliability work overlaps observability strengths.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "9b59dea0ea",
+      "number": "A2",
+      "number_display": "A2",
+      "token": "3c0661e095",
+      "run_id": "20260828_120709",
+      "title": "Software Development Engineer, Agentic Workspaces",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10517465/software-development-engineer-agentic-workspaces-watchtower",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
