@@ -11717,9 +11717,199 @@
   ],
   "2026-08-28": [
     {
+      "job_id": "da666c39cd",
+      "number": "1",
+      "title": "AI Developer AI Agents & ServiceNow Remote Location",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/d47c9214-6fb0-4890-9050-2c9ff7e37605",
+      "matched_keywords": [
+        "ai agent developer",
+        "servicenow",
+        "ai agent",
+        "ai developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "15f29c0c2b",
+      "number": "2",
+      "title": "Agentic AI Engineer - Showman Staffing - Remote",
+      "company": "Showman Staffing",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/c01e3d52-5e92-4be2-b537-1a2883e20a05",
+      "matched_keywords": [
+        "agentic ai",
+        "ai agent",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "f1b770f36f",
+      "number": "3",
+      "title": "Agentic AI Engineer - Stellar Consulting Solutions - Remote",
+      "company": "Stellar Consulting Solutions",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/28906d38-9d43-430d-9b00-4a8d0cc1ef1f",
+      "matched_keywords": [
+        "agentic ai",
+        "mlops engineer",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "7aa7893a98",
+      "number": "4",
+      "title": "Remote AI/ML Engineering Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://remoteai.io/v2/jobs/ai-ml-engineering",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "9a541f536a",
+      "number": "5",
+      "title": "Prompt Engineer AI Specialist in LLM & AI Platforms",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/f10ea487-b0b0-4862-a4a9-af99d2217cb7",
+      "matched_keywords": [
+        "prompt engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "dd48fb7ee7",
+      "number": "6",
+      "title": "Workiy - AI Agent Developer - Remote Job",
+      "company": "AI Agent Developer",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://workiy.zohorecruit.com/jobs/careers/574222000023040009/AI-Agent-Developer?source=CareerSite",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "957c3f9f8f",
+      "number": "7",
+      "title": "AI Agent Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://cazvid.com/en/job/ai-agent-developer-a514ccd7",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "9242545566",
+      "number": "8",
+      "title": "AI Agent Developer at HonorHealth: 100% Remote (AZ)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.flexjobs.com/gjw/honorhealth/ai-agent-developer/publicjobs?id=85fe020d-56c9-4505-955c-da39f579457a",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "f258448164",
+      "number": "9",
+      "title": "AI Engineer, Enablement @ LangChain",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://jobs.ashbyhq.com/langchain/47ad420c-9302-4a4f-a35f-7dd29e1d9d28?workplaceType=Remote",
+      "matched_keywords": [
+        "langchain",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
+      "job_id": "610e1a4162",
+      "number": "10",
+      "title": "Senior Performance Engineer ID84179 - AgileEngine",
+      "company": "AgileEngine",
+      "track": "Performance Engineering",
+      "score": 193,
+      "url": "https://www.dice.com/job-detail/3dfa9543-ac69-46ea-ae8a-061f4e891f98",
+      "matched_keywords": [
+        "agile",
+        "performance engineer",
+        "performance testing",
+        "jmeter",
+        "neoload",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
+    },
+    {
       "job_id": "b546f8b9ee",
       "number": "A1",
-      "number_display": "A1",
       "title": "Front End Engineer, AWS Agentic AI Automated ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -11731,22 +11921,14 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's emerging portfolio; _frontend development_ and production agent deployment experience gaps, but agent safety/reliability work overlaps observability strengths.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-28T12:07:09.899095"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
     },
     {
       "job_id": "9b59dea0ea",
       "number": "A2",
-      "number_display": "A2",
       "title": "Software Development Engineer, Agentic Workspaces",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -11756,17 +11938,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-28T12:07:09.899150"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-28 23:00"
     }
   ]
 }
