@@ -11943,5 +11943,46 @@
       "raw_decision": "",
       "timestamp": "2026-08-28 23:00"
     }
+  ],
+  "2026-08-29": [
+    {
+      "job_id": "02486d544d",
+      "number": "1",
+      "title": "AI Developer - ServiceNow - Advent Global Solutions, Inc.",
+      "company": "ServiceNow",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/95aa5335-592f-4984-a09a-8f795adb6a12",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai developer",
+        "ai agent",
+        "servicenow"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-29 23:00"
+    },
+    {
+      "job_id": "2deed1514f",
+      "number": "G1",
+      "title": "Mainframe Developer (COBOL) - Source",
+      "company": "Source",
+      "track": "Gap Track",
+      "score": 55,
+      "url": "https://www.sourcebridgeco.com/Mainframe-Developer-COBOL/",
+      "matched_keywords": [
+        "mainframe",
+        "mainframe developer",
+        "cobol"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-29 23:00"
+    }
   ]
 }
