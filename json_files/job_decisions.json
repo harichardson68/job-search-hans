@@ -11987,9 +11987,99 @@
   ],
   "2026-08-30": [
     {
+      "job_id": "d269352f03",
+      "number": "1",
+      "title": "Agentic AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://boards.greenhouse.io/supermetricsoy/jobs/4961496101",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
+    },
+    {
+      "job_id": "f91c21ac3c",
+      "number": "2",
+      "title": "AI QA Engineer / AI Test Architect at Togal Ai - RemoShift",
+      "company": "RemoShift",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://remoshift.com/job/ai-qa-engineer-ai-test-architect-46d0ac65",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
+    },
+    {
+      "job_id": "95d073d8cd",
+      "number": "3",
+      "title": "AI Agent Developer at SBA Communications",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.remotesource.com/jobs/AVNY855v5ta2wwdztUtAP-ai-agent-developer-at-sba-communications",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
+    },
+    {
+      "job_id": "3e4881f13a",
+      "number": "4",
+      "title": "Performance Tester - M9 Solutions - Trust, NC, US",
+      "company": "M9 Solutions",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.dice.com/job-detail/9dd3ec36-cf99-412d-ae6e-da47f0a37b96",
+      "matched_keywords": [
+        "loadrunner",
+        "performance tester"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
+    },
+    {
+      "job_id": "fa81cfa829",
+      "number": "5",
+      "title": "AI / MLOps Engineer - Neural Strategic Solutions, Inc.",
+      "company": "Neural Strategic Solutions, Inc.",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/f0217263-bfff-402d-9336-fc103f0af613",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
+    },
+    {
       "job_id": "52eeaf9959",
       "number": "A1",
-      "number_display": "A1",
       "title": "AI/ML Engineer, Amazon Global Data Center Ops Central ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -11999,22 +12089,14 @@
         "ml engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *AI systems engineering* trajectory and *observability* depth relevant; _MLOps tooling_ (MLflow, SageMaker) and _production ML_ experience gaps but realistic pivot.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-30T12:06:43.873420"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
     },
     {
       "job_id": "160fdd6126",
       "number": "A2",
-      "number_display": "A2",
       "title": "Agentic WorkSpaces Sales Specialist, Applied AI Solutions",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -12024,17 +12106,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-08-30T12:06:43.873474"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-08-30 23:00"
     }
   ]
 }
