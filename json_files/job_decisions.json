@@ -12149,5 +12149,60 @@
       "raw_decision": "",
       "timestamp": "2026-08-31 23:00"
     }
+  ],
+  "2026-09-01": [
+    {
+      "job_id": "01aaae0b4b",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Agentic AI - Job ID: 10502322",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en/jobs/10502322/software-development-engineer-agentic-ai",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* systems and *AWS* stack align with Hans's active AI engineering pivot; _production agent deployment_ experience gap is bridgeable given senior observability depth.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-01T12:06:27.097488"
+    },
+    {
+      "job_id": "3a030d273b",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Software Development Engineer III, Agentic Client Experience (ACE)",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 26,
+      "url": "https://www.amazon.jobs/en/jobs/10509601/software-development-engineer-iii-agentic-client-experience-ace-builder-foundations",
+      "matched_keywords": [
+        "rag",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-01T12:06:27.097506"
+    }
   ]
 }
