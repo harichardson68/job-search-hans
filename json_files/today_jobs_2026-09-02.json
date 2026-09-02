@@ -1,0 +1,156 @@
+{
+  "date": "2026-09-02",
+  "run_id": "20260902_120701",
+  "jobs": [
+    {
+      "job_id": "c44bb20743",
+      "number": "1",
+      "number_display": "1",
+      "token": "82b417bdeb",
+      "run_id": "20260902_120701",
+      "title": "Full Stack AI Engineer (Generative AI) with AWS Bedrock - Dice",
+      "company": "Dice",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/535c2c9e-2b81-4416-8f58-f28279870041",
+      "matched_keywords": [
+        "aws",
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Senior AI Engineer* role matches Hans's *GenAI cert* and emerging skills; minor _AWS Bedrock depth_ gap but actively building AI systems.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "5e802c45b9",
+      "number": "2",
+      "number_display": "2",
+      "token": "5571cb5507",
+      "run_id": "20260902_120701",
+      "title": "Generative AI Engineer at Infinite Electronics - aijobs.com",
+      "company": "aijobs.com",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.aijobs.com/jobs/656603867-generative-ai-engineer",
+      "matched_keywords": [
+        "generative ai",
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI engineer* role matches Hans's active GenAI cert and Claude API projects; minor _production deployment_ depth but realistic given observability and systems background.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "b957bb609b",
+      "number": "3",
+      "number_display": "3",
+      "token": "fde0f36482",
+      "run_id": "20260902_120701",
+      "title": "Ai QA Engineer II/III | remote zest jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://remotezest.up.railway.app/job/ai-qa-engineer-iiiii",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA* and *agent validation* align with emerging AI skills; minor _production LLM depth_ gap but LoadRunner rigor transfers cleanly.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c66f66d1f2",
+      "number": "4",
+      "number_display": "4",
+      "token": "69ef99d541",
+      "run_id": "20260902_120701",
+      "title": "AI Agent Developer | Remote reputed company Only",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://remotezest.up.railway.app/job/ai-agent-developer-remote-reputed-company-only",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches portfolio trajectory; minor _production LLM depth_ gap but active GenAI learning and remote eligibility align well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "8c6bd28e8e",
+      "number": "5",
+      "number_display": "5",
+      "token": "b640cb97bb",
+      "run_id": "20260902_120701",
+      "title": "AI Integration Engineer | remote zest jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotezest.up.railway.app/job/ai-integration-engineer-1",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Integration Engineer* role matches Hans's *GenAI cert* and agent projects; _limited production LLM deployment_ experience is minor gap but actively closing.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "b9c48c79cd",
+      "number": "6",
+      "number_display": "6",
+      "token": "9fee745821",
+      "run_id": "20260902_120701",
+      "title": "Remote Performance Tester - WeAreDevelopers",
+      "company": "WeAreDevelopers",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.wearedevelopers.com/jobs/ext/2313106-remote-performance-tester",
+      "matched_keywords": [
+        "performance tester",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "6cfff40fd7",
+      "number": "7",
+      "number_display": "7",
+      "token": "db95fabaad",
+      "run_id": "20260902_120701",
+      "title": "Associate AI/ML Engineer - Hybrid in Eden prairie, MN - Dice",
+      "company": "Hybrid in Eden prairie, MN",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/e90f82c0-cd05-4b3e-a705-0bf4536630d5",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai prompt",
+        "ml engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AI prompt engineering* and *GenAI cert* foundation align, but _associate-level ML_ and _Eden Prairie location_ create moderate friction against remote preference.",
+      "level_signal": "desc:entry_mid_signal:associate"
+    }
+  ]
+}
