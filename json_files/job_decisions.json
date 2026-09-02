@@ -12152,9 +12152,81 @@
   ],
   "2026-09-01": [
     {
+      "job_id": "1d7e239b7b",
+      "number": "1",
+      "title": "AI Prompt Engineer Job Remote Ukraine",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://career.luxoft.com/jobs/ai-prompt-engineer-27009",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer",
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-01 23:00"
+    },
+    {
+      "job_id": "8be06381d7",
+      "number": "2",
+      "title": "Generative AI Engineer - Remote",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.indeed.com/viewjob?jk=28236ac1d6aa91b3",
+      "matched_keywords": [
+        "generative ai",
+        "ai engineer",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-01 23:00"
+    },
+    {
+      "job_id": "7c4519ad36",
+      "number": "3",
+      "title": "AI Engineer - New Verticals @ Protege",
+      "company": "New Verticals @ Protege",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/protege/f8b0350b-c5e3-447d-8d01-04bfc5e04f22",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-01 23:00"
+    },
+    {
+      "job_id": "a885b2afdf",
+      "number": "G1",
+      "title": "COBOL Developer Job [REMOTE] - Above And Beyond ...",
+      "company": "Above And Beyond ...",
+      "track": "Gap Track",
+      "score": 45,
+      "url": "https://www.monster.com/job-openings/cobol-developer--8828c459-5057-4550-9636-8c57b325bdab",
+      "matched_keywords": [
+        "cobol",
+        "cobol developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-01 23:00"
+    },
+    {
       "job_id": "01aaae0b4b",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, Agentic AI - Job ID: 10502322",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -12166,22 +12238,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* systems and *AWS* stack align with Hans's active AI engineering pivot; _production agent deployment_ experience gap is bridgeable given senior observability depth.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-01T12:06:27.097488"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-01 23:00"
     },
     {
       "job_id": "3a030d273b",
       "number": "A2",
-      "number_display": "A2",
       "title": "Software Development Engineer III, Agentic Client Experience (ACE)",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -12192,17 +12256,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-01T12:06:27.097506"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-01 23:00"
     }
   ]
 }
