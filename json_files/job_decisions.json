@@ -12490,5 +12490,174 @@
       "raw_decision": "",
       "timestamp": "2026-09-03 23:00"
     }
+  ],
+  "2026-09-04": [
+    {
+      "job_id": "c03c5fb679",
+      "number": "1",
+      "title": "Software Engineer AI/ML QA Engineer - Lumen Solutions Group Inc.",
+      "company": "Lumen Solutions Group Inc.",
+      "track": "AI Engineering",
+      "score": 85,
+      "url": "https://www.dice.com/job-detail/518d67b6-f12d-4a70-bb36-ece8bed357b9",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai test engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "80e089d4a1",
+      "number": "2",
+      "title": "AI Engineer (Agentic AI) - Hybrid/Remote- 6 months - Palni Inc - Dice",
+      "company": "Hybrid/Remote- 6 months",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://www.dice.com/job-detail/31da5438-e850-4330-b414-1a31bea5bf4b",
+      "matched_keywords": [
+        "ai engineer",
+        "ai agent",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "9ade2d8b13",
+      "number": "3",
+      "title": "Generative AI Engineer 1016 | Veracity Ventures Inc.",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://veracity-ventures-inc.careerplug.com/jobs/3581589/apps/new",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "01c79969f0",
+      "number": "4",
+      "title": "AI Agent Developer - WeAreDevelopers",
+      "company": "WeAreDevelopers",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.wearedevelopers.com/jobs/ext/2686411-ai-agent-developer",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "1ab93def1b",
+      "number": "5",
+      "title": "AI Automation Engineer - Remote Job [REMOTE] in - City Of Hope",
+      "company": "Remote Job [REMOTE] in",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.careerbuilder.com/job-details/ai-automation-engineer-remote-los-angeles-ca--80b9cbe1-8e47-46f0-b256-63c9a0e40b19",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "498e8d08e5",
+      "number": "6",
+      "title": "AI/MLOps Engineer - Nityo Infotech Corporation - Santa Clara, CA, US",
+      "company": "Nityo Infotech Corporation",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.dice.com/job-detail/1dfa702a-5568-4aba-a7e2-ad2c1b3834af",
+      "matched_keywords": [
+        "mlops engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "49d2a4fea8",
+      "number": "7",
+      "title": "Performance Tester with Loadrunner and JMeter experience - Shine",
+      "company": "Shine",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://www.shine.com/jobs/performance-tester-with-loadrunner-and-jmeter-experience-reputed-company/vacancy-global-pro/19467580",
+      "matched_keywords": [
+        "jmeter",
+        "performance tester",
+        "LoadRunner-in-title",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "d892f7d8d9",
+      "number": "8",
+      "title": "dexter health (Remote): AI Engineer (LLM) - Join",
+      "company": "Join",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://join.com/companies/dexter-health/16648807-ai-engineer-llm-remote",
+      "matched_keywords": [
+        "ai engineer",
+        "llm",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    },
+    {
+      "job_id": "1956646fbe",
+      "number": "9",
+      "title": "Jr. AI Prompt Engineer - Ashburn, VA - Monster Jobs",
+      "company": "Ashburn, VA",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.monster.com/job-openings/jr-ai-prompt-engineer-ashburn-va--19168363-b666-4aa3-9008-15ea154759e0",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-04 23:00"
+    }
   ]
 }
