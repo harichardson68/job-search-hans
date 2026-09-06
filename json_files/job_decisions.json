@@ -12751,5 +12751,33 @@
       "raw_decision": "",
       "timestamp": "2026-09-05 23:00"
     }
+  ],
+  "2026-09-06": [
+    {
+      "job_id": "d158361c80",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer II, Agentic WorkSpaces Client",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/zh/jobs/10529792/software-development-engineer-ii-agentic-workspaces-client",
+      "matched_keywords": [
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory align well; _production LLM deployment_ experience still building but portfolio demonstrates serious momentum.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-06T12:05:33.345752"
+    }
   ]
 }

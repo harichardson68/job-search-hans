@@ -1,0 +1,74 @@
+{
+  "date": "2026-09-06",
+  "run_id": "20260906_120533",
+  "jobs": [
+    {
+      "job_id": "d30c5fe4c9",
+      "number": "1",
+      "number_display": "1",
+      "token": "dc0fcb72a8",
+      "run_id": "20260906_120533",
+      "title": "Hire LLM Engineers Who Ship to Production - Entrans",
+      "company": "Entrans",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.entrans.ai/hire-developers/dedicated-llm-engineer",
+      "matched_keywords": [
+        "llm engineer",
+        "pytorch",
+        "langchain",
+        "langchain developer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *LLM engineer* role matches AI trajectory and remote eligibility; _hands-on PyTorch/LangChain production depth_ still developing but GenAI certs and agent projects show momentum.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "40813481e7",
+      "number": "2",
+      "number_display": "2",
+      "token": "7dd67a14ae",
+      "run_id": "20260906_120533",
+      "title": "Prompt Engineer - RJ - LinkedIn",
+      "company": "RJ",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://br.linkedin.com/jobs/view/prompt-engineer-rj-at-innolevels-4460780756",
+      "matched_keywords": [
+        "python",
+        "generative ai engineer",
+        "prompt engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Python* + *generative AI* + remote match Hans's dual-track pivot; _Amazon Bedrock_ specificity is minor gap but learnable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d158361c80",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "0f037a7bbf",
+      "run_id": "20260906_120533",
+      "title": "Software Development Engineer II, Agentic WorkSpaces Client",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/zh/jobs/10529792/software-development-engineer-ii-agentic-workspaces-client",
+      "matched_keywords": [
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory align well; _production LLM deployment_ experience still building but portfolio demonstrates serious momentum.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
