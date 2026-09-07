@@ -12754,9 +12754,49 @@
   ],
   "2026-09-06": [
     {
+      "job_id": "d30c5fe4c9",
+      "number": "1",
+      "title": "Hire LLM Engineers Who Ship to Production - Entrans",
+      "company": "Entrans",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://www.entrans.ai/hire-developers/dedicated-llm-engineer",
+      "matched_keywords": [
+        "llm engineer",
+        "pytorch",
+        "langchain",
+        "langchain developer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-06 23:00"
+    },
+    {
+      "job_id": "40813481e7",
+      "number": "2",
+      "title": "Prompt Engineer - RJ - LinkedIn",
+      "company": "RJ",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://br.linkedin.com/jobs/view/prompt-engineer-rj-at-innolevels-4460780756",
+      "matched_keywords": [
+        "python",
+        "generative ai engineer",
+        "prompt engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-06 23:00"
+    },
+    {
       "job_id": "d158361c80",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer II, Agentic WorkSpaces Client",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -12767,17 +12807,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory align well; _production LLM deployment_ experience still building but portfolio demonstrates serious momentum.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-06T12:05:33.345752"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-06 23:00"
     }
   ]
 }
