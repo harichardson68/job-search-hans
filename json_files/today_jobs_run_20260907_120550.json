@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-07",
+  "run_id": "20260907_120550",
+  "jobs": [
+    {
+      "job_id": "5c39ec6e4c",
+      "number": "1",
+      "number_display": "1",
+      "token": "e81972d78f",
+      "run_id": "20260907_120550",
+      "title": "City of Hope hiring AI Automation Engineer - Remote Job in United ...",
+      "company": "Remote Job in United ...",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.glassdoor.com/job-listing/ai-automation-engineer-remote-city-of-hope-JV_KO0,29_KE30,42.htm?jl=1010230068736",
+      "matched_keywords": [
+        "ai automation engineer",
+        "ai agent",
+        "sql"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent* and *SQL* skills match Hans's active upskilling; remote location perfect, but _production agent deployment_ experience gap minor.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e9e06d6830",
+      "number": "2",
+      "number_display": "2",
+      "token": "c7c3c8b4ca",
+      "run_id": "20260907_120550",
+      "title": "Hire AI Agent Developers - Codiant",
+      "company": "Codiant",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://codiant.com/technologies/hire-ai-agent-developers/",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent developer* + *remote* role matches dual-track search; _production deployment experience_ gap bridgeable via GenAI cert and portfolio projects.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1f273bc560",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "df5c4fcb2c",
+      "run_id": "20260907_120550",
+      "title": "Software Development Engineer, AWS AI Agentic Automated ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://www.amazon.jobs/en/jobs/10528709/software-development-engineer-aws-ai-agentic-automated-reasoning-ar",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI portfolio; minor _production LLM deployment_ gap but solid engineering foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

@@ -12812,5 +12812,35 @@
       "raw_decision": "",
       "timestamp": "2026-09-06 23:00"
     }
+  ],
+  "2026-09-07": [
+    {
+      "job_id": "1f273bc560",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, AWS AI Agentic Automated ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://www.amazon.jobs/en/jobs/10528709/software-development-engineer-aws-ai-agentic-automated-reasoning-ar",
+      "matched_keywords": [
+        "agentic ai",
+        "aws",
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI portfolio; minor _production LLM deployment_ gap but solid engineering foundation.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-07T12:05:50.379330"
+    }
   ]
 }
