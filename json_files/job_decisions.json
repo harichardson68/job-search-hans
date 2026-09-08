@@ -12815,9 +12815,45 @@
   ],
   "2026-09-07": [
     {
+      "job_id": "5c39ec6e4c",
+      "number": "1",
+      "title": "City of Hope hiring AI Automation Engineer - Remote Job in United ...",
+      "company": "Remote Job in United ...",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.glassdoor.com/job-listing/ai-automation-engineer-remote-city-of-hope-JV_KO0,29_KE30,42.htm?jl=1010230068736",
+      "matched_keywords": [
+        "ai automation engineer",
+        "ai agent",
+        "sql"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-07 23:00"
+    },
+    {
+      "job_id": "e9e06d6830",
+      "number": "2",
+      "title": "Hire AI Agent Developers - Codiant",
+      "company": "Codiant",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://codiant.com/technologies/hire-ai-agent-developers/",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-07 23:00"
+    },
+    {
       "job_id": "1f273bc560",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer, AWS AI Agentic Automated ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -12830,17 +12866,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* alignment with active GenAI portfolio; minor _production LLM deployment_ gap but solid engineering foundation.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-07T12:05:50.379330"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-07 23:00"
     }
   ]
 }
