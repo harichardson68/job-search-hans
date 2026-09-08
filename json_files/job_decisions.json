@@ -12871,5 +12871,59 @@
       "raw_decision": "",
       "timestamp": "2026-09-07 23:00"
     }
+  ],
+  "2026-09-08": [
+    {
+      "job_id": "bde89c6d6b",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer II, Agentic WorkSpaces Client",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/en/jobs/10529792/software-development-engineer-ii-agentic-workspaces-client",
+      "matched_keywords": [
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory aligns well; minor _production LLM deployment_ experience gap but portfolio demonstrates active skill-building.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-08T12:06:00.150921"
+    },
+    {
+      "job_id": "21cc182d18",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Automation Expert & BA, Agentic Solutions, Relay Product and Tech",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10425044/automation-expert-ba-agentic-solutions-relay-product-and-tech",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *automation* expertise align with Hans's active GenAI projects; _BA/product title_ and production agent depth are minor gaps.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-08T12:06:00.150948"
+    }
   ]
 }
