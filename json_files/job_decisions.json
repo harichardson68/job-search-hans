@@ -12874,9 +12874,63 @@
   ],
   "2026-09-08": [
     {
+      "job_id": "10eaecbd89",
+      "number": "1",
+      "title": "AI Engineer (Remote) - Hired - LinkedIn",
+      "company": "Hired",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://ar.linkedin.com/jobs/view/ai-engineer-remote-at-hired-4463741504",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-08 23:00"
+    },
+    {
+      "job_id": "4c69f8bea9",
+      "number": "2",
+      "title": "Performance Engineer - Software Engineering SMTS",
+      "company": "Software Engineering SMTS",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://salesforce.wd12.myworkdayjobs.com/en-US/External_Career_Site/job/Performance-Engineer---Software-Engineering-SMTS_JR358291",
+      "matched_keywords": [
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-08 23:00"
+    },
+    {
+      "job_id": "8ff509d255",
+      "number": "3",
+      "title": "AI QA Engineer \u0432 Innovecs, \u041a\u0438\u0457\u0432 - \u0412\u0430\u043a\u0430\u043d\u0441\u0456\u0457 | DOU",
+      "company": "\u0412\u0430\u043a\u0430\u043d\u0441\u0456\u0457 | DOU",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://jobs.dou.ua/companies/innovecs/vacancies/372499/",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-08 23:00"
+    },
+    {
       "job_id": "bde89c6d6b",
       "number": "A1",
-      "number_display": "A1",
       "title": "Software Development Engineer II, Agentic WorkSpaces Client",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -12887,22 +12941,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory aligns well; minor _production LLM deployment_ experience gap but portfolio demonstrates active skill-building.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-08T12:06:00.150921"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-08 23:00"
     },
     {
       "job_id": "21cc182d18",
       "number": "A2",
-      "number_display": "A2",
       "title": "Automation Expert & BA, Agentic Solutions, Relay Product and Tech",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -12913,17 +12959,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *automation* expertise align with Hans's active GenAI projects; _BA/product title_ and production agent depth are minor gaps.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-08T12:06:00.150948"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-08 23:00"
     }
   ]
 }
