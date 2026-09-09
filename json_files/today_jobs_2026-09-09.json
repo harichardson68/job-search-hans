@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-09",
+  "run_id": "20260909_120609",
+  "jobs": [
+    {
+      "job_id": "14923b9cf2",
+      "number": "1",
+      "number_display": "1",
+      "token": "1ed7f7be4c",
+      "run_id": "20260909_120609",
+      "title": "Distinguished AI Engineer - Agentic AI Platform (Remote Eligible)",
+      "company": "Agentic AI Platform (Remote Eligible)",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://capitalone.wd12.myworkdayjobs.com/en-US/Capital_One/job/San-Francisco--CA/Distinguished-AI-Engineer--Agentic-AI-Platform-_R244764-1/apply/autofillWithResume?utm_campaign=enterprise_tech_pa&utm_medium=jobad&utm_content=pj_board&utm_source=dice&p_sid=7xg2ZRb&p_uid=bXztLYaz5I&source=rd_dice_programmatic_job_Tech_tm&ss=paid",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AI systems* engineering align with Hans's active upskilling; minor _production LLM at scale_ experience gap but GenAI cert and projects bridge it well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "2e99732c16",
+      "number": "2",
+      "number_display": "2",
+      "token": "00bc8efa19",
+      "run_id": "20260909_120609",
+      "title": "AI Agent Developer - ComTec Information Systems - Remote - Dice",
+      "company": "ComTec Information Systems",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/579ee1a5-a34a-4dc0-bafa-c9d02213be1a",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches dual-track search; remote location ideal, salary competitive, but _production agent deployment_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "0688818921",
+      "number": "3",
+      "number_display": "3",
+      "token": "ac66751f83",
+      "run_id": "20260909_120609",
+      "title": "AI Engineer - Full time - Remote - Agile Brains Consulting Inc - Dice",
+      "company": "Full time",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.dice.com/job-detail/414c5fc2-336c-4d2f-bdcb-b874a0add0ae",
+      "matched_keywords": [
+        "agile",
+        "ai engineer",
+        "observability"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role leverages *observability* expertise and GenAI foundation; _LLM-specific tooling_ (LangSmith, W&B) gap is quickly learnable.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
