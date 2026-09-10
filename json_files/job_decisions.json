@@ -12964,5 +12964,63 @@
       "raw_decision": "",
       "timestamp": "2026-09-08 23:00"
     }
+  ],
+  "2026-09-09": [
+    {
+      "job_id": "14923b9cf2",
+      "number": "1",
+      "title": "Distinguished AI Engineer - Agentic AI Platform (Remote Eligible)",
+      "company": "Agentic AI Platform (Remote Eligible)",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://capitalone.wd12.myworkdayjobs.com/en-US/Capital_One/job/San-Francisco--CA/Distinguished-AI-Engineer--Agentic-AI-Platform-_R244764-1/apply/autofillWithResume?utm_campaign=enterprise_tech_pa&utm_medium=jobad&utm_content=pj_board&utm_source=dice&p_sid=7xg2ZRb&p_uid=bXztLYaz5I&source=rd_dice_programmatic_job_Tech_tm&ss=paid",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-09 23:00"
+    },
+    {
+      "job_id": "2e99732c16",
+      "number": "2",
+      "title": "AI Agent Developer - ComTec Information Systems - Remote - Dice",
+      "company": "ComTec Information Systems",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/579ee1a5-a34a-4dc0-bafa-c9d02213be1a",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-09 23:00"
+    },
+    {
+      "job_id": "0688818921",
+      "number": "3",
+      "title": "AI Engineer - Full time - Remote - Agile Brains Consulting Inc - Dice",
+      "company": "Full time",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.dice.com/job-detail/414c5fc2-336c-4d2f-bdcb-b874a0add0ae",
+      "matched_keywords": [
+        "agile",
+        "ai engineer",
+        "observability"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-09 23:00"
+    }
   ]
 }
