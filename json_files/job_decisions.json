@@ -13022,5 +13022,137 @@
       "raw_decision": "",
       "timestamp": "2026-09-09 23:00"
     }
+  ],
+  "2026-09-20": [
+    {
+      "job_id": "38dad111c8",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic Engineer - Security, US Amazon Dedicated Cloud Security",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://amazon.jobs/jobs/10551381",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active upskilling; minor _production agent deployment_ gap but clear portfolio trajectory and security clearance advantage.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-20T12:05:14.104876"
+    },
+    {
+      "job_id": "1abce29ed1",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Delivery Consultant: Agentic AI FullStack SDE, AWS Professional ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en-gb/jobs/10476976/delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's active upskilling trajectory, but _full-stack SDE_ and _production agent deployment_ experience remain emerging rather than proven.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-20T12:05:14.104930"
+    },
+    {
+      "job_id": "e07d220c10",
+      "number": "A3",
+      "number_display": "A3",
+      "title": "Software Development Engineer, Agentic AI DevOps - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://amazon.jobs/en/jobs/10552775/software-development-engineer-agentic-ai-devops",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *DevOps* alignment with active GenAI portfolio; _production agent deployment_ experience still building but realistic path.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-20T12:05:14.104953"
+    },
+    {
+      "job_id": "de7c846877",
+      "number": "A4",
+      "number_display": "A4",
+      "title": "Software Development Engineer, Agentic Workspaces - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10541943/software-development-engineer-agentic-workspaces",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-20T12:05:14.104978"
+    },
+    {
+      "job_id": "d629817702",
+      "number": "A5",
+      "number_display": "A5",
+      "title": "Software Development Engineer, Agentic Workspaces - Watchtower",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://amazon.jobs/en/jobs/10539269/software-development-engineer-agentic-workspaces-watchtower",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-20T12:05:14.104991"
+    }
   ]
 }
