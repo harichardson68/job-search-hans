@@ -13025,9 +13025,64 @@
   ],
   "2026-09-20": [
     {
+      "job_id": "7a8385255d",
+      "number": "1",
+      "title": "[Remote] AI Engineer, Entry Level | vacancy global pro",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://vacancyglobalpro.up.railway.app/job/remote-ai-engineer-entry-level-1",
+      "matched_keywords": [
+        "ai agent",
+        "prompt engineering",
+        "ai engineer",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
+    },
+    {
+      "job_id": "51c21ea4e9",
+      "number": "2",
+      "title": "Core Applied AI Engineer \u2013 Agentic AI & Security - BirdsVue LLC",
+      "company": "BirdsVue LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/ed3dbdb1-d47b-4f7c-8257-ff6a960934ed",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
+    },
+    {
+      "job_id": "63742c2658",
+      "number": "3",
+      "title": "AI Automation Engineer V at Bitovi | Remote Nomad Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.remotenomadjobs.com/remote-jobs/ai-automation-engineer-v-6aab61a9e2f0fa93aa5d5925",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
+    },
+    {
       "job_id": "38dad111c8",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic Engineer - Security, US Amazon Dedicated Cloud Security",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -13039,22 +13094,14 @@
         "ai engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active upskilling; minor _production agent deployment_ gap but clear portfolio trajectory and security clearance advantage.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-20T12:05:14.104876"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
     },
     {
       "job_id": "1abce29ed1",
       "number": "A2",
-      "number_display": "A2",
       "title": "Delivery Consultant: Agentic AI FullStack SDE, AWS Professional ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -13066,22 +13113,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Stretch Fit",
-      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's active upskilling trajectory, but _full-stack SDE_ and _production agent deployment_ experience remain emerging rather than proven.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-20T12:05:14.104930"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
     },
     {
       "job_id": "e07d220c10",
       "number": "A3",
-      "number_display": "A3",
       "title": "Software Development Engineer, Agentic AI DevOps - Job ID",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -13092,22 +13131,14 @@
         "agentic ai"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *DevOps* alignment with active GenAI portfolio; _production agent deployment_ experience still building but realistic path.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-20T12:05:14.104953"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
     },
     {
       "job_id": "de7c846877",
       "number": "A4",
-      "number_display": "A4",
       "title": "Software Development Engineer, Agentic Workspaces - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -13117,22 +13148,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-20T12:05:14.104978"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
     },
     {
       "job_id": "d629817702",
       "number": "A5",
-      "number_display": "A5",
       "title": "Software Development Engineer, Agentic Workspaces - Watchtower",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -13142,17 +13165,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-20T12:05:14.104991"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-20 23:00"
     }
   ]
 }
