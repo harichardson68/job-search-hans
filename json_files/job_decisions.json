@@ -13170,5 +13170,106 @@
       "raw_decision": "",
       "timestamp": "2026-09-20 23:00"
     }
+  ],
+  "2026-09-21": [
+    {
+      "job_id": "580e39e328",
+      "number": "1",
+      "title": "AI Engineer \u2013 Agentic AI & Cloud Discovery @ Pragmatike - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 106,
+      "url": "https://jobs.ashbyhq.com/pragmatike/a4cac55a-bb8b-467c-8063-aadc5dc4a341",
+      "matched_keywords": [
+        "prompt engineering",
+        "rag",
+        "agentic ai",
+        "prompt engineer",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-21 23:00"
+    },
+    {
+      "job_id": "92633b7967",
+      "number": "2",
+      "title": "AI Automation Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 86,
+      "url": "https://aijobsmap.com/ai-automation-jobs",
+      "matched_keywords": [
+        "machine learning engineer",
+        "ai automation engineer",
+        "agentic",
+        "langchain",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-21 23:00"
+    },
+    {
+      "job_id": "d695689051",
+      "number": "3",
+      "title": "Agentic AI Founding AI Engineer (100 % remote) (m/f/d)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 66,
+      "url": "https://eworgmbh.teamtailor.com/jobs/8402125-agentic-ai-founding-ai-engineer-100-remote-m-f-d",
+      "matched_keywords": [
+        "sla",
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-21 23:00"
+    },
+    {
+      "job_id": "9f29109655",
+      "number": "4",
+      "title": "AI Engineer \u2013 Agentic AI - eCom Solutions, Inc. - Remote | Dice.com",
+      "company": "eCom Solutions, Inc.",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/98612540-856a-43b0-995d-e0c871363f52",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-21 23:00"
+    },
+    {
+      "job_id": "f10954cb89",
+      "number": "5",
+      "title": "AI Integration Engineer in Washington, District of Columbia",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://clearedjobs.net/job/ai-integration-engineer-washington-district-of-columbia-1946816",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-21 23:00"
+    }
   ]
 }
