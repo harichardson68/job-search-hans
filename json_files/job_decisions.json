@@ -13274,9 +13274,42 @@
   ],
   "2026-09-22": [
     {
+      "job_id": "1b183c74ac",
+      "number": "1",
+      "title": "QA Lead/Ai Test Engineer - Raas Infotek LLC - Remote | Dice.com",
+      "company": "Raas Infotek LLC",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.dice.com/job-detail/cc7fe78f-eca4-4e4a-bbb5-f63dfd9b6990",
+      "matched_keywords": [
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-22 23:00"
+    },
+    {
+      "job_id": "02accff8af",
+      "number": "2",
+      "title": "AI Engineer (US) @ IFS Nexus Black - Jobs",
+      "company": "Jobs",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/ifsnexusblack/d997cd2d-3e70-4a0a-a55b-60f08e75bc87",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-22 23:00"
+    },
+    {
       "job_id": "266c0e4c8b",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI Full Stack Developer, AWS Professional Services - Job ID ...",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -13288,22 +13321,14 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* + *AWS* alignment with active GenAI projects; minor _full-stack AWS depth_ gap but directly on Hans's dual-track path.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-22T12:05:35.170328"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-22 23:00"
     },
     {
       "job_id": "35b1d7f742",
       "number": "A2",
-      "number_display": "A2",
       "title": "Machine Learning Performance Engineer, Annapurna Labs - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -13313,22 +13338,14 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-22T12:05:35.170381"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-22 23:00"
     },
     {
       "job_id": "f87c7205e5",
       "number": "A3",
-      "number_display": "A3",
       "title": "Machine Learning Performance Engineer, Annapurna Labs - \u30b8\u30e7\u30d6ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -13338,17 +13355,10 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-22T12:05:35.170403"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-22 23:00"
     }
   ]
 }
