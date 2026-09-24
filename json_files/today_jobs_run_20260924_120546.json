@@ -1,0 +1,74 @@
+{
+  "date": "2026-09-24",
+  "run_id": "20260924_120546",
+  "jobs": [
+    {
+      "job_id": "055070cb44",
+      "number": "1",
+      "number_display": "1",
+      "token": "744e2c9674",
+      "run_id": "20260924_120546",
+      "title": "AI prompt Engineer - TECHAGI SOLUTIONS LLC - Remote | Dice.com",
+      "company": "TECHAGI SOLUTIONS LLC",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.dice.com/job-detail/c5172c40-8165-4cca-9c90-77ec830020b5",
+      "matched_keywords": [
+        "ai prompt",
+        "agentic ai",
+        "ai engineer",
+        "agentic",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *prompt engineering* align with Hans's active upskilling; minor _production LLM deployment_ gap but solid Claude API foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7970954b97",
+      "number": "2",
+      "number_display": "2",
+      "token": "22ea2d6f0d",
+      "run_id": "20260924_120546",
+      "title": "Generative AI Engineer | Everforth Apex",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.apexsystems.com/job/3053042_usa/generative-ai-engineer",
+      "matched_keywords": [
+        "generative ai",
+        "ai engineer",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI engineer* role matches dual-track pivot; _Charlotte hybrid_ location and production LLM depth gaps are minor friction against solid foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "beb4bdef36",
+      "number": "3",
+      "number_display": "3",
+      "token": "c6b76ac101",
+      "run_id": "20260924_120546",
+      "title": "LLM Integration / LangChain Engineer at FyerX Global Private Limited",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://in.linkedin.com/jobs/view/llm-integration-langchain-engineer-at-fyerx-global-private-limited-4469473335",
+      "matched_keywords": [
+        "langchain engineer",
+        "langchain",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *LangChain/LLM integration* role matches AI upskilling trajectory; minor _production deployment depth_ gap but GenAI cert and agentic projects show credible momentum.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
