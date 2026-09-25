@@ -13537,5 +13537,66 @@
       "raw_decision": "",
       "timestamp": "2026-09-23 23:00"
     }
+  ],
+  "2026-09-24": [
+    {
+      "job_id": "055070cb44",
+      "number": "1",
+      "title": "AI prompt Engineer - TECHAGI SOLUTIONS LLC - Remote | Dice.com",
+      "company": "TECHAGI SOLUTIONS LLC",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.dice.com/job-detail/c5172c40-8165-4cca-9c90-77ec830020b5",
+      "matched_keywords": [
+        "ai prompt",
+        "agentic ai",
+        "ai engineer",
+        "agentic",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-24 23:00"
+    },
+    {
+      "job_id": "7970954b97",
+      "number": "2",
+      "title": "Generative AI Engineer | Everforth Apex",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.apexsystems.com/job/3053042_usa/generative-ai-engineer",
+      "matched_keywords": [
+        "generative ai",
+        "ai engineer",
+        "generative ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-24 23:00"
+    },
+    {
+      "job_id": "beb4bdef36",
+      "number": "3",
+      "title": "LLM Integration / LangChain Engineer at FyerX Global Private Limited",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://in.linkedin.com/jobs/view/llm-integration-langchain-engineer-at-fyerx-global-private-limited-4469473335",
+      "matched_keywords": [
+        "langchain engineer",
+        "langchain",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-24 23:00"
+    }
   ]
 }
