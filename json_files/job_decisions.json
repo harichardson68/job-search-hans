@@ -13598,5 +13598,38 @@
       "raw_decision": "",
       "timestamp": "2026-09-24 23:00"
     }
+  ],
+  "2026-09-25": [
+    {
+      "job_id": "bf72f9333a",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic AI, Amazon Fulfillment Technology AI Science",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 75,
+      "url": "https://www.amazon.jobs/jobs/10545202/applied-scientist--agentic-ai-amazon-fulfillment-technology-ai-science-?cmpid=bsp-amazon-science",
+      "matched_keywords": [
+        "rag",
+        "will train",
+        "llm",
+        "tool use",
+        "agentic",
+        "agentic ai",
+        "multi-agent"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *multi-agent systems* directly match portfolio trajectory; _production LLM training_ experience gap is learnable given hands-on AI foundation.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-25T12:06:23.861876"
+    }
   ]
 }
