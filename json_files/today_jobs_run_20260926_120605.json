@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-26",
+  "run_id": "20260926_120605",
+  "jobs": [
+    {
+      "job_id": "19f343ed64",
+      "number": "1",
+      "number_display": "1",
+      "token": "be1743e004",
+      "run_id": "20260926_120605",
+      "title": "Generative AI Engineer - Albano Systems Inc - Remote",
+      "company": "Albano Systems Inc",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/43961dc1-f3e6-4a9e-9909-1cb942ec2556",
+      "matched_keywords": [
+        "generative ai engineer",
+        "generative ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI Engineer* role matches dual-track goals; remote location ideal, but _production LLM deployment_ experience needs deepening beyond projects.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "78a5492556",
+      "number": "2",
+      "number_display": "2",
+      "token": "0b8d07671a",
+      "run_id": "20260926_120605",
+      "title": "QA Engineer: AI-Assisted Testing @ ECFX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.tealhq.com/job/qa-engineer_7ea1a3f06f77427d137ddf712b49e76e58ef8",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA* role matches dual-track pivot; *remote* location ideal, but _LoadRunner expertise underutilized_ and junior QA title vs. senior background.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7747bc795a",
+      "number": "3",
+      "number_display": "3",
+      "token": "e76d694492",
+      "run_id": "20260926_120605",
+      "title": "Agentic AI Engineer at CodeRoad",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://remoteleaf.com/company/coderoad/agentic-ai-engineer-latin-america-2/",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active GenAI upskilling and *portfolio projects*; minor _production deployment_ depth gap but clear career trajectory fit.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e926e6c950",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "f66956486e",
+      "run_id": "20260926_120605",
+      "title": "Software Development Engineer II, Agentic WorkSpaces ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10558787/software-development-engineer-ii-agentic-workspaces-client",
+      "matched_keywords": [
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory match well; _production LLM deployment_ experience still building but realistic bridge from performance/reliability foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "38287a6adb",
+      "number": "A2",
+      "number_display": "A2",
+      "token": "1e7046d634",
+      "run_id": "20260926_120605",
+      "title": "Machine Learning Performance Engineer, Annapurna Labs",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://amazon.jobs/en-gb/jobs/10555765/machine-learning-performance-engineer-annapurna-labs",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

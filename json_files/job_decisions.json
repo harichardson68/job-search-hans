@@ -13703,5 +13703,58 @@
       "raw_decision": "",
       "timestamp": "2026-09-25 23:00"
     }
+  ],
+  "2026-09-26": [
+    {
+      "job_id": "e926e6c950",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer II, Agentic WorkSpaces ...",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.amazon.jobs/en/jobs/10558787/software-development-engineer-ii-agentic-workspaces-client",
+      "matched_keywords": [
+        "ai agent",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic systems* and *AI engineering* trajectory match well; _production LLM deployment_ experience still building but realistic bridge from performance/reliability foundation.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-26T12:06:05.856645"
+    },
+    {
+      "job_id": "38287a6adb",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Machine Learning Performance Engineer, Annapurna Labs",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://amazon.jobs/en-gb/jobs/10555765/machine-learning-performance-engineer-annapurna-labs",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-09-26T12:06:05.856709"
+    }
   ]
 }
