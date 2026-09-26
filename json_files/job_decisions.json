@@ -13601,9 +13601,88 @@
   ],
   "2026-09-25": [
     {
+      "job_id": "36a0bfc445",
+      "number": "1",
+      "title": "Enterprise Generative AI Engineer - BCforward",
+      "company": "BCforward",
+      "track": "AI Engineering",
+      "score": 143,
+      "url": "https://www.dice.com/job-detail/22580c06-5edd-45a9-a612-54c01b69585b",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer",
+        "agentic",
+        "ai prompt",
+        "agentic ai",
+        "generative ai",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-25 23:00"
+    },
+    {
+      "job_id": "6569db984b",
+      "number": "2",
+      "title": "Any on W2: AI Prompt Engineer / Agentic AI Engineer - Haystack",
+      "company": "Haystack",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://haystackapp.io/jobs/35ab1d32-353e-4635-83ff-3a3b0e1def35",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "ai prompt",
+        "agentic ai",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-25 23:00"
+    },
+    {
+      "job_id": "8d6174a016",
+      "number": "3",
+      "title": "GenAI and Agentic AI Engineer - Envision LLC. - Remote",
+      "company": "Envision LLC.",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/d23470ad-d1ab-4881-8986-a0252b2741c1",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-25 23:00"
+    },
+    {
+      "job_id": "151269327e",
+      "number": "4",
+      "title": "Fullstack Engineer / AI Engineer for BRAIINS MANAGER",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/braiins/a567dcbe-add4-4feb-9165-6ad912be1172",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-25 23:00"
+    },
+    {
       "job_id": "bf72f9333a",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic AI, Amazon Fulfillment Technology AI Science",
       "company": "Amazon",
       "track": "AI Engineering",
@@ -13619,17 +13698,10 @@
         "multi-agent"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Strong Fit",
-      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *multi-agent systems* directly match portfolio trajectory; _production LLM training_ experience gap is learnable given hands-on AI foundation.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-09-25T12:06:23.861876"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-25 23:00"
     }
   ]
 }
