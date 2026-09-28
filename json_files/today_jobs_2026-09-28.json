@@ -1,0 +1,115 @@
+{
+  "date": "2026-09-28",
+  "run_id": "20260928_120611",
+  "jobs": [
+    {
+      "job_id": "a8320e58de",
+      "number": "1",
+      "number_display": "1",
+      "token": "350aae81fc",
+      "run_id": "20260928_120611",
+      "title": "Agentic AI Engineer - Shiv Software Experts LLC - Remote",
+      "company": "Shiv Software Experts LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/337dac79-30be-4d6b-856b-d8c354c03780",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI engineer* role matches Hans's active GenAI/Claude projects and *remote* preference; _production agent operationalization_ depth still building but realistic progression.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "2beec33ac4",
+      "number": "2",
+      "number_display": "2",
+      "token": "2c3304a4c4",
+      "run_id": "20260928_120611",
+      "title": "Founding Prompt Engineer at Beam",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.remotesource.com/jobs/YYhgPkIaEyDSoiMBYk8P6-founding-prompt-engineer-at-beam",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Prompt engineering* + *AI systems* interest aligns well; _mid-level positioning_ vs. 24yr seniority is minor friction, but remote + experimental mindset match.",
+      "level_signal": "desc:entry_mid_signal:mid-level"
+    },
+    {
+      "job_id": "1a0e18f660",
+      "number": "3",
+      "number_display": "3",
+      "token": "2771b9a9e9",
+      "run_id": "20260928_120611",
+      "title": "Journeyman AI Agent Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.tealhq.com/job/ai-agent-software-engineer_7ea1ae62c718f559f53d1a20e45e4eef15ae0",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *AI Agent Developer* role at GDIT matches Hans's active GenAI/Claude skills; minor _production agent deployment_ depth gap but realistic progression.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "ca4d2b177e",
+      "number": "4",
+      "number_display": "4",
+      "token": "4ab8f7af81",
+      "run_id": "20260928_120611",
+      "title": "LoadRunner Performance Tester | Remote",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://remoterush.mysmartpros.com/job/1697570",
+      "matched_keywords": [
+        "LoadRunner-in-title",
+        "performance tester",
+        "jmeter",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "80935e4f3f",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "ac5ebde2cf",
+      "run_id": "20260928_120611",
+      "title": "Kobie Marketing - SDET",
+      "company": "SDET",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://jobs.lever.co/kobie/f05856c8-23be-4024-b417-d19a342a1027",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *SDET automation* role with *performance testing* tools; minor gap in _JMeter/LoadRunner_ depth but QA/testing background transfers directly.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
