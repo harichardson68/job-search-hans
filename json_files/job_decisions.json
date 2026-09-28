@@ -13796,5 +13796,100 @@
       "raw_decision": "",
       "timestamp": "2026-09-26 23:00"
     }
+  ],
+  "2026-09-27": [
+    {
+      "job_id": "fcc65f7bcd",
+      "number": "1",
+      "title": "Binance - Could AI Engineer",
+      "company": "Could AI Engineer",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://jobs.lever.co/binance/92750245-5e14-4704-82e9-dcd7317e6146",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "prompt engineering"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-27 23:00"
+    },
+    {
+      "job_id": "035dd49f30",
+      "number": "2",
+      "title": "LLM Engineer Jobs | AI Jobs Map",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 78,
+      "url": "https://aijobsmap.com/llm-engineer-jobs",
+      "matched_keywords": [
+        "uat",
+        "python",
+        "llm engineer",
+        "llm"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-27 23:00"
+    },
+    {
+      "job_id": "810f00bb62",
+      "number": "3",
+      "title": "Agentic AI Engineer / Software Engineer - AI Applications ...",
+      "company": "AI Applications ...",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://startup.jobs/agentic-ai-engineer-software-engineer-ai-applications-remote-us-yurts-8720473",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-27 23:00"
+    },
+    {
+      "job_id": "d00c53fc4c",
+      "number": "4",
+      "title": "Agentic AI Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://aijobsmap.com/agentic-ai-jobs",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-27 23:00"
+    },
+    {
+      "job_id": "e2f1dc6334",
+      "number": "5",
+      "title": "AI Integration Engineer/AI Automation Specialist; Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.shine.com/jobs/ai-integration-engineer-ai-automation-specialist-remote/vmysmartpros/19578260",
+      "matched_keywords": [
+        "ai integration engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-27 23:00"
+    }
   ]
 }
