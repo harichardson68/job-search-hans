@@ -13891,5 +13891,101 @@
       "raw_decision": "",
       "timestamp": "2026-09-27 23:00"
     }
+  ],
+  "2026-09-28": [
+    {
+      "job_id": "a8320e58de",
+      "number": "1",
+      "title": "Agentic AI Engineer - Shiv Software Experts LLC - Remote",
+      "company": "Shiv Software Experts LLC",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://www.dice.com/job-detail/337dac79-30be-4d6b-856b-d8c354c03780",
+      "matched_keywords": [
+        "ai engineer",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-28 23:00"
+    },
+    {
+      "job_id": "2beec33ac4",
+      "number": "2",
+      "title": "Founding Prompt Engineer at Beam",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.remotesource.com/jobs/YYhgPkIaEyDSoiMBYk8P6-founding-prompt-engineer-at-beam",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-28 23:00"
+    },
+    {
+      "job_id": "1a0e18f660",
+      "number": "3",
+      "title": "Journeyman AI Agent Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.tealhq.com/job/ai-agent-software-engineer_7ea1ae62c718f559f53d1a20e45e4eef15ae0",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-28 23:00"
+    },
+    {
+      "job_id": "ca4d2b177e",
+      "number": "4",
+      "title": "LoadRunner Performance Tester | Remote",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://remoterush.mysmartpros.com/job/1697570",
+      "matched_keywords": [
+        "LoadRunner-in-title",
+        "performance tester",
+        "jmeter",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-28 23:00"
+    },
+    {
+      "job_id": "80935e4f3f",
+      "number": "G1",
+      "title": "Kobie Marketing - SDET",
+      "company": "SDET",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://jobs.lever.co/kobie/f05856c8-23be-4024-b417-d19a342a1027",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-28 23:00"
+    }
   ]
 }
