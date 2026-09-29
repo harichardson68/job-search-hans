@@ -1,0 +1,93 @@
+{
+  "date": "2026-09-29",
+  "run_id": "20260929_120632",
+  "jobs": [
+    {
+      "job_id": "e26812b083",
+      "number": "1",
+      "number_display": "1",
+      "token": "6ccee9e450",
+      "run_id": "20260929_120632",
+      "title": "Agentic AI Engineer - Reveille Technologies",
+      "company": "Reveille Technologies",
+      "track": "AI Engineering",
+      "score": 103,
+      "url": "https://www.dice.com/job-detail/dfcbd5e3-6ea9-42fa-8e21-941044ebe678",
+      "matched_keywords": [
+        "prompt engineer",
+        "agentic ai",
+        "agentic",
+        "ai engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *prompt engineering* align with active learning trajectory; minor _production agent deployment_ experience gap but genuine skill overlap.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "564e39abd7",
+      "number": "2",
+      "number_display": "2",
+      "token": "a757fd3e17",
+      "run_id": "20260929_120632",
+      "title": "Journeyman AI Agent Developer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.aijobs.com/jobs/726188213-journeyman-ai-agent-developer",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent developer* role matches Hans's active GenAI/Claude portfolio; remote location ideal, but _production agent deployment_ experience still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "a37832a5a1",
+      "number": "3",
+      "number_display": "3",
+      "token": "f387f76045",
+      "run_id": "20260929_120632",
+      "title": "AI Engineer \u2013 Trust & Explainability (AI Platform)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://jobs.ashbyhq.com/meridianlink/e6f8bdc7-0859-45b9-bbc6-fdacfe402319",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* + *trust/explainability* aligns with Hans's GenAI trajectory; minor _production LLM depth_ gap but observability and agent skills transfer well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "74144582f3",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "34784f5a16",
+      "run_id": "20260929_120632",
+      "title": "Agentic AI FullStack SDE, AWS Professional Services",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://amazon.jobs/en-gb/jobs/10476203/sr-delivery-consultant-agentic-ai-fullstack-sde-aws-professional-services",
+      "matched_keywords": [
+        "aws",
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *AWS* align with Hans's active upskilling; minor _production deployment_ experience gap but senior technical leadership fits.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
