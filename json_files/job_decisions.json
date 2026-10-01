@@ -14064,5 +14064,117 @@
       "raw_decision": "",
       "timestamp": "2026-09-29 23:00"
     }
+  ],
+  "2026-09-30": [
+    {
+      "job_id": "90a4b7c63d",
+      "number": "1",
+      "title": "AI Agent Developer at Corpay",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.aijobs.com/jobs/730822091-ai-agent-developer",
+      "matched_keywords": [
+        "ai agent",
+        "ai agent developer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-30 23:00"
+    },
+    {
+      "job_id": "69afdcce6e",
+      "number": "2",
+      "title": "Junior Generative AI Engineer - Remote - Genesis10",
+      "company": "Remote",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/8970ff89-197d-4c7c-ac60-4b4aba6f6191",
+      "matched_keywords": [
+        "generative ai engineer",
+        "generative ai",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-30 23:00"
+    },
+    {
+      "job_id": "a2577a481b",
+      "number": "3",
+      "title": "Software Engineer, AI Agents",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://jobs.ashbyhq.com/true-talent-solutions-partners/255e7af4-2657-48e7-9d38-44c6eefc26e5",
+      "matched_keywords": [
+        "ai agent",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-30 23:00"
+    },
+    {
+      "job_id": "17183e36e4",
+      "number": "4",
+      "title": "AI Automation Expert & AI Automation Engineer; Remote - Shine",
+      "company": "Shine",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.shine.com/jobs/ai-automation-expert-ai-automation-engineer-remote-ai-automation/remotepromsp/19631774",
+      "matched_keywords": [
+        "ai workflow",
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-30 23:00"
+    },
+    {
+      "job_id": "11e6a3f724",
+      "number": "5",
+      "title": "Business Analyst and Prompt Engineer - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://convatec.wd1.myworkdayjobs.com/convatec/job/remote-slovakia/business-analyst-and-prompt-engineer_jr00021695/apply",
+      "matched_keywords": [
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-30 23:00"
+    },
+    {
+      "job_id": "2499592e3b",
+      "number": "G1",
+      "title": "Kobie Marketing - SDET",
+      "company": "SDET",
+      "track": "QA Automation",
+      "score": 120,
+      "url": "https://jobs.lever.co/kobie/48974478-8bc8-4599-aa1a-6b6c5b524b8c",
+      "matched_keywords": [
+        "performance testing",
+        "jmeter",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-09-30 23:00"
+    }
   ]
 }
