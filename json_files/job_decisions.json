@@ -14176,5 +14176,34 @@
       "raw_decision": "",
       "timestamp": "2026-09-30 23:00"
     }
+  ],
+  "2026-10-06": [
+    {
+      "job_id": "93f206664a",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Agentic AI - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en-gb/jobs/10566212/software-development-engineer-agentic-ai",
+      "matched_keywords": [
+        "aws",
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* and *AWS* align with Hans's active upskilling trajectory, but _production agent deployment_ experience is emerging rather than established.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-06T12:07:15.210114"
+    }
   ]
 }
