@@ -14285,5 +14285,34 @@
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-10-06 23:00"
     }
+  ],
+  "2026-10-07": [
+    {
+      "job_id": "516ac8cefa",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Software Development Engineer, Agentic AI - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 46,
+      "url": "https://www.amazon.jobs/en-gb/jobs/10566213/software-development-engineer-agentic-ai",
+      "matched_keywords": [
+        "agentic",
+        "aws",
+        "agentic ai"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *Agentic AI* engineering aligns with Hans's AI trajectory and *AWS* observability skills; _production agent deployment_ experience still developing.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-07T12:06:20.967592"
+    }
   ]
 }
