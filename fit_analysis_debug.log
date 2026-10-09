@@ -4092,3 +4092,61 @@
 2026-10-07 12:07:38,821 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
 2026-10-07 12:07:38,827 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
 2026-10-07 12:07:38,882 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-08 12:04:19,357 INFO [FIT-FALLBACK] id=https://www.indeed.com/career/ai-developer/salaries title='AI developer salary in United States' source=Google Jobs reason=missing_company
+2026-10-08 12:04:20,991 INFO [FIT-OK] id=https://www.indeed.com/career/ai-developer/salaries title='AI developer salary in United States' source=Google Jobs score=80 tier=Strong Fit
+2026-10-08 12:04:20,991 INFO [FIT-FALLBACK] id=https://us.remotejobs.dedyn.io/job/3247220 title='[Remote] Generative AI Engineer' source=Google Jobs reason=missing_company
+2026-10-08 12:04:22,476 INFO [FIT-OK] id=https://us.remotejobs.dedyn.io/job/3247220 title='[Remote] Generative AI Engineer' source=Google Jobs score=80 tier=Strong Fit
+2026-10-08 12:04:23,872 INFO [FIT-OK] id=https://www.indeed.com/viewjob?jk=ac90bdaf0b4a9199 title='Generative AI Engineer - Remote' source=Google Jobs score=80 tier=Strong Fit
+2026-10-08 12:04:25,462 INFO [FIT-OK] id=https://www.dice.com/job-detail/260421f7-3b86-48a3-82c0-677d8de05db0 title='Generative AI Engineer (GenAI Engineer) - K-Tek ...' source=Google Jobs score=80 tier=Strong Fit
+2026-10-08 12:04:25,462 INFO [FIT-FALLBACK] id=https://us.remotejobs.dedyn.io/job/genai-and-agentic-ai-engineer-f3deedb9 title='GenAI and Agentic AI Engineer' source=Google Jobs reason=missing_company
+2026-10-08 12:04:27,103 INFO [FIT-OK] id=https://us.remotejobs.dedyn.io/job/genai-and-agentic-ai-engineer-f3deedb9 title='GenAI and Agentic AI Engineer' source=Google Jobs score=63 tier=Excellent Fit
+2026-10-08 12:04:27,103 INFO [FIT-FALLBACK] id=https://us.remotejobs.dedyn.io/job/generative-ai-genai-prompt-engineer-5 title='Generative AI (GenAI) | Prompt Engineer' source=Google Jobs reason=missing_company
+2026-10-08 12:04:28,493 INFO [FIT-OK] id=https://us.remotejobs.dedyn.io/job/generative-ai-genai-prompt-engineer-5 title='Generative AI (GenAI) | Prompt Engineer' source=Google Jobs score=60 tier=Strong Fit
+2026-10-08 12:04:29,746 INFO [FIT-OK] id=https://www.dice.com/job-detail/17a4e563-f003-44ca-ac48-d1feca5f7199 title='ML Engineer, I - MLOps Framework - Torc Robotics - Remote' source=Google Jobs score=60 tier=Stretch Fit
+2026-10-08 12:04:29,746 INFO [FIT-FALLBACK] id=https://careers.epam.com/en/vacancy/data-ai-reliability-engineering-consultant-architect-bltbni32xo9txnehhm5_en title='Data & AI Reliability Engineering Consultant/Architect' source=Google Jobs reason=missing_company
+2026-10-08 12:04:31,053 INFO [FIT-OK] id=https://careers.epam.com/en/vacancy/data-ai-reliability-engineering-consultant-architect-bltbni32xo9txnehhm5_en title='Data & AI Reliability Engineering Consultant/Architect' source=Google Jobs score=58 tier=Weak Fit
+2026-10-08 12:04:31,053 INFO [FIT-FALLBACK] id=https://www.dice.com/job-detail/8f16e421-2586-41c0-996d-cf77e086a1f3 title='Mid-Level AI Software Test Engineer ...' source=Google Jobs reason=missing_company
+2026-10-08 12:04:33,352 INFO [FIT-OK] id=https://www.dice.com/job-detail/8f16e421-2586-41c0-996d-cf77e086a1f3 title='Mid-Level AI Software Test Engineer ...' source=Google Jobs score=45 tier=Strong Fit
+2026-10-08 12:04:33,352 INFO [FIT-FALLBACK] id=https://jobs.ashbyhq.com/mastra/531a3fe8-556f-4b83-bee7-20374f67f980 title='AI Engineer @ Mastra' source=Google Jobs reason=missing_company
+2026-10-08 12:04:35,256 INFO [FIT-OK] id=https://jobs.ashbyhq.com/mastra/531a3fe8-556f-4b83-bee7-20374f67f980 title='AI Engineer @ Mastra' source=Google Jobs score=40 tier=Strong Fit
+2026-10-08 12:04:35,257 INFO [FIT-FALLBACK] id=https://jobs.ashbyhq.com/clera/3c4fc4d4-6dfc-4fc3-af75-0169707315fe title='Founding Applied AI Engineer @ Clera' source=Google Jobs reason=missing_company
+2026-10-08 12:04:36,943 INFO [FIT-OK] id=https://jobs.ashbyhq.com/clera/3c4fc4d4-6dfc-4fc3-af75-0169707315fe title='Founding Applied AI Engineer @ Clera' source=Google Jobs score=40 tier=Strong Fit
+2026-10-08 12:04:38,235 INFO [FIT-OK] id=https://www.dice.com/job-detail/754725b5-4a08-4091-a1f7-e6bdde38457c title='MLOps Engineer - York Solutions, LLC - Hybrid in Remote, ...' source=Google Jobs score=40 tier=Stretch Fit
+2026-10-08 12:04:39,369 INFO [FIT-OK] id=https://www.dice.com/job-detail/5b0c7ba9-6284-4d48-a18d-5f1d7d22265e title='MLOps Engineer - Atomic Machines - Emeryville, CA, US' source=Google Jobs score=40 tier=Stretch Fit
+2026-10-08 12:06:09,498 INFO [FIT-OK] id=https://amazon.jobs/en/jobs/10566073/executive-assistant-aws-agentic-ai title='Executive Assistant, AWS Agentic AI - Job ID: 10566073' source=Amazon Jobs score=46 tier=Weak Fit
+2026-10-08 12:06:10,851 INFO [FIT-OK] id=https://www.amazon.jobs/jobs/10570666/ai-engineer--vla-foundation-model-rivr?cmpid=DA_INAD200785B title='AI Engineer - VLA Foundation Model, RIVR - Job ID' source=Amazon Jobs score=40 tier=Stretch Fit
+2026-10-08 12:07:35,416 INFO No device provided, using cpu
+2026-10-08 12:07:35,993 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:35,994 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-08 12:07:36,003 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:36,094 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:36,104 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:36,137 INFO Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-10-08 12:07:36,185 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:36,195 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:36,248 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:36,257 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-10-08 12:07:36,384 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:36,393 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:36,467 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:36,476 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:36,554 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-08 12:07:36,613 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:36,621 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:37,212 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-08 12:07:37,267 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-08 12:07:37,320 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-08 12:07:37,382 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-08 12:07:37,453 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:37,462 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:37,540 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:37,549 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:37,612 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:37,621 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:37,687 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:37,695 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:37,812 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-08 12:07:37,867 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-08 12:07:38,155 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-08 12:07:38,164 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-10-08 12:07:38,246 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
