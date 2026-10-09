@@ -14609,5 +14609,32 @@
       "raw_decision": "",
       "timestamp": "2026-10-08 23:00"
     }
+  ],
+  "2026-10-09": [
+    {
+      "job_id": "4a116e7ef7",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "AI Engineer - VLA Foundation Model, RIVR - Job ID",
+      "company": "Amazon",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.amazon.jobs/en/jobs/10570666/ai-engineer-vla-foundation-model-rivr",
+      "matched_keywords": [
+        "ai engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Stretch Fit",
+      "fit_analysis": "**Stretch Fit** \u2014 *AI engineering* trajectory and *agentic systems* interest align, but _production robotics/VLA_ experience and _deep learning model_ work remain nascent.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-09T12:06:38.966681"
+    }
   ]
 }
