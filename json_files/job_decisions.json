@@ -14718,5 +14718,191 @@
       "raw_decision": "",
       "timestamp": "2026-10-09 23:00"
     }
+  ],
+  "2026-10-10": [
+    {
+      "job_id": "4b7cec6823",
+      "number": "1",
+      "title": "AI Prompt Engineer / Agentic AI Engineer at CONFISA ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 106,
+      "url": "https://startup.jobs/ai-prompt-engineer-agentic-ai-engineer-confisa-international-group-10362947",
+      "matched_keywords": [
+        "agentic",
+        "ai engineer",
+        "prompt engineer",
+        "agentic ai",
+        "rag",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "85ac323bb4",
+      "number": "2",
+      "title": "AI Test Engineers",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://www.apexsystems.com/job/3054790_usa/ai-test-engineers",
+      "matched_keywords": [
+        "ai testing",
+        "ai test engineer",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "8821ea232b",
+      "number": "3",
+      "title": "Remote Prompt Engineering Jobs",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://promptlyhired.com/prompt-engineering-jobs/remote",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "40bffebe5c",
+      "number": "4",
+      "title": "AI Agent Developer (Chatbots & Customer Care Solutions",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/f038ec3e-ac5b-436b-857c-dd38f1e7bf8a",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "17b676a58b",
+      "number": "5",
+      "title": "Remote AI Automation Engineer at Airtm",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://remotearmy.io/jobs/FuahRFCv-ai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "37c963fa00",
+      "number": "6",
+      "title": "AI Automation Engineer at Moblize.it \u2022 Mountain View",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://wellfound.com/jobs/4814773-ai-automation-engineer",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "ae3e5b5c3a",
+      "number": "7",
+      "title": "Load & Performance Engineer - Innova - Plano, TX, US",
+      "company": "Innova",
+      "track": "Performance Engineering",
+      "score": 85,
+      "url": "https://www.dice.com/job-detail/97590569-82d7-45b7-aac9-f5b0c0419db1",
+      "matched_keywords": [
+        "performance engineer",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "d444091929",
+      "number": "8",
+      "title": "AI Prompt Engineer - CACI International, Inc.",
+      "company": "CACI International, Inc.",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/d19914e8-f192-4fe1-9824-49761dd8e862",
+      "matched_keywords": [
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "a06809fcd1",
+      "number": "9",
+      "title": "Software Engineer(Agentic AI Automation) - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://tti.wd1.myworkdayjobs.com/en-US/Milwaukee/job/Software-Engineer-Agentic-AI-Automation-_R78372",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    },
+    {
+      "job_id": "b0b89c0ebe",
+      "number": "G1",
+      "title": "Software Development Test Engineer (SDET), AI & ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 43,
+      "url": "https://boards.greenhouse.io/keepersecurity/jobs/4438839009",
+      "matched_keywords": [
+        "uat",
+        "model evaluation"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-10 23:00"
+    }
   ]
 }
