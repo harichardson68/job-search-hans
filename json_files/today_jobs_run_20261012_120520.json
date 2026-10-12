@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-12",
+  "run_id": "20261012_120520",
+  "jobs": [
+    {
+      "job_id": "548d8cf21a",
+      "number": "1",
+      "number_display": "1",
+      "token": "b54f7af5c9",
+      "run_id": "20261012_120520",
+      "title": "AI Test Engineers Job at Everforth",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://www.flexjobs.com/gjw/everforth-everforth_apex/ai-test-engineers/publicjobs?id=d52c63ae-6f2f-410b-a342-67bded652e5b",
+      "matched_keywords": [
+        "ai test engineer",
+        "ai testing",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI testing* and *evaluation capability* align with Hans's active GenAI projects; minor _production LLM ops_ depth gap but directly on his dual-track path.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "8ec782f710",
+      "number": "2",
+      "number_display": "2",
+      "token": "a305f3d3cc",
+      "run_id": "20261012_120520",
+      "title": "[Remote] Generative AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 98,
+      "url": "https://us.remotejobs.dedyn.io/job/remote-generative-ai-engineer-5c79b47c",
+      "matched_keywords": [
+        "ai engineer",
+        "generative ai engineer",
+        "fine-tuning",
+        "uat",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI* and *fine-tuning* expertise building actively; minor _production LLM ops_ gap but observability and engineering rigor transfer well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "78452f2032",
+      "number": "3",
+      "number_display": "3",
+      "token": "0197b3d2af",
+      "run_id": "20261012_120520",
+      "title": "AI QA Engineer at Innovecs in Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.codingjobboard.com/job/ai-qa-engineer-at-innovecs-remote/24541",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 Remote *AI QA* role matches career pivot; *GenAI cert* and agent projects support candidacy, but _production AI systems_ QA depth still building.",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
