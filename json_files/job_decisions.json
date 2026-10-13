@@ -15015,5 +15015,65 @@
       "raw_decision": "",
       "timestamp": "2026-10-11 23:00"
     }
+  ],
+  "2026-10-12": [
+    {
+      "job_id": "548d8cf21a",
+      "number": "1",
+      "title": "AI Test Engineers Job at Everforth",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://www.flexjobs.com/gjw/everforth-everforth_apex/ai-test-engineers/publicjobs?id=d52c63ae-6f2f-410b-a342-67bded652e5b",
+      "matched_keywords": [
+        "ai test engineer",
+        "ai testing",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-12 23:00"
+    },
+    {
+      "job_id": "8ec782f710",
+      "number": "2",
+      "title": "[Remote] Generative AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 98,
+      "url": "https://us.remotejobs.dedyn.io/job/remote-generative-ai-engineer-5c79b47c",
+      "matched_keywords": [
+        "ai engineer",
+        "generative ai engineer",
+        "fine-tuning",
+        "uat",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-12 23:00"
+    },
+    {
+      "job_id": "78452f2032",
+      "number": "3",
+      "title": "AI QA Engineer at Innovecs in Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.codingjobboard.com/job/ai-qa-engineer-at-innovecs-remote/24541",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-12 23:00"
+    }
   ]
 }
