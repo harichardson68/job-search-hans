@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-13",
+  "run_id": "20261013_120558",
+  "jobs": [
+    {
+      "job_id": "617b2b9da9",
+      "number": "1",
+      "number_display": "1",
+      "token": "0d11e00442",
+      "run_id": "20261013_120558",
+      "title": "Product Software Engineer - Agentic AI - Myworkdayjobs.com",
+      "company": "Agentic AI",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://wk.wd3.myworkdayjobs.com/en-US/External/job/USA---Kennesaw-GA/Product-Software-Engineer---Agentic-AI_R0058845",
+      "matched_keywords": [
+        "agentic",
+        "prompt engineer",
+        "prompt engineering",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *prompt engineering* align perfectly with dual-track pivot; minor _production LLM deployment_ depth but GenAI cert and Claude projects bridge gap.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "fff48757f4",
+      "number": "2",
+      "number_display": "2",
+      "token": "0b5354a71a",
+      "run_id": "20261013_120558",
+      "title": "AI Engineer with Microsoft - ASCII Group LLC",
+      "company": "ASCII Group LLC",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/e9a64f10-719e-412f-9905-bbc13ee9912c",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineer* role matches dual-track search and GenAI credentials; _remote Baltimore_ is acceptable, minor _production LLM depth_ gap but actively building.",
+      "level_signal": "desc:entry_mid_signal:junior"
+    },
+    {
+      "job_id": "bafb377e5f",
+      "number": "3",
+      "number_display": "3",
+      "token": "58d0b4d6cd",
+      "run_id": "20261013_120558",
+      "title": "Machine Learning Engineer | Contract | Remote, MX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://boards.greenhouse.io/techholding/jobs/4743067005",
+      "matched_keywords": [
+        "prompt engineer",
+        "machine learning engineer",
+        "prompt engineering",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *RAG and prompt engineering* align with AI skilling; _production ML model training_ experience gap but realistic to bridge.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "ae7cd3a9dd",
+      "number": "4",
+      "number_display": "4",
+      "token": "480d32d7df",
+      "run_id": "20261013_120558",
+      "title": "Prompt Engineer_ Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 73,
+      "url": "https://us.remotejobs.dedyn.io/job/2437520",
+      "matched_keywords": [
+        "nlp",
+        "prompt engineer",
+        "prompt engineering",
+        "natural"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *Generative AI* and *prompt engineering* align with Hans's active upskilling; _production conversational systems_ experience gap but realistic to pursue.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "fa9f26d606",
+      "number": "5",
+      "number_display": "5",
+      "token": "f9e7133b1a",
+      "run_id": "20261013_120558",
+      "title": "[Remote] reputed company QA Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://us.remotejobs.dedyn.io/job/3550039",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AI QA engineer* role matches Hans's emerging AI track; _end-to-end code/content testing_ is adjacent to his performance and observability foundation.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "d4f34ba325",
+      "number": "6",
+      "number_display": "6",
+      "token": "ca8ee66cea",
+      "run_id": "20261013_120558",
+      "title": "Load & Performance Engineer - Innova Solutions, Inc",
+      "company": "Innova Solutions, Inc",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://www.dice.com/job-detail/a8a65f39-d56c-4b4d-b042-b2ed008d77f0",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}
