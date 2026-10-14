@@ -15075,5 +15075,121 @@
       "raw_decision": "",
       "timestamp": "2026-10-12 23:00"
     }
+  ],
+  "2026-10-13": [
+    {
+      "job_id": "617b2b9da9",
+      "number": "1",
+      "title": "Product Software Engineer - Agentic AI - Myworkdayjobs.com",
+      "company": "Agentic AI",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://wk.wd3.myworkdayjobs.com/en-US/External/job/USA---Kennesaw-GA/Product-Software-Engineer---Agentic-AI_R0058845",
+      "matched_keywords": [
+        "agentic",
+        "prompt engineer",
+        "prompt engineering",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-13 23:00"
+    },
+    {
+      "job_id": "fff48757f4",
+      "number": "2",
+      "title": "AI Engineer with Microsoft - ASCII Group LLC",
+      "company": "ASCII Group LLC",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://www.dice.com/job-detail/e9a64f10-719e-412f-9905-bbc13ee9912c",
+      "matched_keywords": [
+        "ai engineer",
+        "prompt engineer",
+        "ai prompt"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-13 23:00"
+    },
+    {
+      "job_id": "bafb377e5f",
+      "number": "3",
+      "title": "Machine Learning Engineer | Contract | Remote, MX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://boards.greenhouse.io/techholding/jobs/4743067005",
+      "matched_keywords": [
+        "prompt engineer",
+        "machine learning engineer",
+        "prompt engineering",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-13 23:00"
+    },
+    {
+      "job_id": "ae7cd3a9dd",
+      "number": "4",
+      "title": "Prompt Engineer_ Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 73,
+      "url": "https://us.remotejobs.dedyn.io/job/2437520",
+      "matched_keywords": [
+        "nlp",
+        "prompt engineer",
+        "prompt engineering",
+        "natural"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-13 23:00"
+    },
+    {
+      "job_id": "fa9f26d606",
+      "number": "5",
+      "title": "[Remote] reputed company QA Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://us.remotejobs.dedyn.io/job/3550039",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-13 23:00"
+    },
+    {
+      "job_id": "d4f34ba325",
+      "number": "6",
+      "title": "Load & Performance Engineer - Innova Solutions, Inc",
+      "company": "Innova Solutions, Inc",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://www.dice.com/job-detail/a8a65f39-d56c-4b4d-b042-b2ed008d77f0",
+      "matched_keywords": [
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-13 23:00"
+    }
   ]
 }
