@@ -1,0 +1,248 @@
+{
+  "date": "2026-10-15",
+  "run_id": "20261015_120706",
+  "jobs": [
+    {
+      "job_id": "454c8f7442",
+      "number": "1",
+      "number_display": "1",
+      "token": "99d60fc827",
+      "run_id": "20261015_120706",
+      "title": "[Remote] Agentic AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://us.remotejobs.dedyn.io/job/3660074",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 Remote *Agentic AI Engineer* role matches Hans's active *AI systems* pivot; IBM GenAI cert and Claude API projects directly relevant, minimal _production deployment_ friction.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "1e40d62f67",
+      "number": "2",
+      "number_display": "2",
+      "token": "ebfaec39a9",
+      "run_id": "20261015_120706",
+      "title": "Generative and Agentic AI Training Track - Big Binary Tech",
+      "company": "Big Binary Tech",
+      "track": "AI Engineering",
+      "score": 106,
+      "url": "https://bbt.edu.pk/track-full-stack-ai-engineer/",
+      "matched_keywords": [
+        "ai engineer",
+        "llm application",
+        "agentic ai",
+        "ai developer",
+        "rag",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Agentic AI* and *LLM application* skills align with track; minor _production deployment_ gap but IBM GenAI cert and Claude projects bridge it well.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e5d815b84d",
+      "number": "3",
+      "number_display": "3",
+      "token": "15d3d742d5",
+      "run_id": "20261015_120706",
+      "title": "AI Engineer - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 95,
+      "url": "https://tsys.wd1.myworkdayjobs.com/en-US/TSYS/job/AI-Engineer_R0073963",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "uat",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Engineer* role with *prompt engineering* focus matches dual-track pivot; minor _RLHF/LLM eval_ depth gap but GenAI cert and Claude projects bridge it.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c732f100e7",
+      "number": "4",
+      "number_display": "4",
+      "token": "96aca5d9aa",
+      "run_id": "20261015_120706",
+      "title": "[Remote] AI Prompt Engineer & Evaluator | $50/hr Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 95,
+      "url": "https://us.remotejobs.dedyn.io/job/2699595",
+      "matched_keywords": [
+        "ai prompt",
+        "uat",
+        "llm prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI prompt engineering* aligns with GenAI cert and Claude projects; minor _production LLM deployment_ gap but active skill-building trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "2349196cdf",
+      "number": "5",
+      "number_display": "5",
+      "token": "64d9cb288d",
+      "run_id": "20261015_120706",
+      "title": "AI QA Engineer for Learning Platform (Hourly, Long-Term)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Engineer-for-Learning-Platform-Hourly-Long-Term_~022109661776215568216/",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI QA Engineer* role matches Hans's *AI systems* pivot; minor _production ML model training_ gap but active GenAI/agent skill-building bridgeable.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "6ff78eb13d",
+      "number": "6",
+      "number_display": "6",
+      "token": "29cbc21e5f",
+      "run_id": "20261015_120706",
+      "title": "AI Prompt Engineer, Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://us.remotejobs.dedyn.io/job/2620269",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI engineering* trajectory and *GenAI certification* align well; _prompt optimization_ depth may need rapid ramp but fits Hans's agent-building trajectory.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "4f11e248a6",
+      "number": "7",
+      "number_display": "7",
+      "token": "46d953d1e4",
+      "run_id": "20261015_120706",
+      "title": "AI Agent Developer - Remote at LEO DOES IT INC - Haystack",
+      "company": "Remote at LEO DOES IT INC",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://haystackapp.io/jobs/25f2cffd-a4cf-4b19-94fd-8a11d51e9873",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI Agent Developer* role matches Hans's GenAI skills and remote location; minor _production agent deployment_ experience gap but directly aligned with stated career pivot.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7a125495af",
+      "number": "8",
+      "number_display": "8",
+      "token": "fa16e06bd2",
+      "run_id": "20261015_120706",
+      "title": "AI Engineer Jobs in Saint Pete Beach, FL",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://hiringcafe.com/jobs/ai-engineer-saint-pete-beach-fl",
+      "matched_keywords": [
+        "ai workflow",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI workflow engineer* role matches Hans's emerging *agent/agentic* focus; _hybrid Florida location_ and _production LLM depth_ are minor gaps but bridgeable given GenAI cert and active projects.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e5defd0d54",
+      "number": "9",
+      "number_display": "9",
+      "token": "79e060014c",
+      "run_id": "20261015_120706",
+      "title": "Performance Engineering Architect - QualiTest - Remote",
+      "company": "QualiTest",
+      "track": "Performance Engineering",
+      "score": 190,
+      "url": "https://www.dice.com/job-detail/bd8f82b9-a89c-4923-a56d-385bdfa10242",
+      "matched_keywords": [
+        "performance engineer",
+        "loadrunner",
+        "neoload",
+        "jmeter",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "b9329032bf",
+      "number": "10",
+      "number_display": "10",
+      "token": "6c2b7238bb",
+      "run_id": "20261015_120706",
+      "title": "AI Prompt Engineer (Media Industry) Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/bd25eabf-c005-4032-b3ba-1ac5960032d9",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *AI engineering* trajectory and *remote* availability align; _prompt engineering_ is narrower than Hans's agentic/systems focus.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "c24f86b1ba",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "9cb9b3af22",
+      "run_id": "20261015_120706",
+      "title": "Programmer Analyst II, Relay Product Excellence Agentic ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10579584/programmer-analyst-ii-relay-product-excellence-agentic-solutions",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

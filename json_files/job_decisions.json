@@ -15191,5 +15191,32 @@
       "raw_decision": "",
       "timestamp": "2026-10-13 23:00"
     }
+  ],
+  "2026-10-15": [
+    {
+      "job_id": "c24f86b1ba",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Programmer Analyst II, Relay Product Excellence Agentic ...",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10579584/programmer-analyst-ii-relay-product-excellence-agentic-solutions",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-15T12:07:06.595799"
+    }
   ]
 }
