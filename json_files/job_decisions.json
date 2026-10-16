@@ -15194,9 +15194,200 @@
   ],
   "2026-10-15": [
     {
+      "job_id": "454c8f7442",
+      "number": "1",
+      "title": "[Remote] Agentic AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 63,
+      "url": "https://us.remotejobs.dedyn.io/job/3660074",
+      "matched_keywords": [
+        "agentic ai",
+        "agentic",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "1e40d62f67",
+      "number": "2",
+      "title": "Generative and Agentic AI Training Track - Big Binary Tech",
+      "company": "Big Binary Tech",
+      "track": "AI Engineering",
+      "score": 106,
+      "url": "https://bbt.edu.pk/track-full-stack-ai-engineer/",
+      "matched_keywords": [
+        "ai engineer",
+        "llm application",
+        "agentic ai",
+        "ai developer",
+        "rag",
+        "agentic"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "e5d815b84d",
+      "number": "3",
+      "title": "AI Engineer - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "AI Engineering",
+      "score": 95,
+      "url": "https://tsys.wd1.myworkdayjobs.com/en-US/TSYS/job/AI-Engineer_R0073963",
+      "matched_keywords": [
+        "prompt engineering",
+        "prompt engineer",
+        "uat",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "c732f100e7",
+      "number": "4",
+      "title": "[Remote] AI Prompt Engineer & Evaluator | $50/hr Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 95,
+      "url": "https://us.remotejobs.dedyn.io/job/2699595",
+      "matched_keywords": [
+        "ai prompt",
+        "uat",
+        "llm prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "2349196cdf",
+      "number": "5",
+      "title": "AI QA Engineer for Learning Platform (Hourly, Long-Term)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Engineer-for-Learning-Platform-Hourly-Long-Term_~022109661776215568216/",
+      "matched_keywords": [
+        "ai qa engineer",
+        "ai qa"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "6ff78eb13d",
+      "number": "6",
+      "title": "AI Prompt Engineer, Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://us.remotejobs.dedyn.io/job/2620269",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "4f11e248a6",
+      "number": "7",
+      "title": "AI Agent Developer - Remote at LEO DOES IT INC - Haystack",
+      "company": "Remote at LEO DOES IT INC",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://haystackapp.io/jobs/25f2cffd-a4cf-4b19-94fd-8a11d51e9873",
+      "matched_keywords": [
+        "ai agent developer",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "7a125495af",
+      "number": "8",
+      "title": "AI Engineer Jobs in Saint Pete Beach, FL",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://hiringcafe.com/jobs/ai-engineer-saint-pete-beach-fl",
+      "matched_keywords": [
+        "ai workflow",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "e5defd0d54",
+      "number": "9",
+      "title": "Performance Engineering Architect - QualiTest - Remote",
+      "company": "QualiTest",
+      "track": "Performance Engineering",
+      "score": 190,
+      "url": "https://www.dice.com/job-detail/bd8f82b9-a89c-4923-a56d-385bdfa10242",
+      "matched_keywords": [
+        "performance engineer",
+        "loadrunner",
+        "neoload",
+        "jmeter",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
+      "job_id": "b9329032bf",
+      "number": "10",
+      "title": "AI Prompt Engineer (Media Industry) Remote",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://www.dice.com/job-detail/bd25eabf-c005-4032-b3ba-1ac5960032d9",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
+    },
+    {
       "job_id": "c24f86b1ba",
       "number": "A1",
-      "number_display": "A1",
       "title": "Programmer Analyst II, Relay Product Excellence Agentic ...",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -15206,17 +15397,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-10-15T12:07:06.595799"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-15 23:00"
     }
   ]
 }
