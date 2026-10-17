@@ -15402,5 +15402,116 @@
       "raw_decision": "",
       "timestamp": "2026-10-15 23:00"
     }
+  ],
+  "2026-10-16": [
+    {
+      "job_id": "edf6699835",
+      "number": "1",
+      "title": "Agentic AI Developer IV in Remote, Texas | Careers at R-TX",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 83,
+      "url": "https://careers-realpagepms.icims.com/jobs/14738/agentic-ai-developer-iv/job",
+      "matched_keywords": [
+        "agentic",
+        "ai developer",
+        "agentic ai",
+        "ai agent"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-16 23:00"
+    },
+    {
+      "job_id": "91408f7c42",
+      "number": "2",
+      "title": "AI QA Engineer at Innovecs Games",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 65,
+      "url": "https://gamejobs.co/AI-QA-Engineer-at-Innovecs-Games",
+      "matched_keywords": [
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-16 23:00"
+    },
+    {
+      "job_id": "7eb04539ff",
+      "number": "3",
+      "title": "Prompt Engineer - AI Innovation Team - US",
+      "company": "AI Innovation Team",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://frontendnode-25b1.onrender.com/job/prompt-engineer-ai-innovation-team-us-2",
+      "matched_keywords": [
+        "prompt engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-16 23:00"
+    },
+    {
+      "job_id": "19ccffc54a",
+      "number": "4",
+      "title": "What is Prompt Engineering? Skills, Jobs & Salary (2026)",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://thedigitalarticles.com/what-is-prompt-engineering/",
+      "matched_keywords": [
+        "ai prompt",
+        "prompt engineer",
+        "prompt engineering",
+        "llm application"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-16 23:00"
+    },
+    {
+      "job_id": "c16151a22f",
+      "number": "5",
+      "title": "PTC - Journi - Performance Load Test Architect/Lead",
+      "company": "Journi",
+      "track": "Performance Engineering",
+      "score": 50,
+      "url": "https://www.dice.com/job-detail/0cdba5bd-5e5a-4269-ad44-76246b3c2d6d",
+      "matched_keywords": [
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-16 23:00"
+    },
+    {
+      "job_id": "8244d6ac69",
+      "number": "6",
+      "title": "AI Automation Engineer \u2013 Remote, Full-Time (up to ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 40,
+      "url": "https://www.upwork.com/freelance-jobs/apply/Automation-Engineer-Remote-Full-Time-500-month_~022111007744145251306/",
+      "matched_keywords": [
+        "ai automation engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-16 23:00"
+    }
   ]
 }
