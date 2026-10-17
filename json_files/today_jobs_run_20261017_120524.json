@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-17",
+  "run_id": "20261017_120524",
+  "jobs": [
+    {
+      "job_id": "12f3c54244",
+      "number": "1",
+      "number_display": "1",
+      "token": "1d9c853d94",
+      "run_id": "20261017_120524",
+      "title": "[Remote] Generative AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://us.remotejobs.dedyn.io/job/3248379",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Generative AI Engineer* role aligns with active upskilling; *agentic workflows* match portfolio direction, minor _production LLM_ ops experience gap but momentum strong.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "7feff04556",
+      "number": "2",
+      "number_display": "2",
+      "token": "eeb514e728",
+      "run_id": "20261017_120524",
+      "title": "AI Engineer - REMOTE (Quarterly Travel to DC) at Protos IT",
+      "company": "REMOTE (Quarterly Travel to DC) at Protos IT",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://haystackapp.io/jobs/5b70b897-596e-4fb2-90f3-745bdcc50a3a",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Remote AI Engineer* role matches Hans's *GenAI cert* and emerging agent skills; _production LLM deployment_ experience still developing but applied foundation solid.",
+      "level_signal": "none:no-seniority-signal-found"
+    },
+    {
+      "job_id": "e5d2da1947",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "bcdaf47824",
+      "run_id": "20261017_120524",
+      "title": "Agentic Data Engineer, Frontier AI Tooling - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10577269/agentic-data-engineer-frontier-ai-tooling",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "level_signal": "none:no-seniority-signal-found"
+    }
+  ]
+}

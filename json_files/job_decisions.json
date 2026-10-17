@@ -15513,5 +15513,32 @@
       "raw_decision": "",
       "timestamp": "2026-10-16 23:00"
     }
+  ],
+  "2026-10-17": [
+    {
+      "job_id": "e5d2da1947",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Agentic Data Engineer, Frontier AI Tooling - Job ID",
+      "company": "Amazon",
+      "track": "Performance Engineering",
+      "score": 23,
+      "url": "https://www.amazon.jobs/en/jobs/10577269/agentic-data-engineer-frontier-ai-tooling",
+      "matched_keywords": [
+        "agentic"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "",
+      "fit_analysis": "",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-17T12:05:24.459594"
+    }
   ]
 }
