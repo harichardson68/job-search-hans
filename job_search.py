@@ -1466,6 +1466,67 @@ CANDIDATE = {
 OUTPUT_FILE    = os.path.join(JSON_DIR, "job_results.json")
 SEEN_JOBS_FILE = os.path.join(JSON_DIR, "seen_jobs.json")
 
+# ─── JOB FINGERPRINT (2026-10-18) ────────────────────────────
+# The same posting arrives from several boards with different URLs and
+# decorated titles, e.g. "AI QA Engineer / AI Test Architect at Togal Ai -
+# RemoShift", "... @ Togal AI", "... at Togal.AI • United States". URL and
+# raw-title dedup both miss these. Fingerprint = core title + company,
+# both normalized. Company comes from the company field, or is pulled out
+# of an "@ X" / " at X" title suffix when the field is missing.
+_FP_STRIP_RE = re.compile(
+    r"\[remote\]|\(remote[^)]*\)|\bremote\b|job id|ジョブid|"
+    r"\bjobs? at\b|\bhiring\b|\bnow hiring\b", re.I)
+_FP_CO_JUNK = re.compile(r"\b(inc|llc|ltd|corp|corporation|co|company|technologies|"
+                         r"technology|solutions|group|usa|us)\b|\.(com|io|co|net)\b")
+
+def _fp_company(c):
+    c = re.sub(r"\s+in\s+.*$", "", (c or "").lower().strip())  # "Innovecs in Remote"
+    c = _FP_CO_JUNK.sub(" ", c)
+    return re.sub(r"[^a-z0-9]", "", c)
+
+_FP_NOT_A_COMPANY = {"", "na", "none", "remote", "jobs", "job", "dice", "indeed",
+                     "lever", "monster", "linkedin", "wfh", "ladders", "tallo",
+                     "jobdetails", "careers", "hybrid", "unitedstates", "w2",
+                     "onlyw2", "myworkdayjobs", "greenhouse", "ashby", "join"}
+
+def job_fingerprint(title, company=""):
+    """Returns "fp:<core title>|<company>" or "" when the company can't be
+    determined — without a company, two same-titled jobs may be different
+    employers, so we don't risk merging them (falls back to URL dedup)."""
+    t = (title or "").lower()
+    co = _fp_company(company)
+    if co in _FP_NOT_A_COMPANY:
+        co = ""
+    # pull "@ Company" / " at Company" out of the title
+    m = re.search(r"\s(?:@|at)\s+([^|\-–•(]+)", t)
+    if m:
+        if not co:
+            co = _fp_company(m.group(1))
+        t = t[:m.start()]
+    if co == "amazon":
+        # Amazon role names contain " - " themselves ("AI Engineer - VLA
+        # Foundation Model, RIVR"); strip only the localized Job-ID suffixes.
+        t = re.sub(r"\s[-–|]\s*(job id|ジョブid|职位\s*id|id da vaga|amazon careers|amazon\.jobs)\b.*$", "", t)
+        t = re.sub(r"\s\|\s*amazon\.jobs.*$", "", t)
+        parts = [t]
+    else:
+        parts = re.split(r"\s[-–|•]\s|\s::\s|\s\|", t)
+    t = parts[0]
+    # Dice-style "Title - Company - Location": second segment is the company
+    if not co:
+        for seg in parts[1:3]:
+            cand = _fp_company(re.sub(r"\bremote\b.*|\bhybrid\b.*|\bonly w2\b", "", seg))
+            if cand not in _FP_NOT_A_COMPANY and not re.search(r"\.(com|io|net|app)\b", seg):
+                co = cand
+                break
+    if co in _FP_NOT_A_COMPANY:
+        return ""
+    t = _FP_STRIP_RE.sub(" ", t)
+    t = re.sub(r"[^a-z0-9+/&]", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return f"fp:{t}|{co}" if t else ""
+
+
 def load_seen_jobs():
     """Load previously seen job URLs."""
     try:
@@ -1481,7 +1542,7 @@ def save_seen_jobs(seen_urls):
     """Save seen job URLs so we never send duplicates."""
     try:
         # Keep only last 1000 URLs to prevent file growing too large
-        url_list = list(seen_urls)[-1000:]
+        url_list = list(seen_urls)[-3000:]  # urls + "fp:" fingerprints
         with open(SEEN_JOBS_FILE, "w") as f:
             json.dump({"urls": url_list, "last_updated": datetime.now().isoformat()}, f, indent=2)
     except Exception as e:
@@ -2995,8 +3056,11 @@ def search_amazon_jobs():
     deduped = []
     skipped_dupes = 0
     for job in sorted(jobs, key=lambda x: x["score"], reverse=True):
-        if job["url"] not in seen_urls and job["url"] not in previously_seen:
+        _fp = job_fingerprint(job["title"], "Amazon")
+        if (job["url"] not in seen_urls and job["url"] not in previously_seen
+                and _fp not in seen_urls and _fp not in previously_seen):
             seen_urls.add(job["url"])
+            seen_urls.add(_fp)
             deduped.append(job)
         else:
             skipped_dupes += 1
@@ -3006,7 +3070,8 @@ def search_amazon_jobs():
     top5 = deduped[:5]
     # Save Amazon job URLs to seen_jobs so they won't repeat tomorrow
     if top5:
-        updated_seen = previously_seen | {job["url"] for job in top5}
+        updated_seen = (previously_seen | {job["url"] for job in top5}
+                        | {job_fingerprint(job["title"], "Amazon") for job in top5})
         save_seen_jobs(updated_seen)
     print(f"   [OK] Amazon Jobs: {len(top5)} relevant jobs found (10-day window)")
     return top5
@@ -3901,7 +3966,15 @@ def main():
         company_norm = job.get("company", "").lower().strip()[:40]
         key = (title_norm, company_norm)
         title_key = title_norm[:45]
+        # 2026-10-18: also collapse the same posting from different boards
+        fp = job_fingerprint(job.get("title", ""), job.get("company", ""))
+        if fp and fp in seen_title_company:
+            if DEBUG_MODE:
+                print(f"   [DEBUG] Cross-board duplicate removed: {job.get('title','')[:50]} ({job.get('source','')})")
+            continue
         if key not in seen_title_company and title_key not in seen_titles_only and key != ("", ""):
+            if fp:
+                seen_title_company.add(fp)
             seen_title_company.add(key)
             seen_titles_only.add(title_key)
             deduped_jobs.append(job)
@@ -3915,7 +3988,9 @@ def main():
 
     # Remove jobs already seen in previous runs
     seen_urls = load_seen_jobs()
-    new_jobs = [j for j in all_jobs if j.get("url", "") not in seen_urls]
+    new_jobs = [j for j in all_jobs
+                if j.get("url", "") not in seen_urls
+                and (job_fingerprint(j.get("title", ""), j.get("company", "")) or "~") not in seen_urls]
     duplicate_count = len(all_jobs) - len(new_jobs)
     if duplicate_count > 0:
         print(f"[OK] Removed {duplicate_count} duplicate jobs already sent previously")
@@ -4122,6 +4197,7 @@ def main():
     # Save newly seen job URLs
     if top_jobs:
         seen_urls.update(j.get("url", "") for j in top_jobs)
+        seen_urls.update(f for f in (job_fingerprint(j.get("title", ""), j.get("company", "")) for j in top_jobs) if f)
         save_seen_jobs(seen_urls)
         unsent = len(all_jobs) - len(top_jobs)
         if unsent > 0:
