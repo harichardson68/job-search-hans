@@ -190,8 +190,27 @@ class JobRAG:
             with open(DECISIONS_FILE, "r", encoding="utf-8") as f:
                 all_decisions = json.load(f)
 
+            # 2026-10-18: one record per job_id. A job shown on two days
+            # appears twice, and Chroma rejects the WHOLE upsert on duplicate
+            # IDs (failed every night: "Expected IDs to be unique"). Keep the
+            # most informative record: a real decision beats no_response /
+            # pending; ties go to the later date.
+            _weak = {"no_response", "pending", "unknown", "", None}
+            by_id = {}
+            for date_str in sorted(all_decisions):
+                entries = all_decisions[date_str]
+                if not isinstance(entries, list):
+                    continue
+                for entry in entries:
+                    jid = entry.get("job_id", "")
+                    if not jid:
+                        continue
+                    prev = by_id.get(jid)
+                    if prev is None or not (entry.get("decision") in _weak and prev[1].get("decision") not in _weak):
+                        by_id[jid] = (date_str, entry)
+
             ids, docs, metas = [], [], []
-            for date_str, entries in all_decisions.items():
+            for date_str, entries in ((d, [e]) for d, e in by_id.values()):
                 if not isinstance(entries, list):
                     continue
                 for entry in entries:
@@ -1879,6 +1898,17 @@ def get_job_track(title, description):
     # Specific multi-word phrases (prompt engineer, ai agent, mlops
     # engineer, etc.) are distinctive enough to stay as full-text triggers.
     is_ai = any(kw in t for kw in AI_GENERIC_TERMS) or any(kw in text for kw in AI_SPECIFIC_PHRASES)
+    # 2026-10-18: AI titles the keyword lists missed fell through to the
+    # "Performance Engineering, OK" default (e.g. "Partner Solutions
+    # Architect, Agentic...", "SDE II, AI Automation"), skipping every
+    # seniority check. Route clear AI titles into the AI branch — unless
+    # the title is genuinely performance/load testing.
+    if not is_ai and not any(kw in t for kw in ("loadrunner", "performance", "load test", "jmeter", "neoload")):
+        is_ai = (any(kw in t for kw in AI_TRANSFERABLE_TITLES + AI_TARGET_TITLES)
+                 or any(kw in t for kw in ("agentic", "mlops", "ai/ml", "applied scientist",
+                                           "machine learning", "ai automation", "ai agent",
+                                           "generative ai", "genai", "prompt engineer"))
+                 or bool(re.search(r"\bai\b", t)))
     is_sdet = any(kw in t for kw in SDET_TITLE_KEYWORDS)
     is_qa = any(kw in text for kw in QA_HIGH_KEYWORDS)
 
@@ -1895,7 +1925,10 @@ def get_job_track(title, description):
                 return "AI Engineering", False, f"title:exec-keyword:{exec_kw.strip()}"
             return "AI Engineering", True, "transferable-title:years-gate-skipped"
 
-        senior_title_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "head of", "vp "]
+        senior_title_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "head of", "vp ",
+                            # 2026-10-18: from Hans's too_senior decisions
+                            "solutions architect", "mlops architect", "applied scientist",
+                            "sde ii", "sde iii", "manager iii"]
         matched_senior_kw = next((s for s in senior_title_kws if s in t), None)
         if matched_senior_kw:
             return "AI Engineering", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
@@ -1910,6 +1943,10 @@ def get_job_track(title, description):
         if len(description.strip()) < 300:
             if any(sig in t for sig in AI_ENTRY_TITLE_SIGNALS):
                 return "AI Engineering", True, "nodesc:entry-title"
+            # Hans's own stated target titles (automation/integration/
+            # workflow/systems) — the titles he actually applies to most.
+            if any(kw in t for kw in AI_TARGET_TITLES):
+                return "AI Engineering", True, "nodesc:target-title"
             return "AI Engineering", False, "nodesc:default-deny"
 
         # Check description for experience requirements
@@ -2056,6 +2093,7 @@ AI_TRANSFERABLE_TITLES = [
     "llm test", "ai validation", "ai verification",
     "ai performance", "llm performance", "ai reliability", "ai observability",
     "llm observability", "ai platform reliability",
+    "llm qa", "llm quality", "genai qa", "genai test",
 ]
 AI_TARGET_TITLES = [
     "ai automation engineer", "ai integration engineer", "ai workflow engineer",
