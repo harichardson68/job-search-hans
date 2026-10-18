@@ -277,8 +277,66 @@ class JobRAG:
             print(f"   [WARN] RAG retrieval failed: {e}")
             return ""
 
+    # 2026-10-18: structured precedents for the fit check. Only decisions
+    # that carry signal (applied / too_senior / not_interested / ...) —
+    # no_response and pending are noise and are excluded.
+    INFORMATIVE = ["applied", "too_senior", "not_interested", "salary_too_low", "onsite", "not_in_us"]
+
+    def precedents(self, job, top_k=5):
+        """Returns [{title, decision, reason, sim}] for the most similar
+        past decisions with real signal, or [] if unavailable."""
+        if not RAG_ENABLED or not self._init():
+            return []
+        try:
+            if self._collection.count() < 20:
+                return []
+            query_text = " ".join(filter(None, [job.get("title", ""), job.get("track", "")]))
+            if not query_text.strip():
+                return []
+            res = self._collection.query(
+                query_texts=[query_text], n_results=top_k,
+                where={"decision": {"$in": self.INFORMATIVE}},
+                include=["metadatas", "distances"],
+            )
+            out = []
+            for meta, dist in zip(res["metadatas"][0], res["distances"][0]):
+                out.append({"title": meta.get("title", ""), "decision": meta.get("decision", ""),
+                            "reason": meta.get("reason", ""), "sim": round(1 - dist, 2)})
+            return out
+        except Exception as e:
+            logging.info(f"[RAG-WARN] precedents failed: {e}")
+            return []
+
 # Singleton
 job_rag = JobRAG()
+
+PRECEDENT_MIN_SIM   = 0.80   # how close a past job must be to count as precedent
+PRECEDENT_MIN_COUNT = 2      # how many agreeing precedents before acting on them
+_PRECEDENT_NEG = {"too_senior", "not_interested", "salary_too_low"}
+
+def precedent_verdict(precs):
+    """Deterministic read of Hans's own history. Returns
+    ("neg"|"pos"|"", evidence_list). Acts only when >= PRECEDENT_MIN_COUNT
+    close matches agree and none disagree."""
+    strong = [p for p in precs if p["sim"] >= PRECEDENT_MIN_SIM]
+    neg = [p for p in strong if p["decision"] in _PRECEDENT_NEG]
+    pos = [p for p in strong if p["decision"] == "applied"]
+    if len(neg) >= PRECEDENT_MIN_COUNT and not pos:
+        return "neg", neg
+    if len(pos) >= PRECEDENT_MIN_COUNT and not neg:
+        return "pos", pos
+    return "", strong
+
+def _precedent_prompt_block(precs):
+    if not precs:
+        return ""
+    lines = ["HANS'S OWN PAST DECISIONS ON SIMILAR JOBS (his real preferences —",
+             "weigh these heavily; if he consistently skipped near-identical roles,",
+             "that matters more than keyword overlap):"]
+    for p in precs:
+        why = f" — {p['reason']}" if p.get("reason") else ""
+        lines.append(f"  - {int(p['sim']*100)}% similar: \"{p['title']}\" → {p['decision']}{why}")
+    return "\n".join(lines) + "\n\n"
 
 # ─── LOGGING SETUP ───────────────────────────────────────────
 # Logs to both console AND job_search.log (overwrites each run)
@@ -2730,6 +2788,18 @@ def search_serper_jobs():
         'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"',
         'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"',
     ]
+    # 2026-10-18: skip queries learn_weights.py paused for producing
+    # nothing Hans wanted (see json_files/learned_adjustments.json).
+    _paused = set()
+    try:
+        with open(os.path.join(JSON_DIR, "learned_adjustments.json"), encoding="utf-8") as _f:
+            _paused = set(json.load(_f).get("paused_queries", {}))
+    except Exception:
+        pass
+    if _paused:
+        _before = len(queries)
+        queries = [q for q in queries if q not in _paused]
+        print(f"   [LEARN] Skipping {_before - len(queries)} paused Serper queries")
     seen = set()
     for query in queries:
         try:
@@ -2848,6 +2918,7 @@ def search_serper_jobs():
                         "company": company,
                         "url": url_job,
                         "posted": posted,
+                        "query": query,
                         "description": desc[:3000],
                         "score": score,
                         "matched_keywords": matched,
@@ -3738,8 +3809,28 @@ def generate_fit_analysis(job):
     full_text_lower = (title + " " + job.get("description", "")).lower()
     hard_disqualified = any(term in full_text_lower for term in HARD_DISQUALIFY_TERMS)
 
+    # 2026-10-18: Hans's own history on near-identical jobs.
+    precs = job_rag.precedents(job)
+    verdict, evidence = precedent_verdict(precs)
+    if verdict:
+        logging.info(f"[FIT-PRECEDENT] id={job_id} title={title!r} verdict={verdict} "
+                     f"evidence={[(p['title'][:40], p['decision'], p['sim']) for p in evidence]}")
+
     # 2026-10-18: No description → don't ask the model to guess from a
     # title. It was rating ~65% of title-only jobs "Strong Fit".
+    # Exception: if Hans's own decisions on near-identical jobs agree,
+    # use that — it's real evidence, not a guess.
+    if len(job.get("description", "").strip()) < 300 and verdict == "neg":
+        reasons = sorted({p["decision"].replace("_", " ") for p in evidence})
+        return {"tier": "Stretch Fit",
+                "display": (f"**Stretch Fit** — You passed on {len(evidence)} near-identical jobs "
+                            f"(_{', '.join(reasons)}_), e.g. \"{evidence[0]['title'][:60]}\"."),
+                "hard_disqualified": hard_disqualified}
+    if len(job.get("description", "").strip()) < 300 and verdict == "pos":
+        return {"tier": "Decent Fit",
+                "display": (f"**Decent Fit** — No description, but you *applied* to {len(evidence)} "
+                            f"near-identical jobs, e.g. \"{evidence[0]['title'][:60]}\"."),
+                "hard_disqualified": hard_disqualified}
     if len(job.get("description", "").strip()) < 300:
         logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=no_description")
         return {"tier": "Unknown Fit",
@@ -3773,7 +3864,7 @@ CANDIDATE SNAPSHOT:
 - Goal: remote, $30+/hr floor, realistic for him to get hired and ramp quickly
   — NOT "is this the ideal next career step"
 
-JOB POSTING:
+{_precedent_prompt_block(precs)}JOB POSTING:
 Title: {title}
 Company: {company}
 Track: {track} (matched at {score} pts)
@@ -3814,7 +3905,7 @@ CANDIDATE SNAPSHOT:
 - Observability stack: AppDynamics, Splunk, Grafana, Prometheus
 - Dual-track search: (1) LoadRunner/Performance roles, (2) AI Systems/Agent/Workflow Engineering
 
-JOB POSTING:
+{_precedent_prompt_block(precs)}JOB POSTING:
 Title: {title}
 Company: {company}
 Track: {track} (matched at {score} pts)
@@ -4760,6 +4851,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
                 "fit_tier":         j.get("fit_tier", ""),
                 "fit_analysis":     j.get("fit_analysis", ""),
                 "level_signal":     j.get("level_signal", ""),
+                "query":            j.get("query", ""),
             }
             for idx, j in enumerate(top_jobs, 1)
         ]

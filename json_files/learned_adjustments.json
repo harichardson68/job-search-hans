@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T22:23:59",
+  "generated_at": "2026-10-18T18:02:47",
   "labeled_weighted": {
     "applied": 20.2,
     "rejected": 38.0
@@ -59,5 +59,7 @@
       "applied_w": 4.4,
       "rejected_w": 3.4
     }
-  }
+  },
+  "paused_queries": {},
+  "query_stats": {}
 }

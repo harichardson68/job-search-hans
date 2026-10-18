@@ -16,6 +16,12 @@ the overall apply rate, scaled to points. Only features seen >= 5
 weighted times get an adjustment. Output is a readable JSON table so
 every learned number can be checked by hand.
 
+Query learning (2026-10-18): every Serper job records the query that
+found it. A query is PAUSED when it has surfaced >= 10 jobs, Hans applied
+to none, and >= 3 were explicit rejects. Pauses expire after 30 days so
+the query gets re-tested. LoadRunner/performance queries are never
+paused — that market is scarce and it's the top-priority track.
+
 Output: json_files/learned_adjustments.json
 Run:    python learn_weights.py        (also called by run_update_scoring.bat)
 """
@@ -76,18 +82,51 @@ def main():
         adj = max(MAX_DOWN, min(MAX_UP, round(SCALE * lo)))
         if adj != 0:
             table[f] = {"adj": adj, "applied_w": round(p, 1), "rejected_w": round(n, 1)}
+    # ── query performance ──
+    qstats = {}
+    for day, recs in data.items():
+        for r in recs:
+            q = r.get("query")
+            if not q:
+                continue
+            st = qstats.setdefault(q, {"shown": 0, "applied": 0, "rejected": 0, "last_seen": day})
+            st["shown"] += 1
+            st["last_seen"] = max(st["last_seen"], day)
+            if r.get("decision") in POS: st["applied"] += 1
+            elif r.get("decision") in NEG: st["rejected"] += 1
+    prev = {}
+    try:
+        prev = json.load(open(OUT, encoding="utf-8")).get("paused_queries", {})
+    except Exception:
+        pass
+    paused = {}
+    for q, st in qstats.items():
+        protected = any(k in q.lower() for k in ("loadrunner", "vugen", "performance", "jmeter", "neoload", "load test"))
+        if protected:
+            continue
+        if st["shown"] >= 10 and st["applied"] == 0 and st["rejected"] >= 3:
+            since = prev.get(q, {}).get("paused_on", now.strftime("%Y-%m-%d"))
+            if (now - datetime.strptime(since, "%Y-%m-%d")).days < 30:
+                paused[q] = {"paused_on": since, **st,
+                             "why": f"{st['shown']} shown, 0 applied, {st['rejected']} rejected"}
+
     out = {
         "generated_at": now.isoformat(timespec="seconds"),
         "labeled_weighted": {"applied": round(tot_p, 1), "rejected": round(tot_n, 1)},
         "settings": {"half_life_days": HALF_LIFE_DAYS, "min_support": MIN_SUPPORT,
                      "points_per_logodds": SCALE, "clamp": [MAX_DOWN, MAX_UP]},
         "adjustments": dict(sorted(table.items(), key=lambda kv: kv[1]["adj"])),
+        "paused_queries": paused,
+        "query_stats": dict(sorted(qstats.items(), key=lambda kv: -kv[1]["applied"])),
     }
     json.dump(out, open(OUT, "w", encoding="utf-8"), indent=2)
     print(f"[LEARN] {len(table)} title features learned from "
           f"{tot_p:.1f} applied / {tot_n:.1f} rejected (recency-weighted)")
     for f, v in out["adjustments"].items():
         print(f"   {v['adj']:+4d}  {f:<28} applied={v['applied_w']:<5} rejected={v['rejected_w']}")
+    print(f"[LEARN] Query tracking: {len(qstats)} queries with history, {len(paused)} paused")
+    for q, v in paused.items():
+        print(f"   PAUSED  {q[:60]}  ({v['why']})")
 
 if __name__ == "__main__":
     main()

@@ -214,6 +214,7 @@ def save_decisions(today_jobs, decisions_by_date):
                 "url":              job.get("url", ""),
                 "matched_keywords": job.get("matched_keywords", []),
                 "source":           job.get("source", ""),
+                "query":            job.get("query", ""),
                 "decision":         dec.get("decision", "no_response"),
                 "reason":           dec.get("reason", None),
                 "raw_decision":     dec.get("raw", ""),
