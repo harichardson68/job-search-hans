@@ -15516,9 +15516,45 @@
   ],
   "2026-10-17": [
     {
+      "job_id": "12f3c54244",
+      "number": "1",
+      "title": "[Remote] Generative AI Engineer",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 80,
+      "url": "https://us.remotejobs.dedyn.io/job/3248379",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer",
+        "generative ai"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-17 23:00"
+    },
+    {
+      "job_id": "7feff04556",
+      "number": "2",
+      "title": "AI Engineer - REMOTE (Quarterly Travel to DC) at Protos IT",
+      "company": "REMOTE (Quarterly Travel to DC) at Protos IT",
+      "track": "AI Engineering",
+      "score": 60,
+      "url": "https://haystackapp.io/jobs/5b70b897-596e-4fb2-90f3-745bdcc50a3a",
+      "matched_keywords": [
+        "generative ai engineer",
+        "ai engineer"
+      ],
+      "source": "Google Jobs",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-17 23:00"
+    },
+    {
       "job_id": "e5d2da1947",
       "number": "A1",
-      "number_display": "A1",
       "title": "Agentic Data Engineer, Frontier AI Tooling - Job ID",
       "company": "Amazon",
       "track": "Performance Engineering",
@@ -15528,17 +15564,10 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "",
-      "fit_analysis": "",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-10-17T12:05:24.459594"
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-17 23:00"
     }
   ]
 }
