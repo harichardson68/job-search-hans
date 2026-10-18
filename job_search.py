@@ -31,6 +31,28 @@ from dotenv import load_dotenv
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_DIR   = os.path.join(SCRIPT_DIR, "json_files")  # all pipeline data .json files live here
 os.makedirs(JSON_DIR, exist_ok=True)
+
+# ─── DRY RUN (2026-10-18) ────────────────────────────────────
+# python job_search.py --dry-run
+# Real searches, real filters, real fit analysis — but NOTHING durable:
+# no git pull/push, no email (digest saved to dry_run/digest.html), no
+# cover letters, no RAG ingest, and every json_files write goes to a
+# throwaway copy under dry_run/ so seen_jobs/decisions stay untouched.
+DRY_RUN = "--dry-run" in sys.argv
+if DRY_RUN:
+    import shutil as _dr_shutil
+    _DRY_DIR = os.path.join(SCRIPT_DIR, "dry_run")
+    _dr_json = os.path.join(_DRY_DIR, "json_files")
+    os.makedirs(_dr_json, exist_ok=True)
+    for _fn in os.listdir(JSON_DIR):
+        _src = os.path.join(JSON_DIR, _fn)
+        if os.path.isfile(_src) and _fn.endswith(".json") and "credential" not in _fn:
+            _dr_shutil.copy2(_src, os.path.join(_dr_json, _fn))
+    os.makedirs(os.path.join(_dr_json, "archive_today_jobs"), exist_ok=True)
+    JSON_DIR = _dr_json
+    print("=" * 55)
+    print("[DRY RUN] No git, no email, no cover letters. Data copy:", JSON_DIR)
+    print("=" * 55)
 load_dotenv(os.path.join(SCRIPT_DIR, ".env"))
 
 # ─── RAG SETUP (ChromaDB + sentence-transformers) ────────────
@@ -406,6 +428,9 @@ import subprocess as _subprocess
 SCRIPT_DIR = _os.path.dirname(_os.path.abspath(__file__))
 
 def git_pull_or_abort():
+    if DRY_RUN:
+        print("[DRY RUN] git pull skipped")
+        return True
     """Pull latest before running. Abort + alert + log on failure."""
     print("[GIT] Pulling latest from GitHub...")
     try:
@@ -430,6 +455,9 @@ def git_pull_or_abort():
 
 def git_commit_push():
     """Commit and push at end of run so all local changes go to GitHub."""
+    if DRY_RUN:
+        print("[DRY RUN] git commit/push skipped")
+        return
     print("\n[GIT] Committing and pushing local changes...")
     try:
         _subprocess.run(["git", "add", "-A"], cwd=SCRIPT_DIR, check=True)
@@ -463,6 +491,8 @@ DEBUG_MODE = True   # Set to False once confirmed working
 # Gap Track widening — set back to True once you've reviewed the output
 # and want real cover letters again.
 GENERATE_COVER_LETTERS = True  # Set to False to disable cover letter generation
+if DRY_RUN:
+    GENERATE_COVER_LETTERS = False
 
 # ─── PIPELINE FUNNEL INSTRUMENTATION ─────────────────────────
 # Tracks where jobs get filtered out at each stage of the pipeline.
@@ -806,6 +836,17 @@ BLOCKED_JOB_SITES = [
     # affiliate links, slipped through via Serper on an "AI Automation
     # Engineer" title match (South Africa location).
     "remote4africa.com", "remote4africa",
+    # 2026-10-18: Junk audit of last 30 run-days (174 jobs surfaced) —
+    # these domains produced scraper re-posts, listing pages, freelance
+    # gigs, or non-US boards. Free-DNS / free-hosting scraper sites:
+    "dedyn.io", "duckdns.org", "up.railway.app",
+    # AI-job aggregators (re-posts, "N open roles" listing pages, no company):
+    "aijobsmap.com", "aijobs.com", "aistartupjobs.com", "haystackapp.io",
+    "codingjobboard.com", "tealhq.com", "startup.jobs", "mysmartpros.com",
+    # Freelance gig marketplace, not employment:
+    "upwork.com",
+    # Non-US boards (India / EU):
+    "://www.shine.com", "://shine.com", "wearedevelopers.com", "://join.com",
 ]
 
 def is_blocked_site(url):
@@ -1296,7 +1337,17 @@ def is_blocked_company(title, description, company=""):
         "deel.com", " deel ", "letsdeel",
     ]
     check = (title + " " + description + " " + company).lower()
-    return any(co in check for co in blocked_companies)
+    if any(co in check for co in blocked_companies):
+        return True
+    # 2026-10-18: Junk-listing signals in the TITLE — redacted employers
+    # ("reputed company") and search/listing pages masquerading as jobs
+    # ("Agentic AI Jobs", "148 open roles").
+    t = title.lower().strip()
+    if "reputed company" in t or "confidential company" in t:
+        return True
+    if re.search(r"\d+\s+open roles", t) or re.search(r"\bjobs\s*(\||$)", t):
+        return True
+    return False
 
 def parse_relative_date(date_str):
     """Handle relative dates like '1 day ago', '3 days ago', '2 hours ago'"""
@@ -1771,10 +1822,34 @@ def get_job_track(title, description):
     is_qa = any(kw in text for kw in QA_HIGH_KEYWORDS)
 
     if is_ai:
+        # 2026-10-18: TRANSFERABLE roles (AI test/QA/eval/performance/
+        # reliability) are where Hans's 24 yrs IT / 14 yrs perf testing
+        # counts directly — "5+ years experience" or "Senior" is a fit, not
+        # a reach. Skip the years/seniority gate for these; only block true
+        # executive titles. PhD/research disqualifiers still apply later in
+        # the fit check (HARD_DISQUALIFY_TERMS).
+        if any(kw in t for kw in AI_TRANSFERABLE_TITLES):
+            exec_kw = next((k for k in ("principal", "director", "head of", "vp ", "chief") if k in t), None)
+            if exec_kw:
+                return "AI Engineering", False, f"title:exec-keyword:{exec_kw.strip()}"
+            return "AI Engineering", True, "transferable-title:years-gate-skipped"
+
         senior_title_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "head of", "vp "]
         matched_senior_kw = next((s for s in senior_title_kws if s in t), None)
         if matched_senior_kw:
             return "AI Engineering", False, f"title:senior-keyword:{matched_senior_kw.strip()}"
+
+        # 2026-10-18: DEFAULT-DENY when there's no real description.
+        # Audit: median AI-track description length was 0 chars (Serper /
+        # Google Jobs return title+URL only), so the seniority checks below
+        # had nothing to read and 81% of jobs passed as "no signal found" —
+        # unchecked, not approved. Now: without a description we only keep
+        # titles that are explicitly entry-level OR transferable (where
+        # Hans's experience counts even if the role skews senior).
+        if len(description.strip()) < 300:
+            if any(sig in t for sig in AI_ENTRY_TITLE_SIGNALS):
+                return "AI Engineering", True, "nodesc:entry-title"
+            return "AI Engineering", False, "nodesc:default-deny"
 
         # Check description for experience requirements
         full_text = text
@@ -1908,23 +1983,61 @@ def get_job_track(title, description):
 LOADRUNNER_PRIORITY = ["loadrunner", "vugen", "lre", "vuser", "lr enterprise"]
 
 # AI/Hybrid roles that deserve priority scoring when in title
-AI_TITLE_PRIORITY = [
-    # Prompt Engineering — highest priority for Hans
-    "prompt engineer", "prompt developer", "prompt specialist",
-    "generative ai engineer", "gen ai engineer",
-    # Agent / LLM Application
-    "ai agent", "agent engineer", "llm developer", "llm engineer",
-    "llm application", "ai application engineer", "langchain",
-    # Agentic AI / AI Developer roles
-    "agentic ai developer", "agentic ai engineer", "ai agent developer",
-    "ai developer", "ai application developer", "agentic",
-    # AI Automation / Integration
-    "ai automation engineer", "ai integration engineer", "ai solutions engineer",
-    # AI + Performance hybrid
-    "mlops", "ai engineer", "ml engineer", "machine learning engineer",
-    "ai test engineer", "ai quality engineer", "ai performance",
-    "ai automation", "ai reliability",
+# 2026-10-18: Retargeted per Hans — "realistic opportunities: entry level
+# or roles where my IT experience transfers." Audit of 1,104 archived
+# AI-track jobs showed generic "AI/ML/prompt/generative AI engineer"
+# titles dominating the digest as reach roles. Generic titles now get NO
+# title boost; transferable roles (testing/eval/performance/reliability —
+# where 24 yrs of perf/QA/observability directly counts) get the most.
+AI_TRANSFERABLE_TITLES = [
+    "ai test", "ai qa", "ai quality", "ai testing", "ai sdet",
+    "ai evaluation", "ai evaluator", "llm evaluation", "model evaluation",
+    "llm test", "ai validation", "ai verification",
+    "ai performance", "llm performance", "ai reliability", "ai observability",
+    "llm observability", "ai platform reliability",
 ]
+AI_TARGET_TITLES = [
+    "ai automation engineer", "ai integration engineer", "ai workflow engineer",
+    "ai systems engineer", "ai solutions engineer", "ai implementation",
+]
+AI_ENTRY_TITLE_SIGNALS = [
+    "entry level", "entry-level", "junior", "jr.", "jr ", "associate",
+    "new grad", "apprentice", "early career",
+]
+AI_TITLE_PRIORITY = AI_TRANSFERABLE_TITLES + AI_TARGET_TITLES  # kept for any other references
+
+
+# ─── LEARNED ADJUSTMENTS (2026-10-18) ────────────────────────
+# Produced by learn_weights.py from job_decisions.json. Strongest
+# positive + strongest negative matching title feature, clamped ±20.
+# Missing/broken file → no adjustment (fail-safe).
+_LEARNED = None
+def _load_learned():
+    global _LEARNED
+    if _LEARNED is None:
+        try:
+            with open(os.path.join(JSON_DIR, "learned_adjustments.json"), encoding="utf-8") as f:
+                _LEARNED = json.load(f).get("adjustments", {})
+            print(f"[LEARN] Loaded {len(_LEARNED)} learned title adjustments")
+        except Exception:
+            _LEARNED = {}
+    return _LEARNED
+
+def learned_adjustment(title):
+    table = _load_learned()
+    if not table:
+        return 0, ""
+    t = re.sub(r"[^a-z0-9+ ]", " ", title.lower())
+    words = t.split()
+    feats = set(words) | {f"{a} {b}" for a, b in zip(words, words[1:])}
+    hits = [(f, table[f]["adj"]) for f in feats if f in table]
+    if not hits:
+        return 0, ""
+    up = max((h for h in hits if h[1] > 0), key=lambda h: h[1], default=None)
+    down = min((h for h in hits if h[1] < 0), key=lambda h: h[1], default=None)
+    total = (up[1] if up else 0) + (down[1] if down else 0)
+    why = ", ".join(f"{h[0]}{h[1]:+d}" for h in (up, down) if h)
+    return max(-20, min(20, total)), why
 
 def score_job(title, description):
     text = (title + " " + description).lower()
@@ -1937,12 +2050,22 @@ def score_job(title, description):
         score += 50
         matched.append("LoadRunner-in-title")
 
-    # AI/hybrid roles in title get a good boost
-    for kw in AI_TITLE_PRIORITY:
-        if kw in t:
-            score += 20
-            matched.append(f"AI-title:{kw}")
-            break  # only count once
+    # AI roles in title: transferable > target > generic (no boost).
+    # 2026-10-18 retarget — see AI_TRANSFERABLE_TITLES comment.
+    _ai_hit = next((kw for kw in AI_TRANSFERABLE_TITLES if kw in t), None)
+    if _ai_hit:
+        score += 25
+        matched.append(f"AI-transferable:{_ai_hit}")
+    else:
+        _ai_hit = next((kw for kw in AI_TARGET_TITLES if kw in t), None)
+        if _ai_hit:
+            score += 15
+            matched.append(f"AI-target:{_ai_hit}")
+    if any(sig in t for sig in AI_ENTRY_TITLE_SIGNALS) and (
+        "ai" in t.split() or "llm" in t or "machine learning" in t or "ml " in t
+    ):
+        score += 10
+        matched.append("AI-entry-level-title")
 
     # NOTE: COBOL-specific scoring removed from here — COBOL jobs always
     # classify into "Gap Track" before get_job_track() ever
@@ -2037,9 +2160,22 @@ def score_job(title, description):
     # so a raw sentinel like "cobol-title-match" was leaking into actual
     # cover letter text as if it were a skill. Strip them all here, once,
     # so every call site (there are 9+) gets clean data automatically.
+    # 2026-10-18: learned adjustment from Hans's own decisions (see
+    # learn_weights.py). Only nudges jobs that already scored > 0 — it can
+    # never revive a rejected job or bypass the seniority/location gates.
+    if score > 0:
+        _adj, _why = learned_adjustment(title)
+        if _adj:
+            score = max(1, score + _adj)
+            if DEBUG_MODE:
+                print(f"   [LEARNED] {_adj:+d} ({_why}) {title[:50]}")
+
     display_keywords = [
         m for m in matched
         if not m.startswith("AI-title:")
+        and not m.startswith("AI-transferable:")
+        and not m.startswith("AI-target:")
+        and m != "AI-entry-level-title"
         and not m.startswith("remote-floor-title:")
         and m != "cobol-title-match"
         and m != "jmeter-only-penalty"
@@ -2352,6 +2488,82 @@ def search_working_nomads():
 #
 SERPER_API_KEY = os.environ.get("SERPER_API_KEY", "")
 
+# ─── ATS DESCRIPTION ENRICHMENT (2026-10-18) ─────────────────
+# Serper/Google Jobs returns title + URL + a ~150-char snippet, so the
+# seniority gate and fit check were judging jobs blind (median AI-track
+# description = 0 chars). Greenhouse, Lever and Ashby all expose free,
+# keyless public JSON APIs with the FULL posting. For any Serper hit on
+# those boards, fetch the real description, company and location before
+# filtering. Fail-safe: any error returns the original values unchanged.
+import html as _html
+_ATS_CACHE = {}          # url -> (desc, company, location) for this run
+_ASHBY_BOARD_CACHE = {}  # board slug -> list of job dicts
+ATS_MAX_FETCHES = 150    # per-run safety cap
+_ats_stats = {"attempted": 0, "enriched": 0, "failed": 0}
+
+def _strip_html(raw):
+    txt = _html.unescape(raw or "")
+    txt = re.sub(r"<(br|/p|/li|/h\d)[^>]*>", "\n", txt, flags=re.I)
+    txt = re.sub(r"<[^>]+>", " ", txt)
+    txt = _html.unescape(txt)
+    return re.sub(r"[ \t]+", " ", re.sub(r"\n\s*\n+", "\n", txt)).strip()
+
+def enrich_from_ats(url, desc, company, location):
+    """Returns (desc, company, location), enriched when url is a
+    Greenhouse/Lever/Ashby posting; otherwise the inputs unchanged."""
+    if url in _ATS_CACHE:
+        return _ATS_CACHE[url]
+    parsed = urllib.parse.urlparse(url)
+    host = parsed.netloc.lower()
+    parts = [x for x in parsed.path.split("/") if x]
+    if not any(h in host for h in ("greenhouse.io", "lever.co", "ashbyhq.com")):
+        return desc, company, location
+    if _ats_stats["attempted"] >= ATS_MAX_FETCHES:
+        return desc, company, location
+    _ats_stats["attempted"] += 1
+    result = (desc, company, location)
+    try:
+        if "greenhouse.io" in host and len(parts) >= 3 and parts[1] == "jobs":
+            slug, jid = parts[0], re.sub(r"\D", "", parts[2])
+            r = requests.get(f"https://boards-api.greenhouse.io/v1/boards/{slug}/jobs/{jid}", timeout=10)
+            r.raise_for_status(); j = r.json()
+            result = (_strip_html(j.get("content", "")),
+                      j.get("company_name") or company,
+                      (j.get("location") or {}).get("name") or location)
+        elif "lever.co" in host and len(parts) >= 2:
+            slug, jid = parts[0], parts[1]
+            r = requests.get(f"https://api.lever.co/v0/postings/{slug}/{jid}", timeout=10)
+            r.raise_for_status(); j = r.json()
+            lists = "\n".join(f"{l.get('text','')}\n{_strip_html(l.get('content',''))}" for l in j.get("lists", []))
+            body = "\n".join(x for x in (j.get("descriptionPlain", ""), lists, j.get("additionalPlain", "")) if x)
+            cats = j.get("categories") or {}
+            co = company if company and company.upper() != "N/A" else slug.replace("-", " ").title()
+            result = (body, co, cats.get("location") or location)
+        elif "ashbyhq.com" in host and len(parts) >= 2:
+            slug, jid = parts[0], parts[1]
+            if slug not in _ASHBY_BOARD_CACHE:
+                r = requests.get(f"https://api.ashbyhq.com/posting-api/job-board/{slug}", timeout=15)
+                r.raise_for_status()
+                _ASHBY_BOARD_CACHE[slug] = r.json().get("jobs", [])
+            j = next((x for x in _ASHBY_BOARD_CACHE[slug] if x.get("id") == jid), None)
+            if j:
+                loc = j.get("location") or location
+                if j.get("isRemote") and "remote" not in str(loc).lower():
+                    loc = f"Remote ({loc})"
+                co = company if company and company.upper() != "N/A" else slug.replace("-", " ").title()
+                result = (j.get("descriptionPlain") or _strip_html(j.get("descriptionHtml", "")), co, loc)
+        if len(result[0]) > len(desc):
+            _ats_stats["enriched"] += 1
+        else:
+            result = (desc, result[1], result[2])
+    except Exception as e:
+        _ats_stats["failed"] += 1
+        logging.info(f"[ATS-FAIL] {url} {e}")
+        result = (desc, company, location)
+    _ATS_CACHE[url] = result
+    return result
+
+
 def search_serper_jobs():
     print("[SEARCH] Searching Google Jobs via Serper...")
     jobs = []
@@ -2383,39 +2595,20 @@ def search_serper_jobs():
         '"performance engineer" "loadrunner" OR "vugen" remote',
         '"load test engineer" "loadrunner" remote',
         '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote',
-        # Prompt Engineering — Hans's sweet spot
-        'site:boards.greenhouse.io "prompt engineer" "remote"',
-        'site:jobs.lever.co "prompt engineer" "remote"',
-        'site:jobs.ashbyhq.com "prompt engineer" "remote"',
-        'site:myworkdayjobs.com "prompt engineer" remote',
-        'site:dice.com/job-detail "prompt engineer" remote',
-        '"prompt engineer" remote "generative ai"',
-        '"prompt engineer" remote "llm"',
-        '"prompt engineering" remote entry level OR mid level',
-        # AI Agent / LLM Application roles
-        'site:boards.greenhouse.io "ai agent" OR "llm developer" "remote"',
-        'site:jobs.lever.co "llm engineer" OR "ai agent" "remote"',
-        '"llm application developer" remote',
-        '"ai agent developer" remote',
-        '"agentic ai" engineer remote',
-        '"langchain developer" OR "langchain engineer" remote',
-        # AI Automation / Integration
-        'site:boards.greenhouse.io "ai automation engineer" "remote"',
-        'site:jobs.lever.co "ai integration engineer" "remote"',
-        '"ai automation engineer" remote',
-        '"ai integration engineer" remote',
-        '"ai solutions engineer" remote entry level OR mid',
-        '"generative ai engineer" remote',
-        # AI/MLOps — direct ATS targeting
-        'site:boards.greenhouse.io "mlops engineer" "remote"',
-        'site:boards.greenhouse.io "ai engineer" "remote"',
-        'site:jobs.lever.co "mlops engineer" "remote"',
-        'site:jobs.lever.co "ai test engineer" "remote"',
-        'site:jobs.lever.co "llm engineer" "remote"',
-        'site:jobs.ashbyhq.com "ai engineer" "remote"',
-        'site:myworkdayjobs.com "mlops engineer" remote',
-        'site:dice.com/job-detail "mlops engineer" remote',
+        # 2026-10-18: AI queries retargeted — transferable + entry level.
+        # Removed: prompt engineer, generic "ai engineer", generative AI
+        # engineer, mlops, langchain (reach roles per 30-day audit).
+        '"junior AI engineer" OR "associate AI engineer" remote',
+        '"entry level" "AI engineer" OR "AI developer" remote',
+        '"AI automation engineer" remote',
+        '"AI integration engineer" OR "AI implementation engineer" remote',
+        '"AI systems engineer" OR "AI workflow engineer" remote',
+        'site:jobs.lever.co "ai test engineer" OR "ai qa" "remote"',
+        'site:boards.greenhouse.io "ai test" OR "ai quality" "remote"',
+        'site:myworkdayjobs.com "ai test engineer" OR "ai quality engineer" remote',
+        'site:dice.com/job-detail "ai test engineer" OR "ai qa" remote',
         'site:dice.com/job-detail "ai performance engineer" remote',
+        '"AI performance engineer" OR "LLM performance" remote',
         # COBOL — direct targeting
         'site:dice.com/job-detail "cobol" "remote"',
         'site:boards.greenhouse.io "cobol" "remote"',
@@ -2424,8 +2617,7 @@ def search_serper_jobs():
         '"mainframe developer" "cobol" remote',
         # Himalayas + BuiltIn
         'site:himalayas.app "loadrunner" OR "performance engineer" remote',
-        'site:himalayas.app "ai engineer" OR "llm" remote',
-        'site:builtin.com/job "ai engineer" OR "performance engineer" remote',
+        'site:builtin.com/job "performance engineer" remote',
         'site:builtin.com/job "ai qa" OR "ai test" remote',
         # AI lane targeting — performance-engineer-bridges-to-AI
         '"AI QA engineer" OR "AI test engineer" remote',
@@ -2540,6 +2732,11 @@ def search_serper_jobs():
                 if "remote" not in location and "remote" not in (title + desc).lower():
                     continue
 
+                # 2026-10-18: pull full description/company/location from
+                # Greenhouse/Lever/Ashby before filtering (no-op elsewhere).
+                desc, company, location = enrich_from_ats(url_job, desc, company, location)
+                location = str(location).lower()
+
                 # Pre-pipeline filters survived — count as raw candidate for funnel
                 funnel.add_raw("Google Jobs (Serper)")
                 passed, score, matched, track, level_signal = passes_filters(
@@ -2552,7 +2749,7 @@ def search_serper_jobs():
                         "company": company,
                         "url": url_job,
                         "posted": posted,
-                        "description": desc[:500],
+                        "description": desc[:3000],
                         "score": score,
                         "matched_keywords": matched,
                         "track": track,
@@ -2564,6 +2761,8 @@ def search_serper_jobs():
             log_error(f"Serper error ({query}): {e}")
         time.sleep(1.2)  # Rate limit: stay under Serper's burst threshold
     print(f"   [OK] Google Jobs: {len(jobs)} relevant jobs found")
+    print(f"   [ATS] descriptions fetched: {_ats_stats['enriched']} enriched, "
+          f"{_ats_stats['failed']} failed, {_ats_stats['attempted']} attempted")
     return jobs
 
 
@@ -2697,9 +2896,7 @@ def search_amazon_jobs():
     queries = [
         'site:amazon.jobs "performance engineer" OR "performance test"',
         'site:amazon.jobs "loadrunner" OR "vugen"',
-        'site:amazon.jobs "prompt engineer" OR "ai engineer"',
-        'site:amazon.jobs "mlops" OR "llm engineer"',
-        'site:amazon.jobs "ai automation" OR "agentic"',
+        'site:amazon.jobs "quality assurance engineer" OR "sdet" "ai"',
     ]
 
     seen = set()
@@ -3381,6 +3578,7 @@ FIT_TIER_RANK = {
     "Excellent Fit": 4,
     "Strong Fit": 3,
     "Decent Fit": 2,
+    "Unknown Fit": 1,   # 2026-10-18: no description — sort below Decent
     "Stretch Fit": 1,
     "Weak Fit": 0,
 }
@@ -3436,6 +3634,14 @@ def generate_fit_analysis(job):
     # model was lenient on a given call.
     full_text_lower = (title + " " + job.get("description", "")).lower()
     hard_disqualified = any(term in full_text_lower for term in HARD_DISQUALIFY_TERMS)
+
+    # 2026-10-18: No description → don't ask the model to guess from a
+    # title. It was rating ~65% of title-only jobs "Strong Fit".
+    if len(job.get("description", "").strip()) < 300:
+        logging.info(f"[FIT-SKIP] id={job_id} title={title!r} reason=no_description")
+        return {"tier": "Unknown Fit",
+                "display": "**Unknown Fit** — no job description available; check the posting before applying.",
+                "hard_disqualified": hard_disqualified}
 
     # Soft fallback for missing company (don't skip — internships and Serper
     # organic results often have N/A company; let Claude infer from title/desc)
@@ -4513,6 +4719,12 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
         msg["From"]    = f"Job Search <{GMAIL_ADDRESS}>"
         msg["To"]      = EMAIL_TO
         msg.attach(MIMEText(html, "html"))
+        if DRY_RUN:
+            _out = os.path.join(SCRIPT_DIR, "dry_run", "digest.html")
+            with open(_out, "w", encoding="utf-8") as _f:
+                _f.write(html)
+            print(f"   [DRY RUN] Email NOT sent — digest saved to {_out}")
+            return
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(GMAIL_ADDRESS, GMAIL_APP_PASS)
             server.sendmail(GMAIL_ADDRESS, EMAIL_TO, msg.as_string())
@@ -4606,8 +4818,9 @@ if __name__ == "__main__":
         # Push all local changes to GitHub at end of every run.
         git_commit_push()
         # Ingest latest decisions into ChromaDB for RAG
-        print("\n[RAG] Ingesting decisions into ChromaDB...")
-        job_rag.ingest_decisions()
+        if not DRY_RUN:
+            print("\n[RAG] Ingesting decisions into ChromaDB...")
+            job_rag.ingest_decisions()
     except Exception as e:
         import traceback as _tb
         tb = _tb.format_exc()

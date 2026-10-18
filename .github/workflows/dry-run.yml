@@ -1,0 +1,40 @@
+# Manual test run from phone: GitHub app -> job-search-hans -> Actions ->
+# "Dry run" -> Run workflow. Real searches + filters + learning, but
+# --dry-run means: no email, no git push, no cover letters, data on a copy.
+# Results: open the run -> Artifacts -> dry-run-results (run.log + digest.html)
+# Needs repo secrets (Settings -> Secrets and variables -> Actions):
+#   SERPER_API_KEY, ADZUNA_APP_ID, ADZUNA_APP_KEY, USAJOBS_API_KEY,
+#   USAJOBS_EMAIL, CLAUDE_API_KEY   (missing ones just skip that source)
+name: Dry run
+on:
+  workflow_dispatch:
+jobs:
+  dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests feedparser python-dateutil python-dotenv
+      - name: Learn from decisions
+        run: python learn_weights.py
+      - name: Dry run
+        env:
+          SERPER_API_KEY:  ${{ secrets.SERPER_API_KEY }}
+          ADZUNA_APP_ID:   ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY:  ${{ secrets.ADZUNA_APP_KEY }}
+          USAJOBS_API_KEY: ${{ secrets.USAJOBS_API_KEY }}
+          USAJOBS_EMAIL:   ${{ secrets.USAJOBS_EMAIL }}
+          CLAUDE_API_KEY:  ${{ secrets.CLAUDE_API_KEY }}
+        run: |
+          mkdir -p dry_run
+          python -u job_search.py --dry-run 2>&1 | tee dry_run/run.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dry-run-results
+          path: |
+            dry_run/run.log
+            dry_run/digest.html

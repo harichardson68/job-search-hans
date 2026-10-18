@@ -38,3 +38,7 @@ jobsearch_errors.log
 # But DO commit the snapshot folder
 !logs/
 *.docx
+
+# Dry-run sandbox + local Claude settings (2026-10-18)
+dry_run/
+.claude/
