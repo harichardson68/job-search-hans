@@ -2560,6 +2560,8 @@ def _parse_dice_page(html_text, desc, company, location):
                     loc = f"Remote, {loc}".strip(", ")
     page = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html_text, flags=re.S | re.I)
     page = _strip_html(page)
+    if not body and "job details" not in page.lower()[:20000]:
+        return (desc, co, loc)   # non-Dice page with no JobPosting data: keep snippet
     if not body:
         i = page.find("Job Details")
         body = page[i:i + 6000] if i >= 0 else ""
@@ -2583,7 +2585,10 @@ def enrich_from_ats(url, desc, company, location):
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
     parts = [x for x in parsed.path.split("/") if x]
-    if not any(h in host for h in ("greenhouse.io", "lever.co", "ashbyhq.com", "dice.com")):
+    # 2026-10-18: any job page — Google Jobs only lists pages carrying
+    # schema.org JobPosting data, so nearly every result has a full
+    # description embedded (Monster, FlexJobs, career.io, company sites...).
+    if not host or is_blocked_site(url):
         return desc, company, location
     if _ats_stats["attempted"] >= ATS_MAX_FETCHES:
         return desc, company, location
@@ -2619,7 +2624,7 @@ def enrich_from_ats(url, desc, company, location):
                     loc = f"Remote ({loc})"
                 co = company if company and company.upper() != "N/A" else slug.replace("-", " ").title()
                 result = (j.get("descriptionPlain") or _strip_html(j.get("descriptionHtml", "")), co, loc)
-        elif "dice.com" in host and "/job-detail/" in parsed.path:
+        else:
             # 2026-10-18: most digest picks are Dice listings with no
             # description, so fit = "Unknown" and on-site/stale jobs slipped
             # through (Frost Bank: on-site San Antonio, posted 60+ days ago).
