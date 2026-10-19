@@ -925,6 +925,7 @@ BLOCKED_JOB_SITES = [
     # Engineer" title match (South Africa location).
     "remote4africa.com", "remote4africa",
     "bayt.com",  # 2026-10-18: Middle East / India board
+    ".onrender.com",  # 2026-10-18: free-hosting scraper sites (e.g. frontendnode-*.onrender.com)
     # 2026-10-18: Junk audit of last 30 run-days (174 jobs surfaced) —
     # these domains produced scraper re-posts, listing pages, freelance
     # gigs, or non-US boards. Free-DNS / free-hosting scraper sites:
@@ -1842,6 +1843,9 @@ REQUIRED_TITLE_KEYWORDS = [
 
 # Titles to EXCLUDE even if they match required keywords
 EXCLUDED_TITLE_TERMS = [
+    # 2026-10-18: from test run — "Senior Performance Marketing Lead",
+    # "Software Test Engineer Intern"
+    "marketing", "intern ", "internship", " intern",
     "engineering manager", "manager of engineering", "director of engineering",
     "vp of engineering", "head of engineering", "vp engineering",
     "engineering director", "director of ai", "head of ai",
@@ -2842,6 +2846,11 @@ def _trial_source_job(source, title, company, url_job, posted, location, desc, s
         title, desc, posted, (location or "").lower(), url_job, company, source, salary
     )
     if not passed:
+        if DEBUG_MODE:  # show WHY each trial-source job was rejected
+            why = ("not-recent" if not is_recent(posted) else
+                   "title" if not is_relevant_title(title) else
+                   f"level/score/location ({level_signal or 'n/a'})")
+            print(f"   [DEBUG] {source} REJECTED ({why}): {title[:60]} | {location[:30] if location else ''} | posted={str(posted)[:10]}")
         return None
     return {"source": source, "title": title, "company": company or "N/A",
             "url": url_job, "posted": posted, "description": (desc or "")[:3000],
