@@ -4929,8 +4929,12 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             _out = os.path.join(SCRIPT_DIR, "dry_run", "digest.html")
             with open(_out, "w", encoding="utf-8") as _f:
                 _f.write(html)
-            print(f"   [DRY RUN] Email NOT sent — digest saved to {_out}")
-            return
+            if "--email" not in sys.argv:
+                print(f"   [DRY RUN] Email NOT sent — digest saved to {_out}")
+                return
+            # --dry-run --email: send the test digest, clearly labeled
+            msg.replace_header("Subject", "[TEST] " + subject)
+            print(f"   [DRY RUN] Sending TEST digest email (also saved to {_out})")
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
             server.login(GMAIL_ADDRESS, GMAIL_APP_PASS)
             server.sendmail(GMAIL_ADDRESS, EMAIL_TO, msg.as_string())
