@@ -1517,7 +1517,8 @@ EMAIL_TO       = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
 # rather than Sonnet, since this is a 5-bucket classification task, not
 # creative writing. Cover letters stay on Sonnet.
 GENERATE_FIT_ANALYSIS   = True
-FIT_ANALYSIS_MODEL      = "claude-haiku-4-5-20251001"
+FIT_ANALYSIS_MODEL      = "claude-haiku-5-5"            # 2026-10-18: newer Haiku, same cheap tier
+FIT_ANALYSIS_FALLBACK   = "claude-haiku-4-5-20251001"   # used automatically if the new ID is rejected
 FIT_ANALYSIS_TRACKS     = {"AI Engineering", "QA Automation", "Gap Track", "Performance Engineering"}  # 2026-10-18: Performance added (feedback only)  # tracks that get fit-eval/gating; Performance Engineering excluded (keyword match there IS reliable fit signal already)
 HARD_DISQUALIFY_TERMS   = [
     # If these appear in the fit_reason/description signal, drop silently —
@@ -3627,7 +3628,7 @@ def generate_fit_analysis(job):
         return empty_result
 
     company  = job.get("company", "")
-    desc     = job.get("description", "")[:600]
+    desc     = job.get("description", "")[:2500]  # 2026-10-18: was 600 — requirements sections were cut off
     keywords = ", ".join(job.get("matched_keywords", []))
     track    = job.get("track", "")
     score    = job.get("score", 0)
@@ -3781,7 +3782,13 @@ EXAMPLES:
 Return ONLY the one line. No headers, no bullets, no follow-up text."""
 
     try:
+        global FIT_ANALYSIS_MODEL
         result = _call_claude_api(prompt, max_tokens=80, model=FIT_ANALYSIS_MODEL)
+        if result is None and FIT_ANALYSIS_MODEL != FIT_ANALYSIS_FALLBACK:
+            # New model ID rejected or unavailable — fall back for the rest of the run.
+            print(f"   [WARN] Fit model {FIT_ANALYSIS_MODEL} failed; falling back to {FIT_ANALYSIS_FALLBACK}")
+            FIT_ANALYSIS_MODEL = FIT_ANALYSIS_FALLBACK
+            result = _call_claude_api(prompt, max_tokens=80, model=FIT_ANALYSIS_MODEL)
     except Exception as e:
         print(f"   [WARN] Fit analysis exception for {title!r} ({source}): {type(e).__name__}: {e}")
         logging.exception(
