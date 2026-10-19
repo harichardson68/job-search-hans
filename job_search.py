@@ -1518,7 +1518,7 @@ EMAIL_TO       = os.environ.get("EMAIL_TO", GMAIL_ADDRESS)
 # creative writing. Cover letters stay on Sonnet.
 GENERATE_FIT_ANALYSIS   = True
 FIT_ANALYSIS_MODEL      = "claude-haiku-4-5-20251001"
-FIT_ANALYSIS_TRACKS     = {"AI Engineering", "QA Automation", "Gap Track"}  # tracks that get fit-eval/gating; Performance Engineering excluded (keyword match there IS reliable fit signal already)
+FIT_ANALYSIS_TRACKS     = {"AI Engineering", "QA Automation", "Gap Track", "Performance Engineering"}  # 2026-10-18: Performance added (feedback only)  # tracks that get fit-eval/gating; Performance Engineering excluded (keyword match there IS reliable fit signal already)
 HARD_DISQUALIFY_TERMS   = [
     # If these appear in the fit_reason/description signal, drop silently —
     # no realistic chance, not worth a slot in the digest at all.
@@ -2533,6 +2533,48 @@ def _strip_html(raw):
     txt = _html.unescape(txt)
     return re.sub(r"[ \t]+", " ", re.sub(r"\n\s*\n+", "\n", txt)).strip()
 
+def _parse_dice_page(html_text, desc, company, location):
+    """Pull description/company/location out of a Dice job page. Tries
+    JSON-LD JobPosting first, then falls back to visible page text.
+    Also surfaces Dice's own "On-site"/"Remote" and "Posted N days ago"
+    labels into the description so the existing location/seniority
+    filters can see them."""
+    co, loc, body = company, location, ""
+    for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', html_text, re.S | re.I):
+        try:
+            data = json.loads(m.group(1).strip())
+        except Exception:
+            continue
+        for d in (data if isinstance(data, list) else [data]):
+            if isinstance(d, dict) and d.get("@type") == "JobPosting":
+                body = _strip_html(d.get("description", ""))
+                org = d.get("hiringOrganization") or {}
+                if isinstance(org, dict) and org.get("name") and (not co or co.upper() == "N/A"):
+                    co = org["name"]
+                jl = d.get("jobLocation")
+                jl = jl[0] if isinstance(jl, list) and jl else jl
+                addr = (jl or {}).get("address", {}) if isinstance(jl, dict) else {}
+                if isinstance(addr, dict):
+                    loc = ", ".join(x for x in (addr.get("addressLocality"), addr.get("addressRegion")) if x) or loc
+                if d.get("jobLocationType") == "TELECOMMUTE":
+                    loc = f"Remote, {loc}".strip(", ")
+    page = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html_text, flags=re.S | re.I)
+    page = _strip_html(page)
+    if not body:
+        i = page.find("Job Details")
+        body = page[i:i + 6000] if i >= 0 else ""
+    # Dice's own work-setting / age labels (cheap, high-signal)
+    tags = []
+    for lab in ("On-site", "Onsite", "Hybrid", "Remote"):
+        if re.search(rf"\b{lab}\b", page[:3000]):
+            tags.append(lab)
+    age = re.search(r"Posted\s+(\d+\+?\s+days?\s+ago)", page)
+    if age:
+        tags.append(f"Posted {age.group(1)}")
+    if body and tags:
+        body = f"[Dice: {' | '.join(tags)}] " + body
+    return (body or desc, co, loc)
+
 def enrich_from_ats(url, desc, company, location):
     """Returns (desc, company, location), enriched when url is a
     Greenhouse/Lever/Ashby posting; otherwise the inputs unchanged."""
@@ -2541,7 +2583,7 @@ def enrich_from_ats(url, desc, company, location):
     parsed = urllib.parse.urlparse(url)
     host = parsed.netloc.lower()
     parts = [x for x in parsed.path.split("/") if x]
-    if not any(h in host for h in ("greenhouse.io", "lever.co", "ashbyhq.com")):
+    if not any(h in host for h in ("greenhouse.io", "lever.co", "ashbyhq.com", "dice.com")):
         return desc, company, location
     if _ats_stats["attempted"] >= ATS_MAX_FETCHES:
         return desc, company, location
@@ -2577,6 +2619,16 @@ def enrich_from_ats(url, desc, company, location):
                     loc = f"Remote ({loc})"
                 co = company if company and company.upper() != "N/A" else slug.replace("-", " ").title()
                 result = (j.get("descriptionPlain") or _strip_html(j.get("descriptionHtml", "")), co, loc)
+        elif "dice.com" in host and "/job-detail/" in parsed.path:
+            # 2026-10-18: most digest picks are Dice listings with no
+            # description, so fit = "Unknown" and on-site/stale jobs slipped
+            # through (Frost Bank: on-site San Antonio, posted 60+ days ago).
+            r = requests.get(url, timeout=15, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                              "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+                "Accept": "text/html"})
+            r.raise_for_status()
+            result = _parse_dice_page(r.text, desc, company, location)
         if len(result[0]) > len(desc):
             _ats_stats["enriched"] += 1
         else:
@@ -2782,6 +2834,13 @@ def search_serper_jobs():
                 # Greenhouse/Lever/Ashby before filtering (no-op elsewhere).
                 desc, company, location = enrich_from_ats(url_job, desc, company, location)
                 location = str(location).lower()
+                # 2026-10-18: Dice shows the real posting age ("Posted 60+
+                # days ago") even when Google lists it as fresh.
+                _age = re.search(r"\[Dice:[^\]]*Posted (\d+)\+?\s+days? ago", desc)
+                if _age and int(_age.group(1)) * 24 > MAX_AGE_HOURS:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Serper FILTERED-stale (Dice says posted {_age.group(1)}+ days ago): {title[:50]}")
+                    continue
 
                 # Pre-pipeline filters survived — count as raw candidate for funnel
                 funnel.add_raw("Google Jobs (Serper)")
@@ -3720,7 +3779,9 @@ Return ONLY the one line. No headers, no bullets, no follow-up text."""
         print(f"   [WARN] Fit analysis tier unparsed for {title!r} — raw response: {result[:100]!r}")
         logging.info(f"[FIT-WARN] id={job_id} title={title!r} unparsed tier from: {result[:60]!r}")
 
-    if tier == "Weak Fit":
+    if tier == "Weak Fit" and track != "Performance Engineering":
+        # Performance is Hans's core lane: show the AI's verdict as feedback
+        # but never let it silently drop a performance job.
         hard_disqualified = True
 
     logging.info(f"[FIT-OK] id={job_id} title={title!r} source={source} score={score} tier={tier or 'unparsed'}")
