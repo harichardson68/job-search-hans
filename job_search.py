@@ -3688,6 +3688,10 @@ realism matter more than career fit here.
 CANDIDATE SNAPSHOT:
 - 24+ years IT experience, including QA/testing-adjacent work throughout his career
 - Technically capable, comfortable learning new tools quickly
+- Testing depth: 14 yrs performance testing (LoadRunner EXPERT; JMeter/NeoLoad TRAINED);
+  QA tooling: ALM/Quality Center, SQL, Selenium (familiar); no formal people management
+- Rule: if the posting's core requirement is deep expertise in a tool Hans is only trained/familiar
+  in (e.g. "5+ yrs Selenium/Java framework ownership"), rate at most Decent Fit.
 - Based in Lee's Summit, MO — remote-only for this track (commute is the whole
   point of avoiding); COBOL/mainframe roles are the one exception where
   KC-metro hybrid/onsite is acceptable if pay is $55+/hr
@@ -3734,6 +3738,18 @@ CANDIDATE SNAPSHOT:
 - Building AI engineering skills: IBM GenAI cert, Claude API projects, agentic loop in progress
 - Observability stack: AppDynamics, Splunk, Grafana, Prometheus
 - Dual-track search: (1) LoadRunner/Performance roles, (2) AI Systems/Agent/Workflow Engineering
+
+TOOL PROFICIENCY (be precise — do not treat "has heard of" as "expert"):
+- EXPERT (14 yrs production): LoadRunner, VuGen (C scripting), LoadRunner Enterprise/Performance Center
+- TRAINED, not production depth: NeoLoad, JMeter, BlazeMeter
+- Domain depth: SAP CRM/ERP/BRIM/FI load testing (Sprint/CenturyLink); federal (USDA) AWS/Kubernetes
+- Leadership: led test efforts and mentored junior engineers; NO formal people-management history
+
+RATING RULES (apply before choosing a tier):
+- If the posting requires EXPERT/advanced-level or many years in a tool Hans is only TRAINED in,
+  and that tool is the role's primary tool → at most Stretch Fit. If it is secondary → at most Decent Fit.
+- If the posting requires formal team management or multiple years leading/managing teams → at most Decent Fit.
+- Excellent Fit is reserved for roles where Hans's EXPERT tools or domains are the core requirement.
 
 {_precedent_prompt_block(precs)}JOB POSTING:
 Title: {title}
