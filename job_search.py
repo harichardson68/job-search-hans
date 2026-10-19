@@ -2842,7 +2842,9 @@ def search_serper_jobs():
                 # 2026-10-18: Dice shows the real posting age ("Posted 60+
                 # days ago") even when Google lists it as fresh.
                 _age = re.search(r"\[Dice:[^\]]*Posted (\d+)\+?\s+days? ago", desc)
-                if _age and int(_age.group(1)) * 24 > MAX_AGE_HOURS:
+                # Dice ages are coarse buckets ("6+", "30+", "60+"), so only
+                # treat 14+ days as stale — "6+" can mean last week.
+                if _age and int(_age.group(1)) >= 14:
                     if DEBUG_MODE:
                         print(f"   [DEBUG] Serper FILTERED-stale (Dice says posted {_age.group(1)}+ days ago): {title[:50]}")
                     continue
@@ -2933,9 +2935,11 @@ def search_theirstack():
             "https://api.theirstack.com/v1/jobs/search",
             headers={"Authorization": f"Bearer {THEIRSTACK_API_KEY}",
                      "Content-Type": "application/json"},
-            json={"job_description_contains_or": ["LoadRunner", "VuGen", "NeoLoad",
-                                                  "LoadRunner Enterprise", "Performance Center"],
+            # "Performance Center" matched baristas/switchboard operators —
+            # tool names only, remote only (on-site PA/NJ hits wasted credits).
+            json={"job_description_contains_or": ["LoadRunner", "VuGen", "NeoLoad"],
                   "job_country_code_or": ["US"],
+                  "workplace_types_or": ["remote"],
                   "posted_at_max_age_days": 2,
                   "limit": THEIRSTACK_DAILY_LIMIT, "page": 0},
             timeout=30)
