@@ -1,6 +1,7 @@
 @echo off
 chcp 65001 > nul
 cd /d "C:\Users\haric\Jobsearch"
+set PYTHONIOENCODING=utf-8
 if not exist dry_run mkdir dry_run
 echo Dry run started %date% %time% > dry_run\run.log
 echo Pulling latest code... >> dry_run\run.log

@@ -25,6 +25,13 @@ from datetime import datetime, timezone, timedelta
 from dateutil import parser as dateparser
 import logging
 import sys
+# 2026-10-18: Windows defaults to cp1252 when output is redirected to a
+# file (dry_run.bat), which crashed on job titles containing ≥ or emoji.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 from dotenv import load_dotenv
 
 # Load .env file from same directory as this script
