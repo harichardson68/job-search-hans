@@ -1,0 +1,28 @@
+[2026-06-18 12:54:59] [job_search.py] RemoteOK error: HTTPSConnectionPool(host='remoteok.com', port=443): Read timed out. (read timeout=15)
+[2026-08-20 12:00:11] [review_decisions.py] Google Sheets API error: <HttpError 503 when requesting https://sheets.googleapis.com/v4/spreadsheets/1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE/values/Form%20Responses%201?alt=json returned "The service is currently unavailable.". Details: "The service is currently unavailable.">
+[2026-08-29 12:04:21] [job_search.py] Adzuna error (vugen): Expecting value: line 1 column 1 (char 0)
+[2026-09-03 12:00:10] [review_decisions.py] Google Sheets API error: <HttpError 503 when requesting https://sheets.googleapis.com/v4/spreadsheets/1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE/values/Form%20Responses%201?alt=json returned "The service is currently unavailable.". Details: "The service is currently unavailable.">
+[2026-09-08 12:04:25] [job_search.py] Serper error (site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"): HTTPSConnectionPool(host='google.serper.dev', port=443): Read timed out. (read timeout=15)
+[2026-09-09 12:04:42] [job_search.py] Adzuna error (vugen): Expecting value: line 1 column 1 (char 0)
+[2026-09-09 12:04:44] [job_search.py] Adzuna error (loadrunner enterprise): Expecting value: line 1 column 1 (char 0)
+[2026-10-16 12:05:18] [job_search.py] Claude API failed: HTTPSConnectionPool(host='api.anthropic.com', port=443): Max retries exceeded with url: /v1/messages (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032)')))
+[2026-10-18 12:04:28] [job_search.py] Adzuna error (performance center loadrunner): Expecting value: line 1 column 1 (char 0)
+[2026-10-18 19:26:34] [job_search.py] RemoteOK error: 'charmap' codec can't encode characters in position 90-91: character maps to <undefined>
+[2026-10-18 19:27:29] [job_search.py] Serper error ("performance test engineer" "loadrunner" remote): 'charmap' codec can't encode character '\U0001f680' in position 60: character maps to <undefined>
+[2026-10-18 19:29:33] [job_search.py] FATAL unhandled exception: 'charmap' codec can't encode character '\u2265' in position 43: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\haric\Jobsearch\job_search.py", line 5023, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\haric\Jobsearch\job_search.py", line 4081, in main
+    print(f"   [DEBUG] FILTERED-payfloor (no parseable \u2265${floor:.0f}/hr pay): {job['title'][:50]} | salary text: {job.get('salary','')[:40]!r}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\haric\Jobsearch\job_search.py", line 358, in write
+    self.console.write(message)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2265' in position 43: character maps to <undefined>
+
+[2026-10-19 12:06:58] [job_search.py] Claude API failed: 'text'
