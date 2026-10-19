@@ -15569,5 +15569,64 @@
       "raw_decision": "",
       "timestamp": "2026-10-17 23:00"
     }
+  ],
+  "2026-10-18": [
+    {
+      "job_id": "ef809c6763",
+      "number": "1",
+      "title": "AI Test Engineers - Apex Systems - Merrifield, VA, US",
+      "company": "Apex Systems",
+      "track": "AI Engineering",
+      "score": 100,
+      "url": "https://www.dice.com/job-detail/a0072dab-15b9-49b4-90dd-e558ea807a56",
+      "matched_keywords": [
+        "uat",
+        "ai testing",
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-10-18 23:00"
+    },
+    {
+      "job_id": "535888ef13",
+      "number": "2",
+      "title": "Software Development Engineer - Agentic AI / ML ...",
+      "company": "Agentic AI / ML ...",
+      "track": "AI Engineering",
+      "score": 43,
+      "url": "https://www.experis.com/en/job/415051/software-development-engineer-agentic-ai-ml-infrastructure",
+      "matched_keywords": [
+        "agentic",
+        "agentic ai"
+      ],
+      "source": "Google Jobs",
+      "query": "",
+      "decision": "too_senior",
+      "reason": null,
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-10-18 23:00"
+    },
+    {
+      "job_id": "5ccfeab8c4",
+      "number": "3",
+      "title": "Enterprise Performance Test Architect",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 35,
+      "url": "https://www.dice.com/job-detail/ce4f52f8-9a89-46ea-8e51-8f338163367b",
+      "matched_keywords": [
+        "neoload"
+      ],
+      "source": "Google Jobs",
+      "query": "",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-18 23:00"
+    }
   ]
 }
