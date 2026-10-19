@@ -1927,7 +1927,8 @@ def is_relevant_title(title):
     # (Track 4 — manual QA/automation/will-train, intentionally wider).
     has_required = any(kw in t for kw in REQUIRED_TITLE_KEYWORDS)
     has_remote_floor = any(kw in t for kw in REMOTE_FLOOR_TITLE_KEYWORDS)
-    if not (has_required or has_remote_floor):
+    has_career_qa = any(kw in t for kw in CAREER_QA_TITLES)  # 2026-10-18
+    if not (has_required or has_remote_floor or has_career_qa):
         return False
     # Then make sure it is not a management role — shared exclusion list
     # applies to every track, including Remote Floor (e.g. "QA Manager"
@@ -1938,6 +1939,27 @@ def is_relevant_title(title):
 
 
 # SDET title keywords — explicit list for accurate detection
+# 2026-10-18: CAREER QA lane (AAON-type roles). Previously these titles
+# fell into Gap Track, which rejects any posting without parseable pay and
+# blocks senior titles — so a $125K Software Test Engineer role with no
+# posted salary was silently dropped. Hans's 24 yrs IT / 14 yrs testing
+# make these direct fits, including Senior/Lead. Manual click-through QA
+# still goes to Gap Track with its pay floor.
+CAREER_QA_TITLES = [
+    "software test engineer", "software tester", "software testing engineer",
+    "qa engineer", "quality assurance engineer", "software quality engineer",
+    "software qa engineer", "qa test engineer", "test engineer",
+    "qa analyst", "quality assurance analyst", "test analyst",
+    "qa lead", "test lead", "qa manager", "test manager",
+    "quality assurance lead", "software quality assurance",
+]
+CAREER_QA_EXCLUDE = [
+    "manual", "intern", "crowd", "freelance", "game tester", "games tester",
+    "usability tester", "beta tester", "hardware", "rf ", "electrical",
+    "mechanical", "validation engineer", "silicon", "asic", "fpga",
+    "principal", "director", "head of", "vp ", "vice president",
+]
+
 SDET_TITLE_KEYWORDS = [
     "sdet", "software engineer in test", "software development engineer in test",
     "test automation engineer", "automation test engineer",
@@ -2112,6 +2134,17 @@ def get_job_track(title, description):
             return "QA Automation", False, f"title:senior-keyword:{matched_senior_kw}"
         return "QA Automation", True, "none:no-seniority-signal-found"
 
+    # ── Career QA (2026-10-18) — before Gap Track so these never get
+    # the pay-floor / no-senior treatment. ─────────────────────────
+    _perf_title = any(k in t for k in ("performance", "load test", "loadrunner", "vugen", "jmeter", "neoload", "lre"))
+    if any(kw in t for kw in CAREER_QA_TITLES) and not _perf_title:
+        bad = next((x for x in CAREER_QA_EXCLUDE if x in t), None)
+        if not bad:
+            return "QA Automation", True, "career-qa-title"
+        if bad in ("principal", "director", "head of", "vp ", "vice president"):
+            return "QA Automation", False, f"title:exec-keyword:{bad.strip()}"
+        # manual / intern / hardware etc. fall through to Gap Track rules
+
     # ── Track 4: Remote Income Floor ────────────────────────────
     # Checked AFTER AI/SDET/QA-hybrid (those are higher-priority, more
     # specific matches and should never get reclassified down into this
@@ -2129,7 +2162,11 @@ def get_job_track(title, description):
     if is_cobol:
         # No seniority exclusion for COBOL — Hans's background covers it.
         return "Gap Track", True, "none:cobol-seniority-exempt"
-    if is_remote_floor:
+    # 2026-10-18: performance titles ("Performance Test Engineer") matched
+    # "test engineer" here and got Gap Track's pay-floor + no-senior rules —
+    # real LoadRunner-lane jobs (e.g. Frost Bank) were dropped for having no
+    # posted pay. Performance titles always go to the Performance branch.
+    if is_remote_floor and not _perf_title:
         senior_kws = ["senior", "sr.", "sr ", "lead ", "principal", "staff ", "director", "manager"]
         matched_senior_kw = next((s for s in senior_kws if s in t), None)
         if matched_senior_kw:
@@ -2138,6 +2175,18 @@ def get_job_track(title, description):
 
     # Performance Engineering - Senior OK only if LoadRunner/VuGen/LRE mentioned
     senior_kws = ["senior", "sr.", "sr ", "lead", "principal", "staff", "director", "head of", "vp"]
+    # 2026-10-18: Hans IS a Senior Performance Engineer (14 yrs). Senior /
+    # Lead / Staff performance titles are his level, with or without
+    # LoadRunner (e.g. JMeter/BlazeMeter roles like TCS/PwC). Only true
+    # executive titles are out of scope.
+    if _perf_title:
+        senior_kws = ["principal", "director", "head of", "vp ", "vice president", "manager"]
+        # ML-systems / silicon "performance" roles (e.g. Amazon Annapurna
+        # "ML Kernel Performance Engineer") — Hans rejected these repeatedly.
+        _hw = next((k for k in ("kernel", "machine learning", "ml ", "gpu", "silicon",
+                                "compiler", "accelerator", "neuron", "cuda") if k in t), None)
+        if _hw:
+            return "Performance Engineering", False, f"title:ml-systems-perf:{_hw.strip()}"
     matched_senior_kw = next((s for s in senior_kws if s in t), None)
     has_loadrunner = any(kw in text for kw in ["loadrunner", "vugen", "lre", "load runner", "vuser"])
     if matched_senior_kw and not has_loadrunner:
@@ -2218,6 +2267,15 @@ def score_job(title, description):
     if any(kw in t for kw in LOADRUNNER_PRIORITY):
         score += 50
         matched.append("LoadRunner-in-title")
+
+    # 2026-10-18: career QA lane (clears QA Automation MIN_SCORES of 30 on
+    # title alone; performance-testing overlap is where Hans stands out).
+    if any(kw in t for kw in CAREER_QA_TITLES) and not any(x in t for x in CAREER_QA_EXCLUDE):
+        score += 35
+        matched.append("career-qa-title")
+        if any(kw in text for kw in ("performance test", "load test", "loadrunner", "jmeter", "neoload")):
+            score += 15
+            matched.append("qa+performance")
 
     # AI roles in title: transferable > target > generic (no boost).
     # 2026-10-18 retarget — see AI_TRANSFERABLE_TITLES comment.
@@ -2593,6 +2651,15 @@ def search_serper_jobs():
         'site:jobs.lever.co "ai sdet" OR "llm test" "remote"',
         'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"',
         'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"',
+        # 2026-10-18: career QA lane (AAON-type roles)
+        '"software test engineer" remote',
+        '"software tester" remote -manual',
+        '"QA engineer" remote "performance testing"',
+        '"quality assurance engineer" remote',
+        '"test engineer" software "Kansas City"',
+        '"QA engineer" OR "software tester" "Kansas City"',
+        'site:dice.com/job-detail "software test engineer" remote',
+        'site:dice.com/job-detail "QA engineer" remote',
     ]
     # 2026-10-18: skip queries learn_weights.py paused for producing
     # nothing Hans wanted (see json_files/learned_adjustments.json).
@@ -2739,6 +2806,128 @@ def search_serper_jobs():
     print(f"   [OK] Google Jobs: {len(jobs)} relevant jobs found")
     print(f"   [ATS] descriptions fetched: {_ats_stats['enriched']} enriched, "
           f"{_ats_stats['failed']} failed, {_ats_stats['attempted']} attempted")
+    return jobs
+
+
+# ─── TRIAL SOURCES: TheirStack + JSearch (2026-10-18) ────────
+# Both are FREE-TIER trials. Each only runs if its key is in .env, and
+# each is budgeted to stay inside its free monthly allowance. main()
+# prints a [SOURCE-EVAL] line showing how many jobs each found that
+# Google Jobs (Serper) did NOT — the number that decides whether either
+# is ever worth paying for (rule: >= 1 applied-to job/month unique to it).
+#   THEIRSTACK_API_KEY  — theirstack.com (free tier ~ a few hundred credits/mo;
+#                         credits are spent per job RETURNED, so limit is tight)
+#   JSEARCH_API_KEY     — RapidAPI key subscribed to JSearch (free tier)
+THEIRSTACK_API_KEY = os.environ.get("THEIRSTACK_API_KEY", "")
+JSEARCH_API_KEY    = os.environ.get("JSEARCH_API_KEY", "")
+THEIRSTACK_DAILY_LIMIT = 6     # ~180 credits/month
+JSEARCH_QUERIES = [            # 4 requests/day ~ 120/month
+    "LoadRunner performance engineer",
+    "performance test engineer remote",
+    "software test engineer remote",
+    "AI QA engineer remote",
+]
+
+def _trial_source_job(source, title, company, url_job, posted, location, desc, salary=""):
+    """Run one trial-source posting through the same gates as Serper jobs.
+    Returns a job dict or None."""
+    if not title or not url_job:
+        return None
+    if is_false_positive_url(url_job)[0]:
+        return None
+    if _is_non_us_serper_posting(title, desc, url_job):
+        return None
+    funnel.add_raw(source)
+    passed, score, matched, track, level_signal = passes_filters(
+        title, desc, posted, (location or "").lower(), url_job, company, source, salary
+    )
+    if not passed:
+        return None
+    return {"source": source, "title": title, "company": company or "N/A",
+            "url": url_job, "posted": posted, "description": (desc or "")[:3000],
+            "score": score, "matched_keywords": matched, "track": track,
+            "level_signal": level_signal, "salary": salary, "location": location or ""}
+
+def search_theirstack():
+    """TheirStack: searches full job DESCRIPTIONS for Hans's core tools —
+    catches roles where LoadRunner etc. appear only in the requirements."""
+    if not THEIRSTACK_API_KEY:
+        return []
+    print("[SEARCH] Searching TheirStack (trial)...")
+    jobs = []
+    try:
+        r = requests.post(
+            "https://api.theirstack.com/v1/jobs/search",
+            headers={"Authorization": f"Bearer {THEIRSTACK_API_KEY}",
+                     "Content-Type": "application/json"},
+            json={"job_description_contains_or": ["LoadRunner", "VuGen", "NeoLoad",
+                                                  "LoadRunner Enterprise", "Performance Center"],
+                  "job_country_code_or": ["US"],
+                  "posted_at_max_age_days": 2,
+                  "limit": THEIRSTACK_DAILY_LIMIT, "page": 0},
+            timeout=30)
+        if DEBUG_MODE:
+            print(f"   [DEBUG] TheirStack status {r.status_code}")
+        if r.status_code != 200:
+            print(f"   [WARN] TheirStack {r.status_code}: {r.text[:200]}")
+            log_error(f"TheirStack {r.status_code}: {r.text[:200]}")
+            return []
+        items = r.json().get("data", []) or []
+        for it in items:
+            loc = it.get("long_location") or it.get("location") or ""
+            if it.get("remote") and "remote" not in loc.lower():
+                loc = f"Remote, {loc}".strip(", ")
+            j = _trial_source_job("TheirStack", it.get("job_title", ""), it.get("company", ""),
+                                  it.get("final_url") or it.get("url", ""), it.get("date_posted", ""),
+                                  loc, it.get("description", ""), it.get("salary_string", "") or "")
+            if j:
+                jobs.append(j)
+        print(f"   [OK] TheirStack: {len(items)} raw, {len(jobs)} relevant")
+    except Exception as e:
+        print(f"   [ERROR] TheirStack error: {e}")
+        log_error(f"TheirStack error: {e}")
+    return jobs
+
+def search_jsearch():
+    """JSearch (RapidAPI): second aggregator, mainly a backup for Serper."""
+    if not JSEARCH_API_KEY:
+        return []
+    print("[SEARCH] Searching JSearch (trial)...")
+    jobs, raw = [], 0
+    for q in JSEARCH_QUERIES:
+        try:
+            r = requests.get(
+                "https://jsearch.p.rapidapi.com/search",
+                headers={"X-RapidAPI-Key": JSEARCH_API_KEY,
+                         "X-RapidAPI-Host": "jsearch.p.rapidapi.com"},
+                params={"query": q, "page": "1", "num_pages": "1",
+                        "date_posted": "3days", "country": "us"},
+                timeout=30)
+            if r.status_code != 200:
+                print(f"   [WARN] JSearch {r.status_code} ({q}): {r.text[:150]}")
+                log_error(f"JSearch {r.status_code} ({q}): {r.text[:150]}")
+                if r.status_code in (401, 403, 429):
+                    break   # bad key or free quota used up — stop for today
+                continue
+            items = r.json().get("data", []) or []
+            raw += len(items)
+            for it in items:
+                loc = ", ".join(x for x in (it.get("job_city"), it.get("job_state"), it.get("job_country")) if x)
+                if it.get("job_is_remote"):
+                    loc = f"Remote, {loc}".strip(", ")
+                sal = ""
+                if it.get("job_min_salary"):
+                    sal = f"${it.get('job_min_salary')}-{it.get('job_max_salary') or ''} {it.get('job_salary_period') or ''}"
+                j = _trial_source_job("JSearch", it.get("job_title", ""), it.get("employer_name", ""),
+                                      it.get("job_apply_link", ""), it.get("job_posted_at_datetime_utc", ""),
+                                      loc, it.get("job_description", ""), sal)
+                if j:
+                    jobs.append(j)
+        except Exception as e:
+            print(f"   [ERROR] JSearch error ({q}): {e}")
+            log_error(f"JSearch error ({q}): {e}")
+        time.sleep(1.0)
+    print(f"   [OK] JSearch: {raw} raw, {len(jobs)} relevant")
     return jobs
 
 
@@ -3544,6 +3733,27 @@ def main():
     # raw results on every query; Hans gets the USAJobs email instead).
     # Google Jobs (Serper) + Amazon produced 100% of the October digest.
     all_jobs += search_serper_jobs()
+    _serper_count = len(all_jobs)
+    if _serper_count == 0 and SERPER_API_KEY:
+        # Serper is the main pipe — an empty result usually means an outage
+        # or exhausted credits, not "no jobs". Flag it instead of a blank digest.
+        log_error("Serper returned 0 relevant jobs — check Serper credits/status")
+        print("   [WARN] Serper returned 0 relevant jobs — possible outage or credits exhausted")
+    # Trial sources (no-op without keys). [SOURCE-EVAL] = jobs they found
+    # that Serper did not (by fingerprint or URL).
+    _serper_keys = {j.get("url", "") for j in all_jobs} | \
+                   {job_fingerprint(j.get("title", ""), j.get("company", "")) for j in all_jobs} - {""}
+    for _src_fn in (search_theirstack, search_jsearch):
+        _found = _src_fn()
+        if _found:
+            _unique = [j for j in _found
+                       if j.get("url", "") not in _serper_keys
+                       and (job_fingerprint(j.get("title", ""), j.get("company", "")) or "~") not in _serper_keys]
+            print(f"   [SOURCE-EVAL] {_found[0]['source']}: {len(_found)} relevant, "
+                  f"{len(_unique)} NOT found by Google Jobs")
+            for _u in _unique[:5]:
+                print(f"      unique: {_u['title'][:60]} @ {_u.get('company','')[:25]}")
+        all_jobs += _found
 
     # Sort by score descending
     all_jobs.sort(key=lambda x: x["score"], reverse=True)
