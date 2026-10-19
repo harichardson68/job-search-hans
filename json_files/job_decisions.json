@@ -15589,7 +15589,9 @@
       "decision": "other",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
-      "timestamp": "2026-10-18 23:00"
+      "timestamp": "2026-10-18 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-19"
     },
     {
       "job_id": "535888ef13",
