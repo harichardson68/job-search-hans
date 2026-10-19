@@ -349,6 +349,8 @@ def _precedent_prompt_block(precs):
 # Logs to both console AND job_search.log (overwrites each run)
 import os as _os
 LOG_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "job_search_run.log")
+if DRY_RUN:  # 2026-10-18: keep the real run's log intact
+    LOG_FILE = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "dry_run", "job_search_run.log")
 
 class DualLogger:
     """Writes to both console and log file simultaneously."""
@@ -458,6 +460,8 @@ def snapshot_and_prune_logs(retention_days=LOG_RETENTION_DAYS):
     Called near end of run, before git_commit_push().
     Returns (snapshotted, pruned) counts. Never raises.
     """
+    if DRY_RUN:  # 2026-10-18: never overwrite real log snapshots
+        return 0, 0
     snapshotted = 0
     pruned = 0
     try:
@@ -920,6 +924,7 @@ BLOCKED_JOB_SITES = [
     # affiliate links, slipped through via Serper on an "AI Automation
     # Engineer" title match (South Africa location).
     "remote4africa.com", "remote4africa",
+    "bayt.com",  # 2026-10-18: Middle East / India board
     # 2026-10-18: Junk audit of last 30 run-days (174 jobs surfaced) —
     # these domains produced scraper re-posts, listing pages, freelance
     # gigs, or non-US boards. Free-DNS / free-hosting scraper sites:
@@ -3053,6 +3058,16 @@ def _is_non_us_serper_posting(title, description, url):
     for tld in SERPER_NON_US_TLDS:
         if domain_part.endswith(tld):
             return f"tld {tld}"
+
+    # 3b. 2026-10-18: country as a URL path segment, e.g.
+    # bayt.com/en/india/jobs/... (an India posting reached the test digest)
+    _path_segs = set(url_lower.split("?")[0].split("/")[3:])
+    for _country in ("india", "uae", "pakistan", "egypt", "saudi-arabia", "qatar",
+                     "uk", "united-kingdom", "canada", "australia", "philippines",
+                     "germany", "poland", "romania", "ukraine", "nigeria", "kenya",
+                     "south-africa", "mexico", "brazil", "argentina", "singapore"):
+        if _country in _path_segs:
+            return f"urlpath {_country}"
 
     # 4. URL slug check (aggregators encoding location in path)
     for marker in SERPER_URL_SLUG_MARKERS:
