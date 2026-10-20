@@ -2480,6 +2480,17 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     # postings added to this track are often local/hybrid. Gap Track now
     # gets the SAME standard KC-metro carve-out as every other track.
     is_cobol_job = any(kw in (title + " " + desc).lower() for kw in COBOL_HIGH_KEYWORDS)
+    # 2026-10-19: explicit hybrid/on-site in the TITLE, structured LOCATION,
+    # or Dice's work-setting label overrides a stray "remote" mention.
+    # ("QA ENGINEER - AaraTechnologies - Hybrid in Virginia" got through.)
+    _tl = (title + " " + location).lower()
+    _dice = re.search(r"\[Dice:([^\]]*)\]", desc)
+    _dice_tags = _dice.group(1).lower() if _dice else ""
+    _explicit_presence = (any(k in _tl for k in ("hybrid", "on-site", "onsite", "on site", "in-office"))
+                          or (("on-site" in _dice_tags or "onsite" in _dice_tags or "hybrid" in _dice_tags)
+                              and "remote" not in _dice_tags))
+    if _explicit_presence and not is_kc_metro_local(title, desc, location):
+        return False, score, matched, track, level_signal
     if not is_us_remote(title, desc, location):
         # Failed remote check — last chance: is it KC-local hybrid/on-site?
         if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
@@ -3465,7 +3476,13 @@ def _call_claude_api(prompt, max_tokens=1000, model="claude-sonnet-4-6"):
         )
         if resp.status_code == 200:
             data = resp.json()
-            return data["content"][0]["text"].strip()
+            # 2026-10-19: newer models can return non-text blocks first
+            # (e.g. thinking); take the first text block instead of [0].
+            for block in data.get("content", []):
+                if block.get("type") == "text" and block.get("text"):
+                    return block["text"].strip()
+            print(f"   [WARN] Claude API returned no text block: {str(data)[:200]}")
+            return None
         else:
             print(f"   [WARN] Claude API error {resp.status_code}: {resp.text[:200]}")
             log_error(f"Claude API error {resp.status_code}: {resp.text[:200]}")
