@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-18T23:00:13",
+  "generated_at": "2026-10-19T23:00:16",
   "labeled_weighted": {
-    "applied": 21.2,
-    "rejected": 39.0
+    "applied": 22.0,
+    "rejected": 38.7
   },
   "settings": {
     "half_life_days": 90,
@@ -15,61 +15,98 @@
   },
   "adjustments": {
     "applied": {
-      "adj": -7,
+      "adj": -8,
       "applied_w": 0.4,
+      "rejected_w": 5.2
+    },
+    "ml": {
+      "adj": -4,
+      "applied_w": 1.2,
       "rejected_w": 5.2
     },
     "agentic": {
       "adj": -4,
       "applied_w": 4.1,
-      "rejected_w": 13.6
+      "rejected_w": 13.5
     },
     "ai engineer": {
       "adj": -3,
       "applied_w": 4.6,
-      "rejected_w": 13.2
-    },
-    "ml": {
-      "adj": -3,
-      "applied_w": 1.3,
-      "rejected_w": 5.2
+      "rejected_w": 13.1
     },
     "agentic ai": {
       "adj": -2,
       "applied_w": 2.9,
-      "rejected_w": 8.1
+      "rejected_w": 8.0
     },
     "ai": {
       "adj": -1,
-      "applied_w": 14.7,
-      "rejected_w": 30.2
+      "applied_w": 15.6,
+      "rejected_w": 30.0
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 17.1,
-      "rejected_w": 29.1
+      "applied_w": 18.0,
+      "rejected_w": 28.9
     },
     "architect": {
       "adj": 4,
       "applied_w": 2.4,
-      "rejected_w": 2.8
+      "rejected_w": 2.7
+    },
+    "automation": {
+      "adj": 7,
+      "applied_w": 5.3,
+      "rejected_w": 3.7
     },
     "ai automation": {
-      "adj": 6,
-      "applied_w": 4.4,
+      "adj": 7,
+      "applied_w": 5.3,
       "rejected_w": 3.7
     },
     "automation engineer": {
-      "adj": 6,
-      "applied_w": 4.4,
+      "adj": 7,
+      "applied_w": 5.3,
       "rejected_w": 3.4
-    },
-    "automation": {
-      "adj": 6,
-      "applied_w": 4.4,
-      "rejected_w": 3.7
     }
   },
   "paused_queries": {},
-  "query_stats": {}
+  "query_stats": {
+    "\"AI automation engineer\" remote": {
+      "shown": 1,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-10-19"
+    },
+    "site:dice.com/job-detail \"performance test engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-19"
+    },
+    "site:dice.com/job-detail \"software test engineer\" remote": {
+      "shown": 2,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-19"
+    },
+    "\"performance center\" \"loadrunner\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-19"
+    },
+    "site:dice.com/job-detail \"QA engineer\" remote": {
+      "shown": 2,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-19"
+    },
+    "\"quality assurance engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-19"
+    }
+  }
 }
