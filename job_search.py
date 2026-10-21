@@ -1,7 +1,7 @@
 """
 Automated Job Search Script for Hans Richardson - Performance Engineer
 Searches: RemoteOK, Remotive, Working Nomads, Serper (Google Jobs), Adzuna, USAJobs, Wellfound, Amazon Jobs
-Targets: LoadRunner, JMeter, NeoLoad, Performance Engineer, AI/Agentic, COBOL (Remote)
+Targets: LoadRunner, JMeter, NeoLoad, Performance Engineer, AI/Agentic (Remote)
 
 SETUP:
     pip install requests feedparser python-dateutil anthropic python-dotenv
@@ -606,7 +606,6 @@ class FunnelCounter:
             "after_blocked": 0, # Survived blocked-site/company check
             "kept_by_sources": 0,  # Total returned by all sources (before main() filters)
             "after_minscore": 0,   # Survived per-track min score thresholds
-            "after_cobol_hybrid": 0,  # Survived COBOL hybrid pay-tier filter ($55/hr rule)
             "after_pay_floor": 0,  # Survived Track 4 pay-floor filter (other tracks pass through)
             "after_cross_dedup": 0,  # Survived cross-source dedup
             "after_seen_dedup": 0,   # Survived seen_jobs.json dedup
@@ -645,7 +644,6 @@ class FunnelCounter:
             ("after_us",         "US/remote filter"),
             ("after_blocked",    "Blocked site/company filter"),
             ("after_minscore",   "Min score threshold"),
-            ("after_cobol_hybrid", "COBOL hybrid pay-tier ($55/hr)"),
             ("after_pay_floor",  "Track 4 pay floor"),
             ("after_cross_dedup", "Cross-source dedup"),
             ("after_seen_dedup",  "Already-seen dedup"),
@@ -1035,11 +1033,10 @@ KC_METRO_LOCATIONS = {
 # to Hans — if the pool ends up too thin after a few runs, loosening this
 # to a soft filter (show pay-unknown jobs too) is a one-line change.
 # 2026-06-26: Tiered per Hans's explicit instruction — remote and KC-metro
-# hybrid/onsite no longer share one floor. Applies to non-COBOL Gap Track
-# only; COBOL keeps its existing $30/hr-remote / $55/hr-hybrid rule
-# (handled separately, earlier in main(), before this floor ever runs).
-REMOTE_FLOOR_MIN_HOURLY  = 25.0   # non-COBOL Gap Track, fully remote
-GAP_HYBRID_MIN_HOURLY    = 30.0   # non-COBOL Gap Track, KC-metro hybrid/onsite
+# hybrid/onsite no longer share one floor. Applies to Gap Track
+# only.
+REMOTE_FLOOR_MIN_HOURLY  = 25.0   # Gap Track, fully remote
+GAP_HYBRID_MIN_HOURLY    = 30.0   # Gap Track, KC-metro hybrid/onsite
 REMOTE_FLOOR_MIN_ANNUAL  = REMOTE_FLOOR_MIN_HOURLY * 2080  # ~$52,000/yr equivalent
 
 def _parse_pay_to_hourly(text):
@@ -1115,7 +1112,7 @@ def meets_pay_floor(job, min_hourly=None):
     floor. Strict per Hans's choice — no parseable pay = rejected.
 
     min_hourly overrides the default $25/hr remote floor — pass
-    GAP_HYBRID_MIN_HOURLY for KC-metro hybrid/onsite non-COBOL jobs, which
+    GAP_HYBRID_MIN_HOURLY for KC-metro hybrid/onsite jobs, which
     have a higher $30/hr bar per Hans's explicit instruction.
     """
     floor = min_hourly if min_hourly is not None else REMOTE_FLOOR_MIN_HOURLY
@@ -1667,17 +1664,6 @@ QA_BONUS_KEYWORDS = [
     "api testing", "regression testing", "agile", "jira", "postman"
 ]
 
-# COBOL/Mainframe track keywords
-COBOL_HIGH_KEYWORDS = [
-    "cobol", "cics", "mainframe", "jcl", "vsam", "db2 mainframe",
-    "ibm mainframe", "mvs", "zos", "z/os", "cobol developer",
-    "mainframe developer", "cobol programmer", "cics developer",
-]
-COBOL_BONUS_KEYWORDS = [
-    "db2", "ims", "natural", "assembler", "racf", "tso", "ispf",
-    "cobol modernization", "legacy systems", "ibm z", "batch processing",
-    "rexx", "sdsf", "endevor", "changeman"
-]
 AI_HIGH_KEYWORDS = [
     "ai engineer", "machine learning engineer", "ml engineer",
     "generative ai", "llm", "large language model", "deep learning",
@@ -1726,8 +1712,8 @@ AI_BONUS_KEYWORDS = [
     "chain of thought", "few shot", "zero shot", "context window",
     "llm ops", "llmops", "model evaluation", "ai observability",
 ]
-HIGH_VALUE_KEYWORDS = PERF_HIGH_KEYWORDS + QA_HIGH_KEYWORDS + AI_HIGH_KEYWORDS + COBOL_HIGH_KEYWORDS
-BONUS_KEYWORDS      = PERF_BONUS_KEYWORDS + QA_BONUS_KEYWORDS + AI_BONUS_KEYWORDS + COBOL_BONUS_KEYWORDS
+HIGH_VALUE_KEYWORDS = PERF_HIGH_KEYWORDS + QA_HIGH_KEYWORDS + AI_HIGH_KEYWORDS
+BONUS_KEYWORDS      = PERF_BONUS_KEYWORDS + QA_BONUS_KEYWORDS + AI_BONUS_KEYWORDS
 
 # ─── TRACK 4: REMOTE INCOME FLOOR ─────────────────────────────
 # Purpose is different from the other 3 tracks: this is NOT about career
@@ -1836,10 +1822,6 @@ REQUIRED_TITLE_KEYWORDS = [
     "ai performance", "ml performance", "ai test engineer",
     "ai quality engineer", "ai qa engineer", "ai qa",
     "mlops", "ai reliability",
-    # COBOL/Mainframe
-    "cobol", "cics", "mainframe developer", "mainframe programmer",
-    "cobol developer", "cobol programmer", "cics developer",
-    "mainframe engineer", "legacy developer", "z/os developer",
 ]
 
 # Titles to EXCLUDE even if they match required keywords
@@ -1847,6 +1829,10 @@ EXCLUDED_TITLE_TERMS = [
     # 2026-10-18: from test run — "Senior Performance Marketing Lead",
     # "Software Test Engineer Intern"
     "marketing", "intern ", "internship", " intern",
+    # 2026-10-20: COBOL/mainframe track removed entirely per Hans
+    "cobol", "cics", "mainframe", "jcl", "z/os", "idms", "vsam",
+    # 2026-10-20: no manager roles of any kind per Hans
+    "manager",
     "engineering manager", "manager of engineering", "director of engineering",
     "vp of engineering", "head of engineering", "vp engineering",
     "engineering director", "director of ai", "head of ai",
@@ -1955,8 +1941,16 @@ CAREER_QA_TITLES = [
     "qa engineer", "quality assurance engineer", "software quality engineer",
     "software qa engineer", "qa test engineer", "test engineer",
     "qa analyst", "quality assurance analyst", "test analyst",
-    "qa lead", "test lead", "qa manager", "test manager",
+    "qa lead", "test lead",
     "quality assurance lead", "software quality assurance",
+    # 2026-10-20: widened testing range per Hans
+    "qa automation", "automation qa", "test automation",
+    "qa architect", "test architect", "testing architect",
+    "qa consultant", "test consultant", "testing consultant",
+    "uat analyst", "uat lead", "uat test", "user acceptance test",
+    "test coordinator", "qa coordinator", "test specialist",
+    "testing specialist", "qa specialist", "software quality analyst",
+    "api tester", "testing engineer", "quality assurance specialist",
 ]
 CAREER_QA_EXCLUDE = [
     "manual", "intern", "crowd", "freelance", "game tester", "games tester",
@@ -2037,6 +2031,20 @@ def get_job_track(title, description):
         # unchecked, not approved. Now: without a description we only keep
         # titles that are explicitly entry-level OR transferable (where
         # Hans's experience counts even if the role skews senior).
+        # 2026-10-20: GENERIC AI titles ("AI Engineer", "ML Engineer",
+        # "Applied AI") are usually production ML/SWE roles — Hans's worst
+        # lane (5% applied, 16% too senior across 245 decisions). Compromise
+        # per Hans: keep one ONLY if the description shows a lane where his
+        # experience counts (testing/eval, perf/reliability, automation/
+        # integration/workflow). No description = no evidence = reject.
+        _is_generic_ai = not any(kw in t for kw in AI_TARGET_TITLES + AI_LANE_TITLE_TERMS)
+        if _is_generic_ai:
+            if len(description.strip()) < 300:
+                return "AI Engineering", False, "generic-ai:no-description"
+            _hits = sorted({s for s in AI_FIT_DESC_SIGNALS if s in text})
+            if len(_hits) < 2:
+                return "AI Engineering", False, f"generic-ai:no-fit-signal:{','.join(_hits) or 'none'}"
+
         if len(description.strip()) < 300:
             if any(sig in t for sig in AI_ENTRY_TITLE_SIGNALS):
                 return "AI Engineering", True, "nodesc:entry-title"
@@ -2154,19 +2162,11 @@ def get_job_track(title, description):
     # Checked AFTER AI/SDET/QA-hybrid (those are higher-priority, more
     # specific matches and should never get reclassified down into this
     # broader bucket). This track exists for relief, not career direction —
-    # broad manual QA / automation-tool / will-train postings, PLUS COBOL
-    # (Hans has the experience; COBOL was previously falling through to
-    # Performance Engineering with no real track of its own). Senior-only
+    # broad manual QA / automation-tool / will-train postings. Senior-only
     # roles are excluded here too (this track is meant to be an accessible
-    # entry point, not a senior IC role) — except COBOL, where Hans's
-    # actual 24+ years includes COBOL/CICS depth, so seniority isn't a
-    # disqualifier for that subset.
-    is_cobol = any(kw in text for kw in COBOL_HIGH_KEYWORDS)
+    # entry point, not a senior IC role). (COBOL removed 2026-10-20.)
     is_remote_floor = any(kw in t for kw in REMOTE_FLOOR_TITLE_KEYWORDS) or \
                        any(kw in text for kw in REMOTE_FLOOR_HIGH_KEYWORDS)
-    if is_cobol:
-        # No seniority exclusion for COBOL — Hans's background covers it.
-        return "Gap Track", True, "none:cobol-seniority-exempt"
     # 2026-10-18: performance titles ("Performance Test Engineer") matched
     # "test engineer" here and got Gap Track's pay-floor + no-senior rules —
     # real LoadRunner-lane jobs (e.g. Frost Bank) were dropped for having no
@@ -2222,6 +2222,29 @@ AI_TRANSFERABLE_TITLES = [
 AI_TARGET_TITLES = [
     "ai automation engineer", "ai integration engineer", "ai workflow engineer",
     "ai systems engineer", "ai solutions engineer", "ai implementation",
+]
+# 2026-10-20: titles that are NOT "generic AI" — they already name a lane
+# where Hans's testing/perf/automation experience counts.
+AI_LANE_TITLE_TERMS = [
+    "agent", "agentic", "prompt", "automation", "integration", "workflow",
+    "llm ops", "llmops", "mlops", "evaluation", "eval ", "test", "qa",
+    "quality", "reliability", "performance", "observability",
+]
+# Description phrases that show a generic-titled AI role is really in one
+# of Hans's lanes. Need 2+ distinct hits (one stray mention isn't enough).
+AI_FIT_DESC_SIGNALS = [
+    # testing / evaluation
+    "model evaluation", "llm evaluation", "evals", "evaluation framework",
+    "test automation", "quality assurance", "test cases", "test plans",
+    "red teaming", "regression testing", "validate model", "output quality",
+    # performance / reliability
+    "load testing", "performance testing", "latency", "throughput",
+    "observability", "reliability", "monitoring", "sla",
+    # automation / integration / workflow
+    "workflow automation", "process automation", "business process",
+    "automate workflows", "automate manual", "api integration", "integrations",
+    "integrate llm", "integrating llm", "enterprise systems", "rpa",
+    "low-code", "no-code", "n8n", "zapier", "power automate",
 ]
 AI_ENTRY_TITLE_SIGNALS = [
     "entry level", "entry-level", "junior", "jr.", "jr ", "associate",
@@ -2367,21 +2390,6 @@ def score_job(title, description):
             score += 3
             matched.append(kw)
 
-    # COBOL scoring (within Remote Income Floor) — sized to actually clear
-    # that track's 20pt threshold on a title match alone, same pattern as
-    # REMOTE_FLOOR_TITLE_KEYWORDS above. 25 in title mirrors the rest of
-    # the track; 10 in description (anywhere) gives partial credit even
-    # without a title hit, since COBOL/CICS/mainframe terms are specific
-    # enough not to need the generic/specific split treatment AI needed.
-    if any(kw in t for kw in ["cobol", "cics", "mainframe", "jcl", "vsam", "z/os", "zos", "mvs"]) and \
-       not any(m.startswith("remote-floor-title:") for m in matched):
-        score += 25
-        matched.append("cobol-title-match")
-    for kw in COBOL_HIGH_KEYWORDS + COBOL_BONUS_KEYWORDS:
-        if kw in text and kw not in matched:
-            score += 10
-            matched.append(kw)
-
     # ── Strip internal bookkeeping tags before returning ─────────
     # AI-title:<kw>, remote-floor-title:<kw>, and cobol-title-match are
     # sentinel entries used only to prevent double-counting within this
@@ -2409,10 +2417,17 @@ def score_job(title, description):
         and not m.startswith("AI-target:")
         and m != "AI-entry-level-title"
         and not m.startswith("remote-floor-title:")
-        and m != "cobol-title-match"
         and m != "jmeter-only-penalty"
     ]
     return score, list(set(display_keywords))
+
+
+# 2026-10-20: Hans wants NOTHING mainframe — reject on description too,
+# not just title (catches e.g. "QA Analyst" roles testing COBOL/CICS apps).
+MAINFRAME_DESC_RE = re.compile(
+    r"\b(cobol|cics|mainframe|jcl|z/os|zos|idms|vsam|mvs|ispf|endevor|changeman|db2 for z)\b",
+    re.IGNORECASE,
+)
 
 
 def passes_filters(title, desc, posted, location, url_job, company, source_name, salary=""):
@@ -2441,6 +2456,12 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
         return False, 0, [], "", ""
     funnel.record("after_recency")
 
+    # Stage: no mainframe work of any kind (title or description)
+    if MAINFRAME_DESC_RE.search(title or "") or MAINFRAME_DESC_RE.search(desc or ""):
+        if DEBUG_MODE:
+            print(f"   [DEBUG] FILTERED-mainframe: {title[:50]}")
+        return False, 0, [], "", ""
+
     # Stage: title
     if not is_relevant_title(title):
         return False, 0, [], "", ""
@@ -2467,19 +2488,11 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     # is "no commute, work from home, save gas, save the body." A KC-local
     # hybrid QA role doesn't satisfy that goal even though it would for
     # the other tracks.
-    # SUB-EXCEPTION (COBOL): Hans is willing to do KC-metro hybrid/onsite
-    # COBOL work IF it pays $55+/hr — but pay text isn't available at this
-    # stage (salary field is populated post-aggregation in main()). So
-    # COBOL jobs get the standard KC-metro carve-out treatment HERE (same
-    # as Performance/AI/QA — don't reject yet), and the real $55/hr-based
-    # accept/reject decision for hybrid COBOL jobs happens in main(),
-    # where job["salary"] actually exists.
     # 2026-06-26: Removed the "Gap Track gets NO hybrid carve-out" rule
     # above per Hans's request — he's now fine with KC-metro hybrid for
-    # this track too (not just COBOL), since the broader general-IT
+    # this track too, since the broader general-IT
     # postings added to this track are often local/hybrid. Gap Track now
     # gets the SAME standard KC-metro carve-out as every other track.
-    is_cobol_job = any(kw in (title + " " + desc).lower() for kw in COBOL_HIGH_KEYWORDS)
     # 2026-10-19: explicit hybrid/on-site in the TITLE, structured LOCATION,
     # or Dice's work-setting label overrides a stray "remote" mention.
     # ("QA ENGINEER - AaraTechnologies - Hybrid in Virginia" got through.)
@@ -2494,8 +2507,7 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     if not is_us_remote(title, desc, location):
         # Failed remote check — last chance: is it KC-local hybrid/on-site?
         if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
-            pass  # KC-local hybrid/on-site is acceptable (final $/hr-based
-                   # decision for COBOL happens later in main())
+            pass  # KC-local hybrid/on-site is acceptable
         else:
             return False, score, matched, track, level_signal
     funnel.record("after_us")
@@ -2703,12 +2715,6 @@ def search_serper_jobs():
         'site:dice.com/job-detail "ai test engineer" OR "ai qa" remote',
         'site:dice.com/job-detail "ai performance engineer" remote',
         '"AI performance engineer" OR "LLM performance" remote',
-        # COBOL — direct targeting
-        'site:dice.com/job-detail "cobol" "remote"',
-        'site:boards.greenhouse.io "cobol" "remote"',
-        'site:myworkdayjobs.com "cobol developer" remote',
-        '"cobol developer" remote "w2"',
-        '"mainframe developer" "cobol" remote',
         # Himalayas + BuiltIn
         'site:himalayas.app "loadrunner" OR "performance engineer" remote',
         'site:builtin.com/job "performance engineer" remote',
@@ -2733,6 +2739,19 @@ def search_serper_jobs():
         '"QA engineer" OR "software tester" "Kansas City"',
         'site:dice.com/job-detail "software test engineer" remote',
         'site:dice.com/job-detail "QA engineer" remote',
+        # 2026-10-20: widened QA/testing range
+        '"QA automation engineer" remote',
+        '"test automation engineer" remote',
+        '"QA lead" OR "test lead" software remote',
+        '"test architect" OR "QA architect" remote',
+        '"UAT lead" OR "UAT analyst" remote',
+        '"API test engineer" OR "API tester" remote',
+        '"test consultant" OR "QA consultant" remote',
+        '"QA analyst" remote "ALM" OR "Quality Center"',
+        'site:myworkdayjobs.com "software test engineer" remote',
+        'site:boards.greenhouse.io "QA engineer" remote',
+        'site:jobs.lever.co "QA engineer" OR "test engineer" remote',
+        '"QA analyst" OR "test lead" OR "UAT" "Kansas City"',
     ]
     # 2026-10-18: skip queries learn_weights.py paused for producing
     # nothing Hans wanted (see json_files/learned_adjustments.json).
@@ -3441,10 +3460,6 @@ COVER LETTER INSTRUCTIONS:
     - Frame it as: "I bring proven performance engineering expertise that most AI engineers lack"
 12. If it's a Performance Engineering role, lead with LoadRunner expertise and specific metrics.
 13. If it's an AI Performance Engineering role, emphasize both LoadRunner expertise AND AI engineering skills together.
-14. If it's a COBOL/Mainframe role, lead with Hans's early career COBOL/CICS programming experience.
-    Emphasize: Started career as COBOL/CICS programmer, understands enterprise mainframe systems,
-    brings rare combination of mainframe programming AND modern IT/performance testing expertise,
-    24+ years of IT experience makes him immediately productive with minimal ramp-up time.
 
 Write only the cover letter text, no subject line or extra commentary."""
 
@@ -3543,48 +3558,19 @@ Lee's Summit, MO | linkedin.com/in/hans-richardson
 """
 
 
-def generate_cover_letter_cobol_template(job):
-    """
-    Free, no-API-call template for income-track COBOL/mainframe jobs
-    (folded into Track 4: Remote Income Floor). Leads with early-career
-    COBOL/CICS experience — the actual differentiator for these roles.
-    """
-    skills_str = ", ".join(job["matched_keywords"][:5]) if job.get("matched_keywords") else "COBOL, CICS, mainframe systems"
-    return f"""Dear Hiring Manager,
-
-I'm writing to apply for the {job["title"]} role at {job["company"]}. I began my IT career as a COBOL/CICS programmer on enterprise mainframe systems, and that early foundation in {skills_str} has stayed with me through 24+ years in IT.
-
-While much of my recent work has been in performance testing and modern systems, I understand mainframe environments and enterprise batch/transaction processing at a level that most newer developers simply haven't been exposed to. That combination — solid COBOL/CICS fundamentals plus decades of broader production IT experience — means I can step in productively with minimal ramp-up time.
-
-I'm available immediately for remote work (or hybrid/onsite in the Kansas City metro area, depending on the role) and would welcome the chance to discuss how my background fits your team's needs.
-
-Best regards,
-Hans Richardson
-Lee's Summit, MO | linkedin.com/in/hans-richardson
-"""
-
-
 def generate_cover_letter(job):
     """
     Generate cover letter. Routing:
       - Income tracks (QA Automation, Remote Income Floor) ALWAYS use a
         free template — never call the API for these, regardless of
         GENERATE_COVER_LETTERS. Volume-over-precision track; Sonnet tokens
-        are better spent on career-direction roles. COBOL jobs (folded
-        into Remote Income Floor) get their own COBOL-flavored template
-        rather than the generic QA one, since the pitch is different.
+        are better spent on career-direction roles.
       - Career tracks (Performance Engineering, AI Engineering) use Claude
         (Sonnet) if available, falling back to the Performance-flavored
         template if the API call fails or GENERATE_COVER_LETTERS is off.
     """
     track = job.get("track", "")
     if track in {"QA Automation", "Gap Track"}:
-        is_cobol = any(
-            kw in (job.get("title", "") + " " + job.get("description", "")).lower()
-            for kw in COBOL_HIGH_KEYWORDS
-        )
-        if is_cobol:
-            return generate_cover_letter_cobol_template(job)
         return generate_cover_letter_qa_template(job)
     # FIXED: removed broken `if OPENAI_API_KEY: return generate_cover_letter_claude()`
     # OpenAI key is not currently wired up; only Claude or template.
@@ -3711,8 +3697,7 @@ CANDIDATE SNAPSHOT:
 - Rule: if the posting's core requirement is deep expertise in a tool Hans is only trained/familiar
   in (e.g. "5+ yrs Selenium/Java framework ownership"), rate at most Decent Fit.
 - Based in Lee's Summit, MO — remote-only for this track (commute is the whole
-  point of avoiding); COBOL/mainframe roles are the one exception where
-  KC-metro hybrid/onsite is acceptable if pay is $55+/hr
+  point of avoiding)
 - Goal: remote, $30+/hr floor, realistic for him to get hired and ramp quickly
   — NOT "is this the ideal next career step"
 
@@ -3729,7 +3714,7 @@ Classify into ONE of five tiers and return a single short line. Judge on
 prestige, or long-term direction.
 
 TIERS:
-- Excellent Fit: Clear match — Hans's background or transferable skills line up directly, remote (or COBOL hybrid/onsite at $55+/hr), no real barrier to getting hired.
+- Excellent Fit: Clear match — Hans's background or transferable skills line up directly, remote, no real barrier to getting hired.
 - Strong Fit: Good match with one minor gap (e.g. a specific tool he hasn't used, but the role type is squarely accessible).
 - Decent Fit: Realistic to apply and get traction — adjacent skills, "will train" language, or generalist QA/testing work he could ramp into quickly.
 - Stretch Fit: Possible but a real reach — meaningfully more specialized/senior than this track is meant for, though not disqualifying.
@@ -3883,7 +3868,6 @@ def main():
         "Performance Engineering": 30,  # Lower threshold - core specialty
         "AI Engineering": 40,           # Lowered from 51 - catching real jobs
         "QA Automation": 30,            # SDET / QA hybrid
-        "COBOL/Mainframe": 10,          # Last resort - low threshold
         "Gap Track": 20,      # Modest bar — relief track, breadth over precision
     }
     filtered_by_score = []
@@ -3900,45 +3884,6 @@ def main():
     all_jobs = filtered_by_score
     funnel.set_stage("after_minscore", len(all_jobs))
 
-    # ── COBOL hybrid pay-tier filter (within Track 4) ───────────
-    # Hans's explicit rule, COBOL only: KC-metro hybrid/onsite is
-    # acceptable IF pay parses to $55+/hr. Below that (but still $30+/hr),
-    # the job must be fully remote — same standard as the rest of Track 4.
-    # Below $30/hr entirely, dropped by the general pay-floor filter below
-    # regardless of hybrid/remote. Non-COBOL Remote Floor jobs are
-    # untouched here — they already got hard-rejected for being
-    # hybrid/onsite back in passes_filters().
-    COBOL_HYBRID_MIN_HOURLY = 55.0
-    cobol_hybrid_filtered = []
-    cobol_hybrid_dropped = 0
-    for job in all_jobs:
-        if job.get("track") != "Gap Track":
-            cobol_hybrid_filtered.append(job)
-            continue
-        is_cobol = any(kw in (job.get("title","") + " " + job.get("description","")).lower()
-                        for kw in COBOL_HIGH_KEYWORDS)
-        if not is_cobol:
-            cobol_hybrid_filtered.append(job)
-            continue
-        job_is_hybrid = is_onsite_or_hybrid(job.get("title",""), job.get("description",""), job.get("location",""))
-        if not job_is_hybrid:
-            # Fully remote COBOL job — no pay-tier hybrid question applies,
-            # falls through to the standard $30/hr floor check below.
-            cobol_hybrid_filtered.append(job)
-            continue
-        # Hybrid/onsite COBOL job — only acceptable at $55+/hr.
-        hourly = _parse_pay_to_hourly(job.get("salary","")) or _parse_pay_to_hourly(job.get("description",""))
-        if hourly is not None and hourly >= COBOL_HYBRID_MIN_HOURLY:
-            cobol_hybrid_filtered.append(job)
-        else:
-            cobol_hybrid_dropped += 1
-            if DEBUG_MODE:
-                print(f"   [DEBUG] FILTERED-cobol-hybrid (hybrid/onsite needs \u2265${COBOL_HYBRID_MIN_HOURLY:.0f}/hr): {job['title'][:50]} | parsed: {hourly}")
-    if cobol_hybrid_dropped > 0:
-        print(f"[OK] Removed {cobol_hybrid_dropped} hybrid/onsite COBOL job(s) below ${COBOL_HYBRID_MIN_HOURLY:.0f}/hr threshold")
-    all_jobs = cobol_hybrid_filtered
-    funnel.set_stage("after_cobol_hybrid", len(all_jobs))
-
     # ── Pay floor filter (Track 4 only) ─────────────────────────
     # Strict per Hans's choice: drop if pay can't be parsed at all, or
     # parses below the floor. Runs here (post-aggregation) because this is
@@ -3948,22 +3893,13 @@ def main():
     # all, so this will cut the pool down hard. If it's too thin after a
     # few runs, this is the one line to relax (drop the `else reject`).
     # 2026-06-26: Floor is now tiered per Hans's explicit instruction —
-    # $25/hr for remote, $30/hr for KC-metro hybrid/onsite. COBOL keeps
-    # its existing flat $30/hr floor here (unchanged); a hybrid COBOL job
-    # reaching this point has already cleared the separate $55/hr hybrid
-    # check above, so $30 is always satisfied trivially for it.
-    COBOL_REMOTE_FLOOR_MIN_HOURLY = 30.0
+    # $25/hr for remote, $30/hr for KC-metro hybrid/onsite.
     pay_filtered = []
     pay_dropped_count = 0
     for job in all_jobs:
         if job.get("track") == "Gap Track":
-            is_cobol = any(kw in (job.get("title","") + " " + job.get("description","")).lower()
-                            for kw in COBOL_HIGH_KEYWORDS)
-            if is_cobol:
-                floor = COBOL_REMOTE_FLOOR_MIN_HOURLY
-            else:
-                is_hybrid = is_onsite_or_hybrid(job.get("title",""), job.get("description",""), job.get("location",""))
-                floor = GAP_HYBRID_MIN_HOURLY if is_hybrid else REMOTE_FLOOR_MIN_HOURLY
+            is_hybrid = is_onsite_or_hybrid(job.get("title",""), job.get("description",""), job.get("location",""))
+            floor = GAP_HYBRID_MIN_HOURLY if is_hybrid else REMOTE_FLOOR_MIN_HOURLY
             if meets_pay_floor(job, min_hourly=floor):
                 pay_filtered.append(job)
             else:
@@ -3973,7 +3909,7 @@ def main():
         else:
             pay_filtered.append(job)
     if pay_dropped_count > 0:
-        print(f"[OK] Removed {pay_dropped_count} Remote Income Floor job(s) below their pay floor (${REMOTE_FLOOR_MIN_HOURLY:.0f}/hr remote, ${GAP_HYBRID_MIN_HOURLY:.0f}/hr KC-hybrid, ${COBOL_REMOTE_FLOOR_MIN_HOURLY:.0f}/hr COBOL) or with unparseable pay")
+        print(f"[OK] Removed {pay_dropped_count} Remote Income Floor job(s) below their pay floor (${REMOTE_FLOOR_MIN_HOURLY:.0f}/hr remote, ${GAP_HYBRID_MIN_HOURLY:.0f}/hr KC-hybrid) or with unparseable pay")
     all_jobs = pay_filtered
     funnel.set_stage("after_pay_floor", len(all_jobs))
 
@@ -4086,7 +4022,7 @@ def main():
     # ── DUAL POOL SPLIT ──────────────────────────────────────────
     # Two separate pools with separate caps and separate purposes:
     #   Pool A (Performance + AI) — career-direction tracks, 10 slots.
-    #   Pool B (QA Automation + Remote Income Floor, incl. COBOL) —
+    #   Pool B (QA Automation + Remote Income Floor) —
     #     relief/income tracks, 15 slots. Broader bar, bigger cap, since
     #     volume matters more than precision here.
     # Each pool is sorted and capped independently — Remote Income Floor
@@ -4188,7 +4124,7 @@ def main():
     else:
         print(f"[STATS] Found {len(all_jobs)} jobs total")
         print(f"[STATS] Pool A (Performance/AI): sending top {len(career_jobs)} of {len(pool_career)} candidates")
-        print(f"[STATS] Pool B (QA Automation/Remote Income Floor incl. COBOL): sending top {len(income_jobs)} of {len(pool_income)} candidates")
+        print(f"[STATS] Pool B (QA Automation/Remote Income Floor): sending top {len(income_jobs)} of {len(pool_income)} candidates")
     if stretch_jobs:
         print(f"[STATS] {len(stretch_jobs)} of those are Stretch Fit — will show in demoted section")
 
@@ -4386,7 +4322,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     #
     # ── Dual pool rendering ──────────────────────────────────────
     # Pool A (Performance + AI, career-direction) and Pool B (QA
-    # Automation + Remote Income Floor incl. COBOL, relief/income) are
+    # Automation + Remote Income Floor, relief/income) are
     # rendered as two separate sections, each with its own normal/Stretch
     # Fit split — so a Performance Stretch Fit never gets mixed in with a
     # Remote Income Floor Stretch Fit, and the numbering inside each
@@ -4488,7 +4424,7 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
     html += _render_pool_section(
         income_section_jobs,
         "💼 QA, Testing & Gap Track",
-        "Remote $25+/hr OR KC-metro hybrid/onsite $30+/hr (COBOL: $30+/hr remote, $55+/hr hybrid/onsite). Broad — manual QA, automation tooling, general IT support/helpdesk/sysadmin, will-train postings, and COBOL/mainframe. Numbered G1–G10.",
+        "Remote $25+/hr OR KC-metro hybrid/onsite $30+/hr. Broad — manual QA, automation tooling, general IT support/helpdesk/sysadmin, and will-train postings. Numbered G1–G10.",
         accent="#8a6d1a", bg="#fff8e7",
     )
 
@@ -4648,7 +4584,6 @@ def send_email(top_jobs, amazon_jobs=None, funnel_summary=None):
             ("after_blocked",    "After blocked-site filter"),
             ("kept_by_sources",  "Kept by sources"),
             ("after_minscore",   "After min-score threshold"),
-            ("after_cobol_hybrid", "After COBOL hybrid pay-tier filter"),
             ("after_pay_floor",  "After Track 4 pay-floor filter"),
             ("after_cross_dedup", "After cross-source dedup"),
             ("after_seen_dedup",  "After already-seen dedup"),

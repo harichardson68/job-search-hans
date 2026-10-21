@@ -417,7 +417,7 @@ class ChatTab:
         goal = simpledialog.askstring(
             "Run Agent" + (" [TEST MODE]" if test_mode else ""),
             "Enter your search goal:",
-            initialvalue="Find me strong remote US matches across all four of my tracks: 1) LoadRunner / Performance Engineering  2) AI Hybrid (AI Systems, Agent Engineer, LLM Platform)  3) QA / Test Engineering (SDET, QA Automation, API testing, manual QA)  4) COBOL / Mainframe (if any postings exist). Remote only, no hybrid or onsite. Contract or full-time.",
+            initialvalue="Find me strong remote US matches across all three of my tracks: 1) LoadRunner / Performance Engineering  2) AI Hybrid (AI Systems, Agent Engineer, LLM Platform)  3) QA / Test Engineering (SDET, QA Automation, API testing, manual QA). No COBOL/mainframe roles. Remote only, no hybrid or onsite. Contract or full-time.",
             parent=self.frame
         )
         if not goal:
@@ -485,7 +485,7 @@ class ChatTab:
                     analyze_fit(state)
 
                 _VALID_TRACKS = {"LoadRunner / Performance", "AI Hybrid",
-                                 "QA / Test Engineering", "COBOL / Mainframe"}
+                                 "QA / Test Engineering"}
                 sendable = [j for j in state.jobs
                             if j.get("fit_tier", "") != "Weak"
                             and j.get("score", 0) > -100
