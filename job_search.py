@@ -2923,7 +2923,7 @@ def search_serper_jobs():
 #   JSEARCH_API_KEY     — RapidAPI key subscribed to JSearch (free tier)
 THEIRSTACK_API_KEY = os.environ.get("THEIRSTACK_API_KEY", "")
 JSEARCH_API_KEY    = os.environ.get("JSEARCH_API_KEY", "")
-THEIRSTACK_DAILY_LIMIT = 10    # ~300 credits/month — confirm against free-tier quota
+THEIRSTACK_DAILY_LIMIT = 6     # ~180 credits/month — free tier is ~200/mo, 1 credit per returned job
 JSEARCH_QUERIES = [            # 4 requests/day ~ 120/month
     "LoadRunner performance engineer",
     "performance test engineer remote",
