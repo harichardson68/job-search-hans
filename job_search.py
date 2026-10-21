@@ -2681,20 +2681,9 @@ def search_serper_jobs():
 
     queries = [
         # LoadRunner/VuGen — direct ATS board targeting
-        'site:boards.greenhouse.io "loadrunner" "remote"',
-        'site:boards.greenhouse.io "performance engineer" "loadrunner"',
-        'site:jobs.lever.co "loadrunner" "remote"',
-        'site:jobs.lever.co "performance engineer" "loadrunner"',
-        'site:jobs.ashbyhq.com "loadrunner" OR "vugen" "remote"',
-        'site:myworkdayjobs.com "loadrunner" "performance engineer"',
-        'site:myworkdayjobs.com "performance tester" "loadrunner"',
-        'site:taleo.net "loadrunner" "performance engineer"',
-        'site:jobs.icims.com "loadrunner" "performance engineer"',
-        'site:jobs.jobvite.com "loadrunner" "performance engineer"',
         'site:dice.com/job-detail "loadrunner" remote',
         'site:dice.com/job-detail "vugen" remote',
         'site:dice.com/job-detail "performance test engineer" remote',
-        'site:roberthalf.com "loadrunner" "performance" "remote"',
         # LRE / Performance Center specific
         '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote',
         '"performance center" "loadrunner" remote',
@@ -2711,10 +2700,29 @@ def search_serper_jobs():
         '"performance test engineer" "jmeter" OR "blazemeter" remote',
         '"neoload" "performance" remote',
         '"k6" OR "gatling" "performance engineer" remote',
-        'site:boards.greenhouse.io "performance engineer" "jmeter"',
-        'site:jobs.lever.co "performance engineer" OR "performance test" "jmeter"',
-        'site:myworkdayjobs.com "performance test engineer" "jmeter"',
         'site:dice.com/job-detail "jmeter" "performance" remote',
+        # 2026-10-20: 18 site:-anchored ATS queries (Greenhouse/Lever/Workday/
+        # Taleo/iCIMS/Jobvite/Ashby/Robert Half) returned 0 results in all 13
+        # October runs and were removed. Plain-text queries reliably return
+        # results, so the freed slots go to plain-text perf searches, including
+        # contract/W2/C2C terms that staffing-firm postings use.
+        'site:dice.com/job-detail "neoload" OR "blazemeter" remote',
+        'site:dice.com/job-detail "performance engineer" remote',
+        '"performance engineer" remote contract "W2" OR "C2C"',
+        '"performance tester" OR "performance test engineer" contract remote',
+        '"performance test lead" OR "performance testing lead" remote',
+        '"performance architect" OR "performance test architect" remote',
+        '"load testing" engineer remote',
+        '"performance testing" "jmeter" remote contract',
+        '"blazemeter" engineer remote',
+        '"performance engineer" "TEKsystems" OR "Insight Global" OR "Randstad" remote',
+        '"performance engineer" "Infosys" OR "Cognizant" OR "TCS" OR "Wipro" remote',
+        '"performance engineer" OR "performance tester" "Kansas City"',
+        '"performance engineer" "dynatrace" OR "appdynamics" remote',
+        '"application performance" engineer remote "load test"',
+        '"non-functional testing" OR "NFT" performance remote',
+        '"performance engineer" "k6" OR "gatling" OR "locust"',
+        '"site reliability" "load testing" OR "performance testing" remote',
         # 2026-10-18: AI queries retargeted — transferable + entry level.
         # Removed: prompt engineer, generic "ai engineer", generative AI
         # engineer, mlops, langchain (reach roles per 30-day audit).
@@ -2722,11 +2730,8 @@ def search_serper_jobs():
         '"AI automation engineer" remote',
         '"AI integration engineer" OR "AI implementation engineer" remote',
         '"AI systems engineer" OR "AI workflow engineer" remote',
-        'site:jobs.lever.co "ai test engineer" OR "ai qa" "remote"',
         'site:boards.greenhouse.io "ai test" OR "ai quality" "remote"',
-        'site:myworkdayjobs.com "ai test engineer" OR "ai quality engineer" remote',
         'site:dice.com/job-detail "ai test engineer" OR "ai qa" remote',
-        'site:dice.com/job-detail "ai performance engineer" remote',
         # Himalayas + BuiltIn
         'site:himalayas.app "loadrunner" OR "performance engineer" remote',
         'site:builtin.com/job "performance engineer" remote',
@@ -2734,7 +2739,6 @@ def search_serper_jobs():
         '"AI QA engineer" OR "AI test engineer" remote',
         '"LLM evaluation engineer" remote',
         '"AI SDET" remote',
-        'site:jobs.lever.co "ai sdet" OR "llm test" "remote"',
         'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"',
         # 2026-10-18: career QA lane (AAON-type roles)
         '"software test engineer" remote',
