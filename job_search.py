@@ -1647,7 +1647,9 @@ GENERAL_QA_LEVEL_FILTER     = ["entry", "junior", "associate", "mid", "intermedi
 PERF_HIGH_KEYWORDS = [
     "loadrunner", "vugen", "lre", "neoload", "performance engineer",
     "performance tester", "load testing", "performance testing",
-    "workload model", "jmeter", "blazemeter"
+    "workload model", "jmeter", "blazemeter",
+    # 2026-10-20: modern perf tools — market has shifted off pure LoadRunner
+    "k6", "gatling", "locust", "performance test", "load test engineer"
 ]
 PERF_BONUS_KEYWORDS = [
     "appdynamics", "splunk", "grafana", "prometheus", "aws",
@@ -2149,7 +2151,7 @@ def get_job_track(title, description):
 
     # ── Career QA (2026-10-18) — before Gap Track so these never get
     # the pay-floor / no-senior treatment. ─────────────────────────
-    _perf_title = any(k in t for k in ("performance", "load test", "loadrunner", "vugen", "jmeter", "neoload", "lre"))
+    _perf_title = any(k in t for k in ("performance", "load test", "loadrunner", "vugen", "jmeter", "neoload", "lre", "gatling", "k6"))
     if any(kw in t for kw in CAREER_QA_TITLES) and not _perf_title:
         bad = next((x for x in CAREER_QA_EXCLUDE if x in t), None)
         if not bad:
@@ -2921,7 +2923,7 @@ def search_serper_jobs():
 #   JSEARCH_API_KEY     — RapidAPI key subscribed to JSearch (free tier)
 THEIRSTACK_API_KEY = os.environ.get("THEIRSTACK_API_KEY", "")
 JSEARCH_API_KEY    = os.environ.get("JSEARCH_API_KEY", "")
-THEIRSTACK_DAILY_LIMIT = 6     # ~180 credits/month
+THEIRSTACK_DAILY_LIMIT = 10    # ~300 credits/month — confirm against free-tier quota
 JSEARCH_QUERIES = [            # 4 requests/day ~ 120/month
     "LoadRunner performance engineer",
     "performance test engineer remote",
@@ -2946,7 +2948,7 @@ def _trial_source_job(source, title, company, url_job, posted, location, desc, s
         if DEBUG_MODE:  # show WHY each trial-source job was rejected
             why = ("not-recent" if not is_recent(posted) else
                    "title" if not is_relevant_title(title) else
-                   f"level/score/location ({level_signal or 'n/a'})")
+                   f"level/score/location (score={score}, track={track}, {level_signal or 'n/a'})")
             print(f"   [DEBUG] {source} REJECTED ({why}): {title[:60]} | {location[:30] if location else ''} | posted={str(posted)[:10]}")
         return None
     return {"source": source, "title": title, "company": company or "N/A",
@@ -2968,10 +2970,11 @@ def search_theirstack():
                      "Content-Type": "application/json"},
             # "Performance Center" matched baristas/switchboard operators —
             # tool names only, remote only (on-site PA/NJ hits wasted credits).
-            json={"job_description_contains_or": ["LoadRunner", "VuGen", "NeoLoad"],
+            json={"job_description_contains_or": ["LoadRunner", "VuGen", "NeoLoad",
+                                                  "JMeter", "BlazeMeter", "Gatling"],
                   "job_country_code_or": ["US"],
                   "workplace_types_or": ["remote"],
-                  "posted_at_max_age_days": 2,
+                  "posted_at_max_age_days": 5,  # match MAX_AGE_HOURS (5 days)
                   "limit": THEIRSTACK_DAILY_LIMIT, "page": 0},
             timeout=30)
         if DEBUG_MODE:
