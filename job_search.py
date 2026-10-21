@@ -2703,11 +2703,22 @@ def search_serper_jobs():
         '"performance engineer" "loadrunner" OR "vugen" remote',
         '"load test engineer" "loadrunner" remote',
         '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote',
+        # 2026-10-20: modern perf tools — no LoadRunner requirement. Before this,
+        # every perf query required LoadRunner/VuGen, so JMeter/BlazeMeter roles
+        # (e.g. TCS/PwC) were never searched. Swapped in for 8 weaker AI queries
+        # to keep Serper credit use flat.
+        '"performance engineer" "jmeter" remote',
+        '"performance test engineer" "jmeter" OR "blazemeter" remote',
+        '"neoload" "performance" remote',
+        '"k6" OR "gatling" "performance engineer" remote',
+        'site:boards.greenhouse.io "performance engineer" "jmeter"',
+        'site:jobs.lever.co "performance engineer" OR "performance test" "jmeter"',
+        'site:myworkdayjobs.com "performance test engineer" "jmeter"',
+        'site:dice.com/job-detail "jmeter" "performance" remote',
         # 2026-10-18: AI queries retargeted — transferable + entry level.
         # Removed: prompt engineer, generic "ai engineer", generative AI
         # engineer, mlops, langchain (reach roles per 30-day audit).
         '"junior AI engineer" OR "associate AI engineer" remote',
-        '"entry level" "AI engineer" OR "AI developer" remote',
         '"AI automation engineer" remote',
         '"AI integration engineer" OR "AI implementation engineer" remote',
         '"AI systems engineer" OR "AI workflow engineer" remote',
@@ -2716,21 +2727,14 @@ def search_serper_jobs():
         'site:myworkdayjobs.com "ai test engineer" OR "ai quality engineer" remote',
         'site:dice.com/job-detail "ai test engineer" OR "ai qa" remote',
         'site:dice.com/job-detail "ai performance engineer" remote',
-        '"AI performance engineer" OR "LLM performance" remote',
         # Himalayas + BuiltIn
         'site:himalayas.app "loadrunner" OR "performance engineer" remote',
         'site:builtin.com/job "performance engineer" remote',
-        'site:builtin.com/job "ai qa" OR "ai test" remote',
         # AI lane targeting — performance-engineer-bridges-to-AI
         '"AI QA engineer" OR "AI test engineer" remote',
         '"LLM evaluation engineer" remote',
-        '"AI reliability engineer" remote',
-        '"AI observability" engineer remote',
-        '"LLM observability" engineer remote',
         '"AI SDET" remote',
-        '"AI workflow engineer" remote',
         'site:jobs.lever.co "ai sdet" OR "llm test" "remote"',
-        'site:boards.greenhouse.io "ai eval" OR "model evaluation" "remote"',
         'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"',
         # 2026-10-18: career QA lane (AAON-type roles)
         '"software test engineer" remote',
