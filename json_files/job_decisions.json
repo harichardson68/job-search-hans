@@ -15962,5 +15962,33 @@
       "raw_decision": "",
       "timestamp": "2026-10-20 23:00"
     }
+  ],
+  "2026-10-21": [
+    {
+      "job_id": "5ac6e78ae1",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Assurance Engineer, Prime Video Ads - \u804c\u4f4dID",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 39,
+      "url": "https://amazon.jobs/zh/jobs/10553843/quality-assurance-engineer-prime-video-ads",
+      "matched_keywords": [
+        "rag",
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-21T12:08:10.476322"
+    }
   ]
 }
