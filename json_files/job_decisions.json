@@ -15800,5 +15800,167 @@
       "raw_decision": "",
       "timestamp": "2026-10-19 23:00"
     }
+  ],
+  "2026-10-20": [
+    {
+      "job_id": "ef440be8ef",
+      "number": "1",
+      "title": "Senior Performance Engineering Architect \u2013 NeoLoad & SAP",
+      "company": "Sarum LLC",
+      "track": "Performance Engineering",
+      "score": 240,
+      "url": "https://www.dice.com/job-detail/93fd87ed-266c-4cc2-8cf5-2a82d817d793",
+      "matched_keywords": [
+        "aws",
+        "performance engineer",
+        "bottleneck",
+        "workload model",
+        "latency",
+        "test plans",
+        "scalability",
+        "sla",
+        "batch processing",
+        "neoload",
+        "load testing",
+        "uat",
+        "throughput",
+        "regression testing",
+        "performance testing"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"performance test engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    },
+    {
+      "job_id": "b8908886da",
+      "number": "2",
+      "title": "AI Reliability Engineer Career Path: Skills, Job Titles & First ...",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 45,
+      "url": "https://www.loopcv.pro/sv/ai-careers/how-to-become-ai-reliability-engineer",
+      "matched_keywords": [
+        "ai reliability engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "\"AI reliability engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    },
+    {
+      "job_id": "afc9c614f4",
+      "number": "G1",
+      "title": "Mainframe COBOL FIS Developer - INSPYR Solutions",
+      "company": "INSPYR Solutions",
+      "track": "Gap Track",
+      "score": 115,
+      "url": "https://www.dice.com/job-detail/fd04bdb3-2204-48ce-8782-bf864937e2fb",
+      "matched_keywords": [
+        "tso",
+        "ispf",
+        "cobol",
+        "changeman",
+        "jcl",
+        "db2",
+        "cics",
+        "ibm mainframe",
+        "mainframe"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"cobol\" \"remote\"",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    },
+    {
+      "job_id": "d3a9afb0e9",
+      "number": "G2",
+      "title": "QA Engineer - Akshaya Inc - Remote",
+      "company": "Akshaya Inc",
+      "track": "QA Automation",
+      "score": 127,
+      "url": "https://www.dice.com/job-detail/c1929c5b-d842-4a09-8bd2-9458ac33b680",
+      "matched_keywords": [
+        "selenium",
+        "jenkins",
+        "test plans",
+        "test cases",
+        "exploratory testing",
+        "java",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    },
+    {
+      "job_id": "9bda60fb9d",
+      "number": "G3",
+      "title": "Salesforce QA Engineer - Smart Info Solutions llc - Remote",
+      "company": "Smart Info Solutions llc",
+      "track": "QA Automation",
+      "score": 109,
+      "url": "https://www.dice.com/job-detail/90ca90f1-aba7-409c-8adc-b168fd8e8d8c",
+      "matched_keywords": [
+        "selenium",
+        "manual testing",
+        "jira",
+        "defect tracking",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    },
+    {
+      "job_id": "6ab81acf77",
+      "number": "G4",
+      "title": "Software QA/SDET (Kemmerer Power)",
+      "company": "SSV Technologies Inc",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://www.dice.com/job-detail/9bc465cb-1689-487e-9daa-1419fa6e04bb",
+      "matched_keywords": [
+        "test plans",
+        "test cases",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"software test engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    },
+    {
+      "job_id": "7b33982e7f",
+      "number": "G5",
+      "title": "SDET Engineer / QA Engineer / QA Automation Engineer",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 67,
+      "url": "https://www.dice.com/job-detail/3c6ec335-55c5-49d8-93c0-764bf5de9046",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-20 23:00"
+    }
   ]
 }
