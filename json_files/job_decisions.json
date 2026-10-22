@@ -15965,9 +15965,141 @@
   ],
   "2026-10-21": [
     {
+      "job_id": "204e036f11",
+      "number": "1",
+      "title": "Performance Tester en Confidential Careers - Empleos",
+      "company": "Empleos",
+      "track": "Performance Engineering",
+      "score": 260,
+      "url": "https://mx.linkedin.com/jobs/view/performance-tester-at-confidential-careers-4481298582",
+      "matched_keywords": [
+        "gatling",
+        "loadrunner",
+        "k6",
+        "performance tester",
+        "performance test",
+        "load test engineer",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "query": "\"load test engineer\" \"loadrunner\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-21 23:00"
+    },
+    {
+      "job_id": "90d2b74cea",
+      "number": "2",
+      "title": "Need Performance Engineer- Greenwood Village, CO",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 71,
+      "url": "https://www.dice.com/job-detail/627d4eed-268f-4f55-ab0c-9334cf199d1f",
+      "matched_keywords": [
+        "performance test",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"performance test engineer\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-21 23:00"
+    },
+    {
+      "job_id": "cb6638b47f",
+      "number": "G1",
+      "title": "Senior Test Engineer",
+      "company": "Oteemo Inc.",
+      "track": "QA Automation",
+      "score": 222,
+      "url": "https://jobs.smartrecruiters.com/OteemoInc/744000156603968-senior-test-engineer",
+      "matched_keywords": [
+        "python",
+        "agentic",
+        "sla",
+        "load testing",
+        "career-qa-title",
+        "k6",
+        "github actions",
+        "api testing",
+        "postman",
+        "test plans",
+        "ci/cd",
+        "locust",
+        "jmeter",
+        "qa+performance"
+      ],
+      "source": "TheirStack",
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-21 23:00"
+    },
+    {
+      "job_id": "54b0e2b84e",
+      "number": "G2",
+      "title": "HCM Test Automation & Quality Engineer",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 192,
+      "url": "https://www.dice.com/job-detail/179f2355-3f25-4707-88c5-07e529d7e25d",
+      "matched_keywords": [
+        "gatling",
+        "performance testing",
+        "career-qa-title",
+        "performance test",
+        "jmeter",
+        "qa+performance"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-21 23:00"
+    },
+    {
+      "job_id": "98cad4ead4",
+      "number": "G3",
+      "title": "QA Engineer Facets, Medicaid Regulatory Solutions",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 61,
+      "url": "https://www.dice.com/job-detail/9383c9e2-356b-4fda-8ecd-6e2febdd55fc",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-21 23:00"
+    },
+    {
+      "job_id": "09bc7f3d86",
+      "number": "G4",
+      "title": "GIS Software Quality Assurance Engineer",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 36,
+      "url": "https://www.clearancejobs.com/jobs/9255080/gis-software-quality-assurance-engineer",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"quality assurance engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-21 23:00"
+    },
+    {
       "job_id": "5ac6e78ae1",
       "number": "A1",
-      "number_display": "A1",
       "title": "Quality Assurance Engineer, Prime Video Ads - \u804c\u4f4dID",
       "company": "Amazon",
       "track": "QA Automation",
@@ -15978,17 +16110,11 @@
         "career-qa-title"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Unknown Fit",
-      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-10-21T12:08:10.476322"
+      "query": "",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-21 23:00"
     }
   ]
 }
