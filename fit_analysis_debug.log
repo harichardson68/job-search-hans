@@ -4886,3 +4886,60 @@
 2026-10-21 12:07:41,225 INFO [FIT-SKIP] id=https://www.dice.com/job-detail/9383c9e2-356b-4fda-8ecd-6e2febdd55fc title='QA Engineer Facets, Medicaid Regulatory Solutions' reason=no_description
 2026-10-21 12:07:41,394 INFO [FIT-SKIP] id=https://www.clearancejobs.com/jobs/9255080/gis-software-quality-assurance-engineer title='GIS Software Quality Assurance Engineer' reason=no_description
 2026-10-21 12:08:10,386 INFO [FIT-SKIP] id=https://amazon.jobs/zh/jobs/10553843/quality-assurance-engineer-prime-video-ads title='Quality Assurance Engineer, Prime Video Ads - \u804c\u4f4dID' reason=no_description
+2026-10-22 12:00:19,351 INFO [ATS-FAIL] https://www.dice.com/job-detail/13f15d48-3990-467c-a752-825b966ab0f7 410 Client Error: Gone for url: https://www.dice.com/job-detail/13f15d48-3990-467c-a752-825b966ab0f7
+2026-10-22 12:00:21,723 INFO [ATS-FAIL] https://www.dice.com/job-detail/182200fc-38fe-4e5a-974b-5df8180633e8 410 Client Error: Gone for url: https://www.dice.com/job-detail/182200fc-38fe-4e5a-974b-5df8180633e8
+2026-10-22 12:00:46,651 INFO [ATS-FAIL] https://www.flexjobs.com/gjw/health_care_service_corporation-hcsc/test-engineer/publicjobs?id=b98ded24-f67e-42a0-9a71-9ba267db9008 HTTPSConnectionPool(host='www.flexjobs.com', port=443): Read timed out. (read timeout=15)
+2026-10-22 12:02:53,251 INFO [ATS-FAIL] https://www.indeed.com/viewjob?jk=d59475f36a3728d2 401 Client Error: Unauthorized for url: https://www.indeed.com/viewjob?jk=d59475f36a3728d2
+2026-10-22 12:03:09,952 INFO [ATS-FAIL] https://www.indeed.com/viewjob?jk=9adcd9276846369b 401 Client Error: Unauthorized for url: https://www.indeed.com/viewjob?jk=9adcd9276846369b
+2026-10-22 12:03:11,627 INFO [ATS-FAIL] https://careers-empowerai.icims.com/jobs/9695/2026-9695/job 405 Client Error: Not Allowed for url: https://careers-empowerai.icims.com/jobs/9695/2026-9695/job
+2026-10-22 12:03:12,391 INFO [ATS-FAIL] https://jobs.saic.com/jobs/18234815-ai-systems-engineer 403 Client Error: Forbidden for url: https://jobs.saic.com/jobs/18234815-ai-systems-engineer
+2026-10-22 12:03:34,191 INFO [ATS-FAIL] https://www.indeed.com/cmp/Shield-Ai/jobs/q-Test-Engineer 403 Client Error: Forbidden for url: https://www.indeed.com/cmp/Shield-Ai/jobs/q-Test-Engineer
+2026-10-22 12:04:00,669 INFO [ATS-FAIL] https://www.monster.com/job-openings/software-test-engineer-remote-austin-tx--a444c5c4-fa4c-4314-9fde-85e9f8db95cd 403 Client Error: HTTP Forbidden for url: https://www.monster.com/job-openings/software-test-engineer-remote-austin-tx--a444c5c4-fa4c-4314-9fde-85e9f8db95cd
+2026-10-22 12:04:11,892 INFO [ATS-FAIL] https://careers.leidos.com/jobs/18382009-software-test-engineer 403 Client Error: Forbidden for url: https://careers.leidos.com/jobs/18382009-software-test-engineer
+2026-10-22 12:04:53,246 INFO [ATS-FAIL] https://www.dice.com/job-detail/90ca90f1-aba7-409c-8adc-b168fd8e8d8c 410 Client Error: Gone for url: https://www.dice.com/job-detail/90ca90f1-aba7-409c-8adc-b168fd8e8d8c
+2026-10-22 12:04:56,130 INFO [ATS-FAIL] https://www.dice.com/job-detail/9383c9e2-356b-4fda-8ecd-6e2febdd55fc 410 Client Error: Gone for url: https://www.dice.com/job-detail/9383c9e2-356b-4fda-8ecd-6e2febdd55fc
+2026-10-22 12:05:34,831 INFO [ATS-FAIL] https://www.simplyhired.com/q-software-test-engineer-l-italian-bowery,-il-jobs.html 403 Client Error: Forbidden for url: https://www.simplyhired.com/q-software-test-engineer-l-italian-bowery,-il-jobs.html
+2026-10-22 12:05:45,334 INFO [ATS-FAIL] https://www.dice.com/job-detail/a3d0f788-3995-45fa-86f5-c81ca6837177 410 Client Error: Gone for url: https://www.dice.com/job-detail/a3d0f788-3995-45fa-86f5-c81ca6837177
+2026-10-22 12:06:20,946 INFO [ATS-FAIL] https://jobs.lever.co/upscale-ai/3f12ccd0-a6ca-4bb2-983a-63ff8606fd99 HTTPSConnectionPool(host='api.lever.co', port=443): Read timed out. (read timeout=10)
+2026-10-22 12:07:41,805 INFO No device provided, using cpu
+2026-10-22 12:07:42,699 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:42,710 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:42,788 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:42,789 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-22 12:07:42,797 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:42,826 INFO Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-10-22 12:07:42,882 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:42,891 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:42,955 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:42,965 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-10-22 12:07:43,095 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:43,105 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:43,192 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:43,202 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:43,289 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-22 12:07:43,346 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:43,357 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:43,638 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-22 12:07:43,699 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-22 12:07:43,771 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-22 12:07:43,828 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-22 12:07:43,894 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:43,904 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:44,000 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:44,009 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:44,076 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:44,084 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:44,148 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:44,157 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:44,244 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-22 12:07:44,301 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-22 12:07:44,594 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-22 12:07:44,603 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-10-22 12:07:44,691 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-22 12:07:51,070 INFO [FIT-OK] id=https://job-boards.greenhouse.io/lirio/jobs/8040698003 title='Lead, Software Quality Assurance' source=TheirStack score=258 tier=Stretch Fit
+2026-10-22 12:07:53,695 INFO [FIT-OK] id=https://bah.wd1.myworkdayjobs.com/en-US/BAH_Jobs/job/Salesforce-Quality-Assurance-Analyst_R0251500 title='Salesforce Quality Assurance Analyst - Myworkdayjobs.com' source=Google Jobs score=150 tier=Strong Fit
+2026-10-22 12:07:54,677 INFO [FIT-SKIP] id=https://careers.leidos.com/jobs/18382009-software-test-engineer title='Software Test Engineer in Huntsville, Alabama (No Remote)' reason=no_description
+2026-10-22 12:07:57,411 INFO [FIT-OK] id=https://jobs.workable.com/view/uWf3X23suh93qNj9cL2SiG/remote-associate-software-test-analyst-in-kansas-city-at-ace-it-careers title='Associate Software Test Analyst | Ace IT Careers' source=Google Jobs score=144 tier=Weak Fit
+2026-10-22 12:07:58,460 INFO [FIT-SKIP] id=https://app.dover.com/apply/edgeqtechnologies/06c4ea11-99c6-401b-8b70-ff1acd9ece42 title='Test Automation Engineer (Remote) at EdgeQ Technologies ...' reason=no_description
+2026-10-22 12:08:00,330 INFO [FIT-OK] id=https://www.dice.com/job-detail/296b07b2-2075-4808-908a-37fb048573fd title='QA Engineer TDM - ASCII Group LLC - Remote' source=Google Jobs score=67 tier=Weak Fit
+2026-10-22 12:08:01,263 INFO [FIT-SKIP] id=https://app.dover.com/apply/edgeqtechnologies/63bc052b-224e-44a0-b3c6-8068ca192d05 title='API Test Engineer (Remote) at EdgeQ Technologies Private ...' reason=no_description

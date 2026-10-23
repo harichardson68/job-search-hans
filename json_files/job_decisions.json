@@ -16118,5 +16118,95 @@
       "raw_decision": "Applied",
       "timestamp": "2026-10-21 23:00"
     }
+  ],
+  "2026-10-22": [
+    {
+      "job_id": "47a1e22525",
+      "number": "G1",
+      "title": "Salesforce Quality Assurance Analyst - Myworkdayjobs.com",
+      "company": "Myworkdayjobs.com",
+      "track": "QA Automation",
+      "score": 150,
+      "url": "https://bah.wd1.myworkdayjobs.com/en-US/BAH_Jobs/job/Salesforce-Quality-Assurance-Analyst_R0251500",
+      "matched_keywords": [
+        "selenium",
+        "test plans",
+        "uat",
+        "career-qa-title",
+        "postman",
+        "test cases",
+        "agile",
+        "regression testing",
+        "jira",
+        "user acceptance testing",
+        "rag"
+      ],
+      "source": "Google Jobs",
+      "query": "site:myworkdayjobs.com \"software test engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-22 23:00"
+    },
+    {
+      "job_id": "932e530a17",
+      "number": "G2",
+      "title": "Software Test Engineer in Huntsville, Alabama (No Remote)",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 146,
+      "url": "https://careers.leidos.com/jobs/18382009-software-test-engineer",
+      "matched_keywords": [
+        "performance test",
+        "qa+performance",
+        "performance testing",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"QA engineer\" remote \"performance testing\"",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-22 23:00"
+    },
+    {
+      "job_id": "bbcf19b77d",
+      "number": "G3",
+      "title": "Test Automation Engineer (Remote) at EdgeQ Technologies ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 74,
+      "url": "https://app.dover.com/apply/edgeqtechnologies/06c4ea11-99c6-401b-8b70-ff1acd9ece42",
+      "matched_keywords": [
+        "ci/cd",
+        "selenium",
+        "cypress",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test automation engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-22 23:00"
+    },
+    {
+      "job_id": "d1713f445f",
+      "number": "G4",
+      "title": "API Test Engineer (Remote) at EdgeQ Technologies Private ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 61,
+      "url": "https://app.dover.com/apply/edgeqtechnologies/63bc052b-224e-44a0-b3c6-8068ca192d05",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"API test engineer\" OR \"API tester\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-22 23:00"
+    }
   ]
 }
