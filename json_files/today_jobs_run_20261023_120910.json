@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-23",
+  "run_id": "20261023_120910",
+  "jobs": [
+    {
+      "job_id": "ccf83e2265",
+      "number": "1",
+      "number_display": "1",
+      "token": "6dcd09ea8e",
+      "run_id": "20261023_120910",
+      "title": "Performance Test Engineer jobs: pay, skills, remote - PassRidge",
+      "company": "PassRidge",
+      "track": "Performance Engineering",
+      "score": 230,
+      "url": "https://passridge.com/roles/performance-test-engineer/",
+      "matched_keywords": [
+        "career-qa-title",
+        "qa+performance",
+        "k6",
+        "performance test",
+        "performance engineer",
+        "jmeter",
+        "gatling"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"k6\" OR \"gatling\" \"performance engineer\" remote"
+    },
+    {
+      "job_id": "07afdfb366",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "a447deb100",
+      "run_id": "20261023_120910",
+      "title": "SDET Engineer / QA Engineer / QA Automation Engineer",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 66,
+      "url": "https://www.dice.com/job-detail/3c5a94c1-6539-4621-b89f-bde3384593f6",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote"
+    }
+  ]
+}

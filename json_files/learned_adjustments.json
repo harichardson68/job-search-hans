@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-21T23:00:17",
+  "generated_at": "2026-10-22T23:00:14",
   "labeled_weighted": {
-    "applied": 24.7,
-    "rejected": 38.2
+    "applied": 24.5,
+    "rejected": 37.9
   },
   "settings": {
     "half_life_days": 90,
@@ -16,62 +16,62 @@
   "adjustments": {
     "applied": {
       "adj": -9,
-      "applied_w": 0.4,
+      "applied_w": 0.3,
       "rejected_w": 5.1
-    },
-    "agentic": {
-      "adj": -5,
-      "applied_w": 4.0,
-      "rejected_w": 13.3
     },
     "ml": {
       "adj": -5,
       "applied_w": 1.2,
       "rejected_w": 5.1
     },
+    "agentic": {
+      "adj": -5,
+      "applied_w": 4.0,
+      "rejected_w": 13.2
+    },
     "ai engineer": {
       "adj": -4,
       "applied_w": 4.5,
-      "rejected_w": 12.9
+      "rejected_w": 12.8
     },
     "agentic ai": {
       "adj": -3,
-      "applied_w": 2.9,
+      "applied_w": 2.8,
       "rejected_w": 7.9
     },
     "ai": {
       "adj": -2,
-      "applied_w": 15.3,
-      "rejected_w": 29.5
+      "applied_w": 15.2,
+      "rejected_w": 29.3
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 19.7,
-      "rejected_w": 28.5
+      "applied_w": 19.6,
+      "rejected_w": 28.3
     },
     "architect": {
       "adj": 3,
       "applied_w": 2.4,
       "rejected_w": 2.7
     },
+    "ai automation": {
+      "adj": 6,
+      "applied_w": 5.2,
+      "rejected_w": 3.6
+    },
     "automation engineer": {
       "adj": 6,
-      "applied_w": 5.3,
+      "applied_w": 5.2,
       "rejected_w": 3.3
     },
     "automation": {
       "adj": 6,
-      "applied_w": 5.3,
-      "rejected_w": 3.6
-    },
-    "ai automation": {
-      "adj": 6,
-      "applied_w": 5.3,
+      "applied_w": 5.2,
       "rejected_w": 3.6
     },
     "performance": {
       "adj": 10,
-      "applied_w": 6.0,
+      "applied_w": 5.9,
       "rejected_w": 0.8
     }
   },
@@ -136,6 +136,30 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-21"
+    },
+    "site:myworkdayjobs.com \"software test engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-22"
+    },
+    "\"QA engineer\" remote \"performance testing\"": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-22"
+    },
+    "\"test automation engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-22"
+    },
+    "\"API test engineer\" OR \"API tester\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-22"
     }
   }
 }
