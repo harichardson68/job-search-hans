@@ -3189,6 +3189,23 @@ SERPER_NON_US_TLDS = (
     ".ca", ".com.br", ".mx", ".com.mx",
 )
 
+# 2026-10-24: non-US job boards on .com domains — the TLD check can't see
+# these. "Senior Test Consultant in Andover (SP10) | Bright Purple" came in
+# from totaljobs.com (UK) and reached the digest.
+SERPER_NON_US_DOMAINS = (
+    "totaljobs.com", "jobserve.com", "s1jobs.com", "cwjobs.co.uk",
+    "gulftalent.com", "timesjobs.com", "shine.com", "jobstreet.com",
+    "jobsdb.com", "naukri.com", "stepstone.com", "michaelpage.com",
+)
+
+# UK postcodes. Outward code in parens must be 2 letters + digit(s), e.g.
+# "(SP10)" — a 1-letter form would match "(W2)" employment-type tags,
+# which appear in titles Hans has applied to. Full postcodes ("SW1A 1AA")
+# are distinctive enough to match as-is. Case-sensitive on purpose.
+UK_POSTCODE_RE = re.compile(
+    r"\(([A-Z]{2}\d{1,2}[A-Z]?)\)|\b[A-Z]{1,2}\d[A-Z\d]? \d[A-Z]{2}\b"
+)
+
 SERPER_URL_SLUG_MARKERS = (
     "-united-kingdom", "-england-", "-scotland-", "-wales-",
     "-germany-", "-france-", "-spain-", "-netherlands-",
@@ -3225,6 +3242,18 @@ def _is_non_us_serper_posting(title, description, url):
     for tld in SERPER_NON_US_TLDS:
         if domain_part.endswith(tld):
             return f"tld {tld}"
+
+    # 3a. 2026-10-24: non-US boards hiding on .com
+    for _dom in SERPER_NON_US_DOMAINS:
+        if domain_part == _dom or domain_part.endswith("." + _dom):
+            return f"domain {_dom}"
+
+    # 3a2. 2026-10-24: UK postcode or pound pricing in title/description
+    _pc = UK_POSTCODE_RE.search(f"{title} {description}")
+    if _pc:
+        return f"uk-postcode {_pc.group(0)}"
+    if "£" in blob:
+        return "currency £"
 
     # 3b. 2026-10-18: country as a URL path segment, e.g.
     # bayt.com/en/india/jobs/... (an India posting reached the test digest)
