@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-22T23:00:14",
+  "generated_at": "2026-10-23T23:00:19",
   "labeled_weighted": {
-    "applied": 24.5,
-    "rejected": 37.9
+    "applied": 24.3,
+    "rejected": 37.6
   },
   "settings": {
     "half_life_days": 90,
@@ -22,42 +22,32 @@
     "ml": {
       "adj": -5,
       "applied_w": 1.2,
-      "rejected_w": 5.1
+      "rejected_w": 5.0
     },
     "agentic": {
       "adj": -5,
-      "applied_w": 4.0,
-      "rejected_w": 13.2
+      "applied_w": 3.9,
+      "rejected_w": 13.1
     },
     "ai engineer": {
       "adj": -4,
-      "applied_w": 4.5,
-      "rejected_w": 12.8
+      "applied_w": 4.4,
+      "rejected_w": 12.7
     },
     "agentic ai": {
       "adj": -3,
       "applied_w": 2.8,
-      "rejected_w": 7.9
+      "rejected_w": 7.8
     },
     "ai": {
       "adj": -2,
-      "applied_w": 15.2,
-      "rejected_w": 29.3
+      "applied_w": 15.1,
+      "rejected_w": 29.1
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 19.6,
-      "rejected_w": 28.3
-    },
-    "architect": {
-      "adj": 3,
-      "applied_w": 2.4,
-      "rejected_w": 2.7
-    },
-    "ai automation": {
-      "adj": 6,
-      "applied_w": 5.2,
-      "rejected_w": 3.6
+      "applied_w": 19.4,
+      "rejected_w": 28.0
     },
     "automation engineer": {
       "adj": 6,
@@ -65,6 +55,11 @@
       "rejected_w": 3.3
     },
     "automation": {
+      "adj": 6,
+      "applied_w": 5.2,
+      "rejected_w": 3.6
+    },
+    "ai automation": {
       "adj": 6,
       "applied_w": 5.2,
       "rejected_w": 3.6
@@ -108,10 +103,10 @@
       "last_seen": "2026-10-19"
     },
     "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 6,
+      "shown": 7,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-10-23"
     },
     "\"quality assurance engineer\" remote": {
       "shown": 2,
@@ -160,6 +155,12 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-22"
+    },
+    "\"k6\" OR \"gatling\" \"performance engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-23"
     }
   }
 }
