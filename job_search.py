@@ -2432,6 +2432,8 @@ MAINFRAME_DESC_RE = re.compile(
 )
 
 
+_LAST_REJECT_REASON = ""
+
 def passes_filters(title, desc, posted, location, url_job, company, source_name, salary=""):
     """
     Run a candidate through every filter stage and record the funnel count
@@ -2452,9 +2454,16 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
 
     Uses short-circuit evaluation: as soon as a filter rejects, returns False
     without checking later stages.
+
+    2026-10-23: sets module-level _LAST_REJECT_REASON to the exact stage
+    that rejected, so debug lines say "location" vs "level" vs "blocked"
+    instead of one lumped "level/score/location".
     """
+    global _LAST_REJECT_REASON
+    _LAST_REJECT_REASON = ""
     # Stage: recency
     if not is_recent(posted):
+        _LAST_REJECT_REASON = "not-recent"
         return False, 0, [], "", ""
     funnel.record("after_recency")
 
@@ -2462,22 +2471,26 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
     if MAINFRAME_DESC_RE.search(title or "") or MAINFRAME_DESC_RE.search(desc or ""):
         if DEBUG_MODE:
             print(f"   [DEBUG] FILTERED-mainframe: {title[:50]}")
+        _LAST_REJECT_REASON = "mainframe"
         return False, 0, [], "", ""
 
     # Stage: title
     if not is_relevant_title(title):
+        _LAST_REJECT_REASON = "title"
         return False, 0, [], "", ""
     funnel.record("after_title")
 
     # Stage: level (track + level_ok)
     track, level_ok, level_signal = get_job_track(title, desc)
     if not level_ok:
+        _LAST_REJECT_REASON = "level"
         return False, 0, [], "", level_signal
     funnel.record("after_level")
 
     # Stage: score
     score, matched = score_job(title, desc)
     if score <= 0:
+        _LAST_REJECT_REASON = "score<=0"
         return False, 0, [], "", level_signal
     funnel.record("after_score")
 
@@ -2505,12 +2518,14 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
                           or (("on-site" in _dice_tags or "onsite" in _dice_tags or "hybrid" in _dice_tags)
                               and "remote" not in _dice_tags))
     if _explicit_presence and not is_kc_metro_local(title, desc, location):
+        _LAST_REJECT_REASON = "location:hybrid/onsite-outside-KC"
         return False, score, matched, track, level_signal
     if not is_us_remote(title, desc, location):
         # Failed remote check — last chance: is it KC-local hybrid/on-site?
         if is_onsite_or_hybrid(title, desc, location) and is_kc_metro_local(title, desc, location):
             pass  # KC-local hybrid/on-site is acceptable
         else:
+            _LAST_REJECT_REASON = "location:not-us-remote"
             return False, score, matched, track, level_signal
     funnel.record("after_us")
 
@@ -2523,6 +2538,7 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
 
     # Stage: blocked site/company
     if is_blocked_site(url_job) or is_blocked_company(title, desc, company):
+        _LAST_REJECT_REASON = "blocked-site/company"
         return False, score, matched, track, level_signal
     funnel.record("after_blocked")
 
@@ -2551,6 +2567,44 @@ _ATS_CACHE = {}          # url -> (desc, company, location) for this run
 _ASHBY_BOARD_CACHE = {}  # board slug -> list of job dicts
 ATS_MAX_FETCHES = 150    # per-run safety cap
 _ats_stats = {"attempted": 0, "enriched": 0, "failed": 0}
+
+# 2026-10-23: career-info / salary / "what is a X" SEO pages that Serper
+# organic results return. "Performance Test Engineer jobs: pay, skills,
+# remote - PassRidge" scored 230 and topped the digest with a cover letter.
+CAREER_INFO_DOMAINS = ("passridge.com", "careerexplorer.com", "zippia.com",
+                       "careeronestop.org", "bls.gov", "payscale.com",
+                       "salary.com", "comparably.com", "6figr.com",
+                       "levels.fyi", "teal.com", "resumeworded.com")
+_CAREER_INFO_TITLE_RE = re.compile(
+    r"\bjobs?\s*:\s*(pay|salary|skills|description)"
+    r"|\b(salary|salaries)\b.*\b(guide|trends?|skills|by state)\b"
+    r"|\bjob (description|trends)\b"
+    r"|\bhow to become\b|\bwhat (does|is) an? \b|\bcareer (guide|path|outlook)\b"
+    r"|\binterview questions\b"
+)
+_CAREER_INFO_PATH_RE = re.compile(r"/(roles|careers?-guide|career-guide|salary|salaries|"
+                                  r"job-description|interview-questions)/", re.I)
+
+_LOCATION_PART_RE = re.compile(
+    r"^(remote|hybrid|on-?site|telecommute|wfh|work from home|united states|usa?|us)\b"
+    r"|\b(remote|telecommute|hybrid)\b.*$|,\s*[A-Z]{2}\b|\b(work|jobs?)$", re.I)
+
+def _looks_like_location(part):
+    return bool(_LOCATION_PART_RE.search((part or "").strip()))
+
+def _is_career_info_page(title, url):
+    """True if this looks like an informational/SEO page, not a posting."""
+    t = (title or "").lower()
+    u = (url or "").lower()
+    if any(d in u for d in CAREER_INFO_DOMAINS):
+        return "career-info-domain"
+    if _CAREER_INFO_TITLE_RE.search(t):
+        return "career-info-title"
+    # /roles/ etc. only counts when the title also lacks a company-style
+    # "Title - Company" shape, to avoid hitting real ATS paths.
+    if _CAREER_INFO_PATH_RE.search(u) and " - " not in (title or "").rsplit(" - ", 1)[0]:
+        return "career-info-path"
+    return ""
 
 def _strip_html(raw):
     txt = _html.unescape(raw or "")
@@ -2812,9 +2866,14 @@ def search_serper_jobs():
                 if not company:
                     # Best-effort: many aggregator/ATS titles follow the
                     # "Title - Company - Location" convention (Dice, etc.)
+                    # 2026-10-23: skip parts that are locations/work-settings
+                    # ("Remote / Telecommute", "Remote work") — those were
+                    # being parsed as the company name.
                     parts = [p.strip() for p in title.split(" - ") if p.strip()]
-                    if len(parts) >= 2:
-                        company = parts[1]
+                    for _part in parts[1:]:
+                        if not _looks_like_location(_part):
+                            company = _part
+                            break
                 if not company:
                     company = "N/A"
                 desc     = item.get("description", item.get("snippet", ""))
@@ -2857,6 +2916,11 @@ def search_serper_jobs():
                 if _looks_like_listing:
                     if DEBUG_MODE:
                         print(f"   [DEBUG] Serper FILTERED-listing-title: {title[:50]}")
+                    continue
+                _ci = _is_career_info_page(title, url_job)
+                if _ci:
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Serper FILTERED-{_ci}: {title[:50]}")
                     continue
                 fp, fp_reason = is_false_positive_url(url_job)
                 if fp:
@@ -2946,6 +3010,8 @@ def _trial_source_job(source, title, company, url_job, posted, location, desc, s
         return None
     if is_false_positive_url(url_job)[0]:
         return None
+    if _is_career_info_page(title, url_job):
+        return None
     if _is_non_us_serper_posting(title, desc, url_job):
         return None
     funnel.add_raw(source)
@@ -2954,9 +3020,8 @@ def _trial_source_job(source, title, company, url_job, posted, location, desc, s
     )
     if not passed:
         if DEBUG_MODE:  # show WHY each trial-source job was rejected
-            why = ("not-recent" if not is_recent(posted) else
-                   "title" if not is_relevant_title(title) else
-                   f"level/score/location (score={score}, track={track}, {level_signal or 'n/a'})")
+            why = (f"{_LAST_REJECT_REASON or 'unknown'} "
+                   f"(score={score}, track={track}, {level_signal or 'n/a'})")
             print(f"   [DEBUG] {source} REJECTED ({why}): {title[:60]} | {location[:30] if location else ''} | posted={str(posted)[:10]}")
         return None
     return {"source": source, "title": title, "company": company or "N/A",
@@ -3408,7 +3473,7 @@ def build_optimized_prompt(job):
     title    = job.get("title", "")
     company  = job.get("company", "")
     desc     = job.get("description", "")
-    keywords = ", ".join(job.get("matched_keywords", []))
+    keywords = ", ".join(_public_keywords(job, n=20))
     track    = job.get("track", "Performance Engineering")
 
     # Extract key requirements from job description
@@ -3519,6 +3584,38 @@ def _call_claude_api(prompt, max_tokens=1000, model="claude-sonnet-4-6"):
         return None
 
 
+_INTERNAL_KW_RE = re.compile(r"[+]|^career-|-title$|^gap-|^level-|^track-")
+
+def _public_keywords(job, n=5):
+    """matched_keywords minus internal scoring tags like 'career-qa-title'
+    or 'qa+performance' — those must never appear in letter text."""
+    return [k for k in (job.get("matched_keywords") or []) if not _INTERNAL_KW_RE.search(k)][:n]
+
+_NO_LETTER_MSG = ("[No cover letter generated — posting details unavailable "
+                  "(missing company or description). Open the posting first; "
+                  "regenerate once you've confirmed it's a real, open role.]")
+
+def _letter_title(job):
+    """Strip ' - Company - Location' suffixes Dice/aggregators bake into titles."""
+    t = (job.get("title") or "").strip()
+    parts = [x.strip() for x in t.split(" - ") if x.strip()]
+    if len(parts) >= 2:
+        co = (job.get("company") or "").lower()
+        tail = " ".join(parts[1:]).lower()
+        if (co and co in tail) or "remote" in tail or "hybrid" in tail or "telecommute" in tail:
+            return parts[0]
+    return t
+
+def _letter_blocked(job):
+    co = (job.get("company") or "").strip()
+    if co.upper() in ("", "N/A", "NA", "NONE") or co.lower() in _FP_NOT_A_COMPANY or _looks_like_location(co):
+        return True
+    if job.get("fit_tier") == "Unknown Fit":
+        return True
+    if len((job.get("description") or "").strip()) < 300:
+        return True
+    return False
+
 def generate_cover_letter_claude(job):
     """Generate tailored cover letter using Claude API with optimized prompt."""
     prompt = build_optimized_prompt(job)
@@ -3532,10 +3629,10 @@ def generate_cover_letter_claude(job):
 def generate_cover_letter_template(job):
     """Fallback template-based cover letter — Performance/career-track flavor.
     Used when Claude API fails for Performance/AI Engineering jobs."""
-    skills_str = ", ".join(job["matched_keywords"][:5]) if job["matched_keywords"] else "LoadRunner, JMeter, NeoLoad"
+    skills_str = ", ".join(_public_keywords(job)) or "LoadRunner, JMeter, NeoLoad"
     return f"""Dear Hiring Manager,
 
-With 24+ years of IT experience and 14 years of hands-on LoadRunner/performance testing expertise in {skills_str}, I am confident I would be a strong fit for the {job["title"]} role at {job["company"]}.
+With 24+ years of IT experience and 14 years of hands-on LoadRunner/performance testing expertise in {skills_str}, I am confident I would be a strong fit for the {_letter_title(job)} role at {job["company"]}.
 
 In my recent role as Sr. Performance Test Engineer at the USDA, I led performance testing for AWS/Kubernetes migrations, integrating AppDynamics, Splunk, and Prometheus to ensure SLA compliance. I increased throughput by 40% and reduced defect resolution time by 35%. Earlier in my career at Sprint/CenturyLink, I spent 9 years as a LoadRunner specialist, scaling systems to 12,000+ transactions per minute.
 
@@ -3554,10 +3651,10 @@ def generate_cover_letter_qa_template(job):
     precision — a solid generic pitch beats spending Sonnet tokens on
     career-direction-quality tailoring for a relief-track role.
     """
-    skills_str = ", ".join(job["matched_keywords"][:5]) if job.get("matched_keywords") else "manual testing, test case design, defect tracking"
+    skills_str = ", ".join(_public_keywords(job)) or "test planning, test case design, defect tracking"
     return f"""Dear Hiring Manager,
 
-I'm writing to apply for the {job["title"]} role at {job["company"]}. With over 24 years of IT experience spanning software testing, quality assurance, and production support, I bring a steady, detail-oriented approach to {skills_str} that translates directly to this role.
+I'm writing to apply for the {_letter_title(job)} role at {job["company"]}. With over 24 years of IT experience spanning software testing, quality assurance, and production support, I bring a steady, detail-oriented approach to {skills_str} that translates directly to this role.
 
 Throughout my career — including as a Senior Performance Test Engineer and earlier hands-on QA and development work — I've built test plans, tracked defects, and worked closely with development teams to ensure releases meet quality standards before they reach production. I'm comfortable picking up new tools quickly and have a strong track record of reliability and follow-through.
 
@@ -3580,6 +3677,8 @@ def generate_cover_letter(job):
         (Sonnet) if available, falling back to the Performance-flavored
         template if the API call fails or GENERATE_COVER_LETTERS is off.
     """
+    if _letter_blocked(job):
+        return _NO_LETTER_MSG
     track = job.get("track", "")
     if track in {"QA Automation", "Gap Track"}:
         return generate_cover_letter_qa_template(job)
@@ -3597,7 +3696,7 @@ FIT_TIER_RANK = {
     "Excellent Fit": 4,
     "Strong Fit": 3,
     "Decent Fit": 2,
-    "Unknown Fit": 1,   # 2026-10-18: no description — sort below Decent
+    "Unknown Fit": 0.5, # 2026-10-23: unverified — below Stretch; own capped bucket
     "Stretch Fit": 1,
     "Weak Fit": 0,
 }
@@ -3711,6 +3810,12 @@ CANDIDATE SNAPSHOT:
   point of avoiding)
 - Goal: remote, $30+/hr floor, realistic for him to get hired and ramp quickly
   — NOT "is this the ideal next career step"
+- SENIORITY IS NOT A BARRIER: Hans is a senior candidate (24+ yrs). "Senior",
+  "Lead", or "N+ years QA/testing experience" requirements are a MATCH, not a
+  reach. Never downgrade a job for being senior or for its years-of-experience
+  requirement. Only downgrade for TOOL depth (rule above) or formal people management.
+- QA test-management / ALM / Jira / Quality Center / test planning / UAT
+  roles are squarely in his background — treat as Strong or Excellent.
 
 {_precedent_prompt_block(precs)}JOB POSTING:
 Title: {title}
@@ -3728,8 +3833,8 @@ TIERS:
 - Excellent Fit: Clear match — Hans's background or transferable skills line up directly, remote, no real barrier to getting hired.
 - Strong Fit: Good match with one minor gap (e.g. a specific tool he hasn't used, but the role type is squarely accessible).
 - Decent Fit: Realistic to apply and get traction — adjacent skills, "will train" language, or generalist QA/testing work he could ramp into quickly.
-- Stretch Fit: Possible but a real reach — meaningfully more specialized/senior than this track is meant for, though not disqualifying.
-- Weak Fit: Hard disqualifier — requires years of specific tool/certification experience Hans doesn't have and wouldn't be considered for, or the role is clearly senior/specialized beyond this track's accessible-entry-point purpose. (Pay floor and remote requirements are already enforced before this job reached you — don't re-judge those.) Return "Weak Fit" only — no explanation.
+- Stretch Fit: Possible but a real reach — the role's PRIMARY tool is one Hans only knows at familiar/trained level (e.g. Playwright, Cypress, Selenium/Java framework ownership), though not disqualifying.
+- Weak Fit: Hard disqualifier — requires years of specific tool/certification experience Hans doesn't have and wouldn't be considered for, or a different discipline entirely (e.g. developer, hardware, mainframe). (Pay floor and remote requirements are already enforced before this job reached you — don't re-judge those.) Return "Weak Fit" only — no explanation.
 
 OUTPUT FORMAT (exactly one line, no preamble):
 **<Tier>** — <15-25 word sentence>. Bold 1-2 positive keywords with *asterisks* and 1-2 friction keywords with _underscores_.
@@ -3796,12 +3901,12 @@ Return ONLY the one line. No headers, no bullets, no follow-up text."""
 
     try:
         global FIT_ANALYSIS_MODEL
-        result = _call_claude_api(prompt, max_tokens=80, model=FIT_ANALYSIS_MODEL)
+        result = _call_claude_api(prompt, max_tokens=600, model=FIT_ANALYSIS_MODEL)
         if result is None and FIT_ANALYSIS_MODEL != FIT_ANALYSIS_FALLBACK:
             # New model ID rejected or unavailable — fall back for the rest of the run.
             print(f"   [WARN] Fit model {FIT_ANALYSIS_MODEL} failed; falling back to {FIT_ANALYSIS_FALLBACK}")
             FIT_ANALYSIS_MODEL = FIT_ANALYSIS_FALLBACK
-            result = _call_claude_api(prompt, max_tokens=80, model=FIT_ANALYSIS_MODEL)
+            result = _call_claude_api(prompt, max_tokens=600, model=FIT_ANALYSIS_MODEL)
     except Exception as e:
         print(f"   [WARN] Fit analysis exception for {title!r} ({source}): {type(e).__name__}: {e}")
         logging.exception(
@@ -4071,16 +4176,26 @@ def main():
     CAREER_STRETCH_CAP = 0
     GAP_NORMAL_CAP      = 10
     GAP_STRETCH_CAP     = 0
+    # 2026-10-23: Unknown Fit (no description) used to count as "normal" and
+    # bypass the clear-the-bar gate while verified jobs were held to it.
+    # Now it's its own bucket, ranked after verified jobs, capped at 2/pool.
+    CAREER_UNKNOWN_CAP  = 2
+    GAP_UNKNOWN_CAP     = 2
 
-    career_pool_normal  = [j for j in pool_career if j.get("fit_tier") != "Stretch Fit"]
+    _HELD = ("Stretch Fit", "Unknown Fit")
+    career_pool_normal  = [j for j in pool_career if j.get("fit_tier") not in _HELD]
     career_pool_stretch = [j for j in pool_career if j.get("fit_tier") == "Stretch Fit"]
-    gap_pool_normal     = [j for j in pool_income if j.get("fit_tier") != "Stretch Fit"]
+    career_pool_unknown = [j for j in pool_career if j.get("fit_tier") == "Unknown Fit"]
+    gap_pool_normal     = [j for j in pool_income if j.get("fit_tier") not in _HELD]
     gap_pool_stretch    = [j for j in pool_income if j.get("fit_tier") == "Stretch Fit"]
+    gap_pool_unknown    = [j for j in pool_income if j.get("fit_tier") == "Unknown Fit"]
 
     career_normal  = career_pool_normal[:CAREER_NORMAL_CAP]
     career_stretch = career_pool_stretch[:CAREER_STRETCH_CAP]
     income_normal  = gap_pool_normal[:GAP_NORMAL_CAP]
     income_stretch = gap_pool_stretch[:GAP_STRETCH_CAP]
+    career_unknown = career_pool_unknown[:CAREER_UNKNOWN_CAP]
+    income_unknown = gap_pool_unknown[:GAP_UNKNOWN_CAP]
 
     # Log anything dropped purely for being over-cap, so a surplus day
     # doesn't silently vanish without a trace in the console/log.
@@ -4089,12 +4204,14 @@ def main():
         ("career stretch", career_pool_stretch, CAREER_STRETCH_CAP),
         ("gap normal", gap_pool_normal, GAP_NORMAL_CAP),
         ("gap stretch", gap_pool_stretch, GAP_STRETCH_CAP),
+        ("career unknown", career_pool_unknown, CAREER_UNKNOWN_CAP),
+        ("gap unknown", gap_pool_unknown, GAP_UNKNOWN_CAP),
     ]:
         if len(pool) > cap:
             print(f"[OK] {label}: {len(pool)} candidates exceeded cap of {cap} — top {cap} kept, {len(pool) - cap} dropped")
 
-    career_jobs = career_normal + career_stretch
-    income_jobs = income_normal + income_stretch
+    career_jobs = career_normal + career_stretch + career_unknown
+    income_jobs = income_normal + income_stretch + income_unknown
     top_jobs = career_jobs + income_jobs
     funnel.set_stage("final", len(top_jobs))
 
