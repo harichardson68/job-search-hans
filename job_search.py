@@ -4267,6 +4267,14 @@ def main():
         j["display_number"] = f"G{i}"
     for i, j in enumerate(income_stretch, 1):
         j["display_number"] = f"GS{i}"
+    # 2026-10-24: Unknown Fit pools were never numbered — the email fell
+    # back to "?" while today_jobs.json stored a flat index, so the form
+    # token never matched and the decision was rejected. Unknown Fit jobs
+    # render alongside the normal cards, so continue that sequence.
+    for i, j in enumerate(career_unknown, len(career_normal) + 1):
+        j["display_number"] = str(i)
+    for i, j in enumerate(income_unknown, len(income_normal) + 1):
+        j["display_number"] = f"G{i}"
 
     # Split top_jobs into normal vs. demoted Stretch Fit section for email.
     # Stretch Fit = title/credential mismatch but real overlap — still
