@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-23T23:00:19",
+  "generated_at": "2026-10-24T23:00:16",
   "labeled_weighted": {
-    "applied": 24.3,
-    "rejected": 37.6
+    "applied": 24.1,
+    "rejected": 37.3
   },
   "settings": {
     "half_life_days": 90,
@@ -17,56 +17,56 @@
     "applied": {
       "adj": -9,
       "applied_w": 0.3,
-      "rejected_w": 5.1
+      "rejected_w": 5.0
+    },
+    "agentic": {
+      "adj": -5,
+      "applied_w": 3.9,
+      "rejected_w": 13.0
     },
     "ml": {
       "adj": -5,
       "applied_w": 1.2,
       "rejected_w": 5.0
     },
-    "agentic": {
-      "adj": -5,
-      "applied_w": 3.9,
-      "rejected_w": 13.1
-    },
     "ai engineer": {
       "adj": -4,
       "applied_w": 4.4,
-      "rejected_w": 12.7
+      "rejected_w": 12.6
     },
     "agentic ai": {
       "adj": -3,
       "applied_w": 2.8,
-      "rejected_w": 7.8
+      "rejected_w": 7.7
     },
     "ai": {
       "adj": -2,
-      "applied_w": 15.1,
-      "rejected_w": 29.1
+      "applied_w": 15.0,
+      "rejected_w": 28.8
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 19.4,
-      "rejected_w": 28.0
-    },
-    "automation engineer": {
-      "adj": 6,
-      "applied_w": 5.2,
-      "rejected_w": 3.3
+      "applied_w": 19.3,
+      "rejected_w": 27.8
     },
     "automation": {
       "adj": 6,
-      "applied_w": 5.2,
-      "rejected_w": 3.6
+      "applied_w": 5.1,
+      "rejected_w": 3.5
+    },
+    "automation engineer": {
+      "adj": 6,
+      "applied_w": 5.1,
+      "rejected_w": 3.2
     },
     "ai automation": {
       "adj": 6,
-      "applied_w": 5.2,
-      "rejected_w": 3.6
+      "applied_w": 5.1,
+      "rejected_w": 3.5
     },
     "performance": {
       "adj": 10,
-      "applied_w": 5.9,
+      "applied_w": 5.8,
       "rejected_w": 0.8
     }
   },
@@ -103,10 +103,10 @@
       "last_seen": "2026-10-19"
     },
     "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 7,
+      "shown": 9,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-23"
+      "last_seen": "2026-10-24"
     },
     "\"quality assurance engineer\" remote": {
       "shown": 2,
@@ -161,6 +161,12 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-23"
+    },
+    "\"test consultant\" OR \"QA consultant\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-24"
     }
   }
 }

@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-25",
+  "run_id": "20261025_120715",
+  "jobs": [
+    {
+      "job_id": "4972cd2ec5",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "f39bb45562",
+      "run_id": "20261025_120715",
+      "title": "Senior QA Automation Engineer - Remote / Telecommute",
+      "company": "Cynet Systems",
+      "track": "QA Automation",
+      "score": 62,
+      "url": "https://www.dice.com/job-detail/04b54f36-dbc2-40d1-b03b-6aaada9cd50e",
+      "matched_keywords": [
+        "aws",
+        "api testing",
+        "career-qa-title",
+        "agile",
+        "python",
+        "sql",
+        "jira",
+        "jenkins"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Senior QA Automation*, *Python*, API/integration testing; _Playwright_ is new but Hans ramped Selenium quickly, solid SQL/Jenkins/Jira foundation.",
+      "level_signal": "career-qa-title",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote"
+    },
+    {
+      "job_id": "5e04a8124c",
+      "number": "G2",
+      "number_display": "G2",
+      "token": "19778de513",
+      "run_id": "20261025_120715",
+      "title": "UAT Analyst at North Dakota Department of Health ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 50,
+      "url": "https://hiringcafe.com/job/uat-analyst-north-dakota-department-of-health-and-human-services-ffqb041fqrmeafag",
+      "matched_keywords": [
+        "career-qa-title",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "\"UAT lead\" OR \"UAT analyst\" remote"
+    }
+  ]
+}
