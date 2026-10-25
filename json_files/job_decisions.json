@@ -16252,5 +16252,103 @@
       "raw_decision": "",
       "timestamp": "2026-10-23 23:00"
     }
+  ],
+  "2026-10-24": [
+    {
+      "job_id": "8e3efc687e",
+      "number": "G1",
+      "title": "Quality Assurance Engineer",
+      "company": "Reality Defender",
+      "track": "QA Automation",
+      "score": 236,
+      "url": "https://jobs.ashbyhq.com/realitydefender/cab9bc40-2343-45ed-98ef-1fee80d5e99d?utm_source=KkgwlMZR3Q",
+      "matched_keywords": [
+        "rest api",
+        "selenium",
+        "jmeter",
+        "locust",
+        "test plans",
+        "ci/cd",
+        "javascript",
+        "java",
+        "k6",
+        "regression testing",
+        "cypress",
+        "python",
+        "github actions",
+        "qa+performance",
+        "postman",
+        "career-qa-title",
+        "load testing",
+        "rag",
+        "latency"
+      ],
+      "source": "TheirStack",
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-24 23:00"
+    },
+    {
+      "job_id": "1a46191ae4",
+      "number": "G2",
+      "title": "QA Engineer - MAVLRA CORPORATION - Remote",
+      "company": "MAVLRA CORPORATION",
+      "track": "QA Automation",
+      "score": 82,
+      "url": "https://www.dice.com/job-detail/bc44650e-6a6e-4c29-8cad-d2d8973e0ab5",
+      "matched_keywords": [
+        "manual testing",
+        "career-qa-title",
+        "rest api",
+        "jira"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-24 23:00"
+    },
+    {
+      "job_id": "b1a59e3b8d",
+      "number": "G3",
+      "title": "QA Engineer - Rivago infotech inc - Remote",
+      "company": "Rivago infotech inc",
+      "track": "QA Automation",
+      "score": 82,
+      "url": "https://www.dice.com/job-detail/3290a7d4-1646-4f26-accf-5fa44244ec4a",
+      "matched_keywords": [
+        "manual testing",
+        "career-qa-title",
+        "rest api",
+        "jira"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-24 23:00"
+    },
+    {
+      "job_id": "68cee774d6",
+      "number": "4",
+      "title": "Senior Test Consultant in Andover (SP10) | Bright Purple ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 35,
+      "url": "https://www.totaljobs.com/job/senior-test-consultant/bright-purple-resourcing-job108089077",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test consultant\" OR \"QA consultant\" remote",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-10-24 23:00"
+    }
   ]
 }
