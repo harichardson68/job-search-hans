@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-24T23:00:16",
+  "generated_at": "2026-10-25T23:00:16",
   "labeled_weighted": {
-    "applied": 24.1,
-    "rejected": 37.3
+    "applied": 23.9,
+    "rejected": 37.0
   },
   "settings": {
     "half_life_days": 90,
@@ -19,20 +19,20 @@
       "applied_w": 0.3,
       "rejected_w": 5.0
     },
-    "agentic": {
-      "adj": -5,
-      "applied_w": 3.9,
-      "rejected_w": 13.0
-    },
     "ml": {
       "adj": -5,
       "applied_w": 1.2,
       "rejected_w": 5.0
     },
+    "agentic": {
+      "adj": -5,
+      "applied_w": 3.9,
+      "rejected_w": 12.9
+    },
     "ai engineer": {
       "adj": -4,
       "applied_w": 4.4,
-      "rejected_w": 12.6
+      "rejected_w": 12.5
     },
     "agentic ai": {
       "adj": -3,
@@ -41,15 +41,15 @@
     },
     "ai": {
       "adj": -2,
-      "applied_w": 15.0,
-      "rejected_w": 28.8
+      "applied_w": 14.9,
+      "rejected_w": 28.6
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 19.3,
-      "rejected_w": 27.8
+      "applied_w": 19.1,
+      "rejected_w": 27.6
     },
-    "automation": {
+    "ai automation": {
       "adj": 6,
       "applied_w": 5.1,
       "rejected_w": 3.5
@@ -59,7 +59,7 @@
       "applied_w": 5.1,
       "rejected_w": 3.2
     },
-    "ai automation": {
+    "automation": {
       "adj": 6,
       "applied_w": 5.1,
       "rejected_w": 3.5
@@ -103,10 +103,10 @@
       "last_seen": "2026-10-19"
     },
     "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 9,
+      "shown": 10,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-24"
+      "last_seen": "2026-10-25"
     },
     "\"quality assurance engineer\" remote": {
       "shown": 2,
@@ -167,6 +167,12 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-24"
+    },
+    "\"UAT lead\" OR \"UAT analyst\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-25"
     }
   }
 }

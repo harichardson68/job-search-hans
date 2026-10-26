@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-26",
+  "run_id": "20261026_120751",
+  "jobs": [
+    {
+      "job_id": "a00a60df2b",
+      "number": "1",
+      "number_display": "1",
+      "token": "fa96275de1",
+      "run_id": "20261026_120751",
+      "title": "Salesforce Performance Tester - 175",
+      "company": "175",
+      "track": "Performance Engineering",
+      "score": 211,
+      "url": "https://www.clearancejobs.com/jobs/9265621/salesforce-performance-tester-175",
+      "matched_keywords": [
+        "defect tracking",
+        "scrum",
+        "agile",
+        "jenkins",
+        "functional testing",
+        "jira",
+        "test plans",
+        "rest api",
+        "test cases",
+        "api testing",
+        "performance tester",
+        "performance testing",
+        "regression testing",
+        "performance test",
+        "selenium"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *Performance testing* + federal healthcare domain match; _Salesforce-specific automation_ and _Selenium/Cucumber production depth_ gap but realistic pivot.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"software tester\" remote -manual"
+    },
+    {
+      "job_id": "ddbb77e775",
+      "number": "2",
+      "number_display": "2",
+      "token": "2eeb976fc8",
+      "run_id": "20261026_120751",
+      "title": "Lead Performance Engineer - SSI People",
+      "company": "SSI People",
+      "track": "Performance Engineering",
+      "score": 130,
+      "url": "https://www.dice.com/job-detail/2d95ec6d-756e-41f9-afb3-83316c23af1d",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "site:dice.com/job-detail \"loadrunner\" remote"
+    }
+  ]
+}
