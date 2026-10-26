@@ -16350,5 +16350,51 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-10-24 23:00"
     }
+  ],
+  "2026-10-25": [
+    {
+      "job_id": "4972cd2ec5",
+      "number": "G1",
+      "title": "Senior QA Automation Engineer - Remote / Telecommute",
+      "company": "Cynet Systems",
+      "track": "QA Automation",
+      "score": 62,
+      "url": "https://www.dice.com/job-detail/04b54f36-dbc2-40d1-b03b-6aaada9cd50e",
+      "matched_keywords": [
+        "aws",
+        "api testing",
+        "career-qa-title",
+        "agile",
+        "python",
+        "sql",
+        "jira",
+        "jenkins"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-25 23:00"
+    },
+    {
+      "job_id": "5e04a8124c",
+      "number": "G2",
+      "title": "UAT Analyst at North Dakota Department of Health ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 50,
+      "url": "https://hiringcafe.com/job/uat-analyst-north-dakota-department-of-health-and-human-services-ffqb041fqrmeafag",
+      "matched_keywords": [
+        "career-qa-title",
+        "uat"
+      ],
+      "source": "Google Jobs",
+      "query": "\"UAT lead\" OR \"UAT analyst\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-25 23:00"
+    }
   ]
 }
