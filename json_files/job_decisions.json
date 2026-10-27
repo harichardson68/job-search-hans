@@ -16396,5 +16396,59 @@
       "raw_decision": "",
       "timestamp": "2026-10-25 23:00"
     }
+  ],
+  "2026-10-26": [
+    {
+      "job_id": "a00a60df2b",
+      "number": "1",
+      "title": "Salesforce Performance Tester - 175",
+      "company": "175",
+      "track": "Performance Engineering",
+      "score": 211,
+      "url": "https://www.clearancejobs.com/jobs/9265621/salesforce-performance-tester-175",
+      "matched_keywords": [
+        "defect tracking",
+        "scrum",
+        "agile",
+        "jenkins",
+        "functional testing",
+        "jira",
+        "test plans",
+        "rest api",
+        "test cases",
+        "api testing",
+        "performance tester",
+        "performance testing",
+        "regression testing",
+        "performance test",
+        "selenium"
+      ],
+      "source": "Google Jobs",
+      "query": "\"software tester\" remote -manual",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-26 23:00"
+    },
+    {
+      "job_id": "ddbb77e775",
+      "number": "2",
+      "title": "Lead Performance Engineer - SSI People",
+      "company": "SSI People",
+      "track": "Performance Engineering",
+      "score": 130,
+      "url": "https://www.dice.com/job-detail/2d95ec6d-756e-41f9-afb3-83316c23af1d",
+      "matched_keywords": [
+        "jmeter",
+        "loadrunner",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"loadrunner\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-26 23:00"
+    }
   ]
 }

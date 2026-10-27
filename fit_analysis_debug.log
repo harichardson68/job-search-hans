@@ -5100,3 +5100,53 @@
 2026-10-25 12:06:58,133 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
 2026-10-25 12:07:05,643 INFO [FIT-OK] id=https://www.dice.com/job-detail/04b54f36-dbc2-40d1-b03b-6aaada9cd50e title='Senior QA Automation Engineer - Remote / Telecommute' source=Google Jobs score=62 tier=Strong Fit
 2026-10-25 12:07:05,929 INFO [FIT-SKIP] id=https://hiringcafe.com/job/uat-analyst-north-dakota-department-of-health-and-human-services-ffqb041fqrmeafag title='UAT Analyst at North Dakota Department of Health ...' reason=no_description
+2026-10-26 12:00:22,414 INFO [ATS-FAIL] https://www.dice.com/job-detail/2d95ec6d-756e-41f9-afb3-83316c23af1d 410 Client Error: Gone for url: https://www.dice.com/job-detail/2d95ec6d-756e-41f9-afb3-83316c23af1d
+2026-10-26 12:00:39,527 INFO [ATS-FAIL] https://www.dice.com/job-detail/2ac12b7e-58a7-497a-ab8f-63b0a8b8bf8d 410 Client Error: Gone for url: https://www.dice.com/job-detail/2ac12b7e-58a7-497a-ab8f-63b0a8b8bf8d
+2026-10-26 12:01:34,057 INFO [ATS-FAIL] https://www.dice.com/job-detail/b2a8ba74-aa0d-44d3-ac4b-c2bccf3695c7 410 Client Error: Gone for url: https://www.dice.com/job-detail/b2a8ba74-aa0d-44d3-ac4b-c2bccf3695c7
+2026-10-26 12:01:52,678 INFO [ATS-FAIL] https://job-boards.greenhouse.io/numa/jobs/4450419009 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/numa/jobs/4450419009
+2026-10-26 12:01:53,751 INFO [ATS-FAIL] https://uk.linkedin.com/jobs/view/senior-performance-architect-at-brightbox-group-4480063399 429 Client Error: Too Many Requests for url: https://uk.linkedin.com/jobs/view/senior-performance-architect-at-brightbox-group-4480063399
+2026-10-26 12:02:51,070 INFO [ATS-FAIL] https://www.indeed.com/viewjob?jk=0773f89e745384bd 401 Client Error: Unauthorized for url: https://www.indeed.com/viewjob?jk=0773f89e745384bd
+2026-10-26 12:03:03,939 INFO [ATS-FAIL] https://jobs.saic.com/jobs/18234815-ai-systems-engineer 403 Client Error: Forbidden for url: https://jobs.saic.com/jobs/18234815-ai-systems-engineer
+2026-10-26 12:03:04,669 INFO [ATS-FAIL] https://www.glassdoor.com/job-listing/ai-systems-engineer-bright-vision-technologies-JV_KO0,19_KE20,46.htm?jl=1010301392528 403 Client Error: Forbidden for url: https://www.glassdoor.com/job-listing/ai-systems-engineer-bright-vision-technologies-JV_KO0,19_KE20,46.htm?jl=1010301392528
+2026-10-26 12:03:28,290 INFO [ATS-FAIL] https://www.indeed.com/cmp/Shield-Ai/jobs/q-Test-Engineer 403 Client Error: Forbidden for url: https://www.indeed.com/cmp/Shield-Ai/jobs/q-Test-Engineer
+2026-10-26 12:03:55,187 INFO [ATS-FAIL] https://careers-millgroupinc.icims.com/jobs/3106/software-test-engineer/job 405 Client Error: Not Allowed for url: https://careers-millgroupinc.icims.com/jobs/3106/software-test-engineer/job
+2026-10-26 12:03:56,018 INFO [ATS-FAIL] https://careers.leidos.com/jobs/18382009-software-test-engineer 403 Client Error: Forbidden for url: https://careers.leidos.com/jobs/18382009-software-test-engineer
+2026-10-26 12:04:23,403 INFO [ATS-FAIL] https://www.dice.com/job-detail/fff40cdd-4db3-4c57-a1bb-30339cc052e2 410 Client Error: Gone for url: https://www.dice.com/job-detail/fff40cdd-4db3-4c57-a1bb-30339cc052e2
+2026-10-26 12:05:14,117 INFO [ATS-FAIL] https://hiringcafe.com/job/uat-analyst-north-dakota-department-of-health-and-human-services-ffqb041fqrmeafag 403 Client Error: Forbidden for url: https://hiringcafe.com/job/uat-analyst-north-dakota-department-of-health-and-human-services-ffqb041fqrmeafag
+2026-10-26 12:07:15,975 INFO No device provided, using cpu
+2026-10-26 12:07:16,797 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:16,799 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-10-26 12:07:16,807 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:16,887 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:16,896 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:16,938 INFO Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-10-26 12:07:16,986 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:16,995 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:17,049 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:17,057 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-10-26 12:07:17,176 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:17,184 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:17,260 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:17,269 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:17,345 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-26 12:07:17,402 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:17,411 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:17,936 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-10-26 12:07:17,984 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-26 12:07:18,038 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-26 12:07:18,097 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-10-26 12:07:18,155 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:18,165 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:18,252 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:18,260 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:18,323 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:18,332 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:18,397 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:18,406 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:18,523 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-26 12:07:18,580 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-26 12:07:18,787 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-26 12:07:18,798 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-10-26 12:07:18,881 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-10-26 12:07:27,808 INFO [FIT-OK] id=https://www.clearancejobs.com/jobs/9265621/salesforce-performance-tester-175 title='Salesforce Performance Tester - 175' source=Google Jobs score=211 tier=Decent Fit
+2026-10-26 12:07:28,094 INFO [FIT-SKIP] id=https://www.dice.com/job-detail/2d95ec6d-756e-41f9-afb3-83316c23af1d title='Lead Performance Engineer - SSI People' reason=no_description
