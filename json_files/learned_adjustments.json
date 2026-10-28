@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-26T23:00:17",
+  "generated_at": "2026-10-27T23:00:19",
   "labeled_weighted": {
-    "applied": 23.8,
-    "rejected": 36.7
+    "applied": 23.6,
+    "rejected": 36.4
   },
   "settings": {
     "half_life_days": 90,
@@ -19,50 +19,50 @@
       "applied_w": 0.3,
       "rejected_w": 4.9
     },
+    "agentic": {
+      "adj": -5,
+      "applied_w": 3.8,
+      "rejected_w": 12.7
+    },
     "ml": {
       "adj": -5,
       "applied_w": 1.2,
       "rejected_w": 4.9
     },
-    "agentic": {
-      "adj": -5,
-      "applied_w": 3.8,
-      "rejected_w": 12.8
-    },
     "ai engineer": {
       "adj": -4,
       "applied_w": 4.3,
-      "rejected_w": 12.4
+      "rejected_w": 12.3
     },
     "agentic ai": {
       "adj": -3,
-      "applied_w": 2.8,
+      "applied_w": 2.7,
       "rejected_w": 7.6
     },
     "ai": {
       "adj": -2,
-      "applied_w": 14.7,
-      "rejected_w": 28.4
+      "applied_w": 14.6,
+      "rejected_w": 28.2
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 19.0,
-      "rejected_w": 27.4
-    },
-    "ai automation": {
-      "adj": 6,
-      "applied_w": 5.1,
-      "rejected_w": 3.5
+      "applied_w": 18.8,
+      "rejected_w": 27.2
     },
     "automation engineer": {
       "adj": 6,
-      "applied_w": 5.1,
+      "applied_w": 5.0,
       "rejected_w": 3.2
+    },
+    "ai automation": {
+      "adj": 6,
+      "applied_w": 5.0,
+      "rejected_w": 3.4
     },
     "automation": {
       "adj": 6,
-      "applied_w": 5.1,
-      "rejected_w": 3.5
+      "applied_w": 5.0,
+      "rejected_w": 3.4
     },
     "performance": {
       "adj": 10,
@@ -73,10 +73,10 @@
   "paused_queries": {},
   "query_stats": {
     "site:dice.com/job-detail \"performance test engineer\" remote": {
-      "shown": 3,
+      "shown": 4,
       "applied": 1,
       "rejected": 0,
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-10-27"
     },
     "\"AI automation engineer\" remote": {
       "shown": 1,
@@ -103,10 +103,10 @@
       "last_seen": "2026-10-19"
     },
     "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 10,
+      "shown": 11,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-25"
+      "last_seen": "2026-10-27"
     },
     "\"quality assurance engineer\" remote": {
       "shown": 2,
@@ -127,10 +127,10 @@
       "last_seen": "2026-10-20"
     },
     "site:dice.com/job-detail \"jmeter\" \"performance\" remote": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-21"
+      "last_seen": "2026-10-27"
     },
     "site:myworkdayjobs.com \"software test engineer\" remote": {
       "shown": 1,
@@ -175,10 +175,10 @@
       "last_seen": "2026-10-25"
     },
     "\"software tester\" remote -manual": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-26"
+      "last_seen": "2026-10-27"
     },
     "site:dice.com/job-detail \"loadrunner\" remote": {
       "shown": 1,
