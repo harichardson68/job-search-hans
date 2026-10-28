@@ -16450,5 +16450,111 @@
       "raw_decision": "",
       "timestamp": "2026-10-26 23:00"
     }
+  ],
+  "2026-10-27": [
+    {
+      "job_id": "babb8fc7be",
+      "number": "1",
+      "title": "Performance Engineer - York Solutions, LLC",
+      "company": "York Solutions, LLC",
+      "track": "Performance Engineering",
+      "score": 212,
+      "url": "https://www.dice.com/job-detail/58be7c32-9e72-4e7f-88a5-d8b545b2946e",
+      "matched_keywords": [
+        "sql",
+        "workload model",
+        "splunk",
+        "performance engineer",
+        "appdynamics",
+        "agile",
+        "aws",
+        "performance testing",
+        "java",
+        "ci/cd",
+        "rag",
+        "jmeter",
+        "observability",
+        "kubernetes",
+        "uat",
+        "microservices",
+        "performance test",
+        "throughput",
+        "scalability",
+        "bottleneck"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"performance test engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-27 23:00"
+    },
+    {
+      "job_id": "26bb00fa9c",
+      "number": "G1",
+      "title": "SDET - Data Computer Corp America - Remote",
+      "company": "Data Computer Corp America",
+      "track": "QA Automation",
+      "score": 164,
+      "url": "https://www.dice.com/job-detail/a9f53c29-0b97-4c9e-9897-c85ef931930b",
+      "matched_keywords": [
+        "test plans",
+        "performance test",
+        "postman",
+        "api testing",
+        "performance testing",
+        "java",
+        "load testing",
+        "scalability",
+        "ci/cd",
+        "rag",
+        "agile",
+        "jmeter",
+        "test cases",
+        "jenkins"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-27 23:00"
+    },
+    {
+      "job_id": "0602537124",
+      "number": "G2",
+      "title": "Software Tester in Remote Work, Virginia, United States",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 60,
+      "url": "https://jobs.saic.com/jobs/18409473-software-tester",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"software tester\" remote -manual",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-27 23:00"
+    },
+    {
+      "job_id": "9ba08dea85",
+      "number": "G3",
+      "title": "QA AUTOMATION ENGINEER (PLAYWRIGHT)",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 41,
+      "url": "https://www.dice.com/job-detail/98023fe1-57c1-4e36-a6bd-a638e54f28a0",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-27 23:00"
+    }
   ]
 }
