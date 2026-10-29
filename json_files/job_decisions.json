@@ -16556,5 +16556,103 @@
       "raw_decision": "",
       "timestamp": "2026-10-27 23:00"
     }
+  ],
+  "2026-10-28": [
+    {
+      "job_id": "47a8b010e2",
+      "number": "G1",
+      "title": "QA Engineer/SDET - Eliassen Group",
+      "company": "Eliassen Group",
+      "track": "QA Automation",
+      "score": 191,
+      "url": "https://www.dice.com/job-detail/150826bf-c11c-40ee-b8a0-87ca6a0bf895",
+      "matched_keywords": [
+        "performance test",
+        "aws",
+        "qa+performance",
+        "ci/cd",
+        "java",
+        "agile",
+        "kubernetes",
+        "performance testing",
+        "test plans",
+        "uat",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-28 23:00"
+    },
+    {
+      "job_id": "32f9a40a70",
+      "number": "G2",
+      "title": "Test Automation Engineer (Remote) | EdgeQ Technologies ...",
+      "company": "EdgeQ Technologies Private Limited",
+      "track": "QA Automation",
+      "score": 98,
+      "url": "https://app.joinhandshake.com/public/jobs/11762446",
+      "matched_keywords": [
+        "cypress",
+        "ci/cd",
+        "selenium",
+        "javascript",
+        "java",
+        "agile",
+        "api testing",
+        "rag",
+        "github actions",
+        "python",
+        "jenkins",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test automation engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-28 23:00"
+    },
+    {
+      "job_id": "d5d191ec69",
+      "number": "G3",
+      "title": "QA Lead - SFCC [Salesforce B2C Commerce] - Remote",
+      "company": "SFCC [Salesforce B2C Commerce]",
+      "track": "QA Automation",
+      "score": 90,
+      "url": "https://www.dice.com/job-detail/9154dca7-44f5-4e15-a844-8863234388cf",
+      "matched_keywords": [
+        "jmeter",
+        "load testing",
+        "qa+performance",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-28 23:00"
+    },
+    {
+      "job_id": "8dece26d1a",
+      "number": "G4",
+      "title": "Software Tester (Remote) at crewlia \u2014 New Zealand",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 60,
+      "url": "https://nz.linkedin.com/jobs/view/software-tester-remote-at-crewlia-4482953075",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"software tester\" remote -manual",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-10-28 23:00"
+    }
   ]
 }
