@@ -16654,5 +16654,59 @@
       "raw_decision": "",
       "timestamp": "2026-10-28 23:00"
     }
+  ],
+  "2026-10-30": [
+    {
+      "job_id": "edc827d230",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Assurance Engineer I, Relay TAQ - Job ID: 10591598",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 86,
+      "url": "https://www.amazon.jobs/en/jobs/10591598/quality-assurance-engineer-i-relay-taq",
+      "matched_keywords": [
+        "career-qa-title",
+        "performance test",
+        "qa+performance"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-30T12:13:21.789027"
+    },
+    {
+      "job_id": "1c7b372eea",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Quality Assurance Engineer II, Amazon Leo - Job ID",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 36,
+      "url": "https://www.amazon.jobs/en/jobs/10592728/quality-assurance-engineer-ii-amazon-leo",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-30T12:13:21.789043"
+    }
   ]
 }
