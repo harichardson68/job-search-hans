@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-28T23:00:22",
+  "generated_at": "2026-10-30T23:00:25",
   "labeled_weighted": {
-    "applied": 23.4,
-    "rejected": 36.2
+    "applied": 24.0,
+    "rejected": 35.6
   },
   "settings": {
     "half_life_days": 90,
@@ -15,59 +15,59 @@
   },
   "adjustments": {
     "applied": {
-      "adj": -8,
+      "adj": -9,
       "applied_w": 0.3,
-      "rejected_w": 4.9
-    },
-    "agentic": {
-      "adj": -5,
-      "applied_w": 3.8,
-      "rejected_w": 12.6
+      "rejected_w": 4.8
     },
     "ml": {
       "adj": -5,
-      "applied_w": 1.2,
-      "rejected_w": 4.9
+      "applied_w": 1.1,
+      "rejected_w": 4.8
     },
-    "ai engineer": {
-      "adj": -4,
-      "applied_w": 4.3,
-      "rejected_w": 12.2
+    "agentic": {
+      "adj": -5,
+      "applied_w": 3.7,
+      "rejected_w": 12.4
     },
     "agentic ai": {
-      "adj": -3,
+      "adj": -4,
       "applied_w": 2.7,
-      "rejected_w": 7.5
+      "rejected_w": 7.4
+    },
+    "ai engineer": {
+      "adj": -3,
+      "applied_w": 5.2,
+      "rejected_w": 12.0
     },
     "ai": {
-      "adj": -2,
-      "applied_w": 14.5,
-      "rejected_w": 28.0
+      "adj": -1,
+      "applied_w": 15.3,
+      "rejected_w": 27.5
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 18.7,
-      "rejected_w": 27.0
-    },
-    "automation engineer": {
-      "adj": 6,
-      "applied_w": 5.0,
-      "rejected_w": 3.1
+      "applied_w": 19.4,
+      "rejected_w": 26.6
     },
     "ai automation": {
-      "adj": 6,
-      "applied_w": 5.0,
+      "adj": 5,
+      "applied_w": 4.9,
       "rejected_w": 3.4
     },
     "automation": {
-      "adj": 6,
-      "applied_w": 5.0,
+      "adj": 5,
+      "applied_w": 4.9,
       "rejected_w": 3.4
+    },
+    "automation engineer": {
+      "adj": 6,
+      "applied_w": 4.9,
+      "rejected_w": 3.1
     },
     "performance": {
       "adj": 10,
-      "applied_w": 5.7,
-      "rejected_w": 0.8
+      "applied_w": 5.6,
+      "rejected_w": 0.7
     }
   },
   "paused_queries": {},
@@ -90,6 +90,12 @@
       "rejected": 0,
       "last_seen": "2026-10-21"
     },
+    "\"junior AI engineer\" OR \"associate AI engineer\" remote": {
+      "shown": 1,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-10-30"
+    },
     "site:dice.com/job-detail \"software test engineer\" remote": {
       "shown": 3,
       "applied": 0,
@@ -97,10 +103,10 @@
       "last_seen": "2026-10-20"
     },
     "\"performance center\" \"loadrunner\" remote": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-19"
+      "last_seen": "2026-10-30"
     },
     "site:dice.com/job-detail \"QA engineer\" remote": {
       "shown": 12,
@@ -127,10 +133,10 @@
       "last_seen": "2026-10-20"
     },
     "site:dice.com/job-detail \"jmeter\" \"performance\" remote": {
-      "shown": 3,
+      "shown": 6,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-28"
+      "last_seen": "2026-10-30"
     },
     "site:myworkdayjobs.com \"software test engineer\" remote": {
       "shown": 1,
@@ -139,10 +145,10 @@
       "last_seen": "2026-10-22"
     },
     "\"QA engineer\" remote \"performance testing\"": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-10-30"
     },
     "\"test automation engineer\" remote": {
       "shown": 2,
@@ -185,6 +191,24 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-26"
+    },
+    "\"performance engineer\" \"TEKsystems\" OR \"Insight Global\" OR \"Randstad\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-30"
+    },
+    "\"performance test engineer\" \"loadrunner\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-30"
+    },
+    "\"blazemeter\" engineer remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-10-30"
     }
   }
 }

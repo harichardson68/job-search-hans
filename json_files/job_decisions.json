@@ -16951,5 +16951,32 @@
       "raw_decision": "",
       "timestamp": "2026-10-30 23:00"
     }
+  ],
+  "2026-10-31": [
+    {
+      "job_id": "8851079ef4",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Assurance Engineer II, Amazon Add To Delivery",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 36,
+      "url": "https://amazon.jobs/jobs/10590754",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-10-31T12:07:57.162477"
+    }
   ]
 }
