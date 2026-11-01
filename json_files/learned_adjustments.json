@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-30T23:00:25",
+  "generated_at": "2026-10-31T23:00:19",
   "labeled_weighted": {
-    "applied": 24.0,
-    "rejected": 35.6
+    "applied": 55.0,
+    "rejected": 50.1
   },
   "settings": {
     "half_life_days": 90,
@@ -15,68 +15,162 @@
   },
   "adjustments": {
     "applied": {
-      "adj": -9,
+      "adj": -14,
       "applied_w": 0.3,
-      "rejected_w": 4.8
+      "rejected_w": 5.8
     },
     "ml": {
-      "adj": -5,
+      "adj": -10,
       "applied_w": 1.1,
-      "rejected_w": 4.8
+      "rejected_w": 5.9
+    },
+    "developer": {
+      "adj": -8,
+      "applied_w": 1.6,
+      "rejected_w": 5.3
     },
     "agentic": {
-      "adj": -5,
-      "applied_w": 3.7,
-      "rejected_w": 12.4
+      "adj": -8,
+      "applied_w": 5.1,
+      "rejected_w": 14.4
     },
     "agentic ai": {
-      "adj": -4,
-      "applied_w": 2.7,
-      "rejected_w": 7.4
+      "adj": -7,
+      "applied_w": 3.1,
+      "rejected_w": 7.8
     },
     "ai engineer": {
-      "adj": -3,
-      "applied_w": 5.2,
-      "rejected_w": 12.0
+      "adj": -6,
+      "applied_w": 6.1,
+      "rejected_w": 12.8
     },
     "ai": {
-      "adj": -1,
-      "applied_w": 15.3,
-      "rejected_w": 27.5
+      "adj": -5,
+      "applied_w": 17.4,
+      "rejected_w": 31.6
+    },
+    "solutions": {
+      "adj": -5,
+      "applied_w": 2.8,
+      "rejected_w": 5.4
+    },
+    "automation engineer": {
+      "adj": 1,
+      "applied_w": 5.8,
+      "rejected_w": 4.4
+    },
+    "automation": {
+      "adj": 1,
+      "applied_w": 6.8,
+      "rejected_w": 5.0
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 19.4,
-      "rejected_w": 26.6
+      "applied_w": 40.0,
+      "rejected_w": 32.4
     },
-    "ai automation": {
-      "adj": 5,
+    "architect": {
+      "adj": 4,
       "applied_w": 4.9,
-      "rejected_w": 3.4
+      "rejected_w": 2.1
     },
-    "automation": {
-      "adj": 5,
-      "applied_w": 4.9,
-      "rejected_w": 3.4
-    },
-    "automation engineer": {
+    "qa": {
       "adj": 6,
-      "applied_w": 4.9,
-      "rejected_w": 3.1
+      "applied_w": 7.4,
+      "rejected_w": 2.8
+    },
+    "qa engineer": {
+      "adj": 6,
+      "applied_w": 6.1,
+      "rejected_w": 1.9
+    },
+    "inc": {
+      "adj": 8,
+      "applied_w": 7.6,
+      "rejected_w": 1.9
+    },
+    "performance engineer": {
+      "adj": 8,
+      "applied_w": 5.2,
+      "rejected_w": 1.1
+    },
+    "quality assurance": {
+      "adj": 8,
+      "applied_w": 4.7,
+      "rejected_w": 0.9
+    },
+    "assurance": {
+      "adj": 8,
+      "applied_w": 4.7,
+      "rejected_w": 0.9
+    },
+    "test": {
+      "adj": 8,
+      "applied_w": 9.3,
+      "rejected_w": 2.3
+    },
+    "quality": {
+      "adj": 9,
+      "applied_w": 5.6,
+      "rejected_w": 0.9
+    },
+    "tester": {
+      "adj": 10,
+      "applied_w": 9.3,
+      "rejected_w": 1.6
+    },
+    "test engineer": {
+      "adj": 10,
+      "applied_w": 4.8,
+      "rejected_w": 0.4
     },
     "performance": {
       "adj": 10,
-      "applied_w": 5.6,
-      "rejected_w": 0.7
+      "applied_w": 20.5,
+      "rejected_w": 1.7
+    },
+    "senior": {
+      "adj": 10,
+      "applied_w": 7.9,
+      "rejected_w": 0.0
+    },
+    "performance tester": {
+      "adj": 10,
+      "applied_w": 9.0,
+      "rejected_w": 0.6
     }
   },
   "paused_queries": {},
   "query_stats": {
+    "site:dice.com/job-detail \"jmeter\" \"performance\" remote": {
+      "shown": 6,
+      "applied": 4,
+      "rejected": 0,
+      "last_seen": "2026-10-30"
+    },
     "site:dice.com/job-detail \"performance test engineer\" remote": {
       "shown": 4,
-      "applied": 1,
+      "applied": 3,
       "rejected": 0,
       "last_seen": "2026-10-27"
+    },
+    "site:dice.com/job-detail \"software test engineer\" remote": {
+      "shown": 4,
+      "applied": 3,
+      "rejected": 0,
+      "last_seen": "2026-10-31"
+    },
+    "site:dice.com/job-detail \"QA engineer\" remote": {
+      "shown": 13,
+      "applied": 3,
+      "rejected": 2,
+      "last_seen": "2026-10-31"
+    },
+    "\"quality assurance engineer\" remote": {
+      "shown": 2,
+      "applied": 2,
+      "rejected": 0,
+      "last_seen": "2026-10-21"
     },
     "\"AI automation engineer\" remote": {
       "shown": 1,
@@ -90,35 +184,47 @@
       "rejected": 0,
       "last_seen": "2026-10-21"
     },
+    "\"API test engineer\" OR \"API tester\" remote": {
+      "shown": 1,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-10-22"
+    },
+    "\"software tester\" remote -manual": {
+      "shown": 3,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-10-28"
+    },
     "\"junior AI engineer\" OR \"associate AI engineer\" remote": {
       "shown": 1,
       "applied": 1,
       "rejected": 0,
       "last_seen": "2026-10-30"
     },
-    "site:dice.com/job-detail \"software test engineer\" remote": {
-      "shown": 3,
-      "applied": 0,
+    "\"performance test engineer\" \"loadrunner\" remote": {
+      "shown": 1,
+      "applied": 1,
       "rejected": 0,
-      "last_seen": "2026-10-20"
+      "last_seen": "2026-10-31"
+    },
+    "\"site reliability\" \"load testing\" OR \"performance testing\" remote": {
+      "shown": 1,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-10-31"
+    },
+    "site:jobs.lever.co \"QA engineer\" OR \"test engineer\" remote": {
+      "shown": 1,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-10-31"
     },
     "\"performance center\" \"loadrunner\" remote": {
       "shown": 2,
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-30"
-    },
-    "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 12,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-28"
-    },
-    "\"quality assurance engineer\" remote": {
-      "shown": 2,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-21"
     },
     "\"AI reliability engineer\" remote": {
       "shown": 1,
@@ -132,35 +238,23 @@
       "rejected": 0,
       "last_seen": "2026-10-20"
     },
-    "site:dice.com/job-detail \"jmeter\" \"performance\" remote": {
-      "shown": 6,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-30"
-    },
     "site:myworkdayjobs.com \"software test engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 1,
+      "last_seen": "2026-10-22"
+    },
+    "\"QA engineer\" remote \"performance testing\"": {
       "shown": 1,
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-10-22"
-    },
-    "\"QA engineer\" remote \"performance testing\"": {
-      "shown": 2,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-30"
     },
     "\"test automation engineer\" remote": {
       "shown": 2,
       "applied": 0,
-      "rejected": 0,
+      "rejected": 1,
       "last_seen": "2026-10-28"
-    },
-    "\"API test engineer\" OR \"API tester\" remote": {
-      "shown": 1,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-22"
     },
     "\"k6\" OR \"gatling\" \"performance engineer\" remote": {
       "shown": 1,
@@ -177,14 +271,8 @@
     "\"UAT lead\" OR \"UAT analyst\" remote": {
       "shown": 1,
       "applied": 0,
-      "rejected": 0,
+      "rejected": 1,
       "last_seen": "2026-10-25"
-    },
-    "\"software tester\" remote -manual": {
-      "shown": 3,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-28"
     },
     "site:dice.com/job-detail \"loadrunner\" remote": {
       "shown": 1,
@@ -198,17 +286,11 @@
       "rejected": 0,
       "last_seen": "2026-10-30"
     },
-    "\"performance test engineer\" \"loadrunner\" remote": {
+    "\"QA engineer\" OR \"software tester\" \"Kansas City\"": {
       "shown": 1,
       "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-30"
-    },
-    "\"blazemeter\" engineer remote": {
-      "shown": 1,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-10-30"
+      "rejected": 1,
+      "last_seen": "2026-10-31"
     }
   }
 }
