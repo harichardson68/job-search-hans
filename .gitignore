@@ -42,3 +42,6 @@ jobsearch_errors.log
 # Dry-run sandbox + local Claude settings (2026-10-18)
 dry_run/
 .claude/
+
+# dated backups made before edits (kept locally, not committed)
+*.bak-*

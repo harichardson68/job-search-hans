@@ -935,6 +935,22 @@ BLOCKED_JOB_SITES = [
     "upwork.com",
     # Non-US boards (India / EU):
     "://www.shine.com", "://shine.com", "wearedevelopers.com", "://join.com",
+    # 2026-10-31: audit of job_decisions.json — every one of these domains was
+    # labelled search_page / not_in_us / bad_link and never anything real.
+    # Listing pages / "hire talent" pages / post-a-job pages:
+    "remoteai.io", "agentic-engineering-jobs.com", "migratemate.co",
+    "passridge.com", "scouts.yutori.com", "onnetpulse.com", "magnosilva.com",
+    "tallo.com", "virtualvocations.com", "unstop.com", "aidoos.com",
+    # Re-post aggregators that kept surfacing non-US roles:
+    "remoteleaf.com", "dynamitejobs.com", "removiet.com", "cohire.com",
+    "metaintro.com", "aiengineer.careers", "careers.sh",
+    # Non-US boards / employers on generic TLDs:
+    "maandag.com", "in.talent.com", "pnet.co.za", "jobs.personio.",
+    "jobsinhelsinki.com",  # 2026-10-31 live test: Finland board
+    # Free-hosting scraper sites (same family as dedyn.io / duckdns.org):
+    "infinityfree.me", "byethost", "000webhostapp.com", "epizy.com",
+    # Staffing-agency marketing pages ("LLM Engineer Staffing - KORE1"):
+    "-staffing/",
 ]
 
 def is_blocked_site(url):
@@ -1157,6 +1173,72 @@ def is_onsite_or_hybrid(title, description, location=""):
     return any(sig in haystack for sig in ONSITE_HYBRID_SIGNALS)
 
 
+# 2026-10-31: from the not_in_us decisions that every filter missed —
+# "AI Prompt Engineer Job Remote Ukraine", "AI Engineer – Agentic AI –
+# Remote (all genders)", "AI Engineer [gn] (Agentic AI & Automation)".
+# EU job ads carry a gender tag by law; US ads never do.
+_NON_US_TITLE_COUNTRIES = re.compile(
+    r"\b(ukraine|bulgaria|poland|romania|serbia|croatia|hungary|czechia|czech republic|"
+    r"slovakia|slovenia|lithuania|latvia|estonia|belarus|moldova|armenia|germany|"
+    r"france|spain|italy|netherlands|belgium|austria|switzerland|sweden|norway|"
+    r"denmark|finland|ireland|uk|united kingdom|south africa|philippines|pakistan|"
+    r"bangladesh|sri lanka|singapore|japan|korea|china|taiwan|hong kong|"
+    r"new zealand|australia|t[uü]rkiye|saudi arabia|qatar|tel aviv|costa rica|"
+    r"peru|uruguay|ecuador|guatemala|emea|apac|latam|europe)\b"
+)
+_EU_GENDER_TAG = re.compile(
+    r"\((?:all genders|[mwfdhx]\s*/\s*[mwfdhx](?:\s*/\s*[mwfdhx])?)\)|\[gn\]|\(gn\)",
+    re.I,
+)
+
+
+def _non_us_title_marker(title):
+    t = (title or "").lower()
+    if _EU_GENDER_TAG.search(t):
+        return "eu-gender-tag"
+    m = _NON_US_TITLE_COUNTRIES.search(t)
+    if m:
+        return f"title-country {m.group(1)}"
+    return None
+
+
+# 2026-10-31: POSITIVE US signal for postings with a full description but no
+# structured location (most Serper results). Snippet-only results are too
+# short to judge, so this only applies when the description is long enough
+# to be the real posting. Case-sensitive "US" on purpose — lowercase "us"
+# matches "join us" and makes the check meaningless.
+_US_POSITIVE_RE = re.compile(
+    r"\bUS\b|\bU\.S\.|\bUSA\b|United States|\bW-?2\b|\b1099\b|\bC2C\b|"
+    r"401\s?\(?k\)?|\bEEO\b|Equal (?:Employment )?Opportunity|E-Verify|"
+    r"green card|\bGC\b|\bH-?1B\b|U\.?S\.? citizen|security clearance|"
+    r"\b(?:EST|CST|MST|PST|EDT|CDT|PDT|ET|CT|PT)\b|"
+    r"(?:Eastern|Central|Mountain|Pacific) (?:Time|Standard)"
+)
+US_POSITIVE_MIN_DESC = 600       # chars; below this we only have a snippet
+US_POSITIVE_ENFORCE = False      # SHADOW MODE: log, don't reject. Flip after review.
+_us_shadow = {"checked": 0, "no_signal": 0}
+
+
+def has_positive_us_signal(title, description, location=""):
+    blob = f"{title}\n{location}\n{description}"
+    if _US_POSITIVE_RE.search(blob):
+        return True
+    low = blob.lower()
+    return (any(st in low for st in US_STATE_NAMES_AND_MAJOR_CITIES)
+            or any(kc in low for kc in KC_METRO_LOCATIONS)
+            or bool(US_STATE_ABBREV_PATTERN.search(location.lower())))
+
+
+def _log_us_shadow(title, url, source):
+    try:
+        _dir = os.path.join(SCRIPT_DIR, "dry_run" if DRY_RUN else "logs")
+        os.makedirs(_dir, exist_ok=True)
+        with open(os.path.join(_dir, "us_signal_shadow.log"), "a", encoding="utf-8") as f:
+            f.write(f"{datetime.now():%Y-%m-%d %H:%M}\t{source}\t{url}\t{title}\n")
+    except Exception:
+        pass
+
+
 def is_us_remote(title, description, location=""):
     # 2026-06-26: Flipped from denylist to allowlist for the structured
     # location field, per Hans's explicit request — the old approach was
@@ -1295,6 +1377,10 @@ def is_us_remote(title, description, location=""):
         "arbeit",       # German for "work"
         "offre d'emploi",  # French job posting
     ]
+    # 2026-10-31: title-only markers. Kept to the TITLE so a US posting whose
+    # description says "offices in Berlin" isn't rejected.
+    if _non_us_title_marker(title):
+        return False
     # Detect semicolon-separated multi-country locations (e.g. "EMEA; India; Poland; Ukraine")
     if re.search(r'(emea|apac|latam|india|ukraine|poland|albania|romania)[^a-z]*;', check):
         return False
@@ -1431,6 +1517,11 @@ def is_blocked_company(title, description, company=""):
     # ("Agentic AI Jobs", "148 open roles").
     t = title.lower().strip()
     if "reputed company" in t or "confidential company" in t:
+        return True
+    # 2026-10-31: same signal when it shows up in the company field instead
+    c = (company or "").lower().strip()
+    if re.search(r"\b(reputed|confidential|undisclosed|anonymous)\b.*\b(company|client|employer|firm|mnc)\b", c) \
+            or c in ("our client", "leading client", "top mnc", "mnc", "leading mnc"):
         return True
     if re.search(r"\d+\s+open roles", t) or re.search(r"\bjobs\s*(\||$)", t):
         return True
@@ -2527,6 +2618,15 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
         else:
             _LAST_REJECT_REASON = "location:not-us-remote"
             return False, score, matched, track, level_signal
+    if not str(location).strip() and len(desc or "") >= US_POSITIVE_MIN_DESC:
+        _us_shadow["checked"] += 1
+        if not has_positive_us_signal(title, desc, str(location)) \
+                and not is_kc_metro_local(title, desc, location):
+            _us_shadow["no_signal"] += 1
+            _log_us_shadow(title, url_job, source_name)
+            if US_POSITIVE_ENFORCE:
+                _LAST_REJECT_REASON = "location:no-positive-us-signal"
+                return False, score, matched, track, level_signal
     funnel.record("after_us")
 
     # NOTE: pay-floor checking for Track 4 (Remote Income Floor) happens
@@ -2554,6 +2654,123 @@ def passes_filters(title, desc, posted, location, url_job, company, source_name,
 # Sign up free at: https://serper.dev
 #
 SERPER_API_KEY = os.environ.get("SERPER_API_KEY", "")
+
+# ─── SERPER /goto RESOLUTION (2026-10-31) ───────────────────
+# Since 2026-10-30 01:30 UTC Google wraps every result after the top 3 in
+# an opaque https://www.google.com/goto?url=CAES... redirect. Every URL-based
+# filter below (search-page, non-US TLD, amazon.jobs, false-positive domain,
+# dedup) is blind to those. The Oct 30 run let an Indeed search page and a
+# Bengaluru foundit.in posting into the digest this way.
+# Fix: send the raw search response to Serper's free /resolve endpoint
+# (0 credits). Google releases the links ~30s after the search, so the
+# response may carry retryAfter; we wait and retry. Anything still wrapped
+# after that gets one direct redirect lookup, and if THAT fails the result
+# is dropped rather than allowed to bypass the URL filters.
+SERPER_RESOLVE_URL = "https://google.serper.dev/resolve"
+SERPER_RESOLVE_MAX_WAIT = 90  # seconds, per response
+_goto_stats = {"wrapped": 0, "resolved_api": 0, "resolved_redirect": 0, "dropped": 0}
+_GOTO_FIELDS = ("link", "applyLink", "url")
+
+
+def _is_goto(link):
+    return isinstance(link, str) and "google.com/goto" in link
+
+
+def _goto_items(data):
+    """Every result dict in a Serper response whose link is a /goto wrapper."""
+    out = []
+    for _v in (data or {}).values():
+        if isinstance(_v, list):
+            for _it in _v:
+                if isinstance(_it, dict) and any(_is_goto(_it.get(f)) for f in _GOTO_FIELDS):
+                    out.append(_it)
+    return out
+
+
+def _follow_goto(link):
+    """Last resort: ask Google for the redirect target without visiting it."""
+    try:
+        r = requests.get(link, allow_redirects=False, timeout=10,
+                         headers={"User-Agent": "Mozilla/5.0"})
+        loc = r.headers.get("Location", "")
+        if loc.startswith("http") and not _is_goto(loc):
+            return loc
+    except Exception:
+        pass
+    return None
+
+
+def resolve_serper_response(data, label="Serper"):
+    """Return the Serper response with /goto links replaced by real URLs.
+
+    Unresolvable results are removed. Never raises.
+    """
+    wrapped = len(_goto_items(data))
+    if not wrapped:
+        return data
+    _goto_stats["wrapped"] += wrapped
+    headers = {"X-API-KEY": SERPER_API_KEY, "Content-Type": "application/json"}
+    waited = 0
+    while True:
+        retry = None
+        try:
+            r = requests.post(SERPER_RESOLVE_URL, headers=headers, json=data, timeout=60)
+            if r.status_code == 200:
+                rd = r.json()
+                if isinstance(rd, dict):
+                    left_before = len(_goto_items(data))
+                    lists = {k: v for k, v in rd.items() if isinstance(v, list)}
+                    if lists:
+                        data = {**data, **lists}
+                    _goto_stats["resolved_api"] += max(0, left_before - len(_goto_items(data)))
+                    retry = rd.get("retryAfter")
+            else:
+                log_error(f"{label} /resolve HTTP {r.status_code}: {r.text[:200]}")
+        except Exception as e:
+            log_error(f"{label} /resolve error: {e}")
+        if not _goto_items(data) or not retry or waited >= SERPER_RESOLVE_MAX_WAIT:
+            break
+        try:
+            pause = float(retry)
+        except (TypeError, ValueError):
+            pause = 10
+        pause = max(1, min(pause, SERPER_RESOLVE_MAX_WAIT - waited))
+        if DEBUG_MODE:
+            print(f"   [DEBUG] {label} /resolve: links not released yet, retrying in {pause:.0f}s")
+        time.sleep(pause)
+        waited += pause
+
+    # Fallback per link, then drop anything still wrapped
+    for it in _goto_items(data):
+        for f in _GOTO_FIELDS:
+            if _is_goto(it.get(f)):
+                real = _follow_goto(it[f])
+                if real:
+                    it[f] = real
+                    _goto_stats["resolved_redirect"] += 1
+    for k, v in list(data.items()):
+        if isinstance(v, list):
+            keep = [it for it in v if not (isinstance(it, dict) and
+                    any(_is_goto(it.get(f)) for f in _GOTO_FIELDS))]
+            if len(keep) != len(v):
+                _goto_stats["dropped"] += len(v) - len(keep)
+                log_error(f"{label}: dropped {len(v) - len(keep)} unresolvable goto result(s)")
+            data[k] = keep
+    return data
+
+
+def resolve_serper_batch(responses, label="Serper"):
+    """Resolve (query, data) pairs gathered earlier in the run.
+
+    Searching everything first means most links have aged past Google's
+    ~30s hold by the time we resolve, so this rarely has to wait.
+    """
+    out = [(q, resolve_serper_response(d, label)) for q, d in responses]
+    print(f"   [GOTO] {label}: {_goto_stats['wrapped']} wrapped links, "
+          f"{_goto_stats['resolved_api']} resolved via /resolve, "
+          f"{_goto_stats['resolved_redirect']} via redirect, "
+          f"{_goto_stats['dropped']} dropped")
+    return out
 
 # ─── ATS DESCRIPTION ENRICHMENT (2026-10-18) ─────────────────
 # Serper/Google Jobs returns title + URL + a ~150-char snippet, so the
@@ -2830,6 +3047,7 @@ def search_serper_jobs():
         queries = [q for q in queries if q not in _paused]
         print(f"   [LEARN] Skipping {_before - len(queries)} paused Serper queries")
     seen = set()
+    responses = []
     for query in queries:
         try:
             url = "https://google.serper.dev/search"
@@ -2853,6 +3071,17 @@ def search_serper_jobs():
             data = resp.json()
             if DEBUG_MODE:
                 print(f"   [DEBUG] Serper '{query}': {len(data.get('jobs', []))} jobs, {len(data.get('organic', []))} organic, status {resp.status_code}")
+            responses.append((query, data))
+        except Exception as e:
+            print(f"   [ERROR] Serper error ({query}): {e}")
+            log_error(f"Serper error ({query}): {e}")
+        time.sleep(1.2)  # Rate limit: stay under Serper's burst threshold
+
+    # 2026-10-31: resolve google.com/goto links before any URL-based filter runs
+    responses = resolve_serper_batch(responses, "Google Jobs")
+
+    for query, data in responses:
+        try:
             # Check both jobs and organic results
             all_results = data.get("jobs", []) + data.get("organic", [])
             for item in all_results:
@@ -2912,6 +3141,8 @@ def search_serper_jobs():
                     re.match(r"^\d+\+?\s+.*\bjobs?\b", _agg_title)
                     or re.search(r"\bhire the \d+\b", _agg_title)
                     or re.search(r"\bbest remote\b.*\bjobs?\b", _agg_title)
+                    # 2026-10-31 live test: "All remote QA jobs - QAAnywhere"
+                    or re.match(r"^all\b.*\bjobs\b", _agg_title)
                 )
                 if _looks_like_listing:
                     if DEBUG_MODE:
@@ -2975,12 +3206,14 @@ def search_serper_jobs():
                         "salary": item.get("salary", ""),
                     })
         except Exception as e:
-            print(f"   [ERROR] Serper error ({query}): {e}")
-            log_error(f"Serper error ({query}): {e}")
-        time.sleep(1.2)  # Rate limit: stay under Serper's burst threshold
+            print(f"   [ERROR] Serper processing error ({query}): {e}")
+            log_error(f"Serper processing error ({query}): {e}")
     print(f"   [OK] Google Jobs: {len(jobs)} relevant jobs found")
     print(f"   [ATS] descriptions fetched: {_ats_stats['enriched']} enriched, "
           f"{_ats_stats['failed']} failed, {_ats_stats['attempted']} attempted")
+    print(f"   [US-SHADOW] {_us_shadow['no_signal']} of {_us_shadow['checked']} full-description "
+          f"postings had no positive US signal "
+          f"({'REJECTED' if US_POSITIVE_ENFORCE else 'logged only'} -> logs/us_signal_shadow.log)")
     return jobs
 
 
@@ -3187,6 +3420,13 @@ SERPER_NON_US_TLDS = (
     ".pl", ".at", ".be", ".pt", ".cz", ".gr",
     ".com.au", ".co.nz", ".co.in", ".in", ".sg", ".com.sg",
     ".ca", ".com.br", ".mx", ".com.mx",
+    # 2026-10-31: pnet.co.za (South Africa) reached the digest; rest of the
+    # common non-US ccTLDs added so they stop being found one at a time.
+    ".co.za", ".za", ".ua", ".ro", ".bg", ".hu", ".sk", ".si", ".rs",  # not .hr — breezy.hr is a US ATS
+    ".lt", ".lv", ".ee", ".com.ar", ".ar", ".com.co", ".cl", ".pe",
+    ".ph", ".pk", ".bd", ".lk", ".com.tr", ".tr", ".il", ".ae", ".sa", ".qa",
+    ".ng", ".ke", ".eg", ".vn", ".my", ".com.my", ".th", ".jp", ".kr",
+    ".cn", ".hk", ".com.hk", ".tw",
 )
 
 # 2026-10-24: non-US job boards on .com domains — the TLD check can't see
@@ -3243,6 +3483,11 @@ def _is_non_us_serper_posting(title, description, url):
         if domain_part.endswith(tld):
             return f"tld {tld}"
 
+    # 3a0. 2026-10-31: LinkedIn country subdomains (za.linkedin.com,
+    # nz.linkedin.com...) — the live test let a Bloemfontein job through.
+    if re.match(r"^(?!www\.)[a-z]{2}\.linkedin\.com$", domain_part):
+        return f"linkedin-country {domain_part[:2]}"
+
     # 3a. 2026-10-24: non-US boards hiding on .com
     for _dom in SERPER_NON_US_DOMAINS:
         if domain_part == _dom or domain_part.endswith("." + _dom):
@@ -3271,6 +3516,9 @@ def _is_non_us_serper_posting(title, description, url):
             return f"urlslug {marker.strip('-')}"
 
     return None
+
+
+AMAZON_TITLE_LANE = re.compile(r"\b(performance|load|test|tester|testing|qa|quality|sdet|reliability)\b", re.I)
 
 
 def search_amazon_jobs():
@@ -3308,6 +3556,9 @@ def search_amazon_jobs():
             if resp.status_code != 200:
                 continue
             data = resp.json()
+            # 2026-10-31: goto links fail the amazon.jobs check below and
+            # were being silently dropped — resolve them first.
+            data = resolve_serper_response(data, "Amazon Jobs")
             all_results = data.get("jobs", []) + data.get("organic", [])
 
             for item in all_results:
@@ -3320,6 +3571,19 @@ def search_amazon_jobs():
                 # Must be from amazon.jobs
                 if "amazon.jobs" not in url_job.lower():
                     continue
+                # 2026-10-31: Amazon tech roles are mostly 5-day on-site, and the
+                # Agentic SDE / sales / ML roles were 59 of 68 Amazon rejects.
+                # Keep only titles in Hans's lane; he checks remote by hand.
+                if not AMAZON_TITLE_LANE.search(title):
+                    if DEBUG_MODE:
+                        print(f"   [DEBUG] Amazon FILTERED-title-lane: {title[:60]}")
+                    continue
+                # 2026-10-31: one Amazon job shows up under /en/, /en-gb/, /jp/,
+                # /pt/... (117 records were only 87 distinct jobs). Collapse to
+                # the job ID so in-run and cross-run dedup both see one URL.
+                _amz_id = re.search(r"amazon\.jobs/(?:[a-z]{2}(?:-[a-z]{2})?/)?jobs/(\d+)", url_job.lower())
+                if _amz_id:
+                    url_job = f"https://www.amazon.jobs/en/jobs/{_amz_id.group(1)}"
                 if url_job in seen:
                     continue
                 seen.add(url_job)
@@ -4010,8 +4274,12 @@ def main():
 
     # Apply minimum score thresholds per track
     MIN_SCORES = {
-        "Performance Engineering": 30,  # Lower threshold - core specialty
-        "AI Engineering": 40,           # Lowered from 51 - catching real jobs
+        # 2026-10-31: set from job_decisions.json (855 records). Perf >=40 kept
+        # 11/14 applied, cut 13/23 rejects. AI: score has no signal below 50 —
+        # >=50 kept 28/44 applied, cut 67/174 rejects (Hans: stop reach AI roles).
+        # Re-check with score_separation_check.py as more decisions come in.
+        "Performance Engineering": 40,  # was 30
+        "AI Engineering": 50,           # was 40
         "QA Automation": 30,            # SDET / QA hybrid
         "Gap Track": 20,      # Modest bar — relief track, breadth over precision
     }

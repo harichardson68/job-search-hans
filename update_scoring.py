@@ -34,7 +34,7 @@ JSON_DIR   = os.path.join(SCRIPT_DIR, "json_files")  # all pipeline data .json f
 load_dotenv(os.path.join(SCRIPT_DIR, ".env"))
 
 SHEET_ID         = "1nv9XmVWJUvJ08t6ldjJFYhZ25MfTLhUAAph3CrSzlmE"
-SHEET_RANGE      = "Form Responses 1!A:D"
+SHEET_RANGE      = "Form Responses 1!A:H"  # 2026-10-31: was A:D — missed Job Token (E) and the pre-June layout (G/H)
 CREDENTIALS_FILE = os.path.join(JSON_DIR, "google_credentials.json")
 
 DECISIONS_FILE   = os.path.join(JSON_DIR, "job_decisions.json")
@@ -60,6 +60,64 @@ DECISION_MAP = {
     "not in united states":     "not_in_us",
     "other":                    "other",
 }
+
+# 2026-10-31: the form's option labels drifted from these keys
+# ("Bad Link/Job Not Available", "Onsite/Not Remote", "Not Interested/Not a
+# match", "Already Seen/Duplicate"), so 64 decisions fell through to "other".
+# Match on a normalized prefix instead of the exact string.
+_DECISION_PREFIXES = [
+    ("applied", "applied"), ("bad link", "bad_link"), ("onsite", "onsite"),
+    ("too senior", "too_senior"), ("salary too low", "salary_too_low"),
+    ("not interested", "not_interested"), ("already seen", "already_seen"),
+    ("search page", "search_page"), ("not in united states", "not_in_us"),
+    ("other", "other"),
+]
+
+
+def normalize_decision(raw):
+    t = re.sub(r"\s*/\s*", " / ", (raw or "").strip().lower())
+    if t in DECISION_MAP:
+        return DECISION_MAP[t]
+    for prefix, key in _DECISION_PREFIXES:
+        if t.startswith(prefix):
+            return key
+    return "other"
+
+
+def parse_job_number(raw):
+    """'4' -> 4; 'A1' / 'G3' / 'S2' -> 'A1' / 'G3' / 'S2'; '' -> None.
+    2026-10-31: only the 'A' prefix used to survive — 'G'/'S' numbers raised
+    ValueError and the row was silently skipped (37 rows)."""
+    t = str(raw or "").strip().upper()
+    if not t:
+        return None
+    return int(t) if t.isdigit() else t
+
+
+# token -> decision dict, filled by read_google_sheet(); matched by job_id in
+# save_decisions(), so a late submission can't land on the wrong day's job.
+DECISIONS_BY_TOKEN = {}
+
+
+def load_token_index():
+    """token -> job dict, from every today_jobs_run_*.json archive."""
+    idx = {}
+    for fname in os.listdir(JSON_DIR):
+        if not (fname.startswith("today_jobs_run_") and fname.endswith(".json")):
+            continue
+        try:
+            with open(os.path.join(JSON_DIR, fname), encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            continue
+        jobs = data.get("jobs", data) if isinstance(data, dict) else data
+        if isinstance(jobs, dict):
+            jobs = list(jobs.values())
+        for j in jobs if isinstance(jobs, list) else []:
+            if isinstance(j, dict) and j.get("token"):
+                idx[j["token"]] = j
+    return idx
+
 
 print(f"\n{'='*55}")
 print(f"  Hans Update Scoring — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -142,34 +200,39 @@ def read_google_sheet():
 
         print(f"   Found {len(rows)-1} total submission(s) in sheet (all dates)")
 
+        DECISIONS_BY_TOKEN.clear()
         for row in rows[1:]:
-            if len(row) < 3:
+            row = list(row) + [""] * (8 - len(row))
+            timestamp  = row[0]
+            # Current layout: B=Job Number, C=Decision, D=Reason, E=Job Token.
+            # Pre-June-21 layout: G=Job Number, H=Decision.
+            job_number = row[1] or row[6]
+            decision   = row[2] or row[7]
+            reason     = row[3]
+            token      = row[4].strip()
+            if not decision.strip():
                 continue
-            timestamp  = row[0] if len(row) > 0 else ""
-            job_number = row[1] if len(row) > 1 else ""
-            decision   = row[2] if len(row) > 2 else ""
-            reason     = row[3] if len(row) > 3 else ""
 
             row_date = parse_sheet_date(timestamp)
             if not row_date:
                 print(f"   [WARN] Could not parse timestamp: '{timestamp}' — skipping")
                 continue
 
-            try:
-                job_num_raw = str(job_number).strip().upper()
-                if job_num_raw.startswith("A"):
-                    job_num = job_num_raw
-                else:
-                    job_num = int(job_num_raw)
-            except ValueError:
+            job_num = parse_job_number(job_number)
+            if job_num is None and not token:
                 continue
 
-            decision_key = DECISION_MAP.get(decision.lower().strip(), "other")
-            decisions_by_date.setdefault(row_date, {})[job_num] = {
+            decision_key = normalize_decision(decision)
+            dec = {
                 "decision": decision_key,
                 "reason":   reason.strip() if reason else None,
                 "raw":      decision,
             }
+            if token:
+                # Token rows are matched by job_id only — never by date.
+                DECISIONS_BY_TOKEN[token] = dec
+            else:
+                decisions_by_date.setdefault(row_date, {})[job_num] = dec
             print(f"   [{row_date}] Job {job_num}: {decision_key}" + (f" — {reason}" if reason else ""))
 
     except Exception as e:
@@ -194,12 +257,23 @@ def save_decisions(today_jobs, decisions_by_date):
         total_updated = 0
         total_new     = 0
 
+        # 2026-10-31: token decisions -> job_id decisions
+        token_index = load_token_index()
+        decisions_by_job_id = {}
+        for tok, dec in DECISIONS_BY_TOKEN.items():
+            job = token_index.get(tok)
+            if job and job.get("job_id"):
+                decisions_by_job_id[job["job_id"]] = dec
+            else:
+                print(f"   [WARN] token {tok} not found in any run archive — skipped")
+
         # ── TODAY: build fresh entries from today_jobs.json ──────
         today_decisions = decisions_by_date.get(TODAY, {})
         today_entries = []
         for job_num, job in today_jobs.items():
             dec = (
-                today_decisions.get(job_num)
+                decisions_by_job_id.get(job.get("job_id", ""))
+                or today_decisions.get(job_num)
                 or today_decisions.get(str(job_num))
                 or today_decisions.get(int(job_num) if str(job_num).isdigit() else job_num)
                 or {}
@@ -223,7 +297,21 @@ def save_decisions(today_jobs, decisions_by_date):
         all_decisions[TODAY] = today_entries
         total_new = len(today_entries)
 
-        # ── BACKFILL: update past no_response entries ─────────────
+        # ── BACKFILL by job_id (token rows) ───────────────────────
+        for date_str, day_entries in all_decisions.items():
+            if date_str == TODAY:
+                continue
+            for entry in day_entries:
+                dec = decisions_by_job_id.get(entry.get("job_id", ""))
+                if not dec or entry.get("decision") not in ("no_response", None, ""):
+                    continue
+                entry["decision"]     = dec.get("decision", "no_response")
+                entry["reason"]       = dec.get("reason", None)
+                entry["raw_decision"] = dec.get("raw", "")
+                total_updated += 1
+                print(f"   [BACKFILL-TOKEN] {date_str} {entry.get('job_id')}: {entry['decision']}")
+
+        # ── BACKFILL: legacy rows without a token (date + job number) ─────
         for date_str, date_decisions in decisions_by_date.items():
             if date_str == TODAY:
                 continue  # already handled above

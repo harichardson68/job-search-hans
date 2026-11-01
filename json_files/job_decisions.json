@@ -276,10 +276,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-05-07 11:23"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-05-07 11:23",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "f3e7381671",
@@ -3154,10 +3156,12 @@
         "jmeter"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-05 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-06-05 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "6744bee04f",
@@ -3172,10 +3176,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-05 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-06-05 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "bb3a838744",
@@ -3460,10 +3466,12 @@
         "AI-title:ai automation"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-06 23:00"
+      "decision": "not_interested",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review N",
+      "timestamp": "2026-06-06 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-06-07": [
@@ -3960,10 +3968,12 @@
         "jmeter"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-12 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-06-12 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "0c2d1cb32a",
@@ -4215,10 +4225,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-15 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-06-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-06-16": [
@@ -4760,10 +4772,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-18 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-06-18 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-06-19": [
@@ -4963,10 +4977,12 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-19 23:00"
+      "decision": "not_interested",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review N",
+      "timestamp": "2026-06-19 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-06-20": [
@@ -5136,10 +5152,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-20 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-06-20 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-06-21": [
@@ -5219,12 +5237,13 @@
         "api integration"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-22 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "4b553090e8",
@@ -5240,12 +5259,13 @@
         "agentic ai"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-06-22 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-06-23": [
@@ -5265,12 +5285,13 @@
         "appdynamics"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "cf37d3f424",
@@ -5307,12 +5328,13 @@
         "ai agent"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "8cef432560",
@@ -5328,12 +5350,13 @@
         "ai agent"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "5a33b8fbc7",
@@ -5349,12 +5372,13 @@
         "prompt engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "8228795f01",
@@ -5426,12 +5450,13 @@
         "observability"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "b0e7ee7d72",
@@ -5446,12 +5471,13 @@
         "agentic ai"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "02ea3d34de",
@@ -5465,10 +5491,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-23 23:00"
+      "decision": "not_interested",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review N",
+      "timestamp": "2026-06-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "dd175a9075",
@@ -5499,12 +5527,13 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "other",
+      "decision": "not_interested",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
       "timestamp": "2026-06-23 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-06-24": [
@@ -5529,12 +5558,13 @@
         "agentic ai"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-24 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "96d25a1705",
@@ -5590,12 +5620,13 @@
         "ai observability"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-24 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "edcd52b30e",
@@ -5610,12 +5641,13 @@
         "ai qa engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": "Expired",
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-24 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "1eb020339d",
@@ -5650,12 +5682,13 @@
         "agentic ai"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": "Expired",
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-24 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "d6e460689b",
@@ -5706,12 +5739,13 @@
         "mlops engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-06-24 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "d283424dbe",
@@ -5873,12 +5907,13 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-06-25 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "e466ddd1b9",
@@ -5894,10 +5929,11 @@
         "agentic"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "onsite",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-06-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "86793d9a17",
@@ -5912,10 +5948,11 @@
         "prompt engineering"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "befe80bfba",
@@ -5930,10 +5967,11 @@
         "ai agent developer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "c48f05a835",
@@ -5948,10 +5986,11 @@
         "ml engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "39aed97e5b",
@@ -5966,10 +6005,11 @@
         "ml engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "onsite",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-25 23:00"
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-06-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "495c7580e8",
@@ -6118,12 +6158,13 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "other",
+      "decision": "not_interested",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
       "timestamp": "2026-06-28 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-06-29"
+      "reviewed_date": "2026-06-29",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-06-29": [
@@ -6141,10 +6182,11 @@
         "ai qa"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-06-29 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "0bb8d2ed7e",
@@ -6161,10 +6203,11 @@
         "tool use"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_in_us",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-06-29 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "a0db76369c",
@@ -6180,10 +6223,11 @@
         "prompt engineering"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-29 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "57932b6b61",
@@ -6199,10 +6243,11 @@
         "agentic ai"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-29 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-06-29 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-06-30": [
@@ -6276,10 +6321,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-06-30 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-06-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-07-01": [
@@ -6371,12 +6418,13 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-01 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-02"
+      "reviewed_date": "2026-07-02",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-07-02": [
@@ -6453,12 +6501,13 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-02 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-06"
+      "reviewed_date": "2026-07-06",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "c1111fa0c4",
@@ -6566,12 +6615,13 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-03 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-06"
+      "reviewed_date": "2026-07-06",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "877e98900e",
@@ -6627,12 +6677,13 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-07-04 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-06"
+      "reviewed_date": "2026-07-06",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "bbfcfb8851",
@@ -6978,12 +7029,13 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-09 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-13"
+      "reviewed_date": "2026-07-13",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-07-10": [
@@ -7106,10 +7158,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-10 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-07-10 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-07-11": [
@@ -7291,12 +7345,13 @@
         "ai qa"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-13 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-20"
+      "reviewed_date": "2026-07-20",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "fe24536497",
@@ -7368,10 +7423,11 @@
         "agentic"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-14 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-14 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "4db96b357b",
@@ -7386,10 +7442,11 @@
         "ims"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-14 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-14 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-07-15": [
@@ -7407,10 +7464,11 @@
         "agentic"
       ],
       "source": "Google Jobs",
-      "decision": "too_senior",
+      "decision": "no_response",
       "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-07-15 23:00"
+      "raw_decision": "",
+      "timestamp": "2026-07-15 23:00",
+      "repaired": "2026-10-31 misrouted"
     },
     {
       "job_id": "7c53ca241a",
@@ -7425,10 +7483,11 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "too_senior",
+      "decision": "no_response",
       "reason": null,
-      "raw_decision": "Too Senior",
-      "timestamp": "2026-07-15 23:00"
+      "raw_decision": "",
+      "timestamp": "2026-07-15 23:00",
+      "repaired": "2026-10-31 misrouted"
     },
     {
       "job_id": "4c3d4c24f1",
@@ -7480,10 +7539,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-15 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-07-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "7532544e5b",
@@ -7514,10 +7575,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-15 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-07-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-07-17": [
@@ -7552,12 +7615,13 @@
         "ai automation engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-07-17 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-20"
+      "reviewed_date": "2026-07-20",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "7ca10e6d6f",
@@ -7588,12 +7652,13 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "not_interested",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
       "timestamp": "2026-07-17 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-20"
+      "reviewed_date": "2026-07-20",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "9fffd6ffc8",
@@ -7631,12 +7696,13 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-07-17 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-20"
+      "reviewed_date": "2026-07-20",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "68dc1109b6",
@@ -7673,10 +7739,11 @@
         "ims"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-17 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-07-17 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "9cf270e057",
@@ -7691,10 +7758,11 @@
         "cobol"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-17 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-07-17 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "7d2ed90b6d",
@@ -7767,12 +7835,13 @@
         "ai engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-07-18 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-20"
+      "reviewed_date": "2026-07-20",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "880af3d520",
@@ -7954,12 +8023,13 @@
         "llm"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "already_seen",
       "reason": null,
       "raw_decision": "Already Seen/Duplicate",
       "timestamp": "2026-07-19 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-20"
+      "reviewed_date": "2026-07-20",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "9346d1f31e",
@@ -8161,10 +8231,11 @@
         "prompt engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_in_us",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-22 23:00"
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-22 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "93bf50eda9",
@@ -8182,10 +8253,11 @@
         "jmeter"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "onsite",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-22 23:00"
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-07-22 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "74f4d87f4c",
@@ -8201,10 +8273,11 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
+      "decision": "not_in_us",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-22 23:00"
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-22 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-07-23": [
@@ -8222,10 +8295,11 @@
         "generative ai"
       ],
       "source": "Google Jobs",
-      "decision": "not_in_us",
+      "decision": "no_response",
       "reason": "Jordan",
-      "raw_decision": "Not in United States",
-      "timestamp": "2026-07-23 23:00"
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00",
+      "repaired": "2026-10-31 misrouted"
     },
     {
       "job_id": "8996dbbe9c",
@@ -8344,10 +8418,11 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "not_in_us",
+      "decision": "no_response",
       "reason": "Australia",
-      "raw_decision": "Not in United States",
-      "timestamp": "2026-07-23 23:00"
+      "raw_decision": "",
+      "timestamp": "2026-07-23 23:00",
+      "repaired": "2026-10-31 misrouted"
     },
     {
       "job_id": "8938b2b663",
@@ -8361,10 +8436,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-23 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-07-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-07-24": [
@@ -8421,10 +8498,11 @@
         "prompt engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-25 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "3841340089",
@@ -8439,10 +8517,11 @@
         "prompt engineering"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-25 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "b0fd4fcca3",
@@ -8459,10 +8538,11 @@
         "agile"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-25 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-07-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "aa15c6d9cd",
@@ -8476,10 +8556,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-25 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-07-25 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-07-26": [
@@ -8500,10 +8582,11 @@
         "prompt engineering"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "too_senior",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-26 23:00"
+      "raw_decision": "Too Senior",
+      "timestamp": "2026-07-26 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "0e4388d2c2",
@@ -8521,10 +8604,11 @@
         "langchain engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "search_page",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-26 23:00"
+      "raw_decision": "Search Page Listing",
+      "timestamp": "2026-07-26 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "6bb600c34f",
@@ -8542,10 +8626,11 @@
         "observability"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-26 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-26 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "f514eb81de",
@@ -8561,10 +8646,11 @@
         "prompt engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_in_us",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-26 23:00"
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-07-26 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "6cbe5d541f",
@@ -8579,10 +8665,11 @@
         "ai qa engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-26 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-26 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "7fbfa45e79",
@@ -8598,10 +8685,11 @@
         "agentic ai"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-26 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-07-26 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "811b104868",
@@ -8618,12 +8706,13 @@
         "LoadRunner-in-title"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-07-26 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-07-27"
+      "reviewed_date": "2026-07-27",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "b9e47b715a",
@@ -8678,10 +8767,11 @@
         "agile"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-27 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-07-27 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "3723c91882",
@@ -8695,10 +8785,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-27 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-07-27 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-07-28": [
@@ -8755,12 +8847,13 @@
         "grafana"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-07-28 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-08-06"
+      "reviewed_date": "2026-08-06",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "c38b596dc1",
@@ -8776,10 +8869,11 @@
         "cobol developer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-28 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-07-28 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-07-29": [
@@ -8874,10 +8968,12 @@
         "jmeter"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-29 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-07-29 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "629f112881",
@@ -8892,10 +8988,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-07-29 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-07-29 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "16499b7190",
@@ -9131,10 +9229,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-03 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-08-03 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "206bc075ff",
@@ -9187,10 +9287,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-03 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-03 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-04": [
@@ -9284,10 +9386,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-04 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-08-04 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "ae791d4c14",
@@ -9321,10 +9425,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-04 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-04 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-05": [
@@ -9397,12 +9503,13 @@
         "ai qa engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "already_seen",
       "reason": null,
       "raw_decision": "Already Seen/Duplicate",
       "timestamp": "2026-08-05 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-08-06"
+      "reviewed_date": "2026-08-06",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "367bb00e81",
@@ -9418,12 +9525,13 @@
         "agentic"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-08-05 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-08-06"
+      "reviewed_date": "2026-08-06",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-08-06": [
@@ -9492,12 +9600,13 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-08-06 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-08-10"
+      "reviewed_date": "2026-08-10",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-08-07": [
@@ -9760,10 +9869,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-09 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-08-09 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "25f61f3109",
@@ -9892,10 +10003,12 @@
         "jmeter"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-10 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-08-10 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "13228312e7",
@@ -9926,10 +10039,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-10 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-10 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-11": [
@@ -10019,10 +10134,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-11 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-08-11 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "afcb92a15f",
@@ -10037,10 +10154,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-11 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-08-11 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-12": [
@@ -10239,10 +10358,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-13 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-13 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "aa6069673f",
@@ -10298,10 +10419,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-14 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-14 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "7947fe1be4",
@@ -10317,10 +10440,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-14 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-08-14 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "56bc4fa616",
@@ -10352,10 +10477,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-14 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-14 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "11e51f318c",
@@ -10369,10 +10496,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-14 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-14 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-15": [
@@ -10448,12 +10577,13 @@
         "ai agent developer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "not_interested",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
       "timestamp": "2026-08-15 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-08-17"
+      "reviewed_date": "2026-08-17",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "45902b923a",
@@ -10486,10 +10616,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-15 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "22759138fd",
@@ -10522,10 +10654,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-15 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-16": [
@@ -10619,10 +10753,12 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-17 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-17 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "a3bb18d279",
@@ -10636,10 +10772,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-17 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-17 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-18": [
@@ -10710,10 +10848,12 @@
         "LoadRunner-in-title"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-18 23:00"
+      "decision": "not_in_us",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review LN",
+      "timestamp": "2026-08-18 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-19": [
@@ -10770,10 +10910,12 @@
         "tool use"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-19 23:00"
+      "decision": "not_interested",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review N",
+      "timestamp": "2026-08-19 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "330d7a8fe4",
@@ -10789,10 +10931,12 @@
         "jmeter"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-19 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-08-19 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "869e9738c9",
@@ -11002,10 +11146,12 @@
         "natural"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-22 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-22 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-23": [
@@ -11135,10 +11281,12 @@
         "performance testing"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-23 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-08-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "d79dbf9e5d",
@@ -11190,10 +11338,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-23 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-23 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-24": [
@@ -11266,10 +11416,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-24 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-24 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-25": [
@@ -11479,10 +11631,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-26 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-26 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "989e5db484",
@@ -11690,10 +11844,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-27 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-27 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "e077f9c17a",
@@ -11902,10 +12058,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-28 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-28 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "b546f8b9ee",
@@ -11938,10 +12096,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-28 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-08-28 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-29": [
@@ -12055,10 +12215,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-30 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-08-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "fa81cfa829",
@@ -12106,10 +12268,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-30 23:00"
+      "decision": "not_interested",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review N",
+      "timestamp": "2026-08-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-08-31": [
@@ -12126,10 +12290,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-31 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-08-31 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "71d80468d5",
@@ -12144,10 +12310,12 @@
         "performance tester"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-08-31 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-08-31 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-09-01": [
@@ -12256,10 +12424,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-01 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-01 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-09-02": [
@@ -12368,10 +12538,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-02 23:00"
+      "decision": "not_in_us",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review LN",
+      "timestamp": "2026-09-02 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "6cfff40fd7",
@@ -12485,10 +12657,12 @@
         "aws"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-03 23:00"
+      "decision": "not_in_us",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review LN",
+      "timestamp": "2026-09-03 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-09-04": [
@@ -12617,10 +12791,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-04 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-09-04 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "d892f7d8d9",
@@ -12905,10 +13081,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-08 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-08 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "8ff509d255",
@@ -13148,10 +13326,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-20 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-20 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "d629817702",
@@ -13165,10 +13345,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-20 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-20 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-09-21": [
@@ -13338,10 +13520,12 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-22 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-22 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "f87c7205e5",
@@ -13355,10 +13539,12 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-22 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-22 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-09-23": [
@@ -13791,10 +13977,12 @@
         "performance engineer"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-26 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-09-26 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-09-27": [
@@ -13963,10 +14151,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-09-28 23:00"
+      "decision": "bad_link",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review J",
+      "timestamp": "2026-09-28 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "80935e4f3f",
@@ -14226,12 +14416,13 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-10-06 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-10-08"
+      "reviewed_date": "2026-10-08",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "dfd4d21c8a",
@@ -14246,12 +14437,13 @@
         "prompt engineer"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "bad_link",
       "reason": null,
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-10-06 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-10-08"
+      "reviewed_date": "2026-10-08",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "4c592b6f8e",
@@ -14265,12 +14457,13 @@
         "ai qa"
       ],
       "source": "Google Jobs",
-      "decision": "other",
+      "decision": "not_interested",
       "reason": null,
       "raw_decision": "Not Interested/Not a match",
       "timestamp": "2026-10-06 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-10-08"
+      "reviewed_date": "2026-10-08",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "93f206664a",
@@ -14286,12 +14479,13 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-10-06 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-10-08"
+      "reviewed_date": "2026-10-08",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-10-07": [
@@ -14402,10 +14596,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-07 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-10-07 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "516ac8cefa",
@@ -14845,10 +15041,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-10 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-10-10 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "d444091929",
@@ -15186,10 +15384,12 @@
         "performance engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-13 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-10-13 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-10-15": [
@@ -15362,10 +15562,12 @@
         "performance testing"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-15 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "b9329032bf",
@@ -15397,10 +15599,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-15 23:00"
+      "decision": "not_in_us",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review LN",
+      "timestamp": "2026-10-15 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     }
   ],
   "2026-10-16": [
@@ -15491,10 +15695,12 @@
         "loadrunner"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-16 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-16 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-10-31"
     },
     {
       "job_id": "8244d6ac69",
@@ -15564,10 +15770,12 @@
         "agentic"
       ],
       "source": "Amazon Jobs",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-17 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-17 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     }
   ],
   "2026-10-18": [
@@ -15586,12 +15794,13 @@
       ],
       "source": "Google Jobs",
       "query": "",
-      "decision": "other",
+      "decision": "onsite",
       "reason": null,
       "raw_decision": "Onsite/Not Remote",
       "timestamp": "2026-10-18 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-10-19"
+      "reviewed_date": "2026-10-19",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "535888ef13",
@@ -15656,12 +15865,13 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"performance test engineer\" remote",
-      "decision": "other",
+      "decision": "already_seen",
       "reason": null,
       "raw_decision": "Already Seen/Duplicate",
       "timestamp": "2026-10-19 23:00",
       "reviewed": true,
-      "reviewed_date": "2026-10-22"
+      "reviewed_date": "2026-10-22",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "4bbe637eb9",
@@ -15702,10 +15912,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"software test engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-19 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-19 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "78801a531d",
@@ -15723,10 +15934,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"software test engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-19 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-19 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "1606d268ca",
@@ -15743,10 +15955,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"performance center\" \"loadrunner\" remote",
-      "decision": "no_response",
+      "decision": "other",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-19 23:00"
+      "raw_decision": "Other",
+      "timestamp": "2026-10-19 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "aa60dcaa0a",
@@ -15761,10 +15974,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "other",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-19 23:00"
+      "raw_decision": "Other",
+      "timestamp": "2026-10-19 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "0af35ca544",
@@ -15779,10 +15993,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-19 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-10-19 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "1ed63ce1e8",
@@ -15797,10 +16012,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"quality assurance engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-19 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-19 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-10-20": [
@@ -15831,10 +16047,12 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"performance test engineer\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-20 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-20 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "b8908886da",
@@ -16035,10 +16253,11 @@
       ],
       "source": "TheirStack",
       "query": "",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-21 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-21 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "54b0e2b84e",
@@ -16058,10 +16277,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-21 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-21 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "98cad4ead4",
@@ -16076,10 +16296,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-21 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-10-21 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "09bc7f3d86",
@@ -16094,10 +16315,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"quality assurance engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-21 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-21 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "5ac6e78ae1",
@@ -16143,10 +16365,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:myworkdayjobs.com \"software test engineer\" remote",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-22 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-10-22 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "932e530a17",
@@ -16164,10 +16387,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"QA engineer\" remote \"performance testing\"",
-      "decision": "no_response",
+      "decision": "onsite",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-22 23:00"
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-10-22 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "bbcf19b77d",
@@ -16185,10 +16409,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"test automation engineer\" remote",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-22 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-10-22 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "d1713f445f",
@@ -16203,10 +16428,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"API test engineer\" OR \"API tester\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-22 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-22 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-10-23": [
@@ -16247,10 +16473,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-23 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-10-23 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-10-24": [
@@ -16285,10 +16512,11 @@
       ],
       "source": "TheirStack",
       "query": "",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-24 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-24 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "1a46191ae4",
@@ -16306,10 +16534,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-24 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-24 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "b1a59e3b8d",
@@ -16327,10 +16556,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-24 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-24 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "68cee774d6",
@@ -16372,10 +16602,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-25 23:00"
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-25 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "5e04a8124c",
@@ -16391,10 +16622,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"UAT lead\" OR \"UAT analyst\" remote",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-25 23:00"
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-10-25 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-10-26": [
@@ -16425,10 +16657,12 @@
       ],
       "source": "Google Jobs",
       "query": "\"software tester\" remote -manual",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-26 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-26 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "ddbb77e775",
@@ -16445,10 +16679,12 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"loadrunner\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-26 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-10-26 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     }
   ],
   "2026-10-27": [
@@ -16484,10 +16720,12 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"performance test engineer\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-27 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-27 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "26bb00fa9c",
@@ -16581,10 +16819,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "onsite",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-28 23:00"
+      "raw_decision": "Onsite/Not Remote",
+      "timestamp": "2026-10-28 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "32f9a40a70",
@@ -16631,10 +16870,11 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-28 23:00"
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-10-28 23:00",
+      "repaired": "2026-10-31 token"
     },
     {
       "job_id": "8dece26d1a",
@@ -16649,10 +16889,11 @@
       ],
       "source": "Google Jobs",
       "query": "\"software tester\" remote -manual",
-      "decision": "no_response",
+      "decision": "not_in_us",
       "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-28 23:00"
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-10-28 23:00",
+      "repaired": "2026-10-31 token"
     }
   ],
   "2026-10-30": [
@@ -16683,10 +16924,12 @@
       ],
       "source": "Google Jobs",
       "query": "\"performance engineer\" \"TEKsystems\" OR \"Insight Global\" OR \"Randstad\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-10-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "47e2be55c4",
@@ -16706,10 +16949,12 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "4de1ea5513",
@@ -16729,10 +16974,12 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "5fd722bc15",
@@ -16788,10 +17035,12 @@
       ],
       "source": "Google Jobs",
       "query": "site:dice.com/job-detail \"jmeter\" \"performance\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
+      "decision": "applied",
+      "reason": "backlog review in chat (would apply; not confirmed applied)",
+      "raw_decision": "backlog-review A",
+      "timestamp": "2026-10-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "9fde151be9",
@@ -16814,33 +17063,12 @@
       ],
       "source": "Google Jobs",
       "query": "\"performance center\" \"loadrunner\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
-    },
-    {
-      "job_id": "a269ba664a",
-      "number": "7",
-      "title": "Senior Performance Engineer- JMeter, JavaScript - Remote",
-      "company": "N/A",
-      "track": "Performance Engineering",
-      "score": 171,
-      "url": "https://www.google.com/goto?url=CAESqAEB6zswFcIXkSVZksuTi2t5w-7E0yr5t-bI6spBBguPCWU3WN4gYBUs2QJauavjeIhHN5OqWKu0FaoGmWds-CtldJ40gUWGlKxnHBU7HhAOGftCMVgycJHJ57RiNBKZlgyQcqPnNFIvqlYDOyugnlqRWRxxt-d2_zT_YywjXguqC2zIFr-B5cYlLqAVFzlMjH0ab42591mKbNbcaUhT_CZlpsS9JiFQH5I",
-      "matched_keywords": [
-        "loadrunner",
-        "performance test",
-        "javascript",
-        "java",
-        "performance engineer",
-        "jmeter"
-      ],
-      "source": "Google Jobs",
-      "query": "\"performance test engineer\" \"loadrunner\" remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
+      "decision": "onsite",
+      "reason": "backlog review in chat",
+      "raw_decision": "backlog-review L",
+      "timestamp": "2026-10-30 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-01"
     },
     {
       "job_id": "62a2e8dca7",
@@ -16862,52 +17090,6 @@
       ],
       "source": "TheirStack",
       "query": "",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
-    },
-    {
-      "job_id": "ea0ca072d0",
-      "number": "G2",
-      "title": "QA Automation Engineer II",
-      "company": "N/A",
-      "track": "QA Automation",
-      "score": 181,
-      "url": "https://www.google.com/goto?url=CAESZQHrOzAVPM6RAgNYYfmpsjD63ayihRoENdb1UAOZfRC0py1naDHqZo4cpxYxjyG2rGBh7Vg4XF6g3m9mXVj17Ct0tuY6vQwsyGYpwL2YrF81ycO35Vb-Gg1h_Qk9AQQCg3sDdLj-",
-      "matched_keywords": [
-        "career-qa-title",
-        "performance test",
-        "selenium",
-        "blazemeter",
-        "performance testing",
-        "qa+performance",
-        "jmeter"
-      ],
-      "source": "Google Jobs",
-      "query": "\"blazemeter\" engineer remote",
-      "decision": "no_response",
-      "reason": null,
-      "raw_decision": "",
-      "timestamp": "2026-10-30 23:00"
-    },
-    {
-      "job_id": "6932ab0f8d",
-      "number": "G3",
-      "title": "Lead QA Engineer at Rhythm - United States Remote",
-      "company": "N/A",
-      "track": "QA Automation",
-      "score": 149,
-      "url": "https://www.google.com/goto?url=CAESmQEB6zswFS-PKI0oBf8YdI2U8xOXLxevpBe7xRRcAfVLVJA4ZGTi2btW40bCYMb-Sj3JPYtEYx9IwDhLIc1D4KJjL9b5Ugzpvu-jNn4fnK__D47UmfJQXXS2XZYH3C6M5W3ChqFiTKYwoC7FF2RXlH9uBppL1-T3UHFi4505-bLxo9EqKOc3Fz0WPTJczYxljA1yM6Vb9Wi9R8o",
-      "matched_keywords": [
-        "career-qa-title",
-        "performance test",
-        "performance testing",
-        "ci/cd",
-        "qa+performance"
-      ],
-      "source": "Google Jobs",
-      "query": "\"QA engineer\" remote \"performance testing\"",
       "decision": "no_response",
       "reason": null,
       "raw_decision": "",
