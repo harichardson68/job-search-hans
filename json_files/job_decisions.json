@@ -4648,9 +4648,9 @@
         "gemini"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Applied",
       "timestamp": "2026-06-18 23:00"
     },
     {
@@ -4736,9 +4736,9 @@
         "cobol"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "onsite",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Onsite / Not Remote",
       "timestamp": "2026-06-18 23:00"
     },
     {
@@ -4755,9 +4755,9 @@
         "cobol"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Applied",
       "timestamp": "2026-06-18 23:00"
     },
     {
@@ -5135,9 +5135,9 @@
         "mainframe"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Not Interested",
       "timestamp": "2026-06-20 23:00"
     },
     {
@@ -5175,9 +5175,9 @@
         "agentic"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "not_in_us",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Not in United States",
       "timestamp": "2026-06-21 23:00"
     },
     {
@@ -5192,9 +5192,9 @@
         "ai test engineer"
       ],
       "source": "Google Jobs",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Applied",
       "timestamp": "2026-06-21 23:00"
     }
   ],
@@ -17136,9 +17136,156 @@
   ],
   "2026-10-31": [
     {
+      "job_id": "0bda8723d4",
+      "number": "1",
+      "title": "Senior Performance Test Engineer (Full time, Remote)",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 170,
+      "url": "https://testdevjobs.com/job/quantum-strides-llc-senior-performance-test-engineer-full-time-remote-27329/",
+      "matched_keywords": [
+        "loadrunner",
+        "performance test",
+        "qa+performance",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"performance test engineer\" \"loadrunner\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-31 23:00"
+    },
+    {
+      "job_id": "61cee15179",
+      "number": "2",
+      "title": "Senior Performance Engineer- JMeter, JavaScript - Remote",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 126,
+      "url": "https://lensa.com/job-v1/maximus/remote/senior-performance-engineer/33849544acf9d7d45d0986a33f119396",
+      "matched_keywords": [
+        "performance engineer",
+        "jmeter",
+        "java",
+        "performance testing",
+        "performance test",
+        "javascript"
+      ],
+      "source": "Google Jobs",
+      "query": "\"site reliability\" \"load testing\" OR \"performance testing\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-31 23:00"
+    },
+    {
+      "job_id": "8ed2064b00",
+      "number": "G1",
+      "title": "Foodsmart - Senior QA Engineer",
+      "company": "Senior QA Engineer",
+      "track": "QA Automation",
+      "score": 335,
+      "url": "https://jobs.lever.co/foodsmart/b90e59c7-61dc-4b4d-9ac5-5147cfed0e14/apply",
+      "matched_keywords": [
+        "selenium",
+        "career-qa-title",
+        "java",
+        "cypress",
+        "ci/cd",
+        "api testing",
+        "sql",
+        "qa+performance",
+        "load testing",
+        "python",
+        "jira",
+        "test plans",
+        "jmeter",
+        "rag",
+        "test cases",
+        "postman",
+        "aws",
+        "zephyr",
+        "bug tracking",
+        "performance testing",
+        "performance test",
+        "k6",
+        "javascript",
+        "agile",
+        "testrail"
+      ],
+      "source": "Google Jobs",
+      "query": "site:jobs.lever.co \"QA engineer\" OR \"test engineer\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-31 23:00"
+    },
+    {
+      "job_id": "9cd9cc9d9f",
+      "number": "G2",
+      "title": "Software Test Engineer - Charter Global, Inc. - Remote",
+      "company": "Charter Global, Inc.",
+      "track": "QA Automation",
+      "score": 109,
+      "url": "https://www.dice.com/job-detail/c0f7d975-ad5f-4fe4-9dc8-305cd89f14eb",
+      "matched_keywords": [
+        "regression testing",
+        "api testing",
+        "sql",
+        "rest api",
+        "career-qa-title",
+        "test cases",
+        "agile",
+        "scrum",
+        "test plans"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"software test engineer\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-31 23:00"
+    },
+    {
+      "job_id": "2d4b087b13",
+      "number": "G3",
+      "title": "QA Engineer - Facets & Medicaid Regulatory Solutions",
+      "company": "Facets & Medicaid Regulatory Solutions",
+      "track": "QA Automation",
+      "score": 61,
+      "url": "https://www.dice.com/job-detail/c87cf4fb-1a9f-4694-9668-4c6c614aab4e",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "not_interested",
+      "reason": null,
+      "raw_decision": "Not Interested/Not a match",
+      "timestamp": "2026-10-31 23:00"
+    },
+    {
+      "job_id": "9ba46e7228",
+      "number": "G4",
+      "title": "Software Tester (Remote) - Kansas City, MO",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 60,
+      "url": "https://www.indeed.com/viewjob?jk=a52f6398d14fe2de",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"QA engineer\" OR \"software tester\" \"Kansas City\"",
+      "decision": "salary_too_low",
+      "reason": "Junk job",
+      "raw_decision": "Salary Too Low",
+      "timestamp": "2026-10-31 23:00"
+    },
+    {
       "job_id": "8851079ef4",
       "number": "A1",
-      "number_display": "A1",
       "title": "Quality Assurance Engineer II, Amazon Add To Delivery",
       "company": "Amazon",
       "track": "QA Automation",
@@ -17148,17 +17295,11 @@
         "career-qa-title"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Unknown Fit",
-      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-10-31T12:07:57.162477"
+      "query": "",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-10-31 23:00"
     }
   ]
 }
