@@ -15959,7 +15959,9 @@
       "reason": null,
       "raw_decision": "Other",
       "timestamp": "2026-10-19 23:00",
-      "repaired": "2026-10-31 token"
+      "repaired": "2026-10-31 token",
+      "reviewed": true,
+      "reviewed_date": "2026-11-02"
     },
     {
       "job_id": "aa60dcaa0a",
@@ -15978,7 +15980,9 @@
       "reason": null,
       "raw_decision": "Other",
       "timestamp": "2026-10-19 23:00",
-      "repaired": "2026-10-31 token"
+      "repaired": "2026-10-31 token",
+      "reviewed": true,
+      "reviewed_date": "2026-11-02"
     },
     {
       "job_id": "0af35ca544",
