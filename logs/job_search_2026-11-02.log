@@ -1,0 +1,112 @@
+
+============================================================
+  Job Search Run: 2026-11-02 12:00:05
+============================================================
+[GIT] Pulling latest from GitHub...
+   [OK] Already up to date.
+
+=======================================================
+  Hans Richardson  Automated Job Search
+  Target: LoadRunner / Performance Engineer (Remote)
+=======================================================
+
+[SEARCH] Searching Google Jobs via Serper...
+   [DEBUG] Serper 'site:dice.com/job-detail "loadrunner" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "vugen" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "performance test engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance center" "loadrunner" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance test engineer" "loadrunner" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" "loadrunner" OR "vugen" remote': rate limited (400), skipping
+   [DEBUG] Serper '"load test engineer" "loadrunner" remote': rate limited (400), skipping
+   [DEBUG] Serper '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" "jmeter" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance test engineer" "jmeter" OR "blazemeter" remote': rate limited (400), skipping
+   [DEBUG] Serper '"neoload" "performance" remote': rate limited (400), skipping
+   [DEBUG] Serper '"k6" OR "gatling" "performance engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "jmeter" "performance" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "neoload" OR "blazemeter" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "performance engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" remote contract "W2" OR "C2C"': rate limited (400), skipping
+   [DEBUG] Serper '"performance tester" OR "performance test engineer" contract remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance test lead" OR "performance testing lead" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance architect" OR "performance test architect" remote': rate limited (400), skipping
+   [DEBUG] Serper '"load testing" engineer remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance testing" "jmeter" remote contract': rate limited (400), skipping
+   [DEBUG] Serper '"blazemeter" engineer remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" "TEKsystems" OR "Insight Global" OR "Randstad" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" "Infosys" OR "Cognizant" OR "TCS" OR "Wipro" remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" OR "performance tester" "Kansas City"': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" "dynatrace" OR "appdynamics" remote': rate limited (400), skipping
+   [DEBUG] Serper '"application performance" engineer remote "load test"': rate limited (400), skipping
+   [DEBUG] Serper '"non-functional testing" OR "NFT" performance remote': rate limited (400), skipping
+   [DEBUG] Serper '"performance engineer" "k6" OR "gatling" OR "locust"': rate limited (400), skipping
+   [DEBUG] Serper '"site reliability" "load testing" OR "performance testing" remote': rate limited (400), skipping
+   [DEBUG] Serper '"junior AI engineer" OR "associate AI engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"AI automation engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"AI integration engineer" OR "AI implementation engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"AI systems engineer" OR "AI workflow engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:boards.greenhouse.io "ai test" OR "ai quality" "remote"': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "ai test engineer" OR "ai qa" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:himalayas.app "loadrunner" OR "performance engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:builtin.com/job "performance engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"AI QA engineer" OR "AI test engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"LLM evaluation engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"AI SDET" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"': rate limited (400), skipping
+   [DEBUG] Serper '"software test engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"software tester" remote -manual': rate limited (400), skipping
+   [DEBUG] Serper '"QA engineer" remote "performance testing"': rate limited (400), skipping
+   [DEBUG] Serper '"quality assurance engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"test engineer" software "Kansas City"': rate limited (400), skipping
+   [DEBUG] Serper '"QA engineer" OR "software tester" "Kansas City"': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "software test engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:dice.com/job-detail "QA engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"QA automation engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"test automation engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"QA lead" OR "test lead" software remote': rate limited (400), skipping
+   [DEBUG] Serper '"test architect" OR "QA architect" remote': rate limited (400), skipping
+   [DEBUG] Serper '"UAT lead" OR "UAT analyst" remote': rate limited (400), skipping
+   [DEBUG] Serper '"API test engineer" OR "API tester" remote': rate limited (400), skipping
+   [DEBUG] Serper '"test consultant" OR "QA consultant" remote': rate limited (400), skipping
+   [DEBUG] Serper '"QA analyst" remote "ALM" OR "Quality Center"': rate limited (400), skipping
+   [DEBUG] Serper 'site:myworkdayjobs.com "software test engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:boards.greenhouse.io "QA engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper 'site:jobs.lever.co "QA engineer" OR "test engineer" remote': rate limited (400), skipping
+   [DEBUG] Serper '"QA analyst" OR "test lead" OR "UAT" "Kansas City"': rate limited (400), skipping
+   [GOTO] Google Jobs: 0 wrapped links, 0 resolved via /resolve, 0 via redirect, 0 dropped
+   [OK] Google Jobs: 0 relevant jobs found
+   [ATS] descriptions fetched: 0 enriched, 0 failed, 0 attempted
+   [US-SHADOW] 0 of 0 full-description postings had no positive US signal (logged only -> logs/us_signal_shadow.log)
+   [WARN] Serper returned 0 relevant jobs — possible outage or credits exhausted
+[SEARCH] Searching TheirStack (trial)...
+   [DEBUG] TheirStack status 200
+[LEARN] Loaded 25 learned title adjustments
+   [LEARNED] +6 (qa engineer+6) QA Engineer (Remote)
+   [DEBUG] TheirStack REJECTED (blocked-site/company (score=340, track=QA Automation, career-qa-title)): QA Engineer (Remote) | Remote | posted=2026-11-02
+   [LEARNED] +6 (qa+6) QA Automation Engineer - WFH
+   [DEBUG] TheirStack REJECTED (blocked-site/company (score=183, track=QA Automation, career-qa-title)): QA Automation Engineer - WFH | Remote | posted=2026-11-02
+   [OK] TheirStack: 6 raw, 0 relevant
+
+=======================================================
+[STATS] Total relevant jobs found: 0
+[STATS] No matching jobs found today.
+=======================================================
+
+[STATS] Generating cover letters for 0 jobs...
+
+
+[OK] Results saved to: C:\Users\haric\Jobsearch\json_files\job_results.json
+[SEARCH] Searching Amazon Jobs spotlight...
+   [OK] Amazon Jobs: 0 relevant jobs found (10-day window)
+
+[EMAIL] Sending email notification...
+   [OK] Saved 0 regular + 0 Amazon jobs to today_jobs.json
+   [OK] Archived to today_jobs_2026-11-02.json
+   [OK] Archived to today_jobs_run_20261102_120419.json (token sync source)
+   Email sent to harichardson68@gmail.com
+=======================================================
+TOP 3 MATCHES WITH COVER LETTERS
+=======================================================
+
+[LOGS] Snapshotting run logs...
