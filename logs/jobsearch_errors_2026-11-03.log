@@ -26,3 +26,6 @@ Traceback (most recent call last):
 UnicodeEncodeError: 'charmap' codec can't encode character '\u2265' in position 43: character maps to <undefined>
 
 [2026-10-19 12:06:58] [job_search.py] Claude API failed: 'text'
+[2026-10-21 00:50:08] [job_search.py] git pull failed: git pull returned 1: fatal: unable to access 'https://github.com/harichardson68/job-search-hans.git/': Received HTTP code 403 from proxy after CONNECT
+[2026-11-01 12:04:04] [job_search.py] Serper returned 0 relevant jobs — check Serper credits/status
+[2026-11-02 12:04:09] [job_search.py] Serper returned 0 relevant jobs — check Serper credits/status

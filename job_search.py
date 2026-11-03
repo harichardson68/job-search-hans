@@ -2950,89 +2950,43 @@ def search_serper_jobs():
         print("   [WARN] Serper skipped - SERPER_API_KEY not set in environment")
         return jobs
 
+    # 2026-11-02: trimmed 63 -> 27 queries. Kept the queries with applied
+    # decisions in job_decisions.json (only 53 of 861 decisions carry a query
+    # tag, so evidence is thin), merged near-duplicates, cut staffing/offshore
+    # name searches, architect titles (too_senior is the #2 rejection),
+    # 0-result site: boards, and generic AI. Weighting: perf ~half, QA, then AI.
+    # Old list is in job_search.py.bak-2026-11-02.
     queries = [
-        # LoadRunner/VuGen — direct ATS board targeting
+        # --- Track 1: LoadRunner / Performance (14) ---
+        'site:dice.com/job-detail "jmeter" "performance" remote',          # 4/6 applied
+        'site:dice.com/job-detail "performance test engineer" remote',     # 3/4
         'site:dice.com/job-detail "loadrunner" remote',
-        'site:dice.com/job-detail "vugen" remote',
-        'site:dice.com/job-detail "performance test engineer" remote',
-        # LRE / Performance Center specific
-        '"LRE" OR "LoadRunner Enterprise" "performance engineer" remote',
-        '"performance center" "loadrunner" remote',
-        # Broader performance engineering with LR filter
-        '"performance test engineer" "loadrunner" remote',
-        '"performance engineer" "loadrunner" OR "vugen" remote',
-        '"load test engineer" "loadrunner" remote',
-        '"sr performance engineer" OR "senior performance engineer" "loadrunner" remote',
-        # 2026-10-20: modern perf tools — no LoadRunner requirement. Before this,
-        # every perf query required LoadRunner/VuGen, so JMeter/BlazeMeter roles
-        # (e.g. TCS/PwC) were never searched. Swapped in for 8 weaker AI queries
-        # to keep Serper credit use flat.
-        '"performance engineer" "jmeter" remote',
-        '"performance test engineer" "jmeter" OR "blazemeter" remote',
-        '"neoload" "performance" remote',
-        '"k6" OR "gatling" "performance engineer" remote',
-        'site:dice.com/job-detail "jmeter" "performance" remote',
-        # 2026-10-20: 18 site:-anchored ATS queries (Greenhouse/Lever/Workday/
-        # Taleo/iCIMS/Jobvite/Ashby/Robert Half) returned 0 results in all 13
-        # October runs and were removed. Plain-text queries reliably return
-        # results, so the freed slots go to plain-text perf searches, including
-        # contract/W2/C2C terms that staffing-firm postings use.
-        'site:dice.com/job-detail "neoload" OR "blazemeter" remote',
         'site:dice.com/job-detail "performance engineer" remote',
-        '"performance engineer" remote contract "W2" OR "C2C"',
-        '"performance tester" OR "performance test engineer" contract remote',
-        '"performance test lead" OR "performance testing lead" remote',
-        '"performance architect" OR "performance test architect" remote',
-        '"load testing" engineer remote',
-        '"performance testing" "jmeter" remote contract',
-        '"blazemeter" engineer remote',
-        '"performance engineer" "TEKsystems" OR "Insight Global" OR "Randstad" remote',
-        '"performance engineer" "Infosys" OR "Cognizant" OR "TCS" OR "Wipro" remote',
-        '"performance engineer" OR "performance tester" "Kansas City"',
+        '"performance test engineer" "loadrunner" remote',                 # 1/1
+        '"load test engineer" "loadrunner" remote',                        # 1/1
+        '"performance engineer" "loadrunner" OR "vugen" remote',
+        '"LoadRunner Enterprise" OR "LoadRunner Cloud" remote',  # "performance center" alone matched baseball/Berklee junk
+        '"performance engineer" "jmeter" remote',
+        '"neoload" OR "blazemeter" OR "k6" OR "gatling" performance remote',
         '"performance engineer" "dynatrace" OR "appdynamics" remote',
-        '"application performance" engineer remote "load test"',
-        '"non-functional testing" OR "NFT" performance remote',
-        '"performance engineer" "k6" OR "gatling" OR "locust"',
-        '"site reliability" "load testing" OR "performance testing" remote',
-        # 2026-10-18: AI queries retargeted — transferable + entry level.
-        # Removed: prompt engineer, generic "ai engineer", generative AI
-        # engineer, mlops, langchain (reach roles per 30-day audit).
-        '"junior AI engineer" OR "associate AI engineer" remote',
-        '"AI automation engineer" remote',
-        '"AI integration engineer" OR "AI implementation engineer" remote',
-        '"AI systems engineer" OR "AI workflow engineer" remote',
-        'site:boards.greenhouse.io "ai test" OR "ai quality" "remote"',
-        'site:dice.com/job-detail "ai test engineer" OR "ai qa" remote',
-        # Himalayas + BuiltIn
-        'site:himalayas.app "loadrunner" OR "performance engineer" remote',
-        'site:builtin.com/job "performance engineer" remote',
-        # AI lane targeting — performance-engineer-bridges-to-AI
-        '"AI QA engineer" OR "AI test engineer" remote',
-        '"LLM evaluation engineer" remote',
-        '"AI SDET" remote',
-        'site:jobs.ashbyhq.com "ai qa" OR "ai test" "remote"',
-        # 2026-10-18: career QA lane (AAON-type roles)
-        '"software test engineer" remote',
-        '"software tester" remote -manual',
-        '"QA engineer" remote "performance testing"',
-        '"quality assurance engineer" remote',
-        '"test engineer" software "Kansas City"',
-        '"QA engineer" OR "software tester" "Kansas City"',
-        'site:dice.com/job-detail "software test engineer" remote',
-        'site:dice.com/job-detail "QA engineer" remote',
-        # 2026-10-20: widened QA/testing range
-        '"QA automation engineer" remote',
-        '"test automation engineer" remote',
-        '"QA lead" OR "test lead" software remote',
-        '"test architect" OR "QA architect" remote',
-        '"UAT lead" OR "UAT analyst" remote',
-        '"API test engineer" OR "API tester" remote',
-        '"test consultant" OR "QA consultant" remote',
-        '"QA analyst" remote "ALM" OR "Quality Center"',
-        'site:myworkdayjobs.com "software test engineer" remote',
+        '"site reliability" "load testing" OR "performance testing" remote',  # 1/1
+        '"performance engineer" remote contract "W2" OR "C2C"',
+        '"performance engineer" OR "performance tester" "Kansas City"',
+        # --- Track 2: QA / Testing (10) ---
+        'site:dice.com/job-detail "software test engineer" remote',        # 3/4
+        'site:dice.com/job-detail "QA engineer" remote',                   # 3/13
+        '"quality assurance engineer" remote',                             # 2/2
+        '"software tester" remote -manual',                                # 1/3
+        '"API test engineer" OR "API tester" remote',                      # 1/1
+        'site:jobs.lever.co "QA engineer" OR "test engineer" remote',      # 1/1
         'site:boards.greenhouse.io "QA engineer" remote',
-        'site:jobs.lever.co "QA engineer" OR "test engineer" remote',
-        '"QA analyst" OR "test lead" OR "UAT" "Kansas City"',
+        '"test automation engineer" OR "QA automation engineer" remote',
+        '"test lead" OR "QA lead" software remote',
+        '"QA" OR "test engineer" OR "software tester" "Kansas City"',
+        # --- Track 3: AI, narrow (3) ---
+        '"AI QA engineer" OR "AI test engineer" OR "AI SDET" remote',
+        '"AI automation engineer" OR "AI workflow engineer" remote',       # 1/1
+        '"AI integration engineer" OR "AI systems engineer" remote',
     ]
     # 2026-10-18: skip queries learn_weights.py paused for producing
     # nothing Hans wanted (see json_files/learned_adjustments.json).
@@ -3064,8 +3018,16 @@ def search_serper_jobs():
             }
             resp = requests.post(url, headers=headers, json=payload, timeout=15)
             if resp.status_code == 400:
+                # 2026-11-02: Serper returns 400 for "Not enough credits", not
+                # just bad requests. Out of credits -> stop instead of burning
+                # 63 x 3s sleeps and mislabeling it "rate limited".
+                _msg = resp.text[:200]
+                if "credit" in _msg.lower():
+                    print(f"   [ERROR] Serper OUT OF CREDITS: {_msg} - skipping remaining queries")
+                    log_error(f"Serper out of credits: {_msg}")
+                    break
                 if DEBUG_MODE:
-                    print(f"   [DEBUG] Serper '{query}': rate limited (400), skipping")
+                    print(f"   [DEBUG] Serper '{query}': HTTP 400 {_msg}, skipping")
                 time.sleep(3)
                 continue
             data = resp.json()

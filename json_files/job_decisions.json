@@ -17305,5 +17305,58 @@
       "raw_decision": "Applied",
       "timestamp": "2026-10-31 23:00"
     }
+  ],
+  "2026-11-03": [
+    {
+      "job_id": "616fce10a4",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Assurance Engineer II, Amazon Robotics Systems ...",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 79,
+      "url": "https://www.amazon.jobs/en/jobs/10592302",
+      "matched_keywords": [
+        "career-qa-title",
+        "performance engineer"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-11-03T12:04:17.777566"
+    },
+    {
+      "job_id": "f78fff52a9",
+      "number": "A2",
+      "number_display": "A2",
+      "title": "Quality Assurance Engineer, SMGS Planning Tools - Job ID",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 44,
+      "url": "https://www.amazon.jobs/en/jobs/10588633",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-11-03T12:04:17.777580"
+    }
   ]
 }
