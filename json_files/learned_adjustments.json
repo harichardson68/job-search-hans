@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-02T23:00:07",
+  "generated_at": "2026-11-03T23:00:19",
   "labeled_weighted": {
-    "applied": 54.2,
-    "rejected": 49.3
+    "applied": 55.8,
+    "rejected": 48.9
   },
   "settings": {
     "half_life_days": 90,
@@ -17,57 +17,57 @@
     "applied": {
       "adj": -14,
       "applied_w": 0.3,
-      "rejected_w": 5.7
+      "rejected_w": 5.6
     },
     "ml": {
       "adj": -10,
       "applied_w": 1.1,
-      "rejected_w": 5.9
+      "rejected_w": 5.8
+    },
+    "agentic": {
+      "adj": -8,
+      "applied_w": 5.0,
+      "rejected_w": 14.1
     },
     "developer": {
       "adj": -8,
       "applied_w": 1.5,
       "rejected_w": 5.2
     },
-    "agentic": {
-      "adj": -8,
-      "applied_w": 5.0,
-      "rejected_w": 14.2
-    },
     "agentic ai": {
       "adj": -7,
       "applied_w": 3.1,
-      "rejected_w": 7.7
+      "rejected_w": 7.6
+    },
+    "ai": {
+      "adj": -6,
+      "applied_w": 17.0,
+      "rejected_w": 30.9
     },
     "ai engineer": {
       "adj": -6,
       "applied_w": 6.0,
-      "rejected_w": 12.6
+      "rejected_w": 12.5
     },
     "solutions": {
       "adj": -5,
       "applied_w": 2.7,
-      "rejected_w": 5.3
-    },
-    "ai": {
-      "adj": -5,
-      "applied_w": 17.1,
-      "rejected_w": 31.1
-    },
-    "engineer": {
-      "adj": 1,
-      "applied_w": 39.4,
-      "rejected_w": 31.9
-    },
-    "automation engineer": {
-      "adj": 1,
-      "applied_w": 5.7,
-      "rejected_w": 4.4
+      "rejected_w": 5.2
     },
     "automation": {
       "adj": 1,
       "applied_w": 6.6,
       "rejected_w": 4.9
+    },
+    "engineer": {
+      "adj": 1,
+      "applied_w": 41.1,
+      "rejected_w": 31.6
+    },
+    "automation engineer": {
+      "adj": 1,
+      "applied_w": 5.7,
+      "rejected_w": 4.3
     },
     "architect": {
       "adj": 4,
@@ -76,27 +76,17 @@
     },
     "qa": {
       "adj": 6,
-      "applied_w": 7.3,
+      "applied_w": 8.2,
       "rejected_w": 2.7
     },
     "qa engineer": {
-      "adj": 6,
-      "applied_w": 6.0,
+      "adj": 7,
+      "applied_w": 7.0,
       "rejected_w": 1.9
-    },
-    "quality assurance": {
-      "adj": 8,
-      "applied_w": 4.6,
-      "rejected_w": 0.9
-    },
-    "test": {
-      "adj": 8,
-      "applied_w": 9.2,
-      "rejected_w": 2.3
     },
     "performance engineer": {
       "adj": 8,
-      "applied_w": 5.2,
+      "applied_w": 5.1,
       "rejected_w": 1.1
     },
     "inc": {
@@ -104,12 +94,17 @@
       "applied_w": 7.4,
       "rejected_w": 1.9
     },
-    "assurance": {
+    "test": {
       "adj": 8,
-      "applied_w": 4.6,
+      "applied_w": 9.1,
+      "rejected_w": 2.2
+    },
+    "quality assurance": {
+      "adj": 9,
+      "applied_w": 5.6,
       "rejected_w": 0.9
     },
-    "quality": {
+    "assurance": {
       "adj": 9,
       "applied_w": 5.6,
       "rejected_w": 0.9
@@ -119,25 +114,35 @@
       "applied_w": 9.1,
       "rejected_w": 1.5
     },
-    "test engineer": {
-      "adj": 10,
-      "applied_w": 4.7,
-      "rejected_w": 0.4
-    },
-    "performance tester": {
-      "adj": 10,
-      "applied_w": 8.9,
-      "rejected_w": 0.6
-    },
     "senior": {
       "adj": 10,
-      "applied_w": 7.8,
+      "applied_w": 8.7,
+      "rejected_w": 0.0
+    },
+    "quality": {
+      "adj": 10,
+      "applied_w": 6.5,
+      "rejected_w": 0.9
+    },
+    "assurance engineer": {
+      "adj": 10,
+      "applied_w": 5.6,
       "rejected_w": 0.0
     },
     "performance": {
       "adj": 10,
-      "applied_w": 20.2,
+      "applied_w": 20.1,
       "rejected_w": 1.6
+    },
+    "performance tester": {
+      "adj": 10,
+      "applied_w": 8.8,
+      "rejected_w": 0.6
+    },
+    "test engineer": {
+      "adj": 10,
+      "applied_w": 4.7,
+      "rejected_w": 0.4
     }
   },
   "paused_queries": {},
@@ -220,6 +225,12 @@
       "rejected": 0,
       "last_seen": "2026-10-31"
     },
+    "site:boards.greenhouse.io \"QA engineer\" remote": {
+      "shown": 1,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-11-03"
+    },
     "\"performance center\" \"loadrunner\" remote": {
       "shown": 2,
       "applied": 0,
@@ -291,6 +302,12 @@
       "applied": 0,
       "rejected": 1,
       "last_seen": "2026-10-31"
+    },
+    "\"performance engineer\" \"jmeter\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-03"
     }
   }
 }
