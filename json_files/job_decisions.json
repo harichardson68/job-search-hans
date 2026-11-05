@@ -17530,5 +17530,32 @@
       "raw_decision": "",
       "timestamp": "2026-11-04 23:00"
     }
+  ],
+  "2026-11-05": [
+    {
+      "job_id": "59aa05df10",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Engineer-II, Alexa Devices - Product QA - Job ID",
+      "company": "Amazon",
+      "track": "Gap Track",
+      "score": 38,
+      "url": "https://www.amazon.jobs/en/jobs/10574392",
+      "matched_keywords": [
+        "rag"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-11-05T12:03:56.120113"
+    }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-03T23:00:19",
+  "generated_at": "2026-11-04T23:00:23",
   "labeled_weighted": {
-    "applied": 55.8,
-    "rejected": 48.9
+    "applied": 55.3,
+    "rejected": 48.5
   },
   "settings": {
     "half_life_days": 90,
@@ -26,62 +26,67 @@
     },
     "agentic": {
       "adj": -8,
-      "applied_w": 5.0,
-      "rejected_w": 14.1
+      "applied_w": 4.9,
+      "rejected_w": 14.0
     },
     "developer": {
       "adj": -8,
       "applied_w": 1.5,
-      "rejected_w": 5.2
+      "rejected_w": 5.1
     },
     "agentic ai": {
       "adj": -7,
-      "applied_w": 3.1,
-      "rejected_w": 7.6
+      "applied_w": 3.0,
+      "rejected_w": 7.5
     },
     "ai": {
       "adj": -6,
-      "applied_w": 17.0,
-      "rejected_w": 30.9
+      "applied_w": 16.9,
+      "rejected_w": 30.6
     },
     "ai engineer": {
       "adj": -6,
-      "applied_w": 6.0,
-      "rejected_w": 12.5
+      "applied_w": 5.9,
+      "rejected_w": 12.4
     },
     "solutions": {
       "adj": -5,
       "applied_w": 2.7,
       "rejected_w": 5.2
     },
-    "automation": {
-      "adj": 1,
-      "applied_w": 6.6,
-      "rejected_w": 4.9
-    },
     "engineer": {
       "adj": 1,
-      "applied_w": 41.1,
-      "rejected_w": 31.6
+      "applied_w": 40.8,
+      "rejected_w": 31.4
+    },
+    "automation": {
+      "adj": 1,
+      "applied_w": 6.5,
+      "rejected_w": 4.9
     },
     "automation engineer": {
       "adj": 1,
-      "applied_w": 5.7,
+      "applied_w": 5.6,
       "rejected_w": 4.3
     },
     "architect": {
       "adj": 4,
-      "applied_w": 4.8,
+      "applied_w": 4.7,
       "rejected_w": 2.0
     },
     "qa": {
       "adj": 6,
-      "applied_w": 8.2,
+      "applied_w": 8.1,
       "rejected_w": 2.7
     },
     "qa engineer": {
       "adj": 7,
-      "applied_w": 7.0,
+      "applied_w": 6.9,
+      "rejected_w": 1.9
+    },
+    "inc": {
+      "adj": 8,
+      "applied_w": 7.3,
       "rejected_w": 1.9
     },
     "performance engineer": {
@@ -89,14 +94,9 @@
       "applied_w": 5.1,
       "rejected_w": 1.1
     },
-    "inc": {
-      "adj": 8,
-      "applied_w": 7.4,
-      "rejected_w": 1.9
-    },
     "test": {
       "adj": 8,
-      "applied_w": 9.1,
+      "applied_w": 9.0,
       "rejected_w": 2.2
     },
     "quality assurance": {
@@ -111,38 +111,38 @@
     },
     "tester": {
       "adj": 10,
-      "applied_w": 9.1,
+      "applied_w": 9.0,
       "rejected_w": 1.5
+    },
+    "performance": {
+      "adj": 10,
+      "applied_w": 19.9,
+      "rejected_w": 1.6
     },
     "senior": {
       "adj": 10,
       "applied_w": 8.7,
       "rejected_w": 0.0
     },
-    "quality": {
+    "test engineer": {
       "adj": 10,
-      "applied_w": 6.5,
-      "rejected_w": 0.9
+      "applied_w": 4.6,
+      "rejected_w": 0.4
     },
     "assurance engineer": {
       "adj": 10,
       "applied_w": 5.6,
       "rejected_w": 0.0
     },
-    "performance": {
-      "adj": 10,
-      "applied_w": 20.1,
-      "rejected_w": 1.6
-    },
     "performance tester": {
       "adj": 10,
-      "applied_w": 8.8,
+      "applied_w": 8.7,
       "rejected_w": 0.6
     },
-    "test engineer": {
+    "quality": {
       "adj": 10,
-      "applied_w": 4.7,
-      "rejected_w": 0.4
+      "applied_w": 6.5,
+      "rejected_w": 0.9
     }
   },
   "paused_queries": {},
@@ -166,10 +166,10 @@
       "last_seen": "2026-10-31"
     },
     "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 13,
+      "shown": 14,
       "applied": 3,
       "rejected": 2,
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-04"
     },
     "\"quality assurance engineer\" remote": {
       "shown": 2,
@@ -190,10 +190,10 @@
       "last_seen": "2026-10-21"
     },
     "\"API test engineer\" OR \"API tester\" remote": {
-      "shown": 1,
+      "shown": 2,
       "applied": 1,
       "rejected": 0,
-      "last_seen": "2026-10-22"
+      "last_seen": "2026-11-04"
     },
     "\"software tester\" remote -manual": {
       "shown": 3,
@@ -308,6 +308,18 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-11-03"
+    },
+    "\"neoload\" OR \"blazemeter\" OR \"k6\" OR \"gatling\" performance remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-04"
+    },
+    "\"test automation engineer\" OR \"QA automation engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-04"
     }
   }
 }
