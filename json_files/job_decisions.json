@@ -17430,5 +17430,105 @@
       "raw_decision": "Applied",
       "timestamp": "2026-11-03 23:00"
     }
+  ],
+  "2026-11-04": [
+    {
+      "job_id": "4d32c67937",
+      "number": "1",
+      "title": "AI Quality Engineer-Citizen - Select Jarvis.com - Remote",
+      "company": "Select Jarvis.com",
+      "track": "AI Engineering",
+      "score": 209,
+      "url": "https://www.dice.com/job-detail/0c1154f3-d787-4cf1-b8db-e330fee25431",
+      "matched_keywords": [
+        "ai agent",
+        "java",
+        "github actions",
+        "ai testing",
+        "rag",
+        "ai engineer",
+        "selenium",
+        "sql",
+        "jenkins",
+        "ai quality engineer",
+        "agentic",
+        "cypress",
+        "ci/cd",
+        "uat",
+        "postman",
+        "api testing",
+        "aws"
+      ],
+      "source": "Google Jobs",
+      "query": "site:dice.com/job-detail \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-04 23:00"
+    },
+    {
+      "job_id": "c2dd4e78ce",
+      "number": "2",
+      "title": "Performance Tester: Neoload @ REMOTE",
+      "company": "VBEST Software Inc",
+      "track": "Performance Engineering",
+      "score": 159,
+      "url": "https://www.dice.com/job-detail/2f5c5855-a3b8-494b-a892-7de54011b3e1",
+      "matched_keywords": [
+        "neoload",
+        "performance testing",
+        "bottleneck",
+        "ci/cd",
+        "performance test",
+        "performance tester",
+        "appdynamics"
+      ],
+      "source": "Google Jobs",
+      "query": "\"neoload\" OR \"blazemeter\" OR \"k6\" OR \"gatling\" performance remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-04 23:00"
+    },
+    {
+      "job_id": "a86b801f5a",
+      "number": "G1",
+      "title": "API Test Engineer (API Automation)",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 76,
+      "url": "https://hirify.me/jobs/1356331-api-test-engineer-automation",
+      "matched_keywords": [
+        "career-qa-title",
+        "postman",
+        "api testing"
+      ],
+      "source": "Google Jobs",
+      "query": "\"API test engineer\" OR \"API tester\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-04 23:00"
+    },
+    {
+      "job_id": "2d2bf07d3b",
+      "number": "G2",
+      "title": "Immediate need: QA Automation Engineer - Remote ()",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 47,
+      "url": "https://www.dice.com/job-detail/f238d917-4035-4083-b48e-4612bb9ddb0b",
+      "matched_keywords": [
+        "career-qa-title",
+        "python",
+        "java"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-04 23:00"
+    }
   ]
 }
