@@ -17660,5 +17660,32 @@
       "raw_decision": "Not in United States",
       "timestamp": "2026-11-05 23:00"
     }
+  ],
+  "2026-11-06": [
+    {
+      "job_id": "1c369e9f01",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Assurance Engineer II - AMZ27970.2 - Job ID",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://www.amazon.jobs/en/jobs/10586811",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-11-06T12:04:52.822859"
+    }
   ]
 }

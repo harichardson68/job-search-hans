@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-04T23:00:23",
+  "generated_at": "2026-11-05T23:00:18",
   "labeled_weighted": {
-    "applied": 55.3,
-    "rejected": 48.5
+    "applied": 55.9,
+    "rejected": 48.2
   },
   "settings": {
     "half_life_days": 90,
@@ -17,17 +17,17 @@
     "applied": {
       "adj": -14,
       "applied_w": 0.3,
-      "rejected_w": 5.6
+      "rejected_w": 5.5
     },
     "ml": {
-      "adj": -10,
+      "adj": -11,
       "applied_w": 1.1,
-      "rejected_w": 5.8
+      "rejected_w": 5.7
     },
     "agentic": {
-      "adj": -8,
+      "adj": -9,
       "applied_w": 4.9,
-      "rejected_w": 14.0
+      "rejected_w": 13.9
     },
     "developer": {
       "adj": -8,
@@ -39,35 +39,35 @@
       "applied_w": 3.0,
       "rejected_w": 7.5
     },
-    "ai": {
-      "adj": -6,
-      "applied_w": 16.9,
-      "rejected_w": 30.6
-    },
     "ai engineer": {
       "adj": -6,
       "applied_w": 5.9,
-      "rejected_w": 12.4
+      "rejected_w": 12.3
+    },
+    "ai": {
+      "adj": -6,
+      "applied_w": 16.7,
+      "rejected_w": 30.4
     },
     "solutions": {
       "adj": -5,
       "applied_w": 2.7,
       "rejected_w": 5.2
     },
-    "engineer": {
-      "adj": 1,
-      "applied_w": 40.8,
-      "rejected_w": 31.4
-    },
-    "automation": {
-      "adj": 1,
-      "applied_w": 6.5,
-      "rejected_w": 4.9
-    },
     "automation engineer": {
       "adj": 1,
       "applied_w": 5.6,
       "rejected_w": 4.3
+    },
+    "automation": {
+      "adj": 1,
+      "applied_w": 6.5,
+      "rejected_w": 4.8
+    },
+    "engineer": {
+      "adj": 1,
+      "applied_w": 41.5,
+      "rejected_w": 31.1
     },
     "architect": {
       "adj": 4,
@@ -77,7 +77,12 @@
     "qa": {
       "adj": 6,
       "applied_w": 8.1,
-      "rejected_w": 2.7
+      "rejected_w": 2.6
+    },
+    "performance engineer": {
+      "adj": 7,
+      "applied_w": 5.0,
+      "rejected_w": 1.1
     },
     "qa engineer": {
       "adj": 7,
@@ -85,68 +90,64 @@
       "rejected_w": 1.9
     },
     "inc": {
-      "adj": 8,
+      "adj": 7,
       "applied_w": 7.3,
-      "rejected_w": 1.9
-    },
-    "performance engineer": {
-      "adj": 8,
-      "applied_w": 5.1,
-      "rejected_w": 1.1
+      "rejected_w": 1.8
     },
     "test": {
       "adj": 8,
       "applied_w": 9.0,
       "rejected_w": 2.2
     },
-    "quality assurance": {
-      "adj": 9,
-      "applied_w": 5.6,
-      "rejected_w": 0.9
-    },
-    "assurance": {
-      "adj": 9,
-      "applied_w": 5.6,
-      "rejected_w": 0.9
-    },
-    "tester": {
-      "adj": 10,
-      "applied_w": 9.0,
-      "rejected_w": 1.5
-    },
     "performance": {
       "adj": 10,
-      "applied_w": 19.9,
+      "applied_w": 19.8,
       "rejected_w": 1.6
     },
     "senior": {
       "adj": 10,
-      "applied_w": 8.7,
+      "applied_w": 8.6,
       "rejected_w": 0.0
     },
-    "test engineer": {
+    "quality": {
       "adj": 10,
-      "applied_w": 4.6,
-      "rejected_w": 0.4
+      "applied_w": 7.4,
+      "rejected_w": 0.9
     },
-    "assurance engineer": {
+    "tester": {
       "adj": 10,
-      "applied_w": 5.6,
-      "rejected_w": 0.0
+      "applied_w": 8.9,
+      "rejected_w": 1.5
+    },
+    "assurance": {
+      "adj": 10,
+      "applied_w": 6.5,
+      "rejected_w": 0.9
+    },
+    "quality assurance": {
+      "adj": 10,
+      "applied_w": 6.5,
+      "rejected_w": 0.9
     },
     "performance tester": {
       "adj": 10,
       "applied_w": 8.7,
-      "rejected_w": 0.6
+      "rejected_w": 0.5
     },
-    "quality": {
+    "assurance engineer": {
       "adj": 10,
       "applied_w": 6.5,
-      "rejected_w": 0.9
+      "rejected_w": 0.0
     }
   },
   "paused_queries": {},
   "query_stats": {
+    "site:dice.com/job-detail \"QA engineer\" remote": {
+      "shown": 15,
+      "applied": 4,
+      "rejected": 2,
+      "last_seen": "2026-11-05"
+    },
     "site:dice.com/job-detail \"jmeter\" \"performance\" remote": {
       "shown": 6,
       "applied": 4,
@@ -164,12 +165,6 @@
       "applied": 3,
       "rejected": 0,
       "last_seen": "2026-10-31"
-    },
-    "site:dice.com/job-detail \"QA engineer\" remote": {
-      "shown": 14,
-      "applied": 3,
-      "rejected": 2,
-      "last_seen": "2026-11-04"
     },
     "\"quality assurance engineer\" remote": {
       "shown": 2,
@@ -320,6 +315,18 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-11-04"
+    },
+    "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-05"
+    },
+    "\"test lead\" OR \"QA lead\" software remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-05"
     }
   }
 }
