@@ -951,6 +951,7 @@ BLOCKED_JOB_SITES = [
     "infinityfree.me", "byethost", "000webhostapp.com", "epizy.com",
     # Staffing-agency marketing pages ("LLM Engineer Staffing - KORE1"):
     "-staffing/",
+    "www.dice.com",
 ]
 
 def is_blocked_site(url):
