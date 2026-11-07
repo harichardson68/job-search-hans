@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-07",
+  "run_id": "20261107_120312",
+  "jobs": [
+    {
+      "job_id": "e913e3cb8b",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "055ce25324",
+      "run_id": "20261107_120312",
+      "title": "Test Engineer",
+      "company": "Borgos Marketing & Events, Inc.",
+      "track": "QA Automation",
+      "score": 223,
+      "url": "http://www.indeed.com/job/test-engineer-30466e264fc652f3",
+      "matched_keywords": [
+        "loadrunner",
+        "career-qa-title",
+        "qa+performance",
+        "defect tracking",
+        "sql",
+        "python",
+        "scrum",
+        "test cases",
+        "jira",
+        "test plans",
+        "agile",
+        "jenkins",
+        "selenium",
+        "java",
+        "javascript",
+        "ci/cd",
+        "aws"
+      ],
+      "source": "TheirStack",
+      "is_amazon": false,
+      "fit_tier": "Excellent Fit",
+      "fit_analysis": "**Excellent Fit** \u2014 *LoadRunner expert*, *remote*, *ALM/Jira/SQL native*; broad testing scope with _no deep single-tool ownership_ required.",
+      "level_signal": "career-qa-title",
+      "query": ""
+    },
+    {
+      "job_id": "8e3a0330f1",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "f9bd7cf355",
+      "run_id": "20261107_120312",
+      "title": "Quality Assurance Engineer I - AMZ24481.6 - Job ID: 10593804",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://www.amazon.jobs/en/jobs/10593804",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title"
+    },
+    {
+      "job_id": "f365d67e58",
+      "number": "A2",
+      "number_display": "A2",
+      "token": "7fbae5d536",
+      "run_id": "20261107_120312",
+      "title": "Quality Assurance Engineer, Veeqo - Job ID: 10599083",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://www.amazon.jobs/en/jobs/10599083",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title"
+    }
+  ]
+}
