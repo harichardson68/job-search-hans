@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-06T23:00:17",
+  "generated_at": "2026-11-07T23:00:18",
   "labeled_weighted": {
-    "applied": 56.5,
-    "rejected": 48.8
+    "applied": 56.0,
+    "rejected": 48.4
   },
   "settings": {
     "half_life_days": 90,
@@ -22,12 +22,12 @@
     "ml": {
       "adj": -10,
       "applied_w": 1.1,
-      "rejected_w": 5.7
+      "rejected_w": 5.6
     },
     "agentic": {
       "adj": -9,
       "applied_w": 4.8,
-      "rejected_w": 13.8
+      "rejected_w": 13.7
     },
     "developer": {
       "adj": -8,
@@ -42,26 +42,26 @@
     "ai engineer": {
       "adj": -6,
       "applied_w": 5.8,
-      "rejected_w": 12.2
+      "rejected_w": 12.1
     },
     "ai": {
       "adj": -6,
-      "applied_w": 16.6,
-      "rejected_w": 30.2
+      "applied_w": 16.5,
+      "rejected_w": 29.9
     },
     "solutions": {
       "adj": -5,
-      "applied_w": 2.7,
+      "applied_w": 2.6,
       "rejected_w": 5.1
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 42.2,
-      "rejected_w": 31.9
+      "applied_w": 41.8,
+      "rejected_w": 31.7
     },
     "automation engineer": {
       "adj": 1,
-      "applied_w": 5.6,
+      "applied_w": 5.5,
       "rejected_w": 4.2
     },
     "automation": {
@@ -71,73 +71,73 @@
     },
     "architect": {
       "adj": 4,
-      "applied_w": 4.7,
+      "applied_w": 4.6,
       "rejected_w": 2.0
     },
     "qa": {
       "adj": 6,
-      "applied_w": 8.0,
+      "applied_w": 7.9,
       "rejected_w": 2.6
-    },
-    "tester": {
-      "adj": 7,
-      "applied_w": 8.8,
-      "rejected_w": 2.5
-    },
-    "qa engineer": {
-      "adj": 7,
-      "applied_w": 6.8,
-      "rejected_w": 1.8
-    },
-    "performance engineer": {
-      "adj": 7,
-      "applied_w": 5.0,
-      "rejected_w": 1.0
     },
     "inc": {
       "adj": 7,
       "applied_w": 7.2,
       "rejected_w": 1.8
     },
+    "tester": {
+      "adj": 7,
+      "applied_w": 8.8,
+      "rejected_w": 2.5
+    },
+    "performance engineer": {
+      "adj": 7,
+      "applied_w": 5.0,
+      "rejected_w": 1.0
+    },
+    "qa engineer": {
+      "adj": 7,
+      "applied_w": 6.8,
+      "rejected_w": 1.8
+    },
     "test": {
       "adj": 8,
-      "applied_w": 8.9,
+      "applied_w": 8.8,
       "rejected_w": 2.2
     },
     "quality": {
       "adj": 8,
-      "applied_w": 8.4,
+      "applied_w": 8.3,
       "rejected_w": 1.9
+    },
+    "performance tester": {
+      "adj": 10,
+      "applied_w": 8.5,
+      "rejected_w": 0.5
     },
     "senior": {
       "adj": 10,
       "applied_w": 8.5,
       "rejected_w": 0.0
     },
-    "assurance": {
+    "assurance engineer": {
       "adj": 10,
-      "applied_w": 7.5,
-      "rejected_w": 0.9
+      "applied_w": 7.4,
+      "rejected_w": 0.0
     },
     "quality assurance": {
       "adj": 10,
-      "applied_w": 7.5,
+      "applied_w": 7.4,
       "rejected_w": 0.9
     },
-    "assurance engineer": {
+    "assurance": {
       "adj": 10,
-      "applied_w": 7.5,
-      "rejected_w": 0.0
+      "applied_w": 7.4,
+      "rejected_w": 0.9
     },
     "performance": {
       "adj": 10,
-      "applied_w": 19.6,
+      "applied_w": 19.5,
       "rejected_w": 1.6
-    },
-    "performance tester": {
-      "adj": 10,
-      "applied_w": 8.6,
-      "rejected_w": 0.5
     }
   },
   "paused_queries": {},
