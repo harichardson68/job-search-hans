@@ -952,6 +952,9 @@ BLOCKED_JOB_SITES = [
     # Staffing-agency marketing pages ("LLM Engineer Staffing - KORE1"):
     "-staffing/",
     "www.dice.com",
+    # 2026-11-08: Lensa — re-post aggregator (lensa.com/job-v1/...), blocked
+    # entirely. Title/company mentions are caught in is_blocked_company().
+    "lensa.com",
 ]
 
 def is_blocked_site(url):
@@ -1512,6 +1515,11 @@ def is_blocked_company(title, description, company=""):
     ]
     check = (title + " " + description + " " + company).lower()
     if any(co in check for co in blocked_companies):
+        return True
+    # 2026-11-08: Lensa re-posts ("... job at X | Lensa", company "Lensa")
+    # even when the URL was rewritten/redirected. Word boundary so names
+    # like "Valensa" don't trip it.
+    if re.search(r"\blensa\b", (title + " " + (company or "")).lower()):
         return True
     # 2026-10-18: Junk-listing signals in the TITLE — redacted employers
     # ("reputed company") and search/listing pages masquerading as jobs
