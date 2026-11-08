@@ -17817,9 +17817,42 @@
   ],
   "2026-11-07": [
     {
+      "job_id": "e913e3cb8b",
+      "number": "G1",
+      "title": "Test Engineer",
+      "company": "Borgos Marketing & Events, Inc.",
+      "track": "QA Automation",
+      "score": 223,
+      "url": "http://www.indeed.com/job/test-engineer-30466e264fc652f3",
+      "matched_keywords": [
+        "loadrunner",
+        "career-qa-title",
+        "qa+performance",
+        "defect tracking",
+        "sql",
+        "python",
+        "scrum",
+        "test cases",
+        "jira",
+        "test plans",
+        "agile",
+        "jenkins",
+        "selenium",
+        "java",
+        "javascript",
+        "ci/cd",
+        "aws"
+      ],
+      "source": "TheirStack",
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-07 23:00"
+    },
+    {
       "job_id": "8e3a0330f1",
       "number": "A1",
-      "number_display": "A1",
       "title": "Quality Assurance Engineer I - AMZ24481.6 - Job ID: 10593804",
       "company": "Amazon",
       "track": "QA Automation",
@@ -17829,22 +17862,15 @@
         "career-qa-title"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Unknown Fit",
-      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-11-07T12:03:13.017542"
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-07 23:00"
     },
     {
       "job_id": "f365d67e58",
       "number": "A2",
-      "number_display": "A2",
       "title": "Quality Assurance Engineer, Veeqo - Job ID: 10599083",
       "company": "Amazon",
       "track": "QA Automation",
@@ -17854,17 +17880,11 @@
         "career-qa-title"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Unknown Fit",
-      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-11-07T12:03:13.017556"
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-07 23:00"
     }
   ]
 }
