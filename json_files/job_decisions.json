@@ -17594,7 +17594,9 @@
       "decision": "other",
       "reason": "Secret clearance",
       "raw_decision": "Other",
-      "timestamp": "2026-11-05 23:00"
+      "timestamp": "2026-11-05 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-09"
     },
     {
       "job_id": "40bd7652b3",
@@ -17951,7 +17953,9 @@
       "decision": "other",
       "reason": "Lensa. Block it",
       "raw_decision": "Other",
-      "timestamp": "2026-11-08 23:00"
+      "timestamp": "2026-11-08 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-09"
     }
   ]
 }

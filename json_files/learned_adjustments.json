@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-07T23:00:18",
+  "generated_at": "2026-11-08T23:00:18",
   "labeled_weighted": {
-    "applied": 56.0,
-    "rejected": 48.4
+    "applied": 56.6,
+    "rejected": 48.0
   },
   "settings": {
     "half_life_days": 90,
@@ -17,86 +17,86 @@
     "applied": {
       "adj": -14,
       "applied_w": 0.3,
-      "rejected_w": 5.5
+      "rejected_w": 5.4
     },
     "ml": {
-      "adj": -10,
+      "adj": -11,
       "applied_w": 1.1,
       "rejected_w": 5.6
     },
     "agentic": {
       "adj": -9,
       "applied_w": 4.8,
-      "rejected_w": 13.7
+      "rejected_w": 13.6
     },
     "developer": {
       "adj": -8,
       "applied_w": 1.5,
       "rejected_w": 5.0
     },
+    "ai engineer": {
+      "adj": -7,
+      "applied_w": 5.7,
+      "rejected_w": 12.0
+    },
     "agentic ai": {
       "adj": -7,
-      "applied_w": 3.0,
-      "rejected_w": 7.4
-    },
-    "ai engineer": {
-      "adj": -6,
-      "applied_w": 5.8,
-      "rejected_w": 12.1
+      "applied_w": 2.9,
+      "rejected_w": 7.3
     },
     "ai": {
       "adj": -6,
-      "applied_w": 16.5,
-      "rejected_w": 29.9
+      "applied_w": 16.4,
+      "rejected_w": 29.7
     },
     "solutions": {
       "adj": -5,
       "applied_w": 2.6,
-      "rejected_w": 5.1
+      "rejected_w": 5.0
+    },
+    "software": {
+      "adj": -1,
+      "applied_w": 4.3,
+      "rejected_w": 3.9
     },
     "engineer": {
       "adj": 1,
-      "applied_w": 41.8,
-      "rejected_w": 31.7
+      "applied_w": 41.5,
+      "rejected_w": 31.4
+    },
+    "automation": {
+      "adj": 1,
+      "applied_w": 6.3,
+      "rejected_w": 4.7
     },
     "automation engineer": {
       "adj": 1,
       "applied_w": 5.5,
       "rejected_w": 4.2
     },
-    "automation": {
-      "adj": 1,
-      "applied_w": 6.4,
-      "rejected_w": 4.8
-    },
     "architect": {
       "adj": 4,
       "applied_w": 4.6,
-      "rejected_w": 2.0
+      "rejected_w": 1.9
     },
     "qa": {
-      "adj": 6,
-      "applied_w": 7.9,
+      "adj": 7,
+      "applied_w": 8.9,
       "rejected_w": 2.6
-    },
-    "inc": {
-      "adj": 7,
-      "applied_w": 7.2,
-      "rejected_w": 1.8
-    },
-    "tester": {
-      "adj": 7,
-      "applied_w": 8.8,
-      "rejected_w": 2.5
-    },
-    "performance engineer": {
-      "adj": 7,
-      "applied_w": 5.0,
-      "rejected_w": 1.0
     },
     "qa engineer": {
       "adj": 7,
-      "applied_w": 6.8,
+      "applied_w": 6.7,
+      "rejected_w": 1.8
+    },
+    "performance engineer": {
+      "adj": 7,
+      "applied_w": 4.9,
+      "rejected_w": 1.0
+    },
+    "inc": {
+      "adj": 7,
+      "applied_w": 7.1,
       "rejected_w": 1.8
     },
     "test": {
@@ -104,40 +104,45 @@
       "applied_w": 8.8,
       "rejected_w": 2.2
     },
+    "tester": {
+      "adj": 8,
+      "applied_w": 9.7,
+      "rejected_w": 2.5
+    },
     "quality": {
       "adj": 8,
-      "applied_w": 8.3,
+      "applied_w": 8.2,
       "rejected_w": 1.9
-    },
-    "performance tester": {
-      "adj": 10,
-      "applied_w": 8.5,
-      "rejected_w": 0.5
-    },
-    "senior": {
-      "adj": 10,
-      "applied_w": 8.5,
-      "rejected_w": 0.0
-    },
-    "assurance engineer": {
-      "adj": 10,
-      "applied_w": 7.4,
-      "rejected_w": 0.0
     },
     "quality assurance": {
       "adj": 10,
       "applied_w": 7.4,
       "rejected_w": 0.9
     },
+    "performance tester": {
+      "adj": 10,
+      "applied_w": 8.5,
+      "rejected_w": 0.5
+    },
+    "assurance engineer": {
+      "adj": 10,
+      "applied_w": 7.4,
+      "rejected_w": 0.0
+    },
+    "performance": {
+      "adj": 10,
+      "applied_w": 19.3,
+      "rejected_w": 1.6
+    },
+    "senior": {
+      "adj": 10,
+      "applied_w": 8.4,
+      "rejected_w": 0.0
+    },
     "assurance": {
       "adj": 10,
       "applied_w": 7.4,
       "rejected_w": 0.9
-    },
-    "performance": {
-      "adj": 10,
-      "applied_w": 19.5,
-      "rejected_w": 1.6
     }
   },
   "paused_queries": {},
@@ -305,16 +310,16 @@
       "last_seen": "2026-11-03"
     },
     "\"neoload\" OR \"blazemeter\" OR \"k6\" OR \"gatling\" performance remote": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-11-04"
+      "last_seen": "2026-11-08"
     },
     "\"test automation engineer\" OR \"QA automation engineer\" remote": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-11-04"
+      "last_seen": "2026-11-08"
     },
     "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote": {
       "shown": 1,
