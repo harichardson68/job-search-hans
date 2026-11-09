@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-09",
+  "run_id": "20261109_120337",
+  "jobs": [
+    {
+      "job_id": "bc0268a412",
+      "number": "1",
+      "number_display": "1",
+      "token": "fae6dfc98e",
+      "run_id": "20261109_120337",
+      "title": "AI Automation Engineer at Huzzle | TrulyRemoteWork.com",
+      "company": "Huzzle",
+      "track": "AI Engineering",
+      "score": 62,
+      "url": "https://trulyremotework.com/jobs/ai-automation-engineer-huzzle",
+      "matched_keywords": [
+        "scalability",
+        "ai automation engineer",
+        "javascript",
+        "ai workflow",
+        "java",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI workflow automation* and *Claude/agentic systems* align perfectly with Hans's active GenAI track; minor _n8n production depth_ gap but realistic given his demonstrated learning velocity.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"AI automation engineer\" OR \"AI workflow engineer\" remote"
+    },
+    {
+      "job_id": "ad36c0316e",
+      "number": "2",
+      "number_display": "2",
+      "token": "79398e4818",
+      "run_id": "20261109_120337",
+      "title": "AI Test Engineer III @ Trend Health Partners",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 107,
+      "url": "https://testdevjobs.com/job/trend-health-partners-ai-test-engineer-iii-27827/",
+      "matched_keywords": [
+        "career-qa-title",
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "transferable-title:years-gate-skipped",
+      "query": "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote"
+    }
+  ]
+}
