@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-10",
+  "run_id": "20261110_120341",
+  "jobs": [
+    {
+      "job_id": "57065cc757",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "84da8f3e77",
+      "run_id": "20261110_120341",
+      "title": "Senior QA Engineer (OTE $50000/year USD), Sparkrock",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 70,
+      "url": "https://jobs.lever.co/Ionicpartners/5aabc877-0262-4ccc-a370-df7e5c4126cf",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "site:jobs.lever.co \"QA engineer\" OR \"test engineer\" remote"
+    },
+    {
+      "job_id": "861195386b",
+      "number": "G2",
+      "number_display": "G2",
+      "token": "e1883428ed",
+      "run_id": "20261110_120341",
+      "title": "Software Test Lead - Remote",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 42,
+      "url": "https://www.indeed.com/viewjob?jk=46a943e99689fae2",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "\"test lead\" OR \"QA lead\" software remote"
+    },
+    {
+      "job_id": "b641f66172",
+      "number": "A1",
+      "number_display": "A1",
+      "token": "8e1e579ad6",
+      "run_id": "20261110_120341",
+      "title": "Quality Assurance Engineer I, Mechatronics and ...",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://www.amazon.jobs/en/jobs/10586425",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title"
+    }
+  ]
+}

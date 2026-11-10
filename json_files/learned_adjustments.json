@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-08T23:00:18",
+  "generated_at": "2026-11-09T23:00:19",
   "labeled_weighted": {
-    "applied": 56.6,
-    "rejected": 48.0
+    "applied": 56.2,
+    "rejected": 47.7
   },
   "settings": {
     "half_life_days": 90,
@@ -22,32 +22,32 @@
     "ml": {
       "adj": -11,
       "applied_w": 1.1,
-      "rejected_w": 5.6
+      "rejected_w": 5.5
     },
     "agentic": {
       "adj": -9,
-      "applied_w": 4.8,
-      "rejected_w": 13.6
+      "applied_w": 4.7,
+      "rejected_w": 13.5
     },
     "developer": {
       "adj": -8,
       "applied_w": 1.5,
-      "rejected_w": 5.0
+      "rejected_w": 4.9
     },
     "ai engineer": {
       "adj": -7,
       "applied_w": 5.7,
-      "rejected_w": 12.0
+      "rejected_w": 11.9
     },
     "agentic ai": {
       "adj": -7,
       "applied_w": 2.9,
-      "rejected_w": 7.3
+      "rejected_w": 7.2
     },
     "ai": {
       "adj": -6,
-      "applied_w": 16.4,
-      "rejected_w": 29.7
+      "applied_w": 16.2,
+      "rejected_w": 29.5
     },
     "solutions": {
       "adj": -5,
@@ -57,37 +57,27 @@
     "software": {
       "adj": -1,
       "applied_w": 4.3,
-      "rejected_w": 3.9
+      "rejected_w": 3.8
     },
-    "engineer": {
+    "automation engineer": {
       "adj": 1,
-      "applied_w": 41.5,
-      "rejected_w": 31.4
+      "applied_w": 5.4,
+      "rejected_w": 4.1
     },
     "automation": {
       "adj": 1,
       "applied_w": 6.3,
       "rejected_w": 4.7
     },
-    "automation engineer": {
+    "engineer": {
       "adj": 1,
-      "applied_w": 5.5,
-      "rejected_w": 4.2
+      "applied_w": 41.2,
+      "rejected_w": 31.2
     },
     "architect": {
       "adj": 4,
       "applied_w": 4.6,
       "rejected_w": 1.9
-    },
-    "qa": {
-      "adj": 7,
-      "applied_w": 8.9,
-      "rejected_w": 2.6
-    },
-    "qa engineer": {
-      "adj": 7,
-      "applied_w": 6.7,
-      "rejected_w": 1.8
     },
     "performance engineer": {
       "adj": 7,
@@ -99,50 +89,60 @@
       "applied_w": 7.1,
       "rejected_w": 1.8
     },
-    "test": {
-      "adj": 8,
+    "qa": {
+      "adj": 7,
       "applied_w": 8.8,
-      "rejected_w": 2.2
+      "rejected_w": 2.6
+    },
+    "qa engineer": {
+      "adj": 7,
+      "applied_w": 6.7,
+      "rejected_w": 1.8
     },
     "tester": {
       "adj": 8,
-      "applied_w": 9.7,
-      "rejected_w": 2.5
+      "applied_w": 9.6,
+      "rejected_w": 2.4
     },
     "quality": {
       "adj": 8,
       "applied_w": 8.2,
-      "rejected_w": 1.9
+      "rejected_w": 1.8
     },
-    "quality assurance": {
+    "test": {
+      "adj": 8,
+      "applied_w": 8.7,
+      "rejected_w": 2.1
+    },
+    "assurance": {
       "adj": 10,
-      "applied_w": 7.4,
+      "applied_w": 7.3,
       "rejected_w": 0.9
-    },
-    "performance tester": {
-      "adj": 10,
-      "applied_w": 8.5,
-      "rejected_w": 0.5
     },
     "assurance engineer": {
       "adj": 10,
-      "applied_w": 7.4,
+      "applied_w": 7.3,
       "rejected_w": 0.0
     },
     "performance": {
       "adj": 10,
-      "applied_w": 19.3,
+      "applied_w": 19.2,
       "rejected_w": 1.6
+    },
+    "performance tester": {
+      "adj": 10,
+      "applied_w": 8.4,
+      "rejected_w": 0.5
+    },
+    "quality assurance": {
+      "adj": 10,
+      "applied_w": 7.3,
+      "rejected_w": 0.9
     },
     "senior": {
       "adj": 10,
-      "applied_w": 8.4,
+      "applied_w": 8.3,
       "rejected_w": 0.0
-    },
-    "assurance": {
-      "adj": 10,
-      "applied_w": 7.4,
-      "rejected_w": 0.9
     }
   },
   "paused_queries": {},
@@ -322,10 +322,10 @@
       "last_seen": "2026-11-08"
     },
     "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote": {
-      "shown": 1,
+      "shown": 2,
       "applied": 0,
       "rejected": 0,
-      "last_seen": "2026-11-05"
+      "last_seen": "2026-11-09"
     },
     "\"test lead\" OR \"QA lead\" software remote": {
       "shown": 1,
@@ -338,6 +338,12 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-11-06"
+    },
+    "\"AI automation engineer\" OR \"AI workflow engineer\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-09"
     }
   }
 }

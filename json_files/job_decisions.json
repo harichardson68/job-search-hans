@@ -18001,5 +18001,32 @@
       "raw_decision": "",
       "timestamp": "2026-11-09 23:00"
     }
+  ],
+  "2026-11-10": [
+    {
+      "job_id": "b641f66172",
+      "number": "A1",
+      "number_display": "A1",
+      "title": "Quality Assurance Engineer I, Mechatronics and ...",
+      "company": "Amazon",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://www.amazon.jobs/en/jobs/10586425",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Amazon Jobs",
+      "is_amazon": true,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "decision": "pending",
+      "reason": "",
+      "detection_method": "auto",
+      "confidence": 1.0,
+      "notes": "",
+      "reviewed": false,
+      "reviewed_date": "",
+      "recorded_at": "2026-11-10T12:03:41.870813"
+    }
   ]
 }
