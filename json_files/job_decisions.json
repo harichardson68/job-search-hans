@@ -17957,5 +17957,49 @@
       "reviewed": true,
       "reviewed_date": "2026-11-09"
     }
+  ],
+  "2026-11-09": [
+    {
+      "job_id": "bc0268a412",
+      "number": "1",
+      "title": "AI Automation Engineer at Huzzle | TrulyRemoteWork.com",
+      "company": "Huzzle",
+      "track": "AI Engineering",
+      "score": 62,
+      "url": "https://trulyremotework.com/jobs/ai-automation-engineer-huzzle",
+      "matched_keywords": [
+        "scalability",
+        "ai automation engineer",
+        "javascript",
+        "ai workflow",
+        "java",
+        "python"
+      ],
+      "source": "Google Jobs",
+      "query": "\"AI automation engineer\" OR \"AI workflow engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-09 23:00"
+    },
+    {
+      "job_id": "ad36c0316e",
+      "number": "2",
+      "title": "AI Test Engineer III @ Trend Health Partners",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 107,
+      "url": "https://testdevjobs.com/job/trend-health-partners-ai-test-engineer-iii-27827/",
+      "matched_keywords": [
+        "career-qa-title",
+        "ai test engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-09 23:00"
+    }
   ]
 }
