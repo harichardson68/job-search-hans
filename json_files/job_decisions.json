@@ -18004,9 +18004,44 @@
   ],
   "2026-11-10": [
     {
+      "job_id": "57065cc757",
+      "number": "G1",
+      "title": "Senior QA Engineer (OTE $50000/year USD), Sparkrock",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 70,
+      "url": "https://jobs.lever.co/Ionicpartners/5aabc877-0262-4ccc-a370-df7e5c4126cf",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "site:jobs.lever.co \"QA engineer\" OR \"test engineer\" remote",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-11-10 23:00"
+    },
+    {
+      "job_id": "861195386b",
+      "number": "G2",
+      "title": "Software Test Lead - Remote",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 42,
+      "url": "https://www.indeed.com/viewjob?jk=46a943e99689fae2",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test lead\" OR \"QA lead\" software remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-11-10 23:00"
+    },
+    {
       "job_id": "b641f66172",
       "number": "A1",
-      "number_display": "A1",
       "title": "Quality Assurance Engineer I, Mechatronics and ...",
       "company": "Amazon",
       "track": "QA Automation",
@@ -18016,17 +18051,11 @@
         "career-qa-title"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Unknown Fit",
-      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-11-10T12:03:41.870813"
+      "query": "",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-11-10 23:00"
     }
   ]
 }
