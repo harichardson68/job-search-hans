@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-14",
+  "run_id": "20261114_120341",
+  "jobs": [
+    {
+      "job_id": "639687054a",
+      "number": "1",
+      "number_display": "1",
+      "token": "17b1ebb36c",
+      "run_id": "20261114_120341",
+      "title": "Lead Performance Engineer",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 130,
+      "url": "https://nvoids.com/j_details.jsp?id=3830886&uid=22d13ad82ff140b0a2a30ec77637c90b",
+      "matched_keywords": [
+        "jmeter",
+        "performance engineer",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"performance engineer\" \"loadrunner\" OR \"vugen\" remote"
+    }
+  ]
+}
