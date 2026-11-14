@@ -18057,5 +18057,137 @@
       "raw_decision": "Applied",
       "timestamp": "2026-11-10 23:00"
     }
+  ],
+  "2026-11-13": [
+    {
+      "job_id": "41040c6d48",
+      "number": "G1",
+      "title": "QA Engineer",
+      "company": "Trilogy Federal",
+      "track": "QA Automation",
+      "score": 244,
+      "url": "https://jobs.lever.co/TrilogyFederal/0d5cdfd3-b58e-4119-885d-c1fdb0155c57",
+      "matched_keywords": [
+        "javascript",
+        "load testing",
+        "jmeter",
+        "locust",
+        "ci/cd",
+        "jira",
+        "qa+performance",
+        "test cases",
+        "selenium",
+        "defect tracking",
+        "career-qa-title",
+        "scalability",
+        "java",
+        "rag",
+        "python",
+        "sql",
+        "agile",
+        "test plans"
+      ],
+      "source": "TheirStack",
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-13 23:00"
+    },
+    {
+      "job_id": "ce9f3aeebb",
+      "number": "G2",
+      "title": "API Test Engineer at Bright Vision Technologies",
+      "company": "Bright Vision Technologies",
+      "track": "QA Automation",
+      "score": 77,
+      "url": "https://www.qajobboard.com/jobs/api-test-engineer-85b48bac",
+      "matched_keywords": [
+        "postman",
+        "career-qa-title",
+        "rag",
+        "aws"
+      ],
+      "source": "Google Jobs",
+      "query": "\"API test engineer\" OR \"API tester\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-13 23:00"
+    },
+    {
+      "job_id": "d8c3fedcc6",
+      "number": "G3",
+      "title": "Quality Assurance Tester",
+      "company": "BS SERVICES",
+      "track": "Gap Track",
+      "score": 245,
+      "url": "http://www.indeed.com/job/quality-assurance-tester-df4942bcba91a1be",
+      "matched_keywords": [
+        "javascript",
+        "jira",
+        "ci/cd",
+        "jenkins",
+        "agile",
+        "test cases",
+        "selenium",
+        "defect tracking",
+        "aws",
+        "java",
+        "scrum",
+        "performance test",
+        "python",
+        "sql",
+        "loadrunner",
+        "performance testing",
+        "test plans"
+      ],
+      "source": "TheirStack",
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-13 23:00"
+    },
+    {
+      "job_id": "937757e6a9",
+      "number": "G4",
+      "title": "Senior Quality Assurance Engineer - Core Video & Data",
+      "company": "Hudl",
+      "track": "QA Automation",
+      "score": 69,
+      "url": "https://boards.greenhouse.io/hudl/jobs/8325526",
+      "matched_keywords": [
+        "aws",
+        "career-qa-title",
+        "rag",
+        "scrum",
+        "manual testing"
+      ],
+      "source": "Google Jobs",
+      "query": "site:boards.greenhouse.io \"QA engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-13 23:00"
+    },
+    {
+      "job_id": "798a704d75",
+      "number": "G5",
+      "title": "Software Tester - Remote - Indeed.com",
+      "company": "Indeed.com",
+      "track": "QA Automation",
+      "score": 67,
+      "url": "https://www.indeed.com/viewjob?jk=2ca3cdfe181513d4",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"software tester\" remote -manual",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-13 23:00"
+    }
   ]
 }
