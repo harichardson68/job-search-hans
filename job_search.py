@@ -955,6 +955,7 @@ BLOCKED_JOB_SITES = [
     # 2026-11-08: Lensa — re-post aggregator (lensa.com/job-v1/...), blocked
     # entirely. Title/company mentions are caught in is_blocked_company().
     "lensa.com",
+    "nvoids.com",
 ]
 
 def is_blocked_site(url):

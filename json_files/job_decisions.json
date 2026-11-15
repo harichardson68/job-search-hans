@@ -18089,9 +18089,9 @@
       ],
       "source": "TheirStack",
       "query": "",
-      "decision": "no_response",
+      "decision": "not_interested",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Not Interested/Not a match",
       "timestamp": "2026-11-13 23:00"
     },
     {
@@ -18110,9 +18110,9 @@
       ],
       "source": "Google Jobs",
       "query": "\"API test engineer\" OR \"API tester\" remote",
-      "decision": "no_response",
+      "decision": "bad_link",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-11-13 23:00"
     },
     {
@@ -18144,9 +18144,9 @@
       ],
       "source": "TheirStack",
       "query": "",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Applied",
       "timestamp": "2026-11-13 23:00"
     },
     {
@@ -18166,9 +18166,9 @@
       ],
       "source": "Google Jobs",
       "query": "site:boards.greenhouse.io \"QA engineer\" remote",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Applied",
       "timestamp": "2026-11-13 23:00"
     },
     {
@@ -18184,10 +18184,32 @@
       ],
       "source": "Google Jobs",
       "query": "\"software tester\" remote -manual",
-      "decision": "no_response",
+      "decision": "applied",
       "reason": null,
-      "raw_decision": "",
+      "raw_decision": "Applied",
       "timestamp": "2026-11-13 23:00"
+    }
+  ],
+  "2026-11-14": [
+    {
+      "job_id": "639687054a",
+      "number": "1",
+      "title": "Lead Performance Engineer",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 130,
+      "url": "https://nvoids.com/j_details.jsp?id=3830886&uid=22d13ad82ff140b0a2a30ec77637c90b",
+      "matched_keywords": [
+        "jmeter",
+        "performance engineer",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "query": "\"performance engineer\" \"loadrunner\" OR \"vugen\" remote",
+      "decision": "bad_link",
+      "reason": "Bad link",
+      "raw_decision": "Bad Link/Job Not Available",
+      "timestamp": "2026-11-14 23:00"
     }
   ]
 }
