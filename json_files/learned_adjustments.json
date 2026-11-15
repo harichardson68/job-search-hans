@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-13T23:00:18",
+  "generated_at": "2026-11-14T23:00:18",
   "labeled_weighted": {
-    "applied": 56.4,
-    "rejected": 46.2
+    "applied": 59.0,
+    "rejected": 46.9
   },
   "settings": {
     "half_life_days": 90,
@@ -22,67 +22,62 @@
     "ml": {
       "adj": -11,
       "applied_w": 1.0,
-      "rejected_w": 5.4
-    },
-    "agentic": {
-      "adj": -9,
-      "applied_w": 4.6,
-      "rejected_w": 13.0
+      "rejected_w": 5.3
     },
     "developer": {
       "adj": -9,
       "applied_w": 1.4,
-      "rejected_w": 4.8
+      "rejected_w": 4.7
+    },
+    "agentic": {
+      "adj": -9,
+      "applied_w": 4.6,
+      "rejected_w": 12.9
+    },
+    "agentic ai": {
+      "adj": -8,
+      "applied_w": 2.8,
+      "rejected_w": 7.0
     },
     "ai engineer": {
       "adj": -7,
       "applied_w": 5.5,
-      "rejected_w": 11.6
-    },
-    "agentic ai": {
-      "adj": -7,
-      "applied_w": 2.8,
-      "rejected_w": 7.0
-    },
-    "ai": {
-      "adj": -6,
-      "applied_w": 15.7,
-      "rejected_w": 28.6
+      "rejected_w": 11.5
     },
     "solutions": {
       "adj": -6,
       "applied_w": 2.5,
-      "rejected_w": 4.9
+      "rejected_w": 4.8
     },
-    "software": {
-      "adj": 1,
-      "applied_w": 5.1,
+    "ai": {
+      "adj": -6,
+      "applied_w": 15.6,
+      "rejected_w": 28.4
+    },
+    "ai automation": {
+      "adj": -1,
+      "applied_w": 4.4,
       "rejected_w": 3.7
     },
-    "engineer": {
-      "adj": 1,
-      "applied_w": 40.9,
-      "rejected_w": 30.2
+    "software": {
+      "adj": 2,
+      "applied_w": 6.1,
+      "rejected_w": 3.7
     },
     "architect": {
-      "adj": 4,
+      "adj": 3,
       "applied_w": 4.4,
       "rejected_w": 1.9
     },
     "qa": {
-      "adj": 6,
-      "applied_w": 8.6,
-      "rejected_w": 2.5
+      "adj": 4,
+      "applied_w": 8.5,
+      "rejected_w": 3.5
     },
     "qa engineer": {
-      "adj": 6,
-      "applied_w": 6.5,
-      "rejected_w": 1.7
-    },
-    "tester": {
-      "adj": 7,
-      "applied_w": 9.3,
-      "rejected_w": 2.4
+      "adj": 4,
+      "applied_w": 6.4,
+      "rejected_w": 2.7
     },
     "inc": {
       "adj": 7,
@@ -96,43 +91,48 @@
     },
     "test": {
       "adj": 8,
-      "applied_w": 9.4,
+      "applied_w": 9.3,
       "rejected_w": 2.1
     },
-    "quality": {
+    "tester": {
       "adj": 9,
-      "applied_w": 8.9,
+      "applied_w": 11.3,
+      "rejected_w": 2.3
+    },
+    "quality": {
+      "adj": 10,
+      "applied_w": 10.8,
       "rejected_w": 1.8
+    },
+    "quality assurance": {
+      "adj": 10,
+      "applied_w": 10.0,
+      "rejected_w": 0.8
+    },
+    "assurance engineer": {
+      "adj": 10,
+      "applied_w": 9.0,
+      "rejected_w": 0.0
     },
     "performance tester": {
       "adj": 10,
       "applied_w": 8.1,
       "rejected_w": 0.5
     },
-    "assurance": {
-      "adj": 10,
-      "applied_w": 8.1,
-      "rejected_w": 0.8
-    },
-    "quality assurance": {
-      "adj": 10,
-      "applied_w": 8.1,
-      "rejected_w": 0.8
-    },
     "performance": {
       "adj": 10,
-      "applied_w": 18.6,
+      "applied_w": 18.4,
       "rejected_w": 1.5
     },
     "senior": {
       "adj": 10,
-      "applied_w": 8.1,
+      "applied_w": 9.0,
       "rejected_w": 0.0
     },
-    "assurance engineer": {
+    "assurance": {
       "adj": 10,
-      "applied_w": 8.1,
-      "rejected_w": 0.0
+      "applied_w": 10.0,
+      "rejected_w": 0.8
     }
   },
   "paused_queries": {},
@@ -167,6 +167,18 @@
       "rejected": 0,
       "last_seen": "2026-11-06"
     },
+    "\"software tester\" remote -manual": {
+      "shown": 4,
+      "applied": 2,
+      "rejected": 0,
+      "last_seen": "2026-11-13"
+    },
+    "site:boards.greenhouse.io \"QA engineer\" remote": {
+      "shown": 2,
+      "applied": 2,
+      "rejected": 0,
+      "last_seen": "2026-11-13"
+    },
     "\"AI automation engineer\" remote": {
       "shown": 1,
       "applied": 1,
@@ -181,12 +193,6 @@
     },
     "\"API test engineer\" OR \"API tester\" remote": {
       "shown": 3,
-      "applied": 1,
-      "rejected": 0,
-      "last_seen": "2026-11-13"
-    },
-    "\"software tester\" remote -manual": {
-      "shown": 4,
       "applied": 1,
       "rejected": 0,
       "last_seen": "2026-11-13"
@@ -214,12 +220,6 @@
       "applied": 1,
       "rejected": 0,
       "last_seen": "2026-11-10"
-    },
-    "site:boards.greenhouse.io \"QA engineer\" remote": {
-      "shown": 2,
-      "applied": 1,
-      "rejected": 0,
-      "last_seen": "2026-11-13"
     },
     "\"test lead\" OR \"QA lead\" software remote": {
       "shown": 2,
@@ -334,6 +334,12 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-11-09"
+    },
+    "\"performance engineer\" \"loadrunner\" OR \"vugen\" remote": {
+      "shown": 1,
+      "applied": 0,
+      "rejected": 0,
+      "last_seen": "2026-11-14"
     }
   }
 }
