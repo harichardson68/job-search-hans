@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-16",
+  "run_id": "20261116_120450",
+  "jobs": [
+    {
+      "job_id": "04fbbe09cb",
+      "number": "1",
+      "number_display": "1",
+      "token": "21b5b7163c",
+      "run_id": "20261116_120450",
+      "title": "AI QA Engineer, LLM Evaluation and Test Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 182,
+      "url": "https://hiddenjobs.dev/company/verasoft/jobs/ai-qa-engineer-llm-evaluation-and-test-automation-5883c1d2/",
+      "matched_keywords": [
+        "llm",
+        "ai qa",
+        "uat",
+        "career-qa-title",
+        "ai engineer",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "transferable-title:years-gate-skipped",
+      "query": "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote"
+    },
+    {
+      "job_id": "00f2da5ff8",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "6fce9caad9",
+      "run_id": "20261116_120450",
+      "title": "Sr. QA Automation Engineer at Improving - Remote (work from ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 42,
+      "url": "https://www.getonbrd.com/jobs/sysadmin-devops-qa/sr-qa-automation-engineer-improving-remote",
+      "matched_keywords": [
+        "rag",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *Senior QA Automation* role with *strategy* and *cross-team* focus; minor _tool-specific_ gaps but squarely in his wheelhouse.",
+      "level_signal": "career-qa-title",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote"
+    },
+    {
+      "job_id": "4e1cafea1f",
+      "number": "G2",
+      "number_display": "G2",
+      "token": "0fc2943d3b",
+      "run_id": "20261116_120450",
+      "title": "Quality Assurance Engineer at Booknook Inc \u00b7 Remote, United ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://relomote.com/jobs/quality-assurance-engineer-194571680",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "\"quality assurance engineer\" remote"
+    }
+  ]
+}
