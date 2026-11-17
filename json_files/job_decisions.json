@@ -18211,5 +18211,67 @@
       "raw_decision": "Bad Link/Job Not Available",
       "timestamp": "2026-11-14 23:00"
     }
+  ],
+  "2026-11-16": [
+    {
+      "job_id": "04fbbe09cb",
+      "number": "1",
+      "title": "AI QA Engineer, LLM Evaluation and Test Automation",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 182,
+      "url": "https://hiddenjobs.dev/company/verasoft/jobs/ai-qa-engineer-llm-evaluation-and-test-automation-5883c1d2/",
+      "matched_keywords": [
+        "llm",
+        "ai qa",
+        "uat",
+        "career-qa-title",
+        "ai engineer",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote",
+      "decision": "other",
+      "reason": "Paid link",
+      "raw_decision": "Other",
+      "timestamp": "2026-11-16 23:00"
+    },
+    {
+      "job_id": "00f2da5ff8",
+      "number": "G1",
+      "title": "Sr. QA Automation Engineer at Improving - Remote (work from ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 42,
+      "url": "https://www.getonbrd.com/jobs/sysadmin-devops-qa/sr-qa-automation-engineer-improving-remote",
+      "matched_keywords": [
+        "rag",
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-16 23:00"
+    },
+    {
+      "job_id": "4e1cafea1f",
+      "number": "G2",
+      "title": "Quality Assurance Engineer at Booknook Inc \u00b7 Remote, United ...",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 45,
+      "url": "https://relomote.com/jobs/quality-assurance-engineer-194571680",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"quality assurance engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-16 23:00"
+    }
   ]
 }

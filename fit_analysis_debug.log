@@ -5994,3 +5994,45 @@
 2026-11-15 12:03:15,228 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
 2026-11-15 12:03:15,238 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
 2026-11-15 12:03:15,318 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-16 12:03:01,179 INFO [ATS-FAIL] https://relomote.com/jobs/quality-assurance-engineer-194571680 403 Client Error: Forbidden for url: https://relomote.com/jobs/quality-assurance-engineer-194571680
+2026-11-16 12:03:12,066 INFO [ATS-FAIL] https://boards.greenhouse.io/redcellpartners/jobs/5253541007 404 Client Error: Not Found for url: https://boards-api.greenhouse.io/v1/boards/redcellpartners/jobs/5253541007
+2026-11-16 12:04:27,525 INFO No device provided, using cpu
+2026-11-16 12:04:28,351 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,353 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-16 12:04:28,362 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:28,444 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,453 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:28,487 INFO Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-11-16 12:04:28,539 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,548 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:28,604 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,613 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-11-16 12:04:28,738 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,746 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:28,829 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,838 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:28,917 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-11-16 12:04:28,974 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:28,983 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:29,474 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-11-16 12:04:29,534 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-16 12:04:29,594 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-16 12:04:29,661 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-16 12:04:29,725 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:29,733 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:29,816 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:29,825 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:29,885 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:29,894 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:29,956 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:29,964 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:30,084 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-16 12:04:30,141 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-16 12:04:30,356 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-16 12:04:30,363 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-11-16 12:04:30,430 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-16 12:04:32,031 INFO [FIT-SKIP] id=https://hiddenjobs.dev/company/verasoft/jobs/ai-qa-engineer-llm-evaluation-and-test-automation-5883c1d2/ title='AI QA Engineer, LLM Evaluation and Test Automation' reason=no_description
+2026-11-16 12:04:38,194 INFO [FIT-OK] id=https://tangerinefeed.net/job/Mhb_x title='Performance Engineer at ClickHouse - Fully Remote Job' source=Google Jobs score=45 tier=Stretch Fit
+2026-11-16 12:04:38,511 INFO [FIT-SKIP] id=https://relomote.com/jobs/quality-assurance-engineer-194571680 title='Quality Assurance Engineer at Booknook Inc · Remote, United ...' reason=no_description
+2026-11-16 12:04:38,684 INFO [FIT-FALLBACK] id=https://www.getonbrd.com/jobs/sysadmin-devops-qa/sr-qa-automation-engineer-improving-remote title='Sr. QA Automation Engineer at Improving - Remote (work from ...' source=Google Jobs reason=missing_company
+2026-11-16 12:04:40,639 INFO [FIT-OK] id=https://www.getonbrd.com/jobs/sysadmin-devops-qa/sr-qa-automation-engineer-improving-remote title='Sr. QA Automation Engineer at Improving - Remote (work from ...' source=Google Jobs score=42 tier=Strong Fit
