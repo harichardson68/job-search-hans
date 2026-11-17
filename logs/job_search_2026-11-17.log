@@ -1,0 +1,260 @@
+
+============================================================
+  Job Search Run: 2026-11-17 12:00:07
+============================================================
+[GIT] Pulling latest from GitHub...
+   [OK] Already up to date.
+
+=======================================================
+  Hans Richardson  Automated Job Search
+  Target: LoadRunner / Performance Engineer (Remote)
+=======================================================
+
+[SEARCH] Searching Google Jobs via Serper...
+   [DEBUG] Serper 'site:dice.com/job-detail "jmeter" "performance" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "performance test engineer" remote': 0 jobs, 4 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "loadrunner" remote': 0 jobs, 7 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "performance engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance test engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"load test engineer" "loadrunner" remote': 0 jobs, 0 organic, status 200
+   [DEBUG] Serper '"performance engineer" "loadrunner" OR "vugen" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"LoadRunner Enterprise" OR "LoadRunner Cloud" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" "jmeter" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"neoload" OR "blazemeter" OR "k6" OR "gatling" performance remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" "dynatrace" OR "appdynamics" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"site reliability" "load testing" OR "performance testing" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" remote contract "W2" OR "C2C"': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" OR "performance tester" "Kansas City"': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "software test engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "QA engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"quality assurance engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"software tester" remote -manual': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"API test engineer" OR "API tester" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:jobs.lever.co "QA engineer" OR "test engineer" remote': 0 jobs, 6 organic, status 200
+   [DEBUG] Serper 'site:boards.greenhouse.io "QA engineer" remote': 0 jobs, 1 organic, status 200
+   [DEBUG] Serper '"test automation engineer" OR "QA automation engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"test lead" OR "QA lead" software remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"QA" OR "test engineer" OR "software tester" "Kansas City"': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"AI QA engineer" OR "AI test engineer" OR "AI SDET" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"AI automation engineer" OR "AI workflow engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"AI integration engineer" OR "AI systems engineer" remote': 0 jobs, 10 organic, status 200
+   [GOTO] Google Jobs: 154 wrapped links, 154 resolved via /resolve, 0 via redirect, 0 dropped
+[LEARN] Loaded 24 learned title adjustments
+   [LEARNED] +10 (performance+10) Senior Performance Engineer- JMeter, JavaScript - 
+   [LEARNED] +10 (performance+10) Performance Test Engineer - Remote - W2/own corpor
+   [LEARNED] +10 (performance+10) Performance Testing - Logicplanet, Inc. - Remote
+   [LEARNED] +10 (performance+10) Performance Testing - Logicplanet, Inc. - Remote
+   [DEBUG] Serper FILTERED-non-US (city/country canada): ML Systems Performance Engineer - Cerebras Systems
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Best Performance Testing Jobs in 2026
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Sr Performance Test Engineer- LoadRunner, API & ..
+   [DEBUG] Serper FILTERED-searchpage: Performance Testing With Jmeter Jobs
+   [LEARNED] +8 (test+8) [Remote] QA Test Engineer
+   [LEARNED] +10 (performance+10) Performance Test Engineer - Remote/Hybrid (JMeter 
+   [DEBUG] Serper FILTERED-non-US (linkedin-country ca): Sr Performance Test Engineer- LoadRunner, API & ..
+   [LEARNED] +10 (performance+10) Lead Performance Engineer
+   [LEARNED] +10 (performance+10) Remote Performance Engineer for High-Traffic Apps
+   [LEARNED] +10 (performance+10) Remote Performance Engineer Jobs
+   [DEBUG] Serper FILTERED-listing-title: 184 performance testing Job Vacancies in US | Hiri
+   [LEARNED] +10 (performance+10) Performance Engineer (6391) at itD Tech
+   [DEBUG] Serper FILTERED-non-US (linkedin-country ca): Senior Performance Test Lead / Specialist at N2P S
+   [DEBUG] Serper FILTERED-listing-title: 876 Autosys Jobs in Noida
+   [DEBUG] Serper FILTERED-fp_path:/blog/: Scalability Testing: Techniques, Metrics, and Tool
+   [LEARNED] +10 (performance+10) Performance Engineer III | remote quest jobs
+   [DEBUG] Serper FILTERED-non-US (city/country bengaluru): QA jobs in Bengaluru, Hyderabad, Pune, Chennai, Gu
+   [DEBUG] Serper FILTERED-non-US (tld .in): Latest Autosys Jobs Vacancies 17 November 2026
+   [LEARNED] +10 (performance+10) Senior Performance Engineer – JMeter, JavaScript
+   [DEBUG] Serper FILTERED-searchpage: Performance Testing With Jmeter Jobs
+   [DEBUG] Serper FILTERED-fp_path:/blog/: k6 vs JMeter vs Gatling vs Locust Compared (2026)
+   [LEARNED] +10 (performance+10) QA Engineer - Load and Performance Testing at Full
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Remote Site Reliability Engineer Jobs in Canada
+   [DEBUG] Serper FILTERED-listing-title: 184 performance testing Job Vacancies in US | Hiri
+   [DEBUG] Serper FILTERED-searchpage: 494 Modeling and simulation engineer jobs in Remot
+   [DEBUG] Serper FILTERED-searchpage: Energy Storage Engineers jobs in Remote
+   [LEARNED] +8 (test+8) Sr Software Test Engineer - DATAMAXIS, Inc
+   [LEARNED] +7 (inc+7) QA ENGINEER - AaraTechnologies Inc - Hybrid in Vir
+   [DEBUG] Serper FILTERED-non-US (city turin): Remote Quality Analyst - US - TURING ENTERPRISES, 
+   [LEARNED] +7 (inc+7) Pega QA Engineer- Remote - LEO DOES IT INC
+   [LEARNED] +10 (quality+10) Software Quality Engineering L4 - Frontdoor, Inc. 
+   [LEARNED] +7 (inc+7) QA ENGINEER - AaraTechnologies Inc - Hybrid in ...
+   [LEARNED] +7 (inc+7) QA Engineer - DTEL Engineering & Consultants Inc
+   [DEBUG] Serper FILTERED-searchpage: Software Qa jobs in Remote
+   [LEARNED] +10 (assurance engineer+10) Sr. Quality Assurance Engineer (REMOTE- US based o
+   [LEARNED] +10 (assurance engineer+10) Quality Assurance Engineer - Remote - USA
+   [DEBUG] Serper FILTERED-non-US (city/country india): [Hiring] Quality Assurance Engineer | Remote | 6 M
+   [DEBUG] Serper FILTERED-career-info-path: Remote Quality Assurance (QA) Jobs in November 202
+   [DEBUG] Serper FILTERED-searchpage: Remote QA Engineer Jobs - 618 Open Positions (Nov 
+   [DEBUG] Serper FILTERED-non-US (city/country germany): Remote QA Engineer Jobs in Germany
+   [LEARNED] +9 (tester+9) Software Tester (Remote)
+   [DEBUG] Serper FILTERED-non-US (city/country italy): Freelance Software Tester | Remote in Italy
+   [DEBUG] Serper FILTERED-non-US (city/country germany): Freelance Software Tester | Remote in Germany
+   [DEBUG] Serper FILTERED-non-US (city/country germany): Website & App Tester | Remote, freelancer at Testl
+   [DEBUG] Serper FILTERED-searchpage: Automotive test engineer jobs in Remote
+   [LEARNED] +8 (test+8) Automation Test Engineer – API & Playwright | Unit
+   [DEBUG] Serper FILTERED-searchpage: Remote Quality Assurance Jobs by Job Title: A
+   [DEBUG] Serper FILTERED-searchpage: Performance Tester jobs in Remote
+   [DEBUG] Serper FILTERED-non-US (city/country mumbai): Software Engineer- API Tester + SQL - AQM Technolo
+   [DEBUG] Serper FILTERED-non-US (city/country india): Jobgether - Senior Automation QA Engineer
+   [DEBUG] Serper FILTERED-non-US (city/country australia): Jobgether - Data QA Engineer
+   [LEARNED] +4 (qa+4) Remote QA Automation Engineer at Come and See
+   [LEARNED] +4 (qa+4) QA Automation Engineer - Procal Technologies - Rem
+   [LEARNED] +4 (qa+4) QA Automation Engineer at Come and See Foundation
+   [LEARNED] +4 (qa+4) Remote QA Automation Engineer Jobs
+   [DEBUG] Serper FILTERED-searchpage: 138 Remote qa automation engineer jobs in Canada
+   [LEARNED] +4 (qa+4) QA Automation Engineer - Remote
+   [DEBUG] Serper FILTERED-non-US (city/country india): Remote Software Testing Jobs Hiring In India
+   [DEBUG] Serper FILTERED-searchpage: Software Qa jobs in Remote
+   [LEARNED] +4 (qa+4) Remote QA Lead Healthcare CMMS | reputed company- 
+   [LEARNED] +8 (test+8) Workday Automation Test lead - Laiba Technologies 
+   [LEARNED] +8 (test+8) Test Automation Lead at TalentHop — United States 
+   [DEBUG] Serper FILTERED-non-US (city turin): QA Automation Engineer at TriCom Technical Service
+   [DEBUG] Serper FILTERED-non-US (city turin): Quality Assurance Developer at Randstad Digital Am
+   [LEARNED] -2 (qa engineer+4, ai-6) AI QA Engineer (Remote) at AiQualTest LLC
+   [DEBUG] Serper FILTERED-non-US (city/country india): Jobgether - AI - Software Development Engineer in 
+   [DEBUG] Serper FILTERED-non-US (city/country australia): Agentic AI Test Engineer (Playwright) job - 60-day
+   [LEARNED] -6 (ai-6) Remote :: AI Testing Engineer || Contract - IT Fir
+   [DEBUG] Serper FILTERED-searchpage: Remote QA Engineer Jobs - 618 Open Positions (Nov 
+   [DEBUG] Serper FILTERED-career-info-title: AI Automation Engineer Jobs & Career Guide
+   [LEARNED] -6 (ai-6) AIApply hiring AI Automation Engineer Job in Remot
+   [DEBUG] Serper FILTERED-searchpage: Remote full stack ai engineer jobs
+   [DEBUG] Serper FILTERED-fp_path:/blog/: What Is AI Automation Engineering? Role, Skills, P
+   [DEBUG] Serper FILTERED-non-US (linkedin-country za): AI Integration Engineer (Remote, Tembisa) - Jobs
+   [OK] Google Jobs: 4 relevant jobs found
+   [ATS] descriptions fetched: 6 enriched, 3 failed, 13 attempted
+   [US-SHADOW] 0 of 0 full-description postings had no positive US signal (logged only -> logs/us_signal_shadow.log)
+[SEARCH] Searching TheirStack (trial)...
+   [DEBUG] TheirStack status 200
+   [DEBUG] TheirStack REJECTED (title (score=0, track=, n/a)): Senior Software Engineer | Remote, United States | posted=2026-11-17
+   [DEBUG] TheirStack REJECTED (level (score=0, track=, desc:experience-pattern:3+years (threshold 3))): QA Test Analyst - AI & Test Automation | Remote, San Mateo, CA | posted=2026-11-17
+   [LEARNED] +4 (qa+4) QA Automation Engineer
+   [DEBUG] TheirStack REJECTED (title (score=0, track=, n/a)): Mid-Level Full Stack Developer (Remote) | Remote, McLean, VA 22102 | posted=2026-11-17
+   [LEARNED] +10 (senior+10) Senior QA Automation Engineer
+   [DEBUG] TheirStack REJECTED (location:not-us-remote (score=251, track=QA Automation, career-qa-title)): Senior QA Automation Engineer | Remote, Pinecrest, FL 33156 | posted=2026-11-16
+   [DEBUG] TheirStack REJECTED (title (score=0, track=, n/a)): Sr Software Engineer I | Remote, US | posted=2026-11-16
+   [OK] TheirStack: 6 raw, 1 relevant
+   [SOURCE-EVAL] TheirStack: 1 relevant, 1 NOT found by Google Jobs
+      unique: QA Automation Engineer @ Azra AI
+   [DEBUG] FILTERED-minscore (AI Engineering needs 50pts): AIApply hiring AI Automation Engineer Job in Remot [29pts]
+[OK] Removed 1 jobs below minimum score thresholds
+[OK] Removed 1 duplicate jobs already sent previously
+
+=======================================================
+[STATS] Total relevant jobs found: 3
+   [WARN] Claude API returned no text block: {'model': 'claude-haiku-5-5', 'id': 'msg_011Ch8waH9A2hGtRfDRG4Xuy', 'type': 'message', 'role': 'assistant', 'content': [{'type': 'thinking', 'thinking': '', 'signature': 'CAQSzBAKEAgTGAI4AUIIdGhpbmtpb
+   [WARN] Fit model claude-haiku-5-5 failed; falling back to claude-haiku-4-5-20251001
+[OK] Ran fit evaluation on 3 AI-track job(s) (3 succeeded, 0 empty/failed)
+[STATS] Found 3 jobs total
+[STATS] Pool A (Performance/AI): sending top 2 of 2 candidates
+[STATS] Pool B (QA Automation/Remote Income Floor): sending top 1 of 1 candidates
+=======================================================
+
+[STATS] Generating cover letters for 3 jobs...
+
+  [01] Score:201 | Tier:Excellent Fit | Google Jobs | AI QA Engineer (Remote) at AiQualTest LLC
+        AiQualTest LLC | https://talentapply.io/jobs/ai-qa-engineer-remote-aiqualtest
+        [FIT] **Excellent Fit** — Remote *AI QA Engineer* role with *RAG/agentic* focus; Hans's GenAI certs, API testing, Python autom...
+
+  [02] Score:265 | Tier:Strong Fit    | TheirStack | QA Automation Engineer
+        Azra AI | http://www.indeed.com/job/qa-automation-engineer-e2208b684ee
+        [FIT] **Strong Fit** — *QA automation* + *AI testing* + *observability* align well; minor _formal team leadership_ expectation...
+
+  [03] Score: 78 | Tier:Excellent Fit | Google Jobs | QA Automation Engineer at Come and See Foundation
+        Come and See Foundation | https://www.christiantechjobs.io/christian-jobs/remote-qa-au
+        [FIT] **Excellent Fit** — *Remote* QA automation role with *strategy & mentorship* focus; Hans's 24yrs + performance testing d...
+
+[OK] Saved 3 job URLs to seen_jobs.json
+
+[OK] Results saved to: C:\Users\haric\Jobsearch\json_files\job_results.json
+[SEARCH] Searching Amazon Jobs spotlight...
+   [DEBUG] Amazon FILTERED-title-lane: Business Intelligence Engineer, Search Capacity - Job ID
+   [DEBUG] Amazon FILTERED-title-lane: Network Development Engineer, 5G NTN ...
+   [DEBUG] Amazon FILTERED-title-lane: Software Development Engineer II - Change Review ...
+   [DEBUG] Amazon FILTERED-title-lane: Software Development Engineer II, Alexa Excellence
+   [DEBUG] Amazon FILTERED-non-US (adci): Quality Assurance Engineer II, Alexa Connectivity Devices - 
+   [DEBUG] Amazon FILTERED-title-lane: Amazon Prime
+   [DEBUG] Amazon FILTERED-title-lane: Westborough, Massachusetts
+   [DEBUG] Amazon FILTERED-title-lane: QAE II, Amazon Payments - ID pracovní pozice
+   [DEBUG] Amazon FILTERED-title-lane: Senior Financial Analyst, AWS Data Center FP&A - Job ID: 105
+   [OK] Amazon Jobs: 0 relevant jobs found (10-day window)
+
+[EMAIL] Sending email notification...
+   [OK] Saved 3 regular + 0 Amazon jobs to today_jobs.json
+   [OK] Archived to today_jobs_2026-11-17.json
+   [OK] Archived to today_jobs_run_20261117_120446.json (token sync source)
+   Email sent to harichardson68@gmail.com
+=======================================================
+TOP 3 MATCHES WITH COVER LETTERS
+=======================================================
+
+[TOP] [201 pts] AI QA Engineer (Remote) at AiQualTest LLC
+   Company : AiQualTest LLC
+   Source  : Google Jobs
+   URL     : https://talentapply.io/jobs/ai-qa-engineer-remote-aiqualtest-llc-2181936
+   Keywords: api testing, rag, agentic, selenium, cypress, ci/cd, test cases, ai qa engineer, career-qa-title, ai qa, sla, python, uat
+
+--- FIT ANALYSIS ---
+**Excellent Fit** — Remote *AI QA Engineer* role with *RAG/agentic* focus; Hans's GenAI certs, API testing, Python automation, and quality-strategy depth align perfectly—_no production LLM build required_.
+
+--- COVER LETTER ---
+Hans Richardson
+harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
+
+---
+
+AiQualTest LLC's AI QA Engineer role sits precisely at the intersection of what I've built over 24 years — rigorous quality engineering, SLA-driven observability, and API testing discipline — and where I'm actively building: LLM evaluation, RAG architectures, and agentic system testing.
+
+At USDA, I enforced SLA compliance thresholds (<5s transactions, <2s services), increased system throughput 40%, and reduced defect resolution time 35% through integrated AppDynamics/Splunk/Grafana observability — the same monitoring discipline that applies directly to evaluating model latency, retrieval pipeline reliability, and AI response consistency. I've built Python-based evaluation frameworks integrating the Claude API, designed a RAG layer using ChromaDB and sentence-transformers, and structured decision logging with continuous-improvement feedback loops — directly mirroring your requirements around LLM evaluation, RAG testing, and CI/CD integration.
+
+Where most AI engineers lack reliability engineering depth, I bring it natively.
+
+I'm fully remote-ready and available immediately. I'd welcome a conversation about how my background serves AiQualTest's quality mission.
+
+Hans Richardson
+----------------------------------------
+
+[TOP] [265 pts] QA Automation Engineer
+   Company : Azra AI
+   Source  : TheirStack
+   URL     : http://www.indeed.com/job/qa-automation-engineer-e2208b684ee5af46
+   Keywords: api testing, cypress, scrum, jmeter, python, qa+performance, ci/cd, career-qa-title, jenkins, kubernetes, uat, sql, selenium, ai engineer, observability, javascript, postman, load testing, k6, java, github actions, gatling
+
+--- FIT ANALYSIS ---
+**Strong Fit** — *QA automation* + *AI testing* + *observability* align well; minor _formal team leadership_ expectation and _production Python depth_ gap, but highly relevant.
+
+--- COVER LETTER ---
+Hans Richardson
+harichardson68@gmail.com | linkedin.com/in/hans-richardson | Lee's Summit, MO (Remote)
+
+---
+
+Azra AI's mission — identifying cancer in real time and moving patients from detection to treatment — deserves a quality strategy built on proven engineering discipline. With 24+ years in QA and performance engineering, including hands-on work with Python, CI/CD pipelines, Kubernetes, and AI API integration, I'm ready to lead test automation for a platform where every release genuinely matters.
+
+At USDA, I led performance testing through an AWS/Kubernetes migration, integrating Prometheus, Grafana, Splunk, and AppDynamics for full-stack observability — increasing system throughput 40% and reducing defect resolution time 35%. I've built API testing frameworks, validated SQL data transformations, and worked within Agile/Scrum teams delivering audit-ready, traceable quality artifacts. My recent hands-on AI work includes a production Python pipeline integrating the Claude API with structured evaluation logging and a RAG layer using ChromaDB — directly applicable to regression-checking model outputs and AI-driven feature validation.
+
+I'm fully remote-capable and available immediately. I'd welcome a conversation about how my reliability engineering background strengthens Azra AI's quality strategy.
+----------------------------------------
+
+[TOP] [78 pts] QA Automation Engineer at Come and See Foundation
+   Company : Come and See Foundation
+   Source  : Google Jobs
+   URL     : https://www.christiantechjobs.io/christian-jobs/remote-qa-automation-engineer-come-and-see-foundation-1893
+   Keywords: exploratory testing, rag, ci/cd, regression testing, career-qa-title, uat
+
+--- FIT ANALYSIS ---
+**Excellent Fit** — *Remote* QA automation role with *strategy & mentorship* focus; Hans's 24yrs + performance testing depth align directly, _no specific tool blocker_.
+
+--- COVER LETTER ---
+Dear Hiring Manager,
+
+I'm writing to apply for the QA Automation Engineer at Come and See Foundation role at Come and See Foundation. With over 24 years of IT experience spanning software testing, quality assurance, and production support, I bring a steady, detail-oriented approach to exploratory testing, rag, ci/cd, regression testing, uat that translates directly to this role.
+
+Throughout my career — including as a Senior Performance Test Engineer and earlier hands-on QA and development work — I've built test plans, tracked defects, and worked closely with development teams to ensure releases meet quality standards before they reach production. I'm comfortable picking up new tools quickly and have a strong track record of reliability and follow-through.
+
+I'm available immediately for remote work and would welcome the opportunity to bring that same reliability to your team.
+
+Best regards,
+Hans Richardson
+Lee's Summit, MO | linkedin.com/in/hans-richardson
+
+----------------------------------------
+
+[LOGS] Snapshotting run logs...
