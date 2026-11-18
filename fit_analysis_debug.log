@@ -6036,3 +6036,44 @@
 2026-11-16 12:04:38,511 INFO [FIT-SKIP] id=https://relomote.com/jobs/quality-assurance-engineer-194571680 title='Quality Assurance Engineer at Booknook Inc · Remote, United ...' reason=no_description
 2026-11-16 12:04:38,684 INFO [FIT-FALLBACK] id=https://www.getonbrd.com/jobs/sysadmin-devops-qa/sr-qa-automation-engineer-improving-remote title='Sr. QA Automation Engineer at Improving - Remote (work from ...' source=Google Jobs reason=missing_company
 2026-11-16 12:04:40,639 INFO [FIT-OK] id=https://www.getonbrd.com/jobs/sysadmin-devops-qa/sr-qa-automation-engineer-improving-remote title='Sr. QA Automation Engineer at Improving - Remote (work from ...' source=Google Jobs score=42 tier=Strong Fit
+2026-11-17 12:02:36,472 INFO [ATS-FAIL] https://www.indeed.com/viewjob?jk=dba5aba6c993576d 401 Client Error: Unauthorized for url: https://www.indeed.com/viewjob?jk=dba5aba6c993576d
+2026-11-17 12:02:45,595 INFO [ATS-FAIL] https://www.glassdoor.com/job-listing/ai-automation-engineer-aiapply-JV_KO0,22_KE23,30.htm?jl=1010214648250 403 Client Error: Forbidden for url: https://www.glassdoor.com/job-listing/ai-automation-engineer-aiapply-JV_KO0,22_KE23,30.htm?jl=1010214648250
+2026-11-17 12:02:46,381 INFO [ATS-FAIL] https://www.monster.com/job-openings/lead-ai-automation-engineer-louisville-ky--212af28f-da1e-4da0-8a29-919c6027c83e 403 Client Error: HTTP Forbidden for url: https://www.monster.com/job-openings/lead-ai-automation-engineer-louisville-ky--212af28f-da1e-4da0-8a29-919c6027c83e
+2026-11-17 12:04:04,279 INFO No device provided, using cpu
+2026-11-17 12:04:04,855 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:04,857 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-11-17 12:04:04,865 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:04,943 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:04,952 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:04,985 INFO Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-11-17 12:04:05,032 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:05,041 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:05,095 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:05,104 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-11-17 12:04:05,224 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:05,233 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:05,311 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:05,321 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:05,399 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-11-17 12:04:05,452 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:05,460 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:05,678 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-11-17 12:04:05,733 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-17 12:04:05,787 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-17 12:04:05,842 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-11-17 12:04:05,902 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:05,911 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:05,993 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:06,002 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:06,064 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:06,073 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:06,136 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:06,144 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:06,261 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-11-17 12:04:06,310 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-11-17 12:04:06,492 INFO HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-11-17 12:04:06,501 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-11-17 12:04:06,578 INFO HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-11-17 12:04:14,466 INFO [FIT-OK] id=http://www.indeed.com/job/qa-automation-engineer-e2208b684ee5af46 title='QA Automation Engineer' source=TheirStack score=265 tier=Strong Fit
+2026-11-17 12:04:16,564 INFO [FIT-OK] id=https://talentapply.io/jobs/ai-qa-engineer-remote-aiqualtest-llc-2181936 title='AI QA Engineer (Remote) at AiQualTest LLC' source=Google Jobs score=201 tier=Excellent Fit
+2026-11-17 12:04:18,434 INFO [FIT-OK] id=https://www.christiantechjobs.io/christian-jobs/remote-qa-automation-engineer-come-and-see-foundation-1893 title='QA Automation Engineer at Come and See Foundation' source=Google Jobs score=78 tier=Excellent Fit
