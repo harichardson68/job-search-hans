@@ -1,0 +1,191 @@
+
+============================================================
+  Job Search Run: 2026-11-18 12:00:13
+============================================================
+[GIT] Pulling latest from GitHub...
+   [OK] Already up to date.
+
+=======================================================
+  Hans Richardson  Automated Job Search
+  Target: LoadRunner / Performance Engineer (Remote)
+=======================================================
+
+[SEARCH] Searching Google Jobs via Serper...
+   [DEBUG] Serper 'site:dice.com/job-detail "jmeter" "performance" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "performance test engineer" remote': 0 jobs, 5 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "loadrunner" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "performance engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance test engineer" "loadrunner" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"load test engineer" "loadrunner" remote': 0 jobs, 0 organic, status 200
+   [DEBUG] Serper '"performance engineer" "loadrunner" OR "vugen" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"LoadRunner Enterprise" OR "LoadRunner Cloud" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" "jmeter" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"neoload" OR "blazemeter" OR "k6" OR "gatling" performance remote': 0 jobs, 7 organic, status 200
+   [DEBUG] Serper '"performance engineer" "dynatrace" OR "appdynamics" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"site reliability" "load testing" OR "performance testing" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" remote contract "W2" OR "C2C"': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"performance engineer" OR "performance tester" "Kansas City"': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "software test engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:dice.com/job-detail "QA engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"quality assurance engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"software tester" remote -manual': 0 jobs, 9 organic, status 200
+   [DEBUG] Serper '"API test engineer" OR "API tester" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper 'site:jobs.lever.co "QA engineer" OR "test engineer" remote': 0 jobs, 5 organic, status 200
+   [DEBUG] Serper 'site:boards.greenhouse.io "QA engineer" remote': 0 jobs, 1 organic, status 200
+   [DEBUG] Serper '"test automation engineer" OR "QA automation engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"test lead" OR "QA lead" software remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"QA" OR "test engineer" OR "software tester" "Kansas City"': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"AI QA engineer" OR "AI test engineer" OR "AI SDET" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"AI automation engineer" OR "AI workflow engineer" remote': 0 jobs, 10 organic, status 200
+   [DEBUG] Serper '"AI integration engineer" OR "AI systems engineer" remote': 0 jobs, 10 organic, status 200
+   [GOTO] Google Jobs: 0 wrapped links, 0 resolved via /resolve, 0 via redirect, 0 dropped
+[LEARN] Loaded 24 learned title adjustments
+   [LEARNED] +10 (senior+10) Senior Performance Engineer- JMeter, JavaScript - 
+   [LEARNED] +10 (performance tester+10) Performance Tester - Pyramid Consulting, Inc. - Re
+   [LEARNED] +4 (qa+4) enior QA Automation Engineer UI Automation
+   [DEBUG] Serper FILTERED-non-US (city/country canada): ML Systems Performance Engineer - Cerebras Systems
+   [LEARNED] +7 (inc+7) Windchill Infrastructure & System Administrator - 
+   [DEBUG] Serper FILTERED-non-US (city/country dublin): E- Compressor Industrial Engineer - MAHLE - Morris
+   [DEBUG] Serper FILTERED-searchpage: Performance Tester jobs in Remote
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Best Performance Testing Jobs in 2026
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Sr Performance Test Engineer- LoadRunner, API & Br
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Performance Test Engineer - Canada (Contract) at Z
+   [DEBUG] Serper FILTERED-searchpage: 27 Performance Testing With Jmeter Job Vacancies I
+   [LEARNED] +8 (test+8) [Remote] QA Test Engineer
+   [DEBUG] Serper FILTERED-non-US (linkedin-country ca): Performance Test Engineer at AI Interviews
+   [DEBUG] Serper FILTERED-non-US (linkedin-country ca): Sr Performance Test Engineer- LoadRunner, API & Br
+   [DEBUG] Serper FILTERED-searchpage: Performance Tester jobs in Remote
+   [LEARNED] +10 (performance+10) Remote Performance Engineer: Drive Speed & Scale |
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Performance Test Engineer - Canada (Contract) at Z
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Performance Test Engineer - Canada (Contract) at Z
+   [DEBUG] Serper FILTERED-non-US (linkedin-country ca): Senior Performance Test Lead / Specialist at N2P S
+   [LEARNED] +10 (performance+10) Performance Engineer III | remote quest jobs
+   [DEBUG] Serper FILTERED-fp_path:/blog/: Scalability Testing: Techniques, Metrics, and Tool
+   [DEBUG] Serper FILTERED-non-US (city/country pune): Apprentice IT SAP ECC Jobs at Eaton (Pune) | ₹3-5 
+   [DEBUG] Serper FILTERED-non-US (city/country bengaluru): QA jobs in Bengaluru, Hyderabad, Pune, Chennai, Gu
+   [DEBUG] Serper FILTERED-non-US (city/country toronto): Performance Test Engineer at Zazz — Greater Toront
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Performance Tester with 0 - 1 Years of Experience 
+   [LEARNED] +10 (senior+10) Senior Performance Engineer – JMeter, JavaScript
+   [LEARNED] +10 (performance+10) Performance Test Engineer at Veracode — Austin, TX
+   [DEBUG] Serper FILTERED-searchpage: 27 Performance Testing With Jmeter Job Vacancies I
+   [DEBUG] Serper FILTERED-non-US (city/country madrid): Job Application for Performance Engineer at Real-T
+   [DEBUG] Serper FILTERED-fp_path:/blog/: 10 BlazeMeter Alternatives: Keep or Rewrite Tests 
+   [DEBUG] Serper FILTERED-fp_path:/blog/: k6 vs JMeter vs Gatling vs Locust Compared (2026)
+   [DEBUG] Serper FILTERED-non-US (city/country canada): Remote Site Reliability Engineer Jobs in Canada
+   [DEBUG] Serper FILTERED-searchpage: Remote engineer jobs in Ohio
+   [DEBUG] Serper FILTERED-listing-title: 184 performance testing Job Vacancies in US | Hiri
+   [DEBUG] Serper FILTERED-searchpage: Performance Tester jobs in Remote
+   [DEBUG] Serper FILTERED-searchpage: 494 Modeling and simulation engineer jobs in Remot
+   [DEBUG] Serper FILTERED-searchpage: Energy Storage Engineers jobs in Remote
+   [LEARNED] +8 (test+8) Sr Software Test Engineer - DATAMAXIS, Inc - North
+   [DEBUG] Serper FILTERED-non-US (city turin): Remote Quality Analyst - US - TURING ENTERPRISES, 
+   [LEARNED] +7 (inc+7) QA ENGINEER - AaraTechnologies Inc - Hybrid in Vir
+   [DEBUG] Serper FILTERED-non-US (city turin): Remote Quality Analyst - US - TURING ENTERPRISES, 
+   [LEARNED] +7 (inc+7) Pega QA Engineer- Remote - LEO DOES IT INC
+   [LEARNED] +10 (quality+10) Software Quality Engineering L4 - Frontdoor, Inc. 
+   [LEARNED] +7 (inc+7) QA ENGINEER - AaraTechnologies Inc - Hybrid in Was
+   [LEARNED] +10 (quality assurance+10) Quality Assurance Analyst I Remote - Apetan Consul
+   [LEARNED] +7 (inc+7) Guidewire PolicyCenter QA Analyst - CIS Technologi
+   [DEBUG] Serper FILTERED-searchpage: Remote quality assurance jobs in Oklahoma
+   [LEARNED] +10 (quality assurance+10) Sr. Quality Assurance Engineer (REMOTE- US based o
+   [LEARNED] +10 (quality assurance+10) Quality Assurance Engineer - Remote - USA
+   [DEBUG] Serper FILTERED-searchpage: Remote QA Engineer Jobs - 618 Open Positions (Nov 
+   [DEBUG] Serper FILTERED-career-info-path: Remote Quality Assurance (QA) Jobs in November 202
+   [DEBUG] Serper FILTERED-searchpage: Remote QA Engineer Jobs, Ghost Jobs Flagged
+   [DEBUG] Serper FILTERED-searchpage: Flexible QA Jobs – Apply Today to Work From Home i
+   [DEBUG] Serper FILTERED-searchpage: $28-$60/hr Remote Qa Analyst Jobs (NOW HIRING) Nov
+   [DEBUG] Serper FILTERED-searchpage: Therapynotes jobs in Remote
+   [DEBUG] Serper FILTERED-non-US (city/country italy): Freelance Software Tester | Remote in Italy
+   [DEBUG] Serper FILTERED-non-US (city/country germany): Website & App Tester | Remote, freelancer at Testl
+   [DEBUG] Serper FILTERED-searchpage: Api Testing Jobs
+   [DEBUG] Serper FILTERED-searchpage: Flexible Remote Test Engineer Jobs
+   [DEBUG] Serper FILTERED-non-US (city/country india): Senior QA API Tester | India
+   [DEBUG] Serper FILTERED-searchpage: Remote Quality Assurance Jobs by Job Title: A
+   [LEARNED] +4 (qa+4) Jobgether - QA Engineer, Mobile
+   [DEBUG] Serper FILTERED-non-US (city/country ireland): Jobgether - Backend QA Engineer
+   [LEARNED] +4 (qa+4) Data QA Engineer - Jobgether
+   [LEARNED] +4 (qa+4) Remote QA Automation Engineer at Come and See
+   [LEARNED] +4 (qa+4) QA Automation Engineer - Procal Technologies - Rem
+   [LEARNED] +4 (qa+4) Remote QA Automation Engineer Jobs in United State
+   [LEARNED] +4 (qa+4) QA Automation Engineer at RemoteHunter — United St
+   [LEARNED] +4 (qa+4) QA Automation Engineer - Remote
+   [DEBUG] Serper FILTERED-non-US (city/country india): QA Automation Engineer at Valtech in Remote
+   [DEBUG] Serper FILTERED-non-US (city/country india): Remote Software Testing Jobs Hiring In India
+   [DEBUG] Serper FILTERED-searchpage: Remote Qa Tester jobs in New Jersey
+   [DEBUG] Serper FILTERED-non-US (city/country india): Test Lead Job Remote India | Career at DXC Luxoft
+   [LEARNED] +4 (qa+4) Remote QA Lead Healthcare CMMS | reputed company-D
+   [DEBUG] Serper FILTERED-searchpage: Qa experience jobs in remote
+   [DEBUG] Serper FILTERED-searchpage: Remote QA Engineer Jobs - 618 Open Positions (Nov 
+   [DEBUG] Serper FILTERED-searchpage: Salesforce Qa jobs in Remote
+   [LEARNED] +9 (tester+9) Remote QA Tester Jobs Worldwide 2026 | TrulyRemote
+   [LEARNED] +8 (test+8) Remote Test Lead - QA Strategy | United States
+   [DEBUG] Serper FILTERED-non-US (city turin): QA Automation Engineer at TriCom Technical Service
+   [DEBUG] Serper FILTERED-non-US (city turin): Quality Assurance Developer at Randstad Digital Am
+   [DEBUG] Serper FILTERED-non-US (city turin): Test Engineer in Kingsville, Missouri, USA - Actal
+   [DEBUG] Serper FILTERED-non-US (city/country india): Part time qa automation engineer job in India
+   [LEARNED] -2 (qa engineer+4, ai-6) AI QA Engineer (Remote) at AiQualTest LLC
+   [DEBUG] Serper FILTERED-non-US (city/country india): Jobgether - AI - Software Development Engineer in 
+   [LEARNED] +2 (test+8, ai-6) AI QA Engineer, LLM Evaluation and Test Automation
+   [DEBUG] Serper FILTERED-searchpage: Remote Ai Qa Engineer — Automation & Testing - Out
+   [DEBUG] Serper FILTERED-non-US (city/country australia): Agentic AI Test Engineer (Playwright) job opening 
+   [DEBUG] Serper FILTERED-searchpage: Remote QA Engineer Jobs - 618 Open Positions (Nov 
+   [DEBUG] Serper FILTERED-non-US (city/country ireland): QA Engineer (Remote) at Joblet-AI
+   [DEBUG] Serper FILTERED-career-info-title: AI Automation Engineer Jobs & Career Guide
+   [LEARNED] +1 (inc+7, ai-6) AI Automation Engineer - Connexions Data Inc - Rem
+   [DEBUG] Serper FILTERED-non-US (city/country mexico): AI Automation Engineer at Worky.mx - Mexico Remote
+   [DEBUG] Serper FILTERED-searchpage: Ai Automation Engineer & Agent Builder jobs - Lago
+   [DEBUG] Serper FILTERED-non-US (city/country india): AI Automation Engineer ( Remote ) at JEEVIT — Indi
+   [DEBUG] Serper FILTERED-listing-title: 181 Ai automation engineer Jobs and Work
+   [DEBUG] Serper FILTERED-non-US (linkedin-country za): AI Integration Engineer (Remote, Benoni) at Blacks
+   [LEARNED] -6 (ai-6) Ai Integration Engineer (Remote, Santa Cruz De La 
+   [DEBUG] Serper FILTERED-non-US (city/country china): AI Systems Engineer - DEUS EX MACHINA
+   [OK] Google Jobs: 3 relevant jobs found
+   [ATS] descriptions fetched: 5 enriched, 2 failed, 15 attempted
+   [US-SHADOW] 0 of 0 full-description postings had no positive US signal (logged only -> logs/us_signal_shadow.log)
+[SEARCH] Searching TheirStack (trial)...
+   [DEBUG] TheirStack status 200
+   [DEBUG] TheirStack REJECTED (title (score=0, track=, n/a)): Senior Software Engineer - C#/.NET | Remote, Kansas City, MO | posted=2026-11-18
+   [DEBUG] TheirStack REJECTED (level (score=0, track=, title:senior-keyword:senior)): Senior QA Automation Engineer (MCP & AI Infrastructure) | On | Remote, New York, NY, US | posted=2026-11-18
+   [LEARNED] +4 (qa+4) QA Automation Lead
+   [DEBUG] TheirStack REJECTED (blocked-site/company (score=213, track=QA Automation, career-qa-title)): QA Automation Lead | Remote, Austin, TX | posted=2026-11-18
+   [DEBUG] TheirStack REJECTED (title (score=0, track=, n/a)): System Analyst & Tester (REMOTE) | Remote, Albuquerque, NM, US | posted=2026-11-18
+   [LEARNED] +10 (senior+10) Senior QA Automation Engineer
+   [DEBUG] TheirStack REJECTED (blocked-site/company (score=198, track=QA Automation, career-qa-title)): Senior QA Automation Engineer | Remote, Austin, TX | posted=2026-11-18
+   [DEBUG] TheirStack REJECTED (title (score=0, track=, n/a)): Sr Software Engineer I | Remote, US | posted=2026-11-18
+   [OK] TheirStack: 6 raw, 0 relevant
+   [DEBUG] FILTERED-payfloor (no parseable ≥$25/hr pay): Remote QA Tester Jobs Worldwide 2026 | TrulyRemote | salary text: ''
+[OK] Removed 1 Remote Income Floor job(s) below their pay floor ($25/hr remote, $30/hr KC-hybrid) or with unparseable pay
+[OK] Removed 2 duplicate jobs already sent previously
+
+=======================================================
+[STATS] Total relevant jobs found: 0
+[STATS] No matching jobs found today.
+=======================================================
+
+[STATS] Generating cover letters for 0 jobs...
+
+
+[OK] Results saved to: C:\Users\haric\Jobsearch\json_files\job_results.json
+[SEARCH] Searching Amazon Jobs spotlight...
+   [DEBUG] Amazon FILTERED-title-lane: Business Intelligence Engineer, Search Capacity - Job ID: 10
+   [DEBUG] Amazon FILTERED-title-lane: Software Development Engineer II - Change Review ...
+   [LEARNED] +10 (assurance+10) Quality Assurance Engineer II, ISFX QA - Job ID: 1
+   [DEBUG] Amazon FILTERED-non-US (adci): Quality Assurance Engineer II, Alexa Connectivity Devices - 
+   [DEBUG] Amazon FILTERED-title-lane: QAE II, Amazon Payments - ID pracovní pozice
+   [DEBUG] Amazon FILTERED-title-lane: Senior Financial Analyst, AWS Data Center FP&A - Job ID: 105
+   [OK] Amazon Jobs: 1 relevant jobs found (10-day window)
+[STATS] Generating fit analysis for 1 AI-track Amazon Spotlight job(s)...
+        [FIT-AMZ] **Unknown Fit** — no job description available; check the posting before applying....
+
+[EMAIL] Sending email notification...
+   [OK] Saved 0 regular + 1 Amazon jobs to today_jobs.json
+   [OK] Archived to today_jobs_2026-11-18.json
+   [OK] Archived to today_jobs_run_20261118_120413.json (token sync source)
+   [OK] Persisted 1 Amazon jobs to job_decisions.json
+[OK] Rotated 7 legacy today_jobs archive(s) older than 30 days into archive_today_jobs/
+   Email sent to harichardson68@gmail.com
+=======================================================
+TOP 3 MATCHES WITH COVER LETTERS
+=======================================================
+
+[LOGS] Snapshotting run logs...
