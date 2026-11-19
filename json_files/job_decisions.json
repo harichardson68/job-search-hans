@@ -18372,7 +18372,6 @@
     {
       "job_id": "f457833747",
       "number": "A1",
-      "number_display": "A1",
       "title": "Quality Assurance Engineer II, ISFX QA - Job ID: 10607788",
       "company": "Amazon",
       "track": "QA Automation",
@@ -18383,17 +18382,11 @@
         "manual testing"
       ],
       "source": "Amazon Jobs",
-      "is_amazon": true,
-      "fit_tier": "Unknown Fit",
-      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
-      "decision": "pending",
-      "reason": "",
-      "detection_method": "auto",
-      "confidence": 1.0,
-      "notes": "",
-      "reviewed": false,
-      "reviewed_date": "",
-      "recorded_at": "2026-11-18T12:04:13.293892"
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-18 23:00"
     }
   ]
 }
