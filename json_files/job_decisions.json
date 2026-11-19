@@ -18234,7 +18234,9 @@
       "decision": "other",
       "reason": "Paid link",
       "raw_decision": "Other",
-      "timestamp": "2026-11-16 23:00"
+      "timestamp": "2026-11-16 23:00",
+      "reviewed": true,
+      "reviewed_date": "2026-11-19"
     },
     {
       "job_id": "00f2da5ff8",
