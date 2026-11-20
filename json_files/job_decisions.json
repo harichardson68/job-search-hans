@@ -18390,5 +18390,31 @@
       "raw_decision": "",
       "timestamp": "2026-11-18 23:00"
     }
+  ],
+  "2026-11-19": [
+    {
+      "job_id": "b085dd95f4",
+      "number": "1",
+      "title": "Performance Testing Job - United States (DivIHN Integration Inc)",
+      "company": "DivIHN Integration Inc",
+      "track": "Performance Engineering",
+      "score": 178,
+      "url": "https://www.iitjobs.com/job/performance-testing-united-states-650305",
+      "matched_keywords": [
+        "performance testing",
+        "uat",
+        "functional testing",
+        "performance test",
+        "scalability",
+        "loadrunner",
+        "test plans"
+      ],
+      "source": "Google Jobs",
+      "query": "\"LoadRunner Enterprise\" OR \"LoadRunner Cloud\" remote",
+      "decision": "applied",
+      "reason": null,
+      "raw_decision": "Applied",
+      "timestamp": "2026-11-19 23:00"
+    }
   ]
 }
