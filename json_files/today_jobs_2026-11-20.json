@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-20",
+  "run_id": "20261120_120402",
+  "jobs": [
+    {
+      "job_id": "196c54158d",
+      "number": "1",
+      "number_display": "1",
+      "token": "106eb036d5",
+      "run_id": "20261120_120402",
+      "title": "[Remote] AI Automation Engineer | JoinWFH",
+      "company": "JoinWFH",
+      "track": "AI Engineering",
+      "score": 148,
+      "url": "https://joinwfh.l9k.yzz.me/remote-jobs/remote-ai-automation-engineer-2",
+      "matched_keywords": [
+        "servicenow",
+        "llm application",
+        "python",
+        "uat",
+        "agent engineer",
+        "ai prompt",
+        "agent framework",
+        "ai automation engineer",
+        "ai agent",
+        "aws",
+        "anthropic",
+        "rest api",
+        "openai",
+        "sql"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Strong Fit",
+      "fit_analysis": "**Strong Fit** \u2014 *AI agent engineering* and *cloud deployment* align perfectly; minor _production LLM depth_ gap but portfolio + GenAI cert + API projects bridge it well.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"AI automation engineer\" OR \"AI workflow engineer\" remote"
+    },
+    {
+      "job_id": "64a3b7aa91",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "6289128c6c",
+      "run_id": "20261120_120402",
+      "title": "Remote QA Automation Engineer Jobs \u2013 Work From Home",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 64,
+      "url": "https://www.qajobboard.com/s/remote-qa-automation-engineer-jobs",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-18T23:00:21",
+  "generated_at": "2026-11-19T23:00:28",
   "labeled_weighted": {
-    "applied": 57.2,
-    "rejected": 45.4
+    "applied": 57.7,
+    "rejected": 45.1
   },
   "settings": {
     "half_life_days": 90,
@@ -22,7 +22,7 @@
     "ml": {
       "adj": -11,
       "applied_w": 1.0,
-      "rejected_w": 5.2
+      "rejected_w": 5.1
     },
     "developer": {
       "adj": -9,
@@ -32,107 +32,107 @@
     "agentic": {
       "adj": -9,
       "applied_w": 4.4,
-      "rejected_w": 12.6
+      "rejected_w": 12.5
     },
     "agentic ai": {
       "adj": -8,
       "applied_w": 2.7,
-      "rejected_w": 6.8
+      "rejected_w": 6.7
     },
     "ai engineer": {
       "adj": -7,
       "applied_w": 5.3,
-      "rejected_w": 11.1
-    },
-    "ai": {
-      "adj": -6,
-      "applied_w": 15.1,
-      "rejected_w": 27.5
+      "rejected_w": 11.0
     },
     "solutions": {
       "adj": -6,
       "applied_w": 2.4,
-      "rejected_w": 4.7
+      "rejected_w": 4.6
+    },
+    "ai": {
+      "adj": -6,
+      "applied_w": 15.0,
+      "rejected_w": 27.3
     },
     "ai automation": {
       "adj": -1,
       "applied_w": 4.2,
-      "rejected_w": 3.6
+      "rejected_w": 3.5
     },
     "software": {
-      "adj": 2,
+      "adj": 1,
       "applied_w": 5.9,
-      "rejected_w": 3.6
+      "rejected_w": 3.5
     },
     "architect": {
       "adj": 3,
-      "applied_w": 4.3,
+      "applied_w": 4.2,
       "rejected_w": 1.8
+    },
+    "qa": {
+      "adj": 4,
+      "applied_w": 8.2,
+      "rejected_w": 3.3
     },
     "qa engineer": {
       "adj": 4,
       "applied_w": 6.2,
       "rejected_w": 2.6
     },
-    "qa": {
-      "adj": 4,
-      "applied_w": 8.2,
-      "rejected_w": 3.4
-    },
     "performance engineer": {
-      "adj": 7,
-      "applied_w": 4.6,
-      "rejected_w": 1.0
+      "adj": 6,
+      "applied_w": 4.5,
+      "rejected_w": 0.9
     },
     "inc": {
       "adj": 7,
-      "applied_w": 6.6,
+      "applied_w": 7.5,
       "rejected_w": 1.7
     },
     "test": {
       "adj": 8,
-      "applied_w": 9.1,
+      "applied_w": 9.0,
       "rejected_w": 2.0
     },
     "tester": {
-      "adj": 9,
-      "applied_w": 10.9,
+      "adj": 8,
+      "applied_w": 10.8,
       "rejected_w": 2.3
-    },
-    "senior": {
-      "adj": 10,
-      "applied_w": 8.7,
-      "rejected_w": 0.0
     },
     "assurance engineer": {
       "adj": 10,
-      "applied_w": 8.7,
+      "applied_w": 8.6,
       "rejected_w": 0.0
-    },
-    "performance": {
-      "adj": 10,
-      "applied_w": 17.9,
-      "rejected_w": 1.5
     },
     "assurance": {
       "adj": 10,
-      "applied_w": 9.7,
+      "applied_w": 9.6,
       "rejected_w": 0.8
-    },
-    "quality": {
-      "adj": 10,
-      "applied_w": 10.5,
-      "rejected_w": 1.7
     },
     "performance tester": {
       "adj": 10,
       "applied_w": 7.8,
       "rejected_w": 0.5
     },
+    "performance": {
+      "adj": 10,
+      "applied_w": 18.7,
+      "rejected_w": 1.4
+    },
     "quality assurance": {
       "adj": 10,
-      "applied_w": 9.7,
+      "applied_w": 9.6,
       "rejected_w": 0.8
+    },
+    "quality": {
+      "adj": 10,
+      "applied_w": 10.4,
+      "rejected_w": 1.7
+    },
+    "senior": {
+      "adj": 10,
+      "applied_w": 8.7,
+      "rejected_w": 0.0
     }
   },
   "paused_queries": {},
@@ -226,6 +226,12 @@
       "applied": 1,
       "rejected": 0,
       "last_seen": "2026-11-10"
+    },
+    "\"LoadRunner Enterprise\" OR \"LoadRunner Cloud\" remote": {
+      "shown": 2,
+      "applied": 1,
+      "rejected": 0,
+      "last_seen": "2026-11-19"
     },
     "\"performance center\" \"loadrunner\" remote": {
       "shown": 2,
@@ -322,12 +328,6 @@
       "applied": 0,
       "rejected": 0,
       "last_seen": "2026-11-17"
-    },
-    "\"LoadRunner Enterprise\" OR \"LoadRunner Cloud\" remote": {
-      "shown": 1,
-      "applied": 0,
-      "rejected": 0,
-      "last_seen": "2026-11-06"
     },
     "\"AI automation engineer\" OR \"AI workflow engineer\" remote": {
       "shown": 1,
