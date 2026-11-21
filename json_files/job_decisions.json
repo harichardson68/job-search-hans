@@ -18416,5 +18416,56 @@
       "raw_decision": "Applied",
       "timestamp": "2026-11-19 23:00"
     }
+  ],
+  "2026-11-20": [
+    {
+      "job_id": "196c54158d",
+      "number": "1",
+      "title": "[Remote] AI Automation Engineer | JoinWFH",
+      "company": "JoinWFH",
+      "track": "AI Engineering",
+      "score": 148,
+      "url": "https://joinwfh.l9k.yzz.me/remote-jobs/remote-ai-automation-engineer-2",
+      "matched_keywords": [
+        "servicenow",
+        "llm application",
+        "python",
+        "uat",
+        "agent engineer",
+        "ai prompt",
+        "agent framework",
+        "ai automation engineer",
+        "ai agent",
+        "aws",
+        "anthropic",
+        "rest api",
+        "openai",
+        "sql"
+      ],
+      "source": "Google Jobs",
+      "query": "\"AI automation engineer\" OR \"AI workflow engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-20 23:00"
+    },
+    {
+      "job_id": "64a3b7aa91",
+      "number": "G1",
+      "title": "Remote QA Automation Engineer Jobs \u2013 Work From Home",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 64,
+      "url": "https://www.qajobboard.com/s/remote-qa-automation-engineer-jobs",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-20 23:00"
+    }
   ]
 }
