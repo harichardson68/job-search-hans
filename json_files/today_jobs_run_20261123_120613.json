@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-23",
+  "run_id": "20261123_120613",
+  "jobs": [
+    {
+      "job_id": "d19173e3dd",
+      "number": "1",
+      "number_display": "1",
+      "token": "b6609d7148",
+      "run_id": "20261123_120613",
+      "title": "Performance Engineer Lead | Partner One Software Inc",
+      "company": "Partner One Software Inc",
+      "track": "Performance Engineering",
+      "score": 97,
+      "url": "https://jobs.workable.com/view/dPPHiaKvcZ8nGZUKnZbKrf/remote-performance-engineer-lead-in-turkey-at-partner-one-software-inc",
+      "matched_keywords": [
+        "scalability",
+        "ci/cd",
+        "load testing",
+        "kubernetes",
+        "performance engineer",
+        "bottleneck",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *Performance engineering* and *Kubernetes* expertise strong; primary tool is _JMeter_ (trained, not expert) and _leadership_ role lacks Hans's formal management history.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"performance engineer\" \"jmeter\" remote"
+    },
+    {
+      "job_id": "29862f3036",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "aa0da47318",
+      "run_id": "20261123_120613",
+      "title": "Lead QA Engineer - Test Strategy & Automation (ISTQB) - Remote",
+      "company": "Test Strategy & Automation (ISTQB)",
+      "track": "QA Automation",
+      "score": 68,
+      "url": "https://www.indeed.com/viewjob?jk=d3e39da17e2aaabb",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "\"software tester\" remote -manual"
+    }
+  ]
+}
