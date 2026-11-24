@@ -18467,5 +18467,49 @@
       "raw_decision": "",
       "timestamp": "2026-11-20 23:00"
     }
+  ],
+  "2026-11-23": [
+    {
+      "job_id": "d19173e3dd",
+      "number": "1",
+      "title": "Performance Engineer Lead | Partner One Software Inc",
+      "company": "Partner One Software Inc",
+      "track": "Performance Engineering",
+      "score": 97,
+      "url": "https://jobs.workable.com/view/dPPHiaKvcZ8nGZUKnZbKrf/remote-performance-engineer-lead-in-turkey-at-partner-one-software-inc",
+      "matched_keywords": [
+        "scalability",
+        "ci/cd",
+        "load testing",
+        "kubernetes",
+        "performance engineer",
+        "bottleneck",
+        "jmeter"
+      ],
+      "source": "Google Jobs",
+      "query": "\"performance engineer\" \"jmeter\" remote",
+      "decision": "not_in_us",
+      "reason": null,
+      "raw_decision": "Not in United States",
+      "timestamp": "2026-11-23 23:00"
+    },
+    {
+      "job_id": "29862f3036",
+      "number": "G1",
+      "title": "Lead QA Engineer - Test Strategy & Automation (ISTQB) - Remote",
+      "company": "Test Strategy & Automation (ISTQB)",
+      "track": "QA Automation",
+      "score": 68,
+      "url": "https://www.indeed.com/viewjob?jk=d3e39da17e2aaabb",
+      "matched_keywords": [
+        "career-qa-title"
+      ],
+      "source": "Google Jobs",
+      "query": "\"software tester\" remote -manual",
+      "decision": "other",
+      "reason": null,
+      "raw_decision": "Other",
+      "timestamp": "2026-11-23 23:00"
+    }
   ]
 }
