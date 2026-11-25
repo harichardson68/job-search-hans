@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-25",
+  "run_id": "20261125_120557",
+  "jobs": [
+    {
+      "job_id": "fdcd733354",
+      "number": "1",
+      "number_display": "1",
+      "token": "8ffbdf4c64",
+      "run_id": "20261125_120557",
+      "title": "Senior Performance Engineer- JMeter, JavaScript - Remote",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 56,
+      "url": "https://www.indeed.com/viewjob?jk=a006cf8c470bff18",
+      "matched_keywords": [
+        "java",
+        "jmeter",
+        "javascript",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"performance engineer\" \"jmeter\" remote"
+    },
+    {
+      "job_id": "247393c82d",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "46370742f9",
+      "run_id": "20261125_120557",
+      "title": "QA Lead FHIR API Tester at Infinite \u2022 Atlanta",
+      "company": "Infinite",
+      "track": "QA Automation",
+      "score": 74,
+      "url": "https://wellfound.com/jobs/4990812-qa-lead-fhir-api-tester",
+      "matched_keywords": [
+        "career-qa-title",
+        "api testing",
+        "postman"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Decent Fit",
+      "fit_analysis": "**Decent Fit** \u2014 *API testing* and *QA lead* experience align; _FHIR/Da Vinci domain knowledge_ is new but learnable, automation preferred not required.",
+      "level_signal": "career-qa-title",
+      "query": "\"API test engineer\" OR \"API tester\" remote"
+    },
+    {
+      "job_id": "9f80adeec6",
+      "number": "G2",
+      "number_display": "G2",
+      "token": "d30acf286a",
+      "run_id": "20261125_120557",
+      "title": "ServiceNow Test Automation Engineer - Remote",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 46,
+      "url": "https://www.indeed.com/viewjob?jk=22d9294ab4051f87",
+      "matched_keywords": [
+        "career-qa-title",
+        "servicenow"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote"
+    }
+  ]
+}
