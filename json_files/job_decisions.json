@@ -18511,5 +18511,67 @@
       "raw_decision": "Other",
       "timestamp": "2026-11-23 23:00"
     }
+  ],
+  "2026-11-25": [
+    {
+      "job_id": "fdcd733354",
+      "number": "1",
+      "title": "Senior Performance Engineer- JMeter, JavaScript - Remote",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 56,
+      "url": "https://www.indeed.com/viewjob?jk=a006cf8c470bff18",
+      "matched_keywords": [
+        "java",
+        "jmeter",
+        "javascript",
+        "performance engineer"
+      ],
+      "source": "Google Jobs",
+      "query": "\"performance engineer\" \"jmeter\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-25 23:00"
+    },
+    {
+      "job_id": "247393c82d",
+      "number": "G1",
+      "title": "QA Lead FHIR API Tester at Infinite \u2022 Atlanta",
+      "company": "Infinite",
+      "track": "QA Automation",
+      "score": 74,
+      "url": "https://wellfound.com/jobs/4990812-qa-lead-fhir-api-tester",
+      "matched_keywords": [
+        "career-qa-title",
+        "api testing",
+        "postman"
+      ],
+      "source": "Google Jobs",
+      "query": "\"API test engineer\" OR \"API tester\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-25 23:00"
+    },
+    {
+      "job_id": "9f80adeec6",
+      "number": "G2",
+      "title": "ServiceNow Test Automation Engineer - Remote",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 46,
+      "url": "https://www.indeed.com/viewjob?jk=22d9294ab4051f87",
+      "matched_keywords": [
+        "career-qa-title",
+        "servicenow"
+      ],
+      "source": "Google Jobs",
+      "query": "\"test automation engineer\" OR \"QA automation engineer\" remote",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-25 23:00"
+    }
   ]
 }
