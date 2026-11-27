@@ -18575,5 +18575,36 @@
       "raw_decision": "",
       "timestamp": "2026-11-25 23:00"
     }
+  ],
+  "2026-11-26": [
+    {
+      "job_id": "3ba9e0d450",
+      "number": "G1",
+      "title": "IT Applications Test Engineer (Remote)",
+      "company": "California FAIR Plan Association",
+      "track": "QA Automation",
+      "score": 292,
+      "url": "https://cafairplan.bamboohr.com/careers/294?postedDate=2026-11-25&source=indeed&src=indeed",
+      "matched_keywords": [
+        "test cases",
+        "jmeter",
+        "performance testing",
+        "career-qa-title",
+        "selenium",
+        "qa+performance",
+        "loadrunner",
+        "agile",
+        "performance test",
+        "uat",
+        "rag",
+        "scalability"
+      ],
+      "source": "TheirStack",
+      "query": "",
+      "decision": "no_response",
+      "reason": null,
+      "raw_decision": "",
+      "timestamp": "2026-11-26 23:00"
+    }
   ]
 }
