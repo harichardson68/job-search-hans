@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-27",
+  "run_id": "20261127_120544",
+  "jobs": [
+    {
+      "job_id": "a828b8758e",
+      "number": "1",
+      "number_display": "1",
+      "token": "5669421d28",
+      "run_id": "20261127_120544",
+      "title": "Best Performance Testing Jobs in the World",
+      "company": "N/A",
+      "track": "Performance Engineering",
+      "score": 200,
+      "url": "https://testdevjobs.com/performance-testing-jobs/",
+      "matched_keywords": [
+        "performance test",
+        "jmeter",
+        "gatling",
+        "performance testing",
+        "loadrunner"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "none:no-seniority-signal-found",
+      "query": "\"performance test engineer\" \"loadrunner\" remote"
+    },
+    {
+      "job_id": "82e542a5b8",
+      "number": "2",
+      "number_display": "2",
+      "token": "0ce9d765b0",
+      "run_id": "20261127_120544",
+      "title": "AI QA Engineer - United States",
+      "company": "N/A",
+      "track": "AI Engineering",
+      "score": 123,
+      "url": "https://www.indeed.com/viewjob?jk=369b1ffd465b46d3",
+      "matched_keywords": [
+        "career-qa-title",
+        "ai qa",
+        "ai qa engineer"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "transferable-title:years-gate-skipped",
+      "query": "\"AI QA engineer\" OR \"AI test engineer\" OR \"AI SDET\" remote"
+    },
+    {
+      "job_id": "0689e0bb78",
+      "number": "G1",
+      "number_display": "G1",
+      "token": "2b1b8a077e",
+      "run_id": "20261127_120544",
+      "title": "Junior Software Tester - Remote, No Experience Necessary",
+      "company": "N/A",
+      "track": "QA Automation",
+      "score": 71,
+      "url": "https://testerjobusa.wpcomstaging.com/junior-software-tester-remote-no-experience-necessary/",
+      "matched_keywords": [
+        "career-qa-title",
+        "no experience necessary"
+      ],
+      "source": "Google Jobs",
+      "is_amazon": false,
+      "fit_tier": "Unknown Fit",
+      "fit_analysis": "**Unknown Fit** \u2014 no job description available; check the posting before applying.",
+      "level_signal": "career-qa-title",
+      "query": "\"software tester\" remote -manual"
+    }
+  ]
+}
